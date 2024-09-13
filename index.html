@@ -1,1 +1,453 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>S</title><style>body,html{margin:0;padding:0;overflow:hidden;background:#000;color:#fff;font-family:sans-serif;height:100vh;width:100%}#a{position:relative;width:100%;height:100vh;display:flex;justify-content:center;align-items:center;overflow:hidden;padding:0 5vw}#b{text-align:left;width:100%}#c{font-size:6vw;line-height:1.1;white-space:nowrap;transition:transform 1s,opacity 1s}.d{display:inline-block;transform-origin:top left;opacity:0;transition:transform .5s,opacity .5s}.e{position:absolute;bottom:20px;right:20px;display:flex;flex-direction:column;align-items:center;transition:opacity .3s}.f{font-size:12px;color:#3e3e3e;opacity:.8;transition:opacity .8s,color .3s}.g{width:24px;height:24px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg);opacity:.8;animation:h 2s infinite}@keyframes h{0%,20%,50%,80%,100%{transform:translateY(0) rotate(-45deg)}40%{transform:translateY(10px) rotate(-45deg)}60%{transform:translateY(5px) rotate(-45deg)}}.i{transform:scale(.5) translateX(-50%);opacity:.5;transition:transform 1s,opacity 1s}#j{position:absolute;top:20px;right:20px;display:flex;gap:10px;background:#fff}#j img{width:40px;height:40px;background:#000}.k #j img{opacity:1}@media(max-width:768px){#c{font-size:8vw;line-height:1.15}#a{padding:0 3vw}}@media(max-width:480px){#c{font-size:9vw}.d{display:inline-block;margin-bottom:0}#a{padding:0 2vw}}</style></head><body><div id="a"><section id="b"><h1 id="c"><span class="d">Jake Fieldhouse</span><br><span class="d">IT Professional</span><br><span class="d">Hardware Specialist</span><br><span class="d">AI Advocate</span><br></h1></section></div><div id="j"><img src="images/email.png"><img src="images/phone-ringing.png"><img src="images/instagram.png"><img src="images/facebook.png"><img src="images/whatsapp.png"><img src="images/github.png"></div><div class="e"><div class="f">Scroll</div><div class="g"></div></div><script>const q=document.querySelectorAll('.d'),r=q.length+1;let s=0,t=!1;const u=document.querySelector('.e'),v=u.querySelector('.f'),w=u.querySelector('.g'),x=document.querySelector('#b'),y=document.querySelector('#a'),z=a=>{q.forEach((b,c)=>{b.style.transform=c<=a?'rotateX(0) translateY(0)':'rotateX(90deg) translateY(-100%)',b.style.opacity=c<=a?'1':'0'}),x.classList.toggle('i',a>=r-1),y.classList.toggle('k',a>=r-1),t=!1},A=a=>{if(t)return;t=!0,s=Math.max(0,Math.min(r-1,s+(a.deltaY>0?1:-1))),z(s),B()},B=()=>{v.style.opacity=s?'0':'1',w.style.opacity=Math.max(0,1-s/r)};window.addEventListener('wheel',A);z(s);</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Jake Fieldhouse - IT Professional, Hardware Specialist, AI Advocate">
+    <meta name="keywords" content="Jake Fieldhouse, IT Professional, Hardware Specialist, AI Advocate, Resume, CV">
+    <title>Jake Fieldhouse - IT Professional</title>
+    <style>
+        /* Reset and basic styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #000;
+            color: #fff;
+            font-family: sans-serif;
+            height: 100vh;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+            touch-action: none;
+        }
+
+        /* Main container */
+        #main-container {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            padding: 0 5vw;
+        }
+
+        /* Intro section */
+        #intro-section {
+            text-align: left;
+            width: 100%;
+            transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+        }
+
+        /* Main heading */
+        #main-heading {
+            font-size: 6vw;
+            line-height: 1.1;
+            white-space: nowrap;
+            transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+        }
+
+        /* Title lines */
+        .title-line {
+            display: inline-block;
+            transform-origin: top left;
+            opacity: 1; /* Visible by default */
+            font-size: 6vw;
+            color: #fff;
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out, font-size 1.5s ease-in-out, color 1.5s ease-in-out, opacity 1.5s ease-in-out;
+            will-change: transform, opacity, font-size, color;
+            cursor: pointer;
+        }
+
+        /* Hidden state for title lines */
+        .hidden {
+            opacity: 0;
+            transform: rotateX(90deg) translateY(-100%);
+        }
+
+        /* Highlight and shrunk styles */
+        .highlight {
+            font-size: 10vw;
+            color: #FFD1DC;
+            font-weight: bold;
+        }
+        .shrunk {
+            font-size: 4vw;
+            color: #fff;
+            opacity: .5;
+        }
+
+        /* Content sections */
+        .content-section {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
+            margin: 0;
+            padding: 0;
+            font-size: 1.5vw;
+            line-height: 1.6;
+        }
+        .content-section.visible {
+            max-height: 500px; /* Adjust as needed */
+            opacity: 1;
+            margin: 10px 0;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: opacity .5s ease-in-out;
+        }
+        .scroll-text {
+            font-size: 12px;
+            color: #3e3e3e;
+            opacity: .8;
+            transition: opacity 1s ease-in-out, color .5s ease-in-out;
+        }
+        .scroll-arrow {
+            width: 24px;
+            height: 24px;
+            border-left: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            transform: rotate(-45deg);
+            opacity: .8;
+            animation: arrowAnimation 2s infinite;
+        }
+        @keyframes arrowAnimation {
+            0%, 100% {
+                transform: translateY(0) rotate(-45deg);
+            }
+            50% {
+                transform: translateY(10px) rotate(-45deg);
+            }
+        }
+
+        /* Scaled class for intro section */
+        .scaled {
+            transform: scale(.5) translateX(-50%);
+            opacity: .5;
+            transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+        }
+
+        /* Social links */
+        #social-links {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            background: none;
+        }
+        #social-links a img {
+            width: 40px;
+            height: 40px;
+            background: none;
+            filter: brightness(0) invert(1);
+            transition: filter .3s ease-in-out;
+        }
+
+        /* Hover effects with colors restored */
+        #social-links a.email:hover img {
+            filter: invert(47%) sepia(91%) saturate(750%) hue-rotate(180deg) brightness(91%) contrast(100%);
+        }
+        #social-links a.phone:hover img {
+            filter: invert(66%) sepia(80%) saturate(339%) hue-rotate(77deg) brightness(93%) contrast(96%);
+        }
+        #social-links a.instagram:hover img {
+            filter: invert(42%) sepia(73%) saturate(7476%) hue-rotate(319deg) brightness(91%) contrast(105%);
+        }
+        #social-links a.facebook:hover img {
+            filter: invert(30%) sepia(91%) saturate(749%) hue-rotate(182deg) brightness(95%) contrast(92%);
+        }
+        #social-links a.whatsapp:hover img {
+            filter: invert(55%) sepia(98%) saturate(258%) hue-rotate(86deg) brightness(91%) contrast(95%);
+        }
+        #social-links a.github:hover img {
+            filter: invert(13%) sepia(99%) saturate(3636%) hue-rotate(264deg) brightness(93%) contrast(97%);
+        }
+        #social-links a.linkedin:hover img {
+            filter: invert(35%) sepia(24%) saturate(2129%) hue-rotate(185deg) brightness(92%) contrast(87%);
+        }
+
+        /* Active state for container */
+        .active #social-links img {
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            #main-heading {
+                font-size: 7vw;
+                line-height: 1.2;
+            }
+            #main-container {
+                padding: 0 4vw;
+            }
+            .content-section {
+                font-size: 3vw;
+                line-height: 1.5;
+            }
+            .highlight {
+                font-size: 12vw;
+            }
+            .shrunk {
+                font-size: 5vw;
+            }
+        }
+        @media (max-width: 480px) {
+            #main-heading {
+                font-size: 8vw;
+                line-height: 1.3; /* Adjusted for readability */
+            }
+            .title-line {
+                display: inline-block;
+                margin-bottom: 0;
+            }
+            #main-container {
+                padding: 0 3vw;
+            }
+            .content-section {
+                font-size: 4vw;
+                line-height: 1.6;
+            }
+            .highlight {
+                font-size: 14vw;
+            }
+            .shrunk {
+                font-size: 6vw;
+            }
+            #social-links a img {
+                width: 35px;
+                height: 35px;
+            }
+        }
+        @media (max-width: 360px) {
+            #main-heading {
+                font-size: 9vw;
+                line-height: 1.4;
+            }
+            .content-section {
+                font-size: 4.5vw;
+            }
+            .highlight {
+                font-size: 16vw;
+            }
+            .shrunk {
+                font-size: 7vw;
+            }
+            #social-links a img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="main-container">
+        <section id="intro-section">
+            <h1 id="main-heading">
+                <span id="name" class="title-line">Jake Fieldhouse</span><br>
+                <div id="content-name" class="content-section">
+                    <p>Passionate IT professional with over 10 years of experience in the industry.</p>
+                    <p>Specializing in delivering innovative solutions and optimizing systems.</p>
+                </div>
+                <span id="it-professional" class="title-line hidden">IT Professional</span><br>
+                <div id="content-it-professional" class="content-section">
+                    <p>Expertise in network infrastructure, cloud computing, and cybersecurity.</p>
+                    <p>Committed to staying ahead of technological trends and best practices.</p>
+                </div>
+                <span id="hardware-specialist" class="title-line hidden">Hardware Specialist</span><br>
+                <div id="content-hardware-specialist" class="content-section">
+                    <p>Skilled in hardware diagnostics, repairs, and custom PC builds.</p>
+                    <p>Providing tailored hardware solutions to meet client needs.</p>
+                </div>
+                <span id="ai-advocate" class="title-line hidden">AI Advocate</span><br>
+                <div id="content-ai-advocate" class="content-section">
+                    <p>Enthusiastic about artificial intelligence and its potential to transform industries.</p>
+                    <p>Actively exploring AI applications to enhance business processes.</p>
+                </div>
+            </h1>
+        </section>
+    </div>
+    <nav id="social-links" aria-label="Social Media Links">
+        <a href="mailto:jke.contact.me@gmail.com" class="email"><img src="images/email.png" alt="Email"></a>
+        <a href="tel:+447400052962" class="phone"><img src="images/phone-ringing.png" alt="Phone"></a>
+        <a href="https://www.instagram.com/jkeinks" target="_blank" class="instagram"><img src="images/instagram.png" alt="Instagram"></a>
+        <a href="https://www.facebook.com/jake.fieldhouse/" target="_blank" class="facebook"><img src="images/facebook.png" alt="Facebook"></a>
+        <a href="https://wa.me/447400052962" target="_blank" class="whatsapp"><img src="images/whatsapp.png" alt="WhatsApp"></a>
+        <a href="https://github.com/Jake-Fieldhouse" target="_blank" class="github"><img src="images/github.png" alt="GitHub"></a>
+        <a href="https://www.linkedin.com/in/jake-fieldhouse" target="_blank" class="linkedin"><img src="images/linkedin.png" alt="LinkedIn"></a>
+    </nav>
+    <div class="scroll-indicator">
+        <div class="scroll-text">Scroll or Swipe</div>
+        <div class="scroll-arrow"></div>
+    </div>
+    <script>
+        // JavaScript code with reverse animations, content sections, touch, and click support
+
+        // Get elements
+        const elements = document.querySelectorAll('.title-line');
+        const totalSteps = elements.length * 2 + 1; // Adjusted total steps
+        let currentStep = 0;
+        let isScrolling = false;
+
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        const scrollText = scrollIndicator.querySelector('.scroll-text');
+        const scrollArrow = scrollIndicator.querySelector('.scroll-arrow');
+        const introSection = document.querySelector('#intro-section');
+        const mainContainer = document.querySelector('#main-container');
+        const nameElement = document.querySelector('#name');
+        const itProfessional = document.querySelector('#it-professional');
+        const hardwareSpecialist = document.querySelector('#hardware-specialist');
+        const aiAdvocate = document.querySelector('#ai-advocate');
+
+        const contentSections = {
+            name: document.querySelector('#content-name'),
+            itProfessional: document.querySelector('#content-it-professional'),
+            hardwareSpecialist: document.querySelector('#content-hardware-specialist'),
+            aiAdvocate: document.querySelector('#content-ai-advocate')
+        };
+
+        const sections = [
+            {
+                titleLine: nameElement,
+                contentSection: contentSections.name
+            },
+            {
+                titleLine: itProfessional,
+                contentSection: contentSections.itProfessional
+            },
+            {
+                titleLine: hardwareSpecialist,
+                contentSection: contentSections.hardwareSpecialist
+            },
+            {
+                titleLine: aiAdvocate,
+                contentSection: contentSections.aiAdvocate
+            }
+        ];
+
+        // Define steps using constants
+        const STEPS = {
+            INITIAL: 0,
+            SHOW_ELEMENTS_END: elements.length - 1, // Last index when elements are shown
+            HIGHLIGHT_START: elements.length,       // Step when highlighting starts
+        };
+
+        const updateClasses = (step) => {
+            // Handle element visibility
+            elements.forEach((el, idx) => {
+                if (step >= idx) {
+                    el.classList.remove('hidden');
+                } else {
+                    el.classList.add('hidden');
+                }
+            });
+
+            // Toggle scaled and active classes after all elements are visible
+            if (step >= STEPS.HIGHLIGHT_START) {
+                introSection.classList.add('scaled');
+                mainContainer.classList.add('active');
+            } else {
+                introSection.classList.remove('scaled');
+                mainContainer.classList.remove('active');
+            }
+
+            // Handle highlighting, shrinking, and content sections
+            sections.forEach((section, idx) => {
+                const highlightStep = STEPS.HIGHLIGHT_START + idx; // Steps for highlighting
+                const shouldHighlight = step === highlightStep;
+                const shouldShrink = step > highlightStep;
+                if (shouldHighlight) {
+                    section.titleLine.classList.add('highlight');
+                    section.titleLine.classList.remove('shrunk');
+                    // Show content section
+                    section.contentSection.classList.add('visible');
+                } else if (shouldShrink) {
+                    section.titleLine.classList.remove('highlight');
+                    section.titleLine.classList.add('shrunk');
+                    // Hide content section
+                    section.contentSection.classList.remove('visible');
+                } else {
+                    section.titleLine.classList.remove('highlight', 'shrunk');
+                    // Hide content section
+                    section.contentSection.classList.remove('visible');
+                }
+            });
+
+            isScrolling = false;
+        };
+
+        const updateScrollIndicator = () => {
+            scrollText.style.opacity = currentStep ? '0' : '1';
+            scrollArrow.style.opacity = Math.max(0, 1 - currentStep / totalSteps);
+        };
+
+        // Debounce scroll events
+        let scrollTimeout;
+        const handleScroll = (delta) => {
+            if (isScrolling) return;
+            isScrolling = true;
+            if (scrollTimeout) return;
+            scrollTimeout = setTimeout(() => {
+                scrollTimeout = null;
+                currentStep = Math.max(0, Math.min(totalSteps - 1, currentStep + delta));
+                updateClasses(currentStep);
+                updateScrollIndicator();
+            }, 100); // Adjust debounce timeout as needed
+        };
+
+        // Wheel event for desktop
+        window.addEventListener('wheel', (event) => {
+            const delta = event.deltaY > 0 ? 1 : -1;
+            handleScroll(delta);
+        }, { passive: true });
+
+        // Touch events for mobile
+        let touchStartY = 0;
+        let touchEndY = 0;
+        const minSwipeDistance = 50; // Minimum distance to consider it a swipe
+
+        window.addEventListener('touchstart', (event) => {
+            touchStartY = event.changedTouches[0].screenY;
+        }, { passive: true });
+
+        window.addEventListener('touchend', (event) => {
+            touchEndY = event.changedTouches[0].screenY;
+            handleGesture();
+        }, { passive: true });
+
+        const handleGesture = () => {
+            const deltaY = touchStartY - touchEndY;
+            if (Math.abs(deltaY) > minSwipeDistance) {
+                const delta = deltaY > 0 ? 1 : -1;
+                handleScroll(delta);
+            } else {
+                isScrolling = false;
+            }
+        };
+
+        // Click events for title lines
+        elements.forEach((el, idx) => {
+            el.addEventListener('click', () => {
+                const targetStep = STEPS.HIGHLIGHT_START + idx;
+                currentStep = targetStep;
+                updateClasses(currentStep);
+                updateScrollIndicator();
+            });
+        });
+
+        // Initial setup
+        updateClasses(currentStep);
+    </script>
+</body>
+</html>
