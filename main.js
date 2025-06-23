@@ -166,6 +166,7 @@ elements.forEach((el, idx) => {
         currentStep = targetStep;
         updateClasses(currentStep);
         updateScrollIndicator();
+        updateFocus();
     });
     el.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -191,4 +192,5 @@ window.addEventListener('keydown', (e) => {
 
 // Initial setup
 updateClasses(currentStep);
+updateFocus();
 
