@@ -1,0 +1,11 @@
+{
+  "name": "my-website",
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "htmlhint \"**/*.html\"",
+    "test": "npm run lint"
+  },
+  "devDependencies": {
+    "htmlhint": "^1.1.5"
+  }
+}
