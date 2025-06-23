@@ -12,6 +12,13 @@
             touch-action: none;
         }
 
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
         /* Main container */
         #main-container {
             position: relative;
