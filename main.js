@@ -152,6 +152,12 @@
             });
         });
 
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown') handleScroll(1);
+            if (e.key === 'ArrowUp') handleScroll(-1);
+        });
+
         // Initial setup
         updateClasses(currentStep);
 
