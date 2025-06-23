@@ -1,4 +1,4 @@
-name: HTMLHint
+name: Lint
 
 on:
   push:
@@ -12,5 +12,4 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-      - run: npm ci
       - run: npm test
