@@ -104,6 +104,16 @@ scrollText.style.opacity = currentStep ? '0' : '1';
 scrollArrow.style.opacity = Math.max(0, 1 - currentStep / totalSteps);
 };
 
+const updateFocus = () => {
+    if (
+        currentStep >= STEPS.HIGHLIGHT_START &&
+        currentStep < STEPS.HIGHLIGHT_START + elements.length
+    ) {
+        const index = currentStep - STEPS.HIGHLIGHT_START;
+        sections[index].titleLine.focus();
+    }
+};
+
 // Debounce scroll events
 let scrollTimeout;
 const handleScroll = (delta) => {
@@ -115,6 +125,7 @@ scrollTimeout = setTimeout(() => {
     currentStep = Math.max(0, Math.min(totalSteps - 1, currentStep + delta));
     updateClasses(currentStep);
     updateScrollIndicator();
+    updateFocus();
 }, 100); // Adjust debounce timeout as needed
 };
 
@@ -167,8 +178,10 @@ elements.forEach((el, idx) => {
 // Keyboard navigation for arrow keys and tab
 window.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        e.preventDefault();
         handleScroll(1);
     } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        e.preventDefault();
         handleScroll(-1);
     } else if (e.key === 'Tab') {
         e.preventDefault();
