@@ -96,6 +96,14 @@ body::before {
   cursor: pointer;
 }
 
+/* Tagline displayed under the header */
+.tagline {
+  font-size: clamp(1rem, 3vw, 1.75rem);
+  color: var(--color-accent);
+  margin-top: var(--spacing-sm);
+  font-weight: 500;
+}
+
 /* Hidden state for title lines */
 .hidden {
   opacity: 0;
