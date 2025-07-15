@@ -4,7 +4,7 @@ This repository contains a single page portfolio website for **Jake Fieldhouse**
 
 ## Previewing the site locally
 
-You can view the site directly by opening `index.html` in any modern web browser. If you prefer to serve it via a local server (useful for testing on mobile devices), run:
+You can view the site directly by opening `index.html` in any modern web browser. If you prefer to serve it via a local server (useful for viewing on mobile devices), run:
 
 ```bash
 python3 -m http.server
@@ -15,16 +15,6 @@ This starts a simple web server on port `8000`. Navigate to `http://localhost:80
 ## Deployment
 
 The site is static HTML and can be hosted anywhere that serves static files. If using **GitHub Pages**, push the contents of this repository to your chosen branch (commonly `main`) and enable GitHub Pages for that branch in the repository settings. Pages will serve `index.html` from the repository root.
-
-## Linting and validation
-
-Install dependencies once with `npm install` and then run `npm run lint` to check HTML files using the custom linter. To validate the markup across all HTML files with [html-validate](https://github.com/html-validate/html-validate), run:
-
-```bash
-npm run html-validate
-```
-
-Running `npm test` will execute both the custom linter and `html-validate`.
 
 ## Screenshot
 
