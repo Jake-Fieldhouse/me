@@ -1,8 +1,0 @@
-{
-  "name": "my-website",
-  "version": "1.0.0",
-  "scripts": {
-    "lint": "node lint.js",
-    "test": "npm run lint"
-  }
-}
