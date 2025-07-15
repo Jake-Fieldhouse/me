@@ -16,6 +16,14 @@ This starts a simple web server on port `8000`. Navigate to `http://localhost:80
 
 The site is static HTML and can be hosted anywhere that serves static files. If using **GitHub Pages**, push the contents of this repository to your chosen branch (commonly `main`) and enable GitHub Pages for that branch in the repository settings. Pages will serve `index.html` from the repository root.
 
+## Linting and validation
+
+Run `npm run lint` to check HTML files using the custom linter. To validate the markup across all HTML files with [html-validate](https://github.com/html-validate/html-validate), run:
+
+```bash
+npm run html-validate
+```
+
 ## Screenshot
 
 Due to the limitations of this environment, a live screenshot could not be generated. When deploying the site, consider adding a screenshot of the landing page here for quick reference.
