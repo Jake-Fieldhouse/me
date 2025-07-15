@@ -18,11 +18,13 @@ The site is static HTML and can be hosted anywhere that serves static files. If 
 
 ## Linting and validation
 
-Run `npm run lint` to check HTML files using the custom linter. To validate the markup across all HTML files with [html-validate](https://github.com/html-validate/html-validate), run:
+Install dependencies once with `npm install` and then run `npm run lint` to check HTML files using the custom linter. To validate the markup across all HTML files with [html-validate](https://github.com/html-validate/html-validate), run:
 
 ```bash
 npm run html-validate
 ```
+
+Running `npm test` will execute both the custom linter and `html-validate`.
 
 ## Screenshot
 
