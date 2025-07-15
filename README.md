@@ -4,7 +4,7 @@ This repository contains a single page portfolio website for **Jake Fieldhouse**
 
 ## Previewing the site locally
 
-You can view the site directly by opening `index.html` in any modern web browser. If you prefer to serve it via a local server (useful for testing on mobile devices), run:
+You can view the site directly by opening `index.html` in any modern web browser. If you prefer to serve it via a local server (useful for viewing on mobile devices), run:
 
 ```bash
 python3 -m http.server
