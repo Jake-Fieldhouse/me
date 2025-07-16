@@ -166,13 +166,21 @@
             { passive: true }
         );
 
-        // Click events for each title line
+        // Click and keyboard events for each title line
         elements.forEach((el, idx) => {
-            el.addEventListener('click', () => {
+            function activateSection() {
                 const targetStep = STEPS.HIGHLIGHT_START + idx;
                 currentStep = targetStep;
                 updateClasses(currentStep);
                 updateScrollIndicator();
+            }
+
+            el.addEventListener('click', activateSection);
+            el.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    activateSection();
+                }
             });
         });
 
