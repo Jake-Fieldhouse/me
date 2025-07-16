@@ -126,6 +126,16 @@ body::before {
 
 /* Content sections */
 .content-section {
+  max-height: none;
+  overflow: visible;
+  opacity: 1;
+  margin: var(--spacing-sm) 0;
+  padding: 0;
+  font-size: 1.5vw;
+  line-height: 1.6;
+}
+
+body.js-enabled .content-section {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
@@ -133,11 +143,8 @@ body::before {
     max-height 1s ease-in-out,
     opacity 1s ease-in-out;
   margin: 0;
-  padding: 0;
-  font-size: 1.5vw;
-  line-height: 1.6;
 }
-.content-section.visible {
+body.js-enabled .content-section.visible {
   max-height: 500px; /* Adjust as needed */
   opacity: 1;
   margin: var(--spacing-sm) 0;
@@ -365,4 +372,12 @@ body::before {
   border: none;
   color: #000;
   cursor: pointer;
+}
+
+/* Message shown when JavaScript is disabled */
+.no-js-message {
+  background: #ff7ad9;
+  color: #000;
+  padding: 10px;
+  text-align: center;
 }

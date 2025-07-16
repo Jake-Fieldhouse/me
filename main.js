@@ -2,6 +2,8 @@
 
 // Wrap everything in an IIFE to avoid polluting the global scope
 (function () {
+    document.body.classList.remove('no-js');
+    document.body.classList.add('js-enabled');
     // ---------------------- Element Selection ----------------------
     const elements = document.querySelectorAll('.title-line');
     const totalSteps = elements.length * 2 + 1; // Adjusted total steps
