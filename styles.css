@@ -382,3 +382,14 @@ body::before {
   color: #000;
   cursor: pointer;
 }
+
+/* Services section */
+#services ul {
+  list-style: disc inside;
+  margin: var(--spacing-sm) 0;
+  padding-left: 1em;
+}
+
+#services a {
+  color: var(--color-accent);
+}
