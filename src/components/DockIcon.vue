@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, toRef } from "vue";
+import { ref, computed } from "vue";
 import { useElementBounding } from "@vueuse/core"; 
 
 // Since we might not have vueuse, let's write a vanilla composition.

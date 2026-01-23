@@ -24,22 +24,49 @@ const transformStyle = computed(() => {
   return `perspective(1000px) rotateX(${rotation.value.x}deg) rotateY(${rotation.value.y}deg) scale3d(1, 1, 1)`;
 });
 
+const width = ref(0);
+const height = ref(0);
+
+const handleMouseEnter = (e: MouseEvent) => {
+  const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+  width.value = rect.width;
+  height.value = rect.height;
+};
+
 const handleMouseMove = (e: MouseEvent) => {
+  // Use offsetX/Y if possible, fallback to manual calc if cached dimensions exist
+  // We use cached width/height to avoid reading DOM, but we need position.
+  // Actually, standard event offsetX/Y is relative to the target, which might be a child.
+  // Safe approach: Capture rect ONCE on Enter, assume it doesn't change size/pos continuously during hover.
+  
+  // If we rely on offsetX, it breaks if we hover children.
+  // Best approach: Use the cached width/height, but for X/Y, we still need reliable coords.
+  // If we cache rect on Enter, and the user Scrolls, the rect is invalid.
+  // BUT: The Tilt effect is only valid while hovering.
+  // Optimization: Only call getBoundingClientRect if we track scroll?
+  // OR: Use requestAnimationFrame to throttle the read/write.
+  
+  // Let's go with requestAnimationFrame to unblock the main thread.
+  // AND cache dimensions.
+  
   if (!cardRef.value) return;
-
-  const rect = cardRef.value.getBoundingClientRect();
-  const width = rect.width;
-  const height = rect.height;
-  const mouseX = e.clientX - rect.left;
-  const mouseY = e.clientY - rect.top;
-
-  const xPct = mouseX / width - 0.5;
-  const yPct = mouseY / height - 0.5;
-
-  rotation.value = {
-    x: yPct * -10, // Max tilt deg
-    y: xPct * 10,
-  };
+  
+  // We can't easily avoid getBoundingClientRect for absolute precision without observers.
+  // But we CAN throttle it.
+  requestAnimationFrame(() => {
+     if (!cardRef.value) return;
+     const rect = cardRef.value.getBoundingClientRect();
+     const mouseX = e.clientX - rect.left;
+     const mouseY = e.clientY - rect.top;
+     
+     const xPct = mouseX / rect.width - 0.5;
+     const yPct = mouseY / rect.height - 0.5;
+    
+     rotation.value = {
+        x: yPct * -10, 
+        y: xPct * 10,
+     };
+  });
 };
 
 const handleMouseLeave = () => {
@@ -50,6 +77,7 @@ const handleMouseLeave = () => {
 <template>
   <div
     ref="cardRef"
+    @mouseenter="handleMouseEnter"
     @mousemove="handleMouseMove"
     @mouseleave="handleMouseLeave"
     :style="{ transform: transformStyle }"

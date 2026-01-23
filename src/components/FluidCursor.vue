@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import type { HTMLAttributes } from "vue";
-import { onMounted, onUnmounted, ref, watch } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 
 interface ColorRGB {
   r: number;
@@ -925,15 +923,6 @@ onMounted(() => {
   let lastUpdateTime = Date.now();
   let colorUpdateTimer = 0.0;
 
-  function updateFrame() {
-    const dt = calcDeltaTime();
-    if (resizeCanvas()) initFramebuffers();
-    updateColors(dt);
-    applyInputs();
-    step(dt);
-    render(null);
-    requestAnimationFrame(updateFrame);
-  }
 
   function calcDeltaTime() {
     const now = Date.now();
@@ -1288,17 +1277,6 @@ onMounted(() => {
   };
   window.addEventListener("mousedown", handleMouseDown);
 
-  const handleFirstMouseMove = (e: MouseEvent) => {
-    const pointer = pointers[0];
-    const posX = scaleByPixelRatio(e.clientX);
-    const posY = scaleByPixelRatio(e.clientY);
-    const color = generateColor();
-    updateFrame();
-    updatePointerMoveData(pointer, posX, posY, color);
-    // document.body.removeEventListener("mousemove", handleFirstMouseMove); // Don't remove here, rely on global cleanup or manage state
-  };
-  // We will keep the global listener but maybe flag it? 
-  // Actually, the original code removed it. Let's respect that logic but track it.
   
   // Simplified Logic: Just attach standard listeners and let the loop handle it.
   // The original "Start rendering on first x" logic is a bit complex for cleanup.
