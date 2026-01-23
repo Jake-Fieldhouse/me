@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import FluidCursor from './components/FluidCursor.vue'
 import HyperText from './components/HyperText.vue'
-import ParticlesBg from './components/ParticlesBg.vue'
+import AuroraBackground from './components/AuroraBackground.vue'
+import BentoGrid from './components/BentoGrid.vue'
+import BentoItem from './components/BentoItem.vue'
+import FloatingDock from './components/FloatingDock.vue'
 import { ref } from 'vue'
 
 const showCookies = ref(true)
@@ -14,89 +17,92 @@ const acceptCookies = () => {
 if (localStorage.getItem('cookies-accepted')) {
   showCookies.value = false
 }
+
+const socialItems = [
+  { title: 'Email', icon: '/images/email.png', href: 'mailto:jke.contact.me@gmail.com' },
+  { title: 'Phone', icon: '/images/phone-ringing.png', href: 'tel:+447400052962' },
+  { title: 'Instagram', icon: '/images/instagram.png', href: 'https://www.instagram.com/jkeinks' },
+  { title: 'Facebook', icon: '/images/facebook.png', href: 'https://www.facebook.com/jake.fieldhouse/' },
+  { title: 'WhatsApp', icon: '/images/whatsapp.png', href: 'https://wa.me/447400052962' },
+  { title: 'GitHub', icon: '/images/github.png', href: 'https://github.com/Jake-Fieldhouse' },
+  { title: 'LinkedIn', icon: '/images/linkedin.png', href: 'https://www.linkedin.com/in/jake-fieldhouse' },
+]
 </script>
 
 <template>
-  <div class="relative min-h-screen bg-black text-white font-inter selection:bg-white/20">
-    <ParticlesBg
-      class="fixed inset-0 z-0 pointer-events-none opacity-50"
-      :quantity="50"
-      :staticity="30"
-      :ease="50"
-      color="#ffffff"
-    />
+  <div class="relative min-h-screen bg-black text-white font-inter selection:bg-white/20 overflow-x-hidden">
+    
+    <!-- Hero Layer -->
+    <AuroraBackground class="fixed inset-0 z-0">
+        <!-- Aurora handles its own visuals -->
+    </AuroraBackground>
 
+    <!-- Cursor Layer -->
     <FluidCursor class="fixed inset-0 z-50 pointer-events-none" />
 
-    <div class="relative z-10 w-full max-w-6xl mx-auto px-6 py-20 flex flex-col items-center gap-24">
-      <header class="text-center space-y-4 w-full">
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 py-20 flex flex-col items-center gap-32">
+      
+      <!-- Header -->
+      <header class="text-center space-y-4 w-full mt-20">
         <div class="flex justify-center">
             <HyperText
             text="Jake Fieldhouse"
-            class="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400" 
+            class="text-6xl md:text-8xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60" 
             />
         </div>
-        <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
+        <p class="text-2xl text-neutral-300 font-light max-w-2xl mx-auto">
           Business and technology consulting services
         </p>
       </header>
 
-      <main class="grid md:grid-cols-3 gap-8 w-full">
-        <section class="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all hover:-translate-y-1 hover:shadow-2xl backdrop-blur-sm">
-          <h2 class="text-2xl font-semibold mb-4 text-white group-hover:text-blue-400 transition-colors">IT Professional</h2>
-          <p class="text-neutral-400 leading-relaxed">
-            Passionate IT professional with over 10 years of experience in the
-            industry. Specializing in delivering innovative solutions and
-            optimizing systems.
-          </p>
-        </section>
+      <!-- Services Grid -->
+      <main class="w-full">
+        <BentoGrid class="max-w-4xl mx-auto">
+          <BentoItem
+            title="IT Professional"
+            description="Passionate IT professional with over 10 years of experience. Specializing in delivering innovative solutions and optimizing systems."
+            class="md:col-span-2 group hover:border-blue-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm"
+          >
+             <template #header>
+                <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-800" />
+             </template>
+             <template #icon>
+                <!-- Add icon component here if needed -->
+             </template>
+          </BentoItem>
+          
+          <BentoItem
+            title="Hardware Specialist"
+            description="Skilled in hardware diagnostics, repairs, and custom PC builds. Tailored hardware solutions."
+            class="md:col-span-1 group hover:border-purple-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm"
+          >
+            <template #header>
+                <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-800" />
+            </template>
+          </BentoItem>
 
-        <section class="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all hover:-translate-y-1 hover:shadow-2xl backdrop-blur-sm">
-          <h2 class="text-2xl font-semibold mb-4 text-white group-hover:text-purple-400 transition-colors">Hardware Specialist</h2>
-          <p class="text-neutral-400 leading-relaxed">
-            Skilled in hardware diagnostics, repairs, and custom PC builds.
-            Providing tailored hardware solutions to meet client needs.
-          </p>
-        </section>
-
-        <section class="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all hover:-translate-y-1 hover:shadow-2xl backdrop-blur-sm">
-          <h2 class="text-2xl font-semibold mb-4 text-white group-hover:text-amber-400 transition-colors">AI Advocate</h2>
-          <p class="text-neutral-400 leading-relaxed">
-            Enthusiastic about artificial intelligence and its potential to
-            transform industries. Actively exploring AI applications to enhance
-            business processes.
-          </p>
-        </section>
+          <BentoItem
+            title="AI Advocate"
+            description="Enthusiastic about artificial intelligence and its potential to transform industries. Actively exploring AI applications."
+            class="md:col-span-3 group hover:border-amber-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm"
+          >
+             <template #header>
+                <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-800" />
+             </template>
+          </BentoItem>
+        </BentoGrid>
       </main>
 
-      <section class="text-center space-y-8 w-full">
-        <h3 class="text-3xl font-semibold">Connect</h3>
-        <div class="flex justify-center gap-6 flex-wrap">
-          <a href="mailto:jke.contact.me@gmail.com" title="Email" class="hover:scale-110 transition-transform">
-            <img src="/images/email.png" alt="Email" class="w-12 h-12 invert opacity-70 hover:opacity-100 transition-opacity" />
-          </a>
-          <a href="tel:+447400052962" title="Phone" class="hover:scale-110 transition-transform">
-            <img src="/images/phone-ringing.png" alt="Phone" class="w-12 h-12 invert opacity-70 hover:opacity-100 transition-opacity" />
-          </a>
-          <a href="https://www.instagram.com/jkeinks" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
-            <img src="/images/instagram.png" alt="Instagram" class="w-12 h-12 invert opacity-70 hover:opacity-100 transition-opacity" />
-          </a>
-          <a href="https://www.facebook.com/jake.fieldhouse/" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
-            <img src="/images/facebook.png" alt="Facebook" class="w-12 h-12 invert opacity-70 hover:opacity-100 transition-opacity" />
-          </a>
-          <a href="https://wa.me/447400052962" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
-            <img src="/images/whatsapp.png" alt="WhatsApp" class="w-12 h-12 invert opacity-70 hover:opacity-100 transition-opacity" />
-          </a>
-          <a href="https://github.com/Jake-Fieldhouse" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
-            <img src="/images/github.png" alt="GitHub" class="w-12 h-12 invert opacity-70 hover:opacity-100 transition-opacity" />
-          </a>
-          <a href="https://www.linkedin.com/in/jake-fieldhouse" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
-            <img src="/images/linkedin.png" alt="LinkedIn" class="w-12 h-12 invert opacity-70 hover:opacity-100 transition-opacity" />
-          </a>
-        </div>
+      <!-- Social Dock -->
+      <section class="text-center space-y-8 w-full pb-20">
+        <h3 class="text-3xl font-semibold bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">Connect</h3>
+        <FloatingDock 
+            :items="socialItems"
+            desktopClassName="" 
+        />
       </section>
 
-      <footer class="w-full border-t border-white/10 pt-8 text-center text-neutral-500 text-sm">
+      <footer class="w-full border-t border-white/5 pt-8 text-center text-neutral-500 text-sm">
         <p class="mb-2">Jake Fieldhouse Consulting Ltd | Company No. 16536646</p>
         <nav class="flex justify-center gap-4">
           <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
@@ -105,6 +111,7 @@ if (localStorage.getItem('cookies-accepted')) {
       </footer>
     </div>
 
+    <!-- Cookies -->
     <transition
       enter-active-class="transition ease-out duration-300"
       enter-from-class="transform translate-y-full opacity-0"
@@ -113,7 +120,7 @@ if (localStorage.getItem('cookies-accepted')) {
       leave-from-class="transform translate-y-0 opacity-100"
       leave-to-class="transform translate-y-full opacity-0"
     >
-      <div v-if="showCookies" class="fixed bottom-6 right-6 z-50 bg-neutral-900 border border-neutral-800 p-4 rounded-xl shadow-2xl flex items-center gap-4 max-w-sm">
+      <div v-if="showCookies" class="fixed bottom-6 right-6 z-50 bg-neutral-900/90 border border-neutral-800 p-4 rounded-xl shadow-2xl flex items-center gap-4 max-w-sm backdrop-blur-xl">
         <p class="text-sm text-neutral-300">This site uses cookies to enhance your experience.</p>
         <button 
           @click="acceptCookies" 
@@ -128,5 +135,4 @@ if (localStorage.getItem('cookies-accepted')) {
 
 <style>
 /* Remove local styles in favor of Tailwind classes where possible */
-/* Keep any critical layout fix if Tailwind fails, but for now we rely on utility classes */
 </style>
