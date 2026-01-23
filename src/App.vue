@@ -5,6 +5,7 @@ import AuroraBackground from './components/AuroraBackground.vue'
 import BentoGrid from './components/BentoGrid.vue'
 import BentoItem from './components/BentoItem.vue'
 import FloatingDock from './components/FloatingDock.vue'
+import CircuitPattern from './components/CircuitPattern.vue'
 import { ref } from 'vue'
 
 const showCookies = ref(true)
@@ -51,7 +52,7 @@ const socialItems = [
             />
         </div>
         <p class="text-2xl text-neutral-300 font-light max-w-2xl mx-auto">
-          Business and technology consulting services
+          Multi-Disciplined IT Professional & Hardware Specialist
         </p>
       </header>
 
@@ -59,35 +60,44 @@ const socialItems = [
       <main class="w-full">
         <BentoGrid class="max-w-4xl mx-auto">
           <BentoItem
-            title="IT Professional"
-            description="Passionate IT professional with over 10 years of experience. Specializing in delivering innovative solutions and optimizing systems."
-            class="md:col-span-2 group hover:border-blue-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm"
+            title="Repair Ninja"
+            description="Specializing in component-level electronics repair, microsoldering, and hardware diagnostics. Bringing dead tech back to life."
+            class="md:col-span-2 group hover:border-red-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm"
           >
              <template #header>
-                <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-800" />
-             </template>
-             <template #icon>
-                <!-- Add icon component here if needed -->
+                <div class="relative flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-red-900/50 to-neutral-900 overflow-hidden">
+                    <CircuitPattern class="text-red-500/30" />
+                </div>
              </template>
           </BentoItem>
           
           <BentoItem
-            title="Hardware Specialist"
-            description="Skilled in hardware diagnostics, repairs, and custom PC builds. Tailored hardware solutions."
-            class="md:col-span-1 group hover:border-purple-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm"
+            title="MSP Services"
+            description="Comprehensive Managed IT Services for business. Network infrastructure, security monitoring, and proactive support."
+            class="md:col-span-1 group hover:border-blue-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm"
           >
             <template #header>
-                <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-800" />
+                <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-blue-900/50 to-neutral-900" />
             </template>
           </BentoItem>
 
           <BentoItem
-            title="AI Advocate"
-            description="Enthusiastic about artificial intelligence and its potential to transform industries. Actively exploring AI applications."
-            class="md:col-span-3 group hover:border-amber-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm"
+            title="Data Recovery"
+            description="Professional data retrieval from damaged drives and devices. Forensic analysis and secure data handling."
+            class="md:col-span-1 group hover:border-emerald-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm"
           >
              <template #header>
-                <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-800" />
+                <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-emerald-900/50 to-neutral-900" />
+             </template>
+          </BentoItem>
+
+          <BentoItem
+            title="Sustainable Tech"
+            description="E-Waste flipping and circular economy initiatives. Sourcing, refurbishing, and responsibly recycling enterprise equipment."
+            class="md:col-span-2 group hover:border-amber-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm"
+          >
+             <template #header>
+                <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-amber-900/50 to-neutral-900" />
              </template>
           </BentoItem>
         </BentoGrid>

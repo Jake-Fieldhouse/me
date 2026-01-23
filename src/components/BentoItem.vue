@@ -26,6 +26,7 @@ const transformStyle = computed(() => {
 
 const width = ref(0);
 const height = ref(0);
+const spotlightPos = ref({ x: 0, y: 0 });
 
 const handleMouseEnter = (e: MouseEvent) => {
   const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
@@ -59,6 +60,8 @@ const handleMouseMove = (e: MouseEvent) => {
      const mouseX = e.clientX - rect.left;
      const mouseY = e.clientY - rect.top;
      
+     spotlightPos.value = { x: mouseX, y: mouseY };
+
      const xPct = mouseX / rect.width - 0.5;
      const yPct = mouseY / rect.height - 0.5;
     
@@ -88,6 +91,12 @@ const handleMouseLeave = () => {
       )
     "
   >
+    <div
+      class="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover/bento:opacity-100"
+      :style="{
+        background: `radial-gradient(600px circle at ${spotlightPos.x}px ${spotlightPos.y}px, rgba(255,255,255,0.1), transparent 40%)`
+      }"
+    />
     <slot name="header"></slot>
     <div class="group-hover/bento:translate-x-2 transition duration-200 pointer-events-none">
       <slot name="icon"></slot>
