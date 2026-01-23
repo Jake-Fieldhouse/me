@@ -1,18 +1,44 @@
 <script setup lang="ts">
+import { ref, computed } from "vue";
+
+const props = defineProps<{
+  item: { title: string; icon: string; href: string };
+  mouseX: number;
+}>();
+
+const iconRef = ref<HTMLElement | null>(null);
+
+// Calculate distance and scale
+const width = computed(() => {
+  if (!iconRef.value || props.mouseX === Infinity) return 40; // Base width 40px (w-10)
+
+  const rect = iconRef.value.getBoundingClientRect();
+  const iconCenterX = rect.left + rect.width / 2;
+  const distance = Math.abs(props.mouseX - iconCenterX);
+
+  // Gaussian-ish decay
+  // Max width = 80px ? (w-20)
+  // Distance where effect matches base = 150px
+  
+  if (distance > 150) return 40;
+
+  const maxScale = 80;
+  const minScale = 40;
+  
   // True fancy curve:
   const val = distance / 150;
+  // Cosine interpolation for smoother bell curve
   const scale = minScale + (maxScale - minScale) * Math.cos(val * Math.PI / 2);
 
   return scale; 
 });
-
 </script>
 
 <template>
   <div 
     ref="iconRef"
     class="relative flex flex-col items-center justify-center transition-all duration-75 ease-out cursor-pointer"
-    :style="{ width: `${width}px` }" 
+    :style="{ width: `${width}px`, height: `${width}px` }" 
   >
       <!-- We animate the anchor tag wrapper size -->
       <a
