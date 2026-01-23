@@ -93,13 +93,28 @@ const socialItems = [
         </BentoGrid>
       </main>
 
-      <!-- Social Dock -->
-      <section class="text-center space-y-8 w-full pb-20">
+      <!-- Social Dock (Desktop) -->
+      <section class="text-center space-y-8 w-full pb-20 hidden md:block">
         <h3 class="text-3xl font-semibold bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">Connect</h3>
         <FloatingDock 
             :items="socialItems"
             desktopClassName="" 
         />
+      </section>
+
+      <!-- Social Grid (Mobile) -->
+      <section class="text-center space-y-8 w-full pb-20 md:hidden">
+        <h3 class="text-3xl font-semibold bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">Connect</h3>
+        <div class="flex flex-wrap justify-center gap-6">
+            <a 
+                v-for="item in socialItems" 
+                :key="item.title" 
+                :href="item.href"
+                class="bg-neutral-900 p-4 rounded-full border border-neutral-800"
+            >
+                <img :src="item.icon" :alt="item.title" class="w-8 h-8 invert" />
+            </a>
+        </div>
       </section>
 
       <footer class="w-full border-t border-white/5 pt-8 text-center text-neutral-500 text-sm">

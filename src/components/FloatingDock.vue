@@ -30,7 +30,7 @@ function getWidth(index: number) {
 </script>
 
 <template>
-  <div :class="cn('mx-auto flex gap-4 items-end mb-8', props.desktopClassName)">
+  <div :class="cn('mx-auto hidden md:flex gap-4 items-end mb-8', props.desktopClassName)">
     <div
       v-for="(item, index) in props.items"
       :key="item.title"
