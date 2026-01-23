@@ -1,51 +1,10 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
-import { useElementBounding } from "@vueuse/core"; 
-
-// Since we might not have vueuse, let's write a vanilla composition.
-// Actually, let's do it purely in this component with a ref.
-
-const props = defineProps<{
-  item: { title: string; icon: string; href: string };
-  mouseX: number;
-}>();
-
-const iconRef = ref<HTMLElement | null>(null);
-
-// Calculate distance and scale
-const width = computed(() => {
-  if (!iconRef.value || props.mouseX === Infinity) return 40; // Base width 40px (w-10)
-
-  const rect = iconRef.value.getBoundingClientRect();
-  const iconCenterX = rect.left + rect.width / 2;
-  const distance = Math.abs(props.mouseX - iconCenterX);
-
-  // Gaussian-ish decay
-  // Max width = 80px ? (w-20)
-  // Distance where effect matches base = 150px
-  
-  if (distance > 150) return 40;
-
-  const maxScale = 80;
-  const minScale = 40;
-  
-  // Cosine interpolation for smoother bell curve than linear
-  // or simple linear interpolation 
-  // let scale = minScale + (maxScale - minScale) * (1 - distance / 150);
-  
   // True fancy curve:
   const val = distance / 150;
   const scale = minScale + (maxScale - minScale) * Math.cos(val * Math.PI / 2);
 
   return scale; 
 });
-
-const style = computed(() => {
-    return {
-        width: `${width.value}px`,
-        height: `${width.value}px`,
-    }
-})
 
 </script>
 
