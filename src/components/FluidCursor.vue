@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { HTMLAttributes } from "vue";
-import { onMounted, ref, watch } from "vue";
+import { onMounted, onUnmounted, ref, watch } from "vue";
 
 interface ColorRGB {
   r: number;
@@ -1364,8 +1364,6 @@ onMounted(() => {
   updateFrame();
 
   // Cleanup
-  import { onUnmounted } from 'vue';
-  
   onUnmounted(() => {
     isActive = false;
     cancelAnimationFrame(animationFrameId);
