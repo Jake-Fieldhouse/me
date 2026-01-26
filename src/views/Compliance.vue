@@ -25,7 +25,7 @@ const complianceItems = ref([
         icon: Lock,
         regNumber: 'ZC002956',
         expiry: 'Tier 1 Controller',
-        proofUrl: '/documents/ICO_Certificate_ZC002956.pdf'
+        proofUrl: '/me/documents/ICO_Certificate_ZC002956.pdf'
     },
     {
         title: 'ADISA Certification',
