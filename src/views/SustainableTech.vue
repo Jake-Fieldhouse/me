@@ -18,6 +18,7 @@ const form = ref({
   contact: '',
   email: '',
   type: 'regular',
+  hasHighValueAssets: false,
   interestedInRebate: false,
   earningsMode: 'cash' // 'cash' or 'charity'
 })
@@ -284,34 +285,46 @@ const submitForm = () => {
                     </div>
 
                     <!-- Asset Value Toggle -->
-                    <div class="p-4 bg-neutral-800/50 rounded-xl border border-white/5 space-y-3">
-                        <label class="block text-sm font-medium text-neutral-300">If your assets have value, how should we pay you?</label>
-                        
-                        <div class="grid grid-cols-2 gap-2">
-                            <button 
-                                type="button" 
-                                @click="form.earningsMode = 'cash'"
-                                :class="form.earningsMode === 'cash' ? 'bg-amber-500 text-black font-bold' : 'bg-neutral-700 text-neutral-400 hover:bg-neutral-600'"
-                                class="p-3 rounded-lg text-sm transition-all"
-                            >
-                                Cash Rebate
-                            </button>
-                            <button 
-                                type="button" 
-                                @click="form.earningsMode = 'charity'"
-                                :class="form.earningsMode === 'charity' ? 'bg-green-500 text-black font-bold' : 'bg-neutral-700 text-neutral-400 hover:bg-neutral-600'"
-                                class="p-3 rounded-lg text-sm transition-all"
-                            >
-                                Donate to Charity
-                            </button>
+                    <div class="space-y-4">
+                        <!-- High Value Check -->
+                        <div class="flex items-start gap-3 p-3 bg-neutral-800/50 rounded-lg border border-white/5">
+                            <input type="checkbox" id="highValue" v-model="form.hasHighValueAssets" class="mt-1 w-4 h-4 rounded border-neutral-600 text-amber-500 focus:ring-amber-500 bg-neutral-700">
+                            <label for="highValue" class="text-sm text-neutral-300">
+                                I have high-value assets (MacBooks, Servers, iPhones)
+                                <span class="block text-xs text-neutral-500 mt-0.5">Check this if you are looking for asset value rebates or charity donations. Standard collection is free.</span>
+                            </label>
                         </div>
-                        
-                        <p v-if="form.earningsMode === 'cash'" class="text-xs text-neutral-500 italic">
-                            We will credit the residual value of resaleable hardware directly to your invoice or bank account.
-                        </p>
-                        <p v-else class="text-xs text-neutral-500 italic">
-                            We donate the value to a registered charity of your choice (or our partner schools programme) in your name.
-                        </p>
+
+                        <!-- Rebate Options (Hidden by default) -->
+                         <div v-if="form.hasHighValueAssets" class="p-4 bg-neutral-800/50 rounded-xl border border-amber-500/20 space-y-3 animate-fade-in-down">
+                            <label class="block text-sm font-medium text-neutral-300">Excellent. How should we process the value?</label>
+                            
+                            <div class="grid grid-cols-2 gap-2">
+                                <button 
+                                    type="button" 
+                                    @click="form.earningsMode = 'cash'"
+                                    :class="form.earningsMode === 'cash' ? 'bg-amber-500 text-black font-bold' : 'bg-neutral-700 text-neutral-400 hover:bg-neutral-600'"
+                                    class="p-3 rounded-lg text-sm transition-all"
+                                >
+                                    Cash Rebate
+                                </button>
+                                <button 
+                                    type="button" 
+                                    @click="form.earningsMode = 'charity'"
+                                    :class="form.earningsMode === 'charity' ? 'bg-green-500 text-black font-bold' : 'bg-neutral-700 text-neutral-400 hover:bg-neutral-600'"
+                                    class="p-3 rounded-lg text-sm transition-all"
+                                >
+                                    Donate to Charity
+                                </button>
+                            </div>
+                            
+                            <p v-if="form.earningsMode === 'cash'" class="text-xs text-neutral-500 italic">
+                                We will credit the residual value of resaleable hardware directly to your invoice or bank account.
+                            </p>
+                            <p v-else class="text-xs text-neutral-500 italic">
+                                We donate the value to a registered charity of your choice (or our partner schools programme) in your name.
+                            </p>
+                        </div>
                     </div>
 
                     <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 rounded-xl transition-colors mt-2">

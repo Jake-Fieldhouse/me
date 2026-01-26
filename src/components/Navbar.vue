@@ -12,7 +12,8 @@ const navItems = [
 ]
 
 const serviceItems = [
-  { name: 'Repair Services', path: '/repair-services' },
+  { name: 'Repair Ninja', path: '/repair-ninja' },
+  { name: 'MSP Services', path: '/msp-services' },
   { name: 'E-Waste Solutions', path: '/sustainable-tech' },
   { name: 'Compliance', path: '/compliance' }
 ]
