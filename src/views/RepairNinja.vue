@@ -2,14 +2,6 @@
 import { ref } from 'vue'
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
 
-const commonRepairs = [
-  { device: 'Console (PS5/Xbox)', service: 'HDMI Port Replacement', price: '£60', time: '24h' },
-  { device: 'Nintendo Switch', service: 'USB-C Charging Port', price: '£45', time: '24h' },
-  { device: 'Laptop', service: 'DC Jack Repair', price: '£50+', time: '48h' },
-  { device: 'MacBook', service: 'Logic Board Repair', price: '£150+', time: '3-5 Days' },
-  { device: 'Data Recovery', service: 'Level 1 (Logical)', price: '£90', time: '24-48h' },
-  { device: 'Data Recovery', service: 'Level 2 (Board Repair)', price: '£250+', time: '5-10 Days' },
-]
 
 const form = ref({
   name: '',
@@ -75,32 +67,33 @@ const submitRepair = () => {
         </div>
     </section>
 
-    <!-- Services & Pricing -->
+    <!-- Services & Expertise -->
     <section class="grid md:grid-cols-2 gap-12">
         <div class="space-y-8">
-            <h2 class="text-3xl font-bold text-white">Common Repairs</h2>
-            <div class="overflow-hidden rounded-2xl border border-white/10">
-                <table class="w-full text-left border-collapse">
-                    <thead class="bg-neutral-900 border-b border-white/10">
-                        <tr>
-                            <th class="p-4 text-neutral-400 font-medium">Device / Issue</th>
-                            <th class="p-4 text-neutral-400 font-medium">Est. Price</th>
-                            <th class="p-4 text-neutral-400 font-medium">Time</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-white/10 bg-neutral-900/50">
-                        <tr v-for="(item, i) in commonRepairs" :key="i" class="hover:bg-neutral-800/50 transition-colors">
-                            <td class="p-4">
-                                <div class="text-white font-medium">{{ item.device }}</div>
-                                <div class="text-sm text-neutral-500">{{ item.service }}</div>
-                            </td>
-                            <td class="p-4 text-red-400 font-bold">From {{ item.price }}</td>
-                            <td class="p-4 text-neutral-400 text-sm">Est. {{ item.time }}</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <h2 class="text-3xl font-bold text-white">Expertise That Scales</h2>
+            <p class="text-neutral-300 leading-relaxed">
+                Whether it's a single beloved console or a fleet of 50 enterprise laptops, the quality of the repair is non-negotiable.
+            </p>
+            <p class="text-neutral-300 leading-relaxed">
+                We don't do "fixed price lists" because no two faults are identical. By diagnosing the specific issue (e.g., a single 50p capacitor vs. a £200 chipset), we ensure you only pay for exactly what needs fixing, often saving 50-70% compared to manufacturer flat-rates.
+            </p>
+            
+            <div class="space-y-4 pt-4">
+                <div class="flex gap-4 items-start">
+                    <div class="mt-1 w-2 h-2 rounded-full bg-red-500 shrink-0"></div>
+                    <div>
+                        <strong class="block text-white">For Individuals</strong>
+                        <span class="text-neutral-400 text-sm">Save your data and your device. We fix logic boards that Apple/Samsung declare "dead."</span>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="mt-1 w-2 h-2 rounded-full bg-blue-500 shrink-0"></div>
+                    <div>
+                        <strong class="block text-white">For Business (MSP Integration)</strong>
+                        <span class="text-neutral-400 text-sm">Extend asset life cycles. We offer fleet maintenance and bulk repair contracts to keep your overheads low.</span>
+                    </div>
+                </div>
             </div>
-            <p class="text-sm text-neutral-500 italic">* "From" prices indicate starting rates. Final quote provided after free diagnosis varies by device model and damage severity.</p>
         </div>
 
         <!-- Booking Form -->
