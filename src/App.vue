@@ -7,6 +7,7 @@ import BentoItem from './components/BentoItem.vue'
 import FloatingDock from './components/FloatingDock.vue'
 import CircuitPattern from './components/CircuitPattern.vue'
 import { ref } from 'vue'
+import BentoDetailOverlay from './components/BentoDetailOverlay.vue'
 
 const showCookies = ref(true)
 
@@ -28,6 +29,57 @@ const socialItems = [
   { title: 'GitHub', icon: '/images/github.png', href: 'https://github.com/Jake-Fieldhouse' },
   { title: 'LinkedIn', icon: '/images/linkedin.png', href: 'https://www.linkedin.com/in/jake-fieldhouse' },
 ]
+
+// Expansion Logic
+const isOverlayOpen = ref(false);
+const selectedItem = ref<any>(null);
+const initialRect = ref<DOMRect | null>(null);
+
+const serviceDetails: Record<string, string[]> = {
+  "Repair Ninja": [
+    "HDMI Port Replacement (PS5, Xbox, Laptops)",
+    "Micro-soldering & Trace Repair",
+    "Liquid Damage Ultrasonic Cleaning",
+    "Component Level Diagnostics",
+    "Screen & Battery Replacements",
+    "Custom modding & upgrades"
+  ],
+  "MSP Services": [
+    "24/7 Remote Monitoring & Maintenance",
+    "Endpoint Detection & Response (EDR)",
+    "Cloud Backups & Disaster Recovery",
+    "Network Infrastructure Design",
+    "Helpdesk Support Packages",
+    "Microsoft 365 Management"
+  ],
+  "Data Recovery": [
+    "Mechanical HDD Failure Recovery",
+    "SSD & Flash Controller Repair",
+    "Logic Board Transplant",
+    "Forensic Data Extraction",
+    "RAID Rebuilds",
+    "Secure Chain of Custody"
+  ],
+  "Sustainable Tech": [
+    "Free Corporate E-Waste Collection",
+    "DoD Standard Data Destruction",
+    "Certified Zero-Landfill Recycling",
+    "Asset Value Recovery (Buybacks)",
+    "Carbon Offset Reporting",
+    "Circular Economy Integration"
+  ]
+};
+
+const handleCardClick = (e: MouseEvent, title: string, description: string) => {
+  const target = (e.currentTarget as HTMLElement);
+  initialRect.value = target.getBoundingClientRect();
+  selectedItem.value = {
+    title,
+    description,
+    details: serviceDetails[title] || []
+  };
+  isOverlayOpen.value = true;
+};
 </script>
 
 <template>
@@ -62,7 +114,8 @@ const socialItems = [
           <BentoItem
             title="Repair Ninja"
             description="Specializing in component-level electronics repair, microsoldering, and hardware diagnostics. Bringing dead tech back to life."
-            class="md:col-span-2 group hover:border-red-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm"
+            class="md:col-span-2 group hover:border-red-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
+            @click="(e: any) => handleCardClick(e, 'Repair Ninja', 'Specializing in component-level electronics repair, microsoldering, and hardware diagnostics. Bringing dead tech back to life.')"
           >
              <template #header>
                 <div class="relative flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-red-900/50 to-neutral-900 overflow-hidden">
@@ -74,7 +127,8 @@ const socialItems = [
           <BentoItem
             title="MSP Services"
             description="Comprehensive Managed IT Services for business. Network infrastructure, security monitoring, and proactive support."
-            class="md:col-span-1 group hover:border-blue-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm"
+            class="md:col-span-1 group hover:border-blue-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
+            @click="(e: any) => handleCardClick(e, 'MSP Services', 'Comprehensive Managed IT Services for business. Network infrastructure, security monitoring, and proactive support.')"
           >
             <template #header>
                 <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-blue-900/50 to-neutral-900" />
@@ -84,7 +138,8 @@ const socialItems = [
           <BentoItem
             title="Data Recovery"
             description="Professional data retrieval from damaged drives and devices. Forensic analysis and secure data handling."
-            class="md:col-span-1 group hover:border-emerald-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm"
+            class="md:col-span-1 group hover:border-emerald-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
+            @click="(e: any) => handleCardClick(e, 'Data Recovery', 'Professional data retrieval from damaged drives and devices. Forensic analysis and secure data handling.')"
           >
              <template #header>
                 <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-emerald-900/50 to-neutral-900" />
@@ -93,8 +148,9 @@ const socialItems = [
 
           <BentoItem
             title="Sustainable Tech"
-            description="E-Waste flipping and circular economy initiatives. Sourcing, refurbishing, and responsibly recycling enterprise equipment."
-            class="md:col-span-2 group hover:border-amber-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm"
+            description="Zero-cost corporate e-waste solutions. We handle logistics and secure data destruction, helping your business meet sustainability goals effortlessly."
+            class="md:col-span-2 group hover:border-amber-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
+            @click="(e: any) => handleCardClick(e, 'Sustainable Tech', 'Zero-cost corporate e-waste solutions. We handle logistics and secure data destruction, helping your business meet sustainability goals effortlessly.')"
           >
              <template #header>
                 <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-amber-900/50 to-neutral-900" />
@@ -102,6 +158,14 @@ const socialItems = [
           </BentoItem>
         </BentoGrid>
       </main>
+
+      <!-- Overlay -->
+      <BentoDetailOverlay 
+        :isOpen="isOverlayOpen" 
+        :initialRect="initialRect" 
+        :item="selectedItem"
+        @close="isOverlayOpen = false"
+      />
 
       <!-- Social Dock (Desktop) -->
       <section class="text-center space-y-8 w-full pb-20 hidden md:block">
