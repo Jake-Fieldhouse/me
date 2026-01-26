@@ -1,3 +1,4 @@
+<script setup lang="ts">
 import { ref, computed, watch, nextTick } from "vue";
 
 const props = defineProps<{
@@ -7,7 +8,9 @@ const props = defineProps<{
   colorClass?: string;
 }>();
 
-const emit = defineEmits(["close"]);
+const emit = defineEmits<{
+  (e: 'close'): void
+}>();
 
 const isAnimating = ref(false);
 const isExpanded = ref(false);
@@ -73,7 +76,7 @@ watch(
         v-if="isOpen || isAnimating"
         class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-md transition-opacity duration-500"
         :class="{ 'opacity-0': !isOpen, 'opacity-100': isOpen }"
-        @click="emit('close')"
+        @click="$emit('close')"
     />
 
     <!-- Animated Card -->
@@ -87,7 +90,7 @@ watch(
            
            <!-- Close Button -->
            <button 
-             @click.stop="emit('close')"
+             @click.stop="$emit('close')"
              class="absolute top-4 right-4 p-2 bg-neutral-800 rounded-full hover:bg-neutral-700 transition-colors z-10"
            >
              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -116,7 +119,7 @@ watch(
            <div class="mt-auto pt-8 flex justify-end">
               <button 
                  class="bg-white text-black px-6 py-3 rounded-xl font-bold hover:bg-neutral-200 transition-colors"
-                 @click="emit('close')" 
+                 @click="$emit('close')" 
                >
                  Done
               </button>
