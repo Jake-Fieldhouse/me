@@ -16,7 +16,7 @@ const isAnimating = ref(false);
 const isExpanded = ref(false);
 
 const style = computed(() => {
-  if (!props.initialRect || !props.isOpen) return {};
+  if (!props.initialRect || (!props.isOpen && !isAnimating.value)) return {};
 
   if (isExpanded.value) {
     return {
