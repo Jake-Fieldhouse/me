@@ -60,7 +60,7 @@ const contactMethods = [
             </div>
             <!-- Cal.com Embed -->
             <div class="w-full h-[600px] bg-neutral-900" id="cal-embed">
-                <iframe src="https://cal.com/jakefieldhouse?embed=true" style="width: 100%; height: 100%; overflow: scroll;" frameborder="0"></iframe>
+                <iframe src="https://cal.eu/jake-fieldhouse-7kcb9d?embed=true" style="width: 100%; height: 100%; overflow: scroll;" frameborder="0"></iframe>
             </div>
         </div>
 

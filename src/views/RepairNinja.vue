@@ -33,11 +33,11 @@ const submitRepair = () => {
         <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
             Don't replace your device just because a port is broken. We use microscope-level precision to replace individual components, saving you money and e-waste.
         </p>
-        <div class="flex justify-center gap-4 pt-4">
-            <a href="#book" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors">
+        <div class="flex flex-col md:flex-row justify-center gap-4 pt-4">
+            <a href="#book" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors text-center">
             Start Repair
             </a>
-            <router-link to="/" class="px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/10">
+            <router-link to="/" class="px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/10 text-center">
             Back to Home
             </router-link>
         </div>

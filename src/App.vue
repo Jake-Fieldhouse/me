@@ -3,7 +3,7 @@ import FluidCursor from './components/FluidCursor.vue'
 import AuroraBackground from './components/AuroraBackground.vue'
 import Preloader from './components/Preloader.vue'
 import Navbar from './components/Navbar.vue'
-import FloatingDock from './components/FloatingDock.vue'
+import Navbar from './components/Navbar.vue'
 import { ref, onMounted } from 'vue'
 
 const isLoading = ref(true)
@@ -32,15 +32,6 @@ const getAssetPath = (path: string) => {
   return path.startsWith('/') ? `${base}${path.slice(1)}` : `${base}${path}`
 }
 
-const socialItems = [
-  { title: 'Email', icon: getAssetPath('images/email.png'), href: 'mailto:jke.contact.me@gmail.com' },
-  { title: 'Phone', icon: getAssetPath('images/phone-ringing.png'), href: 'tel:+447404090458' },
-  { title: 'Instagram', icon: getAssetPath('images/instagram.png'), href: 'https://www.instagram.com/jkeinks' },
-  { title: 'Facebook', icon: getAssetPath('images/facebook.png'), href: 'https://www.facebook.com/jake.fieldhouse/' },
-  { title: 'WhatsApp', icon: getAssetPath('images/whatsapp.png'), href: 'https://wa.me/447404090458' },
-  { title: 'GitHub', icon: getAssetPath('images/github.png'), href: 'https://github.com/Jake-Fieldhouse' },
-  { title: 'LinkedIn', icon: getAssetPath('images/linkedin.png'), href: 'https://www.linkedin.com/in/jake-fieldhouse' },
-]
 </script>
 
 <template>
@@ -75,14 +66,6 @@ const socialItems = [
       </transition>
     </router-view>
 
-    <!-- Global Social Dock (Desktop & Mobile) -->
-    <div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-40 w-full max-w-fit">
-        <FloatingDock 
-            :items="socialItems"
-            desktopClassName="bg-black/50 backdrop-blur-xl border border-white/10" 
-            mobileClassName="bg-black/50 backdrop-blur-xl border border-white/10"
-        />
-    </div>
 
     <!-- Cookies -->
     <transition
