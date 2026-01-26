@@ -17,7 +17,8 @@ const form = ref({
   company: '',
   contact: '',
   email: '',
-  type: 'regular'
+  type: 'regular',
+  interestedInRebate: false
 })
 
 const submitForm = () => {
@@ -278,6 +279,16 @@ const submitForm = () => {
                             <option value="large">Large/Office Clearance (50+ items)</option>
                         </select>
                     </div>
+
+                    <!-- Interest Checkbox -->
+                    <div class="flex items-start gap-3 p-3 bg-neutral-800/50 rounded-lg border border-white/5">
+                        <input type="checkbox" id="rebate" v-model="form.interestedInRebate" class="mt-1 w-4 h-4 rounded border-neutral-600 text-amber-500 focus:ring-amber-500 bg-neutral-700">
+                        <label for="rebate" class="text-sm text-neutral-300">
+                            Check eligibility for <strong>Asset Value Rebates</strong>.
+                            <span class="block text-xs text-neutral-500 mt-0.5">We review newer hardware for potential residual value credit against your service.</span>
+                        </label>
+                    </div>
+
                     <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 rounded-xl transition-colors mt-2">
                         Get Quote
                     </button>
