@@ -34,6 +34,7 @@ const socialItems = [
 const isOverlayOpen = ref(false);
 const selectedItem = ref<any>(null);
 const initialRect = ref<DOMRect | null>(null);
+const selectedColor = ref("bg-white");
 
 const serviceDetails: Record<string, string[]> = {
   "Repair Ninja": [
@@ -70,6 +71,13 @@ const serviceDetails: Record<string, string[]> = {
   ]
 };
 
+const serviceColors: Record<string, string> = {
+  "Repair Ninja": "bg-red-500",
+  "MSP Services": "bg-blue-500",
+  "Data Recovery": "bg-emerald-500",
+  "Sustainable Tech": "bg-amber-500"
+};
+
 const handleCardClick = (e: MouseEvent, title: string, description: string) => {
   const target = (e.currentTarget as HTMLElement);
   initialRect.value = target.getBoundingClientRect();
@@ -78,6 +86,8 @@ const handleCardClick = (e: MouseEvent, title: string, description: string) => {
     description,
     details: serviceDetails[title] || []
   };
+  // Store color for overlay in a separate ref or pass it (let's use a new ref for cleaner separation)
+  selectedColor.value = serviceColors[title] || "bg-white";
   isOverlayOpen.value = true;
 };
 </script>
@@ -164,6 +174,7 @@ const handleCardClick = (e: MouseEvent, title: string, description: string) => {
         :isOpen="isOverlayOpen" 
         :initialRect="initialRect" 
         :item="selectedItem"
+        :colorClass="selectedColor"
         @close="isOverlayOpen = false"
       />
 

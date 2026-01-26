@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch, nextTick } from "vue";
+import { ref, watch, nextTick, computed } from "vue";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -14,6 +14,8 @@ const emit = defineEmits<{
 
 const isAnimating = ref(false);
 const cardRef = ref<HTMLElement | null>(null);
+
+const themeColor = computed(() => props.colorClass || "bg-white");
 
 watch(
   () => props.isOpen,
@@ -141,7 +143,11 @@ watch(
                     :key="idx"
                     class="flex items-center gap-3 p-4 bg-neutral-800/50 rounded-lg border border-neutral-800/50"
                   >
-                    <div class="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
+                    <!-- Dynamic Theme Bullet -->
+                    <div 
+                        class="w-2 h-2 rounded-full shadow-[0_0_10px_rgba(255,255,255,0.2)]" 
+                        :class="themeColor"
+                    />
                     <span class="text-neutral-300">{{ detail }}</span>
                   </li>
                </ul>
@@ -150,7 +156,8 @@ watch(
            <!-- Placeholder for dynamic content or CTA -->
            <div class="mt-auto pt-8 flex justify-end">
               <button 
-                 class="bg-white text-black px-6 py-3 rounded-xl font-bold hover:bg-neutral-200 transition-colors"
+                 class="px-6 py-3 rounded-xl font-bold hover:opacity-90 transition-opacity text-white"
+                 :class="themeColor"
                  @click="$emit('close')" 
                >
                  Done
