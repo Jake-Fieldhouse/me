@@ -38,8 +38,8 @@ const submitForm = () => {
         Start Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">Zero-Landfill</span> Journey
       </h1>
       <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-        Secure, compliant, and free IT asset disposal for UK businesses. 
-        We handle everything from collection to data destruction, providing you with full audit trails.
+        Secure, compliant, and free IT asset disposal. Based in <strong>East Yorkshire</strong>, serving businesses <strong>Nationwide</strong>.
+        We handle everything from collection to data destruction.
       </p>
       <div class="flex justify-center gap-4 pt-4">
         <a href="#quote" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors">
@@ -128,6 +128,38 @@ const submitForm = () => {
                  </div>
              </div>
          </div>
+    </section>
+
+    <!-- FAQ / Addressing Skepticism -->
+    <section class="max-w-3xl mx-auto space-y-8">
+        <h2 class="text-3xl font-bold text-white text-center">Common Questions</h2>
+        
+        <div class="space-y-4">
+            <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
+                <h3 class="text-lg font-bold text-white mb-2">How can you offer this for free? What's the catch?</h3>
+                <p class="text-neutral-400">
+                    There is no catch. We operate on a <strong>"Refurbish First"</strong> model. 
+                    Most IT companies charge you to crush your old laptops. We take them for free, securely wipe the data, and refurbish them for resale or donation. 
+                    The value we recover from the hardware covers our logistics and data destruction costs. You get a free service; we get stock. Win-win.
+                </p>
+            </div>
+            
+            <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
+                <h3 class="text-lg font-bold text-white mb-2">Are you fully licensed?</h3>
+                <p class="text-neutral-400">
+                    Yes. We are a registered Tier 1 Waste Carrier with the Environment Agency (Reg: <strong>CBDL620098</strong>). 
+                    We provide a full Waste Transfer Note with every collection, ensuring your legal "Duty of Care" is completely satisfied.
+                </p>
+            </div>
+
+             <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
+                <h3 class="text-lg font-bold text-white mb-2">I'm in Hull, but my head office is in London. Can you help?</h3>
+                <p class="text-neutral-400">
+                    Absolutely. While we are proud to be East Yorkshire based, we operate a nationwide courier network. 
+                    Whether you have one pallet in Hull or fifty laptops in Shoreditch, we can arrange secure collection.
+                </p>
+            </div>
+        </div>
     </section>
 
     <!-- Us vs Them Comparison -->

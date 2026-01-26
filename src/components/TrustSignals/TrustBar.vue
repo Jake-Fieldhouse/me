@@ -12,7 +12,6 @@
         <!-- Waste Carrier -->
         <div class="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity duration-300 cursor-help relative group" title="Registration Active">
             <span class="absolute top-0 right-0 flex h-3 w-3">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
             </span>
             <div class="p-2 rounded-lg bg-green-500/10 border border-green-500/20">
@@ -20,7 +19,7 @@
             </div>
             <div class="flex flex-col">
                 <span class="text-xs text-neutral-400 uppercase tracking-wider font-semibold">Waste Carrier</span>
-                <span class="text-white font-bold leading-none">CBDU123456</span>
+                <span class="text-white font-bold leading-none">CBDL620098</span>
             </div>
         </div>
         
