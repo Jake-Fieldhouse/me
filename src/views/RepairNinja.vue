@@ -94,13 +94,13 @@ const submitRepair = () => {
                                 <div class="text-white font-medium">{{ item.device }}</div>
                                 <div class="text-sm text-neutral-500">{{ item.service }}</div>
                             </td>
-                            <td class="p-4 text-red-400 font-bold">{{ item.price }}</td>
-                            <td class="p-4 text-neutral-400 text-sm">{{ item.time }}</td>
+                            <td class="p-4 text-red-400 font-bold">From {{ item.price }}</td>
+                            <td class="p-4 text-neutral-400 text-sm">Est. {{ item.time }}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <p class="text-sm text-neutral-500 italic">* Prices are estimates. Final quote provided after free diagnosis.</p>
+            <p class="text-sm text-neutral-500 italic">* "From" prices indicate starting rates. Final quote provided after free diagnosis varies by device model and damage severity.</p>
         </div>
 
         <!-- Booking Form -->

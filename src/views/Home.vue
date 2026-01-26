@@ -8,29 +8,16 @@ import BentoItem from '../components/BentoItem.vue'
 import CircuitPattern from '../components/CircuitPattern.vue'
 import BentoDetailOverlay from '../components/BentoDetailOverlay.vue'
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
-import FloatingDock from '../components/FloatingDock.vue'
 import { ref } from 'vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
 
 const headerRef = ref<HTMLElement | null>(null)
 const trustRef = ref<HTMLElement | null>(null)
 const gridRef = ref<HTMLElement | null>(null)
-const dockRef = ref<HTMLElement | null>(null)
 
 useScrollReveal(headerRef, { delay: 2.2 }) // Wait for preloader
 useScrollReveal(trustRef, { delay: 2.5 })
 useScrollReveal(gridRef, { delay: 0.2, y: 100 })
-useScrollReveal(dockRef, { delay: 0.5 })
-
-const socialItems = [
-  { title: 'Email', icon: '/images/email.png', href: 'mailto:jke.contact.me@gmail.com' },
-  { title: 'Phone', icon: '/images/phone-ringing.png', href: 'tel:+447400052962' },
-  { title: 'Instagram', icon: '/images/instagram.png', href: 'https://www.instagram.com/jkeinks' },
-  { title: 'Facebook', icon: '/images/facebook.png', href: 'https://www.facebook.com/jake.fieldhouse/' },
-  { title: 'WhatsApp', icon: '/images/whatsapp.png', href: 'https://wa.me/447400052962' },
-  { title: 'GitHub', icon: '/images/github.png', href: 'https://github.com/Jake-Fieldhouse' },
-  { title: 'LinkedIn', icon: '/images/linkedin.png', href: 'https://www.linkedin.com/in/jake-fieldhouse' },
-]
 
 // Expansion Logic
 const isOverlayOpen = ref(false);
@@ -175,29 +162,7 @@ const handleCardClick = (e: MouseEvent, title: string, description: string) => {
         @close="isOverlayOpen = false"
       />
 
-      <!-- Social Dock (Desktop) -->
-      <section ref="dockRef" class="text-center space-y-8 w-full pb-20 hidden md:block">
-        <h3 class="text-3xl font-semibold bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">Connect</h3>
-        <FloatingDock 
-            :items="socialItems"
-            desktopClassName="" 
-        />
-      </section>
 
-      <!-- Social Grid (Mobile) -->
-      <section class="text-center space-y-8 w-full pb-20 md:hidden">
-        <h3 class="text-3xl font-semibold bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">Connect</h3>
-        <div class="flex flex-wrap justify-center gap-6">
-            <a 
-                v-for="item in socialItems" 
-                :key="item.title" 
-                :href="item.href"
-                class="bg-neutral-900 p-4 rounded-full border border-neutral-800"
-            >
-                <img :src="item.icon" :alt="item.title" class="w-8 h-8 invert" />
-            </a>
-        </div>
-      </section>
 
       <footer class="w-full border-t border-white/5 pt-8 text-center text-neutral-500 text-sm">
         <p class="mb-2">Jake Fieldhouse Consulting Ltd | Company No. 16536646</p>

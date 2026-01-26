@@ -3,6 +3,7 @@ import FluidCursor from './components/FluidCursor.vue'
 import AuroraBackground from './components/AuroraBackground.vue'
 import Preloader from './components/Preloader.vue'
 import Navbar from './components/Navbar.vue'
+import FloatingDock from './components/FloatingDock.vue'
 import { ref, onMounted } from 'vue'
 
 const isLoading = ref(true)
@@ -25,6 +26,16 @@ const acceptCookies = () => {
 if (localStorage.getItem('cookies-accepted')) {
   showCookies.value = false
 }
+
+const socialItems = [
+  { title: 'Email', icon: '/images/email.png', href: 'mailto:jke.contact.me@gmail.com' },
+  { title: 'Phone', icon: '/images/phone-ringing.png', href: 'tel:+447400052962' },
+  { title: 'Instagram', icon: '/images/instagram.png', href: 'https://www.instagram.com/jkeinks' },
+  { title: 'Facebook', icon: '/images/facebook.png', href: 'https://www.facebook.com/jake.fieldhouse/' },
+  { title: 'WhatsApp', icon: '/images/whatsapp.png', href: 'https://wa.me/447400052962' },
+  { title: 'GitHub', icon: '/images/github.png', href: 'https://github.com/Jake-Fieldhouse' },
+  { title: 'LinkedIn', icon: '/images/linkedin.png', href: 'https://www.linkedin.com/in/jake-fieldhouse' },
+]
 </script>
 
 <template>
@@ -58,6 +69,15 @@ if (localStorage.getItem('cookies-accepted')) {
         <component :is="Component" />
       </transition>
     </router-view>
+
+    <!-- Global Social Dock (Desktop & Mobile) -->
+    <div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-40 w-full max-w-fit">
+        <FloatingDock 
+            :items="socialItems"
+            desktopClassName="bg-black/50 backdrop-blur-xl border border-white/10" 
+            mobileClassName="bg-black/50 backdrop-blur-xl border border-white/10"
+        />
+    </div>
 
     <!-- Cookies -->
     <transition
