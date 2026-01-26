@@ -25,7 +25,14 @@ export function useScrollReveal(elementRef: any, options: any = {}) {
 
         const config = { ...defaults, ...options }
 
-        animation = gsap.from(elementRef.value, config)
+        // Slight delay to allow Vue transitions to complete/DOM to settle
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                if (elementRef.value) {
+                    animation = gsap.from(elementRef.value, config)
+                }
+            }, 100)
+        })
     })
 
     onUnmounted(() => {

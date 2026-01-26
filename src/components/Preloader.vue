@@ -61,8 +61,9 @@ watch(() => props.loading, (newVal) => {
 <template>
   <div ref="preloaderRef" class="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center">
     <div class="overflow-hidden mb-4">
-        <h1 ref="textRef" class="text-white font-black text-4xl tracking-tighter">
-            AG
+        <h1 ref="textRef" class="text-white font-black text-6xl tracking-tighter flex items-center gap-1">
+            <span class="text-transparent bg-clip-text bg-gradient-to-tr from-white to-neutral-500">JF</span>
+            <span class="text-amber-500 text-lg">.</span>
         </h1>
     </div>
     <div class="w-48 h-[2px] bg-neutral-800 rounded-full overflow-hidden">
