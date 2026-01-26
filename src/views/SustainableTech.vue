@@ -21,8 +21,27 @@ const form = ref({
 })
 
 const submitForm = () => {
-  // TODO: Hook up to backend or email service
-  alert('Thanks! We will contact you shortly to arrange a collection.')
+  const subject = encodeURIComponent(`B2B E-Waste Collection Request: ${form.value.company}`)
+  const body = encodeURIComponent(`
+Hi Jake,
+
+We'd like to arrange a collection for:
+
+Company: ${form.value.company}
+Contact: ${form.value.contact}
+Email: ${form.value.email}
+Estimated Volume: ${form.value.type}
+
+Please get back to us with a schedule.
+
+Thanks!
+  `.trim())
+
+  window.location.href = `mailto:jke.contact.me@gmail.com?subject=${subject}&body=${body}`
+}
+
+const scrollToQuote = () => {
+    document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' })
 }
 </script>
 
@@ -42,9 +61,9 @@ const submitForm = () => {
         We handle everything from collection to data destruction.
       </p>
       <div class="flex justify-center gap-4 pt-4">
-        <a href="#quote" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors">
+        <button @click="scrollToQuote" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors">
           Book Free Collection
-        </a>
+        </button>
         <router-link to="/" class="px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/10">
           Back to Home
         </router-link>
