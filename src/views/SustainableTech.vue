@@ -17,10 +17,7 @@ const form = ref({
   company: '',
   contact: '',
   email: '',
-  type: 'regular',
-  hasHighValueAssets: false,
-  interestedInRebate: false,
-  earningsMode: 'cash' // 'cash' or 'charity'
+  type: 'regular'
 })
 
 const submitForm = () => {
@@ -285,45 +282,17 @@ const submitForm = () => {
                     </div>
 
                     <!-- Asset Value Toggle -->
-                    <div class="space-y-4">
-                        <!-- High Value Check -->
-                        <div class="flex items-start gap-3 p-3 bg-neutral-800/50 rounded-lg border border-white/5">
-                            <input type="checkbox" id="highValue" v-model="form.hasHighValueAssets" class="mt-1 w-4 h-4 rounded border-neutral-600 text-amber-500 focus:ring-amber-500 bg-neutral-700">
-                            <label for="highValue" class="text-sm text-neutral-300">
-                                I have high-value assets (MacBooks, Servers, iPhones)
-                                <span class="block text-xs text-neutral-500 mt-0.5">Check this if you are looking for asset value rebates or charity donations. Standard collection is free.</span>
-                            </label>
-                        </div>
-
-                        <!-- Rebate Options (Hidden by default) -->
-                         <div v-if="form.hasHighValueAssets" class="p-4 bg-neutral-800/50 rounded-xl border border-amber-500/20 space-y-3 animate-fade-in-down">
-                            <label class="block text-sm font-medium text-neutral-300">Excellent. How should we process the value?</label>
-                            
-                            <div class="grid grid-cols-2 gap-2">
-                                <button 
-                                    type="button" 
-                                    @click="form.earningsMode = 'cash'"
-                                    :class="form.earningsMode === 'cash' ? 'bg-amber-500 text-black font-bold' : 'bg-neutral-700 text-neutral-400 hover:bg-neutral-600'"
-                                    class="p-3 rounded-lg text-sm transition-all"
-                                >
-                                    Cash Rebate
-                                </button>
-                                <button 
-                                    type="button" 
-                                    @click="form.earningsMode = 'charity'"
-                                    :class="form.earningsMode === 'charity' ? 'bg-green-500 text-black font-bold' : 'bg-neutral-700 text-neutral-400 hover:bg-neutral-600'"
-                                    class="p-3 rounded-lg text-sm transition-all"
-                                >
-                                    Donate to Charity
-                                </button>
+                    <div class="p-4 bg-neutral-800/50 rounded-xl border border-white/5">
+                        <div class="flex items-start gap-3">
+                            <div class="mt-1 p-1 bg-green-500/10 rounded-full text-green-500">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
                             </div>
-                            
-                            <p v-if="form.earningsMode === 'cash'" class="text-xs text-neutral-500 italic">
-                                We will credit the residual value of resaleable hardware directly to your invoice or bank account.
-                            </p>
-                            <p v-else class="text-xs text-neutral-500 italic">
-                                We donate the value to a registered charity of your choice (or our partner schools programme) in your name.
-                            </p>
+                            <div>
+                                <strong class="text-sm text-white block">100% Free Collection</strong>
+                                <p class="text-xs text-neutral-400 mt-1">
+                                    We offset our logistics costs by refurbishing viable hardware, so you don't pay a penny. Simple.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
