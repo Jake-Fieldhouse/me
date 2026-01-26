@@ -19,13 +19,13 @@ const complianceItems = ref([
     },
     {
         title: 'Information Commissioner\'s Office (ICO)',
-        description: 'Registered Data Controller ensuring full compliance with GDPR and Data Protection Act 2018 requirements for handling client data.',
+        description: 'Registered Data Controller (ZC002956). Ensuring full compliance with GDPR and Data Protection Act 2018 requirements.',
         status: 'active',
         color: 'text-purple-500',
         icon: Lock,
-        regNumber: 'Registration Pending',
-        expiry: 'In Progress',
-        proofUrl: null
+        regNumber: 'ZC002956',
+        expiry: 'Tier 1 Controller',
+        proofUrl: '/documents/ICO_Certificate_ZC002956.pdf'
     },
     {
         title: 'ADISA Certification',
