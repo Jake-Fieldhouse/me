@@ -28,6 +28,16 @@ const complianceItems = ref([
         proofUrl: '/me/documents/ICO_Certificate_ZC002956.pdf'
     },
     {
+        title: 'NIST 800-88 Purge Standard',
+        description: 'All storage media is sanitized to NIST 800-88 "Purge" Level. Certificates of Destruction provided for every batch.',
+        status: 'active',
+        color: 'text-emerald-500',
+        icon: FileText,
+        regNumber: 'Self-Certified Process',
+        expiry: 'Standard Operating Procedure',
+        proofUrl: '/me/documents/certificate_of_destruction_example.html'
+    },
+    {
         title: 'ADISA Certification',
         description: 'Asset Disposal & Information Security Alliance certification for data sanitization. We adhere to ADISA standards while formal audit is pending.',
         status: 'pending',

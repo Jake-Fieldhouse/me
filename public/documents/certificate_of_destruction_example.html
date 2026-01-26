@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate of Destruction - Jake Fieldhouse Consulting</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 40px;
+            color: #1a1a1a;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        .header {
+            border-bottom: 2px solid #000;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo p {
+            margin: 5px 0 0;
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ref-number {
+            text-align: right;
+            font-family: monospace;
+            font-size: 14px;
+            color: #666;
+        }
+
+        h2 {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            color: #000;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .field {
+            margin-bottom: 15px;
+        }
+
+        .label {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .value {
+            font-size: 15px;
+            font-weight: 600;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 4px;
+            display: block;
+            min-height: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            font-size: 13px;
+        }
+
+        th {
+            text-align: left;
+            border-bottom: 2px solid #000;
+            padding: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 11px;
+        }
+
+        td {
+            border-bottom: 1px solid #eee;
+            padding: 12px 10px;
+            font-family: monospace;
+        }
+
+        .method-box {
+            background: #f8f8f8;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 40px;
+        }
+
+        .method-title {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .compliance-text {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .signature-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .signature-line {
+            border-top: 1px solid #000;
+            padding-top: 10px;
+        }
+
+        .footer {
+            margin-top: 60px;
+            font-size: 10px;
+            color: #999;
+            text-align: center;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        /* Print Optimization */
+        @media print {
+            body { padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <h1>JAKE FIELDHOUSE</h1>
+            <p>Managed IT & Secure Disposal</p>
+        </div>
+        <div class="ref-number">
+            CERTIFICATE ID: COD-_____________
+        </div>
+    </div>
+
+    <h2>Certificate of Secure Data Destruction</h2>
+
+    <div class="grid">
+        <div class="client-details">
+            <div class="field">
+                <span class="label">Client Organization</span>
+                <span class="value" contenteditable="true">__________________________</span>
+            </div>
+            <div class="field">
+                <span class="label">Collection Address</span>
+                <span class="value" contenteditable="true">__________________________</span>
+            </div>
+            <div class="field">
+                <span class="label">Date of Destruction</span>
+                <span class="value" contenteditable="true">__________________________</span>
+            </div>
+        </div>
+        
+        <div class="processor-details">
+            <div class="field">
+                <span class="label">Processing Facility</span>
+                <span class="value">Fieldhouse Secure Ops (Hull)</span>
+            </div>
+            <div class="field">
+                <span class="label">Waste Carrier License</span>
+                <span class="value">CBDL620098</span>
+            </div>
+            <div class="field">
+                <span class="label">Destruction Technician</span>
+                <span class="value">Jake Fieldhouse</span>
+            </div>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Asset ID / Serial</th>
+                <th>Device Type</th>
+                <th>Storage Size</th>
+                <th>Destruction Method</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example Row -->
+            <tr>
+                <td contenteditable="true">SN: 48291039</td>
+                <td contenteditable="true">HDD - Seagate</td>
+                <td contenteditable="true">1TB</td>
+                <td>NIST 800-88 (Purge)</td>
+                <td>VERIFIED</td>
+            </tr>
+            <tr>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="method-box">
+        <span class="method-title">Applies to: GDPR Article 32 & NIST SP 800-88 Rev. 1</span>
+        <p class="compliance-text">
+            I hereby certify that the data storage media described above has been sanitized in accordance with 
+            <strong>NIST Special Publication 800-88 Revision 1 (Guidelines for Media Sanitization)</strong>. 
+            The method used was the <strong>"Purge/Clear"</strong> standard, ensuring data is unrecoverable by standard laboratory techniques. 
+            Physical destruction (shredding/degaussing) has been applied where digital wiping was not possible.
+            This process satisfies the "Right to Erasure" under the <strong>UK Data Protection Act 2018 (GDPR)</strong>.
+        </p>
+    </div>
+
+    <div class="signature-section">
+        <div class="signature-line">
+            <span class="label">Authorized Technician Signature</span>
+            <div style="height: 40px; font-family: 'Brush Script MT', cursive; font-size: 24px;">Jake Fieldhouse</div>
+        </div>
+        <div class="signature-line">
+            <span class="label">Client Verification (Optional)</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        Jake Fieldhouse Consulting LTD. Registered in England & Wales (16536646). <br>
+        Environment Agency Registered Waste Carrier: CBDL620098.
+    </div>
+
+</body>
+</html>
