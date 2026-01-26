@@ -99,6 +99,35 @@ const submitForm = () => {
         </div>
     </section>
 
+    <!-- Our Impact -->
+    <section class="relative bg-neutral-900 overflow-hidden py-24 border-y border-white/5">
+         <div class="absolute inset-0 bg-[url('/images/circuit-bg.svg')] opacity-5"></div>
+         <div class="max-w-7xl mx-auto px-6 relative z-10 text-center space-y-12">
+             <div class="space-y-4">
+                 <h2 class="text-3xl font-bold text-white">Your Environmental Impact</h2>
+                 <p class="text-neutral-400 max-w-2xl mx-auto">By choosing us, you aren't just clearing space—you're actively contributing to the circular economy and reducing global e-waste.</p>
+             </div>
+             
+             <div class="grid md:grid-cols-3 gap-8">
+                 <div class="p-8 bg-black/50 backdrop-blur-sm rounded-2xl border border-white/5 space-y-4">
+                     <div class="text-5xl font-black text-green-500">0%</div>
+                     <h3 class="font-bold text-white text-xl">Landfill Policy</h3>
+                     <p class="text-sm text-neutral-500">Absolutely nothing goes to waste. We separate, refine, and recycle every gram of material.</p>
+                 </div>
+                 <div class="p-8 bg-black/50 backdrop-blur-sm rounded-2xl border border-white/5 space-y-4">
+                     <div class="text-5xl font-black text-green-500">CO2</div>
+                     <h3 class="font-bold text-white text-xl">Carbon Savings</h3>
+                     <p class="text-sm text-neutral-500">Refurbishing one laptop saves ~270kg of CO2 compared to manufacturing a new one.</p>
+                 </div>
+                 <div class="p-8 bg-black/50 backdrop-blur-sm rounded-2xl border border-white/5 space-y-4">
+                     <div class="text-5xl font-black text-green-500">95%</div>
+                     <h3 class="font-bold text-white text-xl">Recovery Rate</h3>
+                     <p class="text-sm text-neutral-500">Through our advanced refining partners, we recover 95% of precious metals like Gold and Copper.</p>
+                 </div>
+             </div>
+         </div>
+    </section>
+
     <!-- Us vs Them Comparison -->
     <section class="border-t border-white/5 pt-20">
         <h2 class="text-3xl font-bold text-white text-center mb-12">Why Choose Us?</h2>

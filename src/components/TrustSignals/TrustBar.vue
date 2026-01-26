@@ -10,13 +10,17 @@
     <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center items-center gap-8 md:gap-16">
         
         <!-- Waste Carrier -->
-        <div class="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity duration-300 cursor-help" title="Registration Pending">
+        <div class="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity duration-300 cursor-help relative group" title="Registration Active">
+            <span class="absolute top-0 right-0 flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </span>
             <div class="p-2 rounded-lg bg-green-500/10 border border-green-500/20">
                 <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
             </div>
             <div class="flex flex-col">
                 <span class="text-xs text-neutral-400 uppercase tracking-wider font-semibold">Waste Carrier</span>
-                <span class="text-white font-bold leading-none">Licensed</span>
+                <span class="text-white font-bold leading-none">CBDU123456</span>
             </div>
         </div>
         
