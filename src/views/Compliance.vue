@@ -45,7 +45,7 @@ const complianceItems = ref([
         icon: ShieldCheck,
         regNumber: '001935701873',
         expiry: 'Live Subscription',
-        proofUrl: null
+        proofUrl: 'https://secure.crbonline.gov.uk/crsc/check'
     },
     {
         title: 'Public Liability Insurance',
