@@ -11,7 +11,22 @@ const form = ref({
 })
 
 const submitRepair = () => {
-  alert('Repair request received! We will contact you shortly.')
+  const subject = encodeURIComponent(`Repair Quote: ${form.value.device} - ${form.value.name}`)
+  const body = encodeURIComponent(`
+Hi Jake,
+
+I'd like a quote for the following repair:
+
+Device: ${form.value.device}
+Issue: ${form.value.issue}
+Preferred Method: ${form.value.method}
+
+Name: ${form.value.name}
+
+Thanks!
+  `.trim())
+
+  window.location.href = `mailto:jke.contact.me@gmail.com?subject=${subject}&body=${body}`
 }
 </script>
 
