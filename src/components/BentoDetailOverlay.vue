@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, watch, nextTick } from "vue";
+import { ref, watch, nextTick } from "vue";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -13,57 +13,75 @@ const emit = defineEmits<{
 }>();
 
 const isAnimating = ref(false);
-const isExpanded = ref(false);
-
-const style = computed(() => {
-  if (!props.initialRect || (!props.isOpen && !isAnimating.value)) return {};
-
-  if (isExpanded.value) {
-    return {
-      top: "10%",
-      left: "50%",
-      width: "90%",
-      maxWidth: "800px",
-      height: "80vh",
-      transform: "translateX(-50%)",
-      borderRadius: "24px",
-    };
-  }
-
-  // Initial state (matching the card)
-  return {
-    top: `${props.initialRect.top}px`,
-    left: `${props.initialRect.left}px`,
-    width: `${props.initialRect.width}px`,
-    height: `${props.initialRect.height}px`,
-    transform: "none",
-    borderRadius: "12px",
-  };
-});
+const cardRef = ref<HTMLElement | null>(null);
 
 watch(
   () => props.isOpen,
-  async (val) => {
-    if (val) {
+  async (nav) => {
+    if (nav) {
+      // OPENING
       isAnimating.value = true;
-      // Force initial state render
-      isExpanded.value = false;
-      
       await nextTick();
       
-      // Trigger expansion next frame
+      const card = cardRef.value;
+      if (!card || !props.initialRect) return;
+
+      // 1. Measure Final State (It's already rendered in fixed centered position)
+      const finalRect = card.getBoundingClientRect();
+
+      // 2. Calculate Invert Transforms
+      const scaleX = props.initialRect.width / finalRect.width;
+      const scaleY = props.initialRect.height / finalRect.height;
+      const transX = props.initialRect.left - finalRect.left;
+      const transY = props.initialRect.top - finalRect.top;
+
+      // 3. Apply Initial State (Instant)
+      card.style.transformOrigin = "top left";
+      card.style.transition = "none";
+      card.style.transform = `translate(${transX}px, ${transY}px) scale(${scaleX}, ${scaleY})`;
+      card.style.borderRadius = "12px"; // Match Bento Card
+
+      // Force Reflow
+      card.offsetHeight; 
+
+      // 4. Play Animation to Final State
       requestAnimationFrame(() => {
-        isExpanded.value = true;
-        setTimeout(() => {
-           isAnimating.value = false;
-        }, 500); // Match transition duration
+        card.style.transition = "transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), border-radius 0.5s ease";
+        card.style.transform = "none";
+        card.style.borderRadius = "24px";
       });
+
+      setTimeout(() => {
+         isAnimating.value = false;
+      }, 500);
+
     } else {
-      isExpanded.value = false;
+      // CLOSING
       isAnimating.value = true;
-       setTimeout(() => {
-           isAnimating.value = false;
-        }, 500);
+      const card = cardRef.value;
+      if (!card || !props.initialRect) return;
+
+      // 1. Current State (Final)
+      const finalRect = card.getBoundingClientRect();
+
+      // 2. Calculate Target Transforms (Back to Initial)
+      const scaleX = props.initialRect.width / finalRect.width;
+      const scaleY = props.initialRect.height / finalRect.height;
+      const transX = props.initialRect.left - finalRect.left;
+      const transY = props.initialRect.top - finalRect.top;
+
+      // 3. Play Animation
+      requestAnimationFrame(() => {
+         card.style.transition = "transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), border-radius 0.4s ease, opacity 0.4s ease";
+         card.style.transformOrigin = "top left";
+         card.style.transform = `translate(${transX}px, ${transY}px) scale(${scaleX}, ${scaleY})`;
+         card.style.borderRadius = "12px";
+         card.style.opacity = "0"; // Fade out slightly at end to merge
+      });
+
+      setTimeout(() => {
+        isAnimating.value = false;
+      }, 400);
     }
   }
 );
@@ -80,13 +98,27 @@ watch(
     />
 
     <!-- Animated Card -->
+    <!-- Always rendered in 'Final' position, transformed by JS -->
     <div
       v-if="isOpen || isAnimating"
-      class="fixed z-[70] bg-neutral-900 border border-neutral-700 shadow-2xl overflow-hidden flex flex-col transition-all duration-500 cubic-bezier(0.25, 0.8, 0.25, 1)"
-      :style="style"
+      ref="cardRef"
+      class="fixed z-[70] bg-neutral-900 border border-neutral-700 shadow-2xl overflow-hidden flex flex-col will-change-transform"
+      style="top: 10%; left: 50%; width: 90%; max-width: 800px; height: 80vh; margin-left: -45%; transform-origin: top left;"
+      :class="{ 'pointer-events-none': isAnimating }"
     >
-      <!-- Content Wrapper -->
-       <div class="relative w-full h-full flex flex-col p-8 overflow-y-auto custom-scrollbar">
+        <!-- Correcting margin-left trick for centering with fixed width/left 50% -->
+        <!-- Actually, better to use transform: translateX(-50%) for centering, BUT 
+             FLIP is easier if we don't mix transforms. 
+             Let's use left: 50%, top: 10% and calc margins or use a flex wrapper.
+             Using `left: 50%; translate: -50%` CONFLICTS with FLIP `transform`.
+             So we must center via margins or inset. 
+        -->
+        
+      <!-- Inner Content - Fade in/out to hide squash effect -->
+       <div 
+         class="relative w-full h-full flex flex-col p-8 overflow-y-auto custom-scrollbar transition-opacity duration-300 delay-100"
+         :class="{ 'opacity-0': isAnimating && !isOpen, 'opacity-100': !isAnimating || isOpen }"
+       >
            
            <!-- Close Button -->
            <button 
@@ -130,9 +162,19 @@ watch(
 </template>
 
 <style scoped>
-.cubic-bezier {
-    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+/* Center the card without transform: translate */
+.fixed.z-\[70\] {
+    left: 50%;
+    transform: translateX(-50%); /* Start centered */
+    /* Wait, if we use translateX(-50%) here, we must include it in our FLIP calculations.
+       Or we can use margin-left if width is fixed. 
+       Let's stick to simple centering: left: 0; right: 0; margin: auto; width: ... */
+    left: 0;
+    right: 0;
+    margin: auto;
 }
+
+/* Custom Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
 }
