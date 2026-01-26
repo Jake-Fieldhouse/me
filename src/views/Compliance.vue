@@ -39,12 +39,12 @@ const complianceItems = ref([
     },
     {
         title: 'DBS Enhanced Check',
-        description: 'Full Enhanced Disclosure & Barring Service check. Registered with the Update Service for real-time status verification. Essential for work in schools and healthcare.',
+        description: 'Full Enhanced Disclosure & Barring Service check. Active subscription to the Update Service for real-time status verification.',
         status: 'active',
         color: 'text-sky-500',
         icon: ShieldCheck,
-        regNumber: 'Available on Request', // Sensitive info
-        expiry: 'Live Update Service',
+        regNumber: '001935701873',
+        expiry: 'Live Subscription',
         proofUrl: null
     },
     {
