@@ -3,7 +3,6 @@ import FluidCursor from './components/FluidCursor.vue'
 import AuroraBackground from './components/AuroraBackground.vue'
 import Preloader from './components/Preloader.vue'
 import Navbar from './components/Navbar.vue'
-import Navbar from './components/Navbar.vue'
 import { ref, onMounted } from 'vue'
 
 const isLoading = ref(true)
