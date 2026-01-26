@@ -30,15 +30,15 @@ const handleMouseLeave = () => {
 
 <template>
   <div 
-    :class="cn('mx-auto hidden md:flex gap-4 items-end mb-8 h-24 justify-center', props.desktopClassName)"
+    :class="cn('flex items-center gap-4 bg-neutral-900/80 backdrop-blur-md rounded-2xl px-6 py-4 border border-white/10 shadow-2xl transition-all duration-300', props.desktopClassName)"
     @mousemove="handleMouseMove"
     @mouseleave="handleMouseLeave"
   >
     <DockIcon 
-        v-for="item in props.items" 
-        :key="item.title"
-        :item="item"
-        :mouseX="mouseX"
+      v-for="item in items" 
+      :key="item.title"
+      :item="item" 
+      :mouseX="mouseX"
     />
   </div>
 </template>
