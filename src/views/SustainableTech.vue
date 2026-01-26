@@ -78,24 +78,115 @@ const submitForm = () => {
     <section ref="processRef" class="space-y-12">
         <h2 class="text-3xl font-bold text-white text-center">How It Works</h2>
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-neutral-900/50 p-8 rounded-2xl border border-neutral-800 relative overflow-hidden group">
+            <div class="bg-neutral-900/50 p-8 rounded-2xl border border-neutral-800 relative overflow-hidden group hover:border-amber-500/50 transition-colors duration-500">
                 <div class="absolute -right-10 -top-10 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-all"></div>
-                <div class="text-6xl font-black text-neutral-800 mb-6">01</div>
+                <div class="text-6xl font-black text-neutral-800 mb-6 group-hover:text-amber-500/20 transition-colors">01</div>
                 <h3 class="text-2xl font-bold text-white mb-4">Book Collection</h3>
                 <p class="text-neutral-400">Fill out our simple form or call us. We align with your schedule for a hassle-free pickup.</p>
             </div>
-            <div class="bg-neutral-900/50 p-8 rounded-2xl border border-neutral-800 relative overflow-hidden group">
+            <div class="bg-neutral-900/50 p-8 rounded-2xl border border-neutral-800 relative overflow-hidden group hover:border-amber-500/50 transition-colors duration-500">
                 <div class="absolute -right-10 -top-10 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-all"></div>
-                <div class="text-6xl font-black text-neutral-800 mb-6">02</div>
+                <div class="text-6xl font-black text-neutral-800 mb-6 group-hover:text-amber-500/20 transition-colors">02</div>
                 <h3 class="text-2xl font-bold text-white mb-4">Secure Transit</h3>
                 <p class="text-neutral-400">Your assets are tracked from your door to our facility using secure, GPS-tracked logistics.</p>
             </div>
-            <div class="bg-neutral-900/50 p-8 rounded-2xl border border-neutral-800 relative overflow-hidden group">
+            <div class="bg-neutral-900/50 p-8 rounded-2xl border border-neutral-800 relative overflow-hidden group hover:border-amber-500/50 transition-colors duration-500">
                 <div class="absolute -right-10 -top-10 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-all"></div>
-                <div class="text-6xl font-black text-neutral-800 mb-6">03</div>
+                <div class="text-6xl font-black text-neutral-800 mb-6 group-hover:text-amber-500/20 transition-colors">03</div>
                 <h3 class="text-2xl font-bold text-white mb-4">Destruction & Audit</h3>
-                <p class="text-neutral-400">Data is wiped (Blancco) or physically destroyed. You receive a Certificate of Destruction.</p>
+                <p class="text-neutral-400">Data is wiped (Blancco) or physically destroyed. You receive a full Certificate of Destruction.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- Us vs Them Comparison -->
+    <section class="border-t border-white/5 pt-20">
+        <h2 class="text-3xl font-bold text-white text-center mb-12">Why Choose Us?</h2>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse min-w-[600px]">
+                <thead>
+                    <tr class="text-sm uppercase tracking-widest text-neutral-500 border-b border-white/10">
+                        <th class="p-6 font-medium">Feature</th>
+                        <th class="p-6 font-bold text-white bg-neutral-900/50 rounded-t-xl border-t border-x border-white/5">Jake Fieldhouse Consulting</th>
+                        <th class="p-6 font-medium text-neutral-600">Typical Recycler</th>
+                        <th class="p-6 font-medium text-neutral-600">Local "Man & Van"</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                    <tr class="group hover:bg-neutral-900/30 transition-colors">
+                        <td class="p-6 font-medium text-white">Cost to You</td>
+                        <td class="p-6 font-bold text-amber-500 bg-neutral-900/50 border-x border-white/5">£0.00 (Free)</td>
+                        <td class="p-6 text-neutral-400">£150+ Collection Fee</td>
+                        <td class="p-6 text-neutral-400">Varies / Cash</td>
+                    </tr>
+                    <tr class="group hover:bg-neutral-900/30 transition-colors">
+                        <td class="p-6 font-medium text-white">Data Security</td>
+                        <td class="p-6 text-green-400 font-bold bg-neutral-900/50 border-x border-white/5">DoD Standard Wiping</td>
+                        <td class="p-6 text-neutral-400">Basic Format</td>
+                        <td class="p-6 text-neutral-400">None / Risky</td>
+                    </tr>
+                    <tr class="group hover:bg-neutral-900/30 transition-colors">
+                        <td class="p-6 font-medium text-white">Documentation</td>
+                        <td class="p-6 text-white bg-neutral-900/50 border-x border-white/5">Full Waste Transfer Note</td>
+                        <td class="p-6 text-neutral-400">Basic Receipt</td>
+                        <td class="p-6 text-neutral-400">None</td>
+                    </tr>
+                    <tr class="group hover:bg-neutral-900/30 transition-colors">
+                        <td class="p-6 font-medium text-white">Certificates</td>
+                        <td class="p-6 text-white bg-neutral-900/50 border-x border-white/5 border-b rounded-b-xl">Certificate of Destruction</td>
+                        <td class="p-6 text-neutral-400">Extra Charge</td>
+                        <td class="p-6 text-neutral-400">None</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Security Deep Dive -->
+    <section class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+            <h2 class="text-3xl font-bold text-white">Bank-Grade Data Security</h2>
+            <p class="text-neutral-400 leading-relaxed">
+                We understand that your data is your most valuable asset. That's why we treat every hard drive, SSD, and memory stick as if it contains top-secret information.
+            </p>
+            <ul class="space-y-4 pt-4">
+                <li class="flex items-start gap-3">
+                    <div class="p-1 rounded bg-green-500/10 text-green-500 mt-1">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div>
+                        <strong class="text-white block">Blancco Data Erasure</strong>
+                        <span class="text-sm text-neutral-500">Industry-standard 3-pass wipe for functioning drives. Certificates provided per serial number.</span>
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <div class="p-1 rounded bg-red-500/10 text-red-500 mt-1">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                    </div>
+                    <div>
+                        <strong class="text-white block">Physical Destruction</strong>
+                        <span class="text-sm text-neutral-500">For non-functional media, we physically shred or drill drives to ensure 100% unrecoverability.</span>
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <div class="p-1 rounded bg-blue-500/10 text-blue-500 mt-1">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <div>
+                        <strong class="text-white block">Full Audit Trail</strong>
+                        <span class="text-sm text-neutral-500">You receive a complete asset report and Waste Transfer Note proving legal compliance.</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="bg-gradient-to-br from-neutral-800 to-black p-8 rounded-2xl border border-white/5 flex items-center justify-center min-h-[400px]">
+           <!-- Placeholder for a graphic or certificate example -->
+           <div class="text-center space-y-4">
+               <div class="w-24 h-32 bg-white/10 mx-auto rounded border border-white/20 flex items-center justify-center">
+                   <svg class="w-12 h-12 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+               </div>
+               <p class="text-neutral-500 font-mono text-sm">Certificate_of_Destruction.pdf</p>
+           </div>
         </div>
     </section>
 
@@ -130,7 +221,12 @@ const submitForm = () => {
             </div>
             
             <!-- Quote Form -->
-            <div id="quote" class="md:w-1/2 bg-neutral-900 p-8 rounded-2xl border border-neutral-800 mt-12 md:mt-0">
+            <div id="quote" class="md:w-1/2 bg-neutral-900 p-8 rounded-2xl border border-neutral-800 mt-12 md:mt-0 relative overflow-hidden">
+                <!-- Badge -->
+                <div class="absolute top-0 right-0 bg-amber-500 text-black text-xs font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+                    Fast Track
+                </div>
+
                 <h3 class="text-2xl font-bold text-white mb-6">Request Free Collection</h3>
                 <form @submit.prevent="submitForm" class="space-y-4">
                     <div>
