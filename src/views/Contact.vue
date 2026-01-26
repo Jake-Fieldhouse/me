@@ -8,23 +8,11 @@ const formRef = ref<HTMLElement | null>(null)
 useScrollReveal(heroRef)
 useScrollReveal(formRef, { delay: 0.2 })
 
-const form = ref({
-  name: '',
-  email: '',
-  phone: '',
-  service: 'general',
-  message: ''
-})
-
-const submitForm = () => {
-  // TODO: Hook up to backend or email service
-  alert('Thanks for reaching out! I\'ll get back to you within 24 hours.')
-}
 
 const contactMethods = [
   { icon: '📧', label: 'Email', value: 'jke.contact.me@gmail.com', href: 'mailto:jke.contact.me@gmail.com' },
-  { icon: '📱', label: 'Phone', value: '+44 7400 052962', href: 'tel:+447400052962' },
-  { icon: '💬', label: 'WhatsApp', value: 'Chat Now', href: 'https://wa.me/447400052962' }
+  { icon: '📱', label: 'Phone', value: '+44 7404 090458', href: 'tel:+447404090458' },
+  { icon: '💬', label: 'WhatsApp', value: 'Chat Now', href: 'https://wa.me/447404090458' }
 ]
 </script>
 
@@ -58,71 +46,66 @@ const contactMethods = [
       </a>
     </div>
 
-    <!-- Form -->
-    <section ref="formRef" class="bg-neutral-900/50 p-8 md:p-12 rounded-3xl border border-white/5">
-      <h2 class="text-2xl font-bold text-white mb-8">Send a Message</h2>
-      <form @submit.prevent="submitForm" class="grid md:grid-cols-2 gap-6">
-        <div>
-          <label class="block text-sm font-medium text-neutral-400 mb-2">Name</label>
-          <input 
-            v-model="form.name" 
-            type="text" 
-            required
-            class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-emerald-500" 
-            placeholder="Your name" 
-          />
+    <!-- Booking & Contact Options -->
+    <section ref="formRef" class="grid lg:grid-cols-5 gap-8">
+        
+        <!-- Option 1: Instant Booking (Cal.com) -->
+        <div class="lg:col-span-3 bg-neutral-900/50 p-1 rounded-3xl border border-white/5 overflow-hidden h-fit">
+            <div class="p-6 pb-2">
+                <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                    <span class="w-2 h-8 bg-emerald-500 rounded-full"></span>
+                    Book a Time
+                </h2>
+                <p class="text-neutral-400 mt-2 text-sm">Schedule a 15-min discovery call or consultation instantly.</p>
+            </div>
+            <!-- Cal.com Embed -->
+            <div class="w-full h-[600px] bg-neutral-900" id="cal-embed">
+                <iframe src="https://cal.com/jakefieldhouse?embed=true" style="width: 100%; height: 100%; overflow: scroll;" frameborder="0"></iframe>
+            </div>
         </div>
-        <div>
-          <label class="block text-sm font-medium text-neutral-400 mb-2">Email</label>
-          <input 
-            v-model="form.email" 
-            type="email" 
-            required
-            class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-emerald-500" 
-            placeholder="you@company.com" 
-          />
+
+        <!-- Option 2: Quick Message / Manual -->
+        <div class="lg:col-span-2 space-y-6">
+            <div class="bg-neutral-900/50 p-8 rounded-3xl border border-white/5 h-fit">
+                <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                    <span class="w-2 h-8 bg-blue-500 rounded-full"></span>
+                    Urgent / Quick Chat?
+                </h2>
+                <p class="text-neutral-400 mb-8">Skip the calendar. If you have an urgent MSP issue or need a quick quote on WhatsApp, reach out directly.</p>
+                
+                <div class="space-y-4">
+                    <a href="tel:+447404090458" class="flex items-center gap-4 p-4 rounded-xl bg-neutral-800 hover:bg-neutral-700 transition-colors group">
+                        <div class="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-black transition-all">
+                            <span class="text-xl">📞</span>
+                        </div>
+                        <div>
+                            <div class="text-xs text-neutral-500 uppercase tracking-widest font-bold">Business Line</div>
+                            <div class="text-white font-mono text-lg">+44 7404 090 458</div>
+                        </div>
+                    </a>
+
+                    <a href="https://wa.me/447404090458" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-neutral-800 hover:bg-neutral-700 transition-colors group">
+                        <div class="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center text-green-500 group-hover:bg-green-500 group-hover:text-black transition-all">
+                            <span class="text-xl">💬</span>
+                        </div>
+                        <div>
+                            <div class="text-xs text-neutral-500 uppercase tracking-widest font-bold">WhatsApp</div>
+                            <div class="text-white font-medium">Chat Instantly</div>
+                        </div>
+                    </a>
+
+                    <a href="mailto:jke.contact.me@gmail.com" class="flex items-center gap-4 p-4 rounded-xl bg-neutral-800 hover:bg-neutral-700 transition-colors group">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 group-hover:bg-blue-500 group-hover:text-black transition-all">
+                            <span class="text-xl">📧</span>
+                        </div>
+                        <div>
+                            <div class="text-xs text-neutral-500 uppercase tracking-widest font-bold">Email</div>
+                            <div class="text-white font-medium">jke.contact.me@gmail.com</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div>
-          <label class="block text-sm font-medium text-neutral-400 mb-2">Phone (optional)</label>
-          <input 
-            v-model="form.phone" 
-            type="tel" 
-            class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-emerald-500" 
-            placeholder="+44 7XXX XXXXXX" 
-          />
-        </div>
-        <div>
-          <label class="block text-sm font-medium text-neutral-400 mb-2">Service</label>
-          <select 
-            v-model="form.service" 
-            class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-emerald-500"
-          >
-            <option value="general">General Enquiry</option>
-            <option value="repair">Repair Quote</option>
-            <option value="msp">MSP / IT Support</option>
-            <option value="ewaste">E-Waste Collection</option>
-            <option value="data">Data Recovery</option>
-          </select>
-        </div>
-        <div class="md:col-span-2">
-          <label class="block text-sm font-medium text-neutral-400 mb-2">Message</label>
-          <textarea 
-            v-model="form.message" 
-            rows="4"
-            required
-            class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-emerald-500 resize-none" 
-            placeholder="Tell me about your project or issue..."
-          ></textarea>
-        </div>
-        <div class="md:col-span-2">
-          <button 
-            type="submit" 
-            class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-xl transition-colors"
-          >
-            Send Message
-          </button>
-        </div>
-      </form>
     </section>
 
     <!-- Back -->

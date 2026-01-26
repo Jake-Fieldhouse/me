@@ -34,10 +34,10 @@ const getAssetPath = (path: string) => {
 
 const socialItems = [
   { title: 'Email', icon: getAssetPath('images/email.png'), href: 'mailto:jke.contact.me@gmail.com' },
-  { title: 'Phone', icon: getAssetPath('images/phone-ringing.png'), href: 'tel:+447400052962' },
+  { title: 'Phone', icon: getAssetPath('images/phone-ringing.png'), href: 'tel:+447404090458' },
   { title: 'Instagram', icon: getAssetPath('images/instagram.png'), href: 'https://www.instagram.com/jkeinks' },
   { title: 'Facebook', icon: getAssetPath('images/facebook.png'), href: 'https://www.facebook.com/jake.fieldhouse/' },
-  { title: 'WhatsApp', icon: getAssetPath('images/whatsapp.png'), href: 'https://wa.me/447400052962' },
+  { title: 'WhatsApp', icon: getAssetPath('images/whatsapp.png'), href: 'https://wa.me/447404090458' },
   { title: 'GitHub', icon: getAssetPath('images/github.png'), href: 'https://github.com/Jake-Fieldhouse' },
   { title: 'LinkedIn', icon: getAssetPath('images/linkedin.png'), href: 'https://www.linkedin.com/in/jake-fieldhouse' },
 ]
