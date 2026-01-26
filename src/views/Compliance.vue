@@ -25,7 +25,7 @@ const complianceItems = ref([
         icon: Lock,
         regNumber: 'ZC002956',
         expiry: 'Rolling Renewal',
-        proofUrl: '/certificates/ico_certificate.pdf'
+        proofUrl: 'certificates/ico_certificate.pdf'
     },
     {
         title: 'ADISA Certification',
