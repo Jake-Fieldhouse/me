@@ -8,14 +8,14 @@ useScrollReveal(containerRef)
 
 const complianceItems = ref([
     {
-        title: 'Upper Tier Waste Carrier',
+        title: 'Registered Waste Carrier',
         description: 'Officially registered with the Environment Agency as a Carrier, Dealer, and Broker of controlled waste. Authorized to transport and handle e-waste.',
         status: 'active', // Options: active, pending, expired
         color: 'text-green-500',
         icon: Recycle,
-        regNumber: 'CBDU123456',
-        expiry: 'Jan 2029',
-        proofUrl: '#' // TODO: Add link to public register or PDF
+        regNumber: 'CBDL620098',
+        expiry: 'Indefinite (Lower Tier)',
+        proofUrl: 'https://environment.data.gov.uk/public-register/view/search-waste-carriers-brokers'
     },
     {
         title: 'Information Commissioner\'s Office (ICO)',
@@ -23,9 +23,9 @@ const complianceItems = ref([
         status: 'active',
         color: 'text-purple-500',
         icon: Lock,
-        regNumber: 'ZC002956',
-        expiry: 'Rolling Renewal',
-        proofUrl: 'certificates/ico_certificate.pdf'
+        regNumber: 'Registration Pending',
+        expiry: 'In Progress',
+        proofUrl: null
     },
     {
         title: 'ADISA Certification',
@@ -53,8 +53,8 @@ const complianceItems = ref([
         status: 'active',
         color: 'text-blue-500',
         icon: FileText,
-        regNumber: 'Policy No. XH-99281',
-        expiry: 'Mar 2026',
+        regNumber: 'Available on Request',
+        expiry: 'Active',
         proofUrl: null
     }
 ])
