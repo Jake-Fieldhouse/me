@@ -27,9 +27,21 @@ export function useScrollReveal(elementRef: any, options: any = {}) {
 
         // Slight delay to allow Vue transitions to complete/DOM to settle
         requestAnimationFrame(() => {
+            // Set fallback in case GSAP fails
+            if (elementRef.value) {
+                elementRef.value.style.opacity = '1' // Ensure visible by default, let GSAP override
+            }
+
             setTimeout(() => {
                 if (elementRef.value) {
-                    animation = gsap.from(elementRef.value, config)
+                    // Reset to 0 for animation
+                    gsap.set(elementRef.value, { opacity: 0, y: 50 })
+                    animation = gsap.to(elementRef.value, {
+                        ...config,
+                        scrollTrigger: config.scrollTrigger,
+                        opacity: 1,
+                        y: 0
+                    })
                 }
             }, 100)
         })

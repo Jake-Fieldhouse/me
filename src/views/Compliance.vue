@@ -38,6 +38,16 @@ const complianceItems = ref([
         proofUrl: null
     },
     {
+        title: 'DBS Enhanced Check',
+        description: 'Full Enhanced Disclosure & Barring Service check. Registered with the Update Service for real-time status verification. Essential for work in schools and healthcare.',
+        status: 'active',
+        color: 'text-sky-500',
+        icon: ShieldCheck,
+        regNumber: 'Available on Request', // Sensitive info
+        expiry: 'Live Update Service',
+        proofUrl: null
+    },
+    {
         title: 'Public Liability Insurance',
         description: 'Comprehensive business insurance coverage protecting our clients and operations.',
         status: 'active',

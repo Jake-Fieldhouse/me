@@ -53,7 +53,9 @@ const submitForm = () => {
     </header>
 
     <!-- Trust Signals -->
-    <TrustBar />
+    <router-link to="/compliance" class="block w-full cursor-pointer hover:opacity-90 transition-opacity">
+        <TrustBar />
+    </router-link>
 
     <!-- Stats Grid -->
     <section ref="statsRef" class="grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-white/5 py-12">
