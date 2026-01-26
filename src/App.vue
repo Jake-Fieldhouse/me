@@ -3,6 +3,7 @@ import FluidCursor from './components/FluidCursor.vue'
 import AuroraBackground from './components/AuroraBackground.vue'
 import Preloader from './components/Preloader.vue'
 import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
 import { ref, onMounted } from 'vue'
 
 const isLoading = ref(true)
@@ -81,6 +82,9 @@ if (localStorage.getItem('cookies-accepted')) {
         </button>
       </div>
     </transition>
+
+    <!-- Global Footer -->
+    <Footer />
   </div>
 </template>
 

@@ -24,6 +24,11 @@ const router = createRouter({
             component: () => import('../views/RepairNinja.vue')
         },
         {
+            path: '/msp-services',
+            name: 'msp-services',
+            component: () => import('../views/MSPServices.vue')
+        },
+        {
             path: '/repair-services',
             name: 'repair-services',
             component: () => import('../views/RepairServices.vue')

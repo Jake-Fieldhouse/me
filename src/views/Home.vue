@@ -122,7 +122,7 @@ const handleCardClick = (e: MouseEvent, title: string, description: string) => {
             title="MSP Services"
             description="Comprehensive Managed IT Services for business. Network infrastructure, security monitoring, and proactive support."
             class="md:col-span-1 group hover:border-blue-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
-            @click="(e: any) => handleCardClick(e, 'MSP Services', 'Comprehensive Managed IT Services for business. Network infrastructure, security monitoring, and proactive support.')"
+            @click="() => $router.push('/msp-services')"
           >
             <template #header>
                 <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-blue-900/50 to-neutral-900" />
@@ -164,15 +164,5 @@ const handleCardClick = (e: MouseEvent, title: string, description: string) => {
 
 
 
-      <footer class="w-full border-t border-white/5 pt-8 text-center text-neutral-500 text-sm">
-        <p class="mb-2">Jake Fieldhouse Consulting Ltd | Company No. 16536646</p>
-        <nav class="flex justify-center gap-6 flex-wrap">
-          <router-link to="/about" class="hover:text-white transition-colors">About</router-link>
-          <router-link to="/contact" class="hover:text-white transition-colors">Contact</router-link>
-          <span class="text-neutral-700">|</span>
-          <router-link to="/privacy" class="hover:text-white transition-colors">Privacy Policy</router-link>
-          <router-link to="/terms" class="hover:text-white transition-colors">Terms</router-link>
-        </nav>
-      </footer>
     </div>
 </template>
