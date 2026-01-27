@@ -99,6 +99,60 @@ const router = createRouter({
             }
         },
         {
+            path: '/cookies',
+            name: 'cookies',
+            component: () => import('../views/CookiePolicy.vue'),
+            meta: {
+                title: 'Cookie Policy | Jake Fieldhouse Consulting',
+                description: 'How we use cookies on our website and your consent options.'
+            }
+        },
+        {
+            path: '/refunds',
+            name: 'refunds',
+            component: () => import('../views/RefundPolicy.vue'),
+            meta: {
+                title: 'Refund & Cancellation Policy | Jake Fieldhouse Consulting',
+                description: 'Our refund policy for repairs, MSP services, and cancellation terms.'
+            }
+        },
+        {
+            path: '/service-commitment',
+            name: 'service-commitment',
+            component: () => import('../views/ServiceCommitment.vue'),
+            meta: {
+                title: 'Service Level Commitment | Jake Fieldhouse Consulting',
+                description: 'Our service targets and response time commitments for MSP clients.'
+            }
+        },
+        {
+            path: '/complaints',
+            name: 'complaints',
+            component: () => import('../views/ComplaintsPolicy.vue'),
+            meta: {
+                title: 'Complaints Policy | Jake Fieldhouse Consulting',
+                description: 'How to raise a complaint and our dispute resolution process.'
+            }
+        },
+        {
+            path: '/environmental-policy',
+            name: 'environmental-policy',
+            component: () => import('../views/EnvironmentalPolicy.vue'),
+            meta: {
+                title: 'Environmental Policy | Jake Fieldhouse Consulting',
+                description: 'Our commitment to sustainability and responsible e-waste handling.'
+            }
+        },
+        {
+            path: '/disclaimer',
+            name: 'disclaimer',
+            component: () => import('../views/Disclaimer.vue'),
+            meta: {
+                title: 'Website Disclaimer | Jake Fieldhouse Consulting',
+                description: 'Legal disclaimer for the use of this website.'
+            }
+        },
+        {
             path: '/service-areas',
             name: 'service-areas',
             component: () => import('../views/ServiceAreas.vue'),

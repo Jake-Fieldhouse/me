@@ -42,6 +42,48 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- Legal & Policy Pages -->
+  <url>
+    <loc>https://jakefieldhouse.co.uk/#/privacy</loc>
+    <lastmod>2026-01-27</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jakefieldhouse.co.uk/#/terms</loc>
+    <lastmod>2026-01-27</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jakefieldhouse.co.uk/#/cookies</loc>
+    <lastmod>2026-01-27</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://jakefieldhouse.co.uk/#/refunds</loc>
+    <lastmod>2026-01-27</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://jakefieldhouse.co.uk/#/complaints</loc>
+    <lastmod>2026-01-27</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://jakefieldhouse.co.uk/#/service-commitment</loc>
+    <lastmod>2026-01-27</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://jakefieldhouse.co.uk/#/environmental-policy</loc>
+    <lastmod>2026-01-27</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jakefieldhouse.co.uk/#/disclaimer</loc>
+    <lastmod>2026-01-27</lastmod>
+    <priority>0.3</priority>
+  </url>
+  
   <!-- Priority Local SEO Pages: Hull (Core Market) -->
   <url>
     <loc>https://jakefieldhouse.co.uk/#/hull-computer-repair</loc>
