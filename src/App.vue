@@ -5,14 +5,25 @@ import Preloader from './components/Preloader.vue'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const isLoading = ref(true)
 const showCookies = ref(true)
 
-
-
 onMounted(() => {
-    // Artificial minimum load time for effect, plus asset check
+    // Handle GitHub Pages SPA redirect
+    // The 404.html redirects to /?p=original-path
+    const urlParams = new URLSearchParams(window.location.search)
+    const redirectPath = urlParams.get('p')
+    
+    if (redirectPath) {
+        // Clean the URL and navigate to the intended route
+        window.history.replaceState(null, '', '/' + decodeURIComponent(redirectPath))
+        router.replace('/' + decodeURIComponent(redirectPath))
+    }
+
+    // Artificial minimum load time for effect
     setTimeout(() => {
         isLoading.value = false
     }, 2000)

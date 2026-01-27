@@ -1,8 +1,8 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 
 const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     routes: [
         {
             path: '/',
@@ -13,46 +13,65 @@ const router = createRouter({
                 description: 'Expert IT support, microsoldering repairs, and B2B e-waste solutions in Hull & East Yorkshire. Your full-stack tech partner.'
             }
         },
+        // ==================== CORE SERVICES (Hyper-Local) ====================
         {
-            path: '/sustainable-tech', // SEO friendly URL
-            name: 'sustainable-tech',
-            component: () => import('../views/SustainableTech.vue'),
+            path: '/managed-it-services-hull',
+            name: 'managed-it-services-hull',
+            component: () => import('../views/MSPServices.vue'),
             meta: {
-                title: 'Free E-Waste Collection Hull | Zero Landfill',
-                description: 'Secure, GDPR-compliant IT asset disposal for businesses. Free collection in Hull & Nationwide. Certificate of Destruction provided.'
+                title: 'Managed IT Services Hull | 24/7 Monitoring & Support',
+                description: 'Proactive IT infrastructure management, cybersecurity EDR, and Microsoft 365 solutions for Hull & East Yorkshire businesses.'
             }
         },
         {
-            path: '/e-waste', // Legacy Redirect
-            redirect: '/sustainable-tech'
+            path: '/microsoldering-repair-hull',
+            name: 'microsoldering-repair-hull',
+            component: () => import('../views/RepairNinja.vue'),
+            meta: {
+                title: 'Microsoldering & Logic Board Repair Hull | Repair Ninja',
+                description: 'Component-level repair for MacBook, iPhone, PS5, and Xbox. No fix, no fee. We fix what others can\'t.'
+            }
+        },
+        {
+            path: '/secure-data-disposal-hull',
+            name: 'secure-data-disposal-hull',
+            component: () => import('../views/SustainableTech.vue'),
+            meta: {
+                title: 'Secure Data Disposal & E-Waste Collection Hull | GDPR Compliant',
+                description: 'GDPR-compliant IT asset disposal for businesses. Free collection in Hull & East Yorkshire. Certificate of Destruction provided.'
+            }
+        },
+        {
+            path: '/ai-optimization-hull',
+            name: 'ai-optimization-hull',
+            component: () => import('../views/AISearchOptimization.vue'),
+            meta: {
+                title: 'AI Search Optimization Hull | Get Found by ChatGPT & Perplexity',
+                description: 'Generative Engine Optimization (GEO) to make your Hull business visible in ChatGPT, Perplexity, Claude, and Google AI Overviews.'
+            }
+        },
+        // ==================== LEGACY REDIRECTS ====================
+        {
+            path: '/msp-services',
+            redirect: '/managed-it-services-hull'
         },
         {
             path: '/repair-ninja',
-            name: 'repair-ninja',
-            component: () => import('../views/RepairNinja.vue'),
-            meta: {
-                title: 'Microsoldering & Console Repair Hull | Repair Ninja',
-                description: 'Component-level repair for PS5, MacBook, and logic boards. No fix, no fee. We fix what others can\'t.'
-            }
+            redirect: '/microsoldering-repair-hull'
         },
         {
-            path: '/msp-services',
-            name: 'msp-services',
-            component: () => import('../views/MSPServices.vue'),
-            meta: {
-                title: 'Managed IT Services Hull | 24/7 Monitoring',
-                description: 'Proactive IT infrastructure management, cybersecurity EDR, and cloud solutions for growing agencies in East Yorkshire.'
-            }
+            path: '/sustainable-tech',
+            redirect: '/secure-data-disposal-hull'
+        },
+        {
+            path: '/e-waste',
+            redirect: '/secure-data-disposal-hull'
         },
         {
             path: '/ai-search',
-            name: 'ai-search',
-            component: () => import('../views/AISearchOptimization.vue'),
-            meta: {
-                title: 'AI Search Optimization | GEO Services Hull',
-                description: 'Generative Engine Optimization (GEO) to make your business visible in ChatGPT, Perplexity, Claude, and Google AI Overviews.'
-            }
+            redirect: '/ai-optimization-hull'
         },
+        // ==================== OTHER SERVICES ====================
         {
             path: '/repair-services',
             name: 'repair-services',
@@ -71,13 +90,14 @@ const router = createRouter({
                 description: 'Verified Environment Agency Waste Carrier (CBDL620098). View our data destruction standards and insurance details.'
             }
         },
+        // ==================== COMPANY PAGES ====================
         {
             path: '/about',
             name: 'about',
             component: () => import('../views/About.vue'),
             meta: {
-                title: 'About Jake Fieldhouse | IT Consultant',
-                description: 'The person behind the tech. A full-stack IT partner helping businesses with setup, repair, and sustainable disposal.'
+                title: 'About Jake Fieldhouse | IT Consultant Hull',
+                description: 'The person behind the tech. A full-stack IT partner helping Hull businesses with setup, repair, and sustainable disposal.'
             }
         },
         {
@@ -85,10 +105,11 @@ const router = createRouter({
             name: 'contact',
             component: () => import('../views/Contact.vue'),
             meta: {
-                title: 'Contact Us | Book Consultation',
+                title: 'Contact Us | Book IT Consultation Hull',
                 description: 'Get a quote for repair, schedule an MSP consultation, or book an e-waste collection. Response within 24 hours.'
             }
         },
+        // ==================== LEGAL & POLICIES ====================
         {
             path: '/privacy',
             name: 'privacy',
@@ -161,6 +182,7 @@ const router = createRouter({
                 description: 'Legal disclaimer for the use of this website.'
             }
         },
+        // ==================== LOCAL SEO ====================
         {
             path: '/service-areas',
             name: 'service-areas',

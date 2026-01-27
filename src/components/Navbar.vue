@@ -12,10 +12,10 @@ const navItems = [
 ]
 
 const serviceItems = [
-  { name: 'Repair Ninja', path: '/repair-ninja' },
-  { name: 'MSP Services', path: '/msp-services' },
-  { name: 'AI Search', path: '/ai-search' },
-  { name: 'E-Waste Solutions', path: '/sustainable-tech' },
+  { name: 'Microsoldering & Repair', path: '/microsoldering-repair-hull' },
+  { name: 'Managed IT Services', path: '/managed-it-services-hull' },
+  { name: 'AI Optimization', path: '/ai-optimization-hull' },
+  { name: 'Secure Data Disposal', path: '/secure-data-disposal-hull' },
   { name: 'Compliance', path: '/compliance' }
 ]
 
