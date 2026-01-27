@@ -6,11 +6,20 @@
   <link rel="icon" type="image/png" href="/me/images/github.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://jakefieldhouse.com/" />
+
   <!-- Primary Meta Tags -->
   <title>Jake Fieldhouse | Repair Ninja & MSP Services</title>
   <meta name="title" content="Jake Fieldhouse | Repair Ninja & MSP Services" />
   <meta name="description"
     content="Expert Electronics Repair, Microsoldering, Data Recovery, and Managed IT Services (MSP) for UK Businesses. Zero-Landfill E-Waste Solutions." />
+
+  <!-- Additional SEO Meta Tags -->
+  <meta name="author" content="Jake Fieldhouse" />
+  <meta name="robots" content="index, follow" />
+  <meta name="geo.region" content="GB-ERY" />
+  <meta name="geo.placename" content="Hull" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -18,8 +27,9 @@
   <meta property="og:title" content="Jake Fieldhouse | Repair Ninja & MSP Services" />
   <meta property="og:description"
     content="Expert Electronics Repair, Microsoldering, Data Recovery, and Managed IT Services (MSP) for UK Businesses. Zero-Landfill E-Waste Solutions." />
-  <!-- TODO: Add actual OG Image -->
-  <meta property="og:image" content="/me/images/og-image.png" />
+  <meta property="og:image" content="https://jakefieldhouse.com/images/og-image.png" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:site_name" content="Jake Fieldhouse Consulting" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
@@ -27,11 +37,16 @@
   <meta property="twitter:title" content="Jake Fieldhouse | Repair Ninja & MSP Services" />
   <meta property="twitter:description"
     content="Expert Electronics Repair, Microsoldering, Data Recovery, and Managed IT Services (MSP) for UK Businesses. Zero-Landfill E-Waste Solutions." />
-  <meta property="twitter:image" content="/me/images/og-image.png" />
+  <meta property="twitter:image" content="https://jakefieldhouse.com/images/og-image.png" />
 
+  <!-- Preconnect & Preload for Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </noscript>
 
   <!-- Local Business Schema -->
   <script type="application/ld+json">
@@ -71,8 +86,27 @@
         "https://linkedin.com/in/jakefieldhouse",
         "https://github.com/Jake-Fieldhouse"
       ],
-      "areaServed": ["Hull", "Beverley", "Driffield", "Bridlington", "Goole", "Cottingham", "Hessle", "East Yorkshire"],
-      "serviceArea": "Nationwide for E-Waste",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://jakefieldhouse.com/images/og-image.png"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Jake Fieldhouse",
+        "jobTitle": "IT Consultant & Microsoldering Specialist",
+        "url": "https://linkedin.com/in/jakefieldhouse"
+      },
+      "areaServed": ["Hull", "Beverley", "Driffield", "Bridlington", "Goole", "Cottingham", "Hessle", "Brough", "Hornsea", "Withernsea", "East Yorkshire"],
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 53.7443,
+          "longitude": -0.3325
+        },
+        "geoRadius": "50000"
+      },
+      "knowsAbout": ["IT Support", "Computer Repair", "Microsoldering", "MacBook Repair", "PS5 Repair", "E-Waste Disposal", "GDPR Compliance", "Data Destruction"],
       "description": "Expert Managed IT Services, Microsoldering Repairs, and Secure E-Waste Disposal in Hull and East Yorkshire.",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
