@@ -1,0 +1,39 @@
+# robots.txt for Jake Fieldhouse Consulting
+# https://jakefieldhouse.com
+
+User-agent: *
+Allow: /
+
+# AI Search Engine Crawlers - Explicitly Allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Sitemap
+Sitemap: https://jake-fieldhouse.github.io/me/sitemap.xml

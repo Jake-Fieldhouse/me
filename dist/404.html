@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Jake Fieldhouse Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden">
+    <!-- Aurora Background Effect -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px]"></div>
+    </div>
+
+    <div class="relative z-10 text-center space-y-8 max-w-lg">
+        <h1 class="text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-neutral-700 to-neutral-500">
+            404</h1>
+
+        <div class="space-y-4">
+            <h2 class="text-3xl font-bold">Signal Lost</h2>
+            <p class="text-neutral-400">The page you are looking for has been decommissioned, moved, or never existed.
+            </p>
+        </div>
+
+        <div class="pt-8">
+            <a href="/me/"
+                class="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors">
+                <span>Return to Base</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                    </path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

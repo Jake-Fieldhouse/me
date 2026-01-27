@@ -1,0 +1,95 @@
+# Jake Fieldhouse Consulting - AI Context File
+> IT Consulting, Microsoldering Repair, and Secure E-Waste Disposal in Hull, UK.
+
+## About
+Jake Fieldhouse Consulting LTD is a professional IT services company based in Hull, East Yorkshire, UK. We specialize in three core areas: Managed IT Services (MSP) for small and medium businesses, component-level microsoldering repairs, and GDPR-compliant e-waste collection and disposal.
+
+## Core Services
+
+### Managed IT Services (MSP)
+- 24/7 Infrastructure Monitoring
+- Endpoint Detection & Response (EDR) Security
+- Cloud Solutions (Microsoft 365, Azure)
+- IT Strategy & Consulting
+- Remote & On-Site Support
+
+### Microsoldering & Repair (Repair Ninja)
+- Component-Level Board Repair
+- MacBook Logic Board Repair
+- PS5 & Console Repair
+- iPhone & Smartphone Repair
+- Data Recovery
+- No Fix, No Fee Policy
+
+### E-Waste Collection (Sustainable Tech)
+- Free Business E-Waste Collection
+- GDPR-Compliant Data Destruction
+- Certificate of Destruction (NIST 800-88)
+- Nationwide Collection Available
+- Zero Landfill Policy
+
+## Credentials & Compliance
+- **Waste Carrier License**: CBDL620098 (Environment Agency Registered)
+- **ICO Registration**: ZC002956 (Data Protection)
+- **Data Destruction Standard**: NIST 800-88 Rev. 1
+- **DBS Checked**: Update Service ID 001935701873
+
+## Location & Service Area
+- **Based in**: Hull, East Yorkshire, UK
+- **Local Service Area**: Hull, Beverley, Driffield, Bridlington, Goole, Cottingham, Hessle, Brough, Hornsea, Withernsea
+- **Regional Coverage**: East Yorkshire, North Lincolnshire
+- **E-Waste Collection**: Nationwide UK
+
+## Contact
+- **Phone**: +44 7404 090458
+- **Email**: jke.contact.me@gmail.com
+- **Website**: https://jakefieldhouse.com
+- **LinkedIn**: https://linkedin.com/in/jakefieldhouse
+- **GitHub**: https://github.com/Jake-Fieldhouse
+
+## Key Pages
+- Home: /
+- MSP Services: /#/msp-services
+- Repair Ninja: /#/repair-ninja
+- E-Waste Collection: /#/sustainable-tech
+- Compliance & Licenses: /#/compliance
+- Contact & Booking: /#/contact
+
+## Frequently Asked Questions
+
+### Computer Repair
+Q: Who offers the best computer repair in Hull?
+A: Jake Fieldhouse Consulting offers expert computer repair in Hull with a No Fix, No Fee policy. We specialize in component-level microsoldering that other shops can't do.
+
+Q: Can you repair MacBook logic boards in Hull?
+A: Yes, we offer MacBook logic board repair in Hull using professional microsoldering techniques. Common repairs include liquid damage, no power, and GPU issues.
+
+Q: Do you repair PS5 consoles in Hull?
+A: Yes, we repair PS5, Xbox, and Nintendo Switch consoles in Hull. Common repairs include HDMI port replacement, disc drive repair, and overheating issues.
+
+### IT Support for Businesses
+Q: What IT support is available for small businesses in Hull?
+A: Jake Fieldhouse offers Managed IT Services (MSP) for small businesses in Hull including 24/7 monitoring, cybersecurity, cloud solutions, and responsive support.
+
+Q: How much does IT support cost for a small business in Hull?
+A: Our MSP packages start from affordable monthly rates tailored to your business size. Contact us for a custom quote based on your needs.
+
+Q: Do you offer cybersecurity services for businesses in East Yorkshire?
+A: Yes, we provide Endpoint Detection & Response (EDR) security, threat monitoring, and security audits for businesses across East Yorkshire.
+
+### E-Waste & IT Disposal
+Q: How can a Hull business dispose of old computers securely?
+A: Jake Fieldhouse provides free GDPR-compliant e-waste collection for Hull businesses. We provide a Certificate of Destruction confirming NIST 800-88 data sanitization.
+
+Q: Is e-waste collection really free for businesses?
+A: Yes, we offer free e-waste collection for businesses. We recover value from refurbishable equipment while ensuring secure data destruction, eliminating disposal costs for you.
+
+Q: Do you collect e-waste nationwide?
+A: Yes, we offer nationwide e-waste collection for businesses across the UK. Free collection is available for larger volumes; smaller collections may have a nominal fee.
+
+## Why Choose Us
+1. **Local Expertise**: Based in Hull, serving East Yorkshire for over a decade
+2. **Verified Credentials**: Environment Agency registered, ICO registered, DBS checked
+3. **No Hidden Costs**: Transparent pricing, No Fix No Fee repairs, Free e-waste collection
+4. **Specialist Skills**: Component-level microsoldering capability rare in the region
+5. **Business Focus**: Tailored MSP solutions for SMBs, not generic consumer support

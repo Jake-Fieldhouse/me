@@ -92,5 +92,53 @@ import TrustBar from '../components/TrustSignals/TrustBar.vue'
         </div>
     </section>
 
+    <!-- FAQ Section for AI/LLM Optimization -->
+    <section class="max-w-3xl mx-auto space-y-8 pb-20">
+        <h2 class="text-3xl font-bold text-white text-center">Frequently Asked Questions</h2>
+        
+        <div class="space-y-4">
+            <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
+                <h3 class="text-lg font-bold text-white mb-2">What IT support is available for small businesses in Hull?</h3>
+                <p class="text-neutral-400">
+                    Jake Fieldhouse Consulting offers comprehensive Managed IT Services (MSP) for small businesses in Hull and East Yorkshire. 
+                    Our packages include 24/7 infrastructure monitoring, Endpoint Detection & Response (EDR) cybersecurity, 
+                    Microsoft 365 management, cloud backups, and priority support with guaranteed SLA response times.
+                </p>
+            </div>
+            
+            <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
+                <h3 class="text-lg font-bold text-white mb-2">How much does managed IT support cost for a small business?</h3>
+                <p class="text-neutral-400">
+                    Our MSP packages are priced per-device or per-user, starting from affordable monthly rates tailored to your business size. 
+                    We offer Essential, Growth, and Enterprise tiers to match your requirements. Contact us for a custom quote based on your infrastructure needs.
+                </p>
+            </div>
+
+            <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
+                <h3 class="text-lg font-bold text-white mb-2">Do you offer cybersecurity services for businesses in East Yorkshire?</h3>
+                <p class="text-neutral-400">
+                    Yes, cybersecurity is core to our MSP offering. We provide next-generation Endpoint Detection & Response (EDR), 
+                    ransomware protection, email filtering, and regular security audits. Our proactive approach catches threats before they impact your business.
+                </p>
+            </div>
+
+            <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
+                <h3 class="text-lg font-bold text-white mb-2">Can you help migrate our business to Microsoft 365 or Azure?</h3>
+                <p class="text-neutral-400">
+                    Absolutely. We specialize in cloud migrations for SMBs. Whether you're moving from on-premise servers to Azure 
+                    or transitioning to Microsoft 365 for email and collaboration, we handle the entire process with minimal disruption to your operations.
+                </p>
+            </div>
+
+            <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
+                <h3 class="text-lg font-bold text-white mb-2">What areas do you cover for on-site IT support?</h3>
+                <p class="text-neutral-400">
+                    We provide on-site IT support across Hull, Beverley, Driffield, Bridlington, Goole, Cottingham, Hessle, 
+                    and the wider East Yorkshire region. Remote support is available nationwide for clients on our MSP plans.
+                </p>
+            </div>
+        </div>
+    </section>
+
   </div>
 </template>

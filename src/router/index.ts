@@ -97,6 +97,25 @@ const router = createRouter({
                 title: 'Terms of Service | Jake Fieldhouse Consulting',
                 description: 'Service terms, repair warranties, and business agreements.'
             }
+        },
+        {
+            path: '/service-areas',
+            name: 'service-areas',
+            component: () => import('../views/ServiceAreas.vue'),
+            meta: {
+                title: 'Service Areas | IT Services East Yorkshire',
+                description: 'Professional IT support, computer repair, and e-waste collection across Hull, Beverley, Driffield, Bridlington, and East Yorkshire.'
+            }
+        },
+        {
+            path: '/:location-:service',
+            name: 'local-service',
+            component: () => import('../views/local/LocalServicePage.vue'),
+            props: true,
+            meta: {
+                title: 'Local IT Services | Jake Fieldhouse Consulting',
+                description: 'Professional IT services in your local area.'
+            }
         }
     ],
     scrollBehavior(_to, _from, savedPosition) {
