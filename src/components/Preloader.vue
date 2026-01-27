@@ -34,7 +34,13 @@ import { watch } from 'vue'
 watch(() => props.loading, (newVal) => {
     if (!newVal) {
         const tl = gsap.timeline({
-            onComplete: () => emit('complete')
+            onComplete: () => {
+                // Hide the preloader completely after animation
+                if (preloaderRef.value) {
+                    preloaderRef.value.style.display = 'none'
+                }
+                emit('complete')
+            }
         })
         
         tl.to(textRef.value, {
