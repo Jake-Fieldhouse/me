@@ -37,7 +37,7 @@ Please get back to us with a schedule.
 Thanks!
   `.trim())
 
-  window.location.href = `mailto:jke.contact.me@gmail.com?subject=${subject}&body=${body}`
+  window.location.href = `mailto:jake@jakefieldhouse.co.uk?subject=${subject}&body=${body}`
 }
 
 const scrollToQuote = () => {

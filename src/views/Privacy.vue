@@ -38,14 +38,14 @@
 
       <section>
         <h2 class="text-2xl font-bold text-white mb-4">5. Your Rights</h2>
-        <p>Under UK GDPR, you have the right to access, rectify, erase, restrict processing, and port your data. Contact us at <a href="mailto:jke.contact.me@gmail.com" class="text-blue-400 hover:underline">jke.contact.me@gmail.com</a> to exercise these rights.</p>
+        <p>Under UK GDPR, you have the right to access, rectify, erase, restrict processing, and port your data. Contact us at <a href="mailto:jake@jakefieldhouse.co.uk" class="text-blue-400 hover:underline">jake@jakefieldhouse.co.uk</a> to exercise these rights.</p>
       </section>
 
       <section>
         <h2 class="text-2xl font-bold text-white mb-4">6. Contact</h2>
         <p>Data Controller: Jake Fieldhouse Consulting Ltd<br/>
         Company Number: 16536646<br/>
-        Email: jke.contact.me@gmail.com</p>
+        Email: jake@jakefieldhouse.co.uk</p>
       </section>
 
       <p class="text-neutral-500 text-sm pt-8">Last updated: January 2026</p>

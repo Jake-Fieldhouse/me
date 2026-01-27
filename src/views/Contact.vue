@@ -10,7 +10,7 @@ useScrollReveal(formRef, { delay: 0.2 })
 
 
 const contactMethods = [
-  { icon: '📧', label: 'Email', value: 'jke.contact.me@gmail.com', href: 'mailto:jke.contact.me@gmail.com' },
+  { icon: '📧', label: 'Email', value: 'jake@jakefieldhouse.co.uk', href: 'mailto:jake@jakefieldhouse.co.uk' },
   { icon: '📱', label: 'Phone', value: '+44 7404 090458', href: 'tel:+447404090458' },
   { icon: '💬', label: 'WhatsApp', value: 'Chat Now', href: 'https://wa.me/447404090458' }
 ]
@@ -94,13 +94,13 @@ const contactMethods = [
                         </div>
                     </a>
 
-                    <a href="mailto:jke.contact.me@gmail.com" class="flex items-center gap-4 p-4 rounded-xl bg-neutral-800 hover:bg-neutral-700 transition-colors group">
+                    <a href="mailto:jake@jakefieldhouse.co.uk" class="flex items-center gap-4 p-4 rounded-xl bg-neutral-800 hover:bg-neutral-700 transition-colors group">
                         <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 group-hover:bg-blue-500 group-hover:text-black transition-all">
                             <span class="text-xl">📧</span>
                         </div>
                         <div>
                             <div class="text-xs text-neutral-500 uppercase tracking-widest font-bold">Email</div>
-                            <div class="text-white font-medium">jke.contact.me@gmail.com</div>
+                            <div class="text-white font-medium">jake@jakefieldhouse.co.uk</div>
                         </div>
                     </a>
                 </div>

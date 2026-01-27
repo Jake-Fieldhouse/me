@@ -26,7 +26,7 @@ Name: ${form.value.name}
 Thanks!
   `.trim())
 
-  window.location.href = `mailto:jke.contact.me@gmail.com?subject=${subject}&body=${body}`
+  window.location.href = `mailto:jake@jakefieldhouse.co.uk?subject=${subject}&body=${body}`
 }
 
 const scrollToBook = () => {

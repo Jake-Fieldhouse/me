@@ -36,4 +36,4 @@ User-agent: cohere-ai
 Allow: /
 
 # Sitemap
-Sitemap: https://jake-fieldhouse.github.io/me/sitemap.xml
+Sitemap: https://jakefieldhouse.co.uk/sitemap.xml
