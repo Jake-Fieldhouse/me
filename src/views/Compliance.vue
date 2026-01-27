@@ -25,7 +25,7 @@ const complianceItems = ref([
         icon: Lock,
         regNumber: 'ZC002956',
         expiry: 'Tier 1 Controller',
-        proofUrl: '/me/documents/ICO_Certificate_ZC002956.pdf'
+        proofUrl: '/documents/ICO_Certificate_ZC002956.pdf'
     },
     {
         title: 'NIST 800-88 Purge Standard',
@@ -35,7 +35,7 @@ const complianceItems = ref([
         icon: FileText,
         regNumber: 'Self-Certified Process',
         expiry: 'Standard Operating Procedure',
-        proofUrl: '/me/documents/certificate_of_destruction_example.html'
+        proofUrl: '/documents/certificate_of_destruction_example.html'
     },
     {
         title: 'ADISA Certification',
