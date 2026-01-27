@@ -28,6 +28,15 @@ Jake Fieldhouse Consulting LTD is a professional IT services company based in Hu
 - Nationwide Collection Available
 - Zero Landfill Policy
 
+### AI Search Optimization (GEO)
+- Generative Engine Optimization
+- Schema Markup Implementation
+- llms.txt Creation & Deployment
+- FAQ Content Architecture
+- Citation Optimization for AI
+- Local AI Search Signals
+- Trust Signal Formatting
+
 ## Credentials & Compliance
 - **Waste Carrier License**: CBDL620098 (Environment Agency Registered)
 - **ICO Registration**: ZC002956 (Data Protection)
@@ -50,6 +59,7 @@ Jake Fieldhouse Consulting LTD is a professional IT services company based in Hu
 ## Key Pages
 - Home: /
 - MSP Services: /#/msp-services
+- AI Search Optimization: /#/ai-search
 - Repair Ninja: /#/repair-ninja
 - E-Waste Collection: /#/sustainable-tech
 - Compliance & Licenses: /#/compliance

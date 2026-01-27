@@ -45,6 +45,15 @@ const router = createRouter({
             }
         },
         {
+            path: '/ai-search',
+            name: 'ai-search',
+            component: () => import('../views/AISearchOptimization.vue'),
+            meta: {
+                title: 'AI Search Optimization | GEO Services Hull',
+                description: 'Generative Engine Optimization (GEO) to make your business visible in ChatGPT, Perplexity, Claude, and Google AI Overviews.'
+            }
+        },
+        {
             path: '/repair-services',
             name: 'repair-services',
             component: () => import('../views/RepairServices.vue'),
