@@ -44,13 +44,13 @@ const scrollToBook = () => {
       
       <div class="relative z-10">
         <div class="inline-block px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-sm font-medium mb-4">
-            Component-Level & Microsoldering Specialist
+            Manufacturer says "replace it"? We say "fix it."
         </div>
         <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
-            We Fix What <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">Others Can't</span>
+            We Fix What <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">Others Won't</span>
         </h1>
         <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-            Don't replace your device just because a port is broken. We use microscope-level precision to replace individual components, saving you money and e-waste.
+            80% of consumers now prioritize repairability. We're on your side—microsoldering dead boards back to life while Apple charges you for a whole new device.
         </p>
         <div class="flex flex-col md:flex-row justify-center gap-4 pt-4">
             <button @click="scrollToBook" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors text-center">
@@ -102,7 +102,7 @@ const scrollToBook = () => {
                     <div class="mt-1 w-2 h-2 rounded-full bg-red-500 shrink-0"></div>
                     <div>
                         <strong class="block text-white">For Individuals</strong>
-                        <span class="text-neutral-400 text-sm">Save your data and your device. We fix logic boards that Apple/Samsung declare "dead."</span>
+                        <span class="text-neutral-400 text-sm">Apple quoted £800? We'll likely fix it for under £200. Same for Samsung, Sony, and anyone else who'd rather sell you a new one.</span>
                     </div>
                 </div>
                 <div class="flex gap-4 items-start">

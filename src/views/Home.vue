@@ -84,19 +84,35 @@ const handleCardClick = (e: MouseEvent, title: string, description: string) => {
     <div class="relative z-10 w-full max-w-7xl mx-auto px-6 py-20 flex flex-col items-center gap-32">
       
       <!-- Header -->
-      <header ref="headerRef" class="text-center space-y-4 w-full mt-20">
+      <header ref="headerRef" class="text-center space-y-6 w-full mt-20">
         <div class="flex justify-center">
             <HyperText
             text="Jake Fieldhouse"
             class="text-6xl md:text-8xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60" 
             />
         </div>
-        <p class="text-2xl text-neutral-300 font-light max-w-2xl mx-auto">
-          Your Full-Stack Tech Partner
+        <p class="text-2xl md:text-3xl text-neutral-300 font-light max-w-2xl mx-auto">
+          Enterprise IT. Component-Level Repair. Zero Compromise.
         </p>
         <p class="text-lg text-neutral-500 max-w-xl mx-auto">
-          From setup to sunset—I handle IT infrastructure, repairs, and sustainable disposal.
+          From 24/7 managed services to microsoldering dead boards—I handle the full stack, Hull to worldwide.
         </p>
+        
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+          <router-link 
+            to="/contact" 
+            class="px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-neutral-200 transition-all hover:scale-105 shadow-lg shadow-white/10"
+          >
+            Book Free Consultation
+          </router-link>
+          <router-link 
+            to="/about" 
+            class="px-8 py-3 border border-white/20 text-white font-medium rounded-full hover:bg-white/5 transition-all"
+          >
+            Learn More
+          </router-link>
+        </div>
       </header>
       
       <!-- Trust Signals -->

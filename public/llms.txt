@@ -69,13 +69,14 @@ GDPR-compliant IT Asset Disposal (ITAD) and certified data destruction.
 ### AI Search Optimization Hull
 **URL**: https://jakefieldhouse.co.uk/ai-optimization-hull
 
-Generative Engine Optimization (GEO) to make Hull businesses visible in AI search results.
+One of the UK's first independent Generative Engine Optimization (GEO) specialists. We make businesses visible in AI search results.
 
 - ChatGPT Citation Optimization
 - Perplexity AI Visibility
 - Google AI Overviews
 - Claude & Gemini Discoverability
 - llms.txt Implementation
+- Schema Markup for AI Crawlers
 
 ---
 

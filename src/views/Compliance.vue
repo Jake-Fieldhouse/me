@@ -49,11 +49,11 @@ const complianceItems = ref([
     },
     {
         title: 'DBS Enhanced Check',
-        description: 'Full Enhanced Disclosure & Barring Service check. Active subscription to the Update Service for real-time status verification.',
+        description: 'Full Enhanced Disclosure & Barring Service check. Active subscription to the Update Service for real-time status verification. Full certificate available on request.',
         status: 'active',
         color: 'text-sky-500',
         icon: ShieldCheck,
-        regNumber: '001935701873',
+        regNumber: 'XXXX-XXXX-1873',
         expiry: 'Live Subscription',
         proofUrl: 'https://secure.crbonline.gov.uk/crsc/check'
     },

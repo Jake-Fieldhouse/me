@@ -50,15 +50,14 @@ const scrollToQuote = () => {
     
     <!-- Hero -->
     <header ref="headerRef" class="text-center space-y-6 mt-10">
-      <div class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-sm font-medium mb-4">
-        B2B E-Waste Solutions
+      <div class="inline-block px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-medium mb-4">
+          New WEEE Regulations Nov 2025 • Is Your Business Compliant?
       </div>
       <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
-        Start Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">Zero-Landfill</span> Journey
+        Free Collection. <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">Zero Risk.</span>
       </h1>
       <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-        Secure, compliant, and free IT asset disposal. Based in <strong>East Yorkshire</strong>, serving businesses <strong>Nationwide</strong>.
-        We handle everything from collection to data destruction.
+        GDPR fines reach <strong>£17.5 million</strong> for improper data disposal. We collect your e-waste for free, destroy your data to NIST 800-88 standards, and provide certificates that prove compliance.
       </p>
       <div class="flex justify-center gap-4 pt-4">
         <button @click="scrollToQuote" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors">
@@ -82,8 +81,8 @@ const scrollToQuote = () => {
             <div class="text-sm text-neutral-500 uppercase tracking-widest">Zero Landfill</div>
         </div>
         <div class="text-center space-y-2">
-            <div class="text-4xl font-bold text-white">GDPR</div>
-            <div class="text-sm text-neutral-500 uppercase tracking-widest">Compliant Wiping</div>
+            <div class="text-4xl font-bold text-white">NIST</div>
+            <div class="text-sm text-neutral-500 uppercase tracking-widest">800-88 Standard</div>
         </div>
         <div class="text-center space-y-2">
             <div class="text-4xl font-bold text-white">FREE</div>

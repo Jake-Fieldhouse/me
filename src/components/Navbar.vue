@@ -38,15 +38,15 @@ const isActive = (path: string) => route.path === path
             v-for="item in navItems" 
             :key="item.path"
             :to="item.path"
-            class="text-sm transition-colors"
-            :class="isActive(item.path) ? 'text-white' : 'text-neutral-400 hover:text-white'"
+            class="text-sm transition-colors border-b pb-0.5"
+            :class="isActive(item.path) ? 'text-white border-white/50' : 'text-neutral-400 hover:text-white border-transparent hover:border-white/50'"
           >
             {{ item.name }}
           </router-link>
           
           <!-- Services Dropdown -->
           <div class="relative group">
-            <button class="text-sm text-neutral-400 hover:text-white transition-colors flex items-center gap-1">
+            <button class="text-sm text-neutral-400 hover:text-white transition-colors flex items-center gap-1 border-b border-transparent hover:border-white/50 pb-0.5">
               Services
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />

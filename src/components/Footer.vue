@@ -14,6 +14,7 @@
         </div>
 
         <p>Jake Fieldhouse Consulting Ltd | Company No. 16536646</p>
+        <p class="text-xs text-neutral-400">Hull & East Yorkshire | UK-Wide On-Site | Remote Worldwide</p>
         
         <!-- Main Navigation -->
         <nav class="flex justify-center gap-6 flex-wrap">
@@ -25,8 +26,8 @@
 
         <!-- Legal Links -->
         <div class="flex flex-col gap-2">
-          <span class="text-neutral-600 text-xs uppercase tracking-wider">Legal & Policies</span>
-          <nav class="flex justify-center gap-4 flex-wrap text-xs">
+          <span class="text-neutral-400 text-xs uppercase tracking-wider">Legal & Policies</span>
+          <nav class="flex justify-center gap-4 flex-wrap text-xs text-neutral-400">
             <router-link to="/privacy" class="hover:text-white transition-colors">Privacy</router-link>
             <router-link to="/terms" class="hover:text-white transition-colors">Terms</router-link>
             <router-link to="/cookies" class="hover:text-white transition-colors">Cookies</router-link>

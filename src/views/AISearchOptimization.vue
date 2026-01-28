@@ -100,7 +100,7 @@ Looking forward to hearing from you.`)
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
         </span>
-        <span class="text-violet-400 font-medium text-sm">The Future of Search is Here</span>
+        <span class="text-violet-400 font-medium text-sm">UK's Independent GEO Pioneer • Your Competitors Aren't Doing This</span>
       </div>
       
       <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
@@ -108,9 +108,9 @@ Looking forward to hearing from you.`)
       </h1>
       
       <p class="text-xl text-neutral-400 mb-8 max-w-3xl mx-auto">
-        <strong class="text-white">40% of Gen Z</strong> already prefer AI over Google. 
-        <strong class="text-white">200M+ weekly users</strong> ask ChatGPT for recommendations. 
-        If AI can't find you, you're losing customers.
+        <strong class="text-white">58% of consumers</strong> now search with AI instead of Google. 
+        <strong class="text-white">60%+ of UK users</strong> use AI search weekly. 
+        If AI can't find you, you're already invisible.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center">

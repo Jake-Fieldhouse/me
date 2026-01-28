@@ -10,14 +10,14 @@ import TrustBar from '../components/TrustSignals/TrustBar.vue'
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
       
       <div class="relative z-10">
-        <div class="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-sm font-medium mb-4">
-            Managed Service Provider (MSP)
+        <div class="inline-block px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-medium mb-4">
+            43% of UK businesses breached this year. Don't be next.
         </div>
         <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
-            Enterprise Reliability, <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">Small Business Agility</span>
+            Local Response. <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">Enterprise Protection.</span>
         </h1>
         <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-            Professional IT infrastructure management without the corporate bloat. From 24/7 monitoring to endpoint security, we keep your business running while you sleep.
+            Big MSPs treat you like a ticket number. We treat you like a partner. 24/7 monitoring, AI-threat detection, and someone who actually picks up the phone—based right here in Hull.
         </p>
         <div class="flex flex-col md:flex-row justify-center gap-4 pt-4">
             <router-link to="/contact" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors text-center">
@@ -52,8 +52,8 @@ import TrustBar from '../components/TrustSignals/TrustBar.vue'
                 <div class="flex gap-4 items-start">
                     <div class="mt-1 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></div>
                     <div>
-                        <strong class="block text-white">Cybersecurity First</strong>
-                        <span class="text-neutral-400 text-sm">Next-gen antivirus, ransomware protection, and email filtering included as standard.</span>
+                        <strong class="block text-white">AI-Powered Threat Defense</strong>
+                        <span class="text-neutral-400 text-sm">EDR that catches AI-generated phishing and ransomware—the top threats UK SMEs face in 2025.</span>
                     </div>
                 </div>
                 <div class="flex gap-4 items-start">
