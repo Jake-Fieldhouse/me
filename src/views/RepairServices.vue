@@ -67,15 +67,15 @@ const services = [
         <CircuitPattern class="w-[800px] h-[800px] text-red-500 animate-pulse-slow" />
       </div>
 
-      <div class="inline-block px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-sm font-medium mb-4">
-        Specialist Hardware Services
+      <div class="inline-block px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-medium mb-4">
+        No-Fix-No-Fee Guarantee • Component-Level Repair
       </div>
       <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
         We Fix <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-600">The Unfixable</span>
       </h1>
       <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-        Component-level board repair, microsoldering, and forensic data recovery. 
-        Don't replace it—repair it.
+        Manufacturer said "unrepairable"? We disagree. Component-level board repair, 
+        microsoldering, and forensic data recovery—at a fraction of replacement cost.
       </p>
       
       <div class="flex justify-center gap-4 pt-4">

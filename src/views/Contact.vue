@@ -21,14 +21,15 @@ const contactMethods = [
     
     <!-- Hero -->
     <header ref="heroRef" class="text-center space-y-6 mt-10">
-      <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-sm font-medium mb-4">
-        Contact
+      <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-4">
+        24hr Response Guarantee • Speak to a Real Person
       </div>
       <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
         Let's <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400">Talk</span>
       </h1>
       <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-        Whether you need a repair quote, MSP consultation, or e-waste pickup—I respond within 24 hours.
+        No ticket queues. No chatbots. Just direct access to Jake—whether you need a repair quote, 
+        MSP consultation, or same-day e-waste pickup.
       </p>
     </header>
 
