@@ -51,6 +51,28 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- Blog -->
+  <url>
+    <loc>https://jakefieldhouse.co.uk/blog</loc>
+    <lastmod>2026-01-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jakefieldhouse.co.uk/blog/why-ai-cant-find-your-business</loc>
+    <lastmod>2026-01-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jakefieldhouse.co.uk/blog/macbook-repair-vs-replace-guide</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jakefieldhouse.co.uk/blog/weee-regulations-2025-business-guide</loc>
+    <lastmod>2026-01-20</lastmod>
+    <priority>0.7</priority>
+  </url>
+  
   <!-- Legal & Policy Pages -->
   <url>
     <loc>https://jakefieldhouse.co.uk/privacy</loc>

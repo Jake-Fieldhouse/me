@@ -12,7 +12,8 @@ useScrollReveal(formRef, { delay: 0.2 })
 const contactMethods = [
   { icon: '📧', label: 'Email', value: 'jake@jakefieldhouse.co.uk', href: 'mailto:jake@jakefieldhouse.co.uk' },
   { icon: '📱', label: 'Phone', value: '+44 7404 090458', href: 'tel:+447404090458' },
-  { icon: '💬', label: 'WhatsApp', value: 'Chat Now', href: 'https://wa.me/447404090458' }
+  { icon: '💬', label: 'WhatsApp', value: 'Chat Now', href: 'https://wa.me/447404090458?text=Hi%20Jake,%20I%27d%20like%20to%20discuss...' },
+  { icon: '💌', label: 'SMS', value: 'Text Me', href: 'sms:+447404090458' }
 ]
 </script>
 
@@ -34,7 +35,7 @@ const contactMethods = [
     </header>
 
     <!-- Quick Contact -->
-    <div class="grid md:grid-cols-3 gap-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
       <a 
         v-for="method in contactMethods" 
         :key="method.label"

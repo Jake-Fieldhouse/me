@@ -109,6 +109,25 @@ const router = createRouter({
                 description: 'Get a quote for repair, schedule an MSP consultation, or book an e-waste collection. Response within 24 hours.'
             }
         },
+        // ==================== BLOG ====================
+        {
+            path: '/blog',
+            name: 'blog',
+            component: () => import('../views/Blog.vue'),
+            meta: {
+                title: 'Blog | IT Insights & Guides for Hull Businesses',
+                description: 'Practical tech advice, repair guides, and AI search insights from Jake Fieldhouse. No fluff, just actionable knowledge.'
+            }
+        },
+        {
+            path: '/blog/:slug',
+            name: 'blog-post',
+            component: () => import('../views/BlogPost.vue'),
+            meta: {
+                title: 'Blog | Jake Fieldhouse Consulting',
+                description: 'Tech insights and guides for Hull businesses.'
+            }
+        },
         // ==================== LEGAL & POLICIES ====================
         {
             path: '/privacy',
