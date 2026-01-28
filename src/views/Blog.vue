@@ -12,16 +12,16 @@ useScrollReveal(postsRef, { delay: 0.2 })
 const posts = ref([
   {
     slug: 'why-ai-cant-find-your-business',
-    title: 'Why ChatGPT Can\'t Find Your Business (And How to Fix It)',
-    excerpt: 'Most Hull businesses are invisible to AI search. Here\'s the technical reason why, and the 5 steps to fix it.',
+    title: 'Why ChatGPT Can\'t Find Your Business (Yet)',
+    excerpt: 'Most Hull businesses are invisible to AI search. Here\'s why that matters—and what you can do about it.',
     date: '2026-01-28',
     category: 'AI Search',
     readTime: '5 min read'
   },
   {
     slug: 'macbook-repair-vs-replace-guide',
-    title: 'MacBook Won\'t Turn On? Repair vs Replace Guide for 2026',
-    excerpt: 'When Apple says "unrepairable", there\'s often a £150 fix. Here\'s how to know which option is right for you.',
+    title: 'MacBook Won\'t Turn On? When Repair Makes More Sense Than Replace',
+    excerpt: 'When Apple says "unrepairable", there\'s often a component-level fix available. Here\'s how to know which option is right for you.',
     date: '2026-01-25',
     category: 'Repair',
     readTime: '4 min read'

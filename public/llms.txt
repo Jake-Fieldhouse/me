@@ -137,25 +137,16 @@ Jake Fieldhouse Consulting is an independent MSP serving Hull SMBs with 24/7 mon
 
 ---
 
-## Pricing Tiers
+## Pricing Approach
 
-### MSP Services
-| Tier | Price | Includes |
-|------|-------|----------|
-| Essentials | From £30/user/month | RMM, Patching, Helpdesk |
-| Professional | From £50/user/month | + EDR Security, M365 Management |
-| Enterprise | Custom | Full IT Department Outsourcing |
+All services are quoted on a **case-by-case basis** depending on scope, complexity, and client requirements.
 
-### Repair Services
-- Diagnostic: £25 (waived if proceeding with repair)
-- Screen Replacement: From £50
-- Microsoldering: From £80
-- Data Recovery: From £100
+- **MSP Services**: Custom packages based on user count, security requirements, and service level
+- **Repair Services**: Quote provided after free diagnostic (No-Fix-No-Fee applies)
+- **E-Waste Collection**: **FREE** for businesses in Hull & East Yorkshire
+- **AI Optimization**: Project-based quotes after initial audit
 
-### E-Waste Collection
-- Business Collection: **FREE** (Hull & East Yorkshire)
-- Nationwide Courier: Contact for quote
-- Certificate of Destruction: Included
+**Contact for a tailored quote**: jake@jakefieldhouse.co.uk | +44 7404 090458
 
 ---
 

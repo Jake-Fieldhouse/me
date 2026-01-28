@@ -14,63 +14,62 @@ useScrollReveal(contentRef, { delay: 0.2 })
 // Placeholder post data - replace with CMS or static data later
 const posts: Record<string, any> = {
   'why-ai-cant-find-your-business': {
-    title: 'Why ChatGPT Can\'t Find Your Business (And How to Fix It)',
+    title: 'Why ChatGPT Can\'t Find Your Business (Yet)',
     date: '2026-01-28',
     category: 'AI Search',
     readTime: '5 min read',
     author: 'Jake Fieldhouse',
     content: `
-      <p class="lead">If you search for "IT support in Hull" on ChatGPT or Perplexity, does your business appear? For most Hull SMBs, the answer is no. Here's why, and how to fix it.</p>
+      <p class="lead">Search for your business in ChatGPT or Perplexity. Does it recommend you? For most Hull SMBs, the answer is no. Here's why that matters in 2026.</p>
       
-      <h2>The Problem: AI Doesn't Crawl Like Google</h2>
-      <p>Google's been crawling the web for 25 years. It knows every page, every link, every mention. AI systems like ChatGPT are different—they're trained on snapshots of web data, and they prioritize structured, authoritative content.</p>
+      <h2>The Shift from Google to AI</h2>
+      <p>25% of searches now bypass Google entirely. Users ask ChatGPT "Who's the best IT company in Hull?" and AI provides direct answers—no clicking through results. If your business isn't in that answer, you don't exist to an increasingly large segment of potential customers.</p>
       
-      <h2>What AI Actually Looks For</h2>
-      <p>To get cited by AI, your website needs:</p>
+      <h2>Why Most Websites Are Invisible to AI</h2>
+      <p>AI systems like ChatGPT don't crawl websites the way Google does. They rely on:</p>
       <ul>
-        <li><strong>Schema Markup:</strong> JSON-LD structured data that tells AI exactly what you do</li>
-        <li><strong>llms.txt:</strong> A dedicated file summarizing your business for AI crawlers</li>
-        <li><strong>FAQ Architecture:</strong> Question-based content AI can directly quote</li>
-        <li><strong>Trust Signals:</strong> Credentials, registrations, and third-party validation</li>
+        <li><strong>Structured data</strong> that explicitly communicates what you do</li>
+        <li><strong>Entity authority</strong> from trusted sources linking to you</li>
+        <li><strong>AI-specific files</strong> that describe your business in machine-readable format</li>
+        <li><strong>Question-based content</strong> formatted for direct citation</li>
       </ul>
+      <p>Traditional SEO doesn't address any of this. That's why businesses ranking well on Google can be completely invisible to AI.</p>
       
-      <h2>The 5-Step Fix</h2>
-      <ol>
-        <li>Add Organization schema with your credentials (Companies House, ICO, etc.)</li>
-        <li>Create /llms.txt and /llms-full.txt files</li>
-        <li>Build FAQPage schema around common questions</li>
-        <li>Add HowTo schema for your key services</li>
-        <li>Monitor AI responses and iterate</li>
-      </ol>
+      <h2>The Complexity Factor</h2>
+      <p>Getting AI visibility right requires deep technical knowledge: JSON-LD schema implementation, llms.txt specification compliance, semantic HTML structure, and ongoing monitoring of how AI systems cite your content. It's not a one-time fix—it's an evolving strategy.</p>
       
-      <p>We implemented all of this on our own site—that's why we appear when you ask AI about IT support in Hull. <a href="/ai-optimization-hull">Want us to do the same for you?</a></p>
+      <h2>Your Competitors Probably Aren't Doing This</h2>
+      <p>GEO (Generative Engine Optimization) is so new that less than 1% of businesses have implemented it properly. That's an opportunity for early movers—but it won't last forever.</p>
+      
+      <p>If you're curious whether AI can currently find your business, <a href="/ai-optimization-hull">request a free AI visibility audit</a> and we'll show you exactly what you're missing.</p>
     `
   },
   'macbook-repair-vs-replace-guide': {
-    title: 'MacBook Won\'t Turn On? Repair vs Replace Guide for 2026',
+    title: 'MacBook Won\'t Turn On? When Repair Makes More Sense Than Replace',
     date: '2026-01-25',
     category: 'Repair',
     readTime: '4 min read',
     author: 'Jake Fieldhouse',
     content: `
-      <p class="lead">Apple quotes you £700+ for a "logic board replacement". Before you bin your MacBook or buy new, there's often a £150-350 fix available.</p>
+      <p class="lead">Apple quotes you for a full "logic board replacement". But often, the actual fault is a single component that can be repaired at a fraction of the cost.</p>
       
       <h2>Why Apple Says "Unrepairable"</h2>
       <p>Apple's repair model is based on module replacement, not component-level diagnosis. If any chip on the logic board fails, they replace the entire board. It's fast for them, but expensive for you.</p>
       
-      <h2>What We Actually Fix</h2>
+      <h2>What Component-Level Repair Looks Like</h2>
       <ul>
-        <li><strong>Power Management ICs:</strong> A £15 chip often causes no-power issues</li>
-        <li><strong>USB-C Controllers:</strong> Charging problems are usually one component</li>
+        <li><strong>Power Management ICs:</strong> A single chip often causes no-power issues</li>
+        <li><strong>USB-C Controllers:</strong> Charging problems are typically one component</li>
         <li><strong>Liquid Damage:</strong> Corrosion can be ultrasonically cleaned if caught early</li>
         <li><strong>GPU Issues:</strong> Sometimes a reball or single component swap</li>
       </ul>
+      <p>This requires specialized equipment (microscopes, hot air stations, pre-heaters) and years of experience. It's not a DIY job—but it is possible.</p>
       
       <h2>When to Repair vs Replace</h2>
       <p><strong>Repair if:</strong> Your Mac is 1-5 years old, has 16GB+ RAM, or contains irreplaceable data</p>
-      <p><strong>Replace if:</strong> It's 7+ years old, repair cost exceeds 60% of replacement value</p>
+      <p><strong>Replace if:</strong> It's 7+ years old, or repair cost approaches replacement value</p>
       
-      <p><a href="/microsoldering-repair-hull">Request a free diagnosis</a> and we'll give you an honest assessment.</p>
+      <p><a href="/microsoldering-repair-hull">Request a free diagnosis</a> and we'll give you an honest assessment before you commit to anything.</p>
     `
   },
   'weee-regulations-2025-business-guide': {
