@@ -4,7 +4,7 @@ const packages = [
   {
     id: 'audit',
     name: 'GEO Audit',
-    price: 'From £500',
+    price: 'One-Time',
     description: 'Comprehensive AI visibility assessment',
     features: [
       'AI search visibility score',
@@ -18,7 +18,7 @@ const packages = [
   {
     id: 'implementation',
     name: 'GEO Implementation',
-    price: 'From £1,500',
+    price: 'Project-Based',
     description: 'Full AI-first optimization',
     features: [
       'Everything in Audit',
@@ -28,13 +28,13 @@ const packages = [
       'Citation optimization',
       '30-day post-launch support'
     ],
-    cta: 'Get Started',
+    cta: 'Get a Quote',
     popular: true
   },
   {
     id: 'retainer',
     name: 'GEO Retainer',
-    price: '£500/month',
+    price: 'Monthly',
     description: 'Ongoing AI search dominance',
     features: [
       'Monthly AI visibility reports',
@@ -44,7 +44,7 @@ const packages = [
       'Priority support',
       'Quarterly strategy calls'
     ],
-    cta: 'Contact Us'
+    cta: 'Discuss Pricing'
   }
 ]
 

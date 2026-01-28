@@ -19,6 +19,7 @@
         <!-- Main Navigation -->
         <nav class="flex justify-center gap-6 flex-wrap">
           <router-link to="/about" class="hover:text-white transition-colors">About</router-link>
+          <router-link to="/blog" class="hover:text-white transition-colors">Insights</router-link>
           <router-link to="/contact" class="hover:text-white transition-colors">Contact</router-link>
           <router-link to="/compliance" class="hover:text-white transition-colors">Compliance</router-link>
           <router-link to="/service-areas" class="hover:text-white transition-colors">Service Areas</router-link>

@@ -94,7 +94,7 @@ const scrollToBook = () => {
                 Whether it's a single beloved console or a fleet of 50 enterprise laptops, the quality of the repair is non-negotiable.
             </p>
             <p class="text-neutral-300 leading-relaxed">
-                We don't do "fixed price lists" because no two faults are identical. By diagnosing the specific issue (e.g., a single 50p capacitor vs. a £200 chipset), we ensure you only pay for exactly what needs fixing, often saving 50-70% compared to manufacturer flat-rates.
+                We don't do "fixed price lists" because no two faults are identical. By diagnosing the specific issue (e.g., a single failed capacitor vs. a larger chipset), we ensure you only pay for exactly what needs fixing, often saving significantly compared to manufacturer flat-rates.
             </p>
             
             <div class="space-y-4 pt-4">
@@ -102,7 +102,7 @@ const scrollToBook = () => {
                     <div class="mt-1 w-2 h-2 rounded-full bg-red-500 shrink-0"></div>
                     <div>
                         <strong class="block text-white">For Individuals</strong>
-                        <span class="text-neutral-400 text-sm">Apple quoted £800? We'll likely fix it for under £200. Same for Samsung, Sony, and anyone else who'd rather sell you a new one.</span>
+                        <span class="text-neutral-400 text-sm">Manufacturer quoted hundreds for a replacement? We often fix the underlying fault for a fraction of that cost. Same expertise level, fraction of the price.</span>
                     </div>
                 </div>
                 <div class="flex gap-4 items-start">
