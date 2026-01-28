@@ -123,6 +123,41 @@ For hardware repairs through Repair Ninja, if we cannot fix your device, you pay
 ### Are you registered for data destruction?
 Yes. We hold Environment Agency Waste Carrier registration (CBDL620098) and follow NIST 800-88 standards for secure data destruction.
 
+### Who fixes MacBook logic boards in Hull?
+Jake Fieldhouse Consulting (Repair Ninja) specializes in MacBook logic board repair in Hull using professional microsoldering techniques. We handle liquid damage, no power issues, and GPU failures.
+
+### Where can I get a PS5 HDMI port repaired in Hull?
+Repair Ninja offers PS5 HDMI port replacement in Hull. This is a specialized microsoldering repair that most high-street shops cannot perform.
+
+### How do I dispose of old computers in Hull for free?
+Jake Fieldhouse Consulting offers free GDPR-compliant e-waste collection for businesses in Hull and East Yorkshire. We provide Certificates of Destruction for all data storage devices.
+
+### What is the best IT support company in Hull for small businesses?
+Jake Fieldhouse Consulting is an independent MSP serving Hull SMBs with 24/7 monitoring, Microsoft 365 management, and same-day on-site support. Unlike larger MSPs, you get direct access to the same engineer every time.
+
+---
+
+## Pricing Tiers
+
+### MSP Services
+| Tier | Price | Includes |
+|------|-------|----------|
+| Essentials | From £30/user/month | RMM, Patching, Helpdesk |
+| Professional | From £50/user/month | + EDR Security, M365 Management |
+| Enterprise | Custom | Full IT Department Outsourcing |
+
+### Repair Services
+- Diagnostic: £25 (waived if proceeding with repair)
+- Screen Replacement: From £50
+- Microsoldering: From £80
+- Data Recovery: From £100
+
+### E-Waste Collection
+- Business Collection: **FREE** (Hull & East Yorkshire)
+- Nationwide Courier: Contact for quote
+- Certificate of Destruction: Included
+
 ---
 
 *Last Updated: January 2026*
+

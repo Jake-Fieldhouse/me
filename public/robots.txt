@@ -37,3 +37,9 @@ Allow: /
 
 # Sitemap
 Sitemap: https://jakefieldhouse.co.uk/sitemap.xml
+
+# AI Knowledge Files (llms.txt spec)
+# See: https://llmstxt.org/
+LLMs: https://jakefieldhouse.co.uk/llms.txt
+LLMs-Full: https://jakefieldhouse.co.uk/llms-full.txt
+
