@@ -34,7 +34,7 @@ const serviceDetails: Record<string, string[]> = {
     "Screen & Battery Replacements",
     "Custom modding & upgrades"
   ],
-  "MSP Services": [
+  "Managed IT": [
     "24/7 Remote Monitoring & Maintenance",
     "Endpoint Detection & Response (EDR)",
     "Cloud Backups & Disaster Recovery",
@@ -50,21 +50,21 @@ const serviceDetails: Record<string, string[]> = {
     "RAID Rebuilds",
     "Secure Chain of Custody"
   ],
-  "Sustainable Tech": [
-    "Free Corporate E-Waste Collection",
-    "DoD Standard Data Destruction",
-    "Certified Zero-Landfill Recycling",
-    "Asset Value Recovery (Buybacks)",
-    "Carbon Offset Reporting",
-    "Circular Economy Integration"
+  "E-Waste & ITAD": [
+    "Free Business E-Waste Collection",
+    "NIST 800-88 Data Destruction",
+    "Certificate of Destruction",
+    "Zero-Landfill Policy",
+    "WEEE 2025 Compliant",
+    "Nationwide Service Available"
   ]
 };
 
 const serviceColors: Record<string, string> = {
   "Repair Ninja": "bg-red-500",
-  "MSP Services": "bg-blue-500",
+  "Managed IT": "bg-blue-500",
   "Data Recovery": "bg-emerald-500",
-  "Sustainable Tech": "bg-amber-500"
+  "E-Waste & ITAD": "bg-amber-500"
 };
 
 const handleCardClick = (e: MouseEvent, title: string, description: string) => {
@@ -123,9 +123,9 @@ const handleCardClick = (e: MouseEvent, title: string, description: string) => {
         <BentoGrid class="max-w-4xl mx-auto">
           <BentoItem
             title="Repair Ninja"
-            description="Specializing in component-level electronics repair, microsoldering, and hardware diagnostics. Bringing dead tech back to life."
+            description="Manufacturer says unrepairable? We disagree. Component-level microsoldering for MacBooks, PS5s, and phones. No Fix, No Fee."
             class="md:col-span-2 group hover:border-red-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
-            @click="() => $router.push('/repair-ninja')"
+            @click="() => $router.push('/microsoldering-repair-hull')"
           >
              <template #header>
                 <div class="relative flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-red-900/50 to-neutral-900 overflow-hidden">
@@ -135,10 +135,10 @@ const handleCardClick = (e: MouseEvent, title: string, description: string) => {
           </BentoItem>
           
           <BentoItem
-            title="MSP Services"
-            description="Comprehensive Managed IT Services for business. Network infrastructure, security monitoring, and proactive support."
+            title="Managed IT"
+            description="43% of UK businesses were breached this year. Local response, enterprise protection, 24/7 monitoring."
             class="md:col-span-1 group hover:border-blue-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
-            @click="() => $router.push('/msp-services')"
+            @click="() => $router.push('/managed-it-services-hull')"
           >
             <template #header>
                 <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-blue-900/50 to-neutral-900" />
@@ -157,10 +157,10 @@ const handleCardClick = (e: MouseEvent, title: string, description: string) => {
           </BentoItem>
 
           <BentoItem
-            title="Sustainable Tech"
-            description="Zero-cost corporate e-waste solutions. We handle logistics and secure data destruction, helping your business meet sustainability goals effortlessly."
+            title="E-Waste & ITAD"
+            description="Free collection. NIST 800-88 data destruction. Certificate of Destruction included. WEEE 2025 compliant."
             class="md:col-span-2 group hover:border-amber-500/50 hover:bg-neutral-900/80 transition-all border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
-            @click="() => $router.push('/sustainable-tech')"
+            @click="() => $router.push('/secure-data-disposal-hull')"
           >
              <template #header>
                 <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-amber-900/50 to-neutral-900" />
