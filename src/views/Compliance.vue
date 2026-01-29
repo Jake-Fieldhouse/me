@@ -134,6 +134,53 @@ const getStatusPillColor = (status: string) => {
             </div>
         </div>
     </div>
+
+    <!-- Client Resources (Safety Net) -->
+    <section class="mt-20 border-t border-white/5 pt-12">
+        <h2 class="text-3xl font-bold mb-8">Client Resources (Due Diligence)</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            
+            <div class="bg-neutral-900/30 p-6 rounded-xl border border-white/5 flex items-start gap-4 hover:border-white/10 transition-colors">
+                <div class="p-3 bg-neutral-800 rounded-lg text-white">
+                    <FileText class="w-6 h-6" />
+                </div>
+                <div>
+                    <h3 class="font-bold text-white">Standard RAMS Pack</h3>
+                    <p class="text-sm text-neutral-400 mt-1 mb-3">Risk Assessment & Method Statement for on-site collection.</p>
+                    <a href="/documents/RAMS_Generic_2026.pdf" @click.prevent="alert('PDF Upload Pending')" class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2">
+                        Download PDF ↓
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-neutral-900/30 p-6 rounded-xl border border-white/5 flex items-start gap-4 hover:border-white/10 transition-colors">
+                <div class="p-3 bg-neutral-800 rounded-lg text-white">
+                    <ShieldCheck class="w-6 h-6" />
+                </div>
+                <div>
+                    <h3 class="font-bold text-white">Insurance Certificate</h3>
+                    <p class="text-sm text-neutral-400 mt-1 mb-3">Public Liability & Professional Indemnity Proof of Cover.</p>
+                    <a href="#" @click.prevent="alert('Available on Request')" class="text-sm text-neutral-500 hover:text-white font-medium flex items-center gap-2 cursor-pointer">
+                        Request Copy →
+                    </a>
+                </div>
+            </div>
+
+             <div class="bg-neutral-900/30 p-6 rounded-xl border border-white/5 flex items-start gap-4 hover:border-white/10 transition-colors">
+                <div class="p-3 bg-neutral-800 rounded-lg text-white">
+                    <Lock class="w-6 h-6" />
+                </div>
+                <div>
+                    <h3 class="font-bold text-white">Pre-Signed NDA</h3>
+                    <p class="text-sm text-neutral-400 mt-1 mb-3">Standard Non-Disclosure Agreement for data handling.</p>
+                    <a href="#" @click.prevent="alert('Login Required')" class="text-sm text-neutral-500 hover:text-white font-medium flex items-center gap-2 cursor-pointer">
+                        Client Area Only
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
     
     <div class="mt-12 text-center">
         <router-link to="/" class="text-neutral-500 hover:text-white transition-colors">← Back to Home</router-link>

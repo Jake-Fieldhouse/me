@@ -66,49 +66,73 @@ const contactMethods = [
             </div>
         </div>
 
-        <!-- Option 2: Quick Message / Manual -->
+        <!-- Option 2: Secure Comms & Operations -->
         <div class="lg:col-span-2 flex flex-col gap-6">
-             <!-- Direct Contact Card -->
+             <!-- Secure Messaging Hub -->
             <div class="bg-neutral-900/50 p-6 md:p-8 rounded-3xl border border-white/5 h-full relative overflow-hidden group">
                 <!-- Ambient Glow -->
                 <div class="absolute -top-20 -right-20 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px] group-hover:bg-blue-500/20 transition-all duration-700"></div>
 
                 <h2 class="text-xl md:text-2xl font-bold text-white mb-6 flex items-center gap-3 relative z-10">
                     <span class="w-2 h-6 md:h-8 bg-blue-500 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.4)]"></span>
-                    Direct Access
+                    Secure Comms
                 </h2>
-                <p class="text-neutral-400 mb-8 relative z-10 text-sm md:text-base">Skip the calendar. For urgent MSP issues or quick quotes, reach out directly.</p>
+                <p class="text-neutral-400 mb-8 relative z-10 text-sm md:text-base">
+                    End-to-end encrypted channels for sensitive OPS and urgent response.
+                </p>
                 
-                <div class="grid gap-4 relative z-10">
-                    <a href="tel:+447404090458" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-emerald-500/30 transition-all group/item">
-                        <div class="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover/item:text-emerald-400 group-hover/item:scale-110 transition-all">
-                            <span class="text-lg">📞</span>
-                        </div>
-                        <div>
-                            <div class="text-[10px] text-neutral-500 uppercase tracking-widest font-bold">Priority Line</div>
-                            <div class="text-white font-mono text-sm md:text-base group-hover/item:text-emerald-400 transition-colors">+44 7404 090 458</div>
-                        </div>
-                    </a>
-
-                    <a href="https://wa.me/447404090458" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-green-500/30 transition-all group/item">
-                        <div class="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center text-green-500 group-hover/item:text-green-400 group-hover/item:scale-110 transition-all">
+                <div class="grid gap-3 relative z-10">
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/447404090458" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-green-500/10 border border-white/5 hover:border-green-500/30 transition-all group/item">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center text-green-500 group-hover/item:scale-110 transition-all">
                             <span class="text-lg">💬</span>
                         </div>
-                        <div>
-                            <div class="text-[10px] text-neutral-500 uppercase tracking-widest font-bold">WhatsApp</div>
-                            <div class="text-white font-medium text-sm md:text-base group-hover/item:text-green-400 transition-colors">Chat Instantly</div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-bold group-hover/item:text-green-400 transition-colors">WhatsApp</span>
+                                <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded text-xs">Business</span>
+                            </div>
+                            <div class="text-neutral-500 text-xs mt-0.5">Quick Ops & Quotes</div>
                         </div>
+                        <span class="text-neutral-600 group-hover/item:text-green-500 transition-colors">→</span>
                     </a>
 
-                    <a href="mailto:jake@jakefieldhouse.co.uk" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-blue-500/30 transition-all group/item">
-                        <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 group-hover/item:text-blue-400 group-hover/item:scale-110 transition-all">
-                            <span class="text-lg">📧</span>
+                    <!-- Signal -->
+                    <a href="https://signal.me/#p/+447404090458" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-indigo-500/10 border border-white/5 hover:border-indigo-500/30 transition-all group/item">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover/item:scale-110 transition-all">
+                            <span class="text-lg">🔒</span>
                         </div>
-                        <div class="min-w-0"> <!-- Prevent overflow container -->
-                            <div class="text-[10px] text-neutral-500 uppercase tracking-widest font-bold">Email</div>
-                            <div class="text-white font-medium break-all text-sm group-hover/item:text-blue-400 transition-colors">jake@jakefieldhouse.co.uk</div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-bold group-hover/item:text-indigo-400 transition-colors">Signal</span>
+                                <span class="text-[10px] bg-indigo-500/20 text-indigo-400 px-2 py-0.5 rounded text-xs">Encrypted</span>
+                            </div>
+                            <div class="text-neutral-500 text-xs mt-0.5">Confidential & Private</div>
                         </div>
+                        <span class="text-neutral-600 group-hover/item:text-indigo-500 transition-colors">→</span>
                     </a>
+
+                    <!-- Telegram -->
+                    <a href="https://t.me/JakeFieldhouseIT" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-sky-500/10 border border-white/5 hover:border-sky-500/30 transition-all group/item">
+                        <div class="w-10 h-10 rounded-lg bg-sky-500/20 flex items-center justify-center text-sky-400 group-hover/item:scale-110 transition-all">
+                            <span class="text-lg">✈️</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-bold group-hover/item:text-sky-400 transition-colors">Telegram</span>
+                            </div>
+                            <div class="text-neutral-500 text-xs mt-0.5">Direct Channel</div>
+                        </div>
+                        <span class="text-neutral-600 group-hover/item:text-sky-500 transition-colors">→</span>
+                    </a>
+                </div>
+                
+                <!-- VCard / Save Contact -->
+                <div class="mt-6 pt-6 border-t border-white/5 relative z-10 text-center">
+                     <a href="#" class="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path></svg>
+                        Save Contact (vCard)
+                     </a>
                 </div>
             </div>
         </div>
