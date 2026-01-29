@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import FluidCursor from './components/FluidCursor.vue'
 import AuroraBackground from './components/AuroraBackground.vue'
-import Preloader from './components/Preloader.vue'
+import PremiumPreloader from './components/PremiumPreloader.vue'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import { ref, onMounted } from 'vue'
@@ -23,10 +23,10 @@ onMounted(() => {
         router.replace('/' + decodeURIComponent(redirectPath))
     }
 
-    // Artificial minimum load time for effect
+    // Load time for premium effect
     setTimeout(() => {
         isLoading.value = false
-    }, 2000)
+    }, 2500)
 })
 
 const acceptCookies = () => {
@@ -50,7 +50,7 @@ if (localStorage.getItem('cookies-accepted')) {
     </AuroraBackground>
 
     <!-- Preloader -->
-    <Preloader :loading="isLoading" />
+    <PremiumPreloader :loading="isLoading" />
 
     <!-- Cursor Layer -->
     <FluidCursor class="fixed inset-0 z-50 pointer-events-none" />

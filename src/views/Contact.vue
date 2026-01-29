@@ -49,16 +49,16 @@ const contactMethods = [
     </div>
 
     <!-- Booking & Contact Options -->
-    <section ref="formRef" class="grid lg:grid-cols-5 gap-8">
+    <section ref="formRef" class="grid lg:grid-cols-5 gap-6">
         
         <!-- Option 1: Instant Booking (Cal.com) -->
-        <div class="lg:col-span-3 bg-neutral-900/50 p-1 rounded-3xl border border-white/5 overflow-hidden h-fit">
-            <div class="p-6 pb-2">
-                <h2 class="text-2xl font-bold text-white flex items-center gap-3">
-                    <span class="w-2 h-8 bg-emerald-500 rounded-full"></span>
-                    Book a Time
+        <div class="lg:col-span-3 bg-neutral-900/50 p-1 rounded-3xl border border-white/5 overflow-hidden h-fit shadow-2xl shadow-black/50">
+            <div class="p-6 pb-4 border-b border-white/5 bg-white/5 backdrop-blur-sm">
+                <h2 class="text-xl md:text-2xl font-bold text-white flex items-center gap-3">
+                    <span class="w-2 h-6 md:h-8 bg-emerald-500 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.4)]"></span>
+                    Book Consultation
                 </h2>
-                <p class="text-neutral-400 mt-2 text-sm">Schedule a 15-min discovery call or consultation instantly.</p>
+                <p class="text-neutral-400 mt-1 text-sm">Schedule a 15-min discovery call instantly.</p>
             </div>
             <!-- Cal.com Embed -->
             <div class="w-full h-[600px] bg-neutral-900" id="cal-embed">
@@ -67,42 +67,46 @@ const contactMethods = [
         </div>
 
         <!-- Option 2: Quick Message / Manual -->
-        <div class="lg:col-span-2 space-y-6">
-            <div class="bg-neutral-900/50 p-8 rounded-3xl border border-white/5 h-fit">
-                <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                    <span class="w-2 h-8 bg-blue-500 rounded-full"></span>
-                    Urgent / Quick Chat?
+        <div class="lg:col-span-2 flex flex-col gap-6">
+             <!-- Direct Contact Card -->
+            <div class="bg-neutral-900/50 p-6 md:p-8 rounded-3xl border border-white/5 h-full relative overflow-hidden group">
+                <!-- Ambient Glow -->
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px] group-hover:bg-blue-500/20 transition-all duration-700"></div>
+
+                <h2 class="text-xl md:text-2xl font-bold text-white mb-6 flex items-center gap-3 relative z-10">
+                    <span class="w-2 h-6 md:h-8 bg-blue-500 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.4)]"></span>
+                    Direct Access
                 </h2>
-                <p class="text-neutral-400 mb-8">Skip the calendar. If you have an urgent MSP issue or need a quick quote on WhatsApp, reach out directly.</p>
+                <p class="text-neutral-400 mb-8 relative z-10 text-sm md:text-base">Skip the calendar. For urgent MSP issues or quick quotes, reach out directly.</p>
                 
-                <div class="space-y-4">
-                    <a href="tel:+447404090458" class="flex items-center gap-4 p-4 rounded-xl bg-neutral-800 hover:bg-neutral-700 transition-colors group">
-                        <div class="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-black transition-all">
-                            <span class="text-xl">📞</span>
+                <div class="grid gap-4 relative z-10">
+                    <a href="tel:+447404090458" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-emerald-500/30 transition-all group/item">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover/item:text-emerald-400 group-hover/item:scale-110 transition-all">
+                            <span class="text-lg">📞</span>
                         </div>
                         <div>
-                            <div class="text-xs text-neutral-500 uppercase tracking-widest font-bold">Business Line</div>
-                            <div class="text-white font-mono text-lg">+44 7404 090 458</div>
+                            <div class="text-[10px] text-neutral-500 uppercase tracking-widest font-bold">Priority Line</div>
+                            <div class="text-white font-mono text-sm md:text-base group-hover/item:text-emerald-400 transition-colors">+44 7404 090 458</div>
                         </div>
                     </a>
 
-                    <a href="https://wa.me/447404090458" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-neutral-800 hover:bg-neutral-700 transition-colors group">
-                        <div class="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center text-green-500 group-hover:bg-green-500 group-hover:text-black transition-all">
-                            <span class="text-xl">💬</span>
+                    <a href="https://wa.me/447404090458" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-green-500/30 transition-all group/item">
+                        <div class="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center text-green-500 group-hover/item:text-green-400 group-hover/item:scale-110 transition-all">
+                            <span class="text-lg">💬</span>
                         </div>
                         <div>
-                            <div class="text-xs text-neutral-500 uppercase tracking-widest font-bold">WhatsApp</div>
-                            <div class="text-white font-medium">Chat Instantly</div>
+                            <div class="text-[10px] text-neutral-500 uppercase tracking-widest font-bold">WhatsApp</div>
+                            <div class="text-white font-medium text-sm md:text-base group-hover/item:text-green-400 transition-colors">Chat Instantly</div>
                         </div>
                     </a>
 
-                    <a href="mailto:jake@jakefieldhouse.co.uk" class="flex items-center gap-4 p-4 rounded-xl bg-neutral-800 hover:bg-neutral-700 transition-colors group">
-                        <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 group-hover:bg-blue-500 group-hover:text-black transition-all">
-                            <span class="text-xl">📧</span>
+                    <a href="mailto:jake@jakefieldhouse.co.uk" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-blue-500/30 transition-all group/item">
+                        <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 group-hover/item:text-blue-400 group-hover/item:scale-110 transition-all">
+                            <span class="text-lg">📧</span>
                         </div>
-                        <div>
-                            <div class="text-xs text-neutral-500 uppercase tracking-widest font-bold">Email</div>
-                            <div class="text-white font-medium break-all text-sm sm:text-base">jake@jakefieldhouse.co.uk</div>
+                        <div class="min-w-0"> <!-- Prevent overflow container -->
+                            <div class="text-[10px] text-neutral-500 uppercase tracking-widest font-bold">Email</div>
+                            <div class="text-white font-medium break-all text-sm group-hover/item:text-blue-400 transition-colors">jake@jakefieldhouse.co.uk</div>
                         </div>
                     </a>
                 </div>
