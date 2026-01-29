@@ -37,16 +37,7 @@ const complianceItems = ref([
         expiry: 'Standard Operating Procedure',
         proofUrl: '/documents/certificate_of_destruction_example.html'
     },
-    {
-        title: 'ADISA Certification',
-        description: 'Asset Disposal & Information Security Alliance certification for data sanitization. We adhere to ADISA standards while formal audit is pending.',
-        status: 'pending',
-        color: 'text-amber-500',
-        icon: ShieldCheck,
-        regNumber: 'Pending Audit',
-        expiry: null,
-        proofUrl: null
-    },
+
     {
         title: 'DBS Enhanced Check',
         description: 'Full Enhanced Disclosure & Barring Service check. Active subscription to the Update Service for real-time status verification. Full certificate available on request.',
