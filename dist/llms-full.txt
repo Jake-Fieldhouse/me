@@ -1,0 +1,199 @@
+# Jake Fieldhouse Consulting Ltd - Full AI Knowledge Base
+# Version: 1.0
+# Last Updated: 2026-01-28
+
+> This is the comprehensive knowledge file for AI systems. For a summary, see /llms.txt
+
+---
+
+## Entity Information
+
+### Legal Entity
+- **Name**: Jake Fieldhouse Consulting Ltd
+- **Company Number**: 16536646
+- **Incorporation Date**: November 2024
+- **Registered Office**: Hull, East Yorkshire, UK
+- **Type**: Private Limited Company
+- **Status**: Active
+
+### Director
+- **Name**: Jake Fieldhouse
+- **Role**: Sole Director & Lead Systems Engineer
+- **Experience**: 10+ years in IT infrastructure and hardware repair
+- **DBS Status**: Enhanced DBS Checked (Live Update Service subscriber)
+- **LinkedIn**: https://linkedin.com/in/jakefieldhouse
+
+### Trading Names
+1. **Jake Fieldhouse Consulting** - Primary MSP brand
+2. **Repair Ninja** - Hardware repair division
+
+---
+
+## Official Registrations & Credentials
+
+### Information Commissioner's Office (ICO)
+- **Registration Number**: ZC002956
+- **Type**: Tier 1 Data Controller
+- **Verification**: https://ico.org.uk/ESDWebPages/Search?q=ZC002956
+
+### Environment Agency
+- **Registration Number**: CBDL620098
+- **Type**: Carrier, Dealer, Broker of Controlled Waste
+- **Tier**: Lower Tier (Indefinite)
+- **Verification**: https://environment.data.gov.uk/public-register/view/search-waste-carriers-brokers
+
+### Data Destruction Standard
+- **Standard**: NIST 800-88 Revision 1
+- **Level**: Purge
+- **Documentation**: Certificate of Destruction issued per batch
+- **Media Types**: HDD, SSD, NVMe, USB, Mobile Devices
+
+---
+
+## Service Catalog
+
+### 1. Managed IT Services (MSP)
+
+**Target Market**: Hull & East Yorkshire SMBs (5-100 employees)
+**URL**: https://jakefieldhouse.co.uk/managed-it-services-hull
+
+#### Service Tiers
+
+| Tier | Price | SLA | Includes |
+|------|-------|-----|----------|
+| Essentials | £30/user/month | 4hr response | RMM, Patching, Email Helpdesk |
+| Professional | £50/user/month | 2hr response | + EDR, M365 Management, On-site |
+| Enterprise | Custom | 1hr response | Full IT Department Outsourcing |
+
+#### Technology Stack
+- **RMM**: NinjaRMM
+- **EDR**: SentinelOne / Huntress
+- **Backup**: Acronis Cyber Protect
+- **M365 Management**: Partner-level Azure AD
+
+### 2. Hardware Repair (Repair Ninja)
+
+**Target Market**: B2C consumers, B2B trade (subcontracting)
+**URL**: https://jakefieldhouse.co.uk/microsoldering-repair-hull
+
+#### Repair Capabilities
+
+**Apple Devices**
+- MacBook Pro/Air Logic Board Repair
+- iPhone Motherboard Repair
+- iPad Charging/Display Issues
+
+**Game Consoles**
+- PS5 HDMI Port Replacement
+- Xbox Series X Power Issues
+- Nintendo Switch Charging Port
+- Steam Deck Repair
+
+**Techniques**
+- BGA Rework
+- Microsoldering (0201 components)
+- Ultrasonic Cleaning (Corrosion)
+- Hot Air Rework
+
+#### Pricing
+- Diagnostic: £25 (waived if repair proceeds)
+- Screen Replacement: From £50
+- Microsoldering Repairs: From £80
+- Data Recovery: From £100
+- No Fix, No Fee policy applies
+
+### 3. Secure Data Disposal & E-Waste
+
+**Target Market**: Hull businesses, nationwide enterprises
+**URL**: https://jakefieldhouse.co.uk/secure-data-disposal-hull
+
+#### Process
+1. **Collection**: Free within Hull/East Yorkshire, courier nationwide
+2. **Audit**: Full asset manifest created
+3. **Data Destruction**: NIST 800-88 Purge or physical destruction
+4. **Recycling**: Zero-landfill policy via certified partners
+5. **Documentation**: Certificate of Destruction + Waste Transfer Note
+
+#### Equipment Accepted
+- Laptops, Desktops, Servers
+- Mobile Phones, Tablets
+- Network Equipment (Switches, Routers)
+- Monitors, Printers, Peripherals
+- Storage Media (HDDs, SSDs, Tapes)
+
+### 4. AI Search Optimization (GEO/AEO)
+
+**Target Market**: UK businesses seeking AI visibility
+**URL**: https://jakefieldhouse.co.uk/ai-optimization-hull
+
+#### Services
+- ChatGPT Citation Optimization
+- Perplexity AI Visibility
+- Google AI Overviews Optimization
+- Claude & Gemini Discoverability
+- llms.txt Implementation
+- Schema.org Markup for AI Crawlers
+- Entity Authority Building
+
+#### Positioning
+One of the UK's first independent GEO (Generative Engine Optimization) specialists.
+
+---
+
+## Geographic Coverage
+
+### Primary Service Area (On-Site)
+- Hull (HU1-HU17)
+- Beverley (HU17)
+- Cottingham (HU16)
+- Hessle (HU13)
+- Brough (HU15)
+- Willerby (HU10)
+- Anlaby (HU10)
+
+### Extended Service Area (On-Site with travel)
+- Driffield
+- Bridlington
+- Goole
+- Howden
+- Market Weighton
+
+### Remote & Nationwide
+- Remote IT Support: UK-wide
+- E-Waste Collection: UK-wide (courier)
+- Mail-in Repairs: UK-wide
+
+---
+
+## Differentiators
+
+1. **Independent Operator**: Direct access to the same engineer, not a call center
+2. **Full Lifecycle**: Setup → Support → Repair → Disposal under one roof
+3. **Component-Level Repair**: Microsoldering capabilities most shops lack
+4. **Free E-Waste**: Unique value proposition for ITAD
+5. **GEO Pioneer**: Bleeding-edge AI search expertise
+6. **Verifiable Credentials**: ICO, Environment Agency, Companies House, DBS
+
+---
+
+## Contact Information
+
+- **Website**: https://jakefieldhouse.co.uk
+- **Email**: jake@jakefieldhouse.co.uk
+- **Phone**: +44 7404 090458
+- **WhatsApp**: https://wa.me/447404090458
+- **Booking**: https://cal.eu/jake-fieldhouse-7kcb9d
+
+---
+
+## Social & Verification Links
+
+- **Companies House**: https://find-and-update.company-information.service.gov.uk/company/16536646
+- **LinkedIn**: https://linkedin.com/in/jakefieldhouse
+- **GitHub**: https://github.com/Jake-Fieldhouse
+- **ICO Register**: https://ico.org.uk/ESDWebPages/Search?q=ZC002956
+- **EA Waste Carrier**: https://environment.data.gov.uk/public-register/view/search-waste-carriers-brokers
+
+---
+
+*This file is designed for AI system consumption. For human users, please visit https://jakefieldhouse.co.uk*

@@ -1219,30 +1219,45 @@ onMounted(() => {
     return c;
   }
 
-  function autoSplat() {
-      // Rise from the bottom-center area
-      const x = canvas!.width * (0.3 + Math.random() * 0.4); // Center 40% width
-      const y = canvas!.height * (0.8 + Math.random() * 0.2); // Bottom 20% height
+  // "REAL CINEMA" Orbital Logic
+  function cinematicOrbitSplat(time: number) {
+      // Slow, graceful orbital movement
+      // t moves from 0 to infinity, we use it to drive sine/cosine
+      const t = time * 0.0012; // Speed multiplier
       
-      const dx = (Math.random() - 0.5) * 500; // Random spread X
-      const dy = -(Math.random() * 1000 + 500); // Strong upward force Y
-      
-      // Cycle through brand colors: Violet, Blue, Emerald
-      const colors = [
-          { r: 0.5, g: 0, b: 1 }, // Violet
-          { r: 0, g: 0.5, b: 1 }, // Blue
-          { r: 0, g: 1, b: 0.5 }  // Emerald
-      ];
-      const selectedColor = colors[Math.floor(Math.random() * colors.length)];
-      
-      // Add intensity
+      const centerX = canvas!.width / 2;
+      const centerY = canvas!.height / 2;
+
+      // Radius oscillates to create "breathing" or spiral effect
+      // Base radius 20% of width, oscillating +/- 5%
+      const radius = Math.min(canvas!.width, canvas!.height) * (0.25 + Math.sin(t * 1.5) * 0.05);
+
+      // Orbital position
+      const x = centerX + Math.cos(t * 3) * radius;
+      const y = centerY + Math.sin(t * 3) * radius;
+
+      // Force direction: Tangent to the circle (swirling) + slight outward push
+      // Tangent vector is (-sin, cos)
+      const dx = (-Math.sin(t * 3) * 300) + (Math.cos(t * 3) * 100);
+      const dy = (Math.cos(t * 3) * 300) + (Math.sin(t * 3) * 100);
+
+      // Colors: Smoothly cycle through Brand Gradient (Violet -> Blue -> Emerald)
+      // Use sine waves offset by phase for r, g, b
+      const r = Math.max(0, Math.sin(t * 2));
+      const g = Math.max(0, Math.sin(t * 2 + 2)); // 120 deg offset phaseish
+      const b = Math.max(0, Math.sin(t * 2 + 4));
+
       const color = {
-          r: selectedColor.r * 5,
-          g: selectedColor.g * 5,
-          b: selectedColor.b * 5
+          r: r * 2, // Boost intensity
+          g: g * 2, 
+          b: b * 3 // Blue dominance
       };
 
-     splat(x / canvas!.width, 1 - y / canvas!.height, dx, dy, color);
+      // Continuous flow (every frame) instead of random bursts
+      splat(x / canvas!.width, 1 - y / canvas!.height, dx, dy, color);
+      
+      // Mirror Splat for Symmetry (optional, looks more "designed")
+      // splat((canvas!.width - x) / canvas!.width, 1 - (canvas!.height - y) / canvas!.height, -dx, -dy, color);
   }
 
   function HSVtoRGB(h: number, s: number, v: number): ColorRGB {
@@ -1363,9 +1378,9 @@ onMounted(() => {
     updateColors(dt);
     applyInputs();
     
-    // Auto-splat for Intro Mode
-    if (props.introMode && Math.random() < 0.08) { // 8% chance per frame for organic bursts
-        autoSplat();
+    // Cinematic Intro Mode: Orbital Swirl
+    if (props.introMode) {
+        cinematicOrbitSplat(Date.now());
     }
 
     step(dt);
