@@ -102,7 +102,7 @@ const contactMethods = [
                         </div>
                         <div>
                             <div class="text-xs text-neutral-500 uppercase tracking-widest font-bold">Email</div>
-                            <div class="text-white font-medium">jake@jakefieldhouse.co.uk</div>
+                            <div class="text-white font-medium break-all text-sm sm:text-base">jake@jakefieldhouse.co.uk</div>
                         </div>
                     </a>
                 </div>
