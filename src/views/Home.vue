@@ -3,6 +3,8 @@ import BentoGrid from '../components/BentoGrid.vue'
 import BentoItem from '../components/BentoItem.vue'
 import CircuitPattern from '../components/CircuitPattern.vue'
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
+import OutcomeStats from '../components/OutcomeStats.vue'
+import Testimonials from '../components/Testimonials.vue'
 import { ref } from 'vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
 
@@ -104,10 +106,11 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
         </BentoGrid>
       </main>
 
+      <!-- Outcome Stats -->
+      <OutcomeStats class="w-full" />
 
-
-
-
+      <!-- Testimonials (hidden until populated) -->
+      <Testimonials class="w-full" />
 
     </div>
 </template>
