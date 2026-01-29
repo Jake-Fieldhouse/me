@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import FluidCursor from './components/FluidCursor.vue'
 import AuroraBackground from './components/AuroraBackground.vue'
-import PremiumPreloader from './components/PremiumPreloader.vue'
+import ArtHousePreloader from './components/ArtHousePreloader.vue'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import { ref, onMounted } from 'vue'
@@ -23,10 +23,10 @@ onMounted(() => {
         router.replace('/' + decodeURIComponent(redirectPath))
     }
 
-    // Load time for premium effect
+    // Load time for art house effect
     setTimeout(() => {
         isLoading.value = false
-    }, 2500)
+    }, 3500)
 })
 
 const acceptCookies = () => {
@@ -49,11 +49,11 @@ if (localStorage.getItem('cookies-accepted')) {
         <!-- Aurora handles its own visuals -->
     </AuroraBackground>
 
-    <!-- Preloader -->
-    <PremiumPreloader :loading="isLoading" />
+    <!-- Art House Preloader (Z-40, provides black background) -->
+    <ArtHousePreloader :loading="isLoading" />
 
-    <!-- Cursor Layer -->
-    <FluidCursor class="fixed inset-0 z-50 pointer-events-none" />
+    <!-- Cursor Layer (Z-50, smoke sits ON TOP of preloader) -->
+    <FluidCursor class="fixed inset-0 z-50 pointer-events-none" :intro-mode="isLoading" />
 
     <!-- Navigation -->
     <Navbar />

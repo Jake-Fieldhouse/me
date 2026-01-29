@@ -22,6 +22,7 @@ interface Props {
   colorUpdateSpeed?: number;
   backColor?: ColorRGB;
   transparent?: boolean;
+  introMode?: boolean;
   class?: HTMLAttributes["class"];
 }
 
@@ -38,8 +39,9 @@ const props = withDefaults(defineProps<Props>(), {
   splatForce: 2000,
   shading: true,
   colorUpdateSpeed: 10,
-  backColor: () => ({ r: 0.5, g: 0, b: 0 }),
+  backColor: () => ({ r: 0, g: 0, b: 0 }),
   transparent: true,
+  introMode: false,
 });
 
 interface Pointer {
@@ -1217,6 +1219,32 @@ onMounted(() => {
     return c;
   }
 
+  function autoSplat() {
+      // Rise from the bottom-center area
+      const x = canvas!.width * (0.3 + Math.random() * 0.4); // Center 40% width
+      const y = canvas!.height * (0.8 + Math.random() * 0.2); // Bottom 20% height
+      
+      const dx = (Math.random() - 0.5) * 500; // Random spread X
+      const dy = -(Math.random() * 1000 + 500); // Strong upward force Y
+      
+      // Cycle through brand colors: Violet, Blue, Emerald
+      const colors = [
+          { r: 0.5, g: 0, b: 1 }, // Violet
+          { r: 0, g: 0.5, b: 1 }, // Blue
+          { r: 0, g: 1, b: 0.5 }  // Emerald
+      ];
+      const selectedColor = colors[Math.floor(Math.random() * colors.length)];
+      
+      // Add intensity
+      const color = {
+          r: selectedColor.r * 5,
+          g: selectedColor.g * 5,
+          b: selectedColor.b * 5
+      };
+
+     splat(x / canvas!.width, 1 - y / canvas!.height, dx, dy, color);
+  }
+
   function HSVtoRGB(h: number, s: number, v: number): ColorRGB {
     let r = 0;
     let g = 0;
@@ -1334,6 +1362,12 @@ onMounted(() => {
     if (resizeCanvas()) initFramebuffers();
     updateColors(dt);
     applyInputs();
+    
+    // Auto-splat for Intro Mode
+    if (props.introMode && Math.random() < 0.08) { // 8% chance per frame for organic bursts
+        autoSplat();
+    }
+
     step(dt);
     render(null);
     animationFrameId = requestAnimationFrame(updateFrame);
