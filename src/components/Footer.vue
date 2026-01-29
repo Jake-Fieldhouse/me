@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const currentYear = new Date().getFullYear()
 </script>
 
 <template>
@@ -13,7 +14,7 @@
             <span class="text-xs text-green-500 font-medium tracking-wide">All Systems Operational</span>
         </div>
 
-        <p>Jake Fieldhouse Consulting Ltd | Company No. 16536646</p>
+        <p>© {{ currentYear }} Jake Fieldhouse Consulting Ltd | Company No. 16536646</p>
         <p class="text-xs text-neutral-400">Hull & East Yorkshire | UK-Wide On-Site | Remote Worldwide</p>
         
         <!-- Main Navigation -->
