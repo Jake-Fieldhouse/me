@@ -109,6 +109,15 @@ const router = createRouter({
                 description: 'Get a quote for repair, schedule an MSP consultation, or book an e-waste collection. Response within 24 hours.'
             }
         },
+        {
+            path: '/feedback',
+            name: 'feedback',
+            component: () => import('../views/Feedback.vue'),
+            meta: {
+                title: 'Share Your Experience | Jake Fieldhouse Consulting',
+                description: 'Your feedback helps us improve. Share your experience working with Jake Fieldhouse Consulting.'
+            }
+        },
         // ==================== BLOG ====================
         {
             path: '/blog',

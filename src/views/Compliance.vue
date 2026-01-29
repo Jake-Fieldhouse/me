@@ -151,8 +151,8 @@ const showPendingAlert = (msg: string) => {
                 <div>
                     <h3 class="font-bold text-white">Standard RAMS Pack</h3>
                     <p class="text-sm text-neutral-400 mt-1 mb-3">Risk Assessment & Method Statement for on-site collection.</p>
-                    <a href="/documents/RAMS_Generic_2026.pdf" @click.prevent="showPendingAlert('PDF Upload Pending')" class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2">
-                        Download PDF ↓
+                    <a href="/documents/RAMS-Generic.md" download class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2">
+                        Download Document ↓
                     </a>
                 </div>
             </div>
@@ -177,8 +177,8 @@ const showPendingAlert = (msg: string) => {
                 <div>
                     <h3 class="font-bold text-white">Pre-Signed NDA</h3>
                     <p class="text-sm text-neutral-400 mt-1 mb-3">Standard Non-Disclosure Agreement for data handling.</p>
-                    <a href="#" @click.prevent="showPendingAlert('Login Required')" class="text-sm text-neutral-500 hover:text-white font-medium flex items-center gap-2 cursor-pointer">
-                        Client Area Only
+                    <a href="/documents/NDA-Template.md" download class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2">
+                        Download Template ↓
                     </a>
                 </div>
             </div>
