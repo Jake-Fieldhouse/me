@@ -103,8 +103,8 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
           </BentoItem>
 
           <BentoItem
-            title="E-Waste & ITAD"
-            description="Free collection. NIST 800-88 data destruction. Certificate of Destruction included. WEEE 2025 compliant."
+            title="E-Waste & Recycling"
+            description="Stop paying for disposal. Free business collection, Zero Landfill policy, and full compliance documentation."
             class="md:col-span-2 group hover:scale-[1.02] transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
             @click="() => $router.push('/secure-data-disposal-hull')"
           >
@@ -112,7 +112,7 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
                 <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-amber-900/50 to-neutral-900" />
              </template>
              <div class="mt-4 flex items-center text-amber-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
-                Get Certified <span class="ml-1">→</span>
+                Book Collection <span class="ml-1">→</span>
              </div>
           </BentoItem>
         </BentoGrid>

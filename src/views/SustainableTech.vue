@@ -49,23 +49,24 @@ const scrollToQuote = () => {
   <div class="relative w-full max-w-7xl mx-auto px-6 py-20 flex flex-col gap-20">
     
     <!-- Hero -->
+    <!-- Hero -->
     <header ref="headerRef" class="text-center space-y-6 mt-10">
-      <div class="inline-block px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-medium mb-4">
-          New WEEE Regulations Nov 2025 • Is Your Business Compliant?
+      <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-4">
+          Zero Landfill Policy • 100% Free Service
       </div>
       <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
-        Free Collection. <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">Zero Risk.</span>
+        Business IT Recycling <br class="hidden md:block" /> & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">Collection</span>
       </h1>
       <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-        GDPR fines reach <strong>£17.5 million</strong> for improper data disposal. We collect your e-waste for free, destroy your data to NIST 800-88 standards, and provide certificates that prove compliance.
+        Stop paying to dispose of your IT assets. We offer a superior, zero-landfill service with full Waste Transfer documentation—completely free of charge.
       </p>
       <div class="flex justify-center gap-4 pt-4">
         <button @click="scrollToQuote" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors">
           Book Free Collection
         </button>
-        <router-link to="/" class="px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/10">
-          Back to Home
-        </router-link>
+        <button @click="() => document.getElementById('comparison')?.scrollIntoView({ behavior: 'smooth' })" class="px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/10">
+          Why It's Free?
+        </button>
       </div>
     </header>
 
@@ -181,7 +182,7 @@ const scrollToQuote = () => {
     </section>
 
     <!-- Us vs Them Comparison -->
-    <section class="border-t border-white/5 pt-20">
+    <section id="comparison" class="border-t border-white/5 pt-20">
         <h2 class="text-3xl font-bold text-white text-center mb-12">Why Choose Us?</h2>
         <div class="overflow-x-auto">
             <table class="w-full text-left border-collapse min-w-[600px]">
@@ -228,7 +229,7 @@ const scrollToQuote = () => {
         <div class="space-y-6">
             <h2 class="text-3xl font-bold text-white">Bank-Grade Data Security</h2>
             <p class="text-neutral-400 leading-relaxed">
-                We understand that your data is your most valuable asset. That's why we treat every hard drive, SSD, and memory stick as if it contains top-secret information.
+                We understand that your data is your most valuable asset—and your biggest liability. With GDPR fines reaching <strong>£17.5 million</strong>, taking chances with "man & van" clearance is a risk you can't afford.
             </p>
             <ul class="space-y-4 pt-4">
                 <li class="flex items-start gap-3">
