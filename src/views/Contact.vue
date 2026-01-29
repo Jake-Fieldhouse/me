@@ -113,7 +113,7 @@ const contactMethods = [
                     </a>
 
                     <!-- Telegram -->
-                    <a href="https://t.me/JakeFieldhouseIT" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-sky-500/10 border border-white/5 hover:border-sky-500/30 transition-all group/item">
+                    <a href="https://t.me/jakefieldhouse" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-sky-500/10 border border-white/5 hover:border-sky-500/30 transition-all group/item">
                         <div class="w-10 h-10 rounded-lg bg-sky-500/20 flex items-center justify-center text-sky-400 group-hover/item:scale-110 transition-all">
                             <span class="text-lg">✈️</span>
                         </div>
@@ -121,7 +121,7 @@ const contactMethods = [
                             <div class="flex justify-between items-center">
                                 <span class="text-white font-bold group-hover/item:text-sky-400 transition-colors">Telegram</span>
                             </div>
-                            <div class="text-neutral-500 text-xs mt-0.5">Direct Channel</div>
+                            <div class="text-neutral-500 text-xs mt-0.5">@jakefieldhouse</div>
                         </div>
                         <span class="text-neutral-600 group-hover/item:text-sky-500 transition-colors">→</span>
                     </a>
