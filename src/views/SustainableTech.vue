@@ -43,6 +43,10 @@ Thanks!
 const scrollToQuote = () => {
     document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' })
 }
+
+const scrollToComparison = () => {
+    document.getElementById('comparison')?.scrollIntoView({ behavior: 'smooth' })
+}
 </script>
 
 <template>
@@ -64,7 +68,7 @@ const scrollToQuote = () => {
         <button @click="scrollToQuote" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors">
           Book Free Collection
         </button>
-        <button @click="() => document.getElementById('comparison')?.scrollIntoView({ behavior: 'smooth' })" class="px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/10">
+        <button @click="scrollToComparison" class="px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/10">
           Why It's Free?
         </button>
       </div>
