@@ -309,6 +309,16 @@ const router = createRouter({
                 title: 'Local IT Services | Jake Fieldhouse Consulting',
                 description: 'Professional IT services in your local area.'
             }
+        },
+        // ==================== 404 CATCH-ALL ====================
+        {
+            path: '/:pathMatch(.*)*',
+            name: 'not-found',
+            component: () => import('../views/NotFound.vue'),
+            meta: {
+                title: '404 - Page Not Found | Jake Fieldhouse Consulting',
+                description: 'The page you are looking for does not exist.'
+            }
         }
     ],
     scrollBehavior(_to, _from, savedPosition) {
