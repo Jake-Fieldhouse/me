@@ -60,9 +60,15 @@ const contactMethods = [
                 </h2>
                 <p class="text-neutral-400 mt-1 text-sm">Schedule a 15-min discovery call instantly.</p>
             </div>
-            <!-- Cal.com Embed -->
-            <div class="w-full h-[600px] bg-neutral-900" id="cal-embed">
-                <iframe src="https://cal.eu/jake-fieldhouse-7kcb9d?embed=true&theme=dark" style="width: 100%; height: 100%; overflow: scroll;" frameborder="0"></iframe>
+            <!-- Cal.com Embed - Styled to match site theme -->
+            <div class="w-full h-[580px] bg-neutral-950 rounded-2xl overflow-hidden">
+                <iframe 
+                    src="https://cal.eu/jake-fieldhouse-7kcb9d?embed=true&theme=dark&hideEventTypeDetails=true" 
+                    style="width: 100%; height: 100%; border: none;" 
+                    frameborder="0"
+                    loading="lazy"
+                    title="Book a consultation with Jake Fieldhouse"
+                ></iframe>
             </div>
         </div>
 

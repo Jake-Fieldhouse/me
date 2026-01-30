@@ -6,150 +6,196 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting... | Jake Fieldhouse Consulting</title>
 
-    <!-- Security Headers -->
+    <!-- Security Headers - STRICT CSP -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none';">
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none'; upgrade-insecure-requests;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <script>
-        // GitHub Pages SPA Redirect with Route Validation
-        // Only redirects KNOWN valid routes to the SPA. Unknown routes show 404.
-        (function () {
-            var location = window.location;
-            var search = location.search;
-
-            // If already redirected with ?p=, don't loop
-            if (search.indexOf('?p=') !== -1 || search.indexOf('&p=') !== -1) {
-                return; // Let the 404 page display
-            }
-
-            var path = location.pathname.slice(1); // Remove leading slash
-            if (!path) return;
-
-            // Known valid route patterns (must match router/index.ts)
-            var validRoutes = [
-                // Root
-                '',
-                // Core Services
-                'managed-it-services-hull',
-                'microsoldering-repair-hull',
-                'secure-data-disposal-hull',
-                'ai-optimization-hull',
-                // Legacy Redirects
-                'msp-services',
-                'repair-ninja',
-                'sustainable-tech',
-                'e-waste',
-                'ai-search',
-                // Service Areas
-                'it-support-hull',
-                'it-support-beverley',
-                'it-support-cottingham',
-                'it-support-hessle',
-                'it-support-anlaby',
-                'it-support-driffield',
-                'it-support-brough',
-                // Other Services
-                'repair-services',
-                'compliance',
-                // Company Pages
-                'about',
-                'contact',
-                'feedback',
-                'case-studies',
-                // Blog
-                'blog',
-                // Legal
-                'privacy',
-                'terms',
-                'cookies',
-                'refunds',
-                'service-commitment',
-                'complaints',
-                'environmental-policy',
-                'disclaimer',
-                // Local SEO
-                'service-areas'
-            ];
-
-            // Check if path matches a known route
-            var isKnownRoute = validRoutes.indexOf(path) !== -1;
-
-            // Check if path matches blog post pattern
-            var isBlogPost = path.startsWith('blog/');
-
-            // Check if path matches dynamic local service pattern (location-service)
-            // Valid locations: hull, beverley, driffield, bridlington, goole, withernsea, hornsea, cottingham, hessle, brough
-            // Valid services: computer-repair, laptop-repair, macbook-repair, ps5-repair, console-repair, phone-repair, it-support, managed-it-services, cybersecurity, e-waste-collection, it-disposal
-            var validLocations = ['hull', 'beverley', 'driffield', 'bridlington', 'goole', 'withernsea', 'hornsea', 'cottingham', 'hessle', 'brough'];
-            var validServices = ['computer-repair', 'laptop-repair', 'macbook-repair', 'ps5-repair', 'console-repair', 'phone-repair', 'it-support', 'managed-it-services', 'cybersecurity', 'e-waste-collection', 'it-disposal'];
-
-            var isValidLocalService = false;
-            var parts = path.split('-');
-            if (parts.length >= 2) {
-                var locSlug = parts[0];
-                var service = parts.slice(1).join('-');
-                isValidLocalService = validLocations.indexOf(locSlug) !== -1 && validServices.indexOf(service) !== -1;
-            }
-
-            if (isKnownRoute || isBlogPost || isValidLocalService) {
-                // Valid route - redirect to SPA
-                window.location.replace(
-                    location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') +
-                    '/?p=' + encodeURIComponent(path) +
-                    (location.search ? '&q=' + encodeURIComponent(location.search.slice(1)) : '') +
-                    location.hash
-                );
-            }
-            // Invalid route - let the 404 page display below
-        })();
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aurora {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .aurora-orb {
+            position: absolute;
+            width: 24rem;
+            height: 24rem;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.2;
+        }
+
+        .aurora-orb-1 {
+            top: 25%;
+            left: 25%;
+            background: #dc2626;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .aurora-orb-2 {
+            bottom: 25%;
+            right: 25%;
+            background: #f97316;
+            opacity: 0.1;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.2;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 32rem;
+        }
+
+        .code {
+            font-size: 9rem;
+            font-weight: 900;
+            background: linear-gradient(to right, #dc2626, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-top: 1.5rem;
+        }
+
+        .subtitle {
+            color: #a3a3a3;
+            margin-top: 1rem;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #fff;
+            color: #000;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: background 0.2s;
+        }
+
+        .button:hover {
+            background: #e5e5e5;
+        }
+
+        .button svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .contact {
+            color: #525252;
+            font-size: 0.875rem;
+            margin-top: 1rem;
+        }
+
+        .contact a {
+            color: #a3a3a3;
+            text-decoration: underline;
+        }
+
+        .contact a:hover {
+            color: #fff;
+        }
+
+        .redirect-msg {
+            color: #a3a3a3;
         }
     </style>
 </head>
 
-<body class="bg-black text-white min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden">
-    <!-- Aurora Background Effect -->
-    <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600/20 rounded-full blur-[100px] animate-pulse"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-[100px]"></div>
+<body>
+    <div class="aurora">
+        <div class="aurora-orb aurora-orb-1"></div>
+        <div class="aurora-orb aurora-orb-2"></div>
     </div>
 
-    <div class="relative z-10 text-center space-y-8 max-w-lg">
-        <h1 class="text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
-            404
-        </h1>
+    <!-- Redirect Logic -->
+    <script src="/js/404-router.js"></script>
 
-        <div class="space-y-4">
-            <h2 class="text-3xl font-bold">Page Not Found</h2>
-            <p class="text-neutral-400">
-                The page you're looking for doesn't exist or has been moved.
-            </p>
-        </div>
-
-        <div class="pt-8">
-            <a href="/"
-                class="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors">
+    <noscript>
+        <div class="content">
+            <div class="code">404</div>
+            <h2 class="title">Page Not Found</h2>
+            <p class="subtitle">The page you're looking for doesn't exist or has been moved.</p>
+            <a href="/" class="button">
                 <span>Go Home</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
                     </path>
                 </svg>
             </a>
+            <p class="contact">If you believe this is an error, please <a href="/contact">contact us</a>.</p>
         </div>
+    </noscript>
 
-        <p class="text-neutral-600 text-sm pt-4">
-            If you believe this is an error, please <a href="/contact"
-                class="text-neutral-400 hover:text-white underline">contact us</a>.
-        </p>
+    <div id="redirect-message" class="redirect-msg">
+        <p>Redirecting...</p>
+    </div>
+
+    <!-- Fallback 404 content (shown when not redirecting) -->
+    <div id="not-found-content" class="content" style="display: none;">
+        <div class="code">404</div>
+        <h2 class="title">Page Not Found</h2>
+        <p class="subtitle">The page you're looking for doesn't exist or has been moved.</p>
+        <a href="/" class="button">
+            <span>Go Home</span>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                </path>
+            </svg>
+        </a>
+        <p class="contact">If you believe this is an error, please <a href="/contact">contact us</a>.</p>
     </div>
 </body>
 

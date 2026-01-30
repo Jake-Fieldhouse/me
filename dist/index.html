@@ -2,22 +2,18 @@
 <html lang="en">
 
 <head>
-  <!-- Google Analytics 4 -->
+  <!-- Google Analytics 4 - External Script for Strict CSP -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S5QEQ38Y9M"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-S5QEQ38Y9M');
-  </script>
+  <script src="/js/analytics.js"></script>
 
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Security Headers (Meta Tag Fallback for GitHub Pages) -->
+  <!-- STRICT CSP: No 'unsafe-inline' for scripts - external only -->
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:;">
+    content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://app.cal.com https://cal.com https://cal.eu https://app.cal.eu; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://app.cal.com https://cal.eu; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://app.cal.com https://cal.com https://cal.eu https://app.cal.eu; frame-src https://app.cal.com https://cal.com https://cal.eu https://app.cal.eu; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -567,8 +563,8 @@
       }
     }
   </script>
-  <script type="module" crossorigin src="/assets/index-CcavY67L.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-IsGk0bmH.css">
+  <script type="module" crossorigin src="/assets/index-C7mpn8el.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DG0edlcQ.css">
 </head>
 
 <body>
