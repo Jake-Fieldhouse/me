@@ -25,6 +25,8 @@ const content = computed(() => {
 })
 
 // Redirect to 404 if location or service is invalid
+const isValid = computed(() => Boolean(location.value && service.value))
+
 const validateRoute = () => {
   if (!location.value || !service.value) {
     router.replace({ name: 'not-found' })
@@ -83,7 +85,7 @@ const relatedServices = computed(() => {
 </script>
 
 <template>
-  <div class="relative w-full max-w-7xl mx-auto px-6 py-20 flex flex-col gap-16">
+  <div v-if="isValid" class="relative w-full max-w-7xl mx-auto px-6 py-20 flex flex-col gap-16">
     
     <!-- Hero Section -->
     <header class="text-center space-y-6 mt-10 relative" v-if="location && service && content">
