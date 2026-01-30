@@ -71,6 +71,77 @@ const router = createRouter({
             path: '/ai-search',
             redirect: '/ai-optimization-hull'
         },
+        // ==================== SERVICE AREAS (Local SEO) ====================
+        {
+            path: '/it-support-hull',
+            name: 'it-support-hull',
+            component: () => import('../views/ServiceArea.vue'),
+            meta: {
+                title: 'IT Support Hull | Computer Repair & Business IT Services',
+                description: 'Local IT support and computer repair services in Hull. Same-day response, DBS checked, fully insured. On-site and remote support available.'
+            },
+            props: { location: 'hull' }
+        },
+        {
+            path: '/it-support-beverley',
+            name: 'it-support-beverley',
+            component: () => import('../views/ServiceArea.vue'),
+            meta: {
+                title: 'IT Support Beverley | Computer Repair & Business IT Services',
+                description: 'Professional IT support and computer repair in Beverley. 20-minute response time from Hull. DBS checked, fully insured.'
+            },
+            props: { location: 'beverley' }
+        },
+        {
+            path: '/it-support-cottingham',
+            name: 'it-support-cottingham',
+            component: () => import('../views/ServiceArea.vue'),
+            meta: {
+                title: 'IT Support Cottingham | Computer Repair & Business IT Services',
+                description: 'Fast IT support and computer repair in Cottingham. 10-minute response from Hull. On-site and remote support for homes and businesses.'
+            },
+            props: { location: 'cottingham' }
+        },
+        {
+            path: '/it-support-hessle',
+            name: 'it-support-hessle',
+            component: () => import('../views/ServiceArea.vue'),
+            meta: {
+                title: 'IT Support Hessle | Computer Repair & Business IT Services',
+                description: 'IT support and computer repair services in Hessle. Quick response times, professional service. DBS checked and fully insured.'
+            },
+            props: { location: 'hessle' }
+        },
+        {
+            path: '/it-support-anlaby',
+            name: 'it-support-anlaby',
+            component: () => import('../views/ServiceArea.vue'),
+            meta: {
+                title: 'IT Support Anlaby | Computer Repair & Business IT Services',
+                description: 'Reliable IT support and computer repair in Anlaby. 10-minute response from Hull base. Home and business IT services.'
+            },
+            props: { location: 'anlaby' }
+        },
+        {
+            path: '/it-support-driffield',
+            name: 'it-support-driffield',
+            component: () => import('../views/ServiceArea.vue'),
+            meta: {
+                title: 'IT Support Driffield | Computer Repair & Business IT Services',
+                description: 'Professional IT support and computer repair in Driffield & The Wolds. Regular visits, responsive remote support. DBS checked.'
+            },
+            props: { location: 'driffield' }
+        },
+        {
+            path: '/it-support-brough',
+            name: 'it-support-brough',
+            component: () => import('../views/ServiceArea.vue'),
+            meta: {
+                title: 'IT Support Brough | Computer Repair & Business IT Services',
+                description: 'IT support and computer repair in Brough & Elloughton. 20-minute response from Hull. Business and home IT services.'
+            },
+            props: { location: 'brough' }
+        },
         // ==================== OTHER SERVICES ====================
         {
             path: '/repair-services',
@@ -116,6 +187,15 @@ const router = createRouter({
             meta: {
                 title: 'Share Your Experience | Jake Fieldhouse Consulting',
                 description: 'Your feedback helps us improve. Share your experience working with Jake Fieldhouse Consulting.'
+            }
+        },
+        {
+            path: '/case-studies',
+            name: 'case-studies',
+            component: () => import('../views/CaseStudies.vue'),
+            meta: {
+                title: 'Case Studies | IT Solutions Hull | Jake Fieldhouse',
+                description: 'Real IT transformation projects in Hull & East Yorkshire. See how we\'ve helped local businesses with infrastructure, security, and digital solutions.'
             }
         },
         // ==================== BLOG ====================
