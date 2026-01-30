@@ -17,12 +17,12 @@ const SECURITY_HEADERS = {
     // Content Security Policy - Strict, no inline scripts
     'Content-Security-Policy': [
         "default-src 'self'",
-        "script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.cal.com https://*.cal.eu",
-        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.cal.com https://*.cal.eu",
+        "script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://cal.com https://*.cal.com https://cal.eu https://*.cal.eu",
+        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cal.com https://*.cal.com https://cal.eu https://*.cal.eu",
         "font-src 'self' https://fonts.gstatic.com",
         "img-src 'self' data: https:",
-        "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://*.cal.com https://*.cal.eu",
-        "frame-src https://*.cal.com https://*.cal.eu",
+        "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://cal.com https://*.cal.com https://cal.eu https://*.cal.eu",
+        "frame-src https://cal.com https://*.cal.com https://cal.eu https://*.cal.eu",
         "frame-ancestors 'none'",
         "base-uri 'self'",
         "form-action 'self' mailto:",
