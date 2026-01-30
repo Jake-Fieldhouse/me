@@ -89,9 +89,9 @@
             var isValidLocalService = false;
             var parts = path.split('-');
             if (parts.length >= 2) {
-                var location = parts[0];
+                var locSlug = parts[0];
                 var service = parts.slice(1).join('-');
-                isValidLocalService = validLocations.indexOf(location) !== -1 && validServices.indexOf(service) !== -1;
+                isValidLocalService = validLocations.indexOf(locSlug) !== -1 && validServices.indexOf(service) !== -1;
             }
 
             if (isKnownRoute || isBlogPost || isValidLocalService) {
