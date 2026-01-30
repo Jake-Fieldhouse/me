@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { computed, onMounted, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { locations, services, getLocalPageContent, type Location, type ServiceType } from '../../data/localSeo'
 import TrustBar from '../../components/TrustSignals/TrustBar.vue'
 
 const route = useRoute()
+const router = useRouter()
 
 // Parse location and service from route params
 const locationSlug = computed(() => route.params.location as string)
@@ -22,6 +23,16 @@ const content = computed(() => {
   if (!location.value || !service.value) return null
   return getLocalPageContent(location.value, service.value)
 })
+
+// Redirect to 404 if location or service is invalid
+const validateRoute = () => {
+  if (!location.value || !service.value) {
+    router.replace({ name: 'not-found' })
+  }
+}
+
+onMounted(validateRoute)
+watch([locationSlug, serviceSlug], validateRoute)
 
 const categoryColors = {
   repair: { 
