@@ -21,7 +21,7 @@ import TrustBar from '../components/TrustSignals/TrustBar.vue'
         </p>
         <div class="flex flex-col md:flex-row justify-center gap-4 pt-4">
             <router-link to="/contact" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors text-center">
-            Book Consultation
+            Get in Touch
             </router-link>
             <router-link to="/" class="px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/10 text-center">
             Back to Home

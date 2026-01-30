@@ -56,7 +56,7 @@ const contactMethods = [
             <div class="p-6 pb-4 border-b border-white/5 bg-white/5 backdrop-blur-sm">
                 <h2 class="text-xl md:text-2xl font-bold text-white flex items-center gap-3">
                     <span class="w-2 h-6 md:h-8 bg-emerald-500 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.4)]"></span>
-                    Book Consultation
+                    Get in Touch
                 </h2>
                 <p class="text-neutral-400 mt-1 text-sm">Schedule a 15-min discovery call instantly.</p>
             </div>

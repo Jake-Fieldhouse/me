@@ -41,7 +41,7 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
             to="/contact" 
             class="px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-neutral-200 transition-all hover:scale-105 shadow-lg shadow-white/10"
           >
-            Book Free Consultation
+            Get in Touch
           </router-link>
           <router-link 
             to="/about" 
@@ -112,7 +112,7 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
                 <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-amber-900/50 to-neutral-900" />
              </template>
              <div class="mt-4 flex items-center text-amber-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
-                Book Collection <span class="ml-1">→</span>
+                Get in Touch <span class="ml-1">→</span>
              </div>
           </BentoItem>
         </BentoGrid>

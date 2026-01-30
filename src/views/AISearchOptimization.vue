@@ -13,7 +13,7 @@ const packages = [
       'Competitor AI positioning',
       'Priority recommendations report'
     ],
-    cta: 'Book Audit'
+    cta: 'Get in Touch'
   },
   {
     id: 'implementation',
@@ -28,7 +28,7 @@ const packages = [
       'Citation optimization',
       '30-day post-launch support'
     ],
-    cta: 'Get a Quote',
+    cta: 'Get in Touch',
     popular: true
   },
   {

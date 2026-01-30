@@ -80,7 +80,7 @@ const services = [
       
       <div class="flex justify-center gap-4 pt-4">
         <a href="#quote" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors">
-          Get Repair Quote
+          Get in Touch
         </a>
         <router-link to="/" class="px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/10">
           Back to Home

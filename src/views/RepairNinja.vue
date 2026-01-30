@@ -54,7 +54,7 @@ const scrollToBook = () => {
         </p>
         <div class="flex flex-col md:flex-row justify-center gap-4 pt-4">
             <button @click="scrollToBook" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors text-center">
-            Start Repair
+            Get in Touch
             </button>
             <router-link to="/" class="px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/10 text-center">
             Back to Home
@@ -139,7 +139,7 @@ const scrollToBook = () => {
                     </div>
                 </div>
                 <button type="submit" class="w-full bg-red-600 hover:bg-red-500 text-white font-bold py-4 rounded-xl transition-colors mt-2">
-                    Request Quote
+                    Get in Touch
                 </button>
             </form>
         </div>

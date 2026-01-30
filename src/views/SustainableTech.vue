@@ -66,7 +66,7 @@ const scrollToComparison = () => {
       </p>
       <div class="flex justify-center gap-4 pt-4">
         <button @click="scrollToQuote" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors">
-          Book Free Collection
+          Get in Touch
         </button>
         <button @click="scrollToComparison" class="px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/10">
           Why It's Free?
@@ -352,7 +352,7 @@ const scrollToComparison = () => {
                     </div>
 
                     <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 rounded-xl transition-colors mt-2">
-                        Get Quote
+                        Get in Touch
                     </button>
                 </form>
             </div>
