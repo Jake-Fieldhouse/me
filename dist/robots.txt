@@ -38,8 +38,28 @@ Allow: /
 # Sitemap
 Sitemap: https://jakefieldhouse.co.uk/sitemap.xml
 
+# Security Policy (RFC 9116)
+# See: https://securitytxt.org/
+Security: https://jakefieldhouse.co.uk/.well-known/security.txt
+
 # AI Knowledge Files (llms.txt spec)
 # See: https://llmstxt.org/
 LLMs: https://jakefieldhouse.co.uk/llms.txt
 LLMs-Full: https://jakefieldhouse.co.uk/llms-full.txt
+
+# Security: Block common attack paths
+User-agent: *
+Disallow: /.env
+Disallow: /.git
+Disallow: /wp-admin
+Disallow: /wp-content
+Disallow: /wp-includes
+Disallow: /administrator
+Disallow: /admin
+Disallow: /phpmyadmin
+Disallow: /config
+Disallow: /backup
+Disallow: /.htaccess
+Disallow: /server-status
+Disallow: /cgi-bin
 

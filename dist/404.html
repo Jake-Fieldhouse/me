@@ -5,32 +5,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting... | Jake Fieldhouse Consulting</title>
-    <script>
-        // GitHub Pages SPA Redirect
-        // This script handles clean URL routing for Single Page Applications on GitHub Pages.
-        // When a user navigates directly to a deep link (e.g., /managed-it-services-hull),
-        // GitHub Pages returns this 404.html. This script then redirects to the homepage
-        // with the original path encoded in the URL, allowing the Vue Router to handle it.
-        (function () {
-            var pathSegmentsToKeep = 0; // Set to 1 if using a repo subdirectory
 
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <script>
+        // GitHub Pages SPA Redirect with Route Validation
+        // Only redirects KNOWN valid routes to the SPA. Unknown routes show 404.
+        (function () {
             var location = window.location;
             var search = location.search;
 
-            // Check if we're already being redirected (avoid infinite loop)
-            if (search.indexOf('?p=') === -1 && search.indexOf('&p=') === -1) {
-                var path = location.pathname.slice(1); // Remove leading slash
-
-                if (path) {
-                    // Redirect to root with path as query parameter
-                    location.replace(
-                        location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') +
-                        '/?p=' + encodeURIComponent(path) +
-                        (location.search ? '&q=' + encodeURIComponent(location.search.slice(1)) : '') +
-                        location.hash
-                    );
-                }
+            // If already redirected with ?p=, don't loop
+            if (search.indexOf('?p=') !== -1 || search.indexOf('&p=') !== -1) {
+                return; // Let the 404 page display
             }
+
+            var path = location.pathname.slice(1); // Remove leading slash
+            if (!path) return;
+
+            // Known valid route patterns (must match router/index.ts)
+            var validRoutes = [
+                // Root
+                '',
+                // Core Services
+                'managed-it-services-hull',
+                'microsoldering-repair-hull',
+                'secure-data-disposal-hull',
+                'ai-optimization-hull',
+                // Legacy Redirects
+                'msp-services',
+                'repair-ninja',
+                'sustainable-tech',
+                'e-waste',
+                'ai-search',
+                // Service Areas
+                'it-support-hull',
+                'it-support-beverley',
+                'it-support-cottingham',
+                'it-support-hessle',
+                'it-support-anlaby',
+                'it-support-driffield',
+                'it-support-brough',
+                // Other Services
+                'repair-services',
+                'compliance',
+                // Company Pages
+                'about',
+                'contact',
+                'feedback',
+                'case-studies',
+                // Blog
+                'blog',
+                // Legal
+                'privacy',
+                'terms',
+                'cookies',
+                'refunds',
+                'service-commitment',
+                'complaints',
+                'environmental-policy',
+                'disclaimer',
+                // Local SEO
+                'service-areas'
+            ];
+
+            // Check if path matches a known route
+            var isKnownRoute = validRoutes.indexOf(path) !== -1;
+
+            // Check if path matches blog post pattern
+            var isBlogPost = path.startsWith('blog/');
+
+            // Check if path matches dynamic local service pattern (location-service)
+            // Valid locations: hull, beverley, driffield, bridlington, goole, withernsea, hornsea, cottingham, hessle, brough
+            // Valid services: computer-repair, laptop-repair, macbook-repair, ps5-repair, console-repair, phone-repair, it-support, managed-it-services, cybersecurity, e-waste-collection, it-disposal
+            var validLocations = ['hull', 'beverley', 'driffield', 'bridlington', 'goole', 'withernsea', 'hornsea', 'cottingham', 'hessle', 'brough'];
+            var validServices = ['computer-repair', 'laptop-repair', 'macbook-repair', 'ps5-repair', 'console-repair', 'phone-repair', 'it-support', 'managed-it-services', 'cybersecurity', 'e-waste-collection', 'it-disposal'];
+
+            var isValidLocalService = false;
+            var parts = path.split('-');
+            if (parts.length >= 2) {
+                var location = parts[0];
+                var service = parts.slice(1).join('-');
+                isValidLocalService = validLocations.indexOf(location) !== -1 && validServices.indexOf(service) !== -1;
+            }
+
+            if (isKnownRoute || isBlogPost || isValidLocalService) {
+                // Valid route - redirect to SPA
+                window.location.replace(
+                    location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') +
+                    '/?p=' + encodeURIComponent(path) +
+                    (location.search ? '&q=' + encodeURIComponent(location.search.slice(1)) : '') +
+                    location.hash
+                );
+            }
+            // Invalid route - let the 404 page display below
         })();
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -45,39 +118,38 @@
 <body class="bg-black text-white min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden">
     <!-- Aurora Background Effect -->
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] animate-pulse"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px]"></div>
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600/20 rounded-full blur-[100px] animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-[100px]"></div>
     </div>
 
-    <noscript>
-        <div class="relative z-10 text-center space-y-8 max-w-lg">
-            <h1
-                class="text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-neutral-700 to-neutral-500">
-                404</h1>
+    <div class="relative z-10 text-center space-y-8 max-w-lg">
+        <h1 class="text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
+            404
+        </h1>
 
-            <div class="space-y-4">
-                <h2 class="text-3xl font-bold">Signal Lost</h2>
-                <p class="text-neutral-400">The page you are looking for has been decommissioned, moved, or never
-                    existed.
-                </p>
-            </div>
-
-            <div class="pt-8">
-                <a href="/"
-                    class="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors">
-                    <span>Return to Base</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
-                        </path>
-                    </svg>
-                </a>
-            </div>
+        <div class="space-y-4">
+            <h2 class="text-3xl font-bold">Page Not Found</h2>
+            <p class="text-neutral-400">
+                The page you're looking for doesn't exist or has been moved.
+            </p>
         </div>
-    </noscript>
 
-    <div id="redirect-message" class="relative z-10 text-center">
-        <p class="text-neutral-400">Redirecting...</p>
+        <div class="pt-8">
+            <a href="/"
+                class="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors">
+                <span>Go Home</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                    </path>
+                </svg>
+            </a>
+        </div>
+
+        <p class="text-neutral-600 text-sm pt-4">
+            If you believe this is an error, please <a href="/contact"
+                class="text-neutral-400 hover:text-white underline">contact us</a>.
+        </p>
     </div>
 </body>
 
