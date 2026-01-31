@@ -68,6 +68,7 @@ watch(() => props.loading, (newVal) => {
     -->
     <FluidCursor 
       class="absolute inset-0 z-0" 
+      :intro-mode="true"
       :splat-radius="0.25"
       :curl="8"
       :color-update-speed="15"

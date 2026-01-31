@@ -144,7 +144,11 @@ onMounted(() => {
       supportLinearFiltering = !!gl.getExtension("OES_texture_half_float_linear");
     }
 
-    gl.clearColor(0, 0, 0, 1);
+    if (config.TRANSPARENT) {
+      gl.clearColor(0, 0, 0, 0);
+    } else {
+      gl.clearColor(0, 0, 0, 1);
+    }
 
     const halfFloatTexType = isWebGL2
       ? (gl as WebGL2RenderingContext).HALF_FLOAT
@@ -1406,7 +1410,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="pointer-events-none fixed top-0 left-0 z-50 w-full h-full"
+    class="pointer-events-none w-full h-full"
     :class="[props.class]"
   >
     <canvas
