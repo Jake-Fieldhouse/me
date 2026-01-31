@@ -167,7 +167,7 @@ const caseStudies: CaseStudy[] = [
                 to="/contact" 
                 class="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-neutral-200 transition-colors"
             >
-                Start a Conversation
+                Get in Touch
                 <ArrowRight class="w-4 h-4" />
             </router-link>
         </div>
