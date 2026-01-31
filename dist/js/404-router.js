@@ -58,6 +58,9 @@
         'complaints',
         'environmental-policy',
         'disclaimer',
+        'accessibility',
+        'cybersecurity',
+        'policies',
         // Local SEO
         'service-areas'
     ];
