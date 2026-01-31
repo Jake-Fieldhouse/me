@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
 import ContactForm from '../components/ContactForm.vue'
+import ScrollIndicator from '../components/ScrollIndicator.vue'
 
 const heroRef = ref<HTMLElement | null>(null)
 const formRef = ref<HTMLElement | null>(null)
@@ -22,7 +23,7 @@ const contactMethods = [
   <div class="relative w-full max-w-5xl mx-auto px-6 py-20 flex flex-col gap-16">
     
     <!-- Hero -->
-    <header ref="heroRef" class="text-center space-y-6 mt-10">
+    <header ref="heroRef" class="text-center space-y-6 mt-10 relative min-h-[50vh] flex flex-col justify-center">
       <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-4">
         24hr Response Guarantee • Speak to a Real Person
       </div>
@@ -33,6 +34,7 @@ const contactMethods = [
         No ticket queues. No chatbots. Just direct access to Jake—whether you need a repair quote, 
         MSP consultation, or same-day e-waste pickup.
       </p>
+      <ScrollIndicator />
     </header>
 
     <!-- Quick Contact -->
