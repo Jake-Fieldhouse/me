@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue'
 import gsap from 'gsap'
+import FluidCursor from './FluidCursor.vue'
 
 const props = defineProps<{
   loading: boolean
@@ -80,6 +81,9 @@ watch(() => props.loading, (newVal) => {
   >
     <!-- Subtle gradient overlay -->
     <div class="absolute inset-0 bg-gradient-to-br from-neutral-900 via-neutral-950 to-black opacity-50"></div>
+    
+    <!-- Fluid cursor visual behind content -->
+    <FluidCursor class="absolute inset-0 z-0 opacity-40" />
     
     <!-- Content container -->
     <div class="relative z-10 flex flex-col items-center gap-6">
