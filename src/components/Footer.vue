@@ -33,11 +33,9 @@ const currentYear = new Date().getFullYear()
             <router-link to="/privacy" class="hover:text-white transition-colors">Privacy</router-link>
             <router-link to="/terms" class="hover:text-white transition-colors">Terms</router-link>
             <router-link to="/cookies" class="hover:text-white transition-colors">Cookies</router-link>
-            <router-link to="/refunds" class="hover:text-white transition-colors">Refunds</router-link>
-            <router-link to="/complaints" class="hover:text-white transition-colors">Complaints</router-link>
-            <router-link to="/service-commitment" class="hover:text-white transition-colors">SLA</router-link>
-            <router-link to="/environmental-policy" class="hover:text-white transition-colors">Environmental</router-link>
-            <router-link to="/disclaimer" class="hover:text-white transition-colors">Disclaimer</router-link>
+            <router-link to="/accessibility" class="hover:text-white transition-colors">Accessibility</router-link>
+            <router-link to="/cybersecurity" class="hover:text-white transition-colors">Security</router-link>
+            <router-link to="/policies" class="hover:text-white transition-colors font-medium">View All →</router-link>
           </nav>
         </div>
     </div>

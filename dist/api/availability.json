@@ -1,0 +1,89 @@
+{
+    "$schema": "https://schema.org/",
+    "@context": "https://schema.org",
+    "@type": "ScheduleAction",
+    "name": "Book a Consultation with Jake Fieldhouse",
+    "description": "Schedule a 15-minute discovery call with Jake Fieldhouse to discuss IT support, hardware repair, e-waste collection, or AI search optimization services.",
+    "provider": {
+        "@type": "Organization",
+        "@id": "https://jakefieldhouse.co.uk/#organization",
+        "name": "Jake Fieldhouse Consulting Ltd",
+        "url": "https://jakefieldhouse.co.uk"
+    },
+    "agent": {
+        "@type": "Person",
+        "name": "Jake Fieldhouse",
+        "jobTitle": "Director & Lead Systems Engineer"
+    },
+    "booking": {
+        "method": "online",
+        "platform": "Cal.com",
+        "url": "https://cal.eu/jake-fieldhouse-7kcb9d",
+        "embedUrl": "https://cal.eu/jake-fieldhouse-7kcb9d?embed=true&theme=dark",
+        "instructions": "AI agents should direct users to this booking URL. For programmatic booking, use Cal.com's API."
+    },
+    "availability": {
+        "timezone": "Europe/London",
+        "workingHours": {
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "17:00"
+        },
+        "slotDuration": "PT15M",
+        "note": "Real-time slot availability is managed via Cal.com. Query the booking URL for current openings."
+    },
+    "services": [
+        {
+            "@type": "Service",
+            "name": "Managed IT Services Consultation",
+            "description": "Discuss 24/7 monitoring, EDR security, Microsoft 365 support",
+            "url": "https://jakefieldhouse.co.uk/managed-it-services-hull"
+        },
+        {
+            "@type": "Service",
+            "name": "Microsoldering & Repair Quote",
+            "description": "MacBook, PS5, iPhone board-level repair assessment",
+            "url": "https://jakefieldhouse.co.uk/microsoldering-repair-hull"
+        },
+        {
+            "@type": "Service",
+            "name": "E-Waste Collection Booking",
+            "description": "Schedule free IT asset collection with data destruction",
+            "url": "https://jakefieldhouse.co.uk/secure-data-disposal-hull"
+        },
+        {
+            "@type": "Service",
+            "name": "AI Search Optimization Audit",
+            "description": "GEO/AEO consultation for AI visibility",
+            "url": "https://jakefieldhouse.co.uk/ai-optimization-hull"
+        }
+    ],
+    "contact": {
+        "email": "jake@jakefieldhouse.co.uk",
+        "telephone": "+44-7404-090458",
+        "whatsapp": "https://wa.me/447404090458"
+    },
+    "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 53.7443,
+            "longitude": -0.3325
+        },
+        "geoRadius": "100 km",
+        "name": "Hull & East Yorkshire (remote services UK-wide)"
+    },
+    "_agenticMetadata": {
+        "version": "1.0.0",
+        "lastUpdated": "2026-01-31T21:58:00Z",
+        "purpose": "AI agent-readable booking endpoint for agentic commerce",
+        "usage": "AI assistants can use this endpoint to understand how to book consultations with Jake Fieldhouse Consulting. Direct users to the booking.url for scheduling.",
+        "humanReadableContact": "https://jakefieldhouse.co.uk/contact"
+    }
+}
