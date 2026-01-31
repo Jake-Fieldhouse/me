@@ -29,7 +29,7 @@ const complianceItems = ref([
     },
     {
         title: 'NIST 800-88 Purge Standard',
-        description: 'All storage media is sanitized to NIST 800-88 "Purge" Level using Blancco Drive Eraser for HDDs/SSDs, NVMe Secure Erase (cryptographic) for modern drives, and physical destruction for failed media. Certificates of Destruction provided for every batch.',
+        description: 'All storage media is sanitized to NIST 800-88 "Purge" Level using Blancco Drive Eraser for HDDs/SSDs and NVMe Secure Erase (cryptographic) for modern drives. Certificates of Destruction provided for every batch.',
         status: 'active',
         color: 'text-emerald-500',
         icon: FileText,
