@@ -94,7 +94,7 @@ const scrollToBook = () => {
                 Whether it's a single beloved console or a fleet of 50 enterprise laptops, the quality of the repair is non-negotiable.
             </p>
             <p class="text-neutral-300 leading-relaxed">
-                We don't do "fixed price lists" because no two faults are identical. By diagnosing the specific issue (e.g., a single failed capacitor vs. a larger chipset), we ensure you only pay for exactly what needs fixing, often saving significantly compared to manufacturer flat-rates.
+                There's no "fixed price list" here because no two faults are identical. By diagnosing the specific issue—a single failed capacitor vs. a larger chipset—you only pay for exactly what needs fixing. Often a fraction of what the manufacturer quotes.
             </p>
             
             <div class="space-y-4 pt-4">
@@ -102,14 +102,14 @@ const scrollToBook = () => {
                     <div class="mt-1 w-2 h-2 rounded-full bg-red-500 shrink-0"></div>
                     <div>
                         <strong class="block text-white">For Individuals</strong>
-                        <span class="text-neutral-400 text-sm">Manufacturer quoted hundreds for a replacement? We often fix the underlying fault for a fraction of that cost. Same expertise level, fraction of the price.</span>
+                        <span class="text-neutral-400 text-sm">Manufacturer quoted hundreds for a replacement? The underlying fault often gets fixed for a fraction of that cost. Same expertise, fraction of the price.</span>
                     </div>
                 </div>
                 <div class="flex gap-4 items-start">
                     <div class="mt-1 w-2 h-2 rounded-full bg-blue-500 shrink-0"></div>
                     <div>
                         <strong class="block text-white">For Business (MSP Integration)</strong>
-                        <span class="text-neutral-400 text-sm">Extend asset life cycles. We offer fleet maintenance and bulk repair contracts to keep your overheads low.</span>
+                        <span class="text-neutral-400 text-sm">Extend asset life cycles. Fleet maintenance and bulk repair contracts available to keep your overheads low.</span>
                     </div>
                 </div>
             </div>

@@ -46,3 +46,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      
+      # Notify AI crawlers of content update via IndexNow
+      - name: Ping IndexNow (Bing/Yandex/AI Crawlers)
+        run: |
+          curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/&key=a203532bbd3446768af8ae56145b0d24"
+          echo "IndexNow ping sent successfully"

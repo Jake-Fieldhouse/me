@@ -161,25 +161,25 @@ const scrollToComparison = () => {
             <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
                 <h3 class="text-lg font-bold text-white mb-2">How can you offer this for free? What's the catch?</h3>
                 <p class="text-neutral-400">
-                    There is no catch. We operate on a <strong>"Refurbish First"</strong> model. 
-                    Most IT companies charge you to crush your old laptops. We take them for free, securely wipe the data, and refurbish them for resale or donation. 
-                    The value we recover from the hardware covers our logistics and data destruction costs. You get a free service; we get stock. Win-win.
+                    No catch. I operate on a <strong>"Refurbish First"</strong> model. 
+                    Most IT companies charge you to crush your old laptops. I collect them for free, wipe the data securely, and refurbish viable units for resale or donation. 
+                    The recovered value covers logistics and data destruction. You get a free service; I get stock. Simple.
                 </p>
             </div>
             
             <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
                 <h3 class="text-lg font-bold text-white mb-2">Are you fully licensed?</h3>
                 <p class="text-neutral-400">
-                    Yes. We are a registered Tier 1 Waste Carrier with the Environment Agency (Reg: <strong>CBDL620098</strong>). 
-                    We provide a full Waste Transfer Note with every collection, ensuring your legal "Duty of Care" is completely satisfied.
+                    Yes—registered Tier 1 Waste Carrier with the Environment Agency (Reg: <strong>CBDL620098</strong>). 
+                    Every collection comes with a full Waste Transfer Note, so your legal "Duty of Care" is completely satisfied.
                 </p>
             </div>
 
              <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
                 <h3 class="text-lg font-bold text-white mb-2">I'm in Hull, but my head office is in London. Can you help?</h3>
                 <p class="text-neutral-400">
-                    Absolutely. While we are proud to be East Yorkshire based, we operate a nationwide courier network. 
-                    Whether you have one pallet in Hull or fifty laptops in Shoreditch, we can arrange secure collection.
+                    Absolutely. I'm based in East Yorkshire but can arrange nationwide collection through trusted courier partners. 
+                    Whether it's one pallet in Hull or fifty laptops in Shoreditch, it gets handled.
                 </p>
             </div>
         </div>
