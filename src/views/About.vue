@@ -65,7 +65,7 @@ const values = [
       <h3 class="text-xl font-bold text-white mb-2">The Specialist Advantage</h3>
       <p class="text-neutral-300">
         <strong class="text-white">No call centers. No junior techs. No ticket queues.</strong><br/>
-        You get direct access to 12+ years of enterprise IT and microsoldering expertise—every single time.
+        You get direct access to 15+ years of enterprise IT and microsoldering expertise—every single time.
       </p>
     </section>
 

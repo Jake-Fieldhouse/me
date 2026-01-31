@@ -33,7 +33,7 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
           Enterprise IT. Component-Level Repair. Zero Compromise.
         </p>
         <p class="text-lg text-neutral-500 max-w-xl mx-auto">
-          From 24/7 managed services to microsoldering dead boards—I handle the full stack, Hull to worldwide.
+          <router-link to="/managed-it-services-hull" class="text-blue-400 hover:text-blue-300 transition-colors">SMB & enterprise IT</router-link>, <router-link to="/microsoldering-repair-hull" class="text-red-400 hover:text-red-300 transition-colors">board-level repairs</router-link>, <router-link to="/ai-optimization-hull" class="text-violet-400 hover:text-violet-300 transition-colors">AI visibility</router-link>, and <router-link to="/secure-data-disposal-hull" class="text-emerald-400 hover:text-emerald-300 transition-colors">responsible recycling</router-link>—based in Hull, available worldwide.
         </p>
         
         <!-- CTAs -->

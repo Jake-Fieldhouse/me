@@ -77,7 +77,7 @@ const scrollToBook = () => {
             <div class="text-sm text-neutral-500 uppercase tracking-widest">Turnaround</div>
         </div>
         <div class="text-center space-y-2">
-            <div class="text-4xl font-bold text-white">5k+</div>
+            <div class="text-4xl font-bold text-white">1k+</div>
             <div class="text-sm text-neutral-500 uppercase tracking-widest">Devices Fixed</div>
         </div>
         <div class="text-center space-y-2">
