@@ -73,11 +73,11 @@ const contactMethods = [
                 </h2>
                 <p class="text-neutral-400 mt-1 text-sm">Schedule a 15-min discovery call instantly.</p>
             </div>
-            <!-- Cal.com Embed - Styled to match site theme -->
-            <div class="w-full h-[580px] bg-neutral-950 rounded-2xl overflow-hidden">
+            <!-- Cal.com Embed - Transparent to match site theme -->
+            <div class="w-full h-[580px] bg-transparent rounded-2xl overflow-hidden">
                 <iframe 
                     src="https://cal.eu/jake-fieldhouse-7kcb9d?embed=true&theme=dark&hideEventTypeDetails=true" 
-                    style="width: 100%; height: 100%; border: none;" 
+                    style="width: 100%; height: 100%; border: none; background: transparent;" 
                     frameborder="0"
                     loading="lazy"
                     title="Book a consultation with Jake Fieldhouse"
