@@ -19,7 +19,7 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
 </script>
 
 <template>
-    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 py-20 flex flex-col items-center gap-32">
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 flex flex-col items-center gap-32">
       
       <!-- Header -->
       <header ref="headerRef" class="text-center space-y-6 w-full mt-20">
@@ -29,10 +29,10 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
             class="text-6xl md:text-8xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60" 
             />
         </div>
-        <p class="text-2xl md:text-3xl text-neutral-300 font-light max-w-2xl mx-auto">
+        <p class="text-xl sm:text-2xl md:text-3xl text-neutral-200 font-light max-w-2xl mx-auto" style="text-shadow: 0 2px 20px rgba(0,0,0,0.9);">
           Enterprise IT. Component-Level Repair. Zero Compromise.
         </p>
-        <p class="text-lg text-neutral-500 max-w-xl mx-auto">
+        <p class="text-base sm:text-lg text-neutral-400 max-w-xl mx-auto" style="text-shadow: 0 2px 15px rgba(0,0,0,0.8);">
           <router-link to="/managed-it-services-hull" class="text-blue-400 hover:text-blue-300 transition-colors">SMB & enterprise IT</router-link>, <router-link to="/microsoldering-repair-hull" class="text-red-400 hover:text-red-300 transition-colors">board-level repairs</router-link>, <router-link to="/ai-optimization-hull" class="text-violet-400 hover:text-violet-300 transition-colors">AI visibility</router-link>, and <router-link to="/secure-data-disposal-hull" class="text-emerald-400 hover:text-emerald-300 transition-colors">responsible recycling</router-link>—based in Hull.
         </p>
         

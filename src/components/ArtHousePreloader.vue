@@ -91,7 +91,7 @@ watch(() => props.loading, (newVal) => {
         ref="roleRef"
         class="mt-6 md:mt-8 flex flex-col items-center gap-6"
       >
-        <p class="text-xs md:text-sm font-medium tracking-[0.5em] text-neutral-300 uppercase text-center">
+        <p class="text-[10px] md:text-sm font-medium tracking-[0.2em] md:tracking-[0.5em] text-neutral-200 uppercase text-center px-4" style="text-shadow: 0 2px 10px rgba(0,0,0,0.8);">
           ENTERPRISE IT • HARDWARE REPAIR • EWASTE
         </p>
 
