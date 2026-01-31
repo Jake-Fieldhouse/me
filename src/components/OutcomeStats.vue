@@ -5,7 +5,7 @@
 
 const stats = [
   {
-    value: '8,500+',
+    value: '1,000+',
     label: 'Devices Repaired',
     description: 'MacBooks, PS5s, phones, and more',
     color: 'text-red-500'
@@ -17,13 +17,7 @@ const stats = [
     color: 'text-emerald-500'
   },
   {
-    value: '100%',
-    label: 'Satisfaction',
-    description: 'No Fix, No Fee Guarantee',
-    color: 'text-blue-500'
-  },
-  {
-    value: '12+',
+    value: '15+',
     label: 'Years Experience',
     description: 'Component-level expertise',
     color: 'text-amber-500'
