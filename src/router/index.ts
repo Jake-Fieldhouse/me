@@ -290,6 +290,33 @@ const router = createRouter({
                 description: 'Legal disclaimer for the use of this website.'
             }
         },
+        {
+            path: '/accessibility',
+            name: 'accessibility',
+            component: () => import('../views/Accessibility.vue'),
+            meta: {
+                title: 'Accessibility Statement | Jake Fieldhouse Consulting',
+                description: 'Our commitment to WCAG 2.2 accessibility standards and making our website usable for everyone.'
+            }
+        },
+        {
+            path: '/cybersecurity',
+            name: 'cybersecurity',
+            component: () => import('../views/CybersecurityStatement.vue'),
+            meta: {
+                title: 'Cybersecurity Statement | Jake Fieldhouse Consulting',
+                description: 'Our security practices, data protection measures, and commitment to safeguarding client information.'
+            }
+        },
+        {
+            path: '/policies',
+            name: 'policies',
+            component: () => import('../views/Policies.vue'),
+            meta: {
+                title: 'Policies & Legal | Jake Fieldhouse Consulting',
+                description: 'Browse all our policies including privacy, terms, cookies, accessibility, and more.'
+            }
+        },
         // ==================== LOCAL SEO ====================
         {
             path: '/service-areas',

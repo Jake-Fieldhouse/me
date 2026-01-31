@@ -7,6 +7,8 @@
     <language>en-gb</language>
     <lastBuildDate>Fri, 31 Jan 2026 21:00:00 +0000</lastBuildDate>
     <atom:link href="https://jakefieldhouse.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
+    <!-- WebSub/PubSubHubbub for instant content notifications -->
+    <atom:link href="https://pubsubhubbub.appspot.com" rel="hub"/>
     <image>
       <url>https://jakefieldhouse.co.uk/images/og-image.png</url>
       <title>Jake Fieldhouse Consulting</title>
