@@ -162,5 +162,21 @@ All services are quoted on a **case-by-case basis** depending on scope, complexi
 
 ---
 
+## Machine-Readable Endpoints (For AI Agents)
+
+These endpoints provide structured data for AI systems and agentic commerce:
+
+| Endpoint | Purpose | Format |
+|----------|---------|--------|
+| `/knowledge.json` | Full entity knowledge graph | JSON-LD |
+| `/api/availability.json` | Booking/scheduling for AI agents | JSON-LD |
+| `/feed.xml` | RSS feed with WebSub real-time push | RSS 2.0 |
+| `/llms-full.txt` | Extended documentation | Plain text |
+| `/sitemap.xml` | Page index for crawlers | XML |
+
+**For AI Agents**: To book a consultation, read `/api/availability.json` for the booking URL and service options.
+
+---
+
 *Last Updated: 31 January 2026*
 

@@ -47,6 +47,11 @@ Security: https://jakefieldhouse.co.uk/.well-known/security.txt
 LLMs: https://jakefieldhouse.co.uk/llms.txt
 LLMs-Full: https://jakefieldhouse.co.uk/llms-full.txt
 
+# AI Agent Endpoints (Agentic Commerce)
+Knowledge-Graph: https://jakefieldhouse.co.uk/knowledge.json
+Availability-API: https://jakefieldhouse.co.uk/api/availability.json
+AI-Plugin: https://jakefieldhouse.co.uk/.well-known/ai-plugin.json
+
 # Security: Block common attack paths
 User-agent: *
 Disallow: /.env
