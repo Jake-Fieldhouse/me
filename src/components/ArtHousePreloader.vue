@@ -9,67 +9,49 @@ const props = defineProps<{
 
 const containerRef = ref<HTMLElement | null>(null)
 const nameRef = ref<HTMLElement | null>(null)
-const lineRef = ref<HTMLElement | null>(null)
-const maskRef = ref<HTMLElement | null>(null)
+const roleRef = ref<HTMLElement | null>(null)
 
+// Animation timeline
 onMounted(() => {
   const tl = gsap.timeline()
-  
-  // Initial states
-  gsap.set(lineRef.value, { scaleX: 0 })
-  gsap.set(nameRef.value, { opacity: 0, y: 30 })
-  gsap.set(maskRef.value, { x: '-100%' })
 
-  // Elegant sweep line
-  tl.to(lineRef.value, {
-    scaleX: 1,
-    duration: 0.8,
-    ease: "power3.inOut"
+  // Initial clean state
+  gsap.set([nameRef.value, roleRef.value], { 
+    opacity: 0, 
+    y: 40,
+    filter: 'blur(10px)'
   })
-  
-  // Name reveals with mask sweep
-  .to(maskRef.value, {
-    x: '100%',
-    duration: 1,
-    ease: "power3.inOut"
-  }, "-=0.3")
-  
-  // Name fades in beautifully
-  .to(nameRef.value, {
+
+  // Cinematic reveal
+  tl.to(nameRef.value, {
     opacity: 1,
     y: 0,
-    duration: 0.6,
-    ease: "power2.out"
+    filter: 'blur(0px)',
+    duration: 1.2,
+    ease: "power3.out",
+    delay: 0.5
+  })
+  .to(roleRef.value, {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    duration: 1.0,
+    ease: "power3.out"
   }, "-=0.8")
-  
-  // Hold for a moment
-  .to({}, { duration: 0.5 })
 })
 
 watch(() => props.loading, (newVal) => {
   if (!newVal) {
-    // Elegant exit - sweep up
-    const tl = gsap.timeline()
-    
-    tl.to(nameRef.value, {
-      y: -50,
+    // Exit sequence
+    gsap.to(containerRef.value, {
       opacity: 0,
-      duration: 0.5,
-      ease: "power2.in"
-    })
-    .to(lineRef.value, {
-      scaleX: 0,
-      duration: 0.4,
-      ease: "power2.in"
-    }, "-=0.3")
-    .to(containerRef.value, {
-      y: '-100%',
-      duration: 0.8,
+      scale: 1.05, // Subtle zoom out feel
+      duration: 1.2,
       ease: "power3.inOut",
       onComplete: () => {
         if (containerRef.value) containerRef.value.style.display = 'none'
       }
-    }, "-=0.2")
+    })
   }
 })
 </script>
@@ -77,57 +59,54 @@ watch(() => props.loading, (newVal) => {
 <template>
   <div 
     ref="containerRef"
-    class="fixed inset-0 z-[9999] bg-neutral-950 flex items-center justify-center overflow-hidden"
+    class="fixed inset-0 z-[9999] bg-black flex items-center justify-center overflow-hidden"
   >
-    <!-- Subtle gradient overlay -->
-    <div class="absolute inset-0 bg-gradient-to-br from-neutral-900 via-neutral-950 to-black opacity-50"></div>
+    <!-- 
+       MOONSHOT CHANGE: 
+       Full screen fluid cursor. No opacity reduction.
+       High z-index to be main background but behind text.
+    -->
+    <FluidCursor 
+      class="absolute inset-0 z-0" 
+      :splat-radius="0.25"
+      :curl="8"
+      :color-update-speed="15"
+      :density-dissipation="3.5"
+    />
     
-    <!-- Fluid cursor visual behind content -->
-    <FluidCursor class="absolute inset-0 z-0 opacity-40" />
-    
-    <!-- Content container -->
-    <div class="relative z-10 flex flex-col items-center gap-6">
+    <!-- Content Overlay -->
+    <!-- Pointer events none so clicks go through to fluid if needed, though fluid is z-0 -->
+    <div class="relative z-10 flex flex-col items-center pointer-events-none mix-blend-screen">
       
-      <!-- Animated line -->
+      <h1 
+        ref="nameRef"
+        class="text-6xl md:text-9xl font-black tracking-tighter text-white uppercase text-center leading-none"
+        style="font-family: 'Inter', system-ui, sans-serif; text-shadow: 0 0 40px rgba(255,255,255,0.3);"
+      >
+        Jake<br>Fieldhouse
+      </h1>
+      
       <div 
-        ref="lineRef"
-        class="w-24 h-[1px] bg-gradient-to-r from-transparent via-white to-transparent origin-center"
-      ></div>
-      
-      <!-- Name with reveal mask -->
-      <div class="relative overflow-hidden">
-        <h1 
-          ref="nameRef"
-          class="text-4xl md:text-6xl font-light tracking-[0.3em] text-white uppercase"
-          style="font-family: system-ui, -apple-system, sans-serif;"
-        >
-          Jake Fieldhouse
-        </h1>
-        
-        <!-- Sweep mask -->
-        <div 
-          ref="maskRef"
-          class="absolute inset-0 bg-neutral-950"
-        ></div>
+        ref="roleRef"
+        class="mt-6 md:mt-10 flex items-center gap-4"
+      >
+        <!-- Minimal loading bar -->
+        <div class="h-[2px] w-24 bg-white/20 rounded-full overflow-hidden">
+          <div class="h-full bg-white animate-progress origin-left"></div>
+        </div>
       </div>
-      
-      <!-- Subtle loading bar -->
-      <div class="w-32 h-[2px] bg-neutral-800 rounded-full overflow-hidden mt-4">
-        <div class="h-full bg-gradient-to-r from-emerald-500 to-blue-500 animate-loading-sweep"></div>
-      </div>
-      
+
     </div>
   </div>
 </template>
 
 <style scoped>
-@keyframes loading-sweep {
-  0% { transform: translateX(-100%); width: 50%; }
-  50% { transform: translateX(50%); width: 50%; }
-  100% { transform: translateX(200%); width: 50%; }
+@keyframes progress {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
 }
 
-.animate-loading-sweep {
-  animation: loading-sweep 1.5s ease-in-out infinite;
+.animate-progress {
+  animation: progress 2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
 }
 </style>
