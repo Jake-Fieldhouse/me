@@ -77,8 +77,15 @@ async function handleRequest(request) {
     // Clone so we can modify headers
     const newResponse = new Response(response.body, response);
 
+    // Check if request is HTTPS
+    const isHTTPS = new URL(request.url).protocol === 'https:';
+
     // Add security headers
     Object.entries(SECURITY_HEADERS).forEach(([header, value]) => {
+        // Only add HSTS over HTTPS (it's ignored over HTTP anyway)
+        if (header === 'Strict-Transport-Security' && !isHTTPS) {
+            return;
+        }
         newResponse.headers.set(header, value);
     });
 

@@ -41,13 +41,23 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
             to="/contact" 
             class="px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-neutral-200 transition-all hover:scale-105 shadow-lg shadow-white/10"
           >
-            Get in Touch
+            Book Free Consultation
           </router-link>
           <router-link 
-            to="/about" 
+            to="/repair-ninja" 
             class="px-8 py-3 border border-white/20 text-white font-medium rounded-full hover:bg-white/5 transition-all"
           >
-            Learn More
+            Get Repair Quote
+          </router-link>
+        </div>
+        <!-- Secondary CTA: E-Waste -->
+        <div class="pt-2">
+          <router-link 
+            to="/secure-data-disposal-hull" 
+            class="text-sm text-emerald-400 hover:text-emerald-300 transition-colors inline-flex items-center gap-2"
+          >
+            ♻️ Free E-Waste Collection & ITAD
+            <span class="text-xs opacity-60">→</span>
           </router-link>
         </div>
       </header>

@@ -170,6 +170,44 @@ const scrollToBook = () => {
          </div>
     </section>
 
+    <!-- Repair Gallery (placeholder for macro photography) -->
+    <section class="pb-20">
+        <h2 class="text-3xl font-bold text-white text-center mb-8">Our Work</h2>
+        <p class="text-neutral-400 text-center mb-8 max-w-2xl mx-auto">
+            Macro photography of real repairs—proof of the precision microsoldering work that sets us apart.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Replace placeholders with real macro photos: <img src="/images/repairs/repair-1.jpg" alt="..." class="..." /> -->
+            <div class="aspect-square rounded-xl bg-gradient-to-br from-neutral-800 to-neutral-900 border border-neutral-700 flex items-center justify-center group hover:border-red-500/50 transition-colors">
+                <div class="text-center text-neutral-500 group-hover:text-neutral-400 transition-colors">
+                    <div class="text-3xl mb-2">🔬</div>
+                    <span class="text-xs">Photo 1</span>
+                </div>
+            </div>
+            <div class="aspect-square rounded-xl bg-gradient-to-br from-neutral-800 to-neutral-900 border border-neutral-700 flex items-center justify-center group hover:border-red-500/50 transition-colors">
+                <div class="text-center text-neutral-500 group-hover:text-neutral-400 transition-colors">
+                    <div class="text-3xl mb-2">🔧</div>
+                    <span class="text-xs">Photo 2</span>
+                </div>
+            </div>
+            <div class="aspect-square rounded-xl bg-gradient-to-br from-neutral-800 to-neutral-900 border border-neutral-700 flex items-center justify-center group hover:border-red-500/50 transition-colors">
+                <div class="text-center text-neutral-500 group-hover:text-neutral-400 transition-colors">
+                    <div class="text-3xl mb-2">💻</div>
+                    <span class="text-xs">Photo 3</span>
+                </div>
+            </div>
+            <div class="aspect-square rounded-xl bg-gradient-to-br from-neutral-800 to-neutral-900 border border-neutral-700 flex items-center justify-center group hover:border-red-500/50 transition-colors">
+                <div class="text-center text-neutral-500 group-hover:text-neutral-400 transition-colors">
+                    <div class="text-3xl mb-2">🎮</div>
+                    <span class="text-xs">Photo 4</span>
+                </div>
+            </div>
+        </div>
+        <p class="text-neutral-500 text-center text-sm mt-6">
+            Gallery coming soon – real macro shots of board-level repairs
+        </p>
+    </section>
+
     <!-- FAQ Section for AI/LLM Optimization -->
     <section class="max-w-3xl mx-auto space-y-8 pb-20">
         <h2 class="text-3xl font-bold text-white text-center">Frequently Asked Questions</h2>

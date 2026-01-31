@@ -49,6 +49,26 @@ const values = [
       </p>
     </header>
 
+    <!-- Photo Section (placeholder for owner headshot) -->
+    <section class="flex justify-center">
+      <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-neutral-800 to-neutral-900 border-4 border-neutral-700 overflow-hidden flex items-center justify-center shadow-2xl">
+        <!-- Replace with: <img src="/images/headshot.jpg" alt="Jake Fieldhouse" class="w-full h-full object-cover" /> -->
+        <div class="text-center text-neutral-500">
+          <div class="text-5xl mb-2">👤</div>
+          <span class="text-xs">Photo coming soon</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specialist Advantage -->
+    <section class="max-w-2xl mx-auto p-6 rounded-2xl bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/30 text-center">
+      <h3 class="text-xl font-bold text-white mb-2">The Specialist Advantage</h3>
+      <p class="text-neutral-300">
+        <strong class="text-white">No call centers. No junior techs. No ticket queues.</strong><br/>
+        You get direct access to 12+ years of enterprise IT and microsoldering expertise—every single time.
+      </p>
+    </section>
+
     <!-- Story -->
     <section ref="storyRef" class="bg-neutral-900/50 p-8 md:p-12 rounded-3xl border border-white/5 space-y-6">
       <h2 class="text-3xl font-bold text-white">The Journey</h2>

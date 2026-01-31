@@ -33,6 +33,34 @@ import TrustBar from '../components/TrustSignals/TrustBar.vue'
     <!-- Trust Bar -->
     <TrustBar />
 
+    <!-- Platforms We Manage -->
+    <section class="flex flex-wrap justify-center items-center gap-8 md:gap-12 py-8 border-y border-white/5">
+        <div class="flex items-center gap-3 opacity-70 hover:opacity-100 transition-opacity">
+            <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                <svg class="w-6 h-6 text-blue-400" viewBox="0 0 24 24" fill="currentColor"><path d="M11 11H1V1h10v10zm2-10v10h10V1H13zM1 23h10V13H1v10zm12 0h10V13H13v10z"/></svg>
+            </div>
+            <span class="text-white font-semibold">Microsoft 365</span>
+        </div>
+        <div class="flex items-center gap-3 opacity-70 hover:opacity-100 transition-opacity">
+            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
+                <svg class="w-6 h-6 text-cyan-400" viewBox="0 0 24 24" fill="currentColor"><path d="M22.379 23.343a1.62 1.62 0 0 1-1.082-.453c-.319-.385-.319-.7-.319-1.343v-3.835c0-2.108-1.03-3.772-3.413-3.772-1.4 0-2.88.453-3.573 1.925l2.5.646c.253-.575.825-.961 1.392-.961.888 0 1.271.519 1.271 1.474v.389c-.51-.13-.894-.194-1.592-.194-2.179 0-4.358.896-4.358 3.322 0 2.169 1.72 3.02 3.267 3.02 1.271 0 2.054-.649 2.683-1.428v1.234h2.181c.123 0 .223-.063.223-.186v-.06a1.34 1.34 0 0 1-.78.222zm-4.8-1.417c-.699 0-1.144-.389-1.144-.961 0-.779.699-1.039 1.525-1.039.444 0 .888.067 1.271.194-.062 1.17-.826 1.806-1.652 1.806zm-5.07 1.417c.316 0 .572-.256.572-.572v-.06c-.194.128-.447.195-.76.195h-.064a1.626 1.626 0 0 1-1.082-.453c-.32-.388-.32-.701-.32-1.346v-5.632c0-.643 0-.958.32-1.346a1.626 1.626 0 0 1 1.082-.453h.064c.313 0 .566.067.76.195v-.06a.572.572 0 1 0-1.144 0v.06c-.25.188-.443.463-.465.81-.028-.448-.094-.81-.51-.81h-.064a1.626 1.626 0 0 0-1.082.453c-.32.388-.32.703-.32 1.346v5.632c0 .645 0 .958.32 1.346.27.326.656.453 1.082.453h.064c.416 0 .482-.362.51-.81.022.347.215.622.465.81v.06c0 .316.256.572.572.572zM.786 13.063c0-.316.257-.572.572-.572h.063c.426 0 .813.127 1.082.453.32.388.32.703.32 1.346v5.632c0 .645 0 .958-.32 1.346-.269.326-.656.453-1.082.453H1.358a.572.572 0 0 1-.572-.572v.06c.193-.128.446-.195.76-.195h.063c.283 0 .568-.092.78-.35.187-.228.243-.498.243-.742V14.29c0-.244-.056-.514-.243-.742-.212-.258-.497-.35-.78-.35h-.063c-.314 0-.567.067-.76.195v-.06c0-.145.054-.276.143-.382.068-.081.148-.155.238-.2v-.004c.1-.047.212-.073.333-.073h9.79c.121 0 .233.026.333.073v.004a.748.748 0 0 1 .381.582v.06c-.193-.128-.446-.195-.76-.195h-.063a1.626 1.626 0 0 0-1.082.453c-.32.388-.32.703-.32 1.346v5.632c0 .645 0 .958.32 1.346.27.326.656.453 1.082.453h.063c.314 0 .567-.067.76-.195v.06a.572.572 0 0 1-1.144 0v-.06c-.193.128-.446.195-.76.195H9.89a1.626 1.626 0 0 1-1.082-.453c-.32-.388-.32-.701-.32-1.346v-5.632c0-.643 0-.958.32-1.346a1.626 1.626 0 0 1 1.082-.453h.063c.314 0 .567.067.76.195v-.06a.572.572 0 0 0-1.144 0v.06c.193-.128.446-.195.76-.195h.063c.426 0 .813-.127 1.082-.453.32-.388.32-.703.32-1.346V8.78c0-.645 0-.958-.32-1.346a1.626 1.626 0 0 0-1.082-.453h-.063c-.314 0-.567.067-.76.195v-.06a.572.572 0 0 1 1.144 0v.06c.25-.188.443-.463.465-.81.028.448.094.81.51.81h.063a1.626 1.626 0 0 0 1.082-.453c.32-.388.32-.703.32-1.346V.572A.572.572 0 0 0 11.58 0h-.057c-.427 0-.813.127-1.082.453-.32.388-.32.703-.32 1.346v4.78c0 .645 0 .958.32 1.346.27.326.655.453 1.082.453h.063c.314 0 .567-.067.76-.195v.06a.572.572 0 0 1-.572.572H1.984a1.747 1.747 0 0 0-.595.105c-.11.04-.214.09-.31.15a.748.748 0 0 0-.238.2.57.57 0 0 0-.143.382zM6.43 6.858l4.86-4.715V6.86H6.43z"/></svg>
+            </div>
+            <span class="text-white font-semibold">Azure</span>
+        </div>
+        <div class="flex items-center gap-3 opacity-70 hover:opacity-100 transition-opacity">
+            <div class="w-10 h-10 rounded-lg bg-blue-600/10 flex items-center justify-center">
+                <svg class="w-6 h-6 text-blue-300" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+            </div>
+            <span class="text-white font-semibold">Windows</span>
+        </div>
+        <div class="flex items-center gap-3 opacity-70 hover:opacity-100 transition-opacity">
+            <div class="w-10 h-10 rounded-lg bg-neutral-500/10 flex items-center justify-center">
+                <svg class="w-6 h-6 text-neutral-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+            </div>
+            <span class="text-white font-semibold">macOS</span>
+        </div>
+    </section>
+
     <!-- Services Grid -->
     <section class="grid md:grid-cols-2 gap-12">
         <div class="space-y-8">
@@ -137,6 +165,18 @@ import TrustBar from '../components/TrustSignals/TrustBar.vue'
                     and the wider East Yorkshire region. Remote support is available nationwide for clients on our MSP plans.
                 </p>
             </div>
+        </div>
+    </section>
+
+    <!-- Case Study CTA -->
+    <section class="text-center pb-20">
+        <div class="max-w-2xl mx-auto p-8 rounded-2xl bg-gradient-to-r from-blue-500/5 to-cyan-500/5 border border-blue-500/20">
+            <h3 class="text-2xl font-bold text-white mb-3">See Our Work in Action</h3>
+            <p class="text-neutral-400 mb-6">Discover how we've helped Hull & East Yorkshire businesses transform their IT infrastructure.</p>
+            <router-link to="/case-studies" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-bold rounded-xl hover:bg-neutral-200 transition-colors">
+                View Case Studies
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </router-link>
         </div>
     </section>
 

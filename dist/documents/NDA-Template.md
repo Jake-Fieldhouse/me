@@ -68,19 +68,25 @@ Certificates of Destruction are provided upon request for all data-bearing media
 
 ---
 
-## 6. Term
+## 6. Insurance Coverage
+
+Jake Fieldhouse Consulting Ltd maintains Professional Indemnity and Public Liability insurance underwritten by Hiscox.
+
+---
+
+## 7. Term
 
 This Agreement remains in effect for a period of **three (3) years** from the Effective Date, or until terminated by mutual written agreement.
 
 ---
 
-## 7. Governing Law
+## 8. Governing Law
 
 This Agreement shall be governed by the laws of England and Wales.
 
 ---
 
-## 8. Signatures
+## 9. Signatures
 
 **For Jake Fieldhouse Consulting Ltd:**
 

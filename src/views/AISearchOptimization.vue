@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import TrustBar from '../components/TrustSignals/TrustBar.vue'
 
 const packages = [
   {
@@ -128,6 +129,9 @@ Looking forward to hearing from you.`)
         </a>
       </div>
     </section>
+
+    <!-- Trust Signals -->
+    <TrustBar />
 
     <!-- The Problem Section -->
     <section class="px-6 py-20 bg-neutral-900/50">

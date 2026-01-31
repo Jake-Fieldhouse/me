@@ -49,14 +49,19 @@ const complianceItems = ref([
         proofUrl: 'https://secure.crbonline.gov.uk/crsc/check'
     },
     {
-        title: 'Public Liability Insurance',
-        description: 'Comprehensive business insurance coverage protecting our clients and operations.',
+        title: 'Business Insurance (Hiscox)',
+        description: 'Comprehensive business insurance underwritten by Hiscox including Professional Indemnity, Public Liability, and Cyber Liability coverage.',
         status: 'active',
         color: 'text-blue-500',
-        icon: FileText,
-        regNumber: 'Available on Request',
-        expiry: 'Active',
-        proofUrl: null
+        icon: ShieldCheck,
+        regNumber: 'Hiscox Underwritten',
+        expiry: 'Active Policy',
+        proofUrl: null,
+        proofUrls: [
+            { label: 'Professional Indemnity', url: '/certificates/insurance/DC501 - PI certificate_redacted.pdf' },
+            { label: 'Public Liability', url: '/certificates/insurance/DC502 - PL certificate_redacted.pdf' },
+            { label: 'Cyber Liability', url: '/certificates/insurance/DC506 Cyber Certificate_redacted.pdf' }
+        ]
     }
 ])
 
@@ -78,9 +83,6 @@ const getStatusPillColor = (status: string) => {
     return 'bg-neutral-800 text-neutral-500'
 }
 
-const showPendingAlert = (msg: string) => {
-    alert(msg)
-}
 </script>
 
 <template>
@@ -124,9 +126,18 @@ const showPendingAlert = (msg: string) => {
                     </span>
                 </div>
 
-                <!-- Proof Link -->
+                <!-- Proof Link(s) -->
                 <div class="md:col-span-2 mt-2">
-                    <a v-if="item.proofUrl" :href="item.proofUrl" target="_blank" class="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors text-sm group/link">
+                    <!-- Multiple proof links (for insurance) -->
+                    <div v-if="item.proofUrls" class="flex flex-wrap gap-4">
+                        <a v-for="proof in item.proofUrls" :key="proof.label" :href="proof.url" target="_blank" 
+                           class="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            {{ proof.label }} ↓
+                        </a>
+                    </div>
+                    <!-- Single proof link -->
+                    <a v-else-if="item.proofUrl" :href="item.proofUrl" target="_blank" class="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors text-sm group/link">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         View Official Certificate / Registry
                     </a>
@@ -153,19 +164,6 @@ const showPendingAlert = (msg: string) => {
                     <p class="text-sm text-neutral-400 mt-1 mb-3">Risk Assessment & Method Statement for on-site collection.</p>
                     <a href="/documents/RAMS-Generic.md" download class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2">
                         Download Document ↓
-                    </a>
-                </div>
-            </div>
-
-            <div class="bg-neutral-900/30 p-6 rounded-xl border border-white/5 flex items-start gap-4 hover:border-white/10 transition-colors">
-                <div class="p-3 bg-neutral-800 rounded-lg text-white">
-                    <ShieldCheck class="w-6 h-6" />
-                </div>
-                <div>
-                    <h3 class="font-bold text-white">Insurance Certificate</h3>
-                    <p class="text-sm text-neutral-400 mt-1 mb-3">Public Liability & Professional Indemnity Proof of Cover.</p>
-                    <a href="#" @click.prevent="showPendingAlert('Available on Request')" class="text-sm text-neutral-500 hover:text-white font-medium flex items-center gap-2 cursor-pointer">
-                        Request Copy →
                     </a>
                 </div>
             </div>

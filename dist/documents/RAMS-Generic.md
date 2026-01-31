@@ -79,4 +79,13 @@ This RAMS covers standard on-site IT services including:
 
 ---
 
+## 8. Insurance
+
+| Coverage | Provider |
+|----------|----------|
+| Professional Indemnity | Hiscox |
+| Public Liability | Hiscox |
+
+---
+
 *This document is reviewed annually or following any significant incident or change in working practices.*

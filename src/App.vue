@@ -3,6 +3,7 @@ import FluidCursor from './components/FluidCursor.vue'
 import AuroraBackground from './components/AuroraBackground.vue'
 import ArtHousePreloader from './components/ArtHousePreloader.vue'
 import CookieConsent from './components/CookieConsent.vue'
+import StickyCTA from './components/StickyCTA.vue'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import { ref, onMounted } from 'vue'
@@ -65,6 +66,9 @@ onMounted(() => {
 
       <!-- Cookie Consent -->
       <CookieConsent />
+
+      <!-- Sticky Mobile CTA -->
+      <StickyCTA />
 
       <!-- Global Footer -->
       <Footer />

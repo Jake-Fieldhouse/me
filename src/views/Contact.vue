@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
+import ContactForm from '../components/ContactForm.vue'
 
 const heroRef = ref<HTMLElement | null>(null)
 const formRef = ref<HTMLElement | null>(null)
@@ -46,6 +47,16 @@ const contactMethods = [
         <div class="text-sm text-neutral-500 mb-1">{{ method.label }}</div>
         <div class="text-white font-medium group-hover:text-emerald-400 transition-colors">{{ method.value }}</div>
       </a>
+    </div>
+
+    <!-- Emergency Support Callout -->
+    <div class="p-4 rounded-2xl bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/30 text-center">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <span class="text-red-400 font-bold">🚨 Server down? Critical issue?</span>
+        <a href="tel:+447404090458" class="px-4 py-2 bg-red-500 text-white font-bold rounded-full hover:bg-red-400 transition-colors">
+          Call Now: 07404 090458
+        </a>
+      </div>
     </div>
 
     <!-- Booking & Contact Options -->
@@ -131,6 +142,21 @@ const contactMethods = [
                         </div>
                         <span class="text-neutral-600 group-hover/item:text-sky-500 transition-colors">→</span>
                     </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com/in/jakefieldhouse" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-blue-600/10 border border-white/5 hover:border-blue-600/30 transition-all group/item">
+                        <div class="w-10 h-10 rounded-lg bg-blue-600/20 flex items-center justify-center text-blue-400 group-hover/item:scale-110 transition-all">
+                            <span class="text-lg">💼</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-bold group-hover/item:text-blue-400 transition-colors">LinkedIn</span>
+                                <span class="text-[10px] bg-blue-600/20 text-blue-400 px-2 py-0.5 rounded text-xs">B2B</span>
+                            </div>
+                            <div class="text-neutral-500 text-xs mt-0.5">Professional Profile</div>
+                        </div>
+                        <span class="text-neutral-600 group-hover/item:text-blue-500 transition-colors">→</span>
+                    </a>
                 </div>
                 
                 <div class="mt-6 pt-6 border-t border-white/5 relative z-10 text-center">
@@ -141,6 +167,11 @@ const contactMethods = [
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Quick Contact Form -->
+    <section class="max-w-lg mx-auto">
+      <ContactForm />
     </section>
 
     <!-- Back -->
