@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
+import CitedStat from '../components/CitedStat.vue'
 </script>
 
 <template>
@@ -11,7 +12,12 @@ import TrustBar from '../components/TrustSignals/TrustBar.vue'
       
       <div class="relative z-10">
         <div class="inline-block px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-medium mb-4">
-            43% of UK businesses breached this year. Don't be next.
+            <CitedStat 
+              stat="43% of UK businesses" 
+              source="GOV.UK Cyber Security Breaches Survey" 
+              source-url="https://www.gov.uk/government/statistics/cyber-security-breaches-survey-2025" 
+              year="2025" 
+            /> breached this year. Don't be next.
         </div>
         <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
             Local Response. <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">Enterprise Protection.</span>

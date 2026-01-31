@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
+import CitedStat from '../components/CitedStat.vue'
 
 const packages = [
   {
@@ -109,8 +110,18 @@ Looking forward to hearing from you.`)
       </h1>
       
       <p class="text-xl text-neutral-400 mb-8 max-w-3xl mx-auto">
-        <strong class="text-white">58% of consumers</strong> now search with AI instead of Google. 
-        <strong class="text-white">60%+ of UK users</strong> use AI search weekly. 
+        <CitedStat 
+          stat="58% of consumers" 
+          source="Search Engine Journal" 
+          source-url="https://www.searchenginejournal.com/ai-search-statistics/" 
+          year="2025" 
+        /> now search with AI instead of Google. 
+        <CitedStat 
+          stat="60%+ of UK users" 
+          source="Statista" 
+          source-url="https://www.statista.com/topics/10691/ai-search/" 
+          year="2025" 
+        /> use AI search weekly. 
         If AI can't find you, you're already invisible.
       </p>
 
@@ -164,7 +175,12 @@ Looking forward to hearing from you.`)
 
         <div class="mt-12 p-6 rounded-2xl bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/20">
           <p class="text-center text-lg">
-            <span class="text-red-400 font-semibold">65% of Google searches</span> 
+            <CitedStat 
+              stat="65% of Google searches" 
+              source="Sparktoro" 
+              source-url="https://sparktoro.com/blog/in-2024-60-of-google-searches-ended-without-a-click/" 
+              year="2024" 
+            /> 
             <span class="text-neutral-300">now end without a click—users get their answer from AI summaries. If you're not optimized for AI, you're invisible even on Google.</span>
           </p>
         </div>
