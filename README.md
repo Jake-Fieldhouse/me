@@ -70,5 +70,50 @@ This project uses **GitHub Actions** for CI/CD.
 Any push to `main` triggers a build and deployment to the `gh-pages` environment.
 
 ---
+
+## 🎯 Manual Owner Tasks (GEO/SEO/AEO)
+
+The following actions require Jake's direct involvement to complete the site's optimization:
+
+### 1. Wikidata Entity Creation
+Create an entity for "Jake Fieldhouse Consulting Ltd" at https://www.wikidata.org
+- **Why**: Establishes the business in the global knowledge graph that AI systems use for training
+- **Properties to add**: Company name, founder, location (Hull), establishment date (2024-11), website, Companies House ID
+- **Time**: ~15 minutes
+
+### 2. Google Knowledge Panel
+Search for "Jake Fieldhouse Consulting" on Google → Click "Claim this knowledge panel" when it appears
+- **Why**: Verified entities get priority in AI citations and rich search results
+- **Prerequisite**: Wikidata entry and consistent NAP (Name, Address, Phone) across web
+- **Time**: ~5 minutes (may take weeks to become claimable)
+
+### 3. Google Business Profile Optimization
+Verify and fully complete your profile at https://business.google.com
+- **Add**: All services as products, photos, posts, Q&A
+- **Why**: Direct path to local pack rankings and AI local citations
+- **Time**: ~30 minutes
+
+### 4. HSTS Preload Submission
+Submit to https://hstspreload.org (headers are already compliant)
+- **Why**: Browser security + shows enterprise-grade security posture
+- **Time**: ~2 minutes
+
+### 5. Authority Backlinks (Ongoing)
+Target mentions from:
+- Hull Daily Mail / local news
+- East Yorkshire business directories
+- Industry publications (MSP blogs, repair forums)
+- Companies House directory links
+- **Why**: AI systems weight citations from authoritative domains heavily
+
+### 6. IndexNow Ping (After Each Deploy)
+```bash
+curl "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/&key=a203532bbd3446768af8ae56145b0d24"
+```
+- **Why**: Instant notification to Bing/Yandex/AI crawlers of content updates
+- **Automate**: Add to GitHub Actions workflow after deploy step
+
+---
+
 *© 2026 Jake Fieldhouse Consulting Ltd*
 

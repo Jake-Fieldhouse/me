@@ -16,11 +16,11 @@ import TrustBar from '../components/TrustSignals/TrustBar.vue'
         <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
             Local Response. <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">Enterprise Protection.</span>
         </h1>
-        <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
+        <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed text-readable">
             Big MSPs treat you like a ticket number. We treat you like a partner. 24/7 monitoring, AI-threat detection, and someone who actually picks up the phone—based right here in Hull.
         </p>
         <div class="flex flex-col md:flex-row justify-center gap-4 pt-4">
-            <router-link to="/contact" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors text-center">
+            <router-link to="/contact" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors text-center btn-depth">
             Get in Touch
             </router-link>
             <router-link to="/" class="px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/10 text-center">
@@ -96,7 +96,7 @@ import TrustBar from '../components/TrustSignals/TrustBar.vue'
 
         <!-- Service Tiers / Visual -->
         <div class="grid gap-6">
-             <div class="bg-neutral-900/50 p-6 rounded-xl border border-blue-500/20 hover:border-blue-500/40 transition-colors">
+             <div class="bg-neutral-900/50 p-6 rounded-xl border border-blue-500/20 hover:border-blue-500/40 transition-colors hover-lift scroll-reveal">
                  <h3 class="text-xl font-bold text-white mb-2">Essential</h3>
                  <p class="text-neutral-400 text-sm mb-4">For solopreneurs and small teams.</p>
                  <ul class="space-y-2 text-sm text-neutral-300">
@@ -106,7 +106,7 @@ import TrustBar from '../components/TrustSignals/TrustBar.vue'
                  </ul>
              </div>
              
-             <div class="bg-blue-900/10 p-6 rounded-xl border border-blue-500/50 hover:border-blue-500 transition-colors relative overflow-hidden">
+             <div class="bg-blue-900/10 p-6 rounded-xl border border-blue-500/50 hover:border-blue-500 transition-colors relative overflow-hidden hover-lift scroll-reveal">
                  <div class="absolute top-0 right-0 bg-blue-500 text-xs font-bold px-3 py-1 rounded-bl-xl text-white">MOST POPULAR</div>
                  <h3 class="text-xl font-bold text-white mb-2">Growth</h3>
                  <p class="text-neutral-400 text-sm mb-4">For growing agencies and offices.</p>
@@ -128,41 +128,41 @@ import TrustBar from '../components/TrustSignals/TrustBar.vue'
             <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
                 <h3 class="text-lg font-bold text-white mb-2">What IT support is available for small businesses in Hull?</h3>
                 <p class="text-neutral-400">
-                    Jake Fieldhouse Consulting offers comprehensive Managed IT Services (MSP) for small businesses in Hull and East Yorkshire. 
-                    Our packages include 24/7 infrastructure monitoring, Endpoint Detection & Response (EDR) cybersecurity, 
-                    Microsoft 365 management, cloud backups, and priority support with guaranteed SLA response times.
+                    I offer Managed IT Services for small businesses across Hull and East Yorkshire. 
+                    Depending on what you need, that can include 24/7 monitoring, EDR cybersecurity, 
+                    Microsoft 365 setup, cloud backups, and straightforward support when things go wrong.
                 </p>
             </div>
             
             <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
                 <h3 class="text-lg font-bold text-white mb-2">How much does managed IT support cost for a small business?</h3>
                 <p class="text-neutral-400">
-                    Our MSP packages are priced per-device or per-user, starting from affordable monthly rates tailored to your business size. 
-                    We offer Essential, Growth, and Enterprise tiers to match your requirements. Contact us for a custom quote based on your infrastructure needs.
+                    Pricing depends on your setup—whether that's per-device or per-user. I keep things flexible 
+                    with Essential and Growth tiers so you're not paying for stuff you don't need. Drop me a message for a quote.
                 </p>
             </div>
 
             <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
                 <h3 class="text-lg font-bold text-white mb-2">Do you offer cybersecurity services for businesses in East Yorkshire?</h3>
                 <p class="text-neutral-400">
-                    Yes, cybersecurity is core to our MSP offering. We provide next-generation Endpoint Detection & Response (EDR), 
-                    ransomware protection, email filtering, and regular security audits. Our proactive approach catches threats before they impact your business.
+                    Yes—security is baked into everything I do. That means Endpoint Detection & Response (EDR), 
+                    ransomware protection, and keeping an eye on things so problems get caught early, not after the damage is done.
                 </p>
             </div>
 
             <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
                 <h3 class="text-lg font-bold text-white mb-2">Can you help migrate our business to Microsoft 365 or Azure?</h3>
                 <p class="text-neutral-400">
-                    Absolutely. We specialize in cloud migrations for SMBs. Whether you're moving from on-premise servers to Azure 
-                    or transitioning to Microsoft 365 for email and collaboration, we handle the entire process with minimal disruption to your operations.
+                    Definitely. I've moved plenty of businesses from clunky on-premise setups to Microsoft 365 and Azure. 
+                    I handle the migration properly so you're not stuck with downtime or lost emails.
                 </p>
             </div>
 
             <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
                 <h3 class="text-lg font-bold text-white mb-2">What areas do you cover for on-site IT support?</h3>
                 <p class="text-neutral-400">
-                    We provide on-site IT support across Hull, Beverley, Driffield, Bridlington, Goole, Cottingham, Hessle, 
-                    and the wider East Yorkshire region. Remote support is available nationwide for clients on our MSP plans.
+                    I'm based in Hull and cover Beverley, Driffield, Bridlington, Goole, Cottingham, Hessle, 
+                    and the rest of East Yorkshire for on-site work. Remote support is available anywhere in the UK.
                 </p>
             </div>
         </div>

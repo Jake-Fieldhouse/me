@@ -61,11 +61,11 @@ const scrollToComparison = () => {
       <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
         Business IT Recycling <br class="hidden md:block" /> & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">Collection</span>
       </h1>
-      <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
+      <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed text-readable">
         Stop paying to dispose of your IT assets. We offer a superior, zero-landfill service with full Waste Transfer documentation—completely free of charge.
       </p>
       <div class="flex justify-center gap-4 pt-4">
-        <button @click="scrollToQuote" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors">
+        <button @click="scrollToQuote" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors btn-depth">
           Get in Touch
         </button>
         <button @click="scrollToComparison" class="px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/10">
@@ -103,19 +103,19 @@ const scrollToComparison = () => {
     <section ref="processRef" class="space-y-12">
         <h2 class="text-3xl font-bold text-white text-center">How It Works</h2>
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-neutral-900/50 p-8 rounded-2xl border border-neutral-800 relative overflow-hidden group hover:border-amber-500/50 transition-colors duration-500">
+            <div class="bg-neutral-900/50 p-8 rounded-2xl border border-neutral-800 relative overflow-hidden group hover:border-amber-500/50 transition-colors duration-500 hover-lift scroll-reveal">
                 <div class="absolute -right-10 -top-10 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-all"></div>
                 <div class="text-6xl font-black text-neutral-800 mb-6 group-hover:text-amber-500/20 transition-colors">01</div>
                 <h3 class="text-2xl font-bold text-white mb-4">Book Collection</h3>
                 <p class="text-neutral-400">Fill out our simple form or call us. We align with your schedule for a hassle-free pickup.</p>
             </div>
-            <div class="bg-neutral-900/50 p-8 rounded-2xl border border-neutral-800 relative overflow-hidden group hover:border-amber-500/50 transition-colors duration-500">
+            <div class="bg-neutral-900/50 p-8 rounded-2xl border border-neutral-800 relative overflow-hidden group hover:border-amber-500/50 transition-colors duration-500 hover-lift scroll-reveal">
                 <div class="absolute -right-10 -top-10 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-all"></div>
                 <div class="text-6xl font-black text-neutral-800 mb-6 group-hover:text-amber-500/20 transition-colors">02</div>
                 <h3 class="text-2xl font-bold text-white mb-4">Secure Transit</h3>
                 <p class="text-neutral-400">Your assets are tracked from your door to our facility using secure, GPS-tracked logistics.</p>
             </div>
-            <div class="bg-neutral-900/50 p-8 rounded-2xl border border-neutral-800 relative overflow-hidden group hover:border-amber-500/50 transition-colors duration-500">
+            <div class="bg-neutral-900/50 p-8 rounded-2xl border border-neutral-800 relative overflow-hidden group hover:border-amber-500/50 transition-colors duration-500 hover-lift scroll-reveal">
                 <div class="absolute -right-10 -top-10 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-all"></div>
                 <div class="text-6xl font-black text-neutral-800 mb-6 group-hover:text-amber-500/20 transition-colors">03</div>
                 <h3 class="text-2xl font-bold text-white mb-4">Destruction & Audit</h3>
@@ -351,7 +351,7 @@ const scrollToComparison = () => {
                         </div>
                     </div>
 
-                    <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 rounded-xl transition-colors mt-2">
+                    <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 rounded-xl transition-colors mt-2 btn-depth hover-glow">
                         Get in Touch
                     </button>
                 </form>
