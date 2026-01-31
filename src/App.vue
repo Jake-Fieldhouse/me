@@ -32,7 +32,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="relative min-h-screen bg-black text-white font-inter selection:bg-white/20 overflow-x-hidden">
+  <div class="relative min-h-dvh bg-black text-white font-inter selection:bg-white/20 overflow-x-hidden">
     
     <!-- Hero Layer -->
     <AuroraBackground class="fixed inset-0 z-0">

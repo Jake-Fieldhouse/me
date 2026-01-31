@@ -61,8 +61,22 @@ body,
 }
 
 h1 {
-  font-size: 3.2em;
+  /* Fluid typography - scales smoothly from mobile to desktop */
+  font-size: clamp(1.75rem, 4vw + 1rem, 3.5rem);
   line-height: 1.1;
+}
+
+/* Modern viewport height with fallback */
+.min-h-dvh {
+  min-height: 100vh;
+  /* Fallback */
+  min-height: 100dvh;
+}
+
+.h-dvh {
+  height: 100vh;
+  /* Fallback */
+  height: 100dvh;
 }
 
 button {
