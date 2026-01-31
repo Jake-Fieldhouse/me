@@ -7,6 +7,7 @@ import OutcomeStats from '../components/OutcomeStats.vue'
 import Testimonials from '../components/Testimonials.vue'
 import { ref } from 'vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
+import HyperText from '../components/HyperText.vue'
 
 const headerRef = ref<HTMLElement | null>(null)
 const trustRef = ref<HTMLElement | null>(null)

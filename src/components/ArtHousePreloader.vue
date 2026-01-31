@@ -89,8 +89,12 @@ watch(() => props.loading, (newVal) => {
       
       <div 
         ref="roleRef"
-        class="mt-6 md:mt-10 flex items-center gap-4"
+        class="mt-6 md:mt-8 flex flex-col items-center gap-6"
       >
+        <p class="text-xs md:text-sm font-medium tracking-[0.5em] text-neutral-300 uppercase text-center">
+          Consulting • Engineering • Intelligence
+        </p>
+
         <!-- Minimal loading bar -->
         <div class="h-[2px] w-24 bg-white/20 rounded-full overflow-hidden">
           <div class="h-full bg-white animate-progress origin-left"></div>
