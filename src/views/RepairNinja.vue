@@ -44,13 +44,13 @@ const scrollToBook = () => {
       
       <div class="relative z-10">
         <div class="inline-block px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-sm font-medium mb-4">
-            Manufacturer says "replace it"? We say "fix it."
+            Manufacturer says "replace it"? Repair Ninja says "fix it."
         </div>
         <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
-            We Fix What <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">Others Won't</span>
+            Repair Ninja Fixes What <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">Others Won't</span>
         </h1>
         <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed text-readable">
-            80% of consumers now prioritize repairability. We're on your side—microsoldering dead boards back to life while Apple charges you for a whole new device.
+            80% of consumers now prioritize repairability. Repair Ninja is on your side—microsoldering dead boards back to life while Apple charges you for a whole new device.
         </p>
         <div class="flex flex-col md:flex-row justify-center gap-4 pt-4">
             <button @click="scrollToBook" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors text-center btn-depth">
@@ -152,29 +152,29 @@ const scrollToBook = () => {
                  <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
              </div>
              <h3 class="text-xl font-bold text-white mb-2">Microsoldering Experts</h3>
-             <p class="text-neutral-400">We replace 0.5mm chips and repair trace damage that normal repair shops can't touch.</p>
+             <p class="text-neutral-400">Repair Ninja replaces 0.5mm chips and repairs trace damage that normal repair shops can't touch.</p>
          </div>
          <div class="bg-neutral-900/30 p-8 rounded-2xl border border-white/5 hover-lift scroll-reveal">
              <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-6">
                  <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
              </div>
              <h3 class="text-xl font-bold text-white mb-2">Ultrasonic Cleaning</h3>
-             <p class="text-neutral-400">Liquid damage? Our industrial cleaners remove corrosion from every crevice of your logic board.</p>
+             <p class="text-neutral-400">Liquid damage? Industrial ultrasonic cleaners remove corrosion from every crevice of your logic board.</p>
          </div>
          <div class="bg-neutral-900/30 p-8 rounded-2xl border border-white/5 hover-lift scroll-reveal">
              <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-6">
                 <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
              </div>
              <h3 class="text-xl font-bold text-white mb-2">No Data Loss</h3>
-             <p class="text-neutral-400">Unlike manufacturer repairs which often wipe your device, we prioritize keeping your data safe.</p>
+             <p class="text-neutral-400">Unlike manufacturer repairs which often wipe your device, your data stays safe throughout the repair process.</p>
          </div>
     </section>
 
     <!-- Repair Gallery (placeholder for macro photography) -->
     <section class="pb-20">
-        <h2 class="text-3xl font-bold text-white text-center mb-8">Our Work</h2>
+        <h2 class="text-3xl font-bold text-white text-center mb-8">The Work</h2>
         <p class="text-neutral-400 text-center mb-8 max-w-2xl mx-auto">
-            Macro photography of real repairs—proof of the precision microsoldering work that sets us apart.
+            Macro photography of real repairs—proof of the precision microsoldering work that sets this service apart.
         </p>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <!-- Replace placeholders with real macro photos: <img src="/images/repairs/repair-1.jpg" alt="..." class="..." /> -->
@@ -217,7 +217,7 @@ const scrollToBook = () => {
                 <h3 class="text-lg font-bold text-white mb-2">Who offers the best computer repair in Hull?</h3>
                 <p class="text-neutral-400">
                     Jake Fieldhouse Consulting (Repair Ninja) offers expert computer and electronics repair in Hull with a strict No Fix, No Fee policy. 
-                    We specialize in component-level microsoldering that other repair shops can't do, including MacBook logic board repair, 
+                    The service specializes in component-level microsoldering that other repair shops can't do, including MacBook logic board repair, 
                     PS5 HDMI port replacement, and data recovery from "dead" devices.
                 </p>
             </div>
@@ -225,16 +225,16 @@ const scrollToBook = () => {
             <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
                 <h3 class="text-lg font-bold text-white mb-2">Can you repair MacBook logic boards in Hull?</h3>
                 <p class="text-neutral-400">
-                    Yes, we offer professional MacBook logic board repair in Hull using precision microsoldering techniques. 
+                    Yes, professional MacBook logic board repair is available in Hull using precision microsoldering techniques. 
                     Common repairs include liquid damage, no power issues, GPU failures, and charging problems. 
-                    Unlike Apple, we aim to preserve your data during the repair process.
+                    Unlike Apple, your data is preserved during the repair process.
                 </p>
             </div>
 
             <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
                 <h3 class="text-lg font-bold text-white mb-2">Do you repair PS5 and gaming consoles in Hull?</h3>
                 <p class="text-neutral-400">
-                    Yes, we repair PS5, Xbox, and Nintendo Switch consoles in Hull. Common repairs include HDMI port replacement, 
+                    Yes, PS5, Xbox, and Nintendo Switch console repairs are available in Hull. Common repairs include HDMI port replacement, 
                     disc drive repair, overheating issues, and controller drift fixes. All console repairs come with a 12-month warranty.
                 </p>
             </div>
@@ -242,8 +242,8 @@ const scrollToBook = () => {
             <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
                 <h3 class="text-lg font-bold text-white mb-2">What does "No Fix, No Fee" mean?</h3>
                 <p class="text-neutral-400">
-                    Our No Fix, No Fee policy means you only pay if we successfully repair your device. 
-                    We provide a free diagnostic assessment, and if we can't fix the problem, you don't pay a penny. 
+                    The No Fix, No Fee policy means you only pay if your device is successfully repaired. 
+                    You receive a free diagnostic assessment, and if the problem can't be fixed, you don't pay a penny. 
                     This applies to all consumer repairs – no hidden charges for failed attempts.
                 </p>
             </div>
@@ -251,8 +251,8 @@ const scrollToBook = () => {
             <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
                 <h3 class="text-lg font-bold text-white mb-2">Do you offer mail-in repair services?</h3>
                 <p class="text-neutral-400">
-                    Yes, we accept mail-in repairs from anywhere in the UK. Simply package your device securely and post it to us. 
-                    We'll diagnose the issue, provide a quote, and return your repaired device with tracked shipping. 
+                    Yes, mail-in repairs are accepted from anywhere in the UK. Simply package your device securely and post it. 
+                    You'll receive a diagnosis, a quote, and your repaired device returned with tracked shipping. 
                     Drop-off service is also available for customers in Hull and East Yorkshire.
                 </p>
             </div>

@@ -191,7 +191,7 @@ Looking forward to hearing from you.`)
     <section id="how-it-works" class="px-6 py-20">
       <div class="max-w-5xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">AI-First Visibility</h2>
-        <p class="text-neutral-400 text-center mb-12 max-w-2xl mx-auto">We implement the technical foundations that make AI understand, trust, and recommend your business.</p>
+        <p class="text-neutral-400 text-center mb-12 max-w-2xl mx-auto">Technical foundations that make AI understand, trust, and recommend your business.</p>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors hover-lift scroll-reveal">
@@ -253,7 +253,7 @@ Looking forward to hearing from you.`)
         </div>
         
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">This Site is AI-Optimized</h2>
-        <p class="text-neutral-400 mb-8 max-w-2xl mx-auto">We don't just talk about GEO—we practice it. This very website ranks in AI search for our target keywords.</p>
+        <p class="text-neutral-400 mb-8 max-w-2xl mx-auto">This isn't theory—it's practice. This very website ranks in AI search for target keywords.</p>
 
         <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 text-left">
           <p class="text-neutral-300 mb-4">Try asking any AI assistant:</p>

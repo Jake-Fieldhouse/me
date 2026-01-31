@@ -72,7 +72,7 @@ import CitedStat from '../components/CitedStat.vue'
         <div class="space-y-8">
             <h2 class="text-3xl font-bold text-white">Proactive, Not Reactive</h2>
             <p class="text-neutral-300 leading-relaxed">
-                Downtime costs money. Our MSP packages are designed to catch issues before they interrupt your workflow. using enterprise-grade EDR (Endpoint Detection & Response) and automated patching to secure your fleet.
+                Downtime costs money. These MSP packages are designed to catch issues before they interrupt your workflow, using enterprise-grade EDR (Endpoint Detection & Response) and automated patching to secure your fleet.
             </p>
             
             <div class="space-y-4 pt-4">
@@ -80,7 +80,7 @@ import CitedStat from '../components/CitedStat.vue'
                     <div class="mt-1 w-2 h-2 rounded-full bg-blue-500 shrink-0"></div>
                     <div>
                         <strong class="block text-white">24/7 Remote Monitoring</strong>
-                        <span class="text-neutral-400 text-sm">We watch your servers and workstations so you don't have to. Disk space alerts, CPU spikes, and offline warnings.</span>
+                        <span class="text-neutral-400 text-sm">Your servers and workstations are watched around the clock. Disk space alerts, CPU spikes, and offline warnings—all handled proactively.</span>
                     </div>
                 </div>
                 <div class="flex gap-4 items-start">
