@@ -92,7 +92,7 @@ watch(() => props.loading, (newVal) => {
         class="mt-6 md:mt-8 flex flex-col items-center gap-6"
       >
         <p class="text-xs md:text-sm font-medium tracking-[0.5em] text-neutral-300 uppercase text-center">
-          Consulting • Engineering • Intelligence
+          ENTERPRISE IT • 24/7 MANAGED SERVICES • STARLINK SOLUTIONS
         </p>
 
         <!-- Minimal loading bar -->

@@ -17,9 +17,9 @@ const stats = [
     color: 'text-emerald-500'
   },
   {
-    value: '150+',
-    label: 'Businesses Served',
-    description: 'Hull & East Yorkshire SMBs',
+    value: '100%',
+    label: 'Satisfaction',
+    description: 'No Fix, No Fee Guarantee',
     color: 'text-blue-500'
   },
   {

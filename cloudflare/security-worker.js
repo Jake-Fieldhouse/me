@@ -38,17 +38,41 @@ const SECURITY_HEADERS = {
     // Control referrer info
     'Referrer-Policy': 'strict-origin-when-cross-origin',
 
-    // Restrict browser features
+    // Restrict browser features (Exhaustive Blocklist)
     'Permissions-Policy': [
-        'camera=()',
-        'microphone=()',
-        'geolocation=()',
-        'payment=()',
-        'usb=()',
-        'magnetometer=()',
-        'gyroscope=()',
         'accelerometer=()',
-        'interest-cohort=()'  // Block FLoC
+        'autoplay=()',
+        'battery=()',
+        'camera=()',
+        'cross-origin-isolated=()',
+        'display-capture=()',
+        'document-domain=()',
+        'encrypted-media=()',
+        'execution-while-not-rendered=()',
+        'execution-while-out-of-viewport=()',
+        'fullscreen=()',
+        'gamepad=()',
+        'geolocation=()',
+        'gyroscope=()',
+        'hid=()',
+        'identity-credentials-get=()',
+        'idle-detection=()',
+        'interest-cohort=()',  // Block FLoC
+        'local-fonts=()',
+        'magnetometer=()',
+        'microphone=()',
+        'midi=()',
+        'navigation-override=()',
+        'payment=()',
+        'picture-in-picture=()',
+        'publickey-credentials-get=()',
+        'screen-wake-lock=()',
+        'serial=()',
+        'speaker-selection=()',
+        'sync-xhr=()',
+        'usb=()',
+        'web-share=()',
+        'xr-spatial-tracking=()'
     ].join(', '),
 
     // Cross-Origin policies
