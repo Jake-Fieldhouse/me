@@ -7,78 +7,68 @@ const props = defineProps<{
 }>()
 
 const containerRef = ref<HTMLElement | null>(null)
-const word1Ref = ref<HTMLElement | null>(null)
-const word2Ref = ref<HTMLElement | null>(null)
-const arcRef = ref<HTMLElement | null>(null)
-
-const firstName = "JAKE".split("")
-const lastName = "FIELDHOUSE".split("")
+const nameRef = ref<HTMLElement | null>(null)
+const lineRef = ref<HTMLElement | null>(null)
+const maskRef = ref<HTMLElement | null>(null)
 
 onMounted(() => {
   const tl = gsap.timeline()
   
-  const chars = [
-    ...(word1Ref.value?.children || []),
-    ...(word2Ref.value?.children || [])
-  ]
+  // Initial states
+  gsap.set(lineRef.value, { scaleX: 0 })
+  gsap.set(nameRef.value, { opacity: 0, y: 30 })
+  gsap.set(maskRef.value, { x: '-100%' })
 
-  // Initial State
-  gsap.set(chars, { 
-      opacity: 0,
-      filter: 'blur(8px)',
-      y: 20
+  // Elegant sweep line
+  tl.to(lineRef.value, {
+    scaleX: 1,
+    duration: 0.8,
+    ease: "power3.inOut"
   })
-
-  // Arc initial state - start off screen left
-  if (arcRef.value) {
-    gsap.set(arcRef.value, {
-      opacity: 0,
-      scale: 0.5
-    })
-  }
-
-  // Text Reveal Animation
-  tl.to(chars, {
-      opacity: 1,
-      filter: 'blur(0px)',
-      y: 0,
-      duration: 0.8,
-      stagger: {
-          amount: 0.6,
-          from: "start"
-      },
-      ease: "power2.out"
-  })
-
-  // Arc animation - smooth sweep around text
-  if (arcRef.value) {
-    tl.to(arcRef.value, {
-      opacity: 1,
-      scale: 1,
-      duration: 0.5,
-      ease: "power2.out"
-    }, "-=0.3")
-    
-    // Continuous arc motion
-    gsap.to(arcRef.value, {
-      rotation: 360,
-      duration: 8,
-      repeat: -1,
-      ease: "none"
-    })
-  }
+  
+  // Name reveals with mask sweep
+  .to(maskRef.value, {
+    x: '100%',
+    duration: 1,
+    ease: "power3.inOut"
+  }, "-=0.3")
+  
+  // Name fades in beautifully
+  .to(nameRef.value, {
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: "power2.out"
+  }, "-=0.8")
+  
+  // Hold for a moment
+  .to({}, { duration: 0.5 })
 })
 
 watch(() => props.loading, (newVal) => {
   if (!newVal) {
-    gsap.to(containerRef.value, {
+    // Elegant exit - sweep up
+    const tl = gsap.timeline()
+    
+    tl.to(nameRef.value, {
+      y: -50,
       opacity: 0,
-      duration: 1.5,
-      ease: "power2.inOut",
-      onComplete: () => {
-          if (containerRef.value) containerRef.value.style.display = 'none'
-      }
+      duration: 0.5,
+      ease: "power2.in"
     })
+    .to(lineRef.value, {
+      scaleX: 0,
+      duration: 0.4,
+      ease: "power2.in"
+    }, "-=0.3")
+    .to(containerRef.value, {
+      y: '-100%',
+      duration: 0.8,
+      ease: "power3.inOut",
+      onComplete: () => {
+        if (containerRef.value) containerRef.value.style.display = 'none'
+      }
+    }, "-=0.2")
   }
 })
 </script>
@@ -86,65 +76,54 @@ watch(() => props.loading, (newVal) => {
 <template>
   <div 
     ref="containerRef"
-    class="fixed inset-0 z-[40] bg-black flex flex-col items-center justify-center cursor-none overflow-hidden"
+    class="fixed inset-0 z-[9999] bg-neutral-950 flex items-center justify-center overflow-hidden"
   >
-    <!-- Cinematic Typography Container - NO blend mode -->
-    <div class="relative z-10 flex flex-col md:flex-row gap-4 md:gap-8 items-center justify-center">
+    <!-- Subtle gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-br from-neutral-900 via-neutral-950 to-black opacity-50"></div>
+    
+    <!-- Content container -->
+    <div class="relative z-10 flex flex-col items-center gap-6">
+      
+      <!-- Animated line -->
+      <div 
+        ref="lineRef"
+        class="w-24 h-[1px] bg-gradient-to-r from-transparent via-white to-transparent origin-center"
+      ></div>
+      
+      <!-- Name with reveal mask -->
+      <div class="relative overflow-hidden">
+        <h1 
+          ref="nameRef"
+          class="text-4xl md:text-6xl font-light tracking-[0.3em] text-white uppercase"
+          style="font-family: system-ui, -apple-system, sans-serif;"
+        >
+          Jake Fieldhouse
+        </h1>
         
-        <!-- JAKE -->
-        <div ref="word1Ref" class="flex overflow-hidden">
-            <span 
-                v-for="(char, index) in firstName" 
-                :key="`f-${index}`"
-                class="text-5xl md:text-8xl font-black tracking-tighter text-white inline-block"
-            >
-                {{ char }}
-            </span>
-        </div>
-
-        <!-- FIELDHOUSE -->
-        <div ref="word2Ref" class="flex overflow-hidden">
-            <span 
-                v-for="(char, index) in lastName" 
-                :key="`l-${index}`"
-                class="text-5xl md:text-8xl font-black tracking-tighter text-white inline-block"
-            >
-                {{ char }}
-            </span>
-        </div>
+        <!-- Sweep mask -->
+        <div 
+          ref="maskRef"
+          class="absolute inset-0 bg-neutral-950"
+        ></div>
+      </div>
+      
+      <!-- Subtle loading bar -->
+      <div class="w-32 h-[2px] bg-neutral-800 rounded-full overflow-hidden mt-4">
+        <div class="h-full bg-gradient-to-r from-emerald-500 to-blue-500 animate-loading-sweep"></div>
+      </div>
+      
     </div>
-
-    <!-- Orbital Arc Element -->
-    <div 
-      ref="arcRef"
-      class="absolute pointer-events-none"
-      style="width: 600px; height: 600px; top: 50%; left: 50%; transform: translate(-50%, -50%);"
-    >
-      <svg viewBox="0 0 200 200" class="w-full h-full">
-        <defs>
-          <linearGradient id="arcGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="transparent" />
-            <stop offset="50%" stop-color="rgba(255,255,255,0.4)" />
-            <stop offset="100%" stop-color="transparent" />
-          </linearGradient>
-        </defs>
-        <circle
-          cx="100"
-          cy="100"
-          r="90"
-          fill="none"
-          stroke="url(#arcGradient)"
-          stroke-width="0.5"
-          stroke-dasharray="60 200"
-          stroke-linecap="round"
-        />
-      </svg>
-    </div>
-
-    <!-- Noise Texture Overlay -->
-    <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
-         style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');">
-    </div>
-
   </div>
 </template>
+
+<style scoped>
+@keyframes loading-sweep {
+  0% { transform: translateX(-100%); width: 50%; }
+  50% { transform: translateX(50%); width: 50%; }
+  100% { transform: translateX(200%); width: 50%; }
+}
+
+.animate-loading-sweep {
+  animation: loading-sweep 1.5s ease-in-out infinite;
+}
+</style>
