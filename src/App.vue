@@ -1,4 +1,22 @@
 <script setup lang="ts">
+/**
+ * ============================================
+ * ⚠️  MAINTENANCE MODE CONFIGURATION
+ * ============================================
+ * 
+ * When MAINTENANCE_MODE = true:
+ * - Human visitors see ONLY the preloader (loops forever)
+ * - No pages, navigation, or content is accessible
+ * - AI crawlers can still access static files in /public/
+ *   (llms.txt, knowledge.json, robots.txt, etc.)
+ * 
+ * To disable: Set MAINTENANCE_MODE = false, then build & deploy
+ * 
+ * See: MAINTENANCE_MODE.md for full documentation
+ * ============================================
+ */
+const MAINTENANCE_MODE = true
+
 import FluidCursor from './components/FluidCursor.vue'
 import AuroraBackground from './components/AuroraBackground.vue'
 import ArtHousePreloader from './components/ArtHousePreloader.vue'
@@ -13,6 +31,18 @@ const router = useRouter()
 const isLoading = ref(true)
 
 onMounted(() => {
+    // ⚠️ MAINTENANCE MODE: If enabled, preloader runs forever
+    if (MAINTENANCE_MODE) {
+        // Never set isLoading to false - preloader loops infinitely
+        // Humans cannot see any content
+        console.log('%c⚠️ SITE IN MAINTENANCE MODE', 'color: orange; font-size: 20px; font-weight: bold;')
+        console.log('%cHuman content is hidden. AI endpoints remain accessible.', 'color: orange;')
+        console.log('%cSee: MAINTENANCE_MODE.md', 'color: gray;')
+        return // Exit early, don't run normal loading logic
+    }
+
+    // Normal operation below (only runs when MAINTENANCE_MODE = false)
+    
     // Handle GitHub Pages SPA redirect
     // The 404.html redirects to /?p=original-path
     const urlParams = new URLSearchParams(window.location.search)
@@ -49,42 +79,47 @@ onMounted(() => {
     </AuroraBackground>
 
     <!-- Art House Preloader (Z-40, provides black background) -->
+    <!-- In maintenance mode, this NEVER goes away -->
     <ArtHousePreloader :loading="isLoading" />
 
     <!-- Cursor Layer (Z-50, smoke sits ON TOP of preloader) -->
     <FluidCursor class="fixed inset-0 z-50 pointer-events-none" :intro-mode="isLoading" />
 
-    <!-- Navigation -->
-    <Navbar />
+    <!-- ⚠️ ALL CONTENT BELOW IS HIDDEN WHEN isLoading = true (maintenance mode) -->
+    <template v-if="!isLoading">
+      <!-- Navigation -->
+      <Navbar />
 
-    <!-- Main Router Content -->
-    <div class="relative z-10">
-      <router-view v-slot="{ Component }">
-        <transition 
-          enter-active-class="transition ease-out duration-500" 
-          enter-from-class="opacity-0 translate-y-4" 
-          enter-to-class="opacity-100 translate-y-0" 
-          leave-active-class="transition ease-in duration-300" 
-          leave-from-class="opacity-100 translate-y-0" 
-          leave-to-class="opacity-0 -translate-y-4"
-          mode="out-in"
-        >
-          <component :is="Component" />
-        </transition>
-      </router-view>
+      <!-- Main Router Content -->
+      <div class="relative z-10">
+        <router-view v-slot="{ Component }">
+          <transition 
+            enter-active-class="transition ease-out duration-500" 
+            enter-from-class="opacity-0 translate-y-4" 
+            enter-to-class="opacity-100 translate-y-0" 
+            leave-active-class="transition ease-in duration-300" 
+            leave-from-class="opacity-100 translate-y-0" 
+            leave-to-class="opacity-0 -translate-y-4"
+            mode="out-in"
+          >
+            <component :is="Component" />
+          </transition>
+        </router-view>
 
-      <!-- Cookie Consent -->
-      <CookieConsent />
+        <!-- Cookie Consent -->
+        <CookieConsent />
 
-      <!-- Sticky Mobile CTA -->
-      <StickyCTA />
+        <!-- Sticky Mobile CTA -->
+        <StickyCTA />
 
-      <!-- Global Footer -->
-      <Footer />
-    </div>
+        <!-- Global Footer -->
+        <Footer />
+      </div>
+    </template>
   </div>
 </template>
 
 <style>
 /* Remove local styles in favor of Tailwind classes where possible */
 </style>
+
