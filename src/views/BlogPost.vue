@@ -23,7 +23,7 @@ const posts: Record<string, any> = {
       <p class="lead">Open ChatGPT. Ask it to recommend an IT company in Hull. If your business doesn't appear, you're invisible to a growing segment of customers who've stopped using Google.</p>
       
       <h2>How Big Is the Shift from Google to AI?</h2>
-      <p>Gartner projects a <strong>25% drop in traditional search volume by 2026</strong>. ChatGPT now handles over 140 million queries daily. Perplexity processes 30 million. These aren't niche tools anymore—they're how a significant portion of your potential customers find services.</p>
+      <p>Industry analysts predict traditional search volume will decline significantly as users shift to AI assistants. ChatGPT, Perplexity, and similar tools now handle <strong>hundreds of millions of queries daily</strong>—and that number keeps growing. These aren't niche tools anymore; they're how a meaningful portion of your potential customers find services.</p>
       <p>The difference? AI doesn't show ten blue links. It gives one answer. If you're not in that answer, you don't exist.</p>
       
       <h2>Why Are Most Websites Invisible to AI?</h2>
@@ -40,7 +40,7 @@ const posts: Record<string, any> = {
       <p>This isn't a one-time plugin install. It requires JSON-LD schema implementation, semantic HTML structure, llms.txt specification compliance, and continuous monitoring of how AI systems cite your content. The landscape evolves monthly as models update their training data and citation methods.</p>
       
       <h2>Are Competitors Already Doing This?</h2>
-      <p>Less than 1% of UK SMBs have implemented GEO properly. That's the opportunity—early movers will dominate AI search for their niches before the industry catches up. But that window closes as awareness grows.</p>
+      <p>GEO is still in its infancy—the vast majority of businesses haven't touched it. That's the opportunity. Early movers will dominate AI search for their niches before the industry catches up. But that window narrows as awareness grows.</p>
       
       <p>Curious whether AI can currently find your business? <a href="/ai-optimization-hull">Request a free visibility audit</a>—you'll see exactly what's missing and what it would take to fix.</p>
     `
@@ -52,10 +52,10 @@ const posts: Record<string, any> = {
     readTime: '4 min read',
     author: 'Jake Fieldhouse',
     content: `
-      <p class="lead">Apple's repair quote: £799 for a "logic board replacement." The actual fault: a £2 capacitor. Here's why component-level repair often makes more sense than paying Apple's prices—or binning a perfectly good machine.</p>
+      <p class="lead">Apple quotes you for a full "logic board replacement." The actual fault? Often a single component that can be sourced for a few pounds. Here's why component-level repair often makes more sense than paying Apple's prices—or binning a perfectly good machine.</p>
       
       <h2>Why Does Apple Say "Unrepairable"?</h2>
-      <p>Apple doesn't diagnose to component level. Their model is module replacement: if a single chip fails, they swap the entire logic board. It's efficient for their workflow, but expensive for you. A board replacement costs £500-900. The actual faulty component often costs £5-50.</p>
+      <p>Apple doesn't diagnose to component level. Their model is module replacement: if a single chip fails, they swap the entire logic board. It's efficient for their workflow, but expensive for you. The faulty component often costs a fraction of what they charge for the board.</p>
       
       <h2>What Does Component-Level Repair Look Like?</h2>
       <p>Under a stereo microscope at 40x magnification, using hot air rework stations and precision soldering equipment, individual chips can be removed, tested, and replaced. Common examples:</p>
@@ -65,7 +65,7 @@ const posts: Record<string, any> = {
         <li><strong>Liquid Damage Corrosion</strong>—ultrasonic cleaning can recover boards that Apple writes off</li>
         <li><strong>GPU BGA Failures</strong>—sometimes a reball or replacement chip, not a new board</li>
       </ul>
-      <p>This isn't DIY territory. It requires years of training, £10k+ in equipment, and access to board schematics. But it is possible—and it saves machines that Apple would have you replace.</p>
+      <p>This isn't DIY territory. It requires years of training, significant equipment investment, and access to board schematics. But it is possible—and it saves machines that Apple would have you replace.</p>
       
       <h2>When Should You Repair vs Replace?</h2>
       <p><strong>Repair makes sense if:</strong> Your Mac is 1-6 years old, has 16GB+ RAM or Apple Silicon, or contains irreplaceable data on a soldered SSD.</p>
