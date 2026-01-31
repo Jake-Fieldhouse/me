@@ -207,7 +207,7 @@ const scrollToComparison = () => {
                     </tr>
                     <tr class="group hover:bg-neutral-900/30 transition-colors">
                         <td class="p-6 font-medium text-white">Data Security</td>
-                        <td class="p-6 text-green-400 font-bold bg-neutral-900/50 border-x border-white/5">DoD Standard Wiping</td>
+                        <td class="p-6 text-green-400 font-bold bg-neutral-900/50 border-x border-white/5">NIST 800-88 Wiping</td>
                         <td class="p-6 text-neutral-400">Basic Format</td>
                         <td class="p-6 text-neutral-400">None / Risky</td>
                     </tr>

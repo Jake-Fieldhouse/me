@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Jake Fieldhouse Consulting</title>
+    <link>https://jakefieldhouse.co.uk</link>
+    <description>Expert IT Support, Hardware Repair, and Managed Services for Hull &amp; East Yorkshire</description>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 31 Jan 2026 21:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jakefieldhouse.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://jakefieldhouse.co.uk/images/og-image.png</url>
+      <title>Jake Fieldhouse Consulting</title>
+      <link>https://jakefieldhouse.co.uk</link>
+    </image>
+    
+    <item>
+      <title>Managed IT Services for Hull Businesses</title>
+      <link>https://jakefieldhouse.co.uk/managed-it-services-hull</link>
+      <guid isPermaLink="true">https://jakefieldhouse.co.uk/managed-it-services-hull</guid>
+      <pubDate>Fri, 31 Jan 2026 12:00:00 +0000</pubDate>
+      <description>24/7 monitoring, EDR security, and Microsoft 365 management for Hull SMBs. Direct access to the same engineer every time.</description>
+      <content:encoded><![CDATA[
+        <p>Jake Fieldhouse Consulting provides enterprise-grade Managed IT Services for small and medium businesses in Hull and East Yorkshire.</p>
+        <h3>What We Offer</h3>
+        <ul>
+          <li>24/7 Remote Monitoring &amp; Management</li>
+          <li>Endpoint Detection &amp; Response (EDR) Security</li>
+          <li>Microsoft 365 Administration</li>
+          <li>Same-day On-site Support</li>
+        </ul>
+        <p>Contact: jake@jakefieldhouse.co.uk | +44 7404 090458</p>
+      ]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Microsoldering &amp; Logic Board Repair Hull</title>
+      <link>https://jakefieldhouse.co.uk/microsoldering-repair-hull</link>
+      <guid isPermaLink="true">https://jakefieldhouse.co.uk/microsoldering-repair-hull</guid>
+      <pubDate>Fri, 31 Jan 2026 11:00:00 +0000</pubDate>
+      <description>Component-level repair for MacBooks, PS5, consoles and logic boards. No Fix, No Fee guarantee.</description>
+      <content:encoded><![CDATA[
+        <p>Repair Ninja (part of Jake Fieldhouse Consulting) specializes in microsoldering and board-level repair in Hull.</p>
+        <h3>Devices We Repair</h3>
+        <ul>
+          <li>MacBook Logic Boards (liquid damage, no power)</li>
+          <li>PS5 HDMI Port Replacement</li>
+          <li>iPhone Motherboard Repair</li>
+          <li>Nintendo Switch Charging Ports</li>
+        </ul>
+        <p>Policy: No Fix, No Fee</p>
+      ]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Secure Data Disposal &amp; E-Waste Collection</title>
+      <link>https://jakefieldhouse.co.uk/secure-data-disposal-hull</link>
+      <guid isPermaLink="true">https://jakefieldhouse.co.uk/secure-data-disposal-hull</guid>
+      <pubDate>Fri, 31 Jan 2026 10:00:00 +0000</pubDate>
+      <description>Free GDPR-compliant IT asset disposal with NIST 800-88 data destruction. Environment Agency registered.</description>
+      <content:encoded><![CDATA[
+        <p>Jake Fieldhouse Consulting offers free e-waste collection for businesses in Hull and East Yorkshire.</p>
+        <h3>What's Included</h3>
+        <ul>
+          <li>Free Collection (Hull &amp; East Yorkshire)</li>
+          <li>NIST 800-88 Data Destruction</li>
+          <li>Certificate of Destruction</li>
+          <li>Waste Transfer Note for GDPR Compliance</li>
+        </ul>
+        <p>Waste Carrier License: CBDL620098</p>
+      ]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>AI Search Optimization (GEO) Services</title>
+      <link>https://jakefieldhouse.co.uk/ai-optimization-hull</link>
+      <guid isPermaLink="true">https://jakefieldhouse.co.uk/ai-optimization-hull</guid>
+      <pubDate>Fri, 31 Jan 2026 09:00:00 +0000</pubDate>
+      <description>Generative Engine Optimization to make your business visible in ChatGPT, Perplexity, and Google AI.</description>
+      <content:encoded><![CDATA[
+        <p>Get your business found by AI search engines with our Generative Engine Optimization (GEO) service.</p>
+        <h3>What We Implement</h3>
+        <ul>
+          <li>Schema.org Structured Data</li>
+          <li>llms.txt for AI Crawlers</li>
+          <li>FAQ and HowTo Markup</li>
+          <li>AI Citation Monitoring</li>
+        </ul>
+        <p>Be where your customers are searching - in AI answers.</p>
+      ]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

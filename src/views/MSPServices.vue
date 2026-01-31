@@ -81,7 +81,7 @@ import TrustBar from '../components/TrustSignals/TrustBar.vue'
                     <div class="mt-1 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></div>
                     <div>
                         <strong class="block text-white">AI-Powered Threat Defense</strong>
-                        <span class="text-neutral-400 text-sm">EDR that catches AI-generated phishing and ransomware—the top threats UK SMEs face in 2025.</span>
+                        <span class="text-neutral-400 text-sm">EDR that catches AI-generated phishing and ransomware—the top threats UK SMEs face in 2026.</span>
                     </div>
                 </div>
                 <div class="flex gap-4 items-start">
