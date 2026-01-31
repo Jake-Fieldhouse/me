@@ -30,7 +30,7 @@ const contactMethods = [
       <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
         Let's <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400">Talk</span>
       </h1>
-      <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
+      <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed text-readable">
         No ticket queues. No chatbots. Just direct access to Jake—whether you need a repair quote, 
         MSP consultation, or same-day e-waste pickup.
       </p>
@@ -43,7 +43,7 @@ const contactMethods = [
         v-for="method in contactMethods" 
         :key="method.label"
         :href="method.href"
-        class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5 hover:border-emerald-500/50 transition-colors text-center group"
+        class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5 hover:border-emerald-500/50 transition-colors text-center group hover-lift"
       >
         <div class="text-3xl mb-3">{{ method.icon }}</div>
         <div class="text-sm text-neutral-500 mb-1">{{ method.label }}</div>

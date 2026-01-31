@@ -44,7 +44,7 @@ const values = [
       <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
         The Person Behind <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">The Tech</span>
       </h1>
-      <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
+      <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed text-readable">
         I'm Jake Fieldhouse—Director of Jake Fieldhouse Consulting Ltd (Company No. 16536646). Your full-stack tech partner from setup to sunset, based in Hull.
       </p>
     </header>
@@ -92,7 +92,7 @@ const values = [
         <div 
           v-for="value in values" 
           :key="value.title"
-          class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5 hover:border-white/20 transition-colors"
+          class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5 hover:border-white/20 transition-colors hover-lift scroll-reveal"
         >
           <div class="text-4xl mb-4">{{ value.icon }}</div>
           <h3 class="text-xl font-bold text-white mb-2">{{ value.title }}</h3>
@@ -105,7 +105,7 @@ const values = [
     <section class="text-center space-y-6">
       <h2 class="text-2xl font-bold text-white">Ready to simplify your IT?</h2>
       <div class="flex justify-center gap-4">
-        <router-link to="/contact" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors">
+        <router-link to="/contact" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors btn-depth">
           Get In Touch
         </router-link>
         <router-link to="/" class="px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/10">

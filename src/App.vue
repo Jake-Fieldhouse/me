@@ -24,10 +24,19 @@ onMounted(() => {
         router.replace('/' + decodeURIComponent(redirectPath))
     }
 
-    // Load time for art house effect
-    setTimeout(() => {
+    // Smart preloader: skip on repeat visits within session
+    const hasSeenPreloader = sessionStorage.getItem('preloader-seen')
+    
+    if (hasSeenPreloader) {
+        // Instant load for repeat visitors
         isLoading.value = false
-    }, 3500)
+    } else {
+        // Full art house experience for first visit
+        setTimeout(() => {
+            isLoading.value = false
+            sessionStorage.setItem('preloader-seen', 'true')
+        }, 3500)
+    }
 })
 </script>
 

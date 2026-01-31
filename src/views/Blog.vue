@@ -55,7 +55,7 @@ const categoryColors: Record<string, string> = {
       <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
         The <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Blog</span>
       </h1>
-      <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
+      <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed text-readable">
         Practical tech advice for Hull businesses. No fluff, just actionable insights from the field.
       </p>
     </header>
@@ -65,7 +65,7 @@ const categoryColors: Record<string, string> = {
       <article 
         v-for="post in posts" 
         :key="post.slug"
-        class="bg-neutral-900/50 p-8 rounded-2xl border border-white/5 hover:border-blue-500/30 transition-colors group"
+        class="bg-neutral-900/50 p-8 rounded-2xl border border-white/5 hover:border-blue-500/30 transition-colors group hover-lift scroll-reveal"
       >
         <div class="flex flex-wrap items-center gap-4 mb-4">
           <span :class="['px-3 py-1 rounded-full text-xs font-medium border', categoryColors[post.category]]">
