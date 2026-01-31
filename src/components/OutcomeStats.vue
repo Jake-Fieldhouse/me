@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Outcome Statistics Component
-// Realistic numbers for 10+ years in the industry
+// Realistic numbers for 15+ years in the industry
 // Note: These are illustrative estimates - update with actuals when available
 
 const stats = [

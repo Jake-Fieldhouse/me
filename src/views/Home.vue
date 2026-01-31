@@ -33,7 +33,7 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
           Enterprise IT. Component-Level Repair. Zero Compromise.
         </p>
         <p class="text-lg text-neutral-500 max-w-xl mx-auto">
-          <router-link to="/managed-it-services-hull" class="text-blue-400 hover:text-blue-300 transition-colors">SMB & enterprise IT</router-link>, <router-link to="/microsoldering-repair-hull" class="text-red-400 hover:text-red-300 transition-colors">board-level repairs</router-link>, <router-link to="/ai-optimization-hull" class="text-violet-400 hover:text-violet-300 transition-colors">AI visibility</router-link>, and <router-link to="/secure-data-disposal-hull" class="text-emerald-400 hover:text-emerald-300 transition-colors">responsible recycling</router-link>—based in Hull, available worldwide.
+          <router-link to="/managed-it-services-hull" class="text-blue-400 hover:text-blue-300 transition-colors">SMB & enterprise IT</router-link>, <router-link to="/microsoldering-repair-hull" class="text-red-400 hover:text-red-300 transition-colors">board-level repairs</router-link>, <router-link to="/ai-optimization-hull" class="text-violet-400 hover:text-violet-300 transition-colors">AI visibility</router-link>, and <router-link to="/secure-data-disposal-hull" class="text-emerald-400 hover:text-emerald-300 transition-colors">responsible recycling</router-link>—based in Hull.
         </p>
         
         <!-- CTAs -->
@@ -42,7 +42,7 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
             to="/contact" 
             class="px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-neutral-200 transition-all hover:scale-105 shadow-lg shadow-white/10"
           >
-            Book Free Consultation
+            Get in Touch
           </router-link>
           <router-link 
             to="/repair-ninja" 

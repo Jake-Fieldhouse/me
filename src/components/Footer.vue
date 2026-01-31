@@ -15,7 +15,7 @@ const currentYear = new Date().getFullYear()
         </div>
 
         <p>© {{ currentYear }} Jake Fieldhouse Consulting Ltd | Company No. 16536646 | Insured by Hiscox</p>
-        <p class="text-xs text-neutral-400">Hull & East Yorkshire | UK-Wide On-Site | Remote Worldwide</p>
+        <p class="text-xs text-neutral-400">Hull & East Yorkshire | UK-Wide On-Site & Remote</p>
         
         <!-- Main Navigation -->
         <nav class="flex justify-center gap-6 flex-wrap">
