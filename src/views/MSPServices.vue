@@ -23,7 +23,7 @@ import CitedStat from '../components/CitedStat.vue'
             Local Response. <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">Enterprise Protection.</span>
         </h1>
         <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed text-readable">
-            Big MSPs treat you like a ticket number. We treat you like a partner. 24/7 monitoring, AI-threat detection, and someone who actually picks up the phone—based right here in Hull.
+            Big MSPs treat you like a ticket number. I treat you like a partner. 24/7 monitoring, AI-threat detection, and someone who actually picks up the phone—based right here in Hull.
         </p>
         <div class="flex flex-col md:flex-row justify-center gap-4 pt-4">
             <router-link to="/contact" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors text-center btn-depth">
@@ -178,7 +178,7 @@ import CitedStat from '../components/CitedStat.vue'
     <section class="text-center pb-20">
         <div class="max-w-2xl mx-auto p-8 rounded-2xl bg-gradient-to-r from-blue-500/5 to-cyan-500/5 border border-blue-500/20">
             <h3 class="text-2xl font-bold text-white mb-3">See Our Work in Action</h3>
-            <p class="text-neutral-400 mb-6">Discover how we've helped Hull & East Yorkshire businesses transform their IT infrastructure.</p>
+            <p class="text-neutral-400 mb-6">See how I've helped Hull & East Yorkshire businesses transform their IT infrastructure.</p>
             <router-link to="/case-studies" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-bold rounded-xl hover:bg-neutral-200 transition-colors">
                 View Case Studies
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>

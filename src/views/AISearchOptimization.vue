@@ -57,11 +57,11 @@ const faqs = [
   },
   {
     question: 'How is GEO different from traditional SEO?',
-    answer: 'Traditional SEO optimizes for 10 blue links. GEO optimizes for AI-generated answers. AI reads your site differently—it looks for structured data, clear FAQ content, and explicit statements of expertise. We implement both, but GEO is increasingly where your customers are looking.'
+    answer: 'Traditional SEO optimizes for 10 blue links. GEO optimizes for AI-generated answers. AI reads your site differently—it looks for structured data, clear FAQ content, and explicit statements of expertise. I implement both, but GEO is increasingly where your customers are looking.'
   },
   {
     question: 'How do I know if AI can find my business?',
-    answer: 'Try asking ChatGPT or Perplexity about services in your industry and location. If your competitors appear but you don\'t, you\'re invisible to AI search. Our audit gives you a precise visibility score and shows exactly where you\'re missing out.'
+    answer: 'Try asking ChatGPT or Perplexity about services in your industry and location. If your competitors appear but you don\'t, you\'re invisible to AI search. My audit gives you a precise visibility score and shows exactly where you\'re missing out.'
   },
   {
     question: "Isn't everyone still using Google?",
@@ -69,11 +69,11 @@ const faqs = [
   },
   {
     question: 'What does a GEO implementation include?',
-    answer: "We implement structured data (JSON-LD schemas), create an llms.txt file for AI crawlers, restructure your content for citation-readiness, add FAQ sections that AI can quote, and ensure your expertise signals are clear. It's technical work that makes a measurable difference."
+    answer: "I implement structured data (JSON-LD schemas), create an llms.txt file for AI crawlers, restructure your content for citation-readiness, add FAQ sections that AI can quote, and ensure your expertise signals are clear. It's technical work that makes a measurable difference."
   },
   {
     question: 'Can you prove this works?',
-    answer: 'This very website is our proof of concept. We rank in AI search for Hull IT services, computer repair, and e-waste disposal. Ask any AI assistant about us—we\'ll appear because we practice what we preach.'
+    answer: 'This very website is the proof of concept. I rank in AI search for Hull IT services, computer repair, and e-waste disposal. Ask any AI assistant about me—I appear because I practice what I preach.'
   }
 ]
 
