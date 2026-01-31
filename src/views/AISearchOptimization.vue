@@ -109,7 +109,7 @@ Looking forward to hearing from you.`)
         Is Your Business <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400">Invisible to AI?</span>
       </h1>
       
-      <p class="text-xl text-neutral-400 mb-8 max-w-3xl mx-auto">
+      <p class="text-xl text-neutral-400 mb-8 max-w-3xl mx-auto text-readable">
         <CitedStat 
           stat="58% of consumers" 
           source="Search Engine Journal" 
@@ -128,7 +128,7 @@ Looking forward to hearing from you.`)
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <button 
           @click="scrollToContact"
-          class="px-8 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-xl font-semibold text-white hover:from-violet-500 hover:to-fuchsia-500 transition-all shadow-lg shadow-violet-500/25"
+          class="px-8 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-xl font-semibold text-white hover:from-violet-500 hover:to-fuchsia-500 transition-all shadow-lg shadow-violet-500/25 btn-depth"
         >
           Get Your Free AI Visibility Check
         </button>
@@ -194,7 +194,7 @@ Looking forward to hearing from you.`)
         <p class="text-neutral-400 text-center mb-12 max-w-2xl mx-auto">We implement the technical foundations that make AI understand, trust, and recommend your business.</p>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors">
+          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors hover-lift scroll-reveal">
             <div class="w-12 h-12 rounded-xl bg-violet-500/20 flex items-center justify-center mb-4">
               <span class="text-2xl">📋</span>
             </div>
@@ -202,7 +202,7 @@ Looking forward to hearing from you.`)
             <p class="text-neutral-400">JSON-LD structured data that tells AI exactly what you do, where you operate, and why you're trustworthy.</p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors">
+          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors hover-lift scroll-reveal">
             <div class="w-12 h-12 rounded-xl bg-fuchsia-500/20 flex items-center justify-center mb-4">
               <span class="text-2xl">🤖</span>
             </div>
@@ -210,7 +210,7 @@ Looking forward to hearing from you.`)
             <p class="text-neutral-400">A dedicated file that gives AI crawlers a clear summary of your business—like robots.txt, but for AI.</p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors">
+          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors hover-lift scroll-reveal">
             <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4">
               <span class="text-2xl">❓</span>
             </div>
@@ -218,7 +218,7 @@ Looking forward to hearing from you.`)
             <p class="text-neutral-400">Structured Q&A content that AI can directly quote when users ask about your services.</p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors">
+          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors hover-lift scroll-reveal">
             <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4">
               <span class="text-2xl">🔗</span>
             </div>
@@ -226,7 +226,7 @@ Looking forward to hearing from you.`)
             <p class="text-neutral-400">Content structured so AI cites you as a source—building authority and driving referral traffic.</p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors">
+          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors hover-lift scroll-reveal">
             <div class="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center mb-4">
               <span class="text-2xl">📍</span>
             </div>
@@ -234,7 +234,7 @@ Looking forward to hearing from you.`)
             <p class="text-neutral-400">Geographic data that helps AI recommend you for local queries like "best IT support in Hull".</p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors">
+          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors hover-lift scroll-reveal">
             <div class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-4">
               <span class="text-2xl">📊</span>
             </div>

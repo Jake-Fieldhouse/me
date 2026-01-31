@@ -49,11 +49,11 @@ const scrollToBook = () => {
         <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
             We Fix What <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">Others Won't</span>
         </h1>
-        <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
+        <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed text-readable">
             80% of consumers now prioritize repairability. We're on your side—microsoldering dead boards back to life while Apple charges you for a whole new device.
         </p>
         <div class="flex flex-col md:flex-row justify-center gap-4 pt-4">
-            <button @click="scrollToBook" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors text-center">
+            <button @click="scrollToBook" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors text-center btn-depth">
             Get in Touch
             </button>
             <router-link to="/" class="px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/10 text-center">
@@ -138,7 +138,7 @@ const scrollToBook = () => {
                         <button type="button" @click="form.method = 'mail-in'" :class="form.method === 'mail-in' ? 'bg-red-500/20 border-red-500 text-white' : 'bg-neutral-800 border-transparent text-neutral-400'" class="p-3 rounded-lg border text-sm font-medium transition-colors">Mail-in</button>
                     </div>
                 </div>
-                <button type="submit" class="w-full bg-red-600 hover:bg-red-500 text-white font-bold py-4 rounded-xl transition-colors mt-2">
+                <button type="submit" class="w-full bg-red-600 hover:bg-red-500 text-white font-bold py-4 rounded-xl transition-colors mt-2 btn-depth hover-glow">
                     Get in Touch
                 </button>
             </form>
@@ -147,21 +147,21 @@ const scrollToBook = () => {
 
     <!-- Why Us Grid -->
     <section class="grid md:grid-cols-3 gap-8 pb-20">
-         <div class="bg-neutral-900/30 p-8 rounded-2xl border border-white/5">
+         <div class="bg-neutral-900/30 p-8 rounded-2xl border border-white/5 hover-lift scroll-reveal">
              <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-6">
                  <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
              </div>
              <h3 class="text-xl font-bold text-white mb-2">Microsoldering Experts</h3>
              <p class="text-neutral-400">We replace 0.5mm chips and repair trace damage that normal repair shops can't touch.</p>
          </div>
-         <div class="bg-neutral-900/30 p-8 rounded-2xl border border-white/5">
+         <div class="bg-neutral-900/30 p-8 rounded-2xl border border-white/5 hover-lift scroll-reveal">
              <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-6">
                  <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
              </div>
              <h3 class="text-xl font-bold text-white mb-2">Ultrasonic Cleaning</h3>
              <p class="text-neutral-400">Liquid damage? Our industrial cleaners remove corrosion from every crevice of your logic board.</p>
          </div>
-         <div class="bg-neutral-900/30 p-8 rounded-2xl border border-white/5">
+         <div class="bg-neutral-900/30 p-8 rounded-2xl border border-white/5 hover-lift scroll-reveal">
              <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-6">
                 <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
              </div>
