@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
 import ContactForm from '../components/ContactForm.vue'
-import ScrollIndicator from '../components/ScrollIndicator.vue'
 
 const heroRef = ref<HTMLElement | null>(null)
 const formRef = ref<HTMLElement | null>(null)
@@ -23,14 +22,13 @@ const contactMethods = [
   <div class="relative w-full max-w-5xl mx-auto px-6 py-20 flex flex-col gap-16">
     
     <!-- Hero -->
-    <header ref="heroRef" class="text-center space-y-6 mt-10 relative min-h-[50vh] flex flex-col justify-center">
+    <header ref="heroRef" class="text-center space-y-4 mt-10">
       <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
         Let's <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400">Talk</span>
       </h1>
       <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed text-readable">
         Reach me directly for repair quotes, IT consultations, or same-day e-waste collection.
       </p>
-      <ScrollIndicator />
     </header>
 
     <!-- Quick Contact -->
