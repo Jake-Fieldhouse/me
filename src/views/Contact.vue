@@ -151,7 +151,7 @@ useScrollReveal(formRef, { delay: 0.2 })
           
           <div class="space-y-2">
             <!-- LinkedIn -->
-            <a href="https://linkedin.com/in/jakefieldhouse" target="_blank" 
+            <a href="https://uk.linkedin.com/in/jake-fieldhouse" target="_blank" 
                class="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors group">
               <div class="w-10 h-10 rounded-lg bg-[#0077b5]/20 flex items-center justify-center">
                 <!-- LinkedIn Logo -->

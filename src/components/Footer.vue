@@ -16,7 +16,7 @@ const currentYear = new Date().getFullYear()
 
         <!-- Social Links -->
         <a 
-          href="https://linkedin.com/in/jakefieldhouse" 
+          href="https://uk.linkedin.com/in/jake-fieldhouse" 
           target="_blank" 
           rel="noopener noreferrer"
           class="flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 hover:bg-blue-500/20 transition-colors group"
