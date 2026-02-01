@@ -125,7 +125,7 @@ const scrollToComparison = () => {
 
     <!-- Our Impact -->
     <section class="relative bg-neutral-900 overflow-hidden py-24 border-y border-white/5">
-         <div class="absolute inset-0 bg-[url('/images/circuit-bg.png')] opacity-5"></div>
+         <div class="absolute inset-0 bg-[url('/images/circuit-bg.webp')] opacity-5"></div>
          <div class="max-w-7xl mx-auto px-6 relative z-10 text-center space-y-12">
              <div class="space-y-4">
                  <h2 class="text-3xl font-bold text-white">Your Environmental Impact</h2>

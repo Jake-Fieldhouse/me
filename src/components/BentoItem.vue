@@ -24,15 +24,7 @@ const transformStyle = computed(() => {
   return `perspective(1000px) rotateX(${rotation.value.x}deg) rotateY(${rotation.value.y}deg) scale3d(1, 1, 1)`;
 });
 
-const width = ref(0);
-const height = ref(0);
 const spotlightPos = ref({ x: 0, y: 0 });
-
-const handleMouseEnter = (e: MouseEvent) => {
-  const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
-  width.value = rect.width;
-  height.value = rect.height;
-};
 
 const handleMouseMove = (e: MouseEvent) => {
   // Use offsetX/Y if possible, fallback to manual calc if cached dimensions exist
@@ -80,13 +72,16 @@ const handleMouseLeave = () => {
 <template>
   <div
     ref="cardRef"
-    @mouseenter="handleMouseEnter"
     @mousemove="handleMouseMove"
     @mouseleave="handleMouseLeave"
+    @keydown.enter="$emit('click', $event)"
+    @keydown.space.prevent="$emit('click', $event)"
+    role="button"
+    tabindex="0"
     :style="{ transform: transformStyle }"
     :class="
       cn(
-        'row-span-1 rounded-xl group/bento hover:shadow-xl transition-all duration-200 ease-out shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4',
+        'row-span-1 rounded-xl group/bento hover:shadow-xl transition-all duration-200 ease-out shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black',
         props.class,
       )
     "

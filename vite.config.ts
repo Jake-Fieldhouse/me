@@ -35,8 +35,17 @@ export default defineConfig({
     },
     // Security: Don't expose build metadata
     reportCompressedSize: false,
-    // Chunk splitting for better caching (not security)
-    chunkSizeWarningLimit: 1000
+    // Chunk splitting for better caching
+    chunkSizeWarningLimit: 1000,
+    // Manual chunking for cache efficiency
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['vue', 'vue-router'],
+          gsap: ['gsap']
+        }
+      }
+    }
   },
 
   // Ensure no server options leak into production

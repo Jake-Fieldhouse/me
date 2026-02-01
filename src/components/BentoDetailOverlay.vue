@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch, nextTick, computed } from "vue";
+import { ref, watch, nextTick, computed, onUnmounted } from "vue";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -16,6 +16,10 @@ const isAnimating = ref(false);
 const cardRef = ref<HTMLElement | null>(null);
 
 const themeColor = computed(() => props.colorClass || "bg-white");
+
+// Store timeout IDs for cleanup
+let openTimeout: ReturnType<typeof setTimeout> | null = null;
+let closeTimeout: ReturnType<typeof setTimeout> | null = null;
 
 watch(
   () => props.isOpen,
@@ -53,7 +57,8 @@ watch(
         card.style.borderRadius = "24px";
       });
 
-      setTimeout(() => {
+      if (openTimeout) clearTimeout(openTimeout);
+      openTimeout = setTimeout(() => {
          isAnimating.value = false;
       }, 500);
 
@@ -81,12 +86,18 @@ watch(
          card.style.opacity = "0"; // Fade out slightly at end to merge
       });
 
-      setTimeout(() => {
+      if (closeTimeout) clearTimeout(closeTimeout);
+      closeTimeout = setTimeout(() => {
         isAnimating.value = false;
       }, 400);
     }
   }
 );
+
+onUnmounted(() => {
+  if (openTimeout) clearTimeout(openTimeout);
+  if (closeTimeout) clearTimeout(closeTimeout);
+});
 </script>
 
 <template>

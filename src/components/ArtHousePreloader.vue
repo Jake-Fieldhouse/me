@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, onUnmounted, ref, watch } from 'vue'
 import gsap from 'gsap'
 import FluidCursor from './FluidCursor.vue'
 
@@ -11,9 +11,13 @@ const containerRef = ref<HTMLElement | null>(null)
 const nameRef = ref<HTMLElement | null>(null)
 const roleRef = ref<HTMLElement | null>(null)
 
+// Store GSAP animations for cleanup
+let entranceTl: gsap.core.Timeline | null = null
+let exitTween: gsap.core.Tween | null = null
+
 // Animation timeline
 onMounted(() => {
-  const tl = gsap.timeline()
+  entranceTl = gsap.timeline()
 
   // Initial clean state
   gsap.set([nameRef.value, roleRef.value], { 
@@ -23,7 +27,7 @@ onMounted(() => {
   })
 
   // Cinematic reveal
-  tl.to(nameRef.value, {
+  entranceTl.to(nameRef.value, {
     opacity: 1,
     y: 0,
     filter: 'blur(0px)',
@@ -43,7 +47,7 @@ onMounted(() => {
 watch(() => props.loading, (newVal) => {
   if (!newVal) {
     // Exit sequence
-    gsap.to(containerRef.value, {
+    exitTween = gsap.to(containerRef.value, {
       opacity: 0,
       scale: 1.05, // Subtle zoom out feel
       duration: 1.2,
@@ -53,6 +57,11 @@ watch(() => props.loading, (newVal) => {
       }
     })
   }
+})
+
+onUnmounted(() => {
+  entranceTl?.kill()
+  exitTween?.kill()
 })
 </script>
 

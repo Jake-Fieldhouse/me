@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch, onMounted } from 'vue';
+import { ref, watch, onMounted, onUnmounted } from 'vue';
 
 const props = defineProps({
   text: {
@@ -23,16 +23,23 @@ const props = defineProps({
 const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const displayText = ref(props.text.split(''));
 const iterations = ref(0);
+let currentInterval: ReturnType<typeof setInterval> | null = null;
 
 function getRandomChar() {
   return alphabets[Math.floor(Math.random() * alphabets.length)];
 }
 
 function triggerAnimation() {
+  // Clear any existing interval before starting new one
+  if (currentInterval) {
+    clearInterval(currentInterval);
+  }
+  
   iterations.value = 0;
-  const interval = setInterval(() => {
+  currentInterval = setInterval(() => {
     if (iterations.value >= props.text.length) {
-      clearInterval(interval);
+      if (currentInterval) clearInterval(currentInterval);
+      currentInterval = null;
       displayText.value = props.text.split(''); 
       return;
     }
@@ -53,6 +60,12 @@ function triggerAnimation() {
 onMounted(() => {
   if (props.animateOnLoad) {
     triggerAnimation();
+  }
+});
+
+onUnmounted(() => {
+  if (currentInterval) {
+    clearInterval(currentInterval);
   }
 });
 

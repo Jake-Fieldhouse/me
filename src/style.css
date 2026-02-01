@@ -291,3 +291,9 @@ h4 {
   transform: translateZ(0);
   backface-visibility: hidden;
 }
+
+/* --- Content Visibility for Offscreen (2026 Performance) --- */
+.defer-offscreen {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}

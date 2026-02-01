@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -12,6 +12,9 @@ const testimonialText = ref('')
 const isSubmitted = ref(false)
 const isSubmitting = ref(false)
 
+// Store timeout for cleanup
+let submitTimeout: ReturnType<typeof setTimeout> | null = null
+
 onMounted(() => {
     if (route.query.name) {
         clientName.value = decodeURIComponent(route.query.name as string)
@@ -19,6 +22,10 @@ onMounted(() => {
     if (route.query.service) {
         serviceName.value = decodeURIComponent(route.query.service as string)
     }
+})
+
+onUnmounted(() => {
+    if (submitTimeout) clearTimeout(submitTimeout)
 })
 
 const stars = computed(() => {
@@ -44,7 +51,8 @@ const handleSubmit = async () => {
     window.location.href = `mailto:jake@jakefieldhouse.co.uk?subject=${subject}&body=${body}`
     
     // Show success state
-    setTimeout(() => {
+    if (submitTimeout) clearTimeout(submitTimeout)
+    submitTimeout = setTimeout(() => {
         isSubmitted.value = true
         isSubmitting.value = false
     }, 500)
