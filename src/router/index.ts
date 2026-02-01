@@ -309,6 +309,15 @@ const router = createRouter({
             }
         },
         {
+            path: '/security-acknowledgments',
+            name: 'security-acknowledgments',
+            component: () => import('../views/SecurityAcknowledgments.vue'),
+            meta: {
+                title: 'Security Acknowledgments | Jake Fieldhouse Consulting',
+                description: 'Recognizing security researchers who help keep our systems safe through responsible disclosure.'
+            }
+        },
+        {
             path: '/policies',
             name: 'policies',
             component: () => import('../views/Policies.vue'),
