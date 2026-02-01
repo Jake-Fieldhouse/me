@@ -24,9 +24,7 @@ const contactMethods = [
     
     <!-- Hero -->
     <header ref="heroRef" class="text-center space-y-6 mt-10 relative min-h-[50vh] flex flex-col justify-center">
-      <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-4">
-        Direct Line to Jake • No Ticket Queues
-      </div>
+
       <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
         Let's <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400">Talk</span>
       </h1>
