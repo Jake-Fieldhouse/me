@@ -24,13 +24,11 @@ const contactMethods = [
     
     <!-- Hero -->
     <header ref="heroRef" class="text-center space-y-6 mt-10 relative min-h-[50vh] flex flex-col justify-center">
-
       <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
         Let's <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400">Talk</span>
       </h1>
       <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed text-readable">
-        No ticket queues. No chatbots. Just direct access to Jake—whether you need a repair quote, 
-        MSP consultation, or same-day e-waste pickup.
+        Reach me directly for repair quotes, IT consultations, or same-day e-waste collection.
       </p>
       <ScrollIndicator />
     </header>
@@ -49,15 +47,6 @@ const contactMethods = [
       </a>
     </div>
 
-    <!-- Emergency Support Callout -->
-    <div class="p-4 rounded-2xl bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/30 text-center">
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <span class="text-red-400 font-bold">🚨 Server down? Critical issue?</span>
-        <a href="tel:+447404090458" class="px-4 py-2 bg-red-500 text-white font-bold rounded-full hover:bg-red-400 transition-colors">
-          Call Now: 07404 090458
-        </a>
-      </div>
-    </div>
 
     <!-- Booking & Contact Options -->
     <section ref="formRef" class="grid lg:grid-cols-5 gap-6">

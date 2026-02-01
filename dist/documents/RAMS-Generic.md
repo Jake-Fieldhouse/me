@@ -66,7 +66,7 @@ This RAMS covers standard on-site IT services including:
 | Manual Handling Awareness | ✓ |
 | NIST 800-88 Data Destruction | ✓ |
 | First Aid Awareness | ✓ |
-| DBS Enhanced Check | ✓ (001935701873) |
+| DBS Enhanced Check | ✓ Verified |
 
 ---
 
