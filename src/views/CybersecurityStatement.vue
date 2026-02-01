@@ -22,18 +22,18 @@
           <li><strong class="text-white">Encryption at Rest:</strong> Client data is stored on encrypted storage systems</li>
           <li><strong class="text-white">Access Controls:</strong> Principle of least privilege applied to all data access</li>
           <li><strong class="text-white">Data Minimisation:</strong> We only collect and retain data necessary for service delivery</li>
-          <li><strong class="text-white">Secure Disposal:</strong> All storage media sanitised to NIST 800-88 standards</li>
+          <li><strong class="text-white">Secure Disposal:</strong> Storage media sanitised following NCSC guidance and industry best practices</li>
         </ul>
       </section>
 
       <section>
         <h2 class="text-2xl font-bold text-white mb-4">3. Infrastructure Security</h2>
         <ul class="list-disc list-inside space-y-3">
-          <li><strong class="text-white">Endpoint Protection:</strong> All devices run enterprise-grade EDR solutions</li>
+          <li><strong class="text-white">Endpoint Protection:</strong> Business devices protected by managed endpoint detection and response</li>
           <li><strong class="text-white">Multi-Factor Authentication:</strong> MFA enforced on all critical systems and accounts</li>
-          <li><strong class="text-white">Network Security:</strong> Segmented networks with next-gen firewall protection</li>
+          <li><strong class="text-white">Network Security:</strong> Appropriate network security controls with traffic monitoring</li>
           <li><strong class="text-white">Patch Management:</strong> Regular patching cycles with priority for critical vulnerabilities</li>
-          <li><strong class="text-white">Backup Strategy:</strong> Regular encrypted backups with tested recovery procedures</li>
+          <li><strong class="text-white">Backup Strategy:</strong> Regular encrypted backups with documented recovery procedures</li>
         </ul>
       </section>
 

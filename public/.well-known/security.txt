@@ -6,7 +6,7 @@ Contact: mailto:jake@jakefieldhouse.co.uk
 Expires: 2027-01-31T23:59:59.000Z
 Preferred-Languages: en
 Canonical: https://jakefieldhouse.co.uk/.well-known/security.txt
-Policy: https://jakefieldhouse.co.uk/privacy
+Policy: https://jakefieldhouse.co.uk/cybersecurity
 Acknowledgments: https://jakefieldhouse.co.uk/security-acknowledgments
 
 # We take security seriously. If you discover a vulnerability,
