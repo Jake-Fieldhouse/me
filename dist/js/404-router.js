@@ -60,6 +60,7 @@
         'disclaimer',
         'accessibility',
         'cybersecurity',
+        'security-acknowledgments',
         'policies',
         // Local SEO
         'service-areas'
