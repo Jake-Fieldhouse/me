@@ -160,7 +160,7 @@
             "@id": "https://jakefieldhouse.co.uk/#credential-waste",
             "@type": "Credential",
             "name": "Environment Agency Waste Carrier License",
-            "credentialCategory": "Tier 1 Waste Carrier",
+            "credentialCategory": "Upper Tier Waste Carrier",
             "identifier": "CBDL620098",
             "issuedBy": {
                 "@type": "GovernmentOrganization",
@@ -173,7 +173,7 @@
             "@type": "Credential",
             "name": "ICO Data Protection Registration",
             "credentialCategory": "Data Controller",
-            "identifier": "ZB804382",
+            "identifier": "ZC002956",
             "issuedBy": {
                 "@type": "GovernmentOrganization",
                 "name": "Information Commissioner's Office",
