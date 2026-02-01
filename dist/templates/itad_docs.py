@@ -32,7 +32,7 @@ except ImportError:
     sys.exit(1)
 
 # Configuration
-TEMPLATE_DIR = Path(__file__).parent / "templates"
+TEMPLATE_DIR = Path(__file__).parent  # Templates are in same folder as this script
 OUTPUT_DIR = Path(__file__).parent / "generated"
 DESTRUCTION_DUE_DAYS = 14
 WEEE_DUE_DAYS = 90

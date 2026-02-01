@@ -1,7 +1,10 @@
 {
-    "name": "portfolio",
+    "name": "jakefieldhouse-portfolio",
+    "description": "Professional portfolio and service portal for Jake Fieldhouse Consulting Ltd - MSP Services, Repair Ninja Diagnostics, and Sustainable Tech Solutions",
+    "author": "Jake Fieldhouse <jake@jakefieldhouse.co.uk>",
     "private": true,
-    "version": "0.0.0",
+    "license": "SEE LICENSE FILE",
+    "version": "1.0.0",
     "type": "module",
     "scripts": {
         "dev": "vite",

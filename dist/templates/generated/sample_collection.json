@@ -1,0 +1,38 @@
+{
+  "client_name": "Acme Manufacturing Ltd",
+  "client_contact": "Jane Smith",
+  "client_email": "jane.smith@acme.example.com",
+  "client_address": "123 Industrial Estate, Hull, HU1 2AB",
+  "client_postcode": "HU1 2AB",
+  "client_signatory": "Jane Smith",
+  "client_position": "Office Manager",
+  "collection_reference": "COL-2026-0001",
+  "collection_date": "01 February 2026",
+  "collection_time": "10:30",
+  "items": [
+    {
+      "device_type": "Laptop",
+      "manufacturer": "Dell",
+      "serial": "ABC123456",
+      "condition": "Working",
+      "storage_size": "256GB SSD",
+      "data_bearing": true
+    },
+    {
+      "device_type": "Desktop PC",
+      "manufacturer": "HP",
+      "serial": "XYZ789012",
+      "condition": "Working",
+      "storage_size": "500GB HDD",
+      "data_bearing": true
+    },
+    {
+      "device_type": "Monitor",
+      "manufacturer": "LG",
+      "serial": "MON456789",
+      "condition": "Good",
+      "storage_size": "N/A",
+      "data_bearing": false
+    }
+  ]
+}

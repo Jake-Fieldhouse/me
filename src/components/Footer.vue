@@ -28,7 +28,7 @@ const currentYear = new Date().getFullYear()
           <span class="text-xs text-blue-400 font-medium group-hover:text-blue-300 transition-colors">LinkedIn</span>
         </a>
 
-        <p>© {{ currentYear }} Jake Fieldhouse Consulting Ltd | Company No. 16536646 | Insured by Hiscox</p>
+        <p>© {{ currentYear }} Jake Fieldhouse Consulting Ltd | Registered in England & Wales | Company No. 16536646 | Insured by Hiscox</p>
         <p class="text-xs text-neutral-400">Hull & East Yorkshire | UK-Wide On-Site & Remote</p>
         
         <!-- Main Navigation -->
