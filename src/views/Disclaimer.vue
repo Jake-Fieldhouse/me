@@ -64,7 +64,7 @@
         <p>We reserve the right to modify this disclaimer at any time without prior notice. Your continued use of this website following any changes constitutes acceptance of those changes.</p>
       </section>
 
-      <p class="text-neutral-500 text-sm pt-8">Last updated: January 2026</p>
+      <p class="text-neutral-500 text-sm pt-8">Last updated: February 2026</p>
     </div>
     
     <div class="mt-12 text-center">

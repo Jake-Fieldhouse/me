@@ -87,7 +87,7 @@
         <p>Our liability for any failure to meet service targets is limited to the monthly fee paid for the affected service. We expressly exclude liability for any indirect, consequential, or economic losses, including but not limited to lost revenue, lost data, or business interruption.</p>
       </section>
 
-      <p class="text-neutral-500 text-sm pt-8">Last updated: January 2026</p>
+      <p class="text-neutral-500 text-sm pt-8">Last updated: February 2026</p>
     </div>
     
     <div class="mt-12 text-center">

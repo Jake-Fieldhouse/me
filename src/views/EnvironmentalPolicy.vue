@@ -71,7 +71,7 @@
         <p>For questions about our environmental practices, contact <a href="mailto:jake@jakefieldhouse.co.uk" class="text-blue-400 hover:underline">jake@jakefieldhouse.co.uk</a>.</p>
       </section>
 
-      <p class="text-neutral-500 text-sm pt-8">Last updated: January 2026</p>
+      <p class="text-neutral-500 text-sm pt-8">Last updated: February 2026</p>
     </div>
     
     <div class="mt-12 text-center">

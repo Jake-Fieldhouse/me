@@ -77,7 +77,7 @@
         <p>If you are not satisfied with our response to your accessibility concern, you may contact the Equality Advisory Support Service (EASS) at <a href="https://www.equalityadvisoryservice.com/" target="_blank" rel="noopener" class="text-blue-400 hover:underline">equalityadvisoryservice.com</a>.</p>
       </section>
 
-      <p class="text-neutral-500 text-sm pt-8">Last updated: January 2026</p>
+      <p class="text-neutral-500 text-sm pt-8">Last updated: February 2026</p>
     </div>
     
     <div class="mt-12 text-center space-x-6">

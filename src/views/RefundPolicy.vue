@@ -57,7 +57,7 @@
         <p>If you are dissatisfied with our decision regarding a refund, please refer to our <router-link to="/complaints" class="text-blue-400 hover:underline">Complaints Policy</router-link>.</p>
       </section>
 
-      <p class="text-neutral-500 text-sm pt-8">Last updated: January 2026</p>
+      <p class="text-neutral-500 text-sm pt-8">Last updated: February 2026</p>
     </div>
     
     <div class="mt-12 text-center">

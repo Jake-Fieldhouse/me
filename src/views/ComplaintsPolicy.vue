@@ -89,7 +89,7 @@
         <p>We reserve the right to decline to engage further with complaints that are, in our reasonable opinion, vexatious, repetitive without new information, or made in bad faith.</p>
       </section>
 
-      <p class="text-neutral-500 text-sm pt-8">Last updated: January 2026</p>
+      <p class="text-neutral-500 text-sm pt-8">Last updated: February 2026</p>
     </div>
     
     <div class="mt-12 text-center">
