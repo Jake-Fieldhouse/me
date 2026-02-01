@@ -75,8 +75,11 @@ function pointerPrototype(): Pointer {
 const canvasRef = ref<HTMLCanvasElement | null>(null);
 
 onMounted(() => {
-  const canvas = canvasRef.value;
-  if (!canvas) return;
+  // Defer heavy WebGL initialization to idle time
+  // This prevents blocking the main thread during initial page load
+  const initFluidSimulation = () => {
+    const canvas = canvasRef.value;
+    if (!canvas) return;
 
   // Pointer and config setup
   const pointers: Pointer[] = [pointerPrototype()];
@@ -1411,6 +1414,15 @@ onMounted(() => {
       loseContext.loseContext();
     }
   });
+  }; // End of initFluidSimulation
+
+  // Use requestIdleCallback to defer initialization, with setTimeout fallback
+  if ('requestIdleCallback' in window) {
+    (window as any).requestIdleCallback(initFluidSimulation, { timeout: 2000 });
+  } else {
+    // Fallback for Safari - defer to next frame
+    setTimeout(initFluidSimulation, 100);
+  }
 });
 </script>
 
