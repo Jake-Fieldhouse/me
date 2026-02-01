@@ -70,8 +70,17 @@
       </section>
 
       <section>
-        <h2 class="text-2xl font-bold text-white mb-4">6. Your Consent</h2>
-        <p>By continuing to use this website after being presented with the cookie notice, you consent to our use of cookies as described in this policy. You may withdraw consent at any time by clearing your cookies and adjusting your browser settings.</p>
+        <h2 class="text-2xl font-bold text-white mb-4">6. Your Consent Choices</h2>
+        <p>We obtain consent for non-essential cookies through our cookie banner when you first visit the site. You can:</p>
+        <ul class="list-disc list-inside space-y-2 mt-4">
+          <li><strong class="text-white">Accept all:</strong> Enable all cookies including analytics</li>
+          <li><strong class="text-white">Essential only:</strong> Accept only strictly necessary cookies</li>
+          <li><strong class="text-white">Manage preferences:</strong> Choose which categories to enable</li>
+        </ul>
+        <p class="mt-4">You can withdraw consent at any time by clearing your cookies and revisiting the site, or by adjusting your browser settings.</p>
+        <div class="mt-4 p-4 bg-blue-500/10 border border-blue-500/30 rounded-xl">
+          <p class="text-blue-400 text-sm"><strong>Note:</strong> Under the Data (Use and Access) Act 2025, analytics cookies for website performance monitoring may be used without consent where they do not collect personal data for marketing purposes.</p>
+        </div>
       </section>
 
       <section>
@@ -84,7 +93,7 @@
         <p>For questions about our use of cookies, contact us at <a href="mailto:jake@jakefieldhouse.co.uk" class="text-blue-400 hover:underline">jake@jakefieldhouse.co.uk</a>.</p>
       </section>
 
-      <p class="text-neutral-500 text-sm pt-8">Last updated: January 2026</p>
+      <p class="text-neutral-500 text-sm pt-8">Last updated: February 2026</p>
     </div>
     
     <div class="mt-12 text-center">

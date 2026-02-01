@@ -22,7 +22,18 @@
       </section>
 
       <section>
-        <h2 class="text-2xl font-bold text-white mb-4">3. How We Use Your Data</h2>
+        <h2 class="text-2xl font-bold text-white mb-4">3. Lawful Basis for Processing</h2>
+        <p>We process your personal data on the following legal bases:</p>
+        <ul class="list-disc list-inside space-y-2 mt-4">
+          <li><strong class="text-white">Contract:</strong> To provide the services you have requested or enquired about</li>
+          <li><strong class="text-white">Legitimate Interests:</strong> To improve our services, respond to enquiries, and maintain business records</li>
+          <li><strong class="text-white">Legal Obligation:</strong> To comply with tax, accounting, and regulatory requirements</li>
+          <li><strong class="text-white">Consent:</strong> For marketing communications (where you have opted in)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">4. How We Use Your Data</h2>
         <ul class="list-disc list-inside space-y-2">
           <li>To provide the services you request</li>
           <li>To communicate about your project or enquiry</li>
@@ -32,23 +43,63 @@
       </section>
 
       <section>
-        <h2 class="text-2xl font-bold text-white mb-4">4. Data Security</h2>
+        <h2 class="text-2xl font-bold text-white mb-4">5. Data Retention</h2>
+        <p>We retain your personal data only as long as necessary:</p>
+        <ul class="list-disc list-inside space-y-2 mt-4">
+          <li><strong class="text-white">Contact enquiries:</strong> 2 years from last contact</li>
+          <li><strong class="text-white">Client records:</strong> 6 years after service completion (legal/tax requirements)</li>
+          <li><strong class="text-white">Website analytics:</strong> 26 months</li>
+          <li><strong class="text-white">Marketing consent:</strong> Until you withdraw consent</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">6. Third-Party Disclosure</h2>
+        <p>We may share your data with:</p>
+        <ul class="list-disc list-inside space-y-2 mt-4">
+          <li><strong class="text-white">Service providers:</strong> Payment processors, cloud hosting (data processing agreements in place)</li>
+          <li><strong class="text-white">Legal authorities:</strong> Where required by law</li>
+        </ul>
+        <p class="mt-4">We do not sell your personal data to third parties.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">7. Data Security</h2>
         <p>We implement appropriate technical and organisational measures to protect your data, including encrypted communications and secure storage systems.</p>
       </section>
 
       <section>
-        <h2 class="text-2xl font-bold text-white mb-4">5. Your Rights</h2>
-        <p>Under UK GDPR, you have the right to access, rectify, erase, restrict processing, and port your data. Contact us at <a href="mailto:jake@jakefieldhouse.co.uk" class="text-blue-400 hover:underline">jake@jakefieldhouse.co.uk</a> to exercise these rights.</p>
+        <h2 class="text-2xl font-bold text-white mb-4">8. Your Rights</h2>
+        <p>Under UK GDPR, you have the right to:</p>
+        <ul class="list-disc list-inside space-y-2 mt-4">
+          <li>Access your personal data</li>
+          <li>Rectify inaccurate data</li>
+          <li>Erase your data ("right to be forgotten")</li>
+          <li>Restrict or object to processing</li>
+          <li>Data portability</li>
+          <li>Withdraw consent at any time</li>
+        </ul>
+        <p class="mt-4">Contact us at <a href="mailto:jake@jakefieldhouse.co.uk" class="text-blue-400 hover:underline">jake@jakefieldhouse.co.uk</a> to exercise these rights.</p>
       </section>
 
       <section>
-        <h2 class="text-2xl font-bold text-white mb-4">6. Contact</h2>
+        <h2 class="text-2xl font-bold text-white mb-4">9. Complaints</h2>
+        <p>If you are dissatisfied with how we handle your data, you have the right to lodge a complaint with the Information Commissioner's Office (ICO):</p>
+        <div class="mt-4 p-4 bg-neutral-800 rounded-xl">
+          <p class="font-medium text-white">Information Commissioner's Office</p>
+          <p>Website: <a href="https://ico.org.uk" target="_blank" rel="noopener" class="text-blue-400 hover:underline">ico.org.uk</a></p>
+          <p>Helpline: 0303 123 1113</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">10. Contact</h2>
         <p>Data Controller: Jake Fieldhouse Consulting Ltd<br/>
         Company Number: 16536646<br/>
         Email: jake@jakefieldhouse.co.uk</p>
       </section>
 
-      <p class="text-neutral-500 text-sm pt-8">Last updated: January 2026</p>
+      <p class="text-neutral-500 text-sm pt-8">Last updated: February 2026</p>
     </div>
     
     <div class="mt-12 text-center">
