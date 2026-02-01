@@ -37,11 +37,24 @@
       </section>
 
       <section>
-        <h2 class="text-2xl font-bold text-white mb-4">6. Governing Law</h2>
+        <h2 class="text-2xl font-bold text-white mb-4">6. Force Majeure</h2>
+        <p>We shall not be liable for any failure or delay in performing our obligations where such failure or delay results from circumstances beyond our reasonable control, including but not limited to:</p>
+        <ul class="list-disc list-inside space-y-2 mt-4">
+          <li>Natural disasters, extreme weather, or acts of God</li>
+          <li>Pandemics, epidemics, or public health emergencies</li>
+          <li>Cyberattacks, IT infrastructure failures, or supply chain disruptions</li>
+          <li>Government actions, legal changes, or regulatory requirements</li>
+          <li>Civil unrest, terrorism, or war</li>
+        </ul>
+        <p class="mt-4">We will notify affected clients promptly and work to resume services as soon as reasonably practicable.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">7. Governing Law</h2>
         <p>These terms are governed by the laws of England and Wales.</p>
       </section>
 
-      <p class="text-neutral-500 text-sm pt-8">Last updated: January 2026</p>
+      <p class="text-neutral-500 text-sm pt-8">Last updated: February 2026</p>
     </div>
     
     <div class="mt-12 text-center">

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 
 interface Props {
   color?: string;
@@ -27,6 +27,7 @@ const circles = ref<any[]>([]);
 const mouse = ref<{ x: number; y: number }>({ x: 0, y: 0 });
 const canvasSize = ref<{ w: number; h: number }>({ w: 0, h: 0 });
 const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1;
+let animationId: number;
 
 onMounted(() => {
   if (canvasRef.value) {
@@ -185,8 +186,15 @@ const animate = () => {
       drawCircle(circle, true);
     }
   });
-  window.requestAnimationFrame(animate);
+  animationId = window.requestAnimationFrame(animate);
 };
+
+onUnmounted(() => {
+  if (animationId) {
+    window.cancelAnimationFrame(animationId);
+  }
+  window.removeEventListener("resize", initCanvas);
+});
 
 // Helper function to convert hex color to rgb
 const hexToRgb = (hex: string): string => {

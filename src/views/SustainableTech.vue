@@ -53,7 +53,6 @@ const scrollToComparison = () => {
   <div class="relative w-full max-w-7xl mx-auto px-6 py-20 flex flex-col gap-20">
     
     <!-- Hero -->
-    <!-- Hero -->
     <header ref="headerRef" class="text-center space-y-6 mt-10">
       <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-4">
           Zero Landfill Policy • 100% Free Service

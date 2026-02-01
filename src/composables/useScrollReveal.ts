@@ -48,6 +48,9 @@ export function useScrollReveal(elementRef: any, options: any = {}) {
     })
 
     onUnmounted(() => {
-        if (animation) animation.kill()
+        if (animation) {
+            animation.scrollTrigger?.kill();
+            animation.kill();
+        }
     })
 }

@@ -15,7 +15,7 @@
  * See: MAINTENANCE_MODE.md for full documentation
  * ============================================
  */
-const MAINTENANCE_MODE = true
+const MAINTENANCE_MODE = false
 
 import FluidCursor from './components/FluidCursor.vue'
 import AuroraBackground from './components/AuroraBackground.vue'
@@ -35,9 +35,11 @@ onMounted(() => {
     if (MAINTENANCE_MODE) {
         // Never set isLoading to false - preloader loops infinitely
         // Humans cannot see any content
-        console.log('%c⚠️ SITE IN MAINTENANCE MODE', 'color: orange; font-size: 20px; font-weight: bold;')
-        console.log('%cHuman content is hidden. AI endpoints remain accessible.', 'color: orange;')
-        console.log('%cSee: MAINTENANCE_MODE.md', 'color: gray;')
+        if (import.meta.env.DEV) {
+            console.log('%c⚠️ SITE IN MAINTENANCE MODE', 'color: orange; font-size: 20px; font-weight: bold;')
+            console.log('%cHuman content is hidden. AI endpoints remain accessible.', 'color: orange;')
+            console.log('%cSee: MAINTENANCE_MODE.md', 'color: gray;')
+        }
         return // Exit early, don't run normal loading logic
     }
 
@@ -118,8 +120,3 @@ onMounted(() => {
     </template>
   </div>
 </template>
-
-<style>
-/* Remove local styles in favor of Tailwind classes where possible */
-</style>
-

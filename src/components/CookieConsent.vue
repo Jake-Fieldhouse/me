@@ -47,11 +47,6 @@ const savePreferences = () => {
     localStorage.setItem('cookie-preferences', JSON.stringify(preferences.value))
     showBanner.value = false
     showSettings.value = false
-    
-    // If analytics is enabled and GA4 exists, enable it
-    if (preferences.value.analytics && typeof window !== 'undefined') {
-        // GA4 is already loaded, no action needed
-    }
 }
 
 const openSettings = () => {

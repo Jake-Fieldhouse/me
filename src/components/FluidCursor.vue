@@ -1404,6 +1404,12 @@ onMounted(() => {
     window.removeEventListener("touchstart", handleTouchStart);
     window.removeEventListener("touchmove", handleTouchMove);
     window.removeEventListener("touchend", handleTouchEnd);
+    
+    // Release WebGL context and GPU resources
+    const loseContext = gl?.getExtension('WEBGL_lose_context');
+    if (loseContext) {
+      loseContext.loseContext();
+    }
   });
 });
 </script>
