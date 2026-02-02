@@ -1,10 +1,24 @@
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, type Ref } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export function useScrollReveal(elementRef: any, options: any = {}) {
+interface ScrollRevealOptions {
+    y?: number
+    opacity?: number
+    duration?: number
+    ease?: string
+    stagger?: number
+    delay?: number
+    scrollTrigger?: {
+        trigger?: HTMLElement | null
+        start?: string
+        toggleActions?: string
+    }
+}
+
+export function useScrollReveal(elementRef: Ref<HTMLElement | null>, options: ScrollRevealOptions = {}) {
     let animation: gsap.core.Tween | null = null
 
     onMounted(() => {

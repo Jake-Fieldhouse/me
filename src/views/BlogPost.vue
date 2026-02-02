@@ -11,8 +11,17 @@ const contentRef = ref<HTMLElement | null>(null)
 useScrollReveal(heroRef)
 useScrollReveal(contentRef, { delay: 0.2 })
 
-// Placeholder post data - replace with CMS or static data later
-const posts: Record<string, any> = {
+interface BlogPost {
+  title: string
+  date: string
+  category: string
+  readTime: string
+  author: string
+  content: string
+}
+
+// Blog post data - replace with CMS integration when needed
+const posts: Record<string, BlogPost> = {
   'why-ai-cant-find-your-business': {
     title: 'Why ChatGPT Can\'t Find Your Business (Yet)',
     date: '2026-01-28',
