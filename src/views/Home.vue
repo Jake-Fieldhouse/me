@@ -73,7 +73,7 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
             title="Repair Ninja"
             description="Manufacturer says unrepairable? We disagree. Component-level microsoldering for MacBooks, PS5s, and phones. No Fix, No Fee."
             class="md:col-span-2 group hover:scale-[1.02] transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
-            @click="() => $router.push('/microsoldering-repair-hull')"
+            to="/microsoldering-repair-hull"
           >
              <template #header>
                 <div class="relative flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-red-900/50 to-neutral-900 overflow-hidden">
@@ -89,7 +89,7 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
             title="Managed IT"
             description="43% of UK businesses were breached this year. Local response, enterprise protection, 24/7 monitoring."
             class="md:col-span-1 group hover:scale-[1.02] transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
-            @click="() => $router.push('/managed-it-services-hull')"
+            to="/managed-it-services-hull"
           >
             <template #header>
                 <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-blue-900/50 to-neutral-900" />
@@ -103,7 +103,7 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
             title="AI Visibility"
             description="58% of consumers now search with AI. Make sure ChatGPT, Perplexity, and Google AI recommend you, not your competitors."
             class="md:col-span-1 group hover:scale-[1.02] transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
-            @click="() => $router.push('/ai-optimization-hull')"
+            to="/ai-optimization-hull"
           >
              <template #header>
                 <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-violet-900/50 to-neutral-900" />
@@ -117,7 +117,7 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
             title="E-Waste & Recycling"
             description="Stop paying for disposal. Free business collection, Zero Landfill policy, and full compliance documentation."
             class="md:col-span-2 group hover:scale-[1.02] transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
-            @click="() => $router.push('/secure-data-disposal-hull')"
+            to="/secure-data-disposal-hull"
           >
              <template #header>
                 <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-amber-900/50 to-neutral-900" />

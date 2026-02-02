@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useToast } from '../composables/useToast'
 
 const form = ref({
   name: '',
@@ -10,6 +11,7 @@ const form = ref({
 const isSubmitting = ref(false)
 const isSubmitted = ref(false)
 const error = ref('')
+const { show: showToast } = useToast()
 
 const handleSubmit = async () => {
   if (!form.value.name || !form.value.email || !form.value.message) {
@@ -26,6 +28,9 @@ const handleSubmit = async () => {
     const body = encodeURIComponent(`Name: ${form.value.name}\nEmail: ${form.value.email}\n\nMessage:\n${form.value.message}`)
     
     window.location.href = `mailto:jake@jakefieldhouse.co.uk?subject=${subject}&body=${body}`
+    
+    // Show success toast
+    showToast('Email client opened! Thanks for reaching out.', 4000)
     
     isSubmitted.value = true
     form.value = { name: '', email: '', message: '' }

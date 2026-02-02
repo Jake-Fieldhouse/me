@@ -81,21 +81,72 @@ onMounted(() => {
     const canvas = canvasRef.value;
     if (!canvas) return;
 
+    // Fix: Listen to window events so pointer-events-none on canvas doesn't kill interaction
+    window.addEventListener("mousedown", (e) => {
+        const p = pointers.find((p) => p.id == -1);
+        if (!p) return;
+        p.down = true;
+        p.moved = false;
+        // Use defined function
+        updatePointerDownData(p, -1, e.clientX, e.clientY);
+    });
+
+    window.addEventListener("mousemove", (e) => {
+        const p = pointers.find((p) => p.id == -1);
+        if (!p) return;
+        p.moved = p.down;
+        // Use defined function with color
+        updatePointerMoveData(p, e.clientX, e.clientY, p.color);
+    });
+
+    window.addEventListener("mouseup", () => {
+         const p = pointers.find((p) => p.id == -1);
+         if (p) p.down = false;
+    });
+
+    // Touch support
+    window.addEventListener("touchstart", (e) => {
+        const touches = e.targetTouches;
+        for (let i = 0; i < touches.length; i++) {
+            if (i >= pointers.length) pointers.push(pointerPrototype());
+            pointers[i].id = touches[i].identifier;
+            pointers[i].down = true;
+            pointers[i].moved = false;
+            updatePointerDownData(pointers[i], touches[i].identifier, touches[i].clientX, touches[i].clientY);
+        }
+    }, { passive: false });
+    
+    window.addEventListener("touchmove", (e) => {
+        const touches = e.targetTouches;
+        for (let i = 0; i < touches.length; i++) {
+            let p = pointers.find((p) => p.id == touches[i].identifier);
+            if (!p) continue;
+            p.moved = p.down;
+            updatePointerMoveData(p, touches[i].clientX, touches[i].clientY, p.color);
+        }
+    }, { passive: false });
+
+  // Detect mobile/low-power devices for performance optimization
+  const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
+  const isLowPowerDevice = (navigator as any).deviceMemory ? (navigator as any).deviceMemory < 4 : false;
+  const shouldReduceQuality = isMobile || isLowPowerDevice;
+
   // Pointer and config setup
   const pointers: Pointer[] = [pointerPrototype()];
 
+  // Mobile-optimized defaults: reduce resolution for better performance
   const config = {
-    SIM_RESOLUTION: props.simResolution,
-    DYE_RESOLUTION: props.dyeResolution,
-    CAPTURE_RESOLUTION: props.captureResolution,
+    SIM_RESOLUTION: shouldReduceQuality ? 64 : props.simResolution,      // 64 on mobile vs 128 desktop
+    DYE_RESOLUTION: shouldReduceQuality ? 512 : props.dyeResolution,     // 512 on mobile vs 1024 desktop
+    CAPTURE_RESOLUTION: shouldReduceQuality ? 256 : props.captureResolution,
     DENSITY_DISSIPATION: props.densityDissipation,
     VELOCITY_DISSIPATION: props.velocityDissipation,
     PRESSURE: props.pressure,
-    PRESSURE_ITERATIONS: props.pressureIterations,
+    PRESSURE_ITERATIONS: shouldReduceQuality ? 10 : props.pressureIterations, // Fewer iterations on mobile
     CURL: props.curl,
     SPLAT_RADIUS: props.splatRadius,
     SPLAT_FORCE: props.splatForce,
-    SHADING: props.shading,
+    SHADING: shouldReduceQuality ? false : props.shading, // Disable shading on mobile
     COLOR_UPDATE_SPEED: props.colorUpdateSpeed,
     PAUSED: false,
     BACK_COLOR: props.backColor,

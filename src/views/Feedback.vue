@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
+import { useToast } from '../composables/useToast'
 
 const route = useRoute()
 
@@ -11,6 +12,7 @@ const rating = ref(5)
 const testimonialText = ref('')
 const isSubmitted = ref(false)
 const isSubmitting = ref(false)
+const { show: showToast } = useToast()
 
 // Store timeout for cleanup
 let submitTimeout: ReturnType<typeof setTimeout> | null = null
@@ -49,6 +51,9 @@ const handleSubmit = async () => {
     
     // Open email client
     window.location.href = `mailto:jake@jakefieldhouse.co.uk?subject=${subject}&body=${body}`
+    
+    // Show success toast
+    showToast('Email client opened! Please send to complete submission.', 4000)
     
     // Show success state
     if (submitTimeout) clearTimeout(submitTimeout)

@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
 const isMenuOpen = ref(false)
+const isServicesOpen = ref(false)
+const navRef = ref<HTMLElement | null>(null)
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -21,10 +23,30 @@ const serviceItems = [
 ]
 
 const isActive = (path: string) => route.path === path
+
+// Close mobile menu and services dropdown when clicking outside
+const handleClickOutside = (event: MouseEvent) => {
+  if (isMenuOpen.value && navRef.value && !navRef.value.contains(event.target as Node)) {
+    isMenuOpen.value = false
+  }
+  // Close services dropdown when clicking outside
+  const servicesDropdown = document.querySelector('.services-dropdown')
+  if (isServicesOpen.value && servicesDropdown && !servicesDropdown.contains(event.target as Node)) {
+    isServicesOpen.value = false
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside)
+})
 </script>
 
 <template>
-  <nav class="fixed top-0 left-0 right-0 z-40 bg-black/80 backdrop-blur-xl border-b border-white/5">
+  <nav ref="navRef" class="fixed top-0 left-0 right-0 z-40 bg-black/80 backdrop-blur-xl border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
@@ -45,20 +67,27 @@ const isActive = (path: string) => route.path === path
             {{ item.name }}
           </router-link>
           
-          <!-- Services Dropdown -->
-          <div class="relative group">
-            <button class="text-sm text-neutral-400 hover:text-white transition-colors flex items-center gap-1 border-b border-transparent hover:border-white/50 pb-0.5">
+          <!-- Services Dropdown (Click + Hover) -->
+          <div class="relative group services-dropdown">
+            <button 
+              @click.stop="isServicesOpen = !isServicesOpen"
+              class="text-sm text-neutral-400 hover:text-white transition-colors flex items-center gap-1 border-b border-transparent hover:border-white/50 pb-0.5"
+            >
               Services
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 transition-transform" :class="isServicesOpen ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-              <div class="bg-neutral-900 border border-white/10 rounded-xl p-2 min-w-[180px] shadow-2xl">
+            <div 
+              class="absolute top-full left-0 pt-4 transition-all duration-200 ease-out z-50"
+              :class="isServicesOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto'"
+            >
+              <div class="bg-neutral-900 border border-white/10 rounded-xl p-2 min-w-[200px] shadow-2xl">
                 <router-link 
                   v-for="service in serviceItems" 
                   :key="service.path"
                   :to="service.path"
+                  @click="isServicesOpen = false"
                   class="block px-4 py-2 text-sm rounded-lg transition-colors"
                   :class="isActive(service.path) ? 'bg-white/10 text-white' : 'text-neutral-400 hover:bg-white/5 hover:text-white'"
                 >
@@ -89,7 +118,7 @@ const isActive = (path: string) => route.path === path
         leave-from-class="opacity-100 translate-y-0"
         leave-to-class="opacity-0 -translate-y-2"
       >
-        <div v-if="isMenuOpen" class="md:hidden py-4 border-t border-white/5">
+        <div v-if="isMenuOpen" class="md:hidden py-4 border-t border-white/5 bg-neutral-900">
           <div class="flex flex-col gap-2">
             <router-link 
               v-for="item in [...navItems, ...serviceItems]" 

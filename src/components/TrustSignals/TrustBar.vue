@@ -31,16 +31,7 @@
             </div>
         </div>
 
-        <!-- Cyber Essentials -->
-        <div class="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity duration-300">
-            <div class="p-2 rounded-lg bg-blue-500/10 border border-blue-500/20">
-                <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-            </div>
-            <div class="flex flex-col">
-                <span class="text-xs text-neutral-400 uppercase tracking-wider font-semibold">Security</span>
-                <span class="text-white font-bold leading-none">Cyber Essentials</span>
-            </div>
-        </div>
+        <!-- TODO: Re-add Cyber Essentials after certification complete (see strategic_playbook.md Section 13) -->
 
          <!-- GDPR/ICO -->
          <div class="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity duration-300">

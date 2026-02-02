@@ -24,11 +24,14 @@ import CookieConsent from './components/CookieConsent.vue'
 import StickyCTA from './components/StickyCTA.vue'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
+import Toast from './components/Toast.vue'
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { useToast } from './composables/useToast'
 
 const router = useRouter()
 const isLoading = ref(true)
+const { toastMessage, showToast } = useToast()
 
 onMounted(() => {
     // ⚠️ MAINTENANCE MODE: If enabled, preloader runs forever
@@ -67,7 +70,7 @@ onMounted(() => {
         setTimeout(() => {
             isLoading.value = false
             sessionStorage.setItem('preloader-seen', 'true')
-        }, 3500)
+        }, 2000)
     }
 })
 </script>
@@ -116,6 +119,9 @@ onMounted(() => {
 
         <!-- Global Footer -->
         <Footer />
+        
+        <!-- Global Toast Notifications -->
+        <Toast :message="toastMessage" :show="showToast" @close="showToast = false" />
       </div>
     </template>
   </div>

@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
+import { useToast } from '../composables/useToast'
+
+const { show: showToast } = useToast()
 
 
 const form = ref({
@@ -27,6 +30,9 @@ Thanks!
   `.trim())
 
   window.location.href = `mailto:jake@jakefieldhouse.co.uk?subject=${subject}&body=${body}`
+  
+  // Show success toast
+  showToast('Email client opened! We\'ll get back to you soon.', 4000)
 }
 
 const scrollToBook = () => {

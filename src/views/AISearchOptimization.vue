@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
+import { useToast } from '../composables/useToast'
+
+const { show: showToast } = useToast()
 
 const packages = [
   {
@@ -89,6 +92,9 @@ Current Challenges:
 Looking forward to hearing from you.`)
 
   window.location.href = `mailto:jake@jakefieldhouse.co.uk?subject=${subject}&body=${body}`
+  
+  // Show success toast
+  showToast('Email client opened! Looking forward to helping you.', 4000)
 }
 </script>
 

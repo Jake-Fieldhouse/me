@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
+import { useToast } from '../composables/useToast'
 
 const headerRef = ref<HTMLElement | null>(null)
 const statsRef = ref<HTMLElement | null>(null)
@@ -13,10 +14,13 @@ useScrollReveal(statsRef, { delay: 0.2, stagger: 0.1 })
 useScrollReveal(processRef, { delay: 0.2, stagger: 0.2 })
 useScrollReveal(quoteRef, { delay: 0.2 })
 
+const { show: showToast } = useToast()
+
 const form = ref({
   company: '',
   contact: '',
   email: '',
+  phone: '',
   type: 'regular'
 })
 
@@ -29,7 +33,7 @@ We'd like to arrange a collection for:
 
 Company: ${form.value.company}
 Contact: ${form.value.contact}
-Email: ${form.value.email}
+Email: ${form.value.email}${form.value.phone ? `\r\nPhone: ${form.value.phone}` : ''}
 Estimated Volume: ${form.value.type}
 
 Please get back to us with a schedule.
@@ -38,6 +42,9 @@ Thanks!
   `.trim())
 
   window.location.href = `mailto:jake@jakefieldhouse.co.uk?subject=${subject}&body=${body}`
+  
+  // Show success toast
+  showToast('Email client opened! We\'ll respond within 24 hours.', 4000)
 }
 
 const scrollToQuote = () => {
@@ -325,6 +332,11 @@ const scrollToComparison = () => {
                     <div>
                         <label class="block text-sm font-medium text-neutral-400 mb-1">Email Address</label>
                         <input v-model="form.email" type="email" class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-500" placeholder="jane@acme.com" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-400 mb-1">Phone <span class="text-neutral-600">(Optional)</span></label>
+                        <input v-model="form.phone" type="tel" class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-500" placeholder="07xxx xxxxxx" />
+                        <p class="text-xs text-neutral-600 mt-1">For urgent same-day scheduling</p>
                     </div>
                      <div>
                         <label class="block text-sm font-medium text-neutral-400 mb-1">Estimated Volume</label>

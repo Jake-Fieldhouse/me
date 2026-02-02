@@ -15,6 +15,11 @@ const props = defineProps({
     type: String,
     required: false,
   },
+  to: {
+    type: String,
+    required: false,
+    default: null,
+  },
 });
 
 const cardRef = ref<HTMLElement | null>(null);
@@ -70,7 +75,9 @@ const handleMouseLeave = () => {
 </script>
 
 <template>
-  <div
+  <component
+    :is="to ? 'router-link' : 'div'"
+    :to="to"
     ref="cardRef"
     @mousemove="handleMouseMove"
     @mouseleave="handleMouseLeave"
@@ -104,5 +111,5 @@ const handleMouseLeave = () => {
         <slot name="description"></slot>
       </div>
     </div>
-  </div>
+  </component>
 </template>
