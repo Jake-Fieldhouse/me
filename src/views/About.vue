@@ -49,14 +49,10 @@ const values = [
       </p>
     </header>
 
-    <!-- Photo Section (placeholder for owner headshot) -->
+    <!-- Photo Section -->
     <section class="flex justify-center">
       <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-neutral-800 to-neutral-900 border-4 border-neutral-700 overflow-hidden flex items-center justify-center shadow-2xl">
-        <!-- Replace with: <img src="/images/headshot.jpg" alt="Jake Fieldhouse" class="w-full h-full object-cover" /> -->
-        <div class="text-center text-neutral-500">
-          <div class="text-5xl mb-2">👤</div>
-          <span class="text-xs">Photo coming soon</span>
-        </div>
+        <img src="/jake-fieldhouse.jpg" alt="Jake Fieldhouse - Director of Jake Fieldhouse Consulting Ltd" class="w-full h-full object-cover object-top" />
       </div>
     </section>
 
