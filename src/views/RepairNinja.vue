@@ -176,7 +176,7 @@ const scrollToBook = () => {
          </div>
     </section>
 
-    <!-- Repair Gallery (placeholder for macro photography) -->
+    <!-- Gallery Section -->
     <section class="pb-20">
         <h2 class="text-3xl font-bold text-white text-center mb-8">The Work</h2>
         <p class="text-neutral-400 text-center mb-8 max-w-2xl mx-auto">

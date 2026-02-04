@@ -32,25 +32,9 @@ const transformStyle = computed(() => {
 const spotlightPos = ref({ x: 0, y: 0 });
 
 const handleMouseMove = (e: MouseEvent) => {
-  // Use offsetX/Y if possible, fallback to manual calc if cached dimensions exist
-  // We use cached width/height to avoid reading DOM, but we need position.
-  // Actually, standard event offsetX/Y is relative to the target, which might be a child.
-  // Safe approach: Capture rect ONCE on Enter, assume it doesn't change size/pos continuously during hover.
-  
-  // If we rely on offsetX, it breaks if we hover children.
-  // Best approach: Use the cached width/height, but for X/Y, we still need reliable coords.
-  // If we cache rect on Enter, and the user Scrolls, the rect is invalid.
-  // BUT: The Tilt effect is only valid while hovering.
-  // Optimization: Only call getBoundingClientRect if we track scroll?
-  // OR: Use requestAnimationFrame to throttle the read/write.
-  
-  // Let's go with requestAnimationFrame to unblock the main thread.
-  // AND cache dimensions.
-  
+  // RAF-throttled spotlight/tilt effect calculation
   if (!cardRef.value) return;
   
-  // We can't easily avoid getBoundingClientRect for absolute precision without observers.
-  // But we CAN throttle it.
   requestAnimationFrame(() => {
      if (!cardRef.value) return;
      const rect = cardRef.value.getBoundingClientRect();

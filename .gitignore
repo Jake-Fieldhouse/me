@@ -36,3 +36,7 @@ Desktop.ini
 
 # Optional: uncomment if you want to ignore insurance docs
 # Insurance/
+
+# Internal workflow files (not for public repo)
+.agent/
+public/templates/generated/
