@@ -25,13 +25,14 @@
         'microsoldering-repair-hull',
         'secure-data-disposal-hull',
         'ai-optimization-hull',
+        'ai-search-optimization-hull',
         // Legacy Redirects
         'msp-services',
         'repair-ninja',
         'sustainable-tech',
         'e-waste',
         'ai-search',
-        // Service Areas
+        // Service Areas (IT Support)
         'it-support-hull',
         'it-support-beverley',
         'it-support-cottingham',
@@ -39,6 +40,10 @@
         'it-support-anlaby',
         'it-support-driffield',
         'it-support-brough',
+        'it-support-bridlington',
+        'it-support-goole',
+        'it-support-withernsea',
+        'it-support-hornsea',
         // Other Services
         'repair-services',
         'compliance',

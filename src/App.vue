@@ -95,8 +95,8 @@ onMounted(() => {
       <!-- Navigation -->
       <Navbar />
 
-      <!-- Main Router Content -->
-      <div class="relative z-10">
+      <!-- Main Router Content (pb-24 on mobile for StickyCTA clearance) -->
+      <div class="relative z-10 pb-24 md:pb-0">
         <router-view v-slot="{ Component }">
           <transition 
             enter-active-class="transition ease-out duration-500" 
