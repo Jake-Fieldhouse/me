@@ -29,9 +29,9 @@ For accurate results, set these environment variables:
 
 ```bash
 # Windows PowerShell
-$env:OPENAI_API_KEY = "sk-..."
-$env:ANTHROPIC_API_KEY = "sk-ant-..."
-$env:PERPLEXITY_API_KEY = "pplx-..."
+$env:OPENAI_API_KEY = "YOUR_OPENAI_KEY"
+$env:ANTHROPIC_API_KEY = "YOUR_ANTHROPIC_KEY"
+$env:PERPLEXITY_API_KEY = "YOUR_PERPLEXITY_KEY"
 
 # Then run
 python monitor.py --api

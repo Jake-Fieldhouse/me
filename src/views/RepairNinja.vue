@@ -183,7 +183,7 @@ const scrollToBook = () => {
             Macro photography of real repairs—proof of the precision microsoldering work that sets this service apart.
         </p>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <!-- Replace placeholders with real macro photos: <img src="/images/repairs/repair-1.jpg" alt="..." class="..." /> -->
+
             <div class="aspect-square rounded-xl bg-gradient-to-br from-neutral-800 to-neutral-900 border border-neutral-700 flex items-center justify-center group hover:border-red-500/50 transition-colors">
                 <div class="text-center text-neutral-500 group-hover:text-neutral-400 transition-colors">
                     <div class="text-3xl mb-2">🔬</div>

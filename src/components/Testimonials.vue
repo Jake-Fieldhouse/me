@@ -14,28 +14,7 @@ interface Testimonial {
 
 const activeTab = ref<'all' | 'b2b' | 'consumer'>('all')
 
-// Placeholder - replace with real testimonials when available
-const testimonials: Testimonial[] = [
-  // Example B2B testimonial:
-  // {
-  //   name: "Sarah Thompson",
-  //   role: "Operations Director",
-  //   company: "Hull Manufacturing Ltd",
-  //   quote: "Jake's team detected a ransomware attempt at 3am on a Sunday. Their 24/7 monitoring saved us from what could have been a catastrophic breach.",
-  //   rating: 5,
-  //   category: 'b2b'
-  // },
-  
-  // Example Consumer testimonial:
-  // {
-  //   name: "Mark Wilson",
-  //   role: "PS5 HDMI Repair",
-  //   company: "Hull",
-  //   quote: "Sony wanted £300+ for a new console. Jake fixed the HDMI port for a fraction of that and had it back to me in 48 hours.",
-  //   rating: 5,
-  //   category: 'consumer'
-  // }
-]
+const testimonials: Testimonial[] = []
 
 const filteredTestimonials = computed(() => {
   if (activeTab.value === 'all') return testimonials

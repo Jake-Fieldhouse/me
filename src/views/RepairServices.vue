@@ -20,7 +20,15 @@ const form = ref({
 })
 
 const submitForm = () => {
-  alert('Thanks! I\'ll review your repair request and get back to you within 24 hours.')
+  const subject = encodeURIComponent(`Repair Quote Request: ${form.value.device}`)
+  const body = encodeURIComponent(`
+Device: ${form.value.device}
+Issue: ${form.value.issue}
+
+Contact: ${form.value.name}
+Email: ${form.value.email}
+  `.trim())
+  window.location.href = `mailto:jake@jakefieldhouse.co.uk?subject=${subject}&body=${body}`
 }
 
 const services = [
