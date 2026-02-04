@@ -52,7 +52,10 @@ const values = [
     <!-- Photo Section -->
     <section class="flex justify-center">
       <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-neutral-800 to-neutral-900 border-4 border-neutral-700 overflow-hidden flex items-center justify-center shadow-2xl">
-        <img src="/jake-fieldhouse.jpg" alt="Jake Fieldhouse - Director of Jake Fieldhouse Consulting Ltd" class="w-full h-full object-cover object-top" />
+        <picture class="w-full h-full">
+          <source srcset="/jake-fieldhouse.avif" type="image/avif" />
+          <img src="/jake-fieldhouse.jpg" alt="Jake Fieldhouse - Director of Jake Fieldhouse Consulting Ltd" class="w-full h-full object-cover object-top" />
+        </picture>
       </div>
     </section>
 
