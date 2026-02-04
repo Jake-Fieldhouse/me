@@ -39,7 +39,7 @@ const values = [
     
     <header ref="heroRef" class="text-center space-y-6 mt-10">
       <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-4">
-        Companies House Verified • DBS Checked • ICO Registered
+        DBS Checked • ICO Registered
       </div>
       <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
         The Person Behind <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">The Tech</span>
@@ -59,14 +59,6 @@ const values = [
       </div>
     </section>
 
-    <!-- Specialist Advantage -->
-    <section class="max-w-2xl mx-auto p-6 rounded-2xl bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/30 text-center">
-      <h3 class="text-xl font-bold text-white mb-2">The Specialist Advantage</h3>
-      <p class="text-neutral-300">
-        <strong class="text-white">No call centers. No junior techs. No ticket queues.</strong><br/>
-        You get direct access to 15+ years of enterprise IT and microsoldering expertise—every single time.
-      </p>
-    </section>
 
     <!-- Story -->
     <section ref="storyRef" class="bg-neutral-900/50 p-8 md:p-12 rounded-3xl border border-white/5 space-y-6">
