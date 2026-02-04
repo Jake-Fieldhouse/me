@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <!-- TODO: Re-add Cyber Essentials after certification complete (see strategic_playbook.md Section 13) -->
+
 
          <!-- GDPR/ICO -->
          <div class="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity duration-300">

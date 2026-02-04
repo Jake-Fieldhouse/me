@@ -210,7 +210,7 @@ const scrollToBook = () => {
             </div>
         </div>
         <p class="text-neutral-500 text-center text-sm mt-6">
-            Gallery coming soon – real macro shots of board-level repairs
+            Precision repairs on phones, consoles, and laptops
         </p>
     </section>
 

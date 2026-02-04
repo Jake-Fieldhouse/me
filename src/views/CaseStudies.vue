@@ -40,7 +40,7 @@ const caseStudies: CaseStudy[] = [
             'Secure, documented IT infrastructure',
             'Ongoing managed support relationship'
         ],
-        testimonial: null, // Will add when received
+        testimonial: null,
         image: null
     },
     {
