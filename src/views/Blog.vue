@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
+import { blogPosts, categoryColors } from '../data/blogPosts'
 
 const heroRef = ref<HTMLElement | null>(null)
 const postsRef = ref<HTMLElement | null>(null)
@@ -8,40 +9,8 @@ const postsRef = ref<HTMLElement | null>(null)
 useScrollReveal(heroRef)
 useScrollReveal(postsRef, { delay: 0.2 })
 
-// Placeholder blog posts - replace with CMS or static data later
-const posts = ref([
-  {
-    slug: 'why-ai-cant-find-your-business',
-    title: 'Why ChatGPT Can\'t Find Your Business (Yet)',
-    excerpt: 'Most Hull businesses are invisible to AI search. Here\'s why that matters—and what you can do about it.',
-    date: '2026-01-28',
-    category: 'AI Search',
-    readTime: '5 min read'
-  },
-  {
-    slug: 'macbook-repair-vs-replace-guide',
-    title: 'MacBook Won\'t Turn On? When Repair Makes More Sense Than Replace',
-    excerpt: 'When Apple says "unrepairable", there\'s often a component-level fix available. Here\'s how to know which option is right for you.',
-    date: '2026-01-25',
-    category: 'Repair',
-    readTime: '4 min read'
-  },
-  {
-    slug: 'weee-regulations-2025-business-guide',
-    title: 'WEEE Regulations 2025: What Hull Businesses Need to Know',
-    excerpt: 'New November 2025 WEEE regulations affect how you dispose of e-waste. Here\'s your compliance checklist.',
-    date: '2026-01-20',
-    category: 'Compliance',
-    readTime: '6 min read'
-  }
-])
-
-const categoryColors: Record<string, string> = {
-  'AI Search': 'bg-violet-500/10 text-violet-400 border-violet-500/20',
-  'Repair': 'bg-red-500/10 text-red-400 border-red-500/20',
-  'Compliance': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
-  'IT Support': 'bg-blue-500/10 text-blue-400 border-blue-500/20'
-}
+// Posts from centralized data layer
+const posts = ref(blogPosts)
 </script>
 
 <template>
