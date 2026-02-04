@@ -74,7 +74,7 @@ const scrollToComparison = () => {
         <button @click="scrollToQuote" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors btn-depth">
           Get in Touch
         </button>
-        <button @click="scrollToComparison" class="px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/10">
+        <button @click="scrollToComparison" class="px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/20">
           Why It's Free?
         </button>
       </div>

@@ -46,7 +46,7 @@ onUnmounted(() => {
         <!-- Main Contact Button -->
         <router-link 
           to="/contact"
-          class="flex-1 flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:shadow-blue-500/30 active:scale-[0.98]"
+          class="flex-1 flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-emerald-500 to-teal-400 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:shadow-emerald-500/30 active:scale-[0.98]"
           aria-label="Get in touch with Jake Fieldhouse"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

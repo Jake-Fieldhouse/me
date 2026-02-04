@@ -31,7 +31,7 @@ import { Home, ArrowLeft } from 'lucide-vue-next'
         </RouterLink>
         <button 
           @click="$router.back()" 
-          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/10"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/20"
         >
           <ArrowLeft class="w-4 h-4" />
           Go Back

@@ -1,0 +1,4 @@
+# Antigravity ignore file
+node_modules/
+dist/
+.git/
