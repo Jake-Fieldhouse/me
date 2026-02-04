@@ -108,10 +108,11 @@ const SECURITY_HEADERS = {
         'xr-spatial-tracking=()'
     ].join(', '),
 
-    // Cross-Origin Isolation policies
-    'Cross-Origin-Opener-Policy': 'same-origin',
-    'Cross-Origin-Resource-Policy': 'same-origin',
-    'Cross-Origin-Embedder-Policy': 'require-corp',
+    // Cross-Origin policies - relaxed to allow Cal.com/Cal.eu embeds
+    // Note: require-corp COEP blocks iframes from origins that don't opt-in
+    'Cross-Origin-Opener-Policy': 'same-origin-allow-popups',
+    'Cross-Origin-Resource-Policy': 'cross-origin',
+    // COEP removed - only needed for SharedArrayBuffer, breaks third-party embeds
 
     // Legacy XSS protection (for older browsers without CSP support)
     'X-XSS-Protection': '1; mode=block',
