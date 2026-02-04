@@ -178,5 +178,5 @@ These endpoints provide structured data for AI systems and agentic commerce:
 
 ---
 
-*Last Updated: 1 February 2026*
+*Last Updated: 4 February 2026*
 
