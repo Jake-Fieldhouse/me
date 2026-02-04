@@ -3,8 +3,11 @@ VERSION:3.0
 FN:Jake Fieldhouse
 N:Fieldhouse;Jake;;;
 ORG:Jake Fieldhouse Consulting Ltd;
-TITLE:Director
+TITLE:Director & Lead Systems Engineer
 TEL;TYPE=CELL:+447404090458
 EMAIL:jake@jakefieldhouse.co.uk
 URL:https://jakefieldhouse.co.uk
+URL;TYPE=LinkedIn:https://uk.linkedin.com/in/jake-fieldhouse
+ADR;TYPE=WORK:;;Hull;East Yorkshire;;United Kingdom
 END:VCARD
+
