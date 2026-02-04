@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+
+// Hide on contact page - no need for CTA when already on contact
+const isContactPage = computed(() => route.path === '/contact')
 
 // Show CTA only after scrolling past hero section
 const isVisible = ref(false)
@@ -22,7 +28,7 @@ onUnmounted(() => {
 <template>
   <Transition name="slide-up">
     <div 
-      v-if="isVisible"
+      v-if="isVisible && !isContactPage"
       class="fixed bottom-0 left-0 right-0 z-40 p-3 md:hidden"
     >
       <!-- Subtle glassmorphism bar -->
