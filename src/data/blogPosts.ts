@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     {
         slug: 'why-ai-cant-find-your-business',
         title: "Why ChatGPT Can't Find Your Business (Yet)",
-        excerpt: "Most Hull businesses are invisible to AI search. Here's why that matters—and what you can do about it.",
+        excerpt: "Most Hull businesses are invisible to AI search. Here's why that matters, and what you can do about it.",
         date: '2026-01-28',
         category: 'AI Search',
         readTime: '5 min read',

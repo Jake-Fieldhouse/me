@@ -29,11 +29,11 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
             class="text-6xl md:text-8xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60" 
             />
         </div>
-        <p class="text-xl sm:text-2xl md:text-3xl text-neutral-200 font-light max-w-2xl mx-auto" style="text-shadow: 0 2px 20px rgba(0,0,0,0.9);">
+        <p class="text-xl sm:text-2xl md:text-3xl text-neutral-200 font-light max-w-2xl mx-auto drop-shadow-2xl">
           Enterprise IT. Component-Level Repair. Zero Compromise.
         </p>
-        <p class="text-base sm:text-lg text-neutral-400 max-w-xl mx-auto text-readable" style="text-shadow: 0 2px 15px rgba(0,0,0,0.8);">
-          <router-link to="/managed-it-services-hull" class="text-blue-400 hover:text-blue-300 transition-colors">SMB & enterprise IT</router-link>, <router-link to="/microsoldering-repair-hull" class="text-red-400 hover:text-red-300 transition-colors">board-level repairs</router-link>, <router-link to="/ai-optimization-hull" class="text-violet-400 hover:text-violet-300 transition-colors">AI visibility</router-link>, and <router-link to="/secure-data-disposal-hull" class="text-emerald-400 hover:text-emerald-300 transition-colors">responsible recycling</router-link>—based in Hull.
+        <p class="text-base sm:text-lg text-neutral-400 max-w-xl mx-auto text-readable drop-shadow-xl">
+          <router-link to="/managed-it-services-hull" class="text-blue-400 hover:text-blue-300 transition-colors">SMB & enterprise IT</router-link>, <router-link to="/microsoldering-repair-hull" class="text-red-400 hover:text-red-300 transition-colors">board-level repairs</router-link>, <router-link to="/ai-optimization-hull" class="text-violet-400 hover:text-violet-300 transition-colors">AI visibility</router-link>, and <router-link to="/secure-data-disposal-hull" class="text-emerald-400 hover:text-emerald-300 transition-colors">responsible recycling</router-link>. Based in Hull.
         </p>
         
         <!-- CTAs -->
@@ -72,11 +72,11 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
           <BentoItem
             title="Repair Ninja"
             description="Manufacturer says unrepairable? We disagree. Component-level microsoldering for MacBooks, PS5s, and phones. No Fix, No Fee."
-            class="md:col-span-2 group hover:scale-[1.02] transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
+            class="md:col-span-2 group hover:scale-105 transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
             to="/microsoldering-repair-hull"
           >
              <template #header>
-                <div class="relative flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-red-900/50 to-neutral-900 overflow-hidden">
+                <div class="relative flex flex-1 w-full h-full min-h-24 rounded-xl bg-gradient-to-br from-red-900/50 to-neutral-900 overflow-hidden">
                     <CircuitPattern class="text-red-500/30" />
                 </div>
              </template>
@@ -88,11 +88,11 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
           <BentoItem
             title="Managed IT"
             description="43% of UK businesses were breached this year. Local response, enterprise protection, 24/7 monitoring."
-            class="md:col-span-1 group hover:scale-[1.02] transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
+            class="md:col-span-1 group hover:scale-105 transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
             to="/managed-it-services-hull"
           >
             <template #header>
-                <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-blue-900/50 to-neutral-900" />
+                <div class="flex flex-1 w-full h-full min-h-24 rounded-xl bg-gradient-to-br from-blue-900/50 to-neutral-900" />
             </template>
              <div class="mt-4 flex items-center text-blue-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
                 Explore <span class="ml-1">→</span>
@@ -102,11 +102,11 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
           <BentoItem
             title="AI Visibility"
             description="58% of consumers now search with AI. Make sure ChatGPT, Perplexity, and Google AI recommend you, not your competitors."
-            class="md:col-span-1 group hover:scale-[1.02] transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
+            class="md:col-span-1 group hover:scale-105 transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
             to="/ai-optimization-hull"
           >
              <template #header>
-                <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-violet-900/50 to-neutral-900" />
+                <div class="flex flex-1 w-full h-full min-h-24 rounded-xl bg-gradient-to-br from-violet-900/50 to-neutral-900" />
              </template>
              <div class="mt-4 flex items-center text-violet-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
                 See How <span class="ml-1">→</span>
@@ -116,11 +116,11 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
           <BentoItem
             title="E-Waste & Recycling"
             description="Stop paying for disposal. Free business collection, Zero Landfill policy, and full compliance documentation."
-            class="md:col-span-2 group hover:scale-[1.02] transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
+            class="md:col-span-2 group hover:scale-105 transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
             to="/secure-data-disposal-hull"
           >
              <template #header>
-                <div class="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-amber-900/50 to-neutral-900" />
+                <div class="flex flex-1 w-full h-full min-h-24 rounded-xl bg-gradient-to-br from-amber-900/50 to-neutral-900" />
              </template>
              <div class="mt-4 flex items-center text-amber-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
                 Get in Touch <span class="ml-1">→</span>

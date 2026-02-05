@@ -12,7 +12,7 @@
 
       <section>
         <h2 class="text-2xl font-bold text-white mb-4">1. Our Security Posture</h2>
-        <p>Jake Fieldhouse Consulting Ltd takes a proactive approach to cybersecurity. As an MSP providing IT services to businesses handling sensitive data, we maintain robust security practices across all operations.</p>
+        <p>We don't wait for things to break. As an MSP providing IT services to businesses handling sensitive data, we apply the same rigorous security standards to ourselves that we enforce for our clients.</p>
       </section>
 
       <section>
@@ -66,8 +66,8 @@
       </section>
 
       <section>
-        <h2 class="text-2xl font-bold text-white mb-4">5. Continuous Professional Development</h2>
-        <p>Staying current with the evolving threat landscape through:</p>
+        <h2 class="text-2xl font-bold text-white mb-4">5. Staying Sharp</h2>
+        <p>We keep up with new threats by:</p>
         <ul class="list-disc list-inside space-y-2 mt-4">
           <li>Regular security training and certifications</li>
           <li>Monitoring of NCSC advisories and threat intelligence</li>

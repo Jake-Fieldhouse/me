@@ -45,7 +45,7 @@ const handleSubmit = async () => {
 <template>
   <div class="bg-neutral-900/50 p-6 md:p-8 rounded-3xl border border-white/5">
     <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-3">
-      <span class="w-2 h-6 bg-amber-500 rounded-full shadow-[0_0_15px_rgba(245,158,11,0.4)]"></span>
+      <span class="w-2 h-6 bg-amber-500 rounded-full shadow-lg shadow-amber-500/40"></span>
       Quick Message
     </h3>
     <p class="text-neutral-400 text-sm mb-6">Prefer a form? No problem.</p>

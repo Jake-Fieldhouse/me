@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
 import { blogPosts, categoryColors } from '../data/blogPosts'
+import IconArrowRight from '../components/icons/IconArrowRight.vue'
 
 const heroRef = ref<HTMLElement | null>(null)
 const postsRef = ref<HTMLElement | null>(null)
@@ -61,9 +62,7 @@ const posts = ref(blogPosts)
           class="inline-flex items-center gap-2 mt-4 text-blue-400 hover:text-blue-300 transition-colors"
         >
           Read More 
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
+          <IconArrowRight class="w-4 h-4" />
         </router-link>
       </article>
     </section>

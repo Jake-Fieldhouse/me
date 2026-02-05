@@ -12,7 +12,7 @@ Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 ```
 
 **Requirements Met:**
-- `max-age` >= 31536000 (1 year) ✅ — Set to 63072000 (2 years)
+- `max-age` >= 31536000 (1 year) ✅ (Set to 63072000, or 2 years)
 - `includeSubDomains` directive ✅
 - `preload` directive ✅
 - Served over HTTPS ✅

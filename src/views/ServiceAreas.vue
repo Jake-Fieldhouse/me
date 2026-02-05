@@ -20,7 +20,7 @@ const ewasteServices = services.filter(s => s.category === 'ewaste')
         Service Areas in <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">East Yorkshire</span>
       </h1>
       <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-        Local knowledge. Same-day response. From HU1 to the Wolds—we know the infrastructure, 
+        Local knowledge. Same-day response. From HU1 to the Wolds: we know the infrastructure, 
         the businesses, and the unique challenges of operating in East Yorkshire.
       </p>
     </header>

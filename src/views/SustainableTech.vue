@@ -3,6 +3,10 @@ import { ref } from 'vue'
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
 import { useToast } from '../composables/useToast'
+import IconFileCheck from '../components/icons/IconFileCheck.vue'
+import IconRecycle from '../components/icons/IconRecycle.vue'
+import IconShieldCheck from '../components/icons/IconShieldCheck.vue'
+import IconCheck from '../components/icons/IconCheck.vue'
 
 const headerRef = ref<HTMLElement | null>(null)
 const statsRef = ref<HTMLElement | null>(null)
@@ -68,7 +72,7 @@ const scrollToComparison = () => {
         Business IT Recycling <br class="hidden md:block" /> & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">Collection</span>
       </h1>
       <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed text-readable">
-        Stop paying to dispose of your IT assets. We offer a superior, zero-landfill service with full Waste Transfer documentation—completely free of charge.
+        Stop paying to dispose of your IT assets. We offer a superior, zero-landfill service with full Waste Transfer documentation, completely free of charge.
       </p>
       <div class="flex justify-center gap-4 pt-4">
         <button @click="scrollToQuote" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors btn-depth">
@@ -136,7 +140,7 @@ const scrollToComparison = () => {
          <div class="max-w-7xl mx-auto px-6 relative z-10 text-center space-y-12">
              <div class="space-y-4">
                  <h2 class="text-3xl font-bold text-white">Your Environmental Impact</h2>
-                 <p class="text-neutral-400 max-w-2xl mx-auto">By choosing us, you aren't just clearing space—you're actively contributing to the circular economy and reducing global e-waste.</p>
+                 <p class="text-neutral-400 max-w-2xl mx-auto">By choosing us, you aren't just clearing space. You're actively contributing to the circular economy and reducing global e-waste.</p>
              </div>
              
              <div class="grid md:grid-cols-3 gap-8">
@@ -176,7 +180,7 @@ const scrollToComparison = () => {
             <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
                 <h3 class="text-lg font-bold text-white mb-2">Are you fully licensed?</h3>
                 <p class="text-neutral-400">
-                    Yes—registered Tier 1 Waste Carrier with the Environment Agency (Reg: <strong>CBDL620098</strong>). 
+                    Yes. Registered Tier 1 Waste Carrier with the Environment Agency (Reg: <strong>CBDL620098</strong>). 
                     Every collection comes with a full Waste Transfer Note, so your legal "Duty of Care" is completely satisfied.
                 </p>
             </div>
@@ -195,7 +199,7 @@ const scrollToComparison = () => {
     <section id="comparison" class="border-t border-white/5 pt-20">
         <h2 class="text-3xl font-bold text-white text-center mb-12">Why Choose Us?</h2>
         <div class="overflow-x-auto">
-            <table class="w-full text-left border-collapse min-w-[600px]">
+            <table class="w-full text-left border-collapse min-w-xl">
                 <thead>
                     <tr class="text-sm uppercase tracking-widest text-neutral-500 border-b border-white/10">
                         <th class="p-6 font-medium">Feature</th>
@@ -239,12 +243,12 @@ const scrollToComparison = () => {
         <div class="space-y-6">
             <h2 class="text-3xl font-bold text-white">Bank-Grade Data Security</h2>
             <p class="text-neutral-400 leading-relaxed">
-                We understand that your data is your most valuable asset—and your biggest liability. With GDPR fines reaching <strong>£17.5 million</strong>, taking chances with "man & van" clearance is a risk you can't afford.
+                We understand that your data is your most valuable asset, and your biggest liability. With GDPR fines reaching <strong>£17.5 million</strong>, taking chances with "man & van" clearance is a risk you can't afford.
             </p>
             <ul class="space-y-4 pt-4">
                 <li class="flex items-start gap-3">
                     <div class="p-1 rounded bg-green-500/10 text-green-500 mt-1">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <IconShieldCheck class="w-5 h-5" />
                     </div>
                     <div>
                         <strong class="text-white block">Blancco Data Erasure</strong>
@@ -253,7 +257,7 @@ const scrollToComparison = () => {
                 </li>
                 <li class="flex items-start gap-3">
                     <div class="p-1 rounded bg-red-500/10 text-red-500 mt-1">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                        <IconRecycle class="w-5 h-5" />
                     </div>
                     <div>
                         <strong class="text-white block">Physical Destruction</strong>
@@ -262,7 +266,7 @@ const scrollToComparison = () => {
                 </li>
                 <li class="flex items-start gap-3">
                     <div class="p-1 rounded bg-blue-500/10 text-blue-500 mt-1">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        <IconFileCheck class="w-5 h-5" />
                     </div>
                     <div>
                         <strong class="text-white block">Full Audit Trail</strong>
@@ -274,7 +278,7 @@ const scrollToComparison = () => {
         <div class="bg-gradient-to-br from-neutral-800 to-black p-8 rounded-2xl border border-white/5 flex items-center justify-center min-h-[400px]">
            <div class="text-center space-y-4">
                <div class="w-24 h-32 bg-white/10 mx-auto rounded border border-white/20 flex items-center justify-center">
-                   <svg class="w-12 h-12 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                   <IconFileCheck class="w-12 h-12 text-white/20" />
                </div>
                <p class="text-neutral-500 font-mono text-sm">Certificate_of_Destruction.pdf</p>
            </div>
@@ -350,20 +354,23 @@ const scrollToComparison = () => {
                     <div class="p-4 bg-neutral-800/50 rounded-xl border border-white/5">
                         <div class="flex items-start gap-3">
                             <div class="mt-1 p-1 bg-green-500/10 rounded-full text-green-500">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                                <IconCheck class="w-4 h-4" />
                             </div>
                             <div>
                                 <strong class="text-sm text-white block">100% Free Collection</strong>
                                 <p class="text-xs text-neutral-400 mt-1">
-                                    We offset our logistics costs by refurbishing viable hardware, so you don't pay a penny. Simple.
+                                    Subject to minimum volume or location. (We'll confirm upon booking)
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 rounded-xl transition-colors mt-2 btn-depth hover-glow">
-                        Get in Touch
+                    <button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-orange-600 text-black font-bold py-4 rounded-xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+                        Get Free Schedule
                     </button>
+                    <p class="text-center text-xs text-neutral-500">
+                        No Credit Card Required • No Obligations
+                    </p>
                 </form>
             </div>
         </div>

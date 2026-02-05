@@ -51,7 +51,7 @@
             </tbody>
           </table>
         </div>
-        <p class="text-sm text-neutral-500 mt-4">Response times are measured during business hours (Mon–Fri, 9am–5pm UK time). Response means acknowledgement of the issue, not necessarily resolution.</p>
+        <p class="text-sm text-neutral-500 mt-4">Response times are measured during business hours (Mon-Fri, 9am-5pm UK time). Response means acknowledgement of the issue, not necessarily resolution.</p>
       </section>
 
       <section>

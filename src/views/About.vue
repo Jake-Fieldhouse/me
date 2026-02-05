@@ -45,7 +45,7 @@ const values = [
         The Person Behind <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">The Tech</span>
       </h1>
       <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed text-readable">
-        I'm Jake Fieldhouse—Director of Jake Fieldhouse Consulting Ltd (Company No. 16536646). Your full-stack tech partner from setup to sunset, based in Hull.
+        I'm Jake Fieldhouse, Director of Jake Fieldhouse Consulting Ltd (Company No. 16536646). Your full-stack tech partner from setup to sunset, based in Hull.
       </p>
     </header>
 
@@ -68,10 +68,10 @@ const values = [
           I started soldering when I was 15, fixing broken phones for pocket money. That curiosity turned into a career spanning hardware repair, network administration, and business IT consulting.
         </p>
         <p>
-          After years of seeing businesses struggle with fragmented IT support—one vendor for setup, another for repairs, a third for disposal—I founded <strong class="text-white">Jake Fieldhouse Consulting Ltd</strong> to be different. No call centers. No ticket numbers. Just one partner who knows your name and your systems.
+          After years of seeing businesses struggle with fragmented IT support (one vendor for setup, another for repairs, a third for disposal), I founded <strong class="text-white">Jake Fieldhouse Consulting Ltd</strong> to be different. No call centers. No ticket numbers. Just one partner who knows your name and your systems.
         </p>
         <p>
-          Today, I serve SMBs across Hull, East Yorkshire, and beyond—from 5-person agencies to 50-seat offices. One relationship. Complete lifecycle coverage.
+          Today, I serve SMBs across Hull, East Yorkshire, and beyond, from 5-person agencies to 50-seat offices. One relationship. Complete lifecycle coverage.
         </p>
       </div>
     </section>

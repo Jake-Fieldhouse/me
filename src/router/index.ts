@@ -377,6 +377,17 @@ router.beforeEach((to, _from, next) => {
         metaDesc.setAttribute('content', (to.meta.description as string) || 'Expert IT Services and Secure Disposal in Hull.');
     }
 
+    // Update Canonical URL
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+        linkCanonical = document.createElement('link');
+        linkCanonical.setAttribute('rel', 'canonical');
+        document.head.appendChild(linkCanonical);
+    }
+    // Remove query params and trailing slashes for canonical
+    const canonicalPath = to.path.endsWith('/') && to.path !== '/' ? to.path.slice(0, -1) : to.path;
+    linkCanonical.setAttribute('href', `https://jakefieldhouse.co.uk${canonicalPath}`);
+
     next();
 });
 

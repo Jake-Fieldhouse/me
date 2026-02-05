@@ -150,7 +150,7 @@ const caseStudies: CaseStudy[] = [
                     <div v-if="study.testimonial" class="bg-white/5 rounded-xl p-6 border-l-4 border-emerald-500">
                         <Quote class="w-8 h-8 text-emerald-500/50 mb-3" />
                         <p class="text-neutral-200 italic mb-4">{{ study.testimonial.quote }}</p>
-                        <p class="text-sm text-neutral-400">— {{ study.testimonial.author }}, {{ study.testimonial.role }}</p>
+                        <p class="text-sm text-neutral-400">{{ study.testimonial.author }}, {{ study.testimonial.role }}</p>
                     </div>
                 </div>
             </article>

@@ -24,7 +24,7 @@
         <div class="mt-4 p-4 bg-neutral-800 rounded-xl">
           <p class="font-medium text-white">Jake Fieldhouse Consulting Ltd</p>
           <p>Email: <a href="mailto:jake@jakefieldhouse.co.uk" class="text-blue-400 hover:underline">jake@jakefieldhouse.co.uk</a></p>
-          <p class="text-sm text-neutral-500 mt-2">Subject line: "Formal Complaint – [Your Name]"</p>
+          <p class="text-sm text-neutral-500 mt-2">Subject line: "Formal Complaint - [Your Name]"</p>
         </div>
         <p class="mt-4">Please include:</p>
         <ul class="list-disc list-inside space-y-2 mt-2">

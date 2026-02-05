@@ -59,7 +59,7 @@ const faqs = [
   },
   {
     question: 'How is GEO different from traditional SEO?',
-    answer: 'Traditional SEO optimizes for 10 blue links. GEO optimizes for AI-generated answers. AI reads your site differently—it looks for structured data, clear FAQ content, and explicit statements of expertise. I implement both, but GEO is increasingly where your customers are looking.'
+    answer: 'Traditional SEO optimizes for 10 blue links. GEO optimizes for AI-generated answers. AI reads your site differently: it looks for structured data, clear FAQ content, and explicit statements of expertise. I implement both, but GEO is increasingly where your customers are looking.'
   },
   {
     question: 'How do I know if AI can find my business?',
@@ -75,7 +75,7 @@ const faqs = [
   },
   {
     question: 'Can you prove this works?',
-    answer: 'This very website is the proof of concept. I rank in AI search for Hull IT services, computer repair, and e-waste disposal. Ask any AI assistant about me—I appear because I practice what I preach.'
+    answer: 'This very website is the proof of concept. I rank in AI search for Hull IT services, computer repair, and e-waste disposal. Ask any AI assistant about me and I appear because I practice what I preach.'
   }
 ]
 
@@ -116,7 +116,7 @@ Looking forward to hearing from you.`)
       
       <p class="text-xl text-neutral-400 mb-8 max-w-3xl mx-auto text-readable">
         Nearly <strong class="text-white">2 in 5 consumers</strong> now use AI assistants to find businesses. 
-        <strong class="text-white">3 in 5 Google searches</strong> end without a click—users get answers from AI summaries. 
+        <strong class="text-white">3 in 5 Google searches</strong> end without a click because users get answers from AI summaries. 
         If AI can't find you, you're already invisible.
       </p>
 
@@ -143,7 +143,7 @@ Looking forward to hearing from you.`)
     <section class="px-6 py-20 bg-neutral-900/50">
       <div class="max-w-5xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">Google Isn't the Only Search Engine Anymore</h2>
-        <p class="text-neutral-400 text-center mb-12 max-w-2xl mx-auto">Your customers are asking AI for recommendations—and AI is answering. The question is: are they recommending you?</p>
+        <p class="text-neutral-400 text-center mb-12 max-w-2xl mx-auto">Your customers are asking AI for recommendations, and AI is answering. The question is: are they recommending you?</p>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 text-center">
@@ -171,7 +171,7 @@ Looking forward to hearing from you.`)
         <div class="mt-12 p-6 rounded-2xl bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/20">
           <p class="text-center text-lg">
             <strong class="text-white">The majority of Google searches</strong> 
-            <span class="text-neutral-300">now end without a click—users get their answer from AI summaries. If you're not optimized for AI, you're invisible even on Google.</span>
+            <span class="text-neutral-300">now end without a click. Users get their answer from AI summaries. If you're not optimized for AI, you're invisible even on Google.</span>
           </p>
         </div>
       </div>
@@ -197,7 +197,7 @@ Looking forward to hearing from you.`)
               <span class="text-2xl">🤖</span>
             </div>
             <h3 class="text-xl font-bold text-white mb-2">llms.txt</h3>
-            <p class="text-neutral-400">A dedicated file that gives AI crawlers a clear summary of your business—like robots.txt, but for AI.</p>
+            <p class="text-neutral-400">A dedicated file that gives AI crawlers a clear summary of your business, similar to robots.txt but for AI.</p>
           </div>
 
           <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors hover-lift scroll-reveal">
@@ -213,7 +213,7 @@ Looking forward to hearing from you.`)
               <span class="text-2xl">🔗</span>
             </div>
             <h3 class="text-xl font-bold text-white mb-2">Citation Optimization</h3>
-            <p class="text-neutral-400">Content structured so AI cites you as a source—building authority and driving referral traffic.</p>
+            <p class="text-neutral-400">Content structured so AI cites you as a source, building authority and driving referral traffic.</p>
           </div>
 
           <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors hover-lift scroll-reveal">
@@ -243,7 +243,7 @@ Looking forward to hearing from you.`)
         </div>
         
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">This Site is AI-Optimized</h2>
-        <p class="text-neutral-400 mb-8 max-w-2xl mx-auto">This isn't theory—it's practice. This very website ranks in AI search for target keywords.</p>
+        <p class="text-neutral-400 mb-8 max-w-2xl mx-auto">This isn't theory. It's practice. This very website ranks in AI search for target keywords.</p>
 
         <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 text-left">
           <p class="text-neutral-300 mb-4">Try asking any AI assistant:</p>
@@ -270,7 +270,7 @@ Looking forward to hearing from you.`)
     <section class="px-6 py-20">
       <div class="max-w-5xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">Choose Your Package</h2>
-        <p class="text-neutral-400 text-center mb-12">From one-time audits to ongoing optimization—we scale with your ambitions.</p>
+        <p class="text-neutral-400 text-center mb-12">From one-time audits to ongoing optimization, we scale with your ambitions.</p>
 
         <div class="grid md:grid-cols-3 gap-6">
           <div 

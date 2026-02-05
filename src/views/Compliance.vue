@@ -2,6 +2,9 @@
 import { ref } from 'vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
 import { Recycle, ShieldCheck, FileText, Lock } from 'lucide-vue-next'
+import IconExternalLink from '../components/icons/IconExternalLink.vue'
+import IconDownload from '../components/icons/IconDownload.vue'
+import IconCheck from '../components/icons/IconCheck.vue'
 
 const containerRef = ref<HTMLElement | null>(null)
 useScrollReveal(containerRef)
@@ -72,7 +75,7 @@ const isExpired = (dateStr: string | null) => {
 }
 
 const getStatusBorderColor = (status: string) => {
-    if (status === 'active') return 'border-green-500/20 shadow-[0_0_30px_-10px_rgba(34,197,94,0.1)]'
+    if (status === 'active') return 'border-green-500/20 shadow-lg shadow-green-500/10'
     if (status === 'pending') return 'border-amber-500/20 border-dashed'
     return 'border-white/5 opacity-50'
 }
@@ -132,17 +135,17 @@ const getStatusPillColor = (status: string) => {
                     <div v-if="item.proofUrls" class="flex flex-wrap gap-4">
                         <a v-for="proof in item.proofUrls" :key="proof.label" :href="proof.url" target="_blank" 
                            class="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors text-sm">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            <IconDownload class="w-4 h-4" />
                             {{ proof.label }} ↓
                         </a>
                     </div>
                     <!-- Single proof link -->
                     <a v-else-if="item.proofUrl" :href="item.proofUrl" target="_blank" class="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors text-sm group/link">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        <IconExternalLink class="w-4 h-4" />
                         View Official Certificate / Registry
                     </a>
                     <span v-else class="text-neutral-500 italic text-sm flex items-center gap-2">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <IconCheck class="w-4 h-4" />
                         Certificate document pending upload
                     </span>
                 </div>

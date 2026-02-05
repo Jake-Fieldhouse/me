@@ -96,14 +96,14 @@ Where site conditions deviate significantly from those described in this RAMS, w
 - **Security/Cyber Incident:** If data security is compromised, cease operations immediately and notify client representative. Document all relevant details.
 - **Personal Safety Concern:** If feeling threatened or unsafe, leave premises immediately and contact emergency services if necessary.
 
-**Emergency Contact:** Jake Fieldhouse — +44 7404 090458
+**Emergency Contact:** Jake Fieldhouse, +44 7404 090458
 
 ---
 
 ## 7. Environmental Considerations
 
 - All collected equipment processed under Environment Agency Waste Carrier License (CBDL620098)
-- Zero Landfill policy — equipment refurbished, recycled, or responsibly disposed
+- Zero Landfill policy: equipment refurbished, recycled, or responsibly disposed
 - Hazardous materials (batteries, CRTs, toner cartridges) handled by licensed downstream partners
 - Waste Transfer Notes provided for every collection
 - WEEE Regulations 2013 compliance maintained throughout chain of custody
@@ -127,9 +127,9 @@ Where site conditions deviate significantly from those described in this RAMS, w
 
 | Coverage | Provider | Status |
 |----------|----------|--------|
-| Professional Indemnity | Hiscox | Active — Certificate available on request |
-| Public Liability | Hiscox | Active — Certificate available on request |
-| Cyber Liability | Hiscox | Active — Certificate available on request |
+| Professional Indemnity | Hiscox | Active (Certificate available on request) |
+| Public Liability | Hiscox | Active (Certificate available on request) |
+| Cyber Liability | Hiscox | Active (Certificate available on request) |
 
 Full policy documentation available upon request. Certificates downloadable from: [jakefieldhouse.co.uk/compliance](https://jakefieldhouse.co.uk/compliance)
 

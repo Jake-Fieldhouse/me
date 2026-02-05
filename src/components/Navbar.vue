@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
+import IconChevronDown from './icons/IconChevronDown.vue'
+import IconMenu from './icons/IconMenu.vue'
+import IconX from './icons/IconX.vue'
 
 const route = useRoute()
 const isMenuOpen = ref(false)
@@ -74,15 +77,13 @@ onUnmounted(() => {
               class="text-sm text-neutral-400 hover:text-white transition-colors flex items-center gap-1 border-b border-transparent hover:border-white/50 pb-0.5"
             >
               Services
-              <svg class="w-4 h-4 transition-transform" :class="isServicesOpen ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
+              <IconChevronDown class="w-4 h-4 transition-transform" :class="isServicesOpen ? 'rotate-180' : ''" />
             </button>
             <div 
               class="absolute top-full left-0 pt-4 transition-all duration-200 ease-out z-50"
               :class="isServicesOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto'"
             >
-              <div class="bg-neutral-900 border border-white/10 rounded-xl p-2 min-w-[200px] shadow-2xl">
+              <div class="bg-neutral-900 border border-white/10 rounded-xl p-2 w-56 shadow-2xl">
                 <router-link 
                   v-for="service in serviceItems" 
                   :key="service.path"
@@ -100,12 +101,8 @@ onUnmounted(() => {
 
         <!-- Mobile Menu Button (44px+ touch target) -->
         <button @click="isMenuOpen = !isMenuOpen" class="md:hidden text-white p-3 -mr-3" aria-label="Toggle menu">
-          <svg v-if="!isMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg v-else class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
+          <IconMenu v-if="!isMenuOpen" class="w-6 h-6" />
+          <IconX v-else class="w-6 h-6" />
         </button>
       </div>
 

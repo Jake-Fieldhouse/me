@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import IconExternalLink from './icons/IconExternalLink.vue'
+
 defineProps<{
   stat: string
   source: string
@@ -17,9 +19,7 @@ defineProps<{
       class="inline-flex items-center ml-1 text-neutral-500 hover:text-neutral-300 transition-colors"
       :title="`Source: ${source}${year ? ` (${year})` : ''}`"
     >
-      <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
+      <IconExternalLink class="w-3.5 h-3.5" />
     </a>
     <!-- Tooltip on hover -->
     <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-neutral-800 text-neutral-300 text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap border border-neutral-700 shadow-lg z-50">

@@ -6,7 +6,7 @@ import { Home, ArrowLeft } from 'lucide-vue-next'
 <template>
   <div class="min-h-screen flex flex-col items-center justify-center px-6 py-20">
     <!-- Background glow -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-auto aspect-square bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
     
     <div class="relative z-10 text-center max-w-lg">
       <!-- Error code -->

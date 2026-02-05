@@ -60,7 +60,7 @@ GDPR-compliant IT Asset Disposal (ITAD) and certified data destruction.
 
 - **Coverage**: Nationwide (UK-wide collection available)
 - **Turnaround**: 24 hours for e-waste collection scheduling
-- **Capacity**: No limit—can handle office clearances of any size
+- **Capacity**: No limit. Can handle office clearances of any size
 - Free Business E-Waste Collection
 - NIST 800-88 Compliant Data Wiping
 - Certificate of Destruction Provided
