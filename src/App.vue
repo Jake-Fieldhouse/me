@@ -31,8 +31,9 @@ import { useToast } from './composables/useToast'
 const isLoading = ref(true)
 const showFluidCursor = ref(true)
 const { toastMessage, showToast } = useToast()
-const PRELOADER_DELAY_MS = 900
-const FAST_PRELOADER_DELAY_MS = 300
+const HOME_PRELOADER_DELAY_MS = 1800
+const PAGE_PRELOADER_DELAY_MS = 900
+const FAST_PRELOADER_DELAY_MS = 350
 
 onMounted(() => {
     // ⚠️ MAINTENANCE MODE: If enabled, preloader runs forever
@@ -63,19 +64,16 @@ onMounted(() => {
     const reducedFxContext = constrainedDevice || touchPrimaryInput || prefersReducedMotion
     showFluidCursor.value = desktopLikeViewport && !reducedFxContext && !prefersReducedMotion
 
-    // Smart preloader: skip only on repeat visits within session
-    const hasSeenPreloader = sessionStorage.getItem('preloader-seen')
-    
-    if (hasSeenPreloader) {
-        // Instant load for repeat visitors
+    const currentPath = window.location.pathname || '/'
+    const isHomeRoute = currentPath === '/'
+    const preloaderDelay = reducedFxContext
+      ? FAST_PRELOADER_DELAY_MS
+      : (isHomeRoute ? HOME_PRELOADER_DELAY_MS : PAGE_PRELOADER_DELAY_MS)
+
+    // Always play the intro on hard loads (longer on home), while staying lighter on constrained contexts.
+    setTimeout(() => {
         isLoading.value = false
-    } else {
-        // Full art house experience for first visit
-        setTimeout(() => {
-            isLoading.value = false
-            sessionStorage.setItem('preloader-seen', 'true')
-        }, reducedFxContext ? FAST_PRELOADER_DELAY_MS : PRELOADER_DELAY_MS)
-    }
+    }, preloaderDelay)
 })
 </script>
 
