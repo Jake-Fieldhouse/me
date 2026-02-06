@@ -368,13 +368,24 @@ const router = createRouter({
 
 // Dynamic SEO Tags
 router.beforeEach((to, _from, next) => {
+    const siteOrigin = 'https://jakefieldhouse.co.uk'
+    const canonicalPath = to.path === '/' ? '/' : (to.path.endsWith('/') ? to.path : `${to.path}/`)
+    const canonicalUrl = `${siteOrigin}${canonicalPath}`
+    const pageTitle = (to.meta.title as string) || 'Jake Fieldhouse Consulting'
+    const pageDescription = (to.meta.description as string) || 'Expert IT Services and Secure Disposal in Hull.'
+
     // Update Title
-    document.title = (to.meta.title as string) || 'Jake Fieldhouse Consulting';
+    document.title = pageTitle;
 
     // Update Description
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-        metaDesc.setAttribute('content', (to.meta.description as string) || 'Expert IT Services and Secure Disposal in Hull.');
+        metaDesc.setAttribute('content', pageDescription);
+    }
+
+    const metaTitle = document.querySelector('meta[name="title"]');
+    if (metaTitle) {
+        metaTitle.setAttribute('content', pageTitle);
     }
 
     // Update Canonical URL
@@ -384,9 +395,25 @@ router.beforeEach((to, _from, next) => {
         linkCanonical.setAttribute('rel', 'canonical');
         document.head.appendChild(linkCanonical);
     }
-    // Remove query params and trailing slashes for canonical
-    const canonicalPath = to.path.endsWith('/') && to.path !== '/' ? to.path.slice(0, -1) : to.path;
-    linkCanonical.setAttribute('href', `https://jakefieldhouse.co.uk${canonicalPath}`);
+    linkCanonical.setAttribute('href', canonicalUrl);
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', pageTitle);
+
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) ogDescription.setAttribute('content', pageDescription);
+
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute('content', canonicalUrl);
+
+    const twitterTitle = document.querySelector('meta[property="twitter:title"]');
+    if (twitterTitle) twitterTitle.setAttribute('content', pageTitle);
+
+    const twitterDescription = document.querySelector('meta[property="twitter:description"]');
+    if (twitterDescription) twitterDescription.setAttribute('content', pageDescription);
+
+    const twitterUrl = document.querySelector('meta[property="twitter:url"]');
+    if (twitterUrl) twitterUrl.setAttribute('content', canonicalUrl);
 
     next();
 });

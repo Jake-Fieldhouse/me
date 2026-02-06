@@ -29,7 +29,9 @@ import { ref, onMounted } from 'vue'
 import { useToast } from './composables/useToast'
 
 const isLoading = ref(true)
+const showFluidCursor = ref(true)
 const { toastMessage, showToast } = useToast()
+const PRELOADER_DELAY_MS = 1200
 
 onMounted(() => {
     // ⚠️ MAINTENANCE MODE: If enabled, preloader runs forever
@@ -45,6 +47,12 @@ onMounted(() => {
     }
 
     // Normal operation below (only runs when MAINTENANCE_MODE = false)
+    const deviceMemory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory
+    const lowMemoryDevice = typeof deviceMemory === 'number' && deviceMemory <= 4
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+    const coarsePointer = window.matchMedia('(pointer: coarse)').matches
+    showFluidCursor.value = !(lowMemoryDevice || prefersReducedMotion || hasTouch || coarsePointer)
 
     // Smart preloader: skip on repeat visits within session
     const hasSeenPreloader = sessionStorage.getItem('preloader-seen')
@@ -57,7 +65,7 @@ onMounted(() => {
         setTimeout(() => {
             isLoading.value = false
             sessionStorage.setItem('preloader-seen', 'true')
-        }, 2000)
+        }, PRELOADER_DELAY_MS)
     }
 })
 </script>
@@ -75,7 +83,7 @@ onMounted(() => {
     <ArtHousePreloader :loading="isLoading" />
 
     <!-- Cursor Layer (Z-50, smoke sits ON TOP of preloader) -->
-    <FluidCursor class="fixed inset-0 z-50 pointer-events-none" :intro-mode="isLoading" />
+    <FluidCursor v-if="showFluidCursor" class="fixed inset-0 z-50 pointer-events-none" :intro-mode="isLoading" />
 
     <!-- ⚠️ ALL CONTENT BELOW IS HIDDEN WHEN isLoading = true (maintenance mode) -->
     <template v-if="!isLoading">
