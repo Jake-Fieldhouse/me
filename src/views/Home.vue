@@ -9,23 +9,20 @@ import { ref } from 'vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
 import HyperText from '../components/HyperText.vue'
 
-const headerRef = ref<HTMLElement | null>(null)
-const trustRef = ref<HTMLElement | null>(null)
 const gridRef = ref<HTMLElement | null>(null)
 
-useScrollReveal(headerRef, { delay: 2.2 }) // Wait for preloader
-useScrollReveal(trustRef, { delay: 2.5 })
-useScrollReveal(gridRef, { delay: 0.2, y: 100 })
+useScrollReveal(gridRef, { delay: 0, y: 56 })
 </script>
 
 <template>
     <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 flex flex-col items-center gap-32">
       
       <!-- Header -->
-      <header ref="headerRef" class="text-center space-y-6 w-full mt-20">
+      <header class="text-center space-y-6 w-full mt-20">
         <div class="flex justify-center">
             <HyperText
             text="Jake Fieldhouse"
+            :animate-on-load="false"
             class="text-6xl md:text-8xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60" 
             />
         </div>
@@ -64,7 +61,7 @@ useScrollReveal(gridRef, { delay: 0.2, y: 100 })
       </header>
       
       <!-- Trust Signals -->
-      <TrustBar ref="trustRef" class="w-full max-w-4xl mx-auto rounded-xl border border-white/5" />
+      <TrustBar class="w-full max-w-6xl mx-auto rounded-xl border border-white/5" />
 
       <!-- Services Grid -->
       <main ref="gridRef" class="w-full">

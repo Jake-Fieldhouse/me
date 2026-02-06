@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-
-interface CookiePreferences {
-    necessary: boolean
-    analytics: boolean
-    marketing: boolean
-}
+import {
+    disableAnalytics,
+    enableAnalytics,
+    parseCookiePreferences,
+    type CookiePreferences
+} from '../lib/analytics'
 
 const showBanner = ref(false)
 const showSettings = ref(false)
@@ -21,7 +21,19 @@ onMounted(() => {
     if (!stored) {
         showBanner.value = true
     } else {
-        preferences.value = JSON.parse(stored)
+        const parsed = parseCookiePreferences(stored)
+
+        if (parsed) {
+            preferences.value = parsed
+        } else {
+            showBanner.value = true
+        }
+    }
+
+    if (preferences.value.analytics) {
+        enableAnalytics()
+    } else {
+        disableAnalytics()
     }
 })
 
@@ -45,6 +57,13 @@ const acceptNecessary = () => {
 
 const savePreferences = () => {
     localStorage.setItem('cookie-preferences', JSON.stringify(preferences.value))
+
+    if (preferences.value.analytics) {
+        enableAnalytics()
+    } else {
+        disableAnalytics()
+    }
+
     showBanner.value = false
     showSettings.value = false
 }
@@ -75,16 +94,16 @@ const closeSettings = () => {
             <div class="space-y-4">
                 <div>
                     <h3 class="text-white font-semibold text-base">Cookie Preferences</h3>
-                    <p class="text-sm text-neutral-400 mt-1">
+                    <p class="text-sm text-neutral-300 mt-1">
                         We use cookies to analyse traffic and improve your experience. 
-                        <router-link to="/cookies" class="text-blue-400 hover:underline">Learn more</router-link>
+                        <router-link to="/cookies" class="text-blue-300 hover:underline">Read our cookie policy</router-link>
                     </p>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
                     <button 
                         @click="acceptAll" 
-                        class="bg-white text-black px-4 py-2 rounded-lg text-sm font-semibold hover:bg-neutral-200 transition-colors"
+                        class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-500 transition-colors"
                     >
                         Accept All
                     </button>
@@ -96,7 +115,7 @@ const closeSettings = () => {
                     </button>
                     <button 
                         @click="openSettings" 
-                        class="text-neutral-400 hover:text-white px-3 py-2 text-sm transition-colors"
+                        class="text-neutral-300 hover:text-white px-3 py-2 text-sm transition-colors"
                     >
                         Customise
                     </button>
@@ -122,7 +141,7 @@ const closeSettings = () => {
             <div class="bg-neutral-900 border border-neutral-700 rounded-2xl max-w-lg w-full p-6 shadow-2xl">
                 <div class="flex justify-between items-center mb-6">
                     <h2 class="text-xl font-bold text-white">Cookie Settings</h2>
-                    <button @click="closeSettings" class="text-neutral-400 hover:text-white text-2xl">&times;</button>
+                    <button @click="closeSettings" class="text-neutral-300 hover:text-white text-2xl">&times;</button>
                 </div>
 
                 <div class="space-y-4">
@@ -130,7 +149,7 @@ const closeSettings = () => {
                     <div class="flex items-center justify-between p-4 bg-neutral-800/50 rounded-xl">
                         <div>
                             <h4 class="font-semibold text-white">Essential Cookies</h4>
-                            <p class="text-xs text-neutral-400 mt-1">Required for the site to function. Cannot be disabled.</p>
+                            <p class="text-xs text-neutral-300 mt-1">Required for the site to function. Cannot be disabled.</p>
                         </div>
                         <div class="bg-green-500/20 text-green-400 text-xs px-3 py-1 rounded-full font-medium">
                             Always On
@@ -141,7 +160,7 @@ const closeSettings = () => {
                     <div class="flex items-center justify-between p-4 bg-neutral-800/50 rounded-xl">
                         <div class="flex-1">
                             <h4 class="font-semibold text-white">Analytics</h4>
-                            <p class="text-xs text-neutral-400 mt-1">Help us understand how visitors use the site (Google Analytics).</p>
+                            <p class="text-xs text-neutral-300 mt-1">Help us understand how visitors use the site (Google Analytics).</p>
                         </div>
                         <label class="relative inline-flex items-center cursor-pointer ml-4">
                             <input type="checkbox" v-model="preferences.analytics" class="sr-only peer">
@@ -153,7 +172,7 @@ const closeSettings = () => {
                     <div class="flex items-center justify-between p-4 bg-neutral-800/50 rounded-xl">
                         <div class="flex-1">
                             <h4 class="font-semibold text-white">Marketing</h4>
-                            <p class="text-xs text-neutral-400 mt-1">Used for remarketing and advertising purposes.</p>
+                            <p class="text-xs text-neutral-300 mt-1">Used for remarketing and advertising purposes.</p>
                         </div>
                         <label class="relative inline-flex items-center cursor-pointer ml-4">
                             <input type="checkbox" v-model="preferences.marketing" class="sr-only peer">
@@ -165,7 +184,7 @@ const closeSettings = () => {
                 <div class="flex gap-3 mt-6">
                     <button 
                         @click="savePreferences" 
-                        class="flex-1 bg-white text-black py-3 rounded-xl font-semibold hover:bg-neutral-200 transition-colors"
+                        class="flex-1 bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-500 transition-colors"
                     >
                         Save Preferences
                     </button>

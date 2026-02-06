@@ -26,12 +26,14 @@ import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import Toast from './components/Toast.vue'
 import { ref, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
 import { useToast } from './composables/useToast'
 
-const router = useRouter()
 const isLoading = ref(true)
+const showFluidCursor = ref(true)
 const { toastMessage, showToast } = useToast()
+const HOME_PRELOADER_DELAY_MS = 3500
+const PAGE_PRELOADER_DELAY_MS = 900
+const FAST_PRELOADER_DELAY_MS = 350
 
 onMounted(() => {
     // ⚠️ MAINTENANCE MODE: If enabled, preloader runs forever
@@ -47,31 +49,31 @@ onMounted(() => {
     }
 
     // Normal operation below (only runs when MAINTENANCE_MODE = false)
-    
-    // Handle GitHub Pages SPA redirect
-    // The 404.html redirects to /?p=original-path
-    const urlParams = new URLSearchParams(window.location.search)
-    const redirectPath = urlParams.get('p')
-    
-    if (redirectPath) {
-        // Clean the URL and navigate to the intended route
-        window.history.replaceState(null, '', '/' + decodeURIComponent(redirectPath))
-        router.replace('/' + decodeURIComponent(redirectPath))
-    }
+    const deviceMemory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory
+    const networkInfo = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection
+    const lowMemoryDevice = typeof deviceMemory === 'number' && deviceMemory <= 4
+    const dataSaverMode = networkInfo?.saveData === true
+    const slowConnection = typeof networkInfo?.effectiveType === 'string'
+      && ['slow-2g', '2g', '3g'].includes(networkInfo.effectiveType)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+    const coarsePointer = window.matchMedia('(pointer: coarse)').matches
+    const touchPrimaryInput = hasTouch && coarsePointer
+    const desktopLikeViewport = window.matchMedia('(min-width: 1024px)').matches
+    const constrainedDevice = lowMemoryDevice || dataSaverMode || slowConnection
+    const reducedFxContext = constrainedDevice || touchPrimaryInput || prefersReducedMotion
+    showFluidCursor.value = desktopLikeViewport && !reducedFxContext && !prefersReducedMotion
 
-    // Smart preloader: skip on repeat visits within session
-    const hasSeenPreloader = sessionStorage.getItem('preloader-seen')
-    
-    if (hasSeenPreloader) {
-        // Instant load for repeat visitors
+    const currentPath = window.location.pathname || '/'
+    const isHomeRoute = currentPath === '/'
+    const preloaderDelay = reducedFxContext
+      ? FAST_PRELOADER_DELAY_MS
+      : (isHomeRoute ? HOME_PRELOADER_DELAY_MS : PAGE_PRELOADER_DELAY_MS)
+
+    // Always play the intro on hard loads (longer on home), while staying lighter on constrained contexts.
+    setTimeout(() => {
         isLoading.value = false
-    } else {
-        // Full art house experience for first visit
-        setTimeout(() => {
-            isLoading.value = false
-            sessionStorage.setItem('preloader-seen', 'true')
-        }, 3500)
-    }
+    }, preloaderDelay)
 })
 </script>
 
@@ -88,41 +90,42 @@ onMounted(() => {
     <ArtHousePreloader :loading="isLoading" />
 
     <!-- Cursor Layer (Z-50, smoke sits ON TOP of preloader) -->
-    <FluidCursor class="fixed inset-0 z-50 pointer-events-none" :intro-mode="isLoading" />
+    <FluidCursor v-if="showFluidCursor" class="fixed inset-0 z-50 pointer-events-none" :intro-mode="isLoading" />
 
-    <!-- ⚠️ ALL CONTENT BELOW IS HIDDEN WHEN isLoading = true (maintenance mode) -->
-    <template v-if="!isLoading">
+    <!-- Keep layout mounted to avoid CLS when preloader ends -->
+    <div
+      class="relative z-10 pb-32 md:pb-0 transition-opacity duration-200"
+      :class="isLoading ? 'opacity-0 pointer-events-none select-none' : 'opacity-100 pointer-events-auto'"
+      :aria-hidden="isLoading ? 'true' : 'false'"
+    >
       <!-- Navigation -->
       <Navbar />
 
-      <!-- Main Router Content (pb-32 on mobile for 108px StickyCTA clearance) -->
-      <div class="relative z-10 pb-32 md:pb-0">
-        <router-view v-slot="{ Component }">
-          <transition 
-            enter-active-class="transition ease-out duration-500" 
-            enter-from-class="opacity-0 translate-y-4" 
-            enter-to-class="opacity-100 translate-y-0" 
-            leave-active-class="transition ease-in duration-300" 
-            leave-from-class="opacity-100 translate-y-0" 
-            leave-to-class="opacity-0 -translate-y-4"
-            mode="out-in"
-          >
-            <component :is="Component" />
-          </transition>
-        </router-view>
+      <router-view v-slot="{ Component }">
+        <transition 
+          enter-active-class="transition ease-out duration-500" 
+          enter-from-class="opacity-0 translate-y-4" 
+          enter-to-class="opacity-100 translate-y-0" 
+          leave-active-class="transition ease-in duration-300" 
+          leave-from-class="opacity-100 translate-y-0" 
+          leave-to-class="opacity-0 -translate-y-4"
+          mode="out-in"
+        >
+          <component :is="Component" />
+        </transition>
+      </router-view>
 
-        <!-- Cookie Consent -->
-        <CookieConsent />
+      <!-- Cookie Consent -->
+      <CookieConsent />
 
-        <!-- Sticky Mobile CTA -->
-        <StickyCTA />
+      <!-- Sticky Mobile CTA -->
+      <StickyCTA />
 
-        <!-- Global Footer -->
-        <Footer />
-        
-        <!-- Global Toast Notifications -->
-        <Toast :message="toastMessage" :show="showToast" @close="showToast = false" />
-      </div>
-    </template>
+      <!-- Global Footer -->
+      <Footer />
+      
+      <!-- Global Toast Notifications -->
+      <Toast :message="toastMessage" :show="showToast" @close="showToast = false" />
+    </div>
   </div>
 </template>

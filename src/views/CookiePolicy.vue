@@ -45,7 +45,7 @@
               </tr>
               <tr class="bg-neutral-900/50">
                 <td class="p-3 font-medium text-white">Third-Party (Cal.com)</td>
-                <td class="p-3">Our booking system may set cookies for scheduling functionality.</td>
+                <td class="p-3">If you open our external booking page, the booking provider may set cookies on their domain.</td>
                 <td class="p-3">Varies</td>
               </tr>
             </tbody>
@@ -55,7 +55,7 @@
 
       <section>
         <h2 class="text-2xl font-bold text-white mb-4">4. Third-Party Cookies</h2>
-        <p>We may embed content or services from third parties (such as Cal.com for booking, or analytics providers). These third parties may set their own cookies. We do not control these cookies and recommend reviewing their privacy policies.</p>
+        <p>When you navigate to third-party services (such as our external Cal.com booking page), those services may set their own cookies under their own policies. We do not control those cookies and recommend reviewing the relevant provider policies.</p>
       </section>
 
       <section>

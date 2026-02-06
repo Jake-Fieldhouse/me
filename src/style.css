@@ -5,12 +5,10 @@
   line-height: 1.5;
   font-weight: 400;
 
-  /* ========== FORCED DARK MODE PREVENTION ========== */
-  /* Tells browser this site is ONLY dark - do not invert */
-  color-scheme: dark only;
-  /* Prevents Windows High Contrast / Forced Colors from inverting */
-  forced-color-adjust: none;
-  -ms-high-contrast-adjust: none;
+  /* Declare dark UI while preserving accessibility modes */
+  color-scheme: dark;
+  forced-color-adjust: auto;
+  -ms-high-contrast-adjust: auto;
 
   color: rgba(255, 255, 255, 0.87);
   background-color: #101010;
@@ -44,14 +42,6 @@ body {
 
 html {
   background-color: #000000 !important;
-}
-
-/* Block browser auto-dark-mode inversion on ALL elements */
-html,
-body,
-* {
-  filter: none !important;
-  -webkit-filter: none !important;
 }
 
 #app {

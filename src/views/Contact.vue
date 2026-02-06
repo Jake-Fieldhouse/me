@@ -8,9 +8,12 @@ import IconSignal from '../components/icons/IconSignal.vue'
 import IconTelegram from '../components/icons/IconTelegram.vue'
 import IconLinkedIn from '../components/icons/IconLinkedIn.vue'
 import IconVcf from '../components/icons/IconVcf.vue'
+import IconExternalLink from '../components/icons/IconExternalLink.vue'
+import IconCheck from '../components/icons/IconCheck.vue'
 
 const heroRef = ref<HTMLElement | null>(null)
 const contentRef = ref<HTMLElement | null>(null)
+const bookingUrl = 'https://cal.eu/jake-fieldhouse-7kcb9d'
 
 useScrollReveal(heroRef)
 useScrollReveal(contentRef, { delay: 0.15 })
@@ -114,15 +117,63 @@ ${form.value.email}
             <h2 class="text-base sm:text-lg font-semibold text-white">Schedule a Call</h2>
             <span class="text-xs text-neutral-500">15 or 30 min • Free</span>
           </div>
-          <div class="relative w-full" style="min-height: 480px;">
-            <iframe 
-              src="https://cal.eu/jake-fieldhouse-7kcb9d?embed=true&theme=dark&hideEventTypeDetails=false&layout=month_view" 
-              class="absolute inset-0 w-full h-full border-0"
-              style="min-height: 480px; background: transparent;"
-              loading="lazy"
-              allow="payment"
-              title="Book a consultation with Jake Fieldhouse"
-            ></iframe>
+          <div class="p-4 sm:p-5 lg:p-6 space-y-4">
+            <div class="booking-hero">
+              <p class="text-sm sm:text-base text-neutral-200 leading-relaxed">
+                Choose a consultation slot in the secure calendar and I will confirm quickly.
+                Perfect for MSP onboarding, repair diagnostics, and compliance planning.
+              </p>
+
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="booking-chip">15 min triage</span>
+                <span class="booking-chip">30 min deep dive</span>
+                <span class="booking-chip">Phone or video</span>
+              </div>
+
+              <div class="mt-5 flex flex-col sm:flex-row gap-3">
+                <a
+                  :href="bookingUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="booking-primary-btn"
+                >
+                  Open Booking Calendar
+                  <IconExternalLink class="w-4 h-4" />
+                </a>
+                <a
+                  href="tel:+447404090458"
+                  class="booking-secondary-btn"
+                >
+                  Need urgent help? Call now
+                </a>
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-3 gap-2.5">
+              <article class="booking-step">
+                <p class="booking-step-title">1. Pick a slot</p>
+                <p class="booking-step-copy">Choose a time that fits your schedule.</p>
+              </article>
+              <article class="booking-step">
+                <p class="booking-step-title">2. Share context</p>
+                <p class="booking-step-copy">Add your goals or issue summary in the booking notes.</p>
+              </article>
+              <article class="booking-step">
+                <p class="booking-step-title">3. Meet and plan</p>
+                <p class="booking-step-copy">We align on next actions and response time immediately.</p>
+              </article>
+            </div>
+
+            <ul class="space-y-2">
+              <li class="flex items-center gap-2 text-xs text-neutral-400">
+                <IconCheck class="w-4 h-4 text-emerald-400" />
+                Opens in a new tab so this site stays clean and fast.
+              </li>
+              <li class="flex items-center gap-2 text-xs text-neutral-400">
+                <IconCheck class="w-4 h-4 text-emerald-400" />
+                No account needed to request a slot.
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -299,5 +350,85 @@ ${form.value.email}
   color: white;
   background: rgba(38, 38, 38, 0.8);
   border-color: rgba(255, 255, 255, 0.12);
+}
+
+.booking-hero {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at 15% 15%, rgba(52, 211, 153, 0.16), transparent 45%),
+    radial-gradient(circle at 88% 82%, rgba(59, 130, 246, 0.14), transparent 45%),
+    rgba(17, 24, 39, 0.55);
+  border-radius: 0.875rem;
+  padding: 1rem;
+}
+
+.booking-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.22);
+  color: rgb(229, 229, 229);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+}
+
+.booking-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: rgb(3, 7, 18);
+  background: linear-gradient(90deg, rgb(52, 211, 153), rgb(96, 165, 250));
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.booking-primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(52, 211, 153, 0.22);
+}
+
+.booking-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgb(229, 229, 229);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(17, 24, 39, 0.45);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.booking-secondary-btn:hover {
+  border-color: rgba(255, 255, 255, 0.26);
+  background: rgba(17, 24, 39, 0.7);
+}
+
+.booking-step {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(17, 24, 39, 0.35);
+  border-radius: 0.75rem;
+  padding: 0.7rem 0.75rem;
+}
+
+.booking-step-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+
+.booking-step-copy {
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+  color: rgb(163, 163, 163);
+  line-height: 1.35;
 }
 </style>

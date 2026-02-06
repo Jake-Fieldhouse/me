@@ -4,7 +4,7 @@ const currentYear = new Date().getFullYear()
 </script>
 
 <template>
-  <footer class="w-full border-t border-white/5 pt-8 pb-8 text-center text-neutral-500 text-sm bg-black/50 backdrop-blur-sm z-40 relative">
+  <footer class="w-full border-t border-white/5 pt-8 pb-8 text-center text-neutral-400 text-sm bg-black/50 backdrop-blur-sm z-40 relative">
     <div class="flex flex-col gap-6 items-center max-w-4xl mx-auto px-6">
         <!-- Status Indicator -->
         <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20">
@@ -28,7 +28,7 @@ const currentYear = new Date().getFullYear()
         </a>
 
         <p>© {{ currentYear }} Jake Fieldhouse Consulting Ltd | Registered in England & Wales | Company No. 16536646 | Insured by Hiscox</p>
-        <p class="text-xs text-neutral-400">Hull & East Yorkshire | UK-Wide On-Site & Remote</p>
+        <p class="text-xs text-neutral-300">Hull & East Yorkshire | UK-Wide On-Site & Remote</p>
         
         <!-- Main Navigation -->
         <nav class="flex justify-center gap-6 flex-wrap">
@@ -41,8 +41,8 @@ const currentYear = new Date().getFullYear()
 
         <!-- Legal Links -->
         <div class="flex flex-col gap-2">
-          <span class="text-neutral-400 text-xs uppercase tracking-wider">Legal & Policies</span>
-          <nav class="flex justify-center gap-4 flex-wrap text-xs text-neutral-400">
+          <span class="text-neutral-300 text-xs uppercase tracking-wider">Legal & Policies</span>
+          <nav class="flex justify-center gap-4 flex-wrap text-xs text-neutral-300">
             <router-link to="/privacy" class="hover:text-white transition-colors">Privacy</router-link>
             <router-link to="/terms" class="hover:text-white transition-colors">Terms</router-link>
             <router-link to="/cookies" class="hover:text-white transition-colors">Cookies</router-link>
