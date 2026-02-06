@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-
-interface CookiePreferences {
-    necessary: boolean
-    analytics: boolean
-    marketing: boolean
-}
+import {
+    disableAnalytics,
+    enableAnalytics,
+    parseCookiePreferences,
+    type CookiePreferences
+} from '../lib/analytics'
 
 const showBanner = ref(false)
 const showSettings = ref(false)
@@ -21,7 +21,19 @@ onMounted(() => {
     if (!stored) {
         showBanner.value = true
     } else {
-        preferences.value = JSON.parse(stored)
+        const parsed = parseCookiePreferences(stored)
+
+        if (parsed) {
+            preferences.value = parsed
+        } else {
+            showBanner.value = true
+        }
+    }
+
+    if (preferences.value.analytics) {
+        enableAnalytics()
+    } else {
+        disableAnalytics()
     }
 })
 
@@ -45,6 +57,13 @@ const acceptNecessary = () => {
 
 const savePreferences = () => {
     localStorage.setItem('cookie-preferences', JSON.stringify(preferences.value))
+
+    if (preferences.value.analytics) {
+        enableAnalytics()
+    } else {
+        disableAnalytics()
+    }
+
     showBanner.value = false
     showSettings.value = false
 }

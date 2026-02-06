@@ -30,8 +30,10 @@ import { useToast } from './composables/useToast'
 
 const isLoading = ref(true)
 const showFluidCursor = ref(true)
+const showAurora = ref(true)
 const { toastMessage, showToast } = useToast()
-const PRELOADER_DELAY_MS = 1200
+const PRELOADER_DELAY_MS = 450
+const FAST_PRELOADER_DELAY_MS = 220
 
 onMounted(() => {
     // ⚠️ MAINTENANCE MODE: If enabled, preloader runs forever
@@ -48,24 +50,32 @@ onMounted(() => {
 
     // Normal operation below (only runs when MAINTENANCE_MODE = false)
     const deviceMemory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory
+    const networkInfo = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection
     const lowMemoryDevice = typeof deviceMemory === 'number' && deviceMemory <= 4
+    const dataSaverMode = networkInfo?.saveData === true
+    const slowConnection = typeof networkInfo?.effectiveType === 'string'
+      && ['slow-2g', '2g', '3g'].includes(networkInfo.effectiveType)
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0
     const coarsePointer = window.matchMedia('(pointer: coarse)').matches
-    showFluidCursor.value = !(lowMemoryDevice || prefersReducedMotion || hasTouch || coarsePointer)
+    const constrainedDevice = lowMemoryDevice || dataSaverMode || slowConnection
+    const reducedFxContext = constrainedDevice || prefersReducedMotion || hasTouch || coarsePointer
+    showFluidCursor.value = !reducedFxContext
+    showAurora.value = !reducedFxContext
 
     // Smart preloader: skip on repeat visits within session
     const hasSeenPreloader = sessionStorage.getItem('preloader-seen')
     
-    if (hasSeenPreloader) {
+    if (hasSeenPreloader || reducedFxContext) {
         // Instant load for repeat visitors
         isLoading.value = false
+        sessionStorage.setItem('preloader-seen', 'true')
     } else {
         // Full art house experience for first visit
         setTimeout(() => {
             isLoading.value = false
             sessionStorage.setItem('preloader-seen', 'true')
-        }, PRELOADER_DELAY_MS)
+        }, constrainedDevice ? FAST_PRELOADER_DELAY_MS : PRELOADER_DELAY_MS)
     }
 })
 </script>
@@ -74,9 +84,10 @@ onMounted(() => {
   <div class="relative min-h-dvh bg-black text-white font-inter selection:bg-white/20 overflow-x-hidden">
     
     <!-- Hero Layer -->
-    <AuroraBackground class="fixed inset-0 z-0">
+    <AuroraBackground v-if="showAurora" class="fixed inset-0 z-0">
         <!-- Aurora handles its own visuals -->
     </AuroraBackground>
+    <div v-else class="fixed inset-0 z-0 bg-black" aria-hidden="true" />
 
     <!-- Art House Preloader (Z-40, provides black background) -->
     <!-- In maintenance mode, this NEVER goes away -->
@@ -85,39 +96,40 @@ onMounted(() => {
     <!-- Cursor Layer (Z-50, smoke sits ON TOP of preloader) -->
     <FluidCursor v-if="showFluidCursor" class="fixed inset-0 z-50 pointer-events-none" :intro-mode="isLoading" />
 
-    <!-- ⚠️ ALL CONTENT BELOW IS HIDDEN WHEN isLoading = true (maintenance mode) -->
-    <template v-if="!isLoading">
+    <!-- Keep layout mounted to avoid CLS when preloader ends -->
+    <div
+      class="relative z-10 pb-32 md:pb-0 transition-opacity duration-200"
+      :class="isLoading ? 'opacity-0 pointer-events-none select-none' : 'opacity-100 pointer-events-auto'"
+      :aria-hidden="isLoading ? 'true' : 'false'"
+    >
       <!-- Navigation -->
       <Navbar />
 
-      <!-- Main Router Content (pb-32 on mobile for 108px StickyCTA clearance) -->
-      <div class="relative z-10 pb-32 md:pb-0">
-        <router-view v-slot="{ Component }">
-          <transition 
-            enter-active-class="transition ease-out duration-500" 
-            enter-from-class="opacity-0 translate-y-4" 
-            enter-to-class="opacity-100 translate-y-0" 
-            leave-active-class="transition ease-in duration-300" 
-            leave-from-class="opacity-100 translate-y-0" 
-            leave-to-class="opacity-0 -translate-y-4"
-            mode="out-in"
-          >
-            <component :is="Component" />
-          </transition>
-        </router-view>
+      <router-view v-slot="{ Component }">
+        <transition 
+          enter-active-class="transition ease-out duration-500" 
+          enter-from-class="opacity-0 translate-y-4" 
+          enter-to-class="opacity-100 translate-y-0" 
+          leave-active-class="transition ease-in duration-300" 
+          leave-from-class="opacity-100 translate-y-0" 
+          leave-to-class="opacity-0 -translate-y-4"
+          mode="out-in"
+        >
+          <component :is="Component" />
+        </transition>
+      </router-view>
 
-        <!-- Cookie Consent -->
-        <CookieConsent />
+      <!-- Cookie Consent -->
+      <CookieConsent />
 
-        <!-- Sticky Mobile CTA -->
-        <StickyCTA />
+      <!-- Sticky Mobile CTA -->
+      <StickyCTA />
 
-        <!-- Global Footer -->
-        <Footer />
-        
-        <!-- Global Toast Notifications -->
-        <Toast :message="toastMessage" :show="showToast" @close="showToast = false" />
-      </div>
-    </template>
+      <!-- Global Footer -->
+      <Footer />
+      
+      <!-- Global Toast Notifications -->
+      <Toast :message="toastMessage" :show="showToast" @close="showToast = false" />
+    </div>
   </div>
 </template>

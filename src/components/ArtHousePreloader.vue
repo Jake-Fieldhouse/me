@@ -1,126 +1,53 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref, watch } from 'vue'
-import gsap from 'gsap'
-import FluidCursor from './FluidCursor.vue'
-
-const props = defineProps<{
+defineProps<{
   loading: boolean
 }>()
-
-const containerRef = ref<HTMLElement | null>(null)
-const nameRef = ref<HTMLElement | null>(null)
-const roleRef = ref<HTMLElement | null>(null)
-
-// Store GSAP animations for cleanup
-let entranceTl: gsap.core.Timeline | null = null
-let exitTween: gsap.core.Tween | null = null
-
-// Animation timeline
-onMounted(() => {
-  entranceTl = gsap.timeline()
-
-  // Initial clean state
-  gsap.set([nameRef.value, roleRef.value], { 
-    opacity: 0, 
-    y: 40,
-    filter: 'blur(10px)'
-  })
-
-  // Cinematic reveal
-  entranceTl.to(nameRef.value, {
-    opacity: 1,
-    y: 0,
-    filter: 'blur(0px)',
-    duration: 1.2,
-    ease: "power3.out",
-    delay: 0.5
-  })
-  .to(roleRef.value, {
-    opacity: 1,
-    y: 0,
-    filter: 'blur(0px)',
-    duration: 1.0,
-    ease: "power3.out"
-  }, "-=0.8")
-})
-
-watch(() => props.loading, (newVal) => {
-  if (!newVal) {
-    // Exit sequence
-    exitTween = gsap.to(containerRef.value, {
-      opacity: 0,
-      scale: 1.05, // Subtle zoom out feel
-      duration: 1.2,
-      ease: "power3.inOut",
-      onComplete: () => {
-        if (containerRef.value) containerRef.value.style.display = 'none'
-      }
-    })
-  }
-})
-
-onUnmounted(() => {
-  entranceTl?.kill()
-  exitTween?.kill()
-})
 </script>
 
 <template>
-  <div 
-    ref="containerRef"
-    class="fixed inset-0 z-[9999] bg-black flex items-center justify-center overflow-hidden"
+  <div
+    class="fixed inset-0 z-[9999] overflow-hidden bg-black transition-[opacity,transform] duration-300 ease-out will-change-transform will-change-opacity"
+    :class="loading ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-[1.01] pointer-events-none'"
   >
-    <!-- 
-       MOONSHOT CHANGE: 
-       Full screen fluid cursor. No opacity reduction.
-       High z-index to be main background but behind text.
-    -->
-    <FluidCursor 
-      class="absolute inset-0 z-0" 
-      :intro-mode="true"
-      :splat-radius="0.25"
-      :curl="8"
-      :color-update-speed="15"
-      :density-dissipation="3.5"
-    />
-    
-    <!-- Content Overlay -->
-    <!-- Pointer events none so clicks go through to fluid if needed, though fluid is z-0 -->
-    <div class="relative z-10 flex flex-col items-center pointer-events-none mix-blend-screen">
-      
-      <h1 
-        ref="nameRef"
-        class="text-6xl md:text-9xl font-black tracking-tighter text-white uppercase text-center leading-none"
-        style="font-family: 'Inter', system-ui, sans-serif; text-shadow: 0 0 40px rgba(255,255,255,0.3);"
-      >
-        Jake<br>Fieldhouse
-      </h1>
-      
-      <div 
-        ref="roleRef"
-        class="mt-6 md:mt-8 flex flex-col items-center gap-6"
-      >
-        <p class="text-[10px] md:text-sm font-medium tracking-[0.2em] md:tracking-[0.5em] text-neutral-200 uppercase text-center px-4" style="text-shadow: 0 2px 10px rgba(0,0,0,0.8);">
+    <div class="absolute inset-0 preloader-sheen" aria-hidden="true" />
+
+    <div class="relative z-10 h-full w-full flex items-center justify-center">
+      <div class="flex flex-col items-center">
+        <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-white uppercase text-center leading-none text-readable-strong">
+          Jake<br>Fieldhouse
+        </h1>
+
+        <p class="mt-5 text-[10px] md:text-sm font-medium tracking-[0.2em] md:tracking-[0.45em] text-neutral-200 uppercase text-center px-4">
           ENTERPRISE IT • HARDWARE REPAIR • EWASTE
         </p>
 
-        <!-- Minimal loading bar -->
-        <div class="h-[2px] w-24 bg-white/20 rounded-full overflow-hidden">
-          <div class="h-full bg-white animate-progress origin-left"></div>
+        <div class="mt-6 h-[2px] w-24 bg-white/25 rounded-full overflow-hidden">
+          <div class="h-full bg-white origin-left animate-progress-once"></div>
         </div>
       </div>
-
     </div>
   </div>
 </template>
 
 <style scoped>
-@keyframes progress {
+@keyframes preloaderShift {
+  0% { transform: translateX(-25%); }
+  100% { transform: translateX(25%); }
+}
+
+@keyframes progressOnce {
   0% { transform: scaleX(0); }
   100% { transform: scaleX(1); }
 }
 
-.animate-progress {
-  animation: progress 2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+.preloader-sheen {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(96, 165, 250, 0.12), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(99, 102, 241, 0.08), transparent 45%);
+  animation: preloaderShift 1.1s linear infinite alternate;
+}
+
+.animate-progress-once {
+  animation: progressOnce 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 </style>
