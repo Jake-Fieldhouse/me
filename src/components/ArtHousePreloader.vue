@@ -80,15 +80,12 @@ defineProps<{
 
 @keyframes preloaderProgress {
   0% {
-    transform: translateX(-130%);
-    opacity: 0.35;
-  }
-  20% {
-    opacity: 1;
+    transform: scaleX(0);
+    transform-origin: left;
   }
   100% {
-    transform: translateX(260%);
-    opacity: 0.35;
+    transform: scaleX(1);
+    transform-origin: left;
   }
 }
 
@@ -114,8 +111,8 @@ defineProps<{
 
 .preloader-progress {
   height: 100%;
-  width: 40%;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.15));
-  animation: preloaderProgress 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5));
+  animation: preloaderProgress 3.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 </style>
