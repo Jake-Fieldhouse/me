@@ -26,10 +26,8 @@ import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import Toast from './components/Toast.vue'
 import { ref, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
 import { useToast } from './composables/useToast'
 
-const router = useRouter()
 const isLoading = ref(true)
 const { toastMessage, showToast } = useToast()
 
@@ -47,17 +45,6 @@ onMounted(() => {
     }
 
     // Normal operation below (only runs when MAINTENANCE_MODE = false)
-    
-    // Handle GitHub Pages SPA redirect
-    // The 404.html redirects to /?p=original-path
-    const urlParams = new URLSearchParams(window.location.search)
-    const redirectPath = urlParams.get('p')
-    
-    if (redirectPath) {
-        // Clean the URL and navigate to the intended route
-        window.history.replaceState(null, '', '/' + decodeURIComponent(redirectPath))
-        router.replace('/' + decodeURIComponent(redirectPath))
-    }
 
     // Smart preloader: skip on repeat visits within session
     const hasSeenPreloader = sessionStorage.getItem('preloader-seen')
