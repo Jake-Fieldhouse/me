@@ -6,21 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collection Note - Jake Fieldhouse Consulting</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #000;
+            --secondary: #666;
+            --accent: #2e7d32;
+            --accent-light: #e8f5e9;
+            --warning: #e65100;
+            --warning-light: #fff3e0;
+            --info: #1565c0;
+            --info-light: #e3f2fd;
+            --border: #ddd;
+            --bg-alt: #f8f8f8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             max-width: 800px;
             margin: 0 auto;
             padding: 40px;
             color: #1a1a1a;
-            line-height: 1.5;
+            line-height: 1.6;
+            background: #fff;
         }
 
         .header {
-            border-bottom: 2px solid #000;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
@@ -28,35 +46,43 @@
 
         .logo h1 {
             margin: 0;
-            font-size: 22px;
+            font-size: 26px;
             font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .logo p {
-            margin: 4px 0 0;
-            font-size: 11px;
-            color: #666;
+            margin: 5px 0 0;
+            font-size: 12px;
+            color: var(--secondary);
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .ref-block {
+        .doc-info {
             text-align: right;
             font-size: 12px;
         }
 
-        .ref-block strong {
-            color: #000;
+        .doc-info strong {
+            color: var(--primary);
+            font-family: 'SF Mono', 'Monaco', monospace;
         }
 
-        .title {
-            font-size: 20px;
+        .title-block {
+            background: var(--bg-alt);
+            padding: 15px 20px;
+            text-align: center;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .title-block h2 {
+            margin: 0;
+            font-size: 18px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 25px;
-            padding: 12px;
-            background: #f5f5f5;
-            text-align: center;
         }
 
         .section {
@@ -64,12 +90,12 @@
         }
 
         .section-title {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
-            color: #666;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
+            color: var(--secondary);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 6px;
             margin-bottom: 12px;
         }
 
@@ -83,54 +109,58 @@
             margin-bottom: 10px;
         }
 
+        .field.full-width {
+            grid-column: span 2;
+        }
+
         .label {
             font-size: 10px;
             font-weight: 600;
             text-transform: uppercase;
-            color: #888;
+            color: var(--secondary);
             margin-bottom: 3px;
         }
 
         .value {
             font-size: 14px;
             font-weight: 500;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border);
             padding-bottom: 3px;
-            min-height: 18px;
+            min-height: 20px;
         }
 
-        .items-table {
+        table {
             width: 100%;
             border-collapse: collapse;
             margin: 15px 0;
             font-size: 12px;
         }
 
-        .items-table th {
+        th {
             text-align: left;
-            border-bottom: 2px solid #000;
+            border-bottom: 2px solid var(--primary);
             padding: 8px;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             font-size: 10px;
-            background: #fafafa;
+            background: var(--bg-alt);
         }
 
-        .items-table td {
-            border-bottom: 1px solid #eee;
+        td {
+            border-bottom: 1px solid var(--border);
             padding: 8px;
             font-family: 'SF Mono', 'Monaco', monospace;
             font-size: 11px;
         }
 
-        .items-table tr:nth-child(even) {
+        tr:nth-child(even) {
             background: #fafafa;
         }
 
         .summary-box {
-            background: #f8f8f8;
-            border: 1px solid #e0e0e0;
-            padding: 15px;
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            padding: 20px;
             border-radius: 4px;
             margin: 20px 0;
         }
@@ -138,71 +168,105 @@
         .summary-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+            gap: 20px;
             text-align: center;
         }
 
         .summary-item .number {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 800;
-            color: #000;
+            color: var(--primary);
+            line-height: 1;
         }
 
         .summary-item .desc {
             font-size: 10px;
             text-transform: uppercase;
-            color: #666;
+            color: var(--secondary);
+            margin-top: 5px;
+        }
+
+        .info-box {
+            background: var(--info-light);
+            border: 1px solid #90caf9;
+            padding: 15px 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .info-box .title {
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--info);
+            margin-bottom: 8px;
+        }
+
+        .info-box p {
+            margin: 0;
+            font-size: 12px;
+            color: #0d47a1;
         }
 
         .signature-section {
             margin-top: 30px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 25px;
         }
 
         .signature-box {
-            border: 1px solid #ddd;
+            border: 1px solid var(--border);
             padding: 15px;
             border-radius: 4px;
         }
 
+        .signature-box .title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
         .signature-line {
-            border-bottom: 1px solid #000;
-            height: 45px;
+            border-bottom: 1px solid var(--primary);
+            height: 40px;
             margin: 10px 0;
         }
 
         .next-steps {
-            background: #fffde7;
-            border: 1px solid #fff176;
-            padding: 15px;
+            background: var(--warning-light);
+            border: 1px solid #ffcc80;
+            padding: 15px 20px;
             border-radius: 4px;
             margin-top: 25px;
-            font-size: 12px;
         }
 
-        .next-steps h4 {
-            margin: 0 0 10px;
-            font-size: 12px;
+        .next-steps .title {
+            font-weight: 700;
+            font-size: 11px;
             text-transform: uppercase;
+            color: var(--warning);
+            margin-bottom: 10px;
         }
 
         .next-steps ul {
             margin: 0;
             padding-left: 18px;
+            font-size: 12px;
         }
 
         .next-steps li {
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
 
         .footer {
-            margin-top: 30px;
-            font-size: 9px;
+            margin-top: 35px;
+            font-size: 10px;
             color: #999;
             text-align: center;
-            border-top: 1px solid #eee;
+            border-top: 1px solid var(--border);
             padding-top: 15px;
         }
 
@@ -211,7 +275,8 @@
                 padding: 20px;
             }
 
-            .next-steps {
+            .next-steps,
+            .info-box {
                 background: #fff;
                 border: 1px solid #000;
             }
@@ -226,27 +291,28 @@
             <h1>JAKE FIELDHOUSE</h1>
             <p>Managed IT & Secure Disposal</p>
         </div>
-        <div class="ref-block">
-            <strong>Collection Ref:</strong> {{collection_reference}}<br>
-            <strong>Date:</strong> {{collection_date}}<br>
-            <strong>Time:</strong> {{collection_time}}
+        <div class="doc-info">
+            <strong>COL-</strong>{{collection_reference}}<br>
+            {{collection_date}} at {{collection_time}}
         </div>
     </div>
 
-    <div class="title">Collection Note</div>
+    <div class="title-block">
+        <h2>Collection Note</h2>
+    </div>
 
     <div class="section">
         <div class="section-title">Client Details</div>
         <div class="grid">
             <div class="field">
-                <div class="label">Organization</div>
+                <div class="label">Organisation</div>
                 <div class="value">{{client_name}}</div>
             </div>
             <div class="field">
                 <div class="label">Contact Person</div>
                 <div class="value">{{client_contact}}</div>
             </div>
-            <div class="field full-width" style="grid-column: span 2;">
+            <div class="field full-width">
                 <div class="label">Collection Address</div>
                 <div class="value">{{client_address}}</div>
             </div>
@@ -255,14 +321,14 @@
 
     <div class="section">
         <div class="section-title">Items Collected</div>
-        <table class="items-table">
+        <table>
             <thead>
                 <tr>
-                    <th style="width: 8%;">#</th>
-                    <th style="width: 25%;">Device Type</th>
-                    <th style="width: 20%;">Manufacturer</th>
-                    <th style="width: 25%;">Serial Number</th>
-                    <th style="width: 22%;">Condition</th>
+                    <th style="width: 6%;">#</th>
+                    <th style="width: 22%;">Device Type</th>
+                    <th style="width: 18%;">Manufacturer</th>
+                    <th style="width: 28%;">Serial Number</th>
+                    <th style="width: 26%;">Condition</th>
                 </tr>
             </thead>
             <tbody>
@@ -296,31 +362,40 @@
         </div>
     </div>
 
+    <div class="info-box">
+        <div class="title">Data Protection Notice (UK GDPR)</div>
+        <p>All data-bearing devices will be securely sanitised in accordance with <strong>NIST 800-88 Rev. 1</strong>
+            and <strong>IEEE 2883-2022</strong> before any refurbishment, resale, or recycling. A Certificate of Data
+            Destruction (COD) will be issued upon completion. Jake Fieldhouse Consulting Ltd is registered with the ICO
+            (ZC002956) and handles all personal data in accordance with the UK Data Protection Act 2018.</p>
+    </div>
+
     <div class="signature-section">
         <div class="signature-box">
-            <div class="label">Client Representative</div>
+            <div class="title">Client Representative</div>
             <div class="signature-line"></div>
-            <div class="label">Name: {{client_signatory}}</div>
-            <div class="label" style="margin-top: 5px;">Position: {{client_position}}</div>
+            <div class="label">Name:</div> {{client_signatory}}<br>
+            <div class="label" style="margin-top: 5px;">Position:</div> {{client_position}}
         </div>
         <div class="signature-box">
-            <div class="label">Collected By</div>
+            <div class="title">Collected By</div>
             <div class="signature-line"
-                style="font-family: 'Brush Script MT', cursive; font-size: 24px; padding-top: 8px;">
+                style="font-family: 'Brush Script MT', cursive; font-size: 24px; padding-top: 6px;">
                 Jake Fieldhouse
             </div>
-            <div class="label">Name: Jake Fieldhouse</div>
-            <div class="label" style="margin-top: 5px;">Waste Carrier: CBDL620098</div>
+            <div class="label">Name:</div> Jake Fieldhouse<br>
+            <div class="label" style="margin-top: 5px;">Waste Carrier:</div> CBDL620098
         </div>
     </div>
 
     <div class="next-steps">
-        <h4>What Happens Next</h4>
+        <div class="title">What Happens Next</div>
         <ul>
-            <li><strong>Certificate of Data Destruction</strong> will be issued by
+            <li><strong>Certificate of Data Destruction (COD)</strong> issued by
                 <strong>{{destruction_due_date}}</strong></li>
-            <li><strong>WEEE Compliance Certificate</strong> will be issued upon final disposal (typically within 90
-                days)</li>
+            <li><strong>Waste Transfer Note (WTN)</strong> provided as proof of compliant disposal</li>
+            <li><strong>WEEE Compliance Certificate</strong> issued upon final processing (typically within 90 days)
+            </li>
             <li>All documents will be emailed to: <strong>{{client_email}}</strong></li>
         </ul>
     </div>

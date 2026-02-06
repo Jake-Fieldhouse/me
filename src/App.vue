@@ -70,7 +70,7 @@ onMounted(() => {
         setTimeout(() => {
             isLoading.value = false
             sessionStorage.setItem('preloader-seen', 'true')
-        }, 2000)
+        }, 3500)
     }
 })
 </script>

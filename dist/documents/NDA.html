@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Non-Disclosure Agreement - Jake Fieldhouse Consulting</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #000;
+            --secondary: #666;
+            --accent: #2e7d32;
+            --accent-light: #e8f5e9;
+            --warning: #e65100;
+            --warning-light: #fff3e0;
+            --info: #1565c0;
+            --info-light: #e3f2fd;
+            --border: #ddd;
+            --bg-alt: #f8f8f8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            color: #1a1a1a;
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        .header {
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo p {
+            margin: 5px 0 0;
+            font-size: 12px;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .doc-info {
+            text-align: right;
+            font-size: 11px;
+            color: var(--secondary);
+        }
+
+        .doc-info strong {
+            color: var(--primary);
+            display: block;
+            font-size: 12px;
+        }
+
+        .title-block {
+            background: var(--bg-alt);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .title-block h2 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .title-block p {
+            margin: 8px 0 0;
+            font-size: 12px;
+            color: var(--secondary);
+        }
+
+        h3 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 10px 12px;
+            background: var(--bg-alt);
+            border-left: 3px solid var(--primary);
+            margin: 30px 0 15px;
+        }
+
+        h4 {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--secondary);
+            text-transform: uppercase;
+            margin: 20px 0 10px;
+        }
+
+        p,
+        li {
+            font-size: 13px;
+        }
+
+        ul,
+        ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .parties-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .party-box {
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .party-box .title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .party-box .name {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .party-box .details {
+            font-size: 12px;
+            color: var(--secondary);
+        }
+
+        .compliance-box {
+            background: var(--accent-light);
+            border: 1px solid #a5d6a7;
+            padding: 15px 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .compliance-box .title {
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .compliance-box ul {
+            margin: 0;
+            color: #1b5e20;
+        }
+
+        .compliance-box p {
+            margin: 0;
+            color: #1b5e20;
+            font-size: 12px;
+        }
+
+        .info-box {
+            background: var(--info-light);
+            border: 1px solid #90caf9;
+            padding: 15px 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .info-box .title {
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--info);
+            margin-bottom: 8px;
+        }
+
+        .info-box p {
+            margin: 0;
+            font-size: 12px;
+        }
+
+        .warning-box {
+            background: var(--warning-light);
+            border: 1px solid #ffcc80;
+            padding: 15px 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .warning-box .title {
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--warning);
+            margin-bottom: 8px;
+        }
+
+        .ownership-box {
+            background: var(--accent-light);
+            border: 2px solid #a5d6a7;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .ownership-box .title {
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .ownership-box p {
+            margin: 0 0 10px;
+            font-size: 12px;
+            color: #1b5e20;
+        }
+
+        .signature-section {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .signature-box {
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .signature-box .title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .signature-line {
+            border-bottom: 1px solid var(--primary);
+            height: 40px;
+            margin: 10px 0;
+        }
+
+        .field {
+            margin-bottom: 10px;
+        }
+
+        .field .label {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--secondary);
+        }
+
+        .field .value {
+            font-size: 13px;
+            border-bottom: 1px solid var(--border);
+            padding: 4px 0;
+            min-height: 22px;
+        }
+
+        .field .value[contenteditable="true"] {
+            background: #fffef0;
+        }
+
+        .clause-number {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .sub-clause {
+            margin-left: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 12px;
+        }
+
+        th {
+            text-align: left;
+            border-bottom: 2px solid var(--primary);
+            padding: 10px 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 10px;
+            background: var(--bg-alt);
+        }
+
+        td {
+            border-bottom: 1px solid var(--border);
+            padding: 10px 8px;
+            vertical-align: top;
+        }
+
+        .check {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 10px;
+            color: #999;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+
+        @media print {
+            body {
+                padding: 20px;
+            }
+
+            .compliance-box,
+            .info-box,
+            .warning-box,
+            .ownership-box {
+                background: #fff;
+                border: 1px solid #000;
+            }
+
+            .field .value[contenteditable="true"] {
+                background: #fff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <h1>JAKE FIELDHOUSE</h1>
+            <p>Managed IT & Secure Disposal</p>
+        </div>
+        <div class="doc-info">
+            <strong>JFC-NDA-001</strong>
+            Mutual NDA Template<br>
+            Effective Date: ___________
+        </div>
+    </div>
+
+    <div class="title-block">
+        <h2>Mutual Non-Disclosure Agreement</h2>
+        <p>Confidential Information Protection for IT Services & Data Destruction</p>
+    </div>
+
+    <!-- Parties -->
+    <h3>The Parties</h3>
+    <div class="parties-grid">
+        <div class="party-box">
+            <div class="title">Party A (Disclosing Party)</div>
+            <div class="name" contenteditable="true">[CLIENT NAME]</div>
+            <div class="details" contenteditable="true">[CLIENT ADDRESS]</div>
+        </div>
+        <div class="party-box">
+            <div class="title">Party B (Receiving Party)</div>
+            <div class="name">Jake Fieldhouse Consulting Ltd</div>
+            <div class="details">Company Number: 16536646<br>Hull, East Yorkshire, United Kingdom</div>
+        </div>
+    </div>
+
+    <!-- Section 1: Purpose -->
+    <h3>1. Purpose</h3>
+    <p>This Agreement is entered into for the purpose of preventing unauthorised disclosure of Confidential Information
+        exchanged between the parties in connection with IT services, hardware repair, data destruction, or related
+        consulting engagements.</p>
+
+    <!-- Section 2: Definition -->
+    <h3>2. Definition of Confidential Information</h3>
+    <p><span class="clause-number">2.1</span> "Confidential Information" means any data, documentation, or information
+        disclosed by either party in any form (written, oral, visual, electronic, or otherwise), including but not
+        limited to:</p>
+    <ul>
+        <li>Business data stored on IT equipment</li>
+        <li>Personal data subject to UK GDPR</li>
+        <li>Technical specifications and system configurations</li>
+        <li>Client lists, financial information, and trade secrets</li>
+        <li>Source code, algorithms, and proprietary software</li>
+        <li>Network topologies, access credentials, and security configurations</li>
+        <li>Any information marked as "Confidential" or reasonably understood to be confidential</li>
+    </ul>
+    <p><span class="clause-number">2.2</span> <strong>Oral Disclosures:</strong> Information disclosed orally shall be
+        treated as Confidential Information if it is identified as confidential at the time of disclosure and summarised
+        in writing within fourteen (14) days.</p>
+
+    <!-- Section 3: Obligations -->
+    <h3>3. Obligations of the Receiving Party</h3>
+    <p>The Receiving Party agrees to:</p>
+    <ol>
+        <li>Hold all Confidential Information in strict confidence</li>
+        <li>Not disclose Confidential Information to third parties without prior written consent</li>
+        <li>Use Confidential Information solely for the Purpose stated above</li>
+        <li>Take reasonable measures to protect Confidential Information from unauthorised access</li>
+        <li>Return or securely destroy all Confidential Information upon request or completion of services</li>
+        <li>Limit access to Confidential Information to personnel with a genuine need to know</li>
+        <li>Ensure that any authorised personnel are bound by confidentiality obligations no less protective than those
+            contained herein</li>
+    </ol>
+
+    <!-- Section 4: Exclusions -->
+    <h3>4. Exclusions</h3>
+    <p>This Agreement does not apply to information that:</p>
+    <ul>
+        <li>Was publicly available at the time of disclosure</li>
+        <li>Becomes publicly available through no fault of the Receiving Party</li>
+        <li>Was lawfully in the Receiving Party's possession prior to disclosure</li>
+        <li>Was independently developed without use of Confidential Information</li>
+        <li>Is received from a third party lawfully entitled to disclose it</li>
+        <li>Is required to be disclosed by law, court order, or regulatory authority</li>
+    </ul>
+
+    <!-- Section 5: Permitted Disclosures -->
+    <h3>5. Permitted Disclosures</h3>
+    <div class="info-box">
+        <div class="title">Statutory Protection (Victims and Prisoners Act 2024 / Employment Rights Act 2025)</div>
+        <p>Nothing in this Agreement prevents either party from: making a protected disclosure (whistleblowing);
+            reporting criminal conduct to law enforcement or regulators; seeking legal advice; or making disclosures
+            relating to harassment or discrimination. Any such disclosure shall not constitute a breach of this
+            Agreement.</p>
+    </div>
+
+    <!-- Section 6: Data Destruction -->
+    <h3>6. Data Destruction Compliance</h3>
+    <div class="compliance-box">
+        <div class="title">Certified Standards</div>
+        <ul>
+            <li><strong>NIST SP 800-88 Rev. 1</strong>: Guidelines for Media Sanitization (Purge level minimum)</li>
+            <li><strong>IEEE 2883-2022</strong>: Standard for Sanitizing Storage</li>
+            <li><strong>NCSC Sanitisation Guidance</strong>: UK National Cyber Security Centre</li>
+            <li><strong>HMG InfoSec Standard No. 5</strong>: UK Government sanitization requirements</li>
+            <li><strong>ISO/IEC 21964 (DIN 66399)</strong>: Physical destruction standards</li>
+        </ul>
+    </div>
+    <p>Certificates of Destruction are provided for all data-bearing media processed. Destruction logs are retained for
+        a minimum of six (6) years.</p>
+
+    <!-- Section 7: Data Processing -->
+    <h3>7. Data Processing (UK GDPR Article 28)</h3>
+    <p>To the extent Jake Fieldhouse Consulting Ltd processes personal data on behalf of the Disclosing Party:</p>
+    <ul>
+        <li>Processing shall occur only in accordance with documented instructions</li>
+        <li>All personnel with access are bound by confidentiality obligations</li>
+        <li>Appropriate technical and organisational measures are implemented (Article 32)</li>
+        <li>Sub-processors shall not be engaged without prior written consent</li>
+        <li>Personal data breach notification within 72 hours</li>
+        <li>Personal data deleted or returned upon completion of services</li>
+    </ul>
+    <p style="font-size: 11px; color: var(--secondary);"><em>This clause satisfies Article 28 of UK GDPR. Practices will
+            be reviewed in accordance with the Data (Use and Access) Act 2025.</em></p>
+
+    <!-- Section 8: Insurance -->
+    <h3>8. Insurance Coverage</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Coverage</th>
+                <th>Provider</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Professional Indemnity</td>
+                <td>Hiscox</td>
+                <td class="check">✓ Active</td>
+            </tr>
+            <tr>
+                <td>Public Liability</td>
+                <td>Hiscox</td>
+                <td class="check">✓ Active</td>
+            </tr>
+            <tr>
+                <td>Cyber Liability</td>
+                <td>Hiscox</td>
+                <td class="check">✓ Active</td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="font-size: 11px; color: var(--secondary);">Certificates available at: <a
+            href="https://jakefieldhouse.co.uk/compliance">jakefieldhouse.co.uk/compliance</a></p>
+
+    <!-- Section 9: Limitation of Liability -->
+    <h3>9. Limitation of Liability</h3>
+    <div class="warning-box">
+        <div class="title">Liability Cap</div>
+        <p style="margin: 0; font-size: 12px;">Total aggregate liability shall not exceed the greater of: (a) fees paid
+            under the services agreement; or (b) <strong>£100,000</strong>. This limitation does not apply to death or
+            personal injury, fraud, wilful misconduct, or any liability that cannot lawfully be excluded.</p>
+    </div>
+
+    <!-- Section 10: Intellectual Property -->
+    <h3>10. Intellectual Property & Trade Secrets</h3>
+    <p>Each party retains ownership of its pre-existing intellectual property. Trade secrets disclosed under this
+        Agreement are protected in accordance with the <strong>Trade Secrets (Enforcement, etc.) Regulations
+            2018</strong> and common law principles of breach of confidence.</p>
+
+    <!-- Section 11: Term -->
+    <h3>11. Term</h3>
+    <p>This Agreement remains in effect for a period of <strong>three (3) years</strong> from the Effective Date, or
+        until terminated by mutual written agreement. Confidentiality obligations in respect of trade secrets shall
+        survive indefinitely.</p>
+
+    <!-- Section 12: Force Majeure -->
+    <h3>12. Force Majeure</h3>
+    <p>Neither party shall be liable for failure or delay caused by events beyond reasonable control, including: acts of
+        God, war, terrorism, pandemic, government actions, cyber-attacks, or critical infrastructure disruption. If a
+        Force Majeure Event continues for more than ninety (90) days, either party may terminate without liability.</p>
+
+    <!-- Section 13: Governing Law -->
+    <h3>13. Governing Law & Dispute Resolution</h3>
+    <p>This Agreement shall be governed by the laws of <strong>England and Wales</strong>. Before initiating court
+        proceedings, the parties agree to attempt resolution through good faith negotiation and, if unsuccessful,
+        mediation through CEDR or a mutually agreed mediator.</p>
+
+    <!-- Signatures -->
+    <h3>14. Signatures</h3>
+    <div class="signature-section">
+        <div class="signature-box">
+            <div class="title">For Jake Fieldhouse Consulting Ltd</div>
+            <div class="field">
+                <div class="label">Name</div>
+                <div class="value">Jake Fieldhouse</div>
+            </div>
+            <div class="field">
+                <div class="label">Title</div>
+                <div class="value">Director</div>
+            </div>
+            <div class="signature-line"
+                style="font-family: 'Brush Script MT', cursive; font-size: 24px; padding-top: 8px;">
+                Jake Fieldhouse
+            </div>
+            <div class="field">
+                <div class="label">Date</div>
+                <div class="value" contenteditable="true"></div>
+            </div>
+        </div>
+        <div class="signature-box">
+            <div class="title">For [CLIENT NAME]</div>
+            <div class="field">
+                <div class="label">Name</div>
+                <div class="value" contenteditable="true"></div>
+            </div>
+            <div class="field">
+                <div class="label">Title</div>
+                <div class="value" contenteditable="true"></div>
+            </div>
+            <div class="signature-line"></div>
+            <div class="field">
+                <div class="label">Date</div>
+                <div class="value" contenteditable="true"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Jake Fieldhouse Consulting LTD. Registered in England & Wales (16536646).<br>
+        Environment Agency Waste Carrier: CBDL620098 | ICO Registration: ZC002956 | Insured by Hiscox<br>
+        jakefieldhouse.co.uk | jake@jakefieldhouse.co.uk<br><br>
+        <em>For complex engagements or high-value contracts, independent legal review is recommended.</em>
+    </div>
+
+</body>
+
+</html>

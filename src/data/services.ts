@@ -2,6 +2,10 @@ import IconMicrosoft from '../components/icons/IconMicrosoft.vue'
 import IconAzure from '../components/icons/IconAzure.vue'
 import IconWindows from '../components/icons/IconWindows.vue'
 import IconApple from '../components/icons/IconApple.vue'
+import IconAndroid from '../components/icons/IconAndroid.vue'
+import IconIOS from '../components/icons/IconIOS.vue'
+import IconIntune from '../components/icons/IconIntune.vue'
+import IconEntra from '../components/icons/IconEntra.vue'
 
 export const supportedPlatforms = [
     {
@@ -17,6 +21,18 @@ export const supportedPlatforms = [
         bgClass: 'bg-cyan-500/10'
     },
     {
+        name: 'Intune',
+        icon: IconIntune,
+        colorClass: 'text-purple-400',
+        bgClass: 'bg-purple-500/10'
+    },
+    {
+        name: 'Entra ID',
+        icon: IconEntra,
+        colorClass: 'text-teal-400',
+        bgClass: 'bg-teal-500/10'
+    },
+    {
         name: 'Windows',
         icon: IconWindows,
         colorClass: 'text-blue-300',
@@ -27,6 +43,18 @@ export const supportedPlatforms = [
         icon: IconApple,
         colorClass: 'text-neutral-400',
         bgClass: 'bg-neutral-500/10'
+    },
+    {
+        name: 'iOS',
+        icon: IconIOS,
+        colorClass: 'text-neutral-300',
+        bgClass: 'bg-neutral-400/10'
+    },
+    {
+        name: 'Android',
+        icon: IconAndroid,
+        colorClass: 'text-green-400',
+        bgClass: 'bg-green-500/10'
     }
 ]
 

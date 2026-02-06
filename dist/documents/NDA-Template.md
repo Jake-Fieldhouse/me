@@ -92,7 +92,7 @@ This Agreement does not apply to information that:
 
 Jake Fieldhouse Consulting Ltd confirms adherence to:
 
-- **NIST 800-88 Rev. 1** (Guidelines for Media Sanitization) — Purge level minimum
+- **NIST 800-88 Rev. 1** (Guidelines for Media Sanitization): Purge level minimum
 - **IEEE 2883-2022** (Standard for Sanitizing Storage)
 - **HMG InfoSec Standard No. 5** (UK Government sanitization requirements)
 - **UK GDPR** (Data Protection Act 2018)

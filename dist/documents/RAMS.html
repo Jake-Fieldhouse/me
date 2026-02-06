@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Assessment & Method Statement - Jake Fieldhouse Consulting</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #000;
+            --secondary: #666;
+            --accent: #2e7d32;
+            --accent-light: #e8f5e9;
+            --warning: #e65100;
+            --warning-light: #fff3e0;
+            --info: #1565c0;
+            --info-light: #e3f2fd;
+            --border: #ddd;
+            --bg-alt: #f8f8f8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            color: #1a1a1a;
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        .header {
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo p {
+            margin: 5px 0 0;
+            font-size: 12px;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .doc-info {
+            text-align: right;
+            font-size: 11px;
+            color: var(--secondary);
+        }
+
+        .doc-info strong {
+            color: var(--primary);
+            display: block;
+            font-size: 12px;
+        }
+
+        .title-block {
+            background: var(--bg-alt);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .title-block h2 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .title-block p {
+            margin: 8px 0 0;
+            font-size: 12px;
+            color: var(--secondary);
+        }
+
+        h3 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 10px 12px;
+            background: var(--bg-alt);
+            border-left: 3px solid var(--primary);
+            margin: 30px 0 15px;
+        }
+
+        h4 {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--secondary);
+            text-transform: uppercase;
+            margin: 20px 0 10px;
+        }
+
+        p,
+        li {
+            font-size: 13px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 12px;
+        }
+
+        th {
+            text-align: left;
+            border-bottom: 2px solid var(--primary);
+            padding: 10px 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 10px;
+            background: var(--bg-alt);
+        }
+
+        td {
+            border-bottom: 1px solid var(--border);
+            padding: 10px 8px;
+            vertical-align: top;
+        }
+
+        tr:hover {
+            background: #fafafa;
+        }
+
+        .risk-high {
+            color: #c62828;
+            font-weight: 700;
+        }
+
+        .risk-medium {
+            color: #ef6c00;
+            font-weight: 600;
+        }
+
+        .risk-low {
+            color: #2e7d32;
+            font-weight: 600;
+        }
+
+        .compliance-box {
+            background: var(--accent-light);
+            border: 1px solid #a5d6a7;
+            padding: 15px 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .compliance-box .title {
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .compliance-box ul {
+            margin: 0;
+            color: #1b5e20;
+        }
+
+        .info-box {
+            background: var(--info-light);
+            border: 1px solid #90caf9;
+            padding: 15px 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .info-box .title {
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--info);
+            margin-bottom: 8px;
+        }
+
+        .warning-box {
+            background: var(--warning-light);
+            border: 1px solid #ffcc80;
+            padding: 15px 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .warning-box .title {
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--warning);
+            margin-bottom: 8px;
+        }
+
+        .signature-section {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .signature-box {
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .signature-box .title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .signature-line {
+            border-bottom: 1px solid var(--primary);
+            height: 40px;
+            margin: 10px 0;
+        }
+
+        .field-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 8px;
+        }
+
+        .field {
+            flex: 1;
+        }
+
+        .field .label {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--secondary);
+        }
+
+        .field .value {
+            font-size: 13px;
+            border-bottom: 1px solid var(--border);
+            padding: 4px 0;
+            min-height: 22px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 10px;
+            color: #999;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+
+        .version-table {
+            font-size: 11px;
+        }
+
+        .version-table td {
+            padding: 6px 8px;
+        }
+
+        .check {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        @media print {
+            body {
+                padding: 20px;
+            }
+
+            .compliance-box,
+            .info-box,
+            .warning-box {
+                background: #fff;
+                border: 1px solid #000;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <h1>JAKE FIELDHOUSE</h1>
+            <p>Managed IT & Secure Disposal</p>
+        </div>
+        <div class="doc-info">
+            <strong>JFC-RAMS-001</strong>
+            Version 2.2<br>
+            04 February 2026<br>
+            Review: 04 February 2027
+        </div>
+    </div>
+
+    <div class="title-block">
+        <h2>Risk Assessment & Method Statement</h2>
+        <p>On-Site IT Services, Equipment Collection & Secure Data Destruction</p>
+    </div>
+
+    <!-- Section 1: Legislative Framework -->
+    <h3>1. Legislative Framework</h3>
+    <div class="compliance-box">
+        <div class="title">This RAMS complies with:</div>
+        <ul>
+            <li>Health and Safety at Work etc. Act 1974</li>
+            <li>Management of Health and Safety at Work Regulations 1999</li>
+            <li>Manual Handling Operations Regulations 1992</li>
+            <li>Provision and Use of Work Equipment Regulations 1998 (PUWER)</li>
+            <li>Display Screen Equipment Regulations 1992</li>
+            <li>Electricity at Work Regulations 1989</li>
+            <li>Control of Substances Hazardous to Health Regulations 2002 (COSHH)</li>
+            <li>HSE Management Standards for Work-Related Stress</li>
+        </ul>
+    </div>
+
+    <!-- Section 2: Scope -->
+    <h3>2. Scope of Work</h3>
+    <p>This RAMS covers standard on-site IT services including:</p>
+    <ul>
+        <li>Collection of IT equipment (laptops, desktops, servers, peripherals)</li>
+        <li>On-site hardware diagnostics and repair</li>
+        <li>Data destruction and media sanitization</li>
+        <li>Network infrastructure assessment</li>
+        <li>Equipment transportation and secure storage</li>
+        <li>Remote technical support (where applicable)</li>
+    </ul>
+
+    <!-- Section 3: Hazard Identification -->
+    <h3>3. Hazard Identification & Control Measures</h3>
+
+    <h4>3.1 Physical Hazards</h4>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 20%;">Hazard</th>
+                <th style="width: 12%;">Risk</th>
+                <th>Control Measures</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Manual Handling</strong></td>
+                <td class="risk-medium">Medium</td>
+                <td>Assess load before lifting. Use proper technique (bend knees, keep back straight). Request
+                    assistance for items >15kg. Use trolley/sack truck for bulk collections.</td>
+            </tr>
+            <tr>
+                <td><strong>Electrical Safety</strong></td>
+                <td class="risk-medium">Medium</td>
+                <td>Visual inspection before handling. Do not handle visibly damaged equipment while powered. Isolate
+                    power before internal work. PAT-tested equipment only.</td>
+            </tr>
+            <tr>
+                <td><strong>Driving for Work</strong></td>
+                <td class="risk-medium">Medium</td>
+                <td>Pre-journey vehicle checks (brakes, lights, tyres). Avoid driving when fatigued. Plan routes to
+                    avoid congestion. Mobile phone use prohibited while driving. Regular breaks on journeys >2 hours.
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Sharps/Broken Equipment</strong></td>
+                <td class="risk-low">Low</td>
+                <td>Wear protective gloves when handling damaged devices. Inspect equipment before packing. Report
+                    damaged items to client.</td>
+            </tr>
+            <tr>
+                <td><strong>Slips, Trips, Falls</strong></td>
+                <td class="risk-low">Low</td>
+                <td>Assess site conditions on arrival. Keep work area clear. Use appropriate footwear. Report hazards to
+                    site manager.</td>
+            </tr>
+            <tr>
+                <td><strong>Display Screen Equipment</strong></td>
+                <td class="risk-low">Low</td>
+                <td>Limit continuous screen work to 50-minute intervals during extended diagnostics. Adjust workstation
+                    for ergonomic posture.</td>
+            </tr>
+            <tr>
+                <td><strong>COSHH (Chemicals)</strong></td>
+                <td class="risk-low">Low</td>
+                <td>Thermal paste, cleaning solvents, and isopropyl alcohol handled with nitrile gloves. MSDS reviewed
+                    for unfamiliar products. Adequate ventilation ensured.</td>
+            </tr>
+            <tr>
+                <td><strong>Vehicle Loading</strong></td>
+                <td class="risk-low">Low</td>
+                <td>Park on level ground. Use vehicle handbrake. Load evenly to maintain balance. Secure items with
+                    straps to prevent movement.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>3.2 Data & Security Hazards</h4>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 20%;">Hazard</th>
+                <th style="width: 12%;">Risk</th>
+                <th>Control Measures</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Data Security</strong></td>
+                <td class="risk-high">High</td>
+                <td>Chain of custody maintained at all times. Equipment secured in locked vehicle. NIST 800-88
+                    sanitization applied to all storage media.</td>
+            </tr>
+            <tr>
+                <td><strong>Cybersecurity Incident</strong></td>
+                <td class="risk-medium">Medium</td>
+                <td>Report any suspected breach immediately to client representative. Document incident details. Do not
+                    attempt to access client network credentials. Use secure VPN where remote access is required.</td>
+            </tr>
+            <tr>
+                <td><strong>Theft/Loss</strong></td>
+                <td class="risk-medium">Medium</td>
+                <td>Equipment inventoried before and after collection. Unique asset tags or serial numbers recorded.
+                    Vehicle secured with alarm when unattended.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>3.3 Psychosocial & Wellbeing Hazards</h4>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 20%;">Hazard</th>
+                <th style="width: 12%;">Risk</th>
+                <th>Control Measures</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Lone Working</strong></td>
+                <td class="risk-medium">Medium</td>
+                <td>Inform office of location and expected duration. Mobile phone carried at all times. Check-in
+                    protocol for extended visits (>2 hours). Controls align with HSE guidance INDG73 (Rev. 2025).</td>
+            </tr>
+            <tr>
+                <td><strong>Work-Related Stress</strong></td>
+                <td class="risk-low">Low</td>
+                <td>Manageable workload maintained. Clear communication channels with client. Flexibility to reschedule
+                    non-urgent work if capacity exceeded.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Section 4: Dynamic Risk Assessment -->
+    <h3>4. Dynamic Risk Assessment</h3>
+    <div class="info-box">
+        <div class="title">On-Site Assessment Protocol</div>
+        <p style="margin: 0; font-size: 12px;">This RAMS is supplemented by dynamic risk assessment performed on-site.
+            Additional hazards identified at client premises will be documented and addressed in real-time. Where site
+            conditions deviate significantly, work will be paused until appropriate controls are implemented.</p>
+    </div>
+
+    <!-- Section 5: PPE -->
+    <h3>5. Personal Protective Equipment</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Equipment</th>
+                <th>When Required</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Safety footwear (toe protection)</td>
+                <td>All on-site collections</td>
+            </tr>
+            <tr>
+                <td>Protective gloves (nitrile)</td>
+                <td>Handling damaged, unknown, or chemically-treated equipment</td>
+            </tr>
+            <tr>
+                <td>Hi-visibility vest</td>
+                <td>Warehouse, industrial site, or loading bay visits</td>
+            </tr>
+            <tr>
+                <td>Safety glasses</td>
+                <td>Work involving potential debris (e.g., damaged CRT monitors)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Section 6: Emergency Procedures -->
+    <h3>6. Emergency Procedures</h3>
+    <div class="warning-box">
+        <div class="title">Emergency Contact: Jake Fieldhouse | +44 7404 090458</div>
+        <ul style="margin: 0; font-size: 12px;">
+            <li><strong>Fire:</strong> Evacuate immediately via nearest exit. Do not retrieve equipment. Call 999 if
+                required.</li>
+            <li><strong>Injury:</strong> Administer first aid if trained and safe. Call 999 for serious injuries.
+                Complete accident report.</li>
+            <li><strong>Security/Cyber Incident:</strong> Cease operations immediately. Notify client representative.
+                Document details.</li>
+            <li><strong>Personal Safety Concern:</strong> Leave premises immediately. Contact emergency services if
+                necessary.</li>
+        </ul>
+    </div>
+
+    <!-- Section 7: Environmental -->
+    <h3>7. Environmental Considerations</h3>
+    <div class="compliance-box">
+        <div class="title">Waste Management Compliance</div>
+        <ul style="margin: 0;">
+            <li>Environment Agency Waste Carrier License: <strong>CBDL620098</strong></li>
+            <li>Zero Landfill policy: equipment refurbished, recycled, or responsibly disposed</li>
+            <li>Hazardous materials (batteries, CRTs, toner) handled by licensed partners</li>
+            <li>Waste Transfer Notes provided for every collection</li>
+            <li>WEEE Regulations 2013 compliance maintained throughout chain of custody</li>
+        </ul>
+    </div>
+
+    <!-- Section 8: Competency -->
+    <h3>8. Competency & Training</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Competency</th>
+                <th>Status</th>
+                <th>Reference</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Manual Handling Awareness</td>
+                <td class="check">✓ Verified</td>
+                <td>In-house training</td>
+            </tr>
+            <tr>
+                <td>NIST 800-88 Data Destruction</td>
+                <td class="check">✓ Verified</td>
+                <td>Blancco certified procedures</td>
+            </tr>
+            <tr>
+                <td>First Aid Awareness</td>
+                <td class="check">✓ Verified</td>
+                <td>Annual refresher</td>
+            </tr>
+            <tr>
+                <td>DBS Enhanced Check</td>
+                <td class="check">✓ Verified</td>
+                <td>Update Service Active</td>
+            </tr>
+            <tr>
+                <td>Cybersecurity Awareness</td>
+                <td class="check">✓ Verified</td>
+                <td>NCSC Cyber Aware</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Section 9: Insurance -->
+    <h3>9. Insurance Coverage</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Coverage</th>
+                <th>Provider</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Professional Indemnity</td>
+                <td>Hiscox</td>
+                <td class="check">✓ Active</td>
+            </tr>
+            <tr>
+                <td>Public Liability</td>
+                <td>Hiscox</td>
+                <td class="check">✓ Active</td>
+            </tr>
+            <tr>
+                <td>Cyber Liability</td>
+                <td>Hiscox</td>
+                <td class="check">✓ Active</td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="font-size: 11px; color: var(--secondary);">Certificates downloadable from: <a
+            href="https://jakefieldhouse.co.uk/compliance">jakefieldhouse.co.uk/compliance</a></p>
+
+    <!-- Signatures -->
+    <h3>10. Sign-Off</h3>
+    <div class="signature-section">
+        <div class="signature-box">
+            <div class="title">Prepared By</div>
+            <div class="field">
+                <div class="label">Name</div>
+                <div class="value">Jake Fieldhouse</div>
+            </div>
+            <div class="field">
+                <div class="label">Position</div>
+                <div class="value">Director</div>
+            </div>
+            <div class="signature-line"
+                style="font-family: 'Brush Script MT', cursive; font-size: 24px; padding-top: 8px;">
+                Jake Fieldhouse
+            </div>
+            <div class="field">
+                <div class="label">Date</div>
+                <div class="value">04 February 2026</div>
+            </div>
+        </div>
+        <div class="signature-box">
+            <div class="title">Client Acknowledgement</div>
+            <div class="field">
+                <div class="label">Organisation</div>
+                <div class="value" contenteditable="true"></div>
+            </div>
+            <div class="field">
+                <div class="label">Name</div>
+                <div class="value" contenteditable="true"></div>
+            </div>
+            <div class="signature-line"></div>
+            <div class="field">
+                <div class="label">Date</div>
+                <div class="value" contenteditable="true"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-box" style="margin-top: 30px;">
+        <div class="title">Client Acknowledgement</div>
+        <p style="margin: 0; font-size: 11px;">By signing, the client organisation confirms they have reviewed this RAMS
+            and agrees to: provide safe access to equipment and work areas; notify of any site-specific hazards; ensure
+            adequate lighting and ventilation; provide access to welfare facilities where reasonably practicable.</p>
+    </div>
+
+    <!-- Version History -->
+    <h3>11. Revision History</h3>
+    <table class="version-table">
+        <thead>
+            <tr>
+                <th>Version</th>
+                <th>Date</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1.0</td>
+                <td>29 Jan 2026</td>
+                <td>Initial release</td>
+            </tr>
+            <tr>
+                <td>2.0</td>
+                <td>04 Feb 2026</td>
+                <td>Added legislative framework, expanded hazards, client acknowledgement</td>
+            </tr>
+            <tr>
+                <td>2.1</td>
+                <td>04 Feb 2026</td>
+                <td>Added psychosocial hazards, cybersecurity controls, HSE stress management</td>
+            </tr>
+            <tr>
+                <td>2.2</td>
+                <td>04 Feb 2026</td>
+                <td>Added driving for work hazard, updated lone working guidance (INDG73 Rev. 2025)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="footer">
+        Jake Fieldhouse Consulting LTD. Registered in England & Wales (16536646).<br>
+        Environment Agency Waste Carrier: CBDL620098 | ICO Registration: ZC002956 | Insured by Hiscox<br>
+        jakefieldhouse.co.uk | jake@jakefieldhouse.co.uk<br><br>
+        <em>This document is reviewed annually or following any significant incident or change in working
+            practices.</em>
+    </div>
+
+</body>
+
+</html>
