@@ -4,6 +4,7 @@
 import IconWasteCarrier from '../icons/IconWasteCarrier.vue'
 import IconNIST from '../icons/IconNIST.vue'
 import IconGDPR from '../icons/IconGDPR.vue'
+import IconShieldCheck from '../icons/IconShieldCheck.vue'
 </script>
 
 <template>
@@ -45,6 +46,17 @@ import IconGDPR from '../icons/IconGDPR.vue'
             <div class="flex flex-col">
                 <span class="text-xs text-neutral-400 uppercase tracking-wider font-semibold">Compliance</span>
                 <span class="text-white font-bold leading-none">ICO Registered</span>
+            </div>
+        </div>
+
+        <!-- Insurance -->
+        <div class="flex items-center gap-3 opacity-80 hover:opacity-100 transition-all duration-300 cursor-help group" title="Professional Indemnity & Public Liability">
+            <div class="relative p-2 rounded-lg bg-amber-500/10 border border-amber-500/20 shadow-lg shadow-amber-500/10 group-hover:shadow-amber-500/20 transition-all">
+                <IconShieldCheck class="w-6 h-6 text-amber-400" />
+            </div>
+            <div class="flex flex-col">
+                <span class="text-xs text-neutral-400 uppercase tracking-wider font-semibold group-hover:text-amber-300 transition-colors">PI & PL</span>
+                <span class="text-white font-bold leading-none">Insured by Hiscox</span>
             </div>
         </div>
     </div>
