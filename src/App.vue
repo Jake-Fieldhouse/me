@@ -66,11 +66,14 @@ onMounted(() => {
 
     const currentPath = window.location.pathname || '/'
     const isHomeRoute = currentPath === '/'
-    const preloaderDelay = reducedFxContext
-      ? FAST_PRELOADER_DELAY_MS
-      : (isHomeRoute ? HOME_PRELOADER_DELAY_MS : PAGE_PRELOADER_DELAY_MS)
+    
+    // Homepage ALWAYS gets the full cinematic experience (3.5s)
+    // Other pages get shorter delays, respecting reduced motion preference
+    const preloaderDelay = isHomeRoute 
+      ? HOME_PRELOADER_DELAY_MS 
+      : (prefersReducedMotion ? FAST_PRELOADER_DELAY_MS : PAGE_PRELOADER_DELAY_MS)
 
-    // Always play the intro on hard loads (longer on home), while staying lighter on constrained contexts.
+    // Always play the intro on hard loads (longer on home)
     setTimeout(() => {
         isLoading.value = false
     }, preloaderDelay)

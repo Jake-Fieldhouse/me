@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import FluidCursor from './FluidCursor.vue'
+
 defineProps<{
   loading: boolean
 }>()
@@ -9,8 +11,19 @@ defineProps<{
     class="fixed inset-0 z-[9999] overflow-hidden bg-black transition-[opacity,transform] duration-300 ease-out will-change-transform will-change-opacity"
     :class="loading ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-[1.01] pointer-events-none'"
   >
-    <div class="absolute inset-0 preloader-sheen" aria-hidden="true" />
-    <div class="absolute inset-0 preloader-vignette" aria-hidden="true" />
+    <!-- Fluid Cursor Background - z-[1] so it's above bg-black but below text -->
+    <FluidCursor 
+      class="absolute inset-0 z-[1]" 
+      :intro-mode="true"
+      :splat-radius="0.2"
+      :curl="6"
+      :color-update-speed="12"
+      :density-dissipation="4"
+    />
+    
+    <!-- Subtle overlay effects -->
+    <div class="absolute inset-0 z-[2] preloader-sheen" aria-hidden="true" />
+    <div class="absolute inset-0 z-[3] preloader-vignette" aria-hidden="true" />
 
     <div class="relative z-10 h-full w-full flex items-center justify-center">
       <div class="flex flex-col items-center">
