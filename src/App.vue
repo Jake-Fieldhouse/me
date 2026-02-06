@@ -60,16 +60,15 @@ onMounted(() => {
     const touchPrimaryInput = hasTouch && coarsePointer
     const desktopLikeViewport = window.matchMedia('(min-width: 1024px)').matches
     const constrainedDevice = lowMemoryDevice || dataSaverMode || slowConnection
-    const reducedFxContext = constrainedDevice || touchPrimaryInput
+    const reducedFxContext = constrainedDevice || touchPrimaryInput || prefersReducedMotion
     showFluidCursor.value = desktopLikeViewport && !reducedFxContext && !prefersReducedMotion
 
-    // Smart preloader: skip on repeat visits within session
+    // Smart preloader: skip only on repeat visits within session
     const hasSeenPreloader = sessionStorage.getItem('preloader-seen')
     
-    if (hasSeenPreloader || constrainedDevice) {
+    if (hasSeenPreloader) {
         // Instant load for repeat visitors
         isLoading.value = false
-        sessionStorage.setItem('preloader-seen', 'true')
     } else {
         // Full art house experience for first visit
         setTimeout(() => {

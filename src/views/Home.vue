@@ -61,7 +61,7 @@ useScrollReveal(gridRef, { delay: 0, y: 56 })
       </header>
       
       <!-- Trust Signals -->
-      <TrustBar class="w-full max-w-4xl mx-auto rounded-xl border border-white/5" />
+      <TrustBar class="w-full max-w-6xl mx-auto rounded-xl border border-white/5" />
 
       <!-- Services Grid -->
       <main ref="gridRef" class="w-full">
