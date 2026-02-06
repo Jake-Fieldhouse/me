@@ -275,7 +275,7 @@ const scrollToComparison = () => {
                 </li>
             </ul>
         </div>
-        <div class="bg-gradient-to-br from-neutral-800 to-black p-8 rounded-2xl border border-white/5 flex items-center justify-center min-h-[400px]">
+        <div class="bg-gradient-to-br from-neutral-800 to-black p-8 rounded-2xl border border-white/5 flex items-center justify-center min-h-96">
            <div class="text-center space-y-4">
                <div class="w-24 h-32 bg-white/10 mx-auto rounded border border-white/20 flex items-center justify-center">
                    <IconFileCheck class="w-12 h-12 text-white/20" />
