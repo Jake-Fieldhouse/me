@@ -8,8 +8,8 @@ defineProps<{
 
 <template>
   <div
-    class="fixed inset-0 z-[9999] overflow-hidden bg-black transition-[opacity,transform] duration-300 ease-out will-change-transform will-change-opacity"
-    :class="loading ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-[1.01] pointer-events-none'"
+    class="fixed inset-0 z-[9999] overflow-hidden bg-black transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform will-change-opacity"
+    :class="loading ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-105 pointer-events-none'"
   >
     <!-- Fluid Cursor Background - z-[1] so it's above bg-black but below text -->
     <FluidCursor 
@@ -81,11 +81,9 @@ defineProps<{
 @keyframes preloaderProgress {
   0% {
     transform: scaleX(0);
-    transform-origin: left;
   }
   100% {
     transform: scaleX(1);
-    transform-origin: left;
   }
 }
 
@@ -112,7 +110,8 @@ defineProps<{
 .preloader-progress {
   height: 100%;
   width: 100%;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5));
-  animation: preloaderProgress 3.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform-origin: left;
+  background: white;
+  animation: preloaderProgress 3.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 </style>
