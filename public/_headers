@@ -17,14 +17,13 @@
   # Restrict browser features
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()
   
-  # Content Security Policy - Strict but functional
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com; frame-src https://cal.com https://*.cal.com https://cal.eu https://*.cal.eu; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:;
+  # Content Security Policy - strict baseline
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:;
   
   # Force HTTPS for 1 year + preload
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   
-  # Cross-Origin policies - relaxed to allow cal.com/cal.eu embeds
-  # Note: require-corp/credentialless COEP blocks iframes that don't opt-in
+  # Cross-Origin policies
   Cross-Origin-Opener-Policy: same-origin-allow-popups
   Cross-Origin-Resource-Policy: cross-origin
 

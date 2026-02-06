@@ -33,7 +33,7 @@
         <h2 class="text-2xl font-bold text-white mb-4">3. Known Limitations</h2>
         <p>While we strive for full accessibility, some limitations may exist:</p>
         <ul class="list-disc list-inside space-y-2 mt-4">
-          <li>Third-party embedded content (e.g., Cal.com booking widget) may have varying accessibility levels</li>
+          <li>External third-party booking pages may have accessibility characteristics outside our direct control</li>
           <li>Some older PDF documents may not be fully accessible</li>
           <li>Complex animations may not convey the same information to all users</li>
         </ul>
