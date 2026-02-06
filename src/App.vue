@@ -58,15 +58,17 @@ onMounted(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0
     const coarsePointer = window.matchMedia('(pointer: coarse)').matches
+    const touchPrimaryInput = hasTouch && coarsePointer
+    const desktopLikeViewport = window.matchMedia('(min-width: 1024px)').matches
     const constrainedDevice = lowMemoryDevice || dataSaverMode || slowConnection
-    const reducedFxContext = constrainedDevice || prefersReducedMotion || hasTouch || coarsePointer
-    showFluidCursor.value = !reducedFxContext
-    showAurora.value = !reducedFxContext
+    const reducedFxContext = constrainedDevice || prefersReducedMotion || touchPrimaryInput
+    showFluidCursor.value = desktopLikeViewport && !reducedFxContext
+    showAurora.value = !(constrainedDevice || prefersReducedMotion)
 
     // Smart preloader: skip on repeat visits within session
     const hasSeenPreloader = sessionStorage.getItem('preloader-seen')
     
-    if (hasSeenPreloader || reducedFxContext) {
+    if (hasSeenPreloader || constrainedDevice || prefersReducedMotion) {
         // Instant load for repeat visitors
         isLoading.value = false
         sessionStorage.setItem('preloader-seen', 'true')
@@ -75,7 +77,7 @@ onMounted(() => {
         setTimeout(() => {
             isLoading.value = false
             sessionStorage.setItem('preloader-seen', 'true')
-        }, constrainedDevice ? FAST_PRELOADER_DELAY_MS : PRELOADER_DELAY_MS)
+        }, reducedFxContext ? FAST_PRELOADER_DELAY_MS : PRELOADER_DELAY_MS)
     }
 })
 </script>
