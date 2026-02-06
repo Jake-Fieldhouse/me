@@ -8,8 +8,8 @@ defineProps<{
 
 <template>
   <div
-    class="fixed inset-0 z-[9999] overflow-hidden bg-black transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform will-change-opacity"
-    :class="loading ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-105 pointer-events-none'"
+    class="fixed inset-0 z-[9999] overflow-hidden bg-black transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform will-change-opacity"
+    :class="loading ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-[1.02] pointer-events-none'"
   >
     <!-- Fluid Cursor Background - z-[1] so it's above bg-black but below text -->
     <FluidCursor 
@@ -35,7 +35,7 @@ defineProps<{
           ENTERPRISE IT • HARDWARE REPAIR • EWASTE
         </p>
 
-        <div class="mt-6 h-[2px] w-28 md:w-32 bg-white/25 rounded-full overflow-hidden">
+        <div class="mt-8 h-1 w-48 md:w-64 bg-white/20 rounded-full overflow-hidden">
           <div class="preloader-progress"></div>
         </div>
       </div>
