@@ -30,10 +30,9 @@ import { useToast } from './composables/useToast'
 
 const isLoading = ref(true)
 const showFluidCursor = ref(true)
-const showAurora = ref(true)
 const { toastMessage, showToast } = useToast()
-const PRELOADER_DELAY_MS = 450
-const FAST_PRELOADER_DELAY_MS = 220
+const PRELOADER_DELAY_MS = 900
+const FAST_PRELOADER_DELAY_MS = 300
 
 onMounted(() => {
     // ⚠️ MAINTENANCE MODE: If enabled, preloader runs forever
@@ -61,14 +60,13 @@ onMounted(() => {
     const touchPrimaryInput = hasTouch && coarsePointer
     const desktopLikeViewport = window.matchMedia('(min-width: 1024px)').matches
     const constrainedDevice = lowMemoryDevice || dataSaverMode || slowConnection
-    const reducedFxContext = constrainedDevice || prefersReducedMotion || touchPrimaryInput
-    showFluidCursor.value = desktopLikeViewport && !reducedFxContext
-    showAurora.value = !(constrainedDevice || prefersReducedMotion)
+    const reducedFxContext = constrainedDevice || touchPrimaryInput
+    showFluidCursor.value = desktopLikeViewport && !reducedFxContext && !prefersReducedMotion
 
     // Smart preloader: skip on repeat visits within session
     const hasSeenPreloader = sessionStorage.getItem('preloader-seen')
     
-    if (hasSeenPreloader || constrainedDevice || prefersReducedMotion) {
+    if (hasSeenPreloader || constrainedDevice) {
         // Instant load for repeat visitors
         isLoading.value = false
         sessionStorage.setItem('preloader-seen', 'true')
@@ -86,10 +84,9 @@ onMounted(() => {
   <div class="relative min-h-dvh bg-black text-white font-inter selection:bg-white/20 overflow-x-hidden">
     
     <!-- Hero Layer -->
-    <AuroraBackground v-if="showAurora" class="fixed inset-0 z-0">
+    <AuroraBackground class="fixed inset-0 z-0">
         <!-- Aurora handles its own visuals -->
     </AuroraBackground>
-    <div v-else class="fixed inset-0 z-0 bg-black" aria-hidden="true" />
 
     <!-- Art House Preloader (Z-40, provides black background) -->
     <!-- In maintenance mode, this NEVER goes away -->
