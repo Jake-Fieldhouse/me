@@ -28,7 +28,7 @@ const stats = [
 <template>
   <section class="w-full py-12">
     <div class="max-w-5xl mx-auto px-6">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+      <div class="flex flex-wrap justify-center gap-8 md:gap-16">
         <div 
           v-for="stat in stats" 
           :key="stat.label"
