@@ -31,13 +31,21 @@ const transformStyle = computed(() => {
 
 const spotlightPos = ref({ x: 0, y: 0 });
 
+const getEl = (): HTMLElement | null => {
+  if (!cardRef.value) return null;
+  // When rendered as router-link, cardRef is a component instance — grab its $el
+  const raw = cardRef.value as any;
+  return raw.$el instanceof HTMLElement ? raw.$el : raw instanceof HTMLElement ? raw : null;
+};
+
 const handleMouseMove = (e: MouseEvent) => {
   // RAF-throttled spotlight/tilt effect calculation
   if (!cardRef.value) return;
   
   requestAnimationFrame(() => {
-     if (!cardRef.value) return;
-     const rect = cardRef.value.getBoundingClientRect();
+     const el = getEl();
+     if (!el) return;
+     const rect = el.getBoundingClientRect();
      const mouseX = e.clientX - rect.left;
      const mouseY = e.clientY - rect.top;
      
