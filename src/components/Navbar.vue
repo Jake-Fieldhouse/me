@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import IconChevronDown from './icons/IconChevronDown.vue'
 import IconMenu from './icons/IconMenu.vue'
@@ -9,6 +9,13 @@ const route = useRoute()
 const isMenuOpen = ref(false)
 const isServicesOpen = ref(false)
 const navRef = ref<HTMLElement | null>(null)
+const servicesDropdownRef = ref<HTMLElement | null>(null)
+
+// Detect hover-capable devices (mouse, trackpad) vs touch-only
+const supportsHover = ref(false)
+onMounted(() => {
+  supportsHover.value = window.matchMedia('(hover: hover)').matches
+})
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -27,29 +34,46 @@ const serviceItems = [
 
 const isActive = (path: string) => route.path === path
 
-// Close mobile menu and services dropdown when clicking outside
-const handleClickOutside = (event: MouseEvent) => {
-  if (isMenuOpen.value && navRef.value && !navRef.value.contains(event.target as Node)) {
+// Desktop hover: only on devices with a fine pointer (mouse)
+const handleMouseEnter = () => {
+  if (supportsHover.value) isServicesOpen.value = true
+}
+const handleMouseLeave = () => {
+  if (supportsHover.value) isServicesOpen.value = false
+}
+
+// Close mobile menu and services dropdown when tapping/clicking outside.
+// Uses pointerdown to fire BEFORE the delayed synthetic click on iOS,
+// preventing the open→close race condition.
+const handleOutsideInteraction = (event: PointerEvent | MouseEvent) => {
+  const target = event.target as Node
+
+  if (isMenuOpen.value && navRef.value && !navRef.value.contains(target)) {
     isMenuOpen.value = false
   }
-  // Close services dropdown when clicking outside
-  const servicesDropdown = document.querySelector('.services-dropdown')
-  if (isServicesOpen.value && servicesDropdown && !servicesDropdown.contains(event.target as Node)) {
+
+  if (isServicesOpen.value && servicesDropdownRef.value && !servicesDropdownRef.value.contains(target)) {
     isServicesOpen.value = false
   }
 }
 
 onMounted(() => {
-  document.addEventListener('click', handleClickOutside)
+  document.addEventListener('pointerdown', handleOutsideInteraction, true)
 })
 
 onUnmounted(() => {
-  document.removeEventListener('click', handleClickOutside)
+  document.removeEventListener('pointerdown', handleOutsideInteraction, true)
+})
+
+// Close dropdown on route change (belt-and-suspenders)
+watch(() => route.path, () => {
+  isServicesOpen.value = false
+  isMenuOpen.value = false
 })
 </script>
 
 <template>
-  <nav ref="navRef" class="fixed top-0 left-0 right-0 z-40 bg-black/80 backdrop-blur-xl border-b border-white/5">
+  <nav ref="navRef" class="navbar-root fixed top-0 left-0 right-0 z-40 bg-black/80 backdrop-blur-xl border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
@@ -70,18 +94,23 @@ onUnmounted(() => {
             {{ item.name }}
           </router-link>
           
-          <!-- Services Dropdown (Click + Hover) -->
-          <div class="relative group services-dropdown">
+          <!-- Services Dropdown (Click + Desktop Hover) -->
+          <div 
+            ref="servicesDropdownRef"
+            class="relative services-dropdown"
+            @mouseenter="handleMouseEnter"
+            @mouseleave="handleMouseLeave"
+          >
             <button 
               @click.stop="isServicesOpen = !isServicesOpen"
-              class="text-sm text-neutral-400 hover:text-white transition-colors flex items-center gap-1 border-b border-transparent hover:border-white/50 pb-0.5"
+              class="services-trigger text-sm text-neutral-400 hover:text-white transition-colors flex items-center gap-1 border-b border-transparent hover:border-white/50 pb-0.5"
             >
               Services
               <IconChevronDown class="w-4 h-4 transition-transform" :class="isServicesOpen ? 'rotate-180' : ''" />
             </button>
             <div 
               class="absolute top-full left-0 pt-4 transition-all duration-200 ease-out z-50"
-              :class="isServicesOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto'"
+              :class="isServicesOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'"
             >
               <div class="bg-neutral-900 border border-white/10 rounded-xl p-2 w-56 shadow-2xl">
                 <router-link 
@@ -133,3 +162,14 @@ onUnmounted(() => {
     </div>
   </nav>
 </template>
+
+<style scoped>
+/* Eliminate iOS 300ms tap delay and double-tap-to-zoom on interactive elements */
+.navbar-root {
+  touch-action: manipulation;
+}
+.navbar-root button,
+.navbar-root a {
+  touch-action: manipulation;
+}
+</style>
