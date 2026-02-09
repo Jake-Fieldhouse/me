@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collector Authorization Form - Jake Fieldhouse Consulting</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            color: #1a1a1a;
+            background: #fff;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 3px solid #000;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .header .sub {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        .header .ref {
+            text-align: right;
+            font-family: monospace;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .purpose-box {
+            background: #f0f4f8;
+            border: 1px solid #d0dae4;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+
+        .purpose-box h2 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #1565c0;
+            margin-bottom: 6px;
+        }
+
+        .purpose-box p {
+            font-size: 12px;
+            color: #444;
+        }
+
+        h3 {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section {
+            margin-bottom: 24px;
+        }
+
+        .field-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .field {
+            margin-bottom: 10px;
+        }
+
+        .field .label {
+            display: block;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #888;
+            letter-spacing: 0.5px;
+            margin-bottom: 3px;
+        }
+
+        .field .value {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 4px;
+            min-height: 22px;
+        }
+
+        .field .value[contenteditable="true"] {
+            background: #fffef0;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+
+        .field .value.pre-filled {
+            color: #000;
+        }
+
+        .checklist {
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+
+        .checklist h3 {
+            border: none;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .check-item input {
+            width: 14px;
+            height: 14px;
+            margin-top: 2px;
+        }
+
+        .terms-box {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+
+        .terms-box h3 {
+            border: none;
+            padding: 0;
+            margin-bottom: 8px;
+        }
+
+        .terms-box ol {
+            padding-left: 20px;
+            font-size: 11px;
+            color: #555;
+        }
+
+        .terms-box li {
+            margin-bottom: 6px;
+        }
+
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .sig-box {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .sig-box h3 {
+            font-size: 11px;
+            border: none;
+            padding: 0;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .sig-line {
+            border-bottom: 1px solid #000;
+            height: 40px;
+            margin: 6px 0;
+        }
+
+        .footer {
+            margin-top: 24px;
+            font-size: 9px;
+            color: #999;
+            text-align: center;
+            border-top: 1px solid #eee;
+            padding-top: 12px;
+        }
+
+        @media print {
+            body {
+                padding: 20px;
+            }
+
+            .purpose-box {
+                background: #f5f5f5 !important;
+            }
+
+            .field .value[contenteditable="true"] {
+                background: #fff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div>
+            <h1>COLLECTOR AUTHORIZATION</h1>
+            <p class="sub">E-Waste Collection Approval Form</p>
+        </div>
+        <div class="ref">
+            Collection Ref: COL-__________<br>
+            Date: ____ / ____ / ________
+        </div>
+    </div>
+
+    <div class="purpose-box">
+        <h2>Purpose of This Form</h2>
+        <p>This form authorizes Jake Fieldhouse Consulting LTD (EA Registered Carrier: CBDL620098) to attend your
+            premises and collect IT equipment for secure data destruction and responsible recycling. Please complete
+            and hand to your reception/facilities team so they can release the equipment on the agreed collection date.
+        </p>
+    </div>
+
+    <!-- Company Details -->
+    <div class="section">
+        <h3>Your Organisation</h3>
+        <div class="field-grid">
+            <div class="field">
+                <span class="label">Company / Organisation Name</span>
+                <span class="value" contenteditable="true"></span>
+            </div>
+            <div class="field">
+                <span class="label">Site Address for Collection</span>
+                <span class="value" contenteditable="true"></span>
+            </div>
+        </div>
+        <div class="field-grid">
+            <div class="field">
+                <span class="label">Authorizing Person (Name)</span>
+                <span class="value" contenteditable="true"></span>
+            </div>
+            <div class="field">
+                <span class="label">Job Title / Department</span>
+                <span class="value" contenteditable="true"></span>
+            </div>
+        </div>
+        <div class="field-grid">
+            <div class="field">
+                <span class="label">Contact Phone</span>
+                <span class="value" contenteditable="true"></span>
+            </div>
+            <div class="field">
+                <span class="label">Contact Email</span>
+                <span class="value" contenteditable="true"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Collector Details -->
+    <div class="section">
+        <h3>Authorized Collector</h3>
+        <div class="field-grid">
+            <div class="field">
+                <span class="label">Collector Name</span>
+                <span class="value pre-filled">Jake Fieldhouse</span>
+            </div>
+            <div class="field">
+                <span class="label">Company</span>
+                <span class="value pre-filled">Jake Fieldhouse Consulting LTD</span>
+            </div>
+        </div>
+        <div class="field-grid">
+            <div class="field">
+                <span class="label">EA Waste Carrier Licence</span>
+                <span class="value pre-filled">CBDL620098</span>
+            </div>
+            <div class="field">
+                <span class="label">Insurance</span>
+                <span class="value pre-filled">Hiscox (PI, PL, Cyber)</span>
+            </div>
+        </div>
+        <div class="field-grid">
+            <div class="field">
+                <span class="label">Agreed Collection Date</span>
+                <span class="value" contenteditable="true"></span>
+            </div>
+            <div class="field">
+                <span class="label">Agreed Collection Time</span>
+                <span class="value" contenteditable="true"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Items Checklist -->
+    <div class="checklist">
+        <h3>Equipment Authorized for Release</h3>
+        <div class="field-grid">
+            <div>
+                <div class="check-item"><input type="checkbox"> Laptops (qty: ______)</div>
+                <div class="check-item"><input type="checkbox"> Desktops / Towers (qty: ______)</div>
+                <div class="check-item"><input type="checkbox"> Monitors / Screens (qty: ______)</div>
+                <div class="check-item"><input type="checkbox"> Servers (qty: ______)</div>
+                <div class="check-item"><input type="checkbox"> Network Equipment (qty: ______)</div>
+            </div>
+            <div>
+                <div class="check-item"><input type="checkbox"> Mobile Phones / Tablets (qty: ______)</div>
+                <div class="check-item"><input type="checkbox"> Printers / Scanners (qty: ______)</div>
+                <div class="check-item"><input type="checkbox"> Cables / Peripherals (qty: ______)</div>
+                <div class="check-item"><input type="checkbox"> Hard Drives (loose) (qty: ______)</div>
+                <div class="check-item"><input type="checkbox"> Other: __________________</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Authorization Terms -->
+    <div class="terms-box">
+        <h3>Authorization Terms</h3>
+        <ol>
+            <li>The undersigned authorizes Jake Fieldhouse Consulting LTD to remove the equipment listed above from the
+                premises on the agreed date.</li>
+            <li>All data-bearing devices will be securely wiped to NIST 800-88 standard or physically destroyed before
+                any resale, donation, or recycling.</li>
+            <li>A Waste Transfer Note will be issued at the point of collection, satisfying Duty of Care obligations
+                under the Environmental Protection Act 1990.</li>
+            <li>A Certificate of Data Destruction will be delivered within 14 working days of collection, listing each
+                data-bearing device by serial number.</li>
+            <li>Jake Fieldhouse Consulting LTD holds full public liability, professional indemnity, and cyber insurance
+                through Hiscox for all on-site activities.</li>
+        </ol>
+    </div>
+
+    <!-- Signatures -->
+    <div class="section">
+        <h3>Signatures</h3>
+        <div class="signature-grid">
+            <div class="sig-box">
+                <h3>Authorizing Person</h3>
+                <div class="field">
+                    <span class="label">Signed</span>
+                    <div class="sig-line"></div>
+                </div>
+                <div class="field">
+                    <span class="label">Print Name</span>
+                    <span class="value" contenteditable="true"></span>
+                </div>
+                <div class="field">
+                    <span class="label">Date</span>
+                    <span class="value" contenteditable="true"></span>
+                </div>
+            </div>
+            <div class="sig-box">
+                <h3>Collector Acknowledgement</h3>
+                <div class="field">
+                    <span class="label">Signed</span>
+                    <div class="sig-line"
+                        style="font-family: 'Brush Script MT', cursive; font-size: 22px; padding-top: 10px;">Jake
+                        Fieldhouse</div>
+                </div>
+                <div class="field">
+                    <span class="label">Print Name</span>
+                    <span class="value pre-filled">Jake Fieldhouse</span>
+                </div>
+                <div class="field">
+                    <span class="label">Date</span>
+                    <span class="value" contenteditable="true"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Jake Fieldhouse Consulting LTD. Registered in England & Wales (16536646).<br>
+        Environment Agency Registered Waste Carrier: CBDL620098 | ICO Registration: ZC002956 | Insured by Hiscox<br>
+        jakefieldhouse.co.uk | jake@jakefieldhouse.co.uk | 07404 090 458
+    </div>
+
+</body>
+
+</html>

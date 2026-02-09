@@ -89,6 +89,26 @@ const scrollToComparison = () => {
         <TrustBar />
     </router-link>
 
+    <!-- Service Area Callout -->
+    <section class="bg-gradient-to-r from-amber-500/5 to-emerald-500/5 border border-white/5 rounded-2xl p-6 md:p-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-4">
+                <div class="p-3 bg-amber-500/10 rounded-xl">
+                    <span class="text-2xl">🚛</span>
+                </div>
+                <div>
+                    <h2 class="text-lg font-bold text-white">Collection Coverage</h2>
+                    <p class="text-neutral-400 text-sm">Hull, East Yorkshire & nationwide via trusted courier partners</p>
+                </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-3 text-sm">
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-neutral-300">Hull & HU postcodes</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-neutral-300">East Yorkshire</span>
+                <span class="px-3 py-1.5 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 font-medium">Nationwide Available</span>
+            </div>
+        </div>
+    </section>
+
     <!-- Stats Grid -->
     <section ref="statsRef" class="grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-white/5 py-12">
         <div class="text-center space-y-2">
@@ -276,11 +296,43 @@ const scrollToComparison = () => {
             </ul>
         </div>
         <div class="bg-gradient-to-br from-neutral-800 to-black p-8 rounded-2xl border border-white/5 flex items-center justify-center min-h-96">
-           <div class="text-center space-y-4">
-               <div class="w-24 h-32 bg-white/10 mx-auto rounded border border-white/20 flex items-center justify-center">
-                   <IconFileCheck class="w-12 h-12 text-white/20" />
+           <div class="w-full max-w-xs">
+               <!-- Certificate mockup -->
+               <div class="bg-white rounded-xl p-6 shadow-2xl shadow-green-500/10 border border-neutral-200">
+                   <!-- Header -->
+                   <div class="text-center border-b border-neutral-200 pb-4 mb-4">
+                       <div class="w-10 h-10 bg-green-500/10 rounded-full mx-auto mb-2 flex items-center justify-center">
+                           <IconShieldCheck class="w-5 h-5 text-green-600" />
+                       </div>
+                       <h4 class="text-sm font-bold text-neutral-900 tracking-wide uppercase">Certificate of Destruction</h4>
+                       <p class="text-xs text-neutral-500 mt-1">Jake Fieldhouse Consulting Ltd</p>
+                   </div>
+                   <!-- Body -->
+                   <div class="space-y-3 text-xs">
+                       <div class="flex justify-between">
+                           <span class="text-neutral-500">Certificate No.</span>
+                           <span class="font-mono text-neutral-800">JFC-2026-0042</span>
+                       </div>
+                       <div class="flex justify-between">
+                           <span class="text-neutral-500">Method</span>
+                           <span class="font-mono text-neutral-800">NIST 800-88 Purge</span>
+                       </div>
+                       <div class="flex justify-between">
+                           <span class="text-neutral-500">Serial No.</span>
+                           <span class="font-mono text-neutral-800">████████1847</span>
+                       </div>
+                       <div class="flex justify-between">
+                           <span class="text-neutral-500">Status</span>
+                           <span class="font-bold text-green-600">DESTROYED ✓</span>
+                       </div>
+                   </div>
+                   <!-- Footer badges -->
+                   <div class="flex gap-2 mt-4 pt-4 border-t border-neutral-200">
+                       <span class="text-[10px] bg-green-50 text-green-700 px-2 py-0.5 rounded-full font-medium">NIST 800-88</span>
+                       <span class="text-[10px] bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full font-medium">GDPR Compliant</span>
+                   </div>
                </div>
-               <p class="text-neutral-500 font-mono text-sm">Certificate_of_Destruction.pdf</p>
+               <p class="text-neutral-500 text-xs text-center mt-4">Sample — redacted for privacy</p>
            </div>
         </div>
     </section>
@@ -326,15 +378,15 @@ const scrollToComparison = () => {
                 <form @submit.prevent="submitForm" class="space-y-4">
                     <div>
                         <label class="block text-sm font-medium text-neutral-400 mb-1">Company Name</label>
-                        <input v-model="form.company" type="text" class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-500" placeholder="Acme Corp" />
+                        <input v-model="form.company" type="text" required class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-500" placeholder="Acme Corp" />
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-neutral-400 mb-1">Contact Name</label>
-                        <input v-model="form.contact" type="text" class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-500" placeholder="Jane Doe" />
+                        <input v-model="form.contact" type="text" required class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-500" placeholder="Jane Doe" />
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-neutral-400 mb-1">Email Address</label>
-                        <input v-model="form.email" type="email" class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-500" placeholder="jane@acme.com" />
+                        <input v-model="form.email" type="email" required class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-500" placeholder="jane@acme.com" />
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-neutral-400 mb-1">Phone <span class="text-neutral-600">(Optional)</span></label>
@@ -373,6 +425,84 @@ const scrollToComparison = () => {
                     </p>
                 </form>
             </div>
+        </div>
+    </section>
+
+    <!-- What Happens Next -->
+    <section class="bg-neutral-900/50 rounded-3xl p-8 md:p-12 border border-white/5 space-y-8">
+        <h2 class="text-3xl font-bold text-white text-center">What Happens Next</h2>
+        <p class="text-neutral-400 text-center max-w-2xl mx-auto">After you submit the form above, here's exactly what to expect.</p>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="text-center space-y-3">
+                <div class="w-12 h-12 mx-auto rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-bold">1</div>
+                <h3 class="font-bold text-white text-sm">24hr Response</h3>
+                <p class="text-xs text-neutral-500">We confirm your request and propose collection dates within one business day.</p>
+            </div>
+            <div class="text-center space-y-3">
+                <div class="w-12 h-12 mx-auto rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-bold">2</div>
+                <h3 class="font-bold text-white text-sm">Scheduled Pickup</h3>
+                <p class="text-xs text-neutral-500">We arrive on-site at the agreed time. You hand over equipment — that's it.</p>
+            </div>
+            <div class="text-center space-y-3">
+                <div class="w-12 h-12 mx-auto rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-bold">3</div>
+                <h3 class="font-bold text-white text-sm">WTN Issued</h3>
+                <p class="text-xs text-neutral-500">You receive a legal Waste Transfer Note proving your Duty of Care compliance.</p>
+            </div>
+            <div class="text-center space-y-3">
+                <div class="w-12 h-12 mx-auto rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-400 font-bold">✓</div>
+                <h3 class="font-bold text-white text-sm">Certificate Delivered</h3>
+                <p class="text-xs text-neutral-500">Full Certificate of Destruction with serial numbers, methods, and compliance evidence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads & Quick Links -->
+    <section class="bg-neutral-900/50 rounded-3xl p-8 md:p-12 border border-white/5 space-y-6">
+        <h2 class="text-2xl font-bold text-white text-center">Downloads & Resources</h2>
+        <p class="text-neutral-400 text-center text-sm max-w-xl mx-auto">Everything you need to justify the collection internally and prove compliance to your team.</p>
+        <div class="grid md:grid-cols-2 gap-4">
+            <a href="/documents/e-waste-service-brief.html" target="_blank" rel="noopener" class="flex items-start gap-4 p-4 bg-white/5 border border-white/10 rounded-xl hover:border-amber-500/30 hover:bg-amber-500/5 transition-all group">
+                <div class="p-2.5 bg-amber-500/10 rounded-lg shrink-0">
+                    <IconFileCheck class="w-5 h-5 text-amber-400" />
+                </div>
+                <div>
+                    <h3 class="font-bold text-white text-sm group-hover:text-amber-400 transition-colors">Service Brief (1-Page Summary)</h3>
+                    <p class="text-xs text-neutral-500 mt-1">Print-ready overview with credentials — forward to your manager or facilities team.</p>
+                </div>
+            </a>
+            <a href="/documents/waste-transfer-note-template.html" target="_blank" rel="noopener" class="flex items-start gap-4 p-4 bg-white/5 border border-white/10 rounded-xl hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all group">
+                <div class="p-2.5 bg-emerald-500/10 rounded-lg shrink-0">
+                    <IconRecycle class="w-5 h-5 text-emerald-400" />
+                </div>
+                <div>
+                    <h3 class="font-bold text-white text-sm group-hover:text-emerald-400 transition-colors">Waste Transfer Note Template</h3>
+                    <p class="text-xs text-neutral-500 mt-1">Legal WTN template issued on every collection — satisfies Duty of Care obligations.</p>
+                </div>
+            </a>
+            <a href="/documents/collector-authorization-form.html" target="_blank" rel="noopener" class="flex items-start gap-4 p-4 bg-white/5 border border-white/10 rounded-xl hover:border-blue-500/30 hover:bg-blue-500/5 transition-all group">
+                <div class="p-2.5 bg-blue-500/10 rounded-lg shrink-0">
+                    <IconShieldCheck class="w-5 h-5 text-blue-400" />
+                </div>
+                <div>
+                    <h3 class="font-bold text-white text-sm group-hover:text-blue-400 transition-colors">Collector Authorization Form</h3>
+                    <p class="text-xs text-neutral-500 mt-1">Hand to reception/facilities to pre-authorize the collection on the agreed date.</p>
+                </div>
+            </a>
+            <a href="/documents/certificate_of_destruction_example.html" target="_blank" rel="noopener" class="flex items-start gap-4 p-4 bg-white/5 border border-white/10 rounded-xl hover:border-green-500/30 hover:bg-green-500/5 transition-all group">
+                <div class="p-2.5 bg-green-500/10 rounded-lg shrink-0">
+                    <IconCheck class="w-5 h-5 text-green-400" />
+                </div>
+                <div>
+                    <h3 class="font-bold text-white text-sm group-hover:text-green-400 transition-colors">Sample Certificate of Destruction</h3>
+                    <p class="text-xs text-neutral-500 mt-1">Example of the certificate you'll receive with serial numbers and destruction methods.</p>
+                </div>
+            </a>
+        </div>
+        <div class="text-center pt-2">
+            <router-link to="/compliance" class="inline-flex items-center gap-2 text-sm text-amber-400 hover:text-amber-300 transition-colors">
+                <IconShieldCheck class="w-4 h-4" />
+                View all insurance & compliance certificates →
+            </router-link>
         </div>
     </section>
 

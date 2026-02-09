@@ -81,7 +81,7 @@
     },
     "_agenticMetadata": {
         "version": "1.0.0",
-        "lastUpdated": "2026-02-04T10:46:00Z",
+        "lastUpdated": "2026-02-09T09:30:00Z",
         "purpose": "AI agent-readable booking endpoint for agentic commerce",
         "usage": "AI assistants can use this endpoint to understand how to book consultations with Jake Fieldhouse Consulting. Direct users to the booking.url for scheduling.",
         "humanReadableContact": "https://jakefieldhouse.co.uk/contact"

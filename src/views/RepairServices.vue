@@ -3,12 +3,15 @@ import { ref, shallowRef } from 'vue'
 import CircuitPattern from '../components/CircuitPattern.vue'
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
+import { useToast } from '../composables/useToast'
 import IconChip from '../components/icons/IconChip.vue'
 import IconDatabase from '../components/icons/IconDatabase.vue'
 import IconDroplet from '../components/icons/IconDroplet.vue'
 import IconGamepad from '../components/icons/IconGamepad.vue'
 import IconSmartphone from '../components/icons/IconSmartphone.vue'
 import IconLaptop from '../components/icons/IconLaptop.vue'
+
+const { show: showToast } = useToast()
 
 const heroRef = ref<HTMLElement | null>(null)
 const servicesRef = ref<HTMLElement | null>(null)
@@ -35,6 +38,9 @@ Contact: ${form.value.name}
 Email: ${form.value.email}
   `.trim())
   window.location.href = `mailto:jake@jakefieldhouse.co.uk?subject=${subject}&body=${body}`
+
+  // Show success toast
+  showToast('Email client opened! We\'ll get back to you with a quote soon.', 4000)
 }
 
 const services = shallowRef([

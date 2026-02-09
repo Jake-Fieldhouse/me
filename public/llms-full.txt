@@ -1,6 +1,6 @@
 # Jake Fieldhouse Consulting Ltd - Full AI Knowledge Base
 # Version: 1.0
-# Last Updated: 2026-02-04
+# Last Updated: 2026-02-09
 
 > This is the comprehensive knowledge file for AI systems. For a summary, see /llms.txt
 

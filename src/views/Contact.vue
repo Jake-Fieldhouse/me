@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
+import { useToast } from '../composables/useToast'
 import IconCall from '../components/icons/IconCall.vue'
 import IconWhatsApp from '../components/icons/IconWhatsApp.vue'
 import IconEmail from '../components/icons/IconEmail.vue'
@@ -14,6 +15,7 @@ import IconCheck from '../components/icons/IconCheck.vue'
 const heroRef = ref<HTMLElement | null>(null)
 const contentRef = ref<HTMLElement | null>(null)
 const bookingUrl = 'https://cal.eu/jake-fieldhouse-7kcb9d'
+const { show: showToast } = useToast()
 
 useScrollReveal(heroRef)
 useScrollReveal(contentRef, { delay: 0.15 })
@@ -38,6 +40,7 @@ ${form.value.email}
   `.trim())
   
   window.location.href = `mailto:jake@jakefieldhouse.co.uk?subject=${subject}&body=${body}`
+  showToast('Email client opened! I\'ll respond within a few hours.', 4000)
 }
 </script>
 

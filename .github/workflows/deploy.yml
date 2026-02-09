@@ -51,4 +51,7 @@ jobs:
       - name: Ping IndexNow (Bing/Yandex/AI Crawlers)
         run: |
           curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/&key=a203532bbd3446768af8ae56145b0d24"
-          echo "IndexNow ping sent successfully"
+          curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/sitemap.xml&key=a203532bbd3446768af8ae56145b0d24"
+          curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/secure-data-disposal-hull/&key=a203532bbd3446768af8ae56145b0d24"
+          curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/compliance/&key=a203532bbd3446768af8ae56145b0d24"
+          echo "IndexNow pings sent for homepage, sitemap, e-waste, and compliance pages"

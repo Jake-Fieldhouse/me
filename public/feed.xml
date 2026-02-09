@@ -5,7 +5,7 @@
     <link>https://jakefieldhouse.co.uk</link>
     <description>Expert IT Support, Hardware Repair, and Managed Services for Hull &amp; East Yorkshire</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 04 Feb 2026 21:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2026 09:00:00 +0000</lastBuildDate>
     <atom:link href="https://jakefieldhouse.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
     <!-- WebSub/PubSubHubbub for instant content notifications -->
     <atom:link href="https://pubsubhubbub.appspot.com" rel="hub"/>
@@ -88,6 +88,46 @@
           <li>AI Citation Monitoring</li>
         </ul>
         <p>Be where your customers are searching - in AI answers.</p>
+      ]]></content:encoded>
+    </item>
+    
+    <!-- Blog Posts -->
+    <item>
+      <title>Why ChatGPT Can't Find Your Business (Yet)</title>
+      <link>https://jakefieldhouse.co.uk/blog/why-ai-cant-find-your-business</link>
+      <guid isPermaLink="true">https://jakefieldhouse.co.uk/blog/why-ai-cant-find-your-business</guid>
+      <pubDate>Wed, 28 Jan 2026 12:00:00 +0000</pubDate>
+      <description>Most Hull businesses are invisible to AI search. Here's why that matters, and what you can do about it.</description>
+      <content:encoded><![CDATA[
+        <p>Open ChatGPT. Ask it to recommend an IT company in Hull. If your business doesn't appear, you're invisible to a growing segment of customers who've stopped using Google.</p>
+        <p>AI doesn't show ten blue links. It gives one answer. If you're not in that answer, you don't exist.</p>
+        <p>GEO is still in its infancy. Early movers will dominate AI search for their niches. <a href="https://jakefieldhouse.co.uk/ai-optimization-hull">Request a free visibility audit</a>.</p>
+      ]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>MacBook Won't Turn On? When Repair Makes More Sense Than Replace</title>
+      <link>https://jakefieldhouse.co.uk/blog/macbook-repair-vs-replace-guide</link>
+      <guid isPermaLink="true">https://jakefieldhouse.co.uk/blog/macbook-repair-vs-replace-guide</guid>
+      <pubDate>Sat, 25 Jan 2026 12:00:00 +0000</pubDate>
+      <description>When Apple says "unrepairable", there's often a component-level fix available. Here's how to know which option is right for you.</description>
+      <content:encoded><![CDATA[
+        <p>Apple quotes you for a full "logic board replacement." The actual fault? Often a single component that can be sourced for a few pounds.</p>
+        <p>Under a stereo microscope at 40x magnification, individual chips can be removed, tested, and replaced — saving machines Apple would have you replace.</p>
+        <p><a href="https://jakefieldhouse.co.uk/microsoldering-repair-hull">Request a free diagnosis</a> for an honest assessment.</p>
+      ]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>WEEE Regulations 2025: What Hull Businesses Need to Know</title>
+      <link>https://jakefieldhouse.co.uk/blog/weee-regulations-2025-business-guide</link>
+      <guid isPermaLink="true">https://jakefieldhouse.co.uk/blog/weee-regulations-2025-business-guide</guid>
+      <pubDate>Mon, 20 Jan 2026 12:00:00 +0000</pubDate>
+      <description>New November 2025 WEEE regulations affect how you dispose of e-waste. Here's your compliance checklist.</description>
+      <content:encoded><![CDATA[
+        <p>November 2025 marks a major update to UK e-waste law. The compliance bar is going up with expanded scope, wider producer responsibility, and stricter enforcement.</p>
+        <p>Improper data disposal is a GDPR breach. The ICO can issue fines up to £17.5 million or 4% of global annual turnover.</p>
+        <p><a href="https://jakefieldhouse.co.uk/secure-data-disposal-hull">Free e-waste collection</a> includes NIST 800-88 data destruction and full compliance documentation.</p>
       ]]></content:encoded>
     </item>
     

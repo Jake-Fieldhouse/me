@@ -133,14 +133,14 @@ const getStatusPillColor = (status: string) => {
                 <div class="md:col-span-2 mt-2">
                     <!-- Multiple proof links (for insurance) -->
                     <div v-if="item.proofUrls" class="flex flex-wrap gap-4">
-                        <a v-for="proof in item.proofUrls" :key="proof.label" :href="proof.url" target="_blank" 
+                        <a v-for="proof in item.proofUrls" :key="proof.label" :href="proof.url" target="_blank" rel="noopener"
                            class="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors text-sm">
                             <IconDownload class="w-4 h-4" />
                             {{ proof.label }} ↓
                         </a>
                     </div>
                     <!-- Single proof link -->
-                    <a v-else-if="item.proofUrl" :href="item.proofUrl" target="_blank" class="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors text-sm group/link">
+                    <a v-else-if="item.proofUrl" :href="item.proofUrl" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors text-sm group/link">
                         <IconExternalLink class="w-4 h-4" />
                         View Official Certificate / Registry
                     </a>
@@ -165,8 +165,8 @@ const getStatusPillColor = (status: string) => {
                 <div>
                     <h3 class="font-bold text-white">Standard RAMS Pack</h3>
                     <p class="text-sm text-neutral-400 mt-1 mb-3">Risk Assessment & Method Statement for on-site collection.</p>
-                    <a href="/documents/RAMS-Generic.md" download class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2">
-                        Download Document ↓
+                    <a href="/documents/RAMS.html" target="_blank" rel="noopener" class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2">
+                        View Document →
                     </a>
                 </div>
             </div>
@@ -178,8 +178,47 @@ const getStatusPillColor = (status: string) => {
                 <div>
                     <h3 class="font-bold text-white">Pre-Signed NDA</h3>
                     <p class="text-sm text-neutral-400 mt-1 mb-3">Standard Non-Disclosure Agreement for data handling.</p>
-                    <a href="/documents/NDA-Template.md" download class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2">
-                        Download Template ↓
+                    <a href="/documents/NDA.html" target="_blank" rel="noopener" class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2">
+                        View Template →
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-neutral-900/30 p-6 rounded-xl border border-white/5 flex items-start gap-4 hover:border-white/10 transition-colors">
+                <div class="p-3 bg-neutral-800 rounded-lg text-emerald-400">
+                    <Recycle class="w-6 h-6" />
+                </div>
+                <div>
+                    <h3 class="font-bold text-white">E-Waste Service Brief</h3>
+                    <p class="text-sm text-neutral-400 mt-1 mb-3">One-page overview of our ITAD service for decision-makers.</p>
+                    <a href="/documents/e-waste-service-brief.html" target="_blank" rel="noopener" class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2">
+                        View Brief →
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-neutral-900/30 p-6 rounded-xl border border-white/5 flex items-start gap-4 hover:border-white/10 transition-colors">
+                <div class="p-3 bg-neutral-800 rounded-lg text-emerald-400">
+                    <FileText class="w-6 h-6" />
+                </div>
+                <div>
+                    <h3 class="font-bold text-white">Waste Transfer Note Template</h3>
+                    <p class="text-sm text-neutral-400 mt-1 mb-3">Duty of Care WTN for compliant e-waste transfer.</p>
+                    <a href="/documents/waste-transfer-note-template.html" target="_blank" rel="noopener" class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2">
+                        View Template →
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-neutral-900/30 p-6 rounded-xl border border-white/5 flex items-start gap-4 hover:border-white/10 transition-colors">
+                <div class="p-3 bg-neutral-800 rounded-lg text-emerald-400">
+                    <ShieldCheck class="w-6 h-6" />
+                </div>
+                <div>
+                    <h3 class="font-bold text-white">Collector Authorization Form</h3>
+                    <p class="text-sm text-neutral-400 mt-1 mb-3">For reception or facilities staff to authorize collection on behalf of their organisation.</p>
+                    <a href="/documents/collector-authorization-form.html" target="_blank" rel="noopener" class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2">
+                        View Form →
                     </a>
                 </div>
             </div>

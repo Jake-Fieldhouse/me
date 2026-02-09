@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Force dark mode via class selector, not browser preference.
+   This prevents Chrome/OS dark mode settings from inverting our dark-themed site. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
