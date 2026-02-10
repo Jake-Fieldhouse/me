@@ -1,0 +1,151 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#134e4a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#14b8a6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect x="0" y="0" width="6" height="630" fill="url(#accent)" />
+  <g opacity="0.08">
+    <circle cx="80" cy="60" r="2" fill="white" />
+    <circle cx="80" cy="140" r="2" fill="white" />
+    <circle cx="80" cy="220" r="2" fill="white" />
+    <circle cx="80" cy="300" r="2" fill="white" />
+    <circle cx="80" cy="380" r="2" fill="white" />
+    <circle cx="80" cy="460" r="2" fill="white" />
+    <circle cx="80" cy="540" r="2" fill="white" />
+    <circle cx="80" cy="620" r="2" fill="white" />
+    <circle cx="160" cy="60" r="2" fill="white" />
+    <circle cx="160" cy="140" r="2" fill="white" />
+    <circle cx="160" cy="220" r="2" fill="white" />
+    <circle cx="160" cy="300" r="2" fill="white" />
+    <circle cx="160" cy="380" r="2" fill="white" />
+    <circle cx="160" cy="460" r="2" fill="white" />
+    <circle cx="160" cy="540" r="2" fill="white" />
+    <circle cx="160" cy="620" r="2" fill="white" />
+    <circle cx="240" cy="60" r="2" fill="white" />
+    <circle cx="240" cy="140" r="2" fill="white" />
+    <circle cx="240" cy="220" r="2" fill="white" />
+    <circle cx="240" cy="300" r="2" fill="white" />
+    <circle cx="240" cy="380" r="2" fill="white" />
+    <circle cx="240" cy="460" r="2" fill="white" />
+    <circle cx="240" cy="540" r="2" fill="white" />
+    <circle cx="240" cy="620" r="2" fill="white" />
+    <circle cx="320" cy="60" r="2" fill="white" />
+    <circle cx="320" cy="140" r="2" fill="white" />
+    <circle cx="320" cy="220" r="2" fill="white" />
+    <circle cx="320" cy="300" r="2" fill="white" />
+    <circle cx="320" cy="380" r="2" fill="white" />
+    <circle cx="320" cy="460" r="2" fill="white" />
+    <circle cx="320" cy="540" r="2" fill="white" />
+    <circle cx="320" cy="620" r="2" fill="white" />
+    <circle cx="400" cy="60" r="2" fill="white" />
+    <circle cx="400" cy="140" r="2" fill="white" />
+    <circle cx="400" cy="220" r="2" fill="white" />
+    <circle cx="400" cy="300" r="2" fill="white" />
+    <circle cx="400" cy="380" r="2" fill="white" />
+    <circle cx="400" cy="460" r="2" fill="white" />
+    <circle cx="400" cy="540" r="2" fill="white" />
+    <circle cx="400" cy="620" r="2" fill="white" />
+    <circle cx="480" cy="60" r="2" fill="white" />
+    <circle cx="480" cy="140" r="2" fill="white" />
+    <circle cx="480" cy="220" r="2" fill="white" />
+    <circle cx="480" cy="300" r="2" fill="white" />
+    <circle cx="480" cy="380" r="2" fill="white" />
+    <circle cx="480" cy="460" r="2" fill="white" />
+    <circle cx="480" cy="540" r="2" fill="white" />
+    <circle cx="480" cy="620" r="2" fill="white" />
+    <circle cx="560" cy="60" r="2" fill="white" />
+    <circle cx="560" cy="140" r="2" fill="white" />
+    <circle cx="560" cy="220" r="2" fill="white" />
+    <circle cx="560" cy="300" r="2" fill="white" />
+    <circle cx="560" cy="380" r="2" fill="white" />
+    <circle cx="560" cy="460" r="2" fill="white" />
+    <circle cx="560" cy="540" r="2" fill="white" />
+    <circle cx="560" cy="620" r="2" fill="white" />
+    <circle cx="640" cy="60" r="2" fill="white" />
+    <circle cx="640" cy="140" r="2" fill="white" />
+    <circle cx="640" cy="220" r="2" fill="white" />
+    <circle cx="640" cy="300" r="2" fill="white" />
+    <circle cx="640" cy="380" r="2" fill="white" />
+    <circle cx="640" cy="460" r="2" fill="white" />
+    <circle cx="640" cy="540" r="2" fill="white" />
+    <circle cx="640" cy="620" r="2" fill="white" />
+    <circle cx="720" cy="60" r="2" fill="white" />
+    <circle cx="720" cy="140" r="2" fill="white" />
+    <circle cx="720" cy="220" r="2" fill="white" />
+    <circle cx="720" cy="300" r="2" fill="white" />
+    <circle cx="720" cy="380" r="2" fill="white" />
+    <circle cx="720" cy="460" r="2" fill="white" />
+    <circle cx="720" cy="540" r="2" fill="white" />
+    <circle cx="720" cy="620" r="2" fill="white" />
+    <circle cx="800" cy="60" r="2" fill="white" />
+    <circle cx="800" cy="140" r="2" fill="white" />
+    <circle cx="800" cy="220" r="2" fill="white" />
+    <circle cx="800" cy="300" r="2" fill="white" />
+    <circle cx="800" cy="380" r="2" fill="white" />
+    <circle cx="800" cy="460" r="2" fill="white" />
+    <circle cx="800" cy="540" r="2" fill="white" />
+    <circle cx="800" cy="620" r="2" fill="white" />
+    <circle cx="880" cy="60" r="2" fill="white" />
+    <circle cx="880" cy="140" r="2" fill="white" />
+    <circle cx="880" cy="220" r="2" fill="white" />
+    <circle cx="880" cy="300" r="2" fill="white" />
+    <circle cx="880" cy="380" r="2" fill="white" />
+    <circle cx="880" cy="460" r="2" fill="white" />
+    <circle cx="880" cy="540" r="2" fill="white" />
+    <circle cx="880" cy="620" r="2" fill="white" />
+    <circle cx="960" cy="60" r="2" fill="white" />
+    <circle cx="960" cy="140" r="2" fill="white" />
+    <circle cx="960" cy="220" r="2" fill="white" />
+    <circle cx="960" cy="300" r="2" fill="white" />
+    <circle cx="960" cy="380" r="2" fill="white" />
+    <circle cx="960" cy="460" r="2" fill="white" />
+    <circle cx="960" cy="540" r="2" fill="white" />
+    <circle cx="960" cy="620" r="2" fill="white" />
+    <circle cx="1040" cy="60" r="2" fill="white" />
+    <circle cx="1040" cy="140" r="2" fill="white" />
+    <circle cx="1040" cy="220" r="2" fill="white" />
+    <circle cx="1040" cy="300" r="2" fill="white" />
+    <circle cx="1040" cy="380" r="2" fill="white" />
+    <circle cx="1040" cy="460" r="2" fill="white" />
+    <circle cx="1040" cy="540" r="2" fill="white" />
+    <circle cx="1040" cy="620" r="2" fill="white" />
+    <circle cx="1120" cy="60" r="2" fill="white" />
+    <circle cx="1120" cy="140" r="2" fill="white" />
+    <circle cx="1120" cy="220" r="2" fill="white" />
+    <circle cx="1120" cy="300" r="2" fill="white" />
+    <circle cx="1120" cy="380" r="2" fill="white" />
+    <circle cx="1120" cy="460" r="2" fill="white" />
+    <circle cx="1120" cy="540" r="2" fill="white" />
+    <circle cx="1120" cy="620" r="2" fill="white" />
+    <circle cx="1200" cy="60" r="2" fill="white" />
+    <circle cx="1200" cy="140" r="2" fill="white" />
+    <circle cx="1200" cy="220" r="2" fill="white" />
+    <circle cx="1200" cy="300" r="2" fill="white" />
+    <circle cx="1200" cy="380" r="2" fill="white" />
+    <circle cx="1200" cy="460" r="2" fill="white" />
+    <circle cx="1200" cy="540" r="2" fill="white" />
+    <circle cx="1200" cy="620" r="2" fill="white" />
+  </g>
+  <!-- Server rack icon -->
+  <g transform="translate(900, 120)" opacity="0.12">
+    <rect x="0" y="0" width="220" height="80" rx="8" fill="white" />
+    <rect x="0" y="100" width="220" height="80" rx="8" fill="white" />
+    <rect x="0" y="200" width="220" height="80" rx="8" fill="white" />
+    <circle cx="30" cy="40" r="6" fill="#134e4a" />
+    <circle cx="30" cy="140" r="6" fill="#134e4a" />
+    <circle cx="30" cy="240" r="6" fill="#134e4a" />
+  </g>
+  <text x="80" y="240" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="72" font-weight="900" fill="white" letter-spacing="-2">DC Remote Hands</text>
+  <text x="80" y="300" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="32" font-weight="400" fill="rgba(255,255,255,0.7)">Your Hands In the Data Centre</text>
+  <text x="80" y="360" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="400" fill="#14b8a6">Racking • Cabling • Hardware Swap • Smart Hands</text>
+  <rect x="80" y="400" width="120" height="3" rx="1.5" fill="#14b8a6" opacity="0.6" />
+  <text x="80" y="560" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="600" fill="rgba(255,255,255,0.5)">Jake Fieldhouse Consulting</text>
+  <text x="80" y="590" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="400" fill="rgba(255,255,255,0.3)">jakefieldhouse.co.uk</text>
+</svg>

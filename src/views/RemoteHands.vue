@@ -1,11 +1,25 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
 import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
 import IconPhone from '../components/icons/IconPhone.vue'
 import IconCheck from '../components/icons/IconCheck.vue'
 import IconArrowRight from '../components/icons/IconArrowRight.vue'
 import { useOgMeta } from '../composables/useOgMeta'
+import { useScrollReveal } from '../composables/useScrollReveal'
 import { remoteHandsTasks, faqs } from '../data/remoteHands'
+
+const heroRef = ref<HTMLElement | null>(null)
+const tasksRef = ref<HTMLElement | null>(null)
+const comparisonRef = ref<HTMLElement | null>(null)
+const processRef = ref<HTMLElement | null>(null)
+const faqRef = ref<HTMLElement | null>(null)
+
+useScrollReveal(heroRef)
+useScrollReveal(tasksRef, { delay: 0.2, stagger: 0.1 })
+useScrollReveal(comparisonRef, { delay: 0.2 })
+useScrollReveal(processRef, { delay: 0.2, stagger: 0.15 })
+useScrollReveal(faqRef, { delay: 0.2 })
 
 useOgMeta({
   title: 'Data Centre Remote Hands Hull | On-Site DC Support',
@@ -21,7 +35,7 @@ useOgMeta({
     <!-- Hero -->
     <BreadcrumbSchema :crumbs="[{ name: 'Data Centre Remote Hands', url: '/data-centre-remote-hands-hull' }]" />
 
-    <header class="text-center space-y-6 mt-10 relative">
+    <header ref="heroRef" class="text-center space-y-6 mt-10 relative">
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl aspect-square bg-teal-600/10 rounded-full blur-3xl pointer-events-none"></div>
       
       <div class="relative z-10">
@@ -51,7 +65,7 @@ useOgMeta({
     <TrustBar />
 
     <!-- What We Do -->
-    <section class="space-y-8">
+    <section ref="tasksRef" class="space-y-8">
         <div class="text-center space-y-3">
             <h2 class="text-3xl font-bold text-white">What We Cover</h2>
             <p class="text-neutral-400 max-w-2xl mx-auto">From routine racking to complex hardware swaps — every job includes a written report with photographic evidence.</p>
@@ -73,7 +87,7 @@ useOgMeta({
     </section>
 
     <!-- Remote Hands vs Smart Hands -->
-    <section class="grid md:grid-cols-2 gap-8">
+    <section ref="comparisonRef" class="grid md:grid-cols-2 gap-8">
         <div class="p-8 rounded-2xl bg-neutral-900/50 border border-white/5 hover:border-teal-500/30 transition-colors">
             <div class="inline-block px-3 py-1 rounded-full bg-teal-500/10 text-teal-400 text-xs font-bold mb-4">REMOTE HANDS</div>
             <h3 class="text-2xl font-bold text-white mb-3">Physical Tasks, Done Right</h3>
@@ -123,7 +137,7 @@ useOgMeta({
     </section>
 
     <!-- How It Works -->
-    <section class="max-w-4xl mx-auto space-y-8">
+    <section ref="processRef" class="max-w-4xl mx-auto space-y-8">
         <h2 class="text-3xl font-bold text-white text-center">How It Works</h2>
         
         <div class="grid md:grid-cols-3 gap-8">
@@ -146,7 +160,7 @@ useOgMeta({
     </section>
 
     <!-- FAQ Section -->
-    <section class="max-w-3xl mx-auto space-y-8">
+    <section ref="faqRef" class="max-w-3xl mx-auto space-y-8">
         <h2 class="text-3xl font-bold text-white text-center">Frequently Asked Questions</h2>
         
         <div class="space-y-4">
