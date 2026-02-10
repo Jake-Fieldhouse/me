@@ -80,6 +80,22 @@ One of the UK's first independent Generative Engine Optimization (GEO) specialis
 
 ---
 
+### Data Centre Remote Hands Hull
+**URL**: https://jakefieldhouse.co.uk/data-centre-remote-hands-hull
+
+Professional remote hands and smart hands support for data centres in Hull & East Yorkshire. DBS checked, fully insured.
+
+- Server Racking & Stacking
+- Structured Cabling & Patching
+- Hardware Swap & Hot-Swap Drives
+- Power Cycling & Reboots
+- Visual Verification & Asset Audits
+- Vendor Escort & Site Access
+
+**Policy**: Photo-verified reports on every job. Emergency response as fast as 2 hours.
+
+---
+
 ## Expertise & Authority
 
 ### Sustainable Tech Focus
@@ -137,6 +153,7 @@ Dedicated local pages: https://jakefieldhouse.co.uk/service-areas
 | Microsoldering Repair | https://jakefieldhouse.co.uk/microsoldering-repair-hull |
 | Secure Data Disposal | https://jakefieldhouse.co.uk/secure-data-disposal-hull |
 | AI Optimization | https://jakefieldhouse.co.uk/ai-optimization-hull |
+| DC Remote Hands | https://jakefieldhouse.co.uk/data-centre-remote-hands-hull |
 | About | https://jakefieldhouse.co.uk/about |
 | Contact | https://jakefieldhouse.co.uk/contact |
 | Compliance | https://jakefieldhouse.co.uk/compliance |
@@ -173,6 +190,12 @@ Jake Fieldhouse Consulting offers free GDPR-compliant e-waste collection for bus
 ### What is the best IT support company in Hull for small businesses?
 Jake Fieldhouse Consulting is an independent MSP serving Hull SMBs with 24/7 monitoring, Microsoft 365 management, and same-day on-site support. Unlike larger MSPs, you get direct access to the same engineer every time.
 
+### What are data centre remote hands?
+Remote hands is a service where a qualified technician physically attends a data centre on your behalf. We handle racking, cabling, hardware swaps, power cycling, visual checks, and vendor escort. Based in Hull, we can be on-site in hours.
+
+### Do you offer smart hands support?
+Yes. Smart Hands goes beyond routine physical tasks to include network troubleshooting, firmware updates, OS-level diagnostics, and complex hardware fault isolation. We offer both Remote Hands and Smart Hands.
+
 ---
 
 ## Secure Communications
@@ -195,6 +218,7 @@ All services are quoted on a **case-by-case basis** depending on scope, complexi
 - **Repair Services**: Quote provided after free diagnostic (No-Fix-No-Fee applies)
 - **E-Waste Collection**: **FREE** for businesses in Hull & East Yorkshire
 - **AI Optimization**: Project-based quotes after initial audit
+- **DC Remote Hands**: Quoted per job or retainer. Emergency premium applies for sub-2hr response
 
 **Contact for a tailored quote**: jake@jakefieldhouse.co.uk | +44 7404 090458
 

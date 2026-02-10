@@ -58,6 +58,13 @@ const categoryColors = {
     border: 'border-amber-500/20',
     text: 'text-amber-500',
     button: 'bg-amber-600 hover:bg-amber-500'
+  },
+  datacenter: { 
+    gradient: 'from-teal-500 to-cyan-400',
+    bg: 'bg-teal-500/10',
+    border: 'border-teal-500/20',
+    text: 'text-teal-500',
+    button: 'bg-teal-600 hover:bg-teal-500'
   }
 }
 
@@ -107,12 +114,17 @@ const faqItems = computed(() => {
       { q: `Do you offer out-of-hours IT support for ${loc.name} businesses?`, a: `Yes. Our managed IT packages include 24/7 monitoring with alerting. For critical issues, emergency support is available outside business hours. We're local, so we can be on-site quickly when needed.` },
       { q: `Can you take over from our current IT provider?`, a: `Absolutely. We handle the full transition process including documentation, credential handover, and system audit. Most migrations are completed within 1-2 weeks with zero downtime.` }
     )
-  } else {
-    base.push(
-      { q: `Is e-waste collection really free in ${loc.name}?`, a: `Yes — 100% free for qualifying volumes (typically 10+ items or equivalent). We recover value from recyclable materials and components, which funds the service. You receive full WEEE compliance documentation at no cost.` },
-      { q: `What documentation do I receive after e-waste collection?`, a: `You receive a Waste Transfer Note (WTN) as required by law, plus a Certificate of Data Destruction for any data-bearing devices. These documents satisfy GDPR and WEEE compliance requirements for audits.` }
-    )
-  }
+   } else if (svc.category === 'datacenter') {
+     base.push(
+       { q: `Do you provide remote hands support for data centres near ${loc.name}?`, a: `Yes. We offer professional remote hands and smart hands services for data centres across ${loc.name} and the wider ${loc.region} area. This includes racking, cabling, hardware swaps, power cycling, and vendor escort — all backed by photographic reports.` },
+       { q: `What's the response time for data centre remote hands in ${loc.name}?`, a: `Standard requests are actioned within 4 hours during business hours. Emergency callouts target a 2-hour response. For clients on retainer plans, we offer guaranteed SLAs with priority dispatch.` }
+     )
+   } else {
+     base.push(
+       { q: `Is e-waste collection really free in ${loc.name}?`, a: `Yes — 100% free for qualifying volumes (typically 10+ items or equivalent). We recover value from recyclable materials and components, which funds the service. You receive full WEEE compliance documentation at no cost.` },
+       { q: `What documentation do I receive after e-waste collection?`, a: `You receive a Waste Transfer Note (WTN) as required by law, plus a Certificate of Data Destruction for any data-bearing devices. These documents satisfy GDPR and WEEE compliance requirements for audits.` }
+     )
+   }
   return base
 })
 
@@ -214,10 +226,16 @@ onUnmounted(() => {
             From 24/7 monitoring to EDR security and cloud solutions, we keep your business running 
             while you focus on growth.
           </p>
-          <p v-else>
+          <p v-else-if="service.category === 'ewaste'">
             Our GDPR-compliant e-waste collection service is <strong class="text-white">completely free</strong> 
             for businesses. We provide full documentation including Waste Transfer Notes and 
             Certificates of Destruction to satisfy your legal compliance requirements.
+          </p>
+          <p v-else-if="service.category === 'datacenter'">
+            We provide professional remote hands and smart hands support for data centres across 
+            {{ location.name }} and the wider {{ location.region }} area. From racking and cabling to 
+            complex diagnostics and vendor escort — <strong class="text-white">DBS checked, fully insured</strong>, 
+            with photographic reports on every job.
           </p>
         </div>
         

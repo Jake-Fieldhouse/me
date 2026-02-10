@@ -48,6 +48,9 @@
                 },
                 {
                     "@id": "https://jakefieldhouse.co.uk/#service-geo"
+                },
+                {
+                    "@id": "https://jakefieldhouse.co.uk/#service-remotehands"
                 }
             ],
             "hasCredential": [
@@ -155,6 +158,20 @@
                 "@id": "https://jakefieldhouse.co.uk/#organization"
             },
             "serviceType": "Search Engine Optimization"
+        },
+        {
+            "@id": "https://jakefieldhouse.co.uk/#service-remotehands",
+            "@type": "Service",
+            "name": "Data Centre Remote Hands",
+            "description": "Professional remote hands and smart hands support for data centres in Hull & East Yorkshire. Racking, cabling, hardware swap, vendor escort. DBS checked.",
+            "url": "https://jakefieldhouse.co.uk/data-centre-remote-hands-hull",
+            "provider": {
+                "@id": "https://jakefieldhouse.co.uk/#organization"
+            },
+            "serviceType": "Data Centre Support",
+            "areaServed": {
+                "@id": "https://jakefieldhouse.co.uk/#area-hull"
+            }
         },
         {
             "@id": "https://jakefieldhouse.co.uk/#credential-waste",

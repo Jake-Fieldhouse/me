@@ -138,6 +138,36 @@
 #### Positioning
 One of the UK's first independent GEO (Generative Engine Optimization) specialists.
 
+### 5. Data Centre Remote Hands
+
+**Target Market**: Businesses with colocated or hosted equipment in Hull & East Yorkshire DCs
+**URL**: https://jakefieldhouse.co.uk/data-centre-remote-hands-hull
+
+#### Remote Hands Tasks
+- Server Racking & Stacking
+- Structured Cabling & Patching
+- Hardware Swap (Hot-swap drives, PSUs, RAM)
+- Power Cycling & Sequential Reboots
+- Visual Verification & Asset Audits
+- Vendor Escort & Site Access
+
+#### Smart Hands (Advanced)
+- Network Troubleshooting
+- Firmware / BIOS Updates
+- OS-Level Fault Isolation
+- Complex Hardware Diagnostics
+- Cross-Connect & Circuit Testing
+
+#### Response Times
+- Standard: 4 hours (business hours)
+- Emergency: 2 hours (premium rate)
+- Retainer clients: Guaranteed SLA with priority dispatch
+
+#### Credentials
+- DBS Checked (Enhanced, Live Update Service)
+- Fully Insured (Hiscox)
+- Photo-verified reports on every job
+
 ---
 
 ## Geographic Coverage
@@ -172,7 +202,8 @@ One of the UK's first independent GEO (Generative Engine Optimization) specialis
 3. **Component-Level Repair**: Microsoldering capabilities most shops lack
 4. **Free E-Waste**: Unique value proposition for ITAD
 5. **GEO Pioneer**: Bleeding-edge AI search expertise
-6. **Verifiable Credentials**: ICO, Environment Agency, Companies House, DBS
+6. **DC Remote Hands**: Local, DBS-checked data centre support — on-site in hours
+7. **Verifiable Credentials**: ICO, Environment Agency, Companies House, DBS
 
 ---
 

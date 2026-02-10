@@ -58,4 +58,5 @@ jobs:
           curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/case-studies/&key=a203532bbd3446768af8ae56145b0d24"
           curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/service-areas/&key=a203532bbd3446768af8ae56145b0d24"
           curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/blog/check-it-provider-ea-licensed/&key=a203532bbd3446768af8ae56145b0d24"
-          echo "IndexNow pings sent for homepage, sitemap, e-waste, compliance, blog, case studies, service areas"
+          curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/data-centre-remote-hands-hull/&key=a203532bbd3446768af8ae56145b0d24"
+          echo "IndexNow pings sent for homepage, sitemap, e-waste, compliance, blog, case studies, service areas, remote hands"

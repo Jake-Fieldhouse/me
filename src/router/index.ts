@@ -50,6 +50,15 @@ const router = createRouter({
                 description: 'Generative Engine Optimization (GEO) to make your Hull business visible in ChatGPT, Perplexity, Claude, and Google AI Overviews.'
             }
         },
+        {
+            path: '/data-centre-remote-hands-hull',
+            name: 'data-centre-remote-hands-hull',
+            component: () => import('../views/RemoteHands.vue'),
+            meta: {
+                title: 'Data Centre Remote Hands Hull | On-Site DC Support',
+                description: 'Professional remote hands and smart hands support for data centres in Hull & East Yorkshire. Racking, cabling, hardware swap, vendor escort. DBS checked.'
+            }
+        },
         // ==================== LEGACY REDIRECTS ====================
         {
             path: '/msp-services',
@@ -70,6 +79,10 @@ const router = createRouter({
         {
             path: '/ai-search',
             redirect: '/ai-optimization-hull'
+        },
+        {
+            path: '/remote-hands',
+            redirect: '/data-centre-remote-hands-hull'
         },
         // ==================== SERVICE AREAS (Local SEO) ====================
         {

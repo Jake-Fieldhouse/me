@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- Favicon: Full browser support -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192x192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Security Headers (Meta Tag Fallback for GitHub Pages) -->
+  <!-- CSP: strict script-src (no 'unsafe-inline'), style-src allows 'unsafe-inline' for Vue scoped styles -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com; frame-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <meta name="color-scheme" content="dark only">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://jakefieldhouse.co.uk/complaints/" />
+
+  <!-- RSS Feed for AI Crawlers -->
+  <link rel="alternate" type="application/rss+xml" title="Jake Fieldhouse Consulting" href="/feed.xml" />
+
+  <!-- Content Freshness Signal for AI Systems -->
+  <meta name="last-modified" content="2026-02-09">
+  <meta name="revised" content="2026-02-09">
+
+  <!-- Primary Meta Tags -->
+  <title>Complaints Policy | Jake Fieldhouse Consulting</title>
+  <meta name="title" content="Complaints Policy | Jake Fieldhouse Consulting" />
+  <meta name="description" content="How to raise a complaint and our dispute resolution process." />
+
+  <!-- Additional SEO Meta Tags -->
+  <meta name="author" content="Jake Fieldhouse" />
+  <meta name="robots" content="index, follow" />
+  <meta name="geo.region" content="GB-ERY" />
+  <meta name="geo.placename" content="Hull" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jakefieldhouse.co.uk/complaints/" />
+  <meta property="og:title" content="Complaints Policy | Jake Fieldhouse Consulting" />
+  <meta property="og:description" content="How to raise a complaint and our dispute resolution process." />
+  <meta property="og:image" content="https://jakefieldhouse.co.uk/images/og-image.png" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:site_name" content="Jake Fieldhouse Consulting" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://jakefieldhouse.co.uk/complaints/" />
+  <meta property="twitter:title" content="Complaints Policy | Jake Fieldhouse Consulting" />
+  <meta property="twitter:description" content="How to raise a complaint and our dispute resolution process." />
+  <meta property="twitter:image" content="https://jakefieldhouse.co.uk/images/og-image.png" />
+
+  <!-- Font preloads — critical weights only to avoid FOIT -->
+  <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-700.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Preconnect for third-party origins -->
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+
+  <!-- WebSite Schema: Sitelinks Searchbox -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://jakefieldhouse.co.uk/#website",
+      "url": "https://jakefieldhouse.co.uk",
+      "name": "Jake Fieldhouse Consulting",
+      "alternateName": ["Repair Ninja", "JFC"],
+      "description": "Expert IT Support, Hardware Repair, and Managed Services for Hull & East Yorkshire",
+      "publisher": {
+        "@id": "https://jakefieldhouse.co.uk/#organization"
+      },
+      "inLanguage": "en-GB",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://jakefieldhouse.co.uk/?s={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+
+  <!-- ImageObject Schema: Brand Logo -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "@id": "https://jakefieldhouse.co.uk/images/og-image.png#image",
+      "url": "https://jakefieldhouse.co.uk/images/og-image.png",
+      "contentUrl": "https://jakefieldhouse.co.uk/images/og-image.png",
+      "caption": "Jake Fieldhouse Consulting - IT Support & Repair Hull",
+      "description": "Brand logo and social sharing image for Jake Fieldhouse Consulting, an independent MSP and hardware repair specialist in Hull, East Yorkshire.",
+      "representativeOfPage": true,
+      "license": "https://jakefieldhouse.co.uk/",
+      "acquireLicensePage": "https://jakefieldhouse.co.uk/contact",
+      "creditText": "Jake Fieldhouse Consulting Ltd",
+      "creator": {
+        "@id": "https://jakefieldhouse.co.uk/#organization"
+      }
+    }
+  </script>
+
+  <!-- BreadcrumbList Schema: Homepage -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://jakefieldhouse.co.uk/"
+        }
+      ]
+    }
+  </script>
+
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Jake Fieldhouse Consulting Ltd",
+      "alternateName": ["Jake Fieldhouse Consulting", "Repair Ninja"],
+      "image": "https://jakefieldhouse.co.uk/images/og-image.png",
+      "@id": "https://jakefieldhouse.co.uk",
+      "url": "https://jakefieldhouse.co.uk",
+      "telephone": "+447404090458",
+      "email": "jake@jakefieldhouse.co.uk",
+      "priceRange": "££",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hull",
+        "addressRegion": "East Yorkshire",
+        "addressCountry": "UK"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 53.7443,
+        "longitude": -0.3325
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00"
+      },
+      "sameAs": [
+        "https://find-and-update.company-information.service.gov.uk/company/16536646",
+        "https://uk.linkedin.com/in/jake-fieldhouse",
+        "https://github.com/Jake-Fieldhouse"
+      ],
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Company Number",
+        "value": "16536646"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://jakefieldhouse.co.uk/images/og-image.png"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Jake Fieldhouse",
+        "jobTitle": "Director & Lead Systems Engineer",
+        "url": "https://uk.linkedin.com/in/jake-fieldhouse",
+        "knowsAbout": ["Microsoldering", "Logic Board Repair", "Microsoft 365", "Endpoint Security", "ITAD", "Data Destruction"]
+      },
+      "department": {
+        "@type": "LocalBusiness",
+        "name": "Repair Ninja",
+        "description": "Specialist hardware repair division handling component-level diagnostics, microsoldering, and logic board restoration.",
+        "url": "https://jakefieldhouse.co.uk/microsoldering-repair-hull"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Hull",
+          "sameAs": "https://www.wikidata.org/wiki/Q128147"
+        },
+        "Beverley", "Driffield", "Bridlington", "Goole", "Cottingham", "Hessle", "Brough", "Hornsea", "Withernsea", "East Yorkshire"
+      ],
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 53.7443,
+          "longitude": -0.3325
+        },
+        "geoRadius": "50000"
+      },
+      "knowsAbout": ["IT Support", "Computer Repair", "Microsoldering", "MacBook Repair", "PS5 Repair", "E-Waste Disposal", "GDPR Compliance", "Data Destruction", "Microsoft 365", "Endpoint Security", "AI Search Optimization"],
+      "description": "The premier independent Managed IT Service Provider (MSP) and Hardware Restoration specialist for Hull & East Yorkshire. We combine enterprise-grade Microsoft 365 management with component-level hardware repair.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "IT Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Managed IT Services Hull",
+              "url": "https://jakefieldhouse.co.uk/managed-it-services-hull",
+              "description": "24/7 monitoring, EDR security, Microsoft 365 management for Hull businesses"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Microsoldering & Board Repair Hull",
+              "url": "https://jakefieldhouse.co.uk/microsoldering-repair-hull",
+              "description": "Component-level repair for MacBooks, PS5, consoles and logic boards. No Fix, No Fee."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Secure Data Disposal Hull",
+              "url": "https://jakefieldhouse.co.uk/secure-data-disposal-hull",
+              "description": "Free GDPR-compliant IT asset disposal with NIST 800-88 data destruction"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Search Optimization Hull",
+              "url": "https://jakefieldhouse.co.uk/ai-optimization-hull",
+              "description": "Generative Engine Optimization (GEO) to make Hull businesses visible in ChatGPT, Perplexity, and Google AI"
+            }
+          }
+        ]
+      }
+    }
+  </script>
+
+  <!-- FAQ Schema for AI Extraction -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who offers the best computer repair in Hull?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jake Fieldhouse Consulting offers expert computer repair in Hull with a No Fix, No Fee policy. We specialize in component-level microsoldering including MacBook logic boards, PS5 consoles, and smartphones."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What IT support is available for small businesses in Hull?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jake Fieldhouse offers Managed IT Services (MSP) for small businesses in Hull including 24/7 infrastructure monitoring, Endpoint Detection & Response (EDR) security, Microsoft 365 and Azure cloud solutions, and responsive on-site support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can a Hull business dispose of old computers securely?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jake Fieldhouse provides free GDPR-compliant e-waste collection for Hull businesses. We are Environment Agency registered (CBDL620098) and provide Certificates of Destruction confirming NIST 800-88 data sanitization standards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you repair MacBook logic boards in Hull?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer MacBook logic board repair in Hull using professional microsoldering techniques. Common repairs include liquid damage, no power issues, and GPU failures. No Fix, No Fee policy applies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is e-waste collection really free for businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer free e-waste collection for businesses in Hull and East Yorkshire. We recover value from refurbishable equipment while ensuring secure data destruction, eliminating disposal costs for you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who fixes PS5 HDMI ports in Hull?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Repair Ninja (part of Jake Fieldhouse Consulting) offers PS5 HDMI port replacement in Hull. This specialized microsoldering repair is something most high-street shops cannot perform."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best IT company in Hull for small businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jake Fieldhouse Consulting is an independent MSP serving Hull SMBs with personalized service. Unlike larger providers, you get direct access to the same engineer every time, with 24/7 monitoring and same-day on-site support available."
+          }
+        }
+      ]
+    }
+  </script>
+
+  <!-- Organization Schema for Knowledge Graph -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://jakefieldhouse.co.uk/#organization",
+      "name": "Jake Fieldhouse Consulting Ltd",
+      "alternateName": ["Jake Fieldhouse Consulting", "Repair Ninja", "JFC"],
+      "url": "https://jakefieldhouse.co.uk",
+      "logo": "https://jakefieldhouse.co.uk/images/og-image.png",
+      "foundingDate": "2024-11-01",
+      "founder": {
+        "@type": "Person",
+        "name": "Jake Fieldhouse"
+      },
+      "legalName": "Jake Fieldhouse Consulting Ltd",
+      "taxID": "16536646",
+      "sameAs": [
+        "https://find-and-update.company-information.service.gov.uk/company/16536646",
+        "https://uk.linkedin.com/in/jake-fieldhouse",
+        "https://github.com/Jake-Fieldhouse"
+      ],
+      "hasCredential": [
+        {
+          "@type": "Credential",
+          "credentialCategory": "Data Protection Registration",
+          "name": "ICO Registration",
+          "identifier": "ZC002956",
+          "issuedBy": {
+            "@type": "Organization",
+            "name": "Information Commissioner's Office",
+            "url": "https://ico.org.uk"
+          }
+        },
+        {
+          "@type": "Credential",
+          "credentialCategory": "Waste Carrier License",
+          "name": "Environment Agency Waste Carrier Registration",
+          "identifier": "CBDL620098",
+          "issuedBy": {
+            "@type": "Organization",
+            "name": "Environment Agency",
+            "url": "https://www.gov.uk/government/organisations/environment-agency"
+          }
+        },
+        {
+          "@type": "Credential",
+          "credentialCategory": "Insurance",
+          "name": "Professional Indemnity & Public Liability Insurance",
+          "issuedBy": {
+            "@type": "Organization",
+            "name": "Hiscox",
+            "url": "https://www.hiscox.co.uk"
+          }
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+447404090458",
+        "email": "jake@jakefieldhouse.co.uk",
+        "contactType": "customer service",
+        "areaServed": "GB",
+        "availableLanguage": "English"
+      }
+    }
+  </script>
+
+  <!-- HowTo Schema for AI Snippets -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Dispose of Business E-Waste in Hull for Free",
+      "description": "Step-by-step guide to securely disposing of old IT equipment in Hull with free collection and GDPR-compliant data destruction.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Request Collection",
+          "text": "Contact Jake Fieldhouse Consulting via phone, email, or the website contact form to request a free e-waste collection."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Schedule Pickup",
+          "text": "We'll arrange a convenient collection time. For Hull and East Yorkshire, collection is completely free."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Secure Data Destruction",
+          "text": "All data storage devices are wiped to NIST 800-88 Purge standard or physically destroyed. You receive a Certificate of Destruction."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Receive Documentation",
+          "text": "You'll receive a Waste Transfer Note for GDPR compliance and a full asset manifest documenting what was collected."
+        }
+      ],
+      "totalTime": "PT24H",
+      "tool": "None required - we handle everything",
+      "supply": "Old IT equipment (laptops, desktops, servers, phones, tablets, peripherals)"
+    }
+  </script>
+
+  <!-- HowTo Schema: MacBook Logic Board Repair -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Get a MacBook Logic Board Repaired in Hull",
+      "description": "Step-by-step guide to getting your MacBook's logic board professionally repaired in Hull with a No Fix, No Fee guarantee.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Describe the Issue",
+          "text": "Contact Repair Ninja with details of your MacBook issue - no power, liquid damage, graphics glitches, or charging problems."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Drop Off or Mail In",
+          "text": "Bring your MacBook to our Hull location or use our secure mail-in service from anywhere in the UK."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Free Diagnosis",
+          "text": "We'll diagnose the exact component-level fault using professional microsoldering equipment at no charge."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Approve the Quote",
+          "text": "You'll receive a detailed quote. Only proceed if you're happy - No Fix, No Fee applies."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Collect Your Repaired Mac",
+          "text": "Most repairs complete within 24-48 hours. Your data remains intact throughout."
+        }
+      ],
+      "totalTime": "PT48H",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "GBP",
+        "value": "150-350"
+      }
+    }
+  </script>
+
+  <!-- HowTo Schema: AI Search Optimization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Get Your Business Found by ChatGPT and AI Search",
+      "description": "Guide to making your business visible in AI-powered search engines like ChatGPT, Perplexity, and Google AI Overviews.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Audit Current AI Visibility",
+          "text": "Search for your business in ChatGPT, Perplexity, and Claude to see if AI currently recommends you."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Implement Schema Markup",
+          "text": "Add JSON-LD structured data (Organization, FAQPage, HowTo, LocalBusiness) so AI can understand your business."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Create llms.txt",
+          "text": "Add an AI-readable summary file at /llms.txt per the llmstxt.org specification."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Build FAQs Around Questions",
+          "text": "Create content that directly answers questions with 'Who', 'What', 'Where', 'How' patterns."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Monitor and Iterate",
+          "text": "Track citations in AI responses and refine your content based on what gets cited."
+        }
+      ],
+      "totalTime": "P7D"
+    }
+  </script>
+
+  <!-- LocalBusiness Schema: Hull -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://jakefieldhouse.co.uk/#hull",
+      "name": "Jake Fieldhouse Consulting - Hull",
+      "description": "IT support, computer repair, and e-waste collection services in Hull city centre.",
+      "url": "https://jakefieldhouse.co.uk/hull-it-support",
+      "telephone": "+447404090458",
+      "email": "jake@jakefieldhouse.co.uk",
+      "areaServed": {
+        "@type": "City",
+        "name": "Kingston upon Hull",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "East Riding of Yorkshire"
+        }
+      },
+      "priceRange": "££",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "parentOrganization": {
+        "@id": "https://jakefieldhouse.co.uk/#organization"
+      }
+    }
+  </script>
+
+  <!-- LocalBusiness Schema: Beverley -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://jakefieldhouse.co.uk/#beverley",
+      "name": "Jake Fieldhouse Consulting - Beverley",
+      "description": "IT support and managed services for Beverley businesses and residents.",
+      "url": "https://jakefieldhouse.co.uk/beverley-it-support",
+      "telephone": "+447404090458",
+      "email": "jake@jakefieldhouse.co.uk",
+      "areaServed": {
+        "@type": "City",
+        "name": "Beverley"
+      },
+      "priceRange": "££",
+      "parentOrganization": {
+        "@id": "https://jakefieldhouse.co.uk/#organization"
+      }
+    }
+  </script>
+
+  <!-- LocalBusiness Schema: Driffield -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://jakefieldhouse.co.uk/#driffield",
+      "name": "Jake Fieldhouse Consulting - Driffield",
+      "description": "IT support and computer repair services covering Driffield and surrounding villages.",
+      "url": "https://jakefieldhouse.co.uk/driffield-it-support",
+      "telephone": "+447404090458",
+      "email": "jake@jakefieldhouse.co.uk",
+      "areaServed": {
+        "@type": "City",
+        "name": "Great Driffield"
+      },
+      "priceRange": "££",
+      "parentOrganization": {
+        "@id": "https://jakefieldhouse.co.uk/#organization"
+      }
+    }
+  </script>
+
+  <!-- LocalBusiness Schema: Bridlington -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://jakefieldhouse.co.uk/#bridlington",
+      "name": "Jake Fieldhouse Consulting - Bridlington",
+      "description": "IT support and e-waste collection for Bridlington coastal businesses.",
+      "url": "https://jakefieldhouse.co.uk/bridlington-it-support",
+      "telephone": "+447404090458",
+      "email": "jake@jakefieldhouse.co.uk",
+      "areaServed": {
+        "@type": "City",
+        "name": "Bridlington"
+      },
+      "priceRange": "££",
+      "parentOrganization": {
+        "@id": "https://jakefieldhouse.co.uk/#organization"
+      }
+    }
+  </script>
+
+  <!-- LocalBusiness Schema: Goole -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://jakefieldhouse.co.uk/#goole",
+      "name": "Jake Fieldhouse Consulting - Goole",
+      "description": "IT support and managed services for Goole and M62 corridor businesses.",
+      "url": "https://jakefieldhouse.co.uk/goole-it-support",
+      "telephone": "+447404090458",
+      "email": "jake@jakefieldhouse.co.uk",
+      "areaServed": {
+        "@type": "City",
+        "name": "Goole"
+      },
+      "priceRange": "££",
+      "parentOrganization": {
+        "@id": "https://jakefieldhouse.co.uk/#organization"
+      }
+    }
+  </script>
+
+  <!-- Speakable Schema for Voice Assistants -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Jake Fieldhouse IT Consulting - Hull",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".hero-title",
+          ".hero-subtitle",
+          ".faq-answer"
+        ]
+      },
+      "mainEntity": {
+        "@id": "https://jakefieldhouse.co.uk/#organization"
+      }
+    }
+  </script>
+
+  <!-- VideoObject Schema: Ambient Brand Experience -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "@id": "https://jakefieldhouse.co.uk/#intro-experience",
+      "name": "Jake Fieldhouse Consulting - Ambient Brand Experience",
+      "description": "An immersive WebGL fluid simulation intro experience showcasing Jake Fieldhouse Consulting's premium approach to IT services in Hull. Features dynamic fluid physics and cinematic typography.",
+      "thumbnailUrl": "https://jakefieldhouse.co.uk/images/og-image.png",
+      "uploadDate": "2026-01-31",
+      "duration": "PT8S",
+      "contentUrl": "https://jakefieldhouse.co.uk/",
+      "embedUrl": "https://jakefieldhouse.co.uk/",
+      "publisher": {
+        "@id": "https://jakefieldhouse.co.uk/#organization"
+      },
+      "isAccessibleForFree": true,
+      "inLanguage": "en-GB",
+      "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/WatchAction",
+        "userInteractionCount": "auto"
+      }
+    }
+  </script>
+  <script type="module" crossorigin src="/assets/index-CJ1XfwfS.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Y4MX9RwH.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-DQKdt4Nj.css">
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+
+</html>

@@ -30,7 +30,7 @@ useScrollReveal(gridRef, { delay: 0, y: 56 })
           Enterprise IT. Component-Level Repair. Zero Compromise.
         </p>
         <p class="text-base sm:text-lg text-neutral-400 max-w-xl mx-auto text-readable drop-shadow-xl">
-          <router-link to="/managed-it-services-hull" class="text-blue-400 hover:text-blue-300 transition-colors">SMB & enterprise IT</router-link>, <router-link to="/microsoldering-repair-hull" class="text-red-400 hover:text-red-300 transition-colors">board-level repairs</router-link>, <router-link to="/ai-optimization-hull" class="text-violet-400 hover:text-violet-300 transition-colors">AI visibility</router-link>, and <router-link to="/secure-data-disposal-hull" class="text-emerald-400 hover:text-emerald-300 transition-colors">responsible recycling</router-link>. Based in Hull.
+          <router-link to="/managed-it-services-hull" class="text-blue-400 hover:text-blue-300 transition-colors">SMB & enterprise IT</router-link>, <router-link to="/microsoldering-repair-hull" class="text-red-400 hover:text-red-300 transition-colors">board-level repairs</router-link>, <router-link to="/ai-optimization-hull" class="text-violet-400 hover:text-violet-300 transition-colors">AI visibility</router-link>, <router-link to="/data-centre-remote-hands-hull" class="text-teal-400 hover:text-teal-300 transition-colors">data centre support</router-link>, and <router-link to="/secure-data-disposal-hull" class="text-emerald-400 hover:text-emerald-300 transition-colors">responsible recycling</router-link>. Based in Hull.
         </p>
         
         <!-- CTAs -->
@@ -103,6 +103,20 @@ useScrollReveal(gridRef, { delay: 0, y: 56 })
              </template>
              <div class="mt-4 flex items-center text-violet-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
                 See How <span class="ml-1">→</span>
+             </div>
+          </BentoItem>
+
+          <BentoItem
+            title="DC Remote Hands"
+            description="Need someone to rack a server, swap a drive, or escort a vendor at your colo? On-site in hours, not days."
+            class="md:col-span-1 group hover:scale-105 transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
+            to="/data-centre-remote-hands-hull"
+          >
+             <template #header>
+                <div class="flex flex-1 w-full h-full min-h-24 rounded-xl bg-gradient-to-br from-teal-900/50 to-neutral-900" />
+             </template>
+             <div class="mt-4 flex items-center text-teal-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
+                Learn More <span class="ml-1">→</span>
              </div>
           </BentoItem>
 

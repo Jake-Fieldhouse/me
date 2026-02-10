@@ -11,7 +11,7 @@ export interface Location {
 export interface ServiceType {
     slug: string
     name: string
-    category: 'repair' | 'msp' | 'ewaste'
+    category: 'repair' | 'msp' | 'ewaste' | 'datacenter'
     keywords: string[]
 }
 
@@ -42,6 +42,9 @@ export const services: ServiceType[] = [
     // E-Waste Services
     { slug: 'e-waste-collection', name: 'E-Waste Collection', category: 'ewaste', keywords: ['IT disposal', 'computer recycling', 'WEEE'] },
     { slug: 'it-disposal', name: 'IT Disposal', category: 'ewaste', keywords: ['secure disposal', 'data destruction', 'asset disposal'] },
+
+    // Data Centre Services
+    { slug: 'remote-hands', name: 'Data Centre Remote Hands', category: 'datacenter', keywords: ['remote hands', 'smart hands', 'DC support', 'server racking'] },
 ]
 
 // Generate all local page routes
@@ -66,7 +69,8 @@ export function getLocalPageMeta(location: Location, service: ServiceType) {
     const categoryTitles = {
         repair: 'Expert Repair Services',
         msp: 'Business IT Services',
-        ewaste: 'Secure IT Disposal'
+        ewaste: 'Secure IT Disposal',
+        datacenter: 'Data Centre Support'
     }
 
     return {
@@ -92,6 +96,11 @@ export function getLocalPageContent(location: Location, service: ServiceType) {
             intro: `Free, GDPR-compliant ${service.name.toLowerCase()} in ${location.name}. We serve businesses in ${location.postcode} with secure data destruction and zero-landfill disposal.`,
             cta: 'Book Free Collection',
             link: '/sustainable-tech'
+        },
+        datacenter: {
+            intro: `Professional ${service.name.toLowerCase()} in ${location.name}. On-site data centre support for businesses in the ${location.postcode} area — racking, cabling, hardware swaps, and vendor escort.`,
+            cta: 'Get a Quote',
+            link: '/data-centre-remote-hands-hull'
         }
     }
 
