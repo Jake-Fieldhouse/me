@@ -1,3 +1,44 @@
+/* Self-hosted Inter font — eliminates render-blocking Google Fonts request */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/inter-300.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/inter-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inter-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/inter-700.woff2') format('woff2');
+}
+
 @import "tailwindcss";
 
 /* Force dark mode via class selector, not browser preference.
@@ -31,6 +72,42 @@
   --blue-300: #93c5fd;
   --violet-200: #ddd6fe;
   --blue-400: #60a5fa;
+}
+
+/* Native <select> dropdown options — force dark colors since
+   browser popup UI ignores Tailwind classes and inherits system theme */
+select,
+select option {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* --- Accessibility: Skip-to-Content Link --- */
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: #101010;
+  color: #fff;
+  border: 2px solid rgba(96, 165, 250, 0.8);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* --- Accessibility: Focus-Visible Outlines --- */
+:focus-visible {
+  outline: 2px solid rgba(96, 165, 250, 0.8);
+  outline-offset: 2px;
 }
 
 body {

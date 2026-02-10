@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
+import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
 import { useToast } from '../composables/useToast'
 import IconFileCheck from '../components/icons/IconFileCheck.vue'
@@ -63,6 +64,7 @@ const scrollToComparison = () => {
 <template>
   <div class="relative w-full max-w-7xl mx-auto px-6 py-20 flex flex-col gap-20">
     
+    <BreadcrumbSchema :crumbs="[{ name: 'E-Waste Collection', url: '/secure-data-disposal-hull' }]" />
     <!-- Hero -->
     <header ref="headerRef" class="text-center space-y-6 mt-10">
       <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-4">
@@ -377,25 +379,25 @@ const scrollToComparison = () => {
                 <h3 class="text-2xl font-bold text-white mb-6">Request Free Collection</h3>
                 <form @submit.prevent="submitForm" class="space-y-4">
                     <div>
-                        <label class="block text-sm font-medium text-neutral-400 mb-1">Company Name</label>
-                        <input v-model="form.company" type="text" required class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-500" placeholder="Acme Corp" />
+                        <label for="ewaste-company" class="block text-sm font-medium text-neutral-400 mb-1">Company Name</label>
+                        <input id="ewaste-company" v-model="form.company" type="text" required autocomplete="organization" class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-500" placeholder="Acme Corp" />
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-neutral-400 mb-1">Contact Name</label>
-                        <input v-model="form.contact" type="text" required class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-500" placeholder="Jane Doe" />
+                        <label for="ewaste-contact" class="block text-sm font-medium text-neutral-400 mb-1">Contact Name</label>
+                        <input id="ewaste-contact" v-model="form.contact" type="text" required autocomplete="name" class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-500" placeholder="Jane Doe" />
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-neutral-400 mb-1">Email Address</label>
-                        <input v-model="form.email" type="email" required class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-500" placeholder="jane@acme.com" />
+                        <label for="ewaste-email" class="block text-sm font-medium text-neutral-400 mb-1">Email Address</label>
+                        <input id="ewaste-email" v-model="form.email" type="email" required autocomplete="email" class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-500" placeholder="jane@acme.com" />
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-neutral-400 mb-1">Phone <span class="text-neutral-600">(Optional)</span></label>
-                        <input v-model="form.phone" type="tel" class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-500" placeholder="07xxx xxxxxx" />
+                        <label for="ewaste-phone" class="block text-sm font-medium text-neutral-400 mb-1">Phone <span class="text-neutral-600">(Optional)</span></label>
+                        <input id="ewaste-phone" v-model="form.phone" type="tel" autocomplete="tel" class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-500" placeholder="07xxx xxxxxx" />
                         <p class="text-xs text-neutral-600 mt-1">For urgent same-day scheduling</p>
                     </div>
                      <div>
-                        <label class="block text-sm font-medium text-neutral-400 mb-1">Estimated Volume</label>
-                        <select v-model="form.type" class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-500">
+                        <label for="ewaste-volume" class="block text-sm font-medium text-neutral-400 mb-1">Estimated Volume</label>
+                        <select id="ewaste-volume" v-model="form.type" class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-500">
                             <option value="regular">Small (1-10 items)</option>
                             <option value="medium">Medium (10-50 items)</option>
                             <option value="large">Large/Office Clearance (50+ items)</option>

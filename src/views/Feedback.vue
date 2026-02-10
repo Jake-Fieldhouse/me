@@ -99,17 +99,20 @@ const handleSubmit = async () => {
             <!-- Name & Service (Pre-filled if from link) -->
             <div class="grid md:grid-cols-2 gap-6">
                 <div>
-                    <label class="block text-sm text-neutral-400 mb-2">Your Name (Optional)</label>
+                    <label for="fb-name" class="block text-sm text-neutral-400 mb-2">Your Name (Optional)</label>
                     <input 
+                        id="fb-name"
                         v-model="clientName"
                         type="text" 
+                        autocomplete="name"
                         placeholder="John Smith"
                         class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-neutral-500 focus:border-emerald-500/50 focus:outline-none transition-all"
                     />
                 </div>
                 <div>
-                    <label class="block text-sm text-neutral-400 mb-2">Service Received</label>
+                    <label for="fb-service" class="block text-sm text-neutral-400 mb-2">Service Received</label>
                     <select 
+                        id="fb-service"
                         v-model="serviceName"
                         class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:border-emerald-500/50 focus:outline-none transition-all"
                     >
@@ -133,6 +136,7 @@ const handleSubmit = async () => {
                         :key="index"
                         type="button"
                         @click="rating = index + 1"
+                        :aria-label="`Rate ${index + 1} out of 5 stars`"
                         class="text-3xl transition-transform hover:scale-110"
                     >
                         {{ filled ? '⭐' : '☆' }}
@@ -142,8 +146,9 @@ const handleSubmit = async () => {
 
             <!-- Testimonial Text -->
             <div>
-                <label class="block text-sm text-neutral-400 mb-2">Your Testimonial</label>
+                <label for="fb-testimonial" class="block text-sm text-neutral-400 mb-2">Your Testimonial</label>
                 <textarea 
+                    id="fb-testimonial"
                     v-model="testimonialText"
                     rows="5"
                     placeholder="Tell us about your experience working with Jake Fieldhouse Consulting..."

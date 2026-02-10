@@ -23,9 +23,6 @@ export const locations: Location[] = [
     { slug: 'goole', name: 'Goole', postcode: 'DN14', region: 'West Humberside' },
     { slug: 'withernsea', name: 'Withernsea', postcode: 'HU19', region: 'East Coast' },
     { slug: 'hornsea', name: 'Hornsea', postcode: 'HU18', region: 'East Coast' },
-    { slug: 'cottingham', name: 'Cottingham', postcode: 'HU16', region: 'Hull Suburbs' },
-    { slug: 'hessle', name: 'Hessle', postcode: 'HU13', region: 'Hull Suburbs' },
-    { slug: 'brough', name: 'Brough', postcode: 'HU15', region: 'Hull Suburbs' },
 ]
 
 export const services: ServiceType[] = [

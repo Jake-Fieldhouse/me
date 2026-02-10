@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
+import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
 import { useToast } from '../composables/useToast'
 import IconChip from '../components/icons/IconChip.vue'
 import IconDroplet from '../components/icons/IconDroplet.vue'
@@ -48,6 +49,10 @@ const scrollToBook = () => {
   <div class="relative w-full max-w-7xl mx-auto px-6 py-20 flex flex-col gap-20">
     
     <!-- Hero -->
+    <BreadcrumbSchema :crumbs="[
+      { name: 'Repair Services', url: '/repair-services' },
+      { name: 'Microsoldering', url: '/microsoldering-repair-hull' }
+    ]" />
     <header class="text-center space-y-6 mt-10 relative">
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-auto aspect-square bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
       
@@ -129,22 +134,22 @@ const scrollToBook = () => {
             <h3 class="text-2xl font-bold text-white mb-6">Book Your Repair</h3>
             <form @submit.prevent="submitRepair" class="space-y-4">
                 <div>
-                    <label class="block text-sm font-medium text-neutral-400 mb-1">Your Name</label>
-                    <input v-model="form.name" type="text" class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-red-500" placeholder="John Smith" />
+                    <label for="rn-name" class="block text-sm font-medium text-neutral-400 mb-1">Your Name</label>
+                    <input id="rn-name" v-model="form.name" type="text" autocomplete="name" class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-red-500" placeholder="John Smith" />
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-neutral-400 mb-1">Device Model</label>
-                    <input v-model="form.device" type="text" class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-red-500" placeholder="PS5, MacBook Air M1, etc." />
+                    <label for="rn-device" class="block text-sm font-medium text-neutral-400 mb-1">Device Model</label>
+                    <input id="rn-device" v-model="form.device" type="text" class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-red-500" placeholder="PS5, MacBook Air M1, etc." />
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-neutral-400 mb-1">Issue Description</label>
-                    <textarea v-model="form.issue" rows="3" class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-red-500" placeholder="e.g. HDMI port looks bent, no signal..."></textarea>
+                    <label for="rn-issue" class="block text-sm font-medium text-neutral-400 mb-1">Issue Description</label>
+                    <textarea id="rn-issue" v-model="form.issue" rows="3" class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-red-500" placeholder="e.g. HDMI port looks bent, no signal..."></textarea>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-neutral-400 mb-1">Service Method</label>
-                    <div class="grid grid-cols-2 gap-4">
-                        <button type="button" @click="form.method = 'drop-off'" :class="form.method === 'drop-off' ? 'bg-red-500/20 border-red-500 text-white' : 'bg-neutral-800 border-transparent text-neutral-400'" class="p-3 rounded-lg border text-sm font-medium transition-colors">Drop-off</button>
-                        <button type="button" @click="form.method = 'mail-in'" :class="form.method === 'mail-in' ? 'bg-red-500/20 border-red-500 text-white' : 'bg-neutral-800 border-transparent text-neutral-400'" class="p-3 rounded-lg border text-sm font-medium transition-colors">Mail-in</button>
+                    <div class="grid grid-cols-2 gap-4" role="radiogroup" aria-label="Service method">
+                        <button type="button" @click="form.method = 'drop-off'" :aria-pressed="form.method === 'drop-off'" :class="form.method === 'drop-off' ? 'bg-red-500/20 border-red-500 text-white' : 'bg-neutral-800 border-transparent text-neutral-400'" class="p-3 rounded-lg border text-sm font-medium transition-colors">Drop-off</button>
+                        <button type="button" @click="form.method = 'mail-in'" :aria-pressed="form.method === 'mail-in'" :class="form.method === 'mail-in' ? 'bg-red-500/20 border-red-500 text-white' : 'bg-neutral-800 border-transparent text-neutral-400'" class="p-3 rounded-lg border text-sm font-medium transition-colors">Mail-in</button>
                     </div>
                 </div>
                 <button type="submit" class="w-full bg-red-600 hover:bg-red-500 text-white font-bold py-4 rounded-xl transition-colors mt-2 btn-depth hover-glow">

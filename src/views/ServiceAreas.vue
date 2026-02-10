@@ -14,14 +14,14 @@ const ewasteServices = services.filter(s => s.category === 'ewaste')
     <!-- Hero -->
     <header class="text-center space-y-6 mt-10">
       <div class="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-4">
-        Hull Born & Based • On-Site Coverage Across East Yorkshire
+        Hull Born & Based • On-Site Coverage Across East Yorkshire & Beyond
       </div>
       <h1 class="text-4xl md:text-6xl font-black tracking-tighter text-white">
-        Service Areas in <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">East Yorkshire</span>
+        Service Areas in <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">East Yorkshire & Beyond</span>
       </h1>
       <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-        Local knowledge. Same-day response. From HU1 to the Wolds: we know the infrastructure, 
-        the businesses, and the unique challenges of operating in East Yorkshire.
+        Local knowledge. Same-day response. From HU1 to the Wolds and across the North of England: 
+        we know the infrastructure, the businesses, and the unique challenges of operating in your area.
       </p>
     </header>
 
@@ -154,8 +154,8 @@ const ewasteServices = services.filter(s => s.category === 'ewaste')
         Can't Find Your Area?
       </h2>
       <p class="text-neutral-400 mb-6 max-w-xl mx-auto">
-        We serve all of East Yorkshire and offer nationwide mail-in repair and e-waste collection. 
-        Contact us to discuss your requirements.
+        We serve all of East Yorkshire, the wider North of England, and offer nationwide 
+        mail-in repair and e-waste collection. Contact us to discuss your requirements.
       </p>
       <router-link to="/contact"
                    class="inline-block bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors">

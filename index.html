@@ -15,7 +15,7 @@
   <!-- Security Headers (Meta Tag Fallback for GitHub Pages) -->
   <!-- STRICT CSP: No 'unsafe-inline' for scripts - external only -->
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com; frame-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests;">
+    content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com; frame-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
@@ -62,10 +62,12 @@
     content="Expert Electronics Repair, Microsoldering, Data Recovery, and Managed IT Services (MSP) for UK Businesses. Zero-Landfill E-Waste Solutions." />
   <meta property="twitter:image" content="https://jakefieldhouse.co.uk/images/og-image.png" />
 
-  <!-- Preconnect & Preload for Performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font preloads — critical weights only to avoid FOIT -->
+  <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-700.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Preconnect for third-party origins -->
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
 
   <!-- WebSite Schema: Sitelinks Searchbox -->
   <script type="application/ld+json">

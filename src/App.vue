@@ -83,6 +83,9 @@ onMounted(() => {
 <template>
   <div class="relative min-h-dvh bg-black text-white font-inter selection:bg-white/20 overflow-x-hidden">
     
+    <!-- Skip to Content (a11y: keyboard users bypass nav) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Hero Layer -->
     <AuroraBackground class="fixed inset-0 z-0">
         <!-- Aurora handles its own visuals -->
@@ -97,6 +100,7 @@ onMounted(() => {
 
     <!-- Keep layout mounted to avoid CLS when preloader ends -->
     <div
+      id="main-content"
       class="relative z-10 pb-32 md:pb-0 transition-opacity duration-200"
       :class="isLoading ? 'opacity-0 pointer-events-none select-none' : 'opacity-100 pointer-events-auto'"
       :aria-hidden="isLoading ? 'true' : 'false'"

@@ -18,7 +18,7 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()
   
   # Content Security Policy - strict baseline
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:;
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:;
   
   # Force HTTPS for 1 year + preload
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
@@ -29,6 +29,10 @@
 
 # Cache immutable assets aggressively
 /assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache self-hosted fonts aggressively
+/fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
 # Don't cache HTML for fresh content

@@ -5,6 +5,7 @@ import { Recycle, ShieldCheck, FileText, Lock } from 'lucide-vue-next'
 import IconExternalLink from '../components/icons/IconExternalLink.vue'
 import IconDownload from '../components/icons/IconDownload.vue'
 import IconCheck from '../components/icons/IconCheck.vue'
+import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
 
 const containerRef = ref<HTMLElement | null>(null)
 useScrollReveal(containerRef)
@@ -90,6 +91,7 @@ const getStatusPillColor = (status: string) => {
 
 <template>
   <div ref="containerRef" class="relative z-10 min-h-screen pt-32 pb-20 px-6 max-w-4xl mx-auto text-white">
+    <BreadcrumbSchema :crumbs="[{ name: 'Compliance', url: '/compliance' }]" />
     <h1 class="text-4xl font-bold mb-12">Compliance & Certifications</h1>
     
     <div class="space-y-6">

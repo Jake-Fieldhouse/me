@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Building2, Fish, ArrowRight, Quote, CheckCircle2 } from 'lucide-vue-next'
+import { Building2, Fish, Recycle, ArrowRight, Quote, CheckCircle2 } from 'lucide-vue-next'
 import type { Component } from 'vue'
 
 interface CaseStudy {
@@ -62,6 +62,32 @@ const caseStudies: CaseStudy[] = [
             'Reduced staff interruptions for basic queries',
             'Enhanced shopping experience',
             'Modern, tech-forward brand image'
+        ],
+        testimonial: null,
+        image: null
+    },
+    {
+        id: 'office-relocation-ewaste',
+        client: 'Regional Accountancy Firm',
+        location: 'York',
+        industry: 'Professional Services',
+        icon: Recycle,
+        color: 'from-amber-500 to-orange-600',
+        challenge: 'A mid-sized accountancy firm relocating to smaller premises needed to dispose of 15 years of accumulated IT equipment — including servers, desktops, and laptops containing sensitive client financial data. Previous quotes from national waste carriers were expensive and offered no data destruction certification.',
+        solution: [
+            'Free on-site collection of 120+ items (desktops, laptops, monitors, servers, printers)',
+            'GDPR-compliant data destruction using Blancco certified erasure',
+            'Individual Certificates of Destruction for every data-bearing device',
+            'Full Waste Transfer Note documentation for audit compliance',
+            'Asset register compiled for their records',
+            'Responsible recycling with zero landfill — 96% material recovery rate'
+        ],
+        outcomes: [
+            'Complete WEEE compliance with full documentation trail',
+            'Zero cost to the client — entirely funded by material recovery',
+            'Satisfied GDPR obligations for client data protection',
+            'Audit-ready documentation for regulatory requirements',
+            'Environmental impact: 1.2 tonnes diverted from landfill'
         ],
         testimonial: null,
         image: null

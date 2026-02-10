@@ -73,7 +73,7 @@ watch(() => route.path, () => {
 </script>
 
 <template>
-  <nav ref="navRef" class="navbar-root fixed top-0 left-0 right-0 z-40 bg-black/80 backdrop-blur-xl border-b border-white/5">
+  <nav ref="navRef" aria-label="Main navigation" class="navbar-root fixed top-0 left-0 right-0 z-40 bg-black/80 backdrop-blur-xl border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
@@ -103,6 +103,9 @@ watch(() => route.path, () => {
           >
             <button 
               @click.stop="isServicesOpen = !isServicesOpen"
+              aria-haspopup="true"
+              :aria-expanded="isServicesOpen"
+              aria-controls="services-menu"
               class="services-trigger text-sm text-neutral-400 hover:text-white transition-colors flex items-center gap-1 border-b border-transparent hover:border-white/50 pb-0.5"
             >
               Services
@@ -112,7 +115,7 @@ watch(() => route.path, () => {
               class="absolute top-full left-0 pt-4 transition-all duration-200 ease-out z-50"
               :class="isServicesOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'"
             >
-              <div class="bg-neutral-900 border border-white/10 rounded-xl p-2 w-56 shadow-2xl">
+              <div class="bg-neutral-900 border border-white/10 rounded-xl p-2 w-56 shadow-2xl" id="services-menu" role="menu">
                 <router-link 
                   v-for="service in serviceItems" 
                   :key="service.path"

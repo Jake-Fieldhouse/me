@@ -188,28 +188,33 @@ ${form.value.email}
           </div>
           <form @submit.prevent="submitForm" class="flex-1 flex flex-col p-4 gap-3">
             <div>
-              <label class="block text-xs font-medium text-neutral-400 mb-1">Name</label>
+              <label for="contact-name" class="block text-xs font-medium text-neutral-400 mb-1">Name</label>
               <input 
+                id="contact-name"
                 v-model="form.name"
                 type="text" 
                 required
+                autocomplete="name"
                 class="form-input"
                 placeholder="Your name"
               />
             </div>
             <div>
-              <label class="block text-xs font-medium text-neutral-400 mb-1">Email</label>
+              <label for="contact-email" class="block text-xs font-medium text-neutral-400 mb-1">Email</label>
               <input 
+                id="contact-email"
                 v-model="form.email"
                 type="email" 
                 required
+                autocomplete="email"
                 class="form-input"
                 placeholder="you@company.com"
               />
             </div>
             <div class="flex-1 flex flex-col">
-              <label class="block text-xs font-medium text-neutral-400 mb-1">Message</label>
+              <label for="contact-message" class="block text-xs font-medium text-neutral-400 mb-1">Message</label>
               <textarea 
+                id="contact-message"
                 v-model="form.message"
                 required
                 class="form-input flex-1 resize-none"

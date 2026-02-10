@@ -134,28 +134,33 @@ const services = shallowRef([
       <h2 class="text-2xl font-bold text-white mb-8 text-center">Request a Repair Quote</h2>
       <form @submit.prevent="submitForm" class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
         <div>
-          <label class="block text-sm font-medium text-neutral-400 mb-2">Your Name</label>
+          <label for="rs-name" class="block text-sm font-medium text-neutral-400 mb-2">Your Name</label>
           <input 
+            id="rs-name"
             v-model="form.name" 
             type="text" 
             required
+            autocomplete="name"
             class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-red-500" 
             placeholder="John Doe" 
           />
         </div>
         <div>
-          <label class="block text-sm font-medium text-neutral-400 mb-2">Email</label>
+          <label for="rs-email" class="block text-sm font-medium text-neutral-400 mb-2">Email</label>
           <input 
+            id="rs-email"
             v-model="form.email" 
             type="email" 
             required
+            autocomplete="email"
             class="w-full bg-neutral-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-red-500" 
             placeholder="you@email.com" 
           />
         </div>
         <div>
-          <label class="block text-sm font-medium text-neutral-400 mb-2">Device Type</label>
+          <label for="rs-device" class="block text-sm font-medium text-neutral-400 mb-2">Device Type</label>
           <input 
+            id="rs-device"
             v-model="form.device" 
             type="text" 
             required
@@ -164,8 +169,9 @@ const services = shallowRef([
           />
         </div>
         <div>
-          <label class="block text-sm font-medium text-neutral-400 mb-2">Issue Description</label>
+          <label for="rs-issue" class="block text-sm font-medium text-neutral-400 mb-2">Issue Description</label>
           <input 
+            id="rs-issue"
             v-model="form.issue" 
             type="text" 
             required

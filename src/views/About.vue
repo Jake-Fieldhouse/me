@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
+import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
 
 const heroRef = ref<HTMLElement | null>(null)
 const storyRef = ref<HTMLElement | null>(null)
@@ -37,6 +38,8 @@ const values = [
 <template>
   <div class="relative w-full max-w-5xl mx-auto px-6 py-20 flex flex-col gap-20">
     
+    <BreadcrumbSchema :crumbs="[{ name: 'About', url: '/about' }]" />
+
     <header ref="heroRef" class="text-center space-y-6 mt-10">
       <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-4">
         DBS Checked • ICO Registered
@@ -54,7 +57,7 @@ const values = [
       <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-neutral-800 to-neutral-900 border-4 border-neutral-700 overflow-hidden flex items-center justify-center shadow-2xl">
         <picture class="w-full h-full">
           <source srcset="/jake-fieldhouse.avif" type="image/avif" />
-          <img src="/jake-fieldhouse.jpg" alt="Jake Fieldhouse - Director of Jake Fieldhouse Consulting Ltd" class="w-full h-full object-cover object-top" />
+          <img src="/jake-fieldhouse.jpg" alt="Jake Fieldhouse - Director of Jake Fieldhouse Consulting Ltd" class="w-full h-full object-cover object-top" fetchpriority="high" />
         </picture>
       </div>
     </section>

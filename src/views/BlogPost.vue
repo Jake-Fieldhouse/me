@@ -126,7 +126,8 @@ const currentPost = computed(() => {
 const categoryColors: Record<string, string> = {
   'AI Search': 'bg-violet-500/10 text-violet-400 border-violet-500/20',
   'Repair': 'bg-red-500/10 text-red-400 border-red-500/20',
-  'Compliance': 'bg-amber-500/10 text-amber-400 border-amber-500/20'
+  'Compliance': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
+  'IT Support': 'bg-blue-500/10 text-blue-400 border-blue-500/20'
 }
 
 // If post doesn't exist, redirect to blog

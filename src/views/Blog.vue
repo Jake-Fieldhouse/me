@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
 import { blogPosts, categoryColors } from '../data/blogPosts'
 import IconArrowRight from '../components/icons/IconArrowRight.vue'
+import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
 
 const heroRef = ref<HTMLElement | null>(null)
 const postsRef = ref<HTMLElement | null>(null)
@@ -18,6 +19,8 @@ const posts = ref(blogPosts)
   <div class="relative w-full max-w-5xl mx-auto px-6 py-20 flex flex-col gap-16">
     
     <!-- Hero -->
+    <BreadcrumbSchema :crumbs="[{ name: 'Blog', url: '/blog' }]" />
+
     <header ref="heroRef" class="text-center space-y-6 mt-10">
       <div class="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-4">
         Insights & Guides

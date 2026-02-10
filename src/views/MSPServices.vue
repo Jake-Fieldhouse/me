@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
+import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
 import CitedStat from '../components/CitedStat.vue'
 import IconPhone from '../components/icons/IconPhone.vue'
 import IconCheck from '../components/icons/IconCheck.vue'
@@ -12,6 +13,8 @@ import { supportedPlatforms, keyFeatures, serviceTiers, faqs } from '../data/ser
   <div class="relative w-full max-w-7xl mx-auto px-6 py-20 flex flex-col gap-20">
     
     <!-- Hero -->
+    <BreadcrumbSchema :crumbs="[{ name: 'Managed IT Services', url: '/managed-it-services-hull' }]" />
+
     <header class="text-center space-y-6 mt-10 relative">
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl aspect-square bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
       

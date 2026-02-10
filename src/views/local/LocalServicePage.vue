@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { computed, onMounted, watch } from 'vue'
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { locations, services, getLocalPageContent, type Location, type ServiceType } from '../../data/localSeo'
 import TrustBar from '../../components/TrustSignals/TrustBar.vue'
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -33,7 +34,7 @@ const validateRoute = () => {
   }
 }
 
-onMounted(validateRoute)
+
 watch([locationSlug, serviceSlug], validateRoute)
 
 const categoryColors = {
@@ -82,11 +83,77 @@ const relatedServices = computed(() => {
     .filter(s => s.category === service.value?.category)
     .slice(0, 3)
 })
+
+// FAQPage JSON-LD schema for rich snippets
+const faqScriptTag = ref<HTMLScriptElement | null>(null)
+
+const faqItems = computed(() => {
+  if (!location.value || !service.value) return []
+  const loc = location.value
+  const svc = service.value
+  const base = [
+    { q: `Where can I get ${svc.name.toLowerCase()} in ${loc.name}?`, a: `Jake Fieldhouse Consulting provides professional ${svc.name.toLowerCase()} services in ${loc.name} and the ${loc.postcode} postcode area. We offer both on-site visits and mail-in services depending on your needs.` },
+    { q: `How much does ${svc.name.toLowerCase()} cost in ${loc.name}?`, a: `Pricing varies based on the specific requirements of your ${svc.category === 'repair' ? 'repair' : 'project'}. We offer free initial assessments and provide transparent quotes with no hidden fees. Contact us today for a personalized quote.` },
+    { q: `Do you serve areas near ${loc.name}?`, a: `Yes! We serve ${loc.name} and all surrounding areas in ${loc.region}. Our service area includes Hull, Beverley, Driffield, Bridlington, Goole, and the entire East Yorkshire region.` }
+  ]
+  // Category-specific unique FAQs
+  if (svc.category === 'repair') {
+    base.push(
+      { q: `What happens if you can't fix my device in ${loc.name}?`, a: `We operate a strict No Fix, No Fee policy. If we can't repair your device, you don't pay a penny. We'll return it to you free of charge and can advise on replacement options.` },
+      { q: `How long does a typical repair take?`, a: `Most repairs are completed within 2-5 working days. Simple fixes like screen replacements can often be done same-day. We'll give you an estimated turnaround when we assess your device.` }
+    )
+  } else if (svc.category === 'msp') {
+    base.push(
+      { q: `Do you offer out-of-hours IT support for ${loc.name} businesses?`, a: `Yes. Our managed IT packages include 24/7 monitoring with alerting. For critical issues, emergency support is available outside business hours. We're local, so we can be on-site quickly when needed.` },
+      { q: `Can you take over from our current IT provider?`, a: `Absolutely. We handle the full transition process including documentation, credential handover, and system audit. Most migrations are completed within 1-2 weeks with zero downtime.` }
+    )
+  } else {
+    base.push(
+      { q: `Is e-waste collection really free in ${loc.name}?`, a: `Yes — 100% free for qualifying volumes (typically 10+ items or equivalent). We recover value from recyclable materials and components, which funds the service. You receive full WEEE compliance documentation at no cost.` },
+      { q: `What documentation do I receive after e-waste collection?`, a: `You receive a Waste Transfer Note (WTN) as required by law, plus a Certificate of Data Destruction for any data-bearing devices. These documents satisfy GDPR and WEEE compliance requirements for audits.` }
+    )
+  }
+  return base
+})
+
+const injectFaqSchema = () => {
+  if (!faqItems.value.length) return
+  const el = document.createElement('script')
+  el.type = 'application/ld+json'
+  el.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.value.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }))
+  })
+  document.head.appendChild(el)
+  faqScriptTag.value = el
+}
+
+onMounted(() => {
+  validateRoute()
+  injectFaqSchema()
+})
+
+onUnmounted(() => {
+  if (faqScriptTag.value) {
+    document.head.removeChild(faqScriptTag.value)
+  }
+})
 </script>
 
 <template>
   <div v-if="isValid" class="relative w-full max-w-7xl mx-auto px-6 py-20 flex flex-col gap-16">
     
+    <!-- Breadcrumb -->
+    <BreadcrumbSchema v-if="location && service" :crumbs="[
+      { name: 'Service Areas', url: '/service-areas' },
+      { name: `${service.name} in ${location.name}`, url: `/${location.slug}-${service.slug}` }
+    ]" />
+
     <!-- Hero Section -->
     <header class="text-center space-y-6 mt-10 relative" v-if="location && service && content">
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-auto aspect-square opacity-10 rounded-full blur-3xl pointer-events-none"
@@ -186,42 +253,18 @@ const relatedServices = computed(() => {
     </section>
 
     <!-- FAQ Section for LLM/AI Optimization -->
-    <section class="max-w-3xl mx-auto space-y-8" v-if="location && service">
+    <section class="max-w-3xl mx-auto space-y-8" v-if="location && service && faqItems.length">
       <h2 class="text-3xl font-bold text-white text-center">
         {{ service.name }} in {{ location.name }} - FAQs
       </h2>
       
       <div class="space-y-4">
-        <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
+        <div v-for="(faq, index) in faqItems" :key="index" class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
           <h3 class="text-lg font-bold text-white mb-2">
-            Where can I get {{ service.name.toLowerCase() }} in {{ location.name }}?
+            {{ faq.q }}
           </h3>
           <p class="text-neutral-400">
-            Jake Fieldhouse Consulting provides professional {{ service.name.toLowerCase() }} services 
-            in {{ location.name }} and the {{ location.postcode }} postcode area. We offer both on-site 
-            visits and mail-in services depending on your needs.
-          </p>
-        </div>
-        
-        <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
-          <h3 class="text-lg font-bold text-white mb-2">
-            How much does {{ service.name.toLowerCase() }} cost in {{ location.name }}?
-          </h3>
-          <p class="text-neutral-400">
-            Pricing varies based on the specific requirements of your {{ service.category === 'repair' ? 'repair' : 'project' }}. 
-            We offer free initial assessments and provide transparent quotes with no hidden fees. 
-            Contact us today for a personalized quote.
-          </p>
-        </div>
-        
-        <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
-          <h3 class="text-lg font-bold text-white mb-2">
-            Do you serve areas near {{ location.name }}?
-          </h3>
-          <p class="text-neutral-400">
-            Yes! We serve {{ location.name }} and all surrounding areas in {{ location.region }}. 
-            Our service area includes Hull, Beverley, Driffield, Bridlington, Goole, and the 
-            entire East Yorkshire region.
+            {{ faq.a }}
           </p>
         </div>
       </div>
