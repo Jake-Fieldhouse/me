@@ -18,6 +18,7 @@ defineProps<{
       rel="noopener noreferrer"
       class="inline-flex items-center ml-1 text-neutral-500 hover:text-neutral-300 transition-colors"
       :title="`Source: ${source}${year ? ` (${year})` : ''}`"
+      :aria-label="`Source: ${source}${year ? ` (${year})` : ''}`"
     >
       <IconExternalLink class="w-3.5 h-3.5" />
     </a>

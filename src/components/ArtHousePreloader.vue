@@ -27,9 +27,9 @@ defineProps<{
 
     <div class="relative z-10 h-full w-full flex items-center justify-center">
       <div class="flex flex-col items-center">
-        <h1 class="animate-preloader-title text-6xl md:text-8xl font-black tracking-tighter text-white uppercase text-center leading-none text-readable-strong">
+        <p class="animate-preloader-title text-6xl md:text-8xl font-black tracking-tighter text-white uppercase text-center leading-none text-readable-strong" aria-hidden="true">
           Jake<br>Fieldhouse
-        </h1>
+        </p>
 
         <p class="animate-preloader-tagline mt-5 text-[10px] md:text-sm font-medium tracking-[0.2em] md:tracking-[0.45em] text-neutral-200 uppercase text-center px-4">
           ENTERPRISE IT • HARDWARE REPAIR • EWASTE

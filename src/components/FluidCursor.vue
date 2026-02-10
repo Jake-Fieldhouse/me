@@ -1483,7 +1483,6 @@ onMounted(() => {
     :class="[props.class]"
   >
     <canvas
-      id="fluid"
       ref="canvasRef"
       class="block w-full h-full"
     />
