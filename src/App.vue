@@ -17,7 +17,7 @@
  */
 const MAINTENANCE_MODE = false
 
-import FluidCursor from './components/FluidCursor.vue'
+
 import AuroraBackground from './components/AuroraBackground.vue'
 import ArtHousePreloader from './components/ArtHousePreloader.vue'
 import CookieConsent from './components/CookieConsent.vue'
@@ -29,7 +29,7 @@ import { ref, onMounted } from 'vue'
 import { useToast } from './composables/useToast'
 
 const isLoading = ref(true)
-const showFluidCursor = ref(true)
+
 const { toastMessage, showToast } = useToast()
 const HOME_PRELOADER_DELAY_MS = 3500
 const PAGE_PRELOADER_DELAY_MS = 900
@@ -49,20 +49,7 @@ onMounted(() => {
     }
 
     // Normal operation below (only runs when MAINTENANCE_MODE = false)
-    const deviceMemory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory
-    const networkInfo = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection
-    const lowMemoryDevice = typeof deviceMemory === 'number' && deviceMemory <= 4
-    const dataSaverMode = networkInfo?.saveData === true
-    const slowConnection = typeof networkInfo?.effectiveType === 'string'
-      && ['slow-2g', '2g', '3g'].includes(networkInfo.effectiveType)
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0
-    const coarsePointer = window.matchMedia('(pointer: coarse)').matches
-    const touchPrimaryInput = hasTouch && coarsePointer
-    const desktopLikeViewport = window.matchMedia('(min-width: 1024px)').matches
-    const constrainedDevice = lowMemoryDevice || dataSaverMode || slowConnection
-    const reducedFxContext = constrainedDevice || touchPrimaryInput || prefersReducedMotion
-    showFluidCursor.value = desktopLikeViewport && !reducedFxContext && !prefersReducedMotion
 
     const currentPath = window.location.pathname || '/'
     const isHomeRoute = currentPath === '/'
@@ -95,8 +82,6 @@ onMounted(() => {
     <!-- In maintenance mode, this NEVER goes away -->
     <ArtHousePreloader :loading="isLoading" />
 
-    <!-- Cursor Layer (Z-50, smoke sits ON TOP of preloader) -->
-    <FluidCursor v-if="showFluidCursor" class="fixed inset-0 z-50 pointer-events-none" :intro-mode="isLoading" />
 
     <!-- Keep layout mounted to avoid CLS when preloader ends -->
     <div

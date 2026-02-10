@@ -163,6 +163,56 @@ const posts: Record<string, BlogPost> = {
       
       <p>Our registration number is <strong>CBDU508692</strong> and you can verify it on the EA public register any time. We provide WTNs, Certificates of Destruction, and asset registers as standard on every collection. <a href="/secure-data-disposal-hull">Book a free collection</a> and see the difference a properly licensed operator makes.</p>
     `
+  },
+  'what-happens-to-your-old-laptop': {
+    title: 'What Happens to Your Old Laptop After We Collect It',
+    date: '2026-02-10',
+    category: 'E-Waste',
+    readTime: '6 min read',
+    author: 'Jake Fieldhouse',
+    content: `
+      <p>You've booked a free collection. We've loaded the van. Your old desktops, laptops, and servers are gone. But what actually happens next?</p>
+
+      <p>Transparent disposal is a trust issue. If you're handing over hardware that may contain client records, financial data, or login credentials, you deserve to know exactly where it ends up. Here's the step-by-step process from collection to certificate.</p>
+
+      <h2>Step 1: Asset Logging</h2>
+      <p>Every item is logged on arrival — serial number, manufacturer, model, and condition. This becomes the <strong>Asset Register</strong> that forms part of your compliance documentation. It's the receipted proof that equipment left your premises and entered a controlled chain of custody.</p>
+
+      <h2>Step 2: Data Destruction</h2>
+      <p>This is the critical stage and the one most businesses get wrong when they use unregistered collectors.</p>
+      <ul>
+        <li><strong>Working drives</strong>: Overwritten using NIST 800-88 compliant software (multiple-pass erasure)</li>
+        <li><strong>Failed or encrypted drives</strong>: Physically shredded — we don't gamble on whether a dead drive is truly unreadable</li>
+        <li><strong>SSDs and NVMe</strong>: Secure erase commands issued at firmware level, then verified</li>
+      </ul>
+      <p>Once complete, you receive a <strong>Certificate of Destruction</strong> documenting the method used, date, and operator. This is the document auditors and the ICO will ask for.</p>
+
+      <h2>Step 3: Triage — Refurbish or Recycle?</h2>
+      <p>Not everything is scrap. We assess each item against three criteria:</p>
+      <ul>
+        <li><strong>Functional value</strong>: Can it run a modern OS and serve another user?</li>
+        <li><strong>Component value</strong>: Are specific parts (screens, RAM, batteries) worth harvesting?</li>
+        <li><strong>Material value</strong>: If neither, what's the most responsible recycling route?</li>
+      </ul>
+      <p>Equipment that passes functional testing gets wiped, refurbished, and redeployed — often to schools, charities, or SMBs who need reliable hardware without the price tag. This is how we make 'free collection' economically viable: the residual value funds the service.</p>
+
+      <h2>Step 4: WEEE-Compliant Recycling</h2>
+      <p>Items that can't be reused are broken down by material type — metals, plastics, circuit boards — and sent to ATFs (Authorised Treatment Facilities) for compliant processing. Nothing goes to landfill. Our <strong>Zero Landfill policy</strong> means every gram is either reused, recovered, or recycled.</p>
+
+      <h2>Step 5: Your Compliance Pack</h2>
+      <p>Within 48 hours of collection, you receive:</p>
+      <ul>
+        <li>Asset Register (every item logged)</li>
+        <li>Certificate of Destruction (per data-bearing device)</li>
+        <li>Waste Transfer Note (legal proof of responsible transfer)</li>
+        <li>Environmental summary (reuse vs. recycle ratio)</li>
+      </ul>
+
+      <h2>Why This Matters</h2>
+      <p>Under GDPR Article 5(1)(f), you are the data controller even after equipment leaves your building. Using an unregistered collector can mean <strong>unlimited fines</strong> if data surfaces later. Our EA registration (<strong>CBDU508692</strong>) and documented chain-of-custody protects you.</p>
+
+      <p>Ready to clear old equipment the right way? <a href="/secure-data-disposal-hull">Book a free collection</a> — every item logged, every drive destroyed, every certificate delivered.</p>
+    `
   }
 }
 

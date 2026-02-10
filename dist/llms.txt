@@ -93,6 +93,41 @@ Component-level repair capabilities including BGA rework, micro-soldering, and c
 
 ---
 
+## Blog
+
+Practical guides and industry insight from Jake Fieldhouse, covering AI search, hardware repair, and IT compliance.
+
+| Post | URL |
+|------|-----|
+| Why ChatGPT Can't Find Your Business (Yet) | https://jakefieldhouse.co.uk/blog/why-ai-cant-find-your-business |
+| MacBook Won't Turn On? Repair vs Replace Guide | https://jakefieldhouse.co.uk/blog/macbook-repair-vs-replace-guide |
+| WEEE Regulations 2025: What Hull Businesses Need to Know | https://jakefieldhouse.co.uk/blog/weee-regulations-2025-business-guide |
+| How to Check if Your IT Provider Is EA Licensed for E-Waste | https://jakefieldhouse.co.uk/blog/check-it-provider-ea-licensed |
+
+---
+
+## Case Studies
+
+Real client outcomes demonstrating measurable impact across IT, repair, and e-waste services.
+
+| Case Study | URL |
+|------------|-----|
+| Little Learners Nursery — MSP IT Overhaul | https://jakefieldhouse.co.uk/case-studies |
+| Frisby's Aquatics — Specialist Repair & Recovery | https://jakefieldhouse.co.uk/case-studies |
+| Regional Accountancy Firm — Office E-Waste Clearance (York) | https://jakefieldhouse.co.uk/case-studies |
+
+---
+
+## Service Areas
+
+Primary: Hull (HU1–HU17), Beverley, Cottingham, Hessle, Brough, Anlaby, Willerby, Kirk Ella.
+Expanded: York, Driffield, Bridlington, Goole, Scunthorpe.
+Nationwide: E-waste collection and remote IT support available UK-wide.
+
+Dedicated local pages: https://jakefieldhouse.co.uk/service-areas
+
+---
+
 ## Key Pages
 
 | Page | URL |
@@ -106,6 +141,9 @@ Component-level repair capabilities including BGA rework, micro-soldering, and c
 | Contact | https://jakefieldhouse.co.uk/contact |
 | Compliance | https://jakefieldhouse.co.uk/compliance |
 | Service Areas | https://jakefieldhouse.co.uk/service-areas |
+| Blog | https://jakefieldhouse.co.uk/blog |
+| Case Studies | https://jakefieldhouse.co.uk/case-studies |
+| Feedback | https://jakefieldhouse.co.uk/feedback |
 
 ---
 
@@ -178,5 +216,5 @@ These endpoints provide structured data for AI systems and agentic commerce:
 
 ---
 
-*Last Updated: 9 February 2026*
+*Last Updated: 10 February 2026*
 

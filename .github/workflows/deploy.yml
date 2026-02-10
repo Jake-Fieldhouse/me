@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: "npm"
       - name: Install dependencies
         run: npm ci
       - name: Build
@@ -34,7 +34,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: "./dist"
 
   deploy:
     environment:
@@ -46,7 +46,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      
+
       # Notify AI crawlers of content update via IndexNow
       - name: Ping IndexNow (Bing/Yandex/AI Crawlers)
         run: |
@@ -54,4 +54,8 @@ jobs:
           curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/sitemap.xml&key=a203532bbd3446768af8ae56145b0d24"
           curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/secure-data-disposal-hull/&key=a203532bbd3446768af8ae56145b0d24"
           curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/compliance/&key=a203532bbd3446768af8ae56145b0d24"
-          echo "IndexNow pings sent for homepage, sitemap, e-waste, and compliance pages"
+          curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/blog/&key=a203532bbd3446768af8ae56145b0d24"
+          curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/case-studies/&key=a203532bbd3446768af8ae56145b0d24"
+          curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/service-areas/&key=a203532bbd3446768af8ae56145b0d24"
+          curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/blog/check-it-provider-ea-licensed/&key=a203532bbd3446768af8ae56145b0d24"
+          echo "IndexNow pings sent for homepage, sitemap, e-waste, compliance, blog, case studies, service areas"

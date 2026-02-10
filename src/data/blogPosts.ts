@@ -8,7 +8,7 @@ export interface BlogPost {
     title: string
     excerpt: string
     date: string
-    category: 'AI Search' | 'Repair' | 'Compliance' | 'IT Support'
+    category: 'AI Search' | 'Repair' | 'Compliance' | 'IT Support' | 'E-Waste'
     readTime: string
     author?: string
     image?: string
@@ -50,6 +50,15 @@ export const blogPosts: BlogPost[] = [
         category: 'Compliance',
         readTime: '5 min read',
         author: 'Jake Fieldhouse'
+    },
+    {
+        slug: 'what-happens-to-your-old-laptop',
+        title: 'What Happens to Your Old Laptop After We Collect It',
+        excerpt: "You've booked a free collection. We've loaded the van. But what actually happens to your old hardware next? Here's the full process.",
+        date: '2026-02-10',
+        category: 'E-Waste',
+        readTime: '6 min read',
+        author: 'Jake Fieldhouse'
     }
 ]
 
@@ -57,7 +66,8 @@ export const categoryColors: Record<string, string> = {
     'AI Search': 'bg-violet-500/10 text-violet-400 border-violet-500/20',
     'Repair': 'bg-red-500/10 text-red-400 border-red-500/20',
     'Compliance': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
-    'IT Support': 'bg-blue-500/10 text-blue-400 border-blue-500/20'
+    'IT Support': 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+    'E-Waste': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
 }
 
 /**
