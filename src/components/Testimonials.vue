@@ -1,7 +1,8 @@
 <script setup lang="ts">
 // Testimonials Component with B2B/B2C split
 // Ready to be populated with real testimonials when available
-import { ref, computed } from 'vue'
+// Auto-generates Schema.org Review + AggregateRating JSON-LD when testimonials exist
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { testimonials, categoryLabels } from '../data/testimonials'
 import IconStar from './icons/IconStar.vue'
 
@@ -13,6 +14,63 @@ const filteredTestimonials = computed(() => {
 })
 
 const showPlaceholder = testimonials.length === 0
+
+// Schema.org Review + AggregateRating injection
+const schemaScriptId = 'testimonials-review-schema'
+
+function injectReviewSchema() {
+  if (testimonials.length === 0) return
+
+  const avgRating = (testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length).toFixed(1)
+
+  const reviews = testimonials.map(t => ({
+    '@type': 'Review',
+    author: {
+      '@type': 'Person',
+      name: t.name
+    },
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: t.rating,
+      bestRating: 5
+    },
+    reviewBody: t.quote,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Jake Fieldhouse Consulting Ltd'
+    }
+  }))
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': 'https://jakefieldhouse.co.uk/#reviews',
+    name: 'Jake Fieldhouse Consulting Ltd',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: avgRating,
+      reviewCount: testimonials.length,
+      bestRating: 5,
+      worstRating: 1
+    },
+    review: reviews
+  }
+
+  const script = document.createElement('script')
+  script.id = schemaScriptId
+  script.type = 'application/ld+json'
+  script.textContent = JSON.stringify(schema)
+  document.head.appendChild(script)
+}
+
+onMounted(() => {
+  injectReviewSchema()
+})
+
+onUnmounted(() => {
+  const existing = document.getElementById(schemaScriptId)
+  if (existing) existing.remove()
+})
 </script>
 
 <template>

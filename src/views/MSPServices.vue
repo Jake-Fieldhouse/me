@@ -5,8 +5,16 @@ import CitedStat from '../components/CitedStat.vue'
 import IconPhone from '../components/icons/IconPhone.vue'
 import IconCheck from '../components/icons/IconCheck.vue'
 import IconArrowRight from '../components/icons/IconArrowRight.vue'
+import { useOgMeta } from '../composables/useOgMeta'
 // Import dynamic data
 import { supportedPlatforms, keyFeatures, serviceTiers, faqs } from '../data/services'
+
+useOgMeta({
+  title: 'Managed IT Services Hull | 24/7 Monitoring & Support',
+  description: '24/7 infrastructure monitoring, EDR security, Microsoft 365 management for Hull businesses. Enterprise protection, local response.',
+  image: '/images/og-msp.svg',
+  url: '/managed-it-services-hull'
+})
 </script>
 
 <template>

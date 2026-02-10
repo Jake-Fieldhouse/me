@@ -47,15 +47,11 @@ useScrollReveal(gridRef, { delay: 0, y: 56 })
           >
             Get Repair Quote
           </router-link>
-        </div>
-        <!-- Secondary CTA: E-Waste -->
-        <div class="pt-2">
           <router-link 
             to="/secure-data-disposal-hull" 
-            class="text-sm text-emerald-400 hover:text-emerald-300 transition-colors inline-flex items-center gap-2"
+            class="px-8 py-3 border border-emerald-500/30 text-emerald-400 font-medium rounded-full hover:bg-emerald-500/10 transition-all"
           >
-            ♻️ Free E-Waste Collection & ITAD
-            <span class="text-xs opacity-60">→</span>
+            ♻️ Book Free Collection
           </router-link>
         </div>
       </header>
@@ -120,7 +116,7 @@ useScrollReveal(gridRef, { delay: 0, y: 56 })
                 <div class="flex flex-1 w-full h-full min-h-24 rounded-xl bg-gradient-to-br from-amber-900/50 to-neutral-900" />
              </template>
              <div class="mt-4 flex items-center text-amber-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
-                Get in Touch <span class="ml-1">→</span>
+                Book Free Collection <span class="ml-1">→</span>
              </div>
           </BentoItem>
         </BentoGrid>

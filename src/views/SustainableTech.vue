@@ -4,10 +4,18 @@ import TrustBar from '../components/TrustSignals/TrustBar.vue'
 import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
 import { useToast } from '../composables/useToast'
+import { useOgMeta } from '../composables/useOgMeta'
 import IconFileCheck from '../components/icons/IconFileCheck.vue'
 import IconRecycle from '../components/icons/IconRecycle.vue'
 import IconShieldCheck from '../components/icons/IconShieldCheck.vue'
 import IconCheck from '../components/icons/IconCheck.vue'
+
+useOgMeta({
+  title: 'E-Waste Collection Hull | Free Business IT Disposal',
+  description: 'Free GDPR-compliant e-waste collection for Hull businesses. EA licensed. NIST 800-88 data destruction. Zero landfill.',
+  image: '/images/og-ewaste.svg',
+  url: '/secure-data-disposal-hull'
+})
 
 const headerRef = ref<HTMLElement | null>(null)
 const statsRef = ref<HTMLElement | null>(null)

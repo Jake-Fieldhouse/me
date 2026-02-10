@@ -3,7 +3,15 @@ import { ref } from 'vue'
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
 import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
 import { useToast } from '../composables/useToast'
+import { useOgMeta } from '../composables/useOgMeta'
 import IconChip from '../components/icons/IconChip.vue'
+
+useOgMeta({
+  title: 'Repair Ninja | Microsoldering & Board Repair Hull',
+  description: 'Component-level microsoldering for MacBooks, PS5s, and smartphones. No Fix, No Fee. Based in Hull.',
+  image: '/images/og-repair.svg',
+  url: '/microsoldering-repair-hull'
+})
 import IconDroplet from '../components/icons/IconDroplet.vue'
 import IconShieldCheck from '../components/icons/IconShieldCheck.vue'
 
