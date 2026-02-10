@@ -115,6 +115,54 @@ const posts: Record<string, BlogPost> = {
       
       <p><a href="/secure-data-disposal-hull">Free e-waste collection</a> includes NIST 800-88 data destruction, Certificates of Destruction, and full Waste Transfer Notes. Everything you need for audit-ready compliance.</p>
     `
+  },
+  'check-it-provider-ea-licensed': {
+    title: 'How to Check if Your IT Provider Is EA Licensed for E-Waste',
+    date: '2026-02-10',
+    category: 'Compliance',
+    readTime: '5 min read',
+    author: 'Jake Fieldhouse',
+    content: `
+      <p class="lead">Before handing over old computers, servers, or printers to anyone, you need to verify they're legally allowed to handle them. Unlicensed disposal is your liability, not theirs. Here's exactly how to check.</p>
+      
+      <h2>Why Does It Matter?</h2>
+      <p>Under the Environmental Protection Act 1990 and the Waste (England and Wales) Regulations 2011, businesses have a <strong>Duty of Care</strong> to ensure their waste is handled by an authorised person. If your "IT recycler" dumps electronics illegally, the Environment Agency traces the waste back to <em>you</em>. Fines start at £5,000 for a fixed penalty notice and can reach <strong>unlimited fines and imprisonment</strong> for serious cases.</p>
+      
+      <h2>Step 1: Ask for Their Registration Number</h2>
+      <p>Any legitimate waste carrier will have a CBDL (Carrier, Broker, Dealer, Licence) registration number. It looks like <strong>CBDU/CBDL followed by numbers</strong> (e.g., CBDU508692). If they can't produce this on request, walk away.</p>
+      
+      <h2>Step 2: Verify on the EA Public Register</h2>
+      <p>Go to the <a href="https://environment.data.gov.uk/public-register/waste-carriers-and-brokers" target="_blank" rel="noopener">Environment Agency Public Register</a> and search their registration number or company name. You'll see:</p>
+      <ul>
+        <li><strong>Registration status</strong>: Active, expired, or revoked</li>
+        <li><strong>Type</strong>: Upper tier (required for most IT waste) or lower tier</li>
+        <li><strong>Company details</strong>: Registered name and address</li>
+        <li><strong>Expiry date</strong>: Registrations must be renewed — an expired one is as bad as none</li>
+      </ul>
+      
+      <h2>Step 3: Check for Upper Tier Registration</h2>
+      <p>There are two tiers of waste carrier registration. <strong>Lower tier</strong> is for businesses carrying their own non-construction waste — it's free and basic. <strong>Upper tier</strong> is required for anyone carrying other people's waste commercially. If your IT provider is collecting your equipment for disposal, they need upper tier registration.</p>
+      
+      <h2>Step 4: Request Documentation Upfront</h2>
+      <p>Before any collection, a compliant provider should offer:</p>
+      <ol>
+        <li><strong>Waste Transfer Note (WTN)</strong>: legally required for every transfer of waste between parties</li>
+        <li><strong>Certificate of Data Destruction</strong>: not legally required but essential for GDPR compliance</li>
+        <li><strong>Asset register</strong>: a list of exactly what was collected, with serial numbers where possible</li>
+      </ol>
+      <p>If they can't provide all three, they're cutting corners.</p>
+      
+      <h2>Red Flags to Watch For</h2>
+      <ul>
+        <li>No registration number when asked</li>
+        <li>Offering to "just take it off your hands" with no paperwork</li>
+        <li>Cash-in-hand operations or Facebook Marketplace-style pickups</li>
+        <li>No fixed business address or company registration</li>
+        <li>Refusing to provide a WTN</li>
+      </ul>
+      
+      <p>Our registration number is <strong>CBDU508692</strong> and you can verify it on the EA public register any time. We provide WTNs, Certificates of Destruction, and asset registers as standard on every collection. <a href="/secure-data-disposal-hull">Book a free collection</a> and see the difference a properly licensed operator makes.</p>
+    `
   }
 }
 

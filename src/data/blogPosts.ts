@@ -41,6 +41,15 @@ export const blogPosts: BlogPost[] = [
         category: 'Compliance',
         readTime: '6 min read',
         author: 'Jake Fieldhouse'
+    },
+    {
+        slug: 'check-it-provider-ea-licensed',
+        title: 'How to Check if Your IT Provider Is EA Licensed for E-Waste',
+        excerpt: "Before handing over old IT equipment, verify the collector is legally authorised. Here's a step-by-step guide to checking EA registration.",
+        date: '2026-02-10',
+        category: 'Compliance',
+        readTime: '5 min read',
+        author: 'Jake Fieldhouse'
     }
 ]
 
