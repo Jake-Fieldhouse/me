@@ -13,8 +13,15 @@ const isContactPage = computed(() => route.path === '/contact')
 const isVisible = ref(false)
 const SCROLL_THRESHOLD = 400 // pixels to scroll before showing
 
+// rAF-throttled scroll handler — reads scrollY at most once per frame
+let scrollTicking = false
 function handleScroll() {
-  isVisible.value = window.scrollY > SCROLL_THRESHOLD
+  if (scrollTicking) return
+  scrollTicking = true
+  requestAnimationFrame(() => {
+    isVisible.value = window.scrollY > SCROLL_THRESHOLD
+    scrollTicking = false
+  })
 }
 
 onMounted(() => {

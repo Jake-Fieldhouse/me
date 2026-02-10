@@ -7,10 +7,35 @@ interface ScrollRevealOptions {
     stagger?: number
 }
 
+// Inject scroll-reveal stylesheet once globally
+let styleInjected = false
+function injectScrollRevealStyles(y: number, duration: number) {
+    if (styleInjected) return
+    styleInjected = true
+    const style = document.createElement('style')
+    style.textContent = `
+        .sr-initial {
+            opacity: 0;
+            transform: translateY(${y}px);
+            transition: opacity ${duration}s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform ${duration}s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .sr-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .sr-reduced {
+            opacity: 1;
+            transform: none;
+        }
+    `
+    document.head.appendChild(style)
+}
+
 /**
  * Native CSS scroll-driven reveal animation
  * Zero-dependency replacement for GSAP ScrollTrigger
- * Uses IntersectionObserver + CSS animations for performance
+ * Uses IntersectionObserver + CSS class toggles for performance
  */
 export function useScrollReveal(elementRef: Ref<HTMLElement | null>, options: ScrollRevealOptions = {}) {
     let observer: IntersectionObserver | null = null
@@ -25,27 +50,24 @@ export function useScrollReveal(elementRef: Ref<HTMLElement | null>, options: Sc
     onMounted(() => {
         if (!elementRef.value) return
 
+        injectScrollRevealStyles(y, duration)
+
         // Respect user's motion preferences
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
         if (prefersReducedMotion) {
-            elementRef.value.style.opacity = '1'
-            elementRef.value.style.transform = 'none'
+            elementRef.value.classList.add('sr-reduced')
             return
         }
 
-        // Set initial state
-        elementRef.value.style.opacity = '0'
-        elementRef.value.style.transform = `translateY(${y}px)`
-        elementRef.value.style.transition = `opacity ${duration}s cubic-bezier(0.16, 1, 0.3, 1), transform ${duration}s cubic-bezier(0.16, 1, 0.3, 1)`
-        elementRef.value.style.transitionDelay = `${delay}s`
+        // Set initial state via class (single reflow) + per-element delay via inline style
+        elementRef.value.classList.add('sr-initial')
+        if (delay) elementRef.value.style.transitionDelay = `${delay}s`
 
-        // Handle staggered children
+        // Handle staggered children — batch class additions
         const children = elementRef.value.querySelectorAll('.scroll-reveal')
         children.forEach((child, index) => {
             const el = child as HTMLElement
-            el.style.opacity = '0'
-            el.style.transform = `translateY(${y}px)`
-            el.style.transition = `opacity ${duration}s cubic-bezier(0.16, 1, 0.3, 1), transform ${duration}s cubic-bezier(0.16, 1, 0.3, 1)`
+            el.classList.add('sr-initial')
             el.style.transitionDelay = `${delay + (index * stagger)}s`
         })
 
@@ -54,15 +76,12 @@ export function useScrollReveal(elementRef: Ref<HTMLElement | null>, options: Sc
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         const el = entry.target as HTMLElement
-                        el.style.opacity = '1'
-                        el.style.transform = 'translateY(0)'
+                        el.classList.add('sr-visible')
 
                         // Also reveal staggered children
                         const children = el.querySelectorAll('.scroll-reveal')
                         children.forEach((child) => {
-                            const childEl = child as HTMLElement
-                            childEl.style.opacity = '1'
-                            childEl.style.transform = 'translateY(0)'
+                            (child as HTMLElement).classList.add('sr-visible')
                         })
                     }
                 })

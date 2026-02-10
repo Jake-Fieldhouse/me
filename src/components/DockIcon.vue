@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 
 const props = defineProps<{
   item: { title: string; icon: string; href: string };
@@ -8,26 +8,36 @@ const props = defineProps<{
 
 const iconRef = ref<HTMLElement | null>(null);
 
-// Calculate distance and scale
-const width = computed(() => {
-  if (!iconRef.value || props.mouseX === Infinity) return 40; // Base width 40px (w-10)
+// Cache rect to avoid forced layout in computed (was calling getBoundingClientRect ~60x/sec)
+const cachedRect = ref<{ left: number; width: number }>({ left: 0, width: 0 });
 
-  const rect = iconRef.value.getBoundingClientRect();
-  const iconCenterX = rect.left + rect.width / 2;
+function updateCachedRect() {
+  if (iconRef.value) {
+    const rect = iconRef.value.getBoundingClientRect();
+    cachedRect.value = { left: rect.left, width: rect.width };
+  }
+}
+
+// Update cache on resize (layout changes)
+onMounted(() => {
+  window.addEventListener('resize', updateCachedRect, { passive: true });
+});
+onUnmounted(() => {
+  window.removeEventListener('resize', updateCachedRect);
+});
+
+// Calculate distance and scale using cached rect (no forced layout)
+const width = computed(() => {
+  if (!iconRef.value || props.mouseX === Infinity) return 40;
+
+  const iconCenterX = cachedRect.value.left + cachedRect.value.width / 2;
   const distance = Math.abs(props.mouseX - iconCenterX);
 
-  // Gaussian-ish decay
-  // Max width = 80px ? (w-20)
-  // Distance where effect matches base = 150px
-  
   if (distance > 150) return 40;
 
   const maxScale = 80;
   const minScale = 40;
-  
-  // True fancy curve:
   const val = distance / 150;
-  // Cosine interpolation for smoother bell curve
   const scale = minScale + (maxScale - minScale) * Math.cos(val * Math.PI / 2);
 
   return scale; 
@@ -39,6 +49,7 @@ const width = computed(() => {
     ref="iconRef"
     class="relative flex flex-col items-center justify-center transition-all duration-75 ease-out cursor-pointer"
     :style="{ width: `${width}px`, height: `${width}px` }" 
+    @mouseenter="updateCachedRect"
   >
       <!-- We animate the anchor tag wrapper size -->
       <a
