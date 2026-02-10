@@ -20,12 +20,13 @@ const MAINTENANCE_MODE = false
 
 import AuroraBackground from './components/AuroraBackground.vue'
 import ArtHousePreloader from './components/ArtHousePreloader.vue'
-import CookieConsent from './components/CookieConsent.vue'
-import StickyCTA from './components/StickyCTA.vue'
+// Async-load non-critical components to reduce initial main-thread work
+const CookieConsent = defineAsyncComponent(() => import('./components/CookieConsent.vue'))
+const StickyCTA = defineAsyncComponent(() => import('./components/StickyCTA.vue'))
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
-import Toast from './components/Toast.vue'
-import { ref, onMounted } from 'vue'
+const Toast = defineAsyncComponent(() => import('./components/Toast.vue'))
+import { ref, onMounted, defineAsyncComponent } from 'vue'
 import { useToast } from './composables/useToast'
 
 const isLoading = ref(true)

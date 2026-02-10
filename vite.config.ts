@@ -41,7 +41,8 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['vue', 'vue-router']
+          vendor: ['vue', 'vue-router'],
+          icons: ['lucide-vue-next']
         }
       }
     }

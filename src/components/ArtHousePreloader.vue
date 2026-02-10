@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import FluidCursor from './FluidCursor.vue'
+import { defineAsyncComponent } from 'vue'
+
+// Code-split: FluidCursor (46KB WebGL) loads as a separate chunk
+// The preloader is visible for 3.5s anyway, so this has zero visual impact
+const FluidCursor = defineAsyncComponent(() => import('./FluidCursor.vue'))
 
 defineProps<{
   loading: boolean
