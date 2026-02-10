@@ -314,7 +314,7 @@ const scrollToComparison = () => {
                        <div class="w-10 h-10 bg-green-500/10 rounded-full mx-auto mb-2 flex items-center justify-center">
                            <IconShieldCheck class="w-5 h-5 text-green-600" />
                        </div>
-                       <h4 class="text-sm font-bold text-neutral-900 tracking-wide uppercase">Certificate of Destruction</h4>
+                       <p class="text-sm font-bold text-neutral-900 tracking-wide uppercase">Certificate of Destruction</p>
                        <p class="text-xs text-neutral-500 mt-1">Jake Fieldhouse Consulting Ltd</p>
                    </div>
                    <!-- Body -->
