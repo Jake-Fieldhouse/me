@@ -1,6 +1,25 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { Building2, Fish, Recycle, ArrowRight, Quote, CheckCircle2 } from 'lucide-vue-next'
 import type { Component } from 'vue'
+import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
+import { useOgMeta } from '../composables/useOgMeta'
+import { useScrollReveal } from '../composables/useScrollReveal'
+
+const headerRef = ref<HTMLElement | null>(null)
+const studiesRef = ref<HTMLElement | null>(null)
+const ctaRef = ref<HTMLElement | null>(null)
+
+useScrollReveal(headerRef)
+useScrollReveal(studiesRef, { delay: 0.2, stagger: 0.15 })
+useScrollReveal(ctaRef, { delay: 0.2 })
+
+useOgMeta({
+  title: 'Case Studies | IT Infrastructure & E-Waste Projects',
+  description: 'Real projects, real results. See how Jake Fieldhouse Consulting has helped local businesses transform their IT infrastructure, from biometric access to WEEE-compliant disposal.',
+  image: '/images/og-case-studies.svg',
+  url: '/case-studies'
+})
 
 interface CaseStudy {
     id: string
@@ -98,8 +117,10 @@ const caseStudies: CaseStudy[] = [
 <template>
     <div class="relative z-10 min-h-screen pt-32 pb-20 px-6 max-w-5xl mx-auto text-white">
         
+        <BreadcrumbSchema :crumbs="[{ name: 'Case Studies', url: '/case-studies' }]" />
+
         <!-- Header -->
-        <div class="mb-16">
+        <div ref="headerRef" class="mb-16">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">Case Studies</h1>
             <p class="text-xl text-neutral-400 max-w-2xl">
                 Real projects, real results. See how we've helped local businesses 
@@ -108,7 +129,7 @@ const caseStudies: CaseStudy[] = [
         </div>
 
         <!-- Case Studies Grid -->
-        <div class="space-y-12">
+        <div ref="studiesRef" class="space-y-12">
             <article 
                 v-for="study in caseStudies" 
                 :key="study.id"
@@ -183,7 +204,7 @@ const caseStudies: CaseStudy[] = [
         </div>
 
         <!-- CTA -->
-        <div class="mt-16 text-center bg-gradient-to-r from-neutral-900 to-neutral-800 rounded-2xl p-8 border border-white/5">
+        <div ref="ctaRef" class="mt-16 text-center bg-gradient-to-r from-neutral-900 to-neutral-800 rounded-2xl p-8 border border-white/5">
             <h3 class="text-2xl font-bold mb-4">Ready to Transform Your IT?</h3>
             <p class="text-neutral-400 mb-6 max-w-lg mx-auto">
                 Whether you need a full infrastructure overhaul or a targeted digital solution, 
