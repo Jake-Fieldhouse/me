@@ -24,7 +24,7 @@ const caseStudies: CaseStudy[] = [
         industry: 'Education / Childcare',
         icon: Building2,
         color: 'from-emerald-500 to-teal-600',
-        challenge: 'The nursery had lost control of their biometric fingerprint access system and couldn\'t add new staff. Investigation revealed a fragmented IT estate with no central management, staff making unauthorized changes, and security vulnerabilities throughout.',
+        challenge: 'As the nursery expanded, their original biometric access system hadn\'t scaled with them — adding new staff had become difficult and time-consuming. Like many growing businesses, the IT setup had evolved organically over time and needed a structured overhaul to match the nursery\'s current size and compliance requirements.',
         solution: [
             'Installed new central command infrastructure in secured comms cabinet',
             'Implemented new BioStar end-to-end biometric system with central admin',

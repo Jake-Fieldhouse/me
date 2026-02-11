@@ -1,1 +1,0 @@
-import{_ as r}from"./index-Djrrzbhv.js";import{o,c as e,a as n}from"./vendor-Y4MX9RwH.js";const t={fill:"none",viewBox:"0 0 24 24",stroke:"currentColor","aria-hidden":"true"},s=r({},[["render",function(r,s){return o(),e("svg",t,[...s[0]||(s[0]=[n("path",{"stroke-linecap":"round","stroke-linejoin":"round","stroke-width":"2",d:"M5 13l4 4L19 7"},null,-1)])])}]]);export{s as I};
