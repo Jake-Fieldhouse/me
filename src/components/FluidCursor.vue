@@ -75,9 +75,24 @@ function pointerPrototype(): Pointer {
 const canvasRef = ref<HTMLCanvasElement | null>(null);
 
 onMounted(() => {
+  // Cleanup callback — populated by initFluidSimulation, called by onUnmounted
+  let cleanup: (() => void) | null = null;
+  onUnmounted(() => cleanup?.());
+
   // Defer heavy WebGL initialization to idle time
   // This prevents blocking the main thread during initial page load
-  const initFluidSimulation = () => {
+  const initFluidSimulation = async () => {
+
+  // Yield to main thread between heavy phases to keep TBT < 50ms
+  const yieldToMain = (): Promise<void> => {
+    if ('scheduler' in window && typeof (window as any).scheduler?.yield === 'function') {
+      return (window as any).scheduler.yield();
+    }
+    if ('scheduler' in window && typeof (window as any).scheduler?.postTask === 'function') {
+      return (window as any).scheduler.postTask(() => {}, { priority: 'user-visible' });
+    }
+    return new Promise(resolve => setTimeout(resolve, 0));
+  };
     const canvas = canvasRef.value;
     if (!canvas) return;
 
@@ -711,6 +726,9 @@ onMounted(() => {
       `,
   );
 
+  // === YIELD: All shaders submitted to GPU, release main thread ===
+  await yieldToMain();
+
   // -------------------- Fullscreen Triangles --------------------
   const blit = (() => {
     const buffer = gl.createBuffer()!;
@@ -767,11 +785,16 @@ onMounted(() => {
   let curl: FBO;
   let pressure: DoubleFBO;
 
-  // WebGL Programs
+  // WebGL Programs — Batch 1: core programs
   const copyProgram = new Program(baseVertexShader, copyShader);
   const clearProgram = new Program(baseVertexShader, clearShader);
   const splatProgram = new Program(baseVertexShader, splatShader);
   const advectionProgram = new Program(baseVertexShader, advectionShader);
+
+  // === YIELD: First batch of programs linked ===
+  await yieldToMain();
+
+  // WebGL Programs — Batch 2: simulation programs
   const divergenceProgram = new Program(baseVertexShader, divergenceShader);
   const curlProgram = new Program(baseVertexShader, curlShader);
   const vorticityProgram = new Program(baseVertexShader, vorticityShader);
@@ -980,6 +1003,9 @@ onMounted(() => {
   // -------------------- Simulation Setup --------------------
   updateKeywords();
   initFramebuffers();
+
+  // === YIELD: FBOs created, release main thread before render loop ===
+  await yieldToMain();
 
   let lastUpdateTime = Date.now();
   let colorUpdateTimer = 0.0;
@@ -1449,8 +1475,8 @@ onMounted(() => {
   // Start loop
   updateFrame();
 
-  // Cleanup
-  onUnmounted(() => {
+  // Register cleanup via the closure (onUnmounted is registered synchronously above)
+  cleanup = () => {
     isActive = false;
     cancelAnimationFrame(animationFrameId);
     window.removeEventListener("mousedown", handleMouseDown);
@@ -1464,15 +1490,15 @@ onMounted(() => {
     if (loseContext) {
       loseContext.loseContext();
     }
-  });
+  };
   }; // End of initFluidSimulation
 
   // Use requestIdleCallback to defer initialization, with setTimeout fallback
   if ('requestIdleCallback' in window) {
-    (window as any).requestIdleCallback(initFluidSimulation, { timeout: 2000 });
+    (window as any).requestIdleCallback(() => initFluidSimulation(), { timeout: 2000 });
   } else {
     // Fallback for Safari - defer to next frame
-    setTimeout(initFluidSimulation, 100);
+    setTimeout(() => initFluidSimulation(), 100);
   }
 });
 </script>

@@ -261,7 +261,7 @@ const categoryCta: Record<string, { title: string; description: string; link: st
   },
   'IT Support': {
     title: 'Need Reliable IT Support in Hull?',
-    description: '24/7 monitoring, EDR security, and a real person who picks up the phone. Enterprise protection, local response.',
+    description: 'Proactive monitoring, EDR security, and a real person who picks up the phone. Enterprise protection, local response.',
     link: '/managed-it-services-hull',
     label: 'Get in Touch',
     color: 'bg-blue-600 hover:bg-blue-500'

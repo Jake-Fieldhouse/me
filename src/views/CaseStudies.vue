@@ -57,7 +57,7 @@ const caseStudies: CaseStudy[] = [
             'New staff onboarded in under 2 minutes (previously 45+ minutes)',
             'Eliminated unauthorized configuration changes',
             'Secure, documented IT infrastructure with quarterly reviews',
-            'Ongoing managed support — average response time under 30 minutes'
+            'Ongoing managed support with responsive local service'
         ],
         testimonial: null,
         image: null

@@ -101,6 +101,7 @@
     </div>
     
     <div class="mt-12 text-center space-x-6">
+      <router-link to="/security-acknowledgments" class="text-neutral-500 hover:text-white transition-colors">Security Acknowledgments</router-link>
       <router-link to="/policies" class="text-neutral-500 hover:text-white transition-colors">← All Policies</router-link>
       <router-link to="/" class="text-neutral-500 hover:text-white transition-colors">Back to Home</router-link>
     </div>

@@ -129,7 +129,7 @@ onUnmounted(() => {
         <!-- Attribution -->
         <div class="pt-4 border-t border-neutral-800">
           <div class="font-semibold text-white text-sm">{{ testimonial.name }}</div>
-          <div class="text-xs text-neutral-500">{{ testimonial.role }}, {{ testimonial.company }}</div>
+          <div class="text-xs text-neutral-400">{{ testimonial.role }}, {{ testimonial.company }}</div>
         </div>
       </div>
     </div>

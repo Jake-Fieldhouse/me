@@ -58,8 +58,7 @@ const scrollToBook = () => {
     
     <!-- Hero -->
     <BreadcrumbSchema :crumbs="[
-      { name: 'Repair Services', url: '/repair-services' },
-      { name: 'Microsoldering', url: '/microsoldering-repair-hull' }
+      { name: 'Microsoldering & Repair', url: '/microsoldering-repair-hull' }
     ]" />
     <header class="text-center space-y-6 mt-10 relative">
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-auto aspect-square bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>

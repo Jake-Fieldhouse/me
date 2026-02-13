@@ -60,8 +60,8 @@ export const supportedPlatforms = [
 
 export const keyFeatures = [
     {
-        name: '24/7 Remote Monitoring',
-        description: 'Your servers and workstations are watched around the clock. Disk space alerts, CPU spikes, and offline warnings are all handled proactively.',
+        name: 'Proactive Remote Monitoring',
+        description: 'Your servers and workstations are watched proactively. Disk space alerts, CPU spikes, and offline warnings are all handled before they become problems.',
         dotColor: 'bg-blue-500'
     },
     {
@@ -104,7 +104,7 @@ export const serviceTiers = [
 export const faqs = [
     {
         question: 'What IT support is available for small businesses in Hull?',
-        answer: 'I offer Managed IT Services for small businesses across Hull and East Yorkshire. Depending on what you need, that can include 24/7 monitoring, EDR cybersecurity, Microsoft 365 setup, cloud backups, and straightforward support when things go wrong.'
+        answer: 'I offer Managed IT Services for small businesses across Hull and East Yorkshire. Depending on what you need, that can include proactive monitoring, EDR cybersecurity, Microsoft 365 setup, cloud backups, and straightforward support when things go wrong.'
     },
     {
         question: 'How much does managed IT support cost for a small business?',

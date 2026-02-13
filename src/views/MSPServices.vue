@@ -10,8 +10,8 @@ import { useOgMeta } from '../composables/useOgMeta'
 import { supportedPlatforms, keyFeatures, serviceTiers, faqs } from '../data/services'
 
 useOgMeta({
-  title: 'Managed IT Services Hull | 24/7 Monitoring & Support',
-  description: '24/7 infrastructure monitoring, EDR security, Microsoft 365 management for Hull businesses. Enterprise protection, local response.',
+  title: 'Managed IT Services Hull | Proactive Monitoring & Support',
+  description: 'Proactive infrastructure monitoring, EDR security, Microsoft 365 management for Hull businesses. Enterprise protection, local response.',
   image: '/images/og-msp.svg',
   url: '/managed-it-services-hull'
 })
@@ -39,7 +39,7 @@ useOgMeta({
             Local Response. <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">Enterprise Protection.</span>
         </h1>
         <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed text-readable">
-            Big MSPs treat you like a ticket number. I treat you like a partner. 24/7 monitoring, AI-threat detection, and someone who actually picks up the phone, based right here in Hull.
+            Big MSPs treat you like a ticket number. I treat you like a partner. Proactive monitoring, EDR security, and someone who actually picks up the phone, based right here in Hull.
         </p>
         <div class="flex flex-col md:flex-row justify-center gap-4 pt-4">
             <router-link to="/contact" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors text-center btn-depth">

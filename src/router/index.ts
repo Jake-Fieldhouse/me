@@ -19,7 +19,7 @@ const router = createRouter({
             name: 'managed-it-services-hull',
             component: () => import('../views/MSPServices.vue'),
             meta: {
-                title: 'Managed IT Services Hull | 24/7 Monitoring & Support',
+                title: 'Managed IT Services Hull | Proactive Monitoring & Support',
                 description: 'Proactive IT infrastructure management, cybersecurity EDR, and Microsoft 365 solutions for Hull & East Yorkshire businesses.'
             }
         },
@@ -83,6 +83,10 @@ const router = createRouter({
         {
             path: '/remote-hands',
             redirect: '/data-centre-remote-hands-hull'
+        },
+        {
+            path: '/repair-services',
+            redirect: '/microsoldering-repair-hull'
         },
         // ==================== SERVICE AREAS (Local SEO) ====================
         {
@@ -156,15 +160,6 @@ const router = createRouter({
             props: { location: 'brough' }
         },
         // ==================== OTHER SERVICES ====================
-        {
-            path: '/repair-services',
-            name: 'repair-services',
-            component: () => import('../views/RepairServices.vue'),
-            meta: {
-                title: 'Expert Device Repair Services | Hull',
-                description: 'Professional repair services for laptops, game consoles, and mobile devices. Quick turnaround and warranty included.'
-            }
-        },
         {
             path: '/compliance',
             name: 'compliance',

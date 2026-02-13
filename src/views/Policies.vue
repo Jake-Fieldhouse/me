@@ -69,6 +69,13 @@ const policies = [
     route: '/cybersecurity',
     icon: '🛡️',
     color: 'cyan'
+  },
+  {
+    title: 'Security Acknowledgments',
+    description: 'Recognising security researchers who help keep our systems safe.',
+    route: '/security-acknowledgments',
+    icon: '🏆',
+    color: 'amber'
   }
 ]
 

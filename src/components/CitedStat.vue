@@ -16,7 +16,7 @@ defineProps<{
       :href="sourceUrl" 
       target="_blank" 
       rel="noopener noreferrer"
-      class="inline-flex items-center ml-1 text-neutral-500 hover:text-neutral-300 transition-colors"
+      class="inline-flex items-center ml-1 text-neutral-400 hover:text-neutral-300 transition-colors"
       :title="`Source: ${source}${year ? ` (${year})` : ''}`"
       :aria-label="`Source: ${source}${year ? ` (${year})` : ''}`"
     >

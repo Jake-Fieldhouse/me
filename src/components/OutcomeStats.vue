@@ -43,7 +43,7 @@ const stats = [
           <div class="text-white font-semibold text-sm md:text-base">
             {{ stat.label }}
           </div>
-          <div class="text-neutral-500 text-xs mt-1 hidden md:block">
+          <div class="text-neutral-400 text-xs mt-1 hidden md:block">
             {{ stat.description }}
           </div>
         </div>

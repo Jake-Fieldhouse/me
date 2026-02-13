@@ -43,7 +43,7 @@ onUnmounted(() => {
 
 <template>
   <!-- Visual breadcrumb (optional — can be hidden if design doesn't need it) -->
-  <nav aria-label="Breadcrumb" class="text-sm text-neutral-500 mb-4">
+  <nav aria-label="Breadcrumb" class="text-sm text-neutral-400 mb-4">
     <ol class="flex items-center gap-1.5 flex-wrap">
       <li>
         <router-link to="/" class="hover:text-white transition-colors">Home</router-link>

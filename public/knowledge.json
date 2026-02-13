@@ -108,7 +108,7 @@
             "@id": "https://jakefieldhouse.co.uk/#service-msp",
             "@type": "Service",
             "name": "Managed IT Services",
-            "description": "24/7 monitoring, EDR security, Microsoft 365 administration, and same-day on-site support for Hull businesses",
+            "description": "Proactive monitoring, EDR security, Microsoft 365 administration, and responsive local support for Hull businesses",
             "url": "https://jakefieldhouse.co.uk/managed-it-services-hull",
             "provider": {
                 "@id": "https://jakefieldhouse.co.uk/#organization"

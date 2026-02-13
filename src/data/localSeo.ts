@@ -36,7 +36,7 @@ export const services: ServiceType[] = [
 
     // MSP Services
     { slug: 'it-support', name: 'IT Support', category: 'msp', keywords: ['business IT', 'IT helpdesk', 'tech support'] },
-    { slug: 'managed-it-services', name: 'Managed IT Services', category: 'msp', keywords: ['MSP', 'IT management', '24/7 monitoring'] },
+    { slug: 'managed-it-services', name: 'Managed IT Services', category: 'msp', keywords: ['MSP', 'IT management', 'proactive monitoring'] },
     { slug: 'cybersecurity', name: 'Cybersecurity Services', category: 'msp', keywords: ['EDR', 'antivirus', 'ransomware protection'] },
 
     // E-Waste Services

@@ -111,7 +111,7 @@ const faqItems = computed(() => {
     )
   } else if (svc.category === 'msp') {
     base.push(
-      { q: `Do you offer out-of-hours IT support for ${loc.name} businesses?`, a: `Yes. Our managed IT packages include 24/7 monitoring with alerting. For critical issues, emergency support is available outside business hours. We're local, so we can be on-site quickly when needed.` },
+      { q: `Do you offer out-of-hours IT support for ${loc.name} businesses?`, a: `Yes. Our managed IT packages include proactive monitoring with alerting. For critical issues, we aim to respond quickly — and being local means we can be on-site when needed.` },
       { q: `Can you take over from our current IT provider?`, a: `Absolutely. We handle the full transition process including documentation, credential handover, and system audit. Most migrations are completed within 1-2 weeks with zero downtime.` }
     )
    } else if (svc.category === 'datacenter') {
@@ -223,7 +223,7 @@ onUnmounted(() => {
           </p>
           <p v-else-if="service.category === 'msp'">
             We provide enterprise-grade IT infrastructure management without the enterprise price tag. 
-            From 24/7 monitoring to EDR security and cloud solutions, we keep your business running 
+            From proactive monitoring to EDR security and cloud solutions, we keep your business running 
             while you focus on growth.
           </p>
           <p v-else-if="service.category === 'ewaste'">

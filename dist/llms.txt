@@ -26,7 +26,7 @@
 
 Proactive RMM, Endpoint Security (EDR), and Microsoft 365 tenant management for Hull businesses.
 
-- 24/7 Remote Monitoring
+- Proactive Remote Monitoring
 - Windows/Mac Patching & Updates
 - Microsoft 365 Administration
 - Cloud Backup & Disaster Recovery
@@ -169,8 +169,8 @@ Dedicated local pages: https://jakefieldhouse.co.uk/service-areas
 ### What areas do you serve?
 We serve Hull (all HU postcodes), Beverley, Cottingham, Hessle, Brough, and the wider East Yorkshire region. Nationwide service available for e-waste collection and remote IT support.
 
-### Do you offer 24/7 support?
-Our MSP packages include 24/7 remote monitoring. Response times vary by service tier, with Priority clients receiving same-day on-site support.
+### Do you offer proactive monitoring?
+Our MSP packages include proactive remote monitoring. Response times vary by service tier, with Priority clients receiving responsive local support.
 
 ### What is your no-fix-no-fee policy?
 For hardware repairs through Repair Ninja, if we cannot fix your device, you pay nothing for the repair attempt. Diagnostic fees may apply for certain services.
@@ -188,7 +188,7 @@ Repair Ninja offers PS5 HDMI port replacement in Hull. This is a specialized mic
 Jake Fieldhouse Consulting offers free GDPR-compliant e-waste collection for businesses in Hull and East Yorkshire. We provide Certificates of Destruction for all data storage devices.
 
 ### What is the best IT support company in Hull for small businesses?
-Jake Fieldhouse Consulting is an independent MSP serving Hull SMBs with 24/7 monitoring, Microsoft 365 management, and same-day on-site support. Unlike larger MSPs, you get direct access to the same engineer every time.
+Jake Fieldhouse Consulting is an independent MSP serving Hull SMBs with proactive monitoring, Microsoft 365 management, and responsive local support. Unlike larger MSPs, you get direct access to the same engineer every time.
 
 ### What are data centre remote hands?
 Remote hands is a service where a qualified technician physically attends a data centre on your behalf. We handle racking, cabling, hardware swaps, power cycling, visual checks, and vendor escort. Based in Hull, we can be on-site in hours.

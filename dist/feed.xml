@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Jake Fieldhouse Consulting</title>
     <link>https://jakefieldhouse.co.uk</link>
@@ -14,26 +16,26 @@
       <title>Jake Fieldhouse Consulting</title>
       <link>https://jakefieldhouse.co.uk</link>
     </image>
-    
+
     <item>
       <title>Managed IT Services for Hull Businesses</title>
       <link>https://jakefieldhouse.co.uk/managed-it-services-hull</link>
       <guid isPermaLink="true">https://jakefieldhouse.co.uk/managed-it-services-hull</guid>
       <pubDate>Tue, 04 Feb 2026 12:00:00 +0000</pubDate>
-      <description>24/7 monitoring, EDR security, and Microsoft 365 management for Hull SMBs. Direct access to the same engineer every time.</description>
+      <description>Proactive monitoring, EDR security, and Microsoft 365 management for Hull SMBs. Direct access to the same engineer every time.</description>
       <content:encoded><![CDATA[
         <p>Jake Fieldhouse Consulting provides enterprise-grade Managed IT Services for small and medium businesses in Hull and East Yorkshire.</p>
         <h3>What We Offer</h3>
         <ul>
-          <li>24/7 Remote Monitoring &amp; Management</li>
+          <li>Proactive Remote Monitoring &amp; Management</li>
           <li>Endpoint Detection &amp; Response (EDR) Security</li>
           <li>Microsoft 365 Administration</li>
-          <li>Same-day On-site Support</li>
+          <li>Responsive Local Support</li>
         </ul>
         <p>Contact: jake@jakefieldhouse.co.uk | +44 7404 090458</p>
-      ]]></content:encoded>
+      ]]>      </content:encoded>
     </item>
-    
+
     <item>
       <title>Microsoldering &amp; Logic Board Repair Hull</title>
       <link>https://jakefieldhouse.co.uk/microsoldering-repair-hull</link>
@@ -50,9 +52,9 @@
           <li>Nintendo Switch Charging Ports</li>
         </ul>
         <p>Policy: No Fix, No Fee</p>
-      ]]></content:encoded>
+      ]]>      </content:encoded>
     </item>
-    
+
     <item>
       <title>Secure Data Disposal &amp; E-Waste Collection</title>
       <link>https://jakefieldhouse.co.uk/secure-data-disposal-hull</link>
@@ -69,9 +71,9 @@
           <li>Waste Transfer Note for GDPR Compliance</li>
         </ul>
         <p>Waste Carrier License: CBDL620098</p>
-      ]]></content:encoded>
+      ]]>      </content:encoded>
     </item>
-    
+
     <item>
       <title>AI Search Optimization (GEO) Services</title>
       <link>https://jakefieldhouse.co.uk/ai-optimization-hull</link>
@@ -88,9 +90,9 @@
           <li>AI Citation Monitoring</li>
         </ul>
         <p>Be where your customers are searching - in AI answers.</p>
-      ]]></content:encoded>
+      ]]>      </content:encoded>
     </item>
-    
+
     <!-- Blog Posts -->
     <item>
       <title>Why ChatGPT Can't Find Your Business (Yet)</title>
@@ -102,9 +104,9 @@
         <p>Open ChatGPT. Ask it to recommend an IT company in Hull. If your business doesn't appear, you're invisible to a growing segment of customers who've stopped using Google.</p>
         <p>AI doesn't show ten blue links. It gives one answer. If you're not in that answer, you don't exist.</p>
         <p>GEO is still in its infancy. Early movers will dominate AI search for their niches. <a href="https://jakefieldhouse.co.uk/ai-optimization-hull">Request a free visibility audit</a>.</p>
-      ]]></content:encoded>
+      ]]>      </content:encoded>
     </item>
-    
+
     <item>
       <title>MacBook Won't Turn On? When Repair Makes More Sense Than Replace</title>
       <link>https://jakefieldhouse.co.uk/blog/macbook-repair-vs-replace-guide</link>
@@ -115,9 +117,9 @@
         <p>Apple quotes you for a full "logic board replacement." The actual fault? Often a single component that can be sourced for a few pounds.</p>
         <p>Under a stereo microscope at 40x magnification, individual chips can be removed, tested, and replaced — saving machines Apple would have you replace.</p>
         <p><a href="https://jakefieldhouse.co.uk/microsoldering-repair-hull">Request a free diagnosis</a> for an honest assessment.</p>
-      ]]></content:encoded>
+      ]]>      </content:encoded>
     </item>
-    
+
     <item>
       <title>WEEE Regulations 2025: What Hull Businesses Need to Know</title>
       <link>https://jakefieldhouse.co.uk/blog/weee-regulations-2025-business-guide</link>
@@ -128,8 +130,8 @@
         <p>November 2025 marks a major update to UK e-waste law. The compliance bar is going up with expanded scope, wider producer responsibility, and stricter enforcement.</p>
         <p>Improper data disposal is a GDPR breach. The ICO can issue fines up to £17.5 million or 4% of global annual turnover.</p>
         <p><a href="https://jakefieldhouse.co.uk/secure-data-disposal-hull">Free e-waste collection</a> includes NIST 800-88 data destruction and full compliance documentation.</p>
-      ]]></content:encoded>
+      ]]>      </content:encoded>
     </item>
-    
+
   </channel>
 </rss>
