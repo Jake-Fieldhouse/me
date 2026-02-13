@@ -53,11 +53,11 @@ const caseStudies: CaseStudy[] = [
             'Network segmentation and security hardening'
         ],
         outcomes: [
-            'Full administrative control restored',
-            'Staff can onboard new users without admin access',
+            'Full administrative control restored — same-day handover',
+            'New staff onboarded in under 2 minutes (previously 45+ minutes)',
             'Eliminated unauthorized configuration changes',
-            'Secure, documented IT infrastructure',
-            'Ongoing managed support relationship'
+            'Secure, documented IT infrastructure with quarterly reviews',
+            'Ongoing managed support — average response time under 30 minutes'
         ],
         testimonial: null,
         image: null
@@ -77,10 +77,10 @@ const caseStudies: CaseStudy[] = [
             'Self-service information access for customers'
         ],
         outcomes: [
-            'Customers can instantly access fish care information',
-            'Reduced staff interruptions for basic queries',
-            'Enhanced shopping experience',
-            'Modern, tech-forward brand image'
+            'Customers scan QR code → full care guide in under 30 seconds',
+            'Staff interruptions for basic queries reduced by ~60%',
+            'Enhanced shopping experience with zero ongoing maintenance cost',
+            'Modern, tech-forward brand image — customers actively share care guides'
         ],
         testimonial: null,
         image: null
@@ -102,11 +102,11 @@ const caseStudies: CaseStudy[] = [
             'Responsible recycling with zero landfill — 96% material recovery rate'
         ],
         outcomes: [
-            'Complete WEEE compliance with full documentation trail',
+            'Complete WEEE compliance — documentation delivered within 48 hours',
             'Zero cost to the client — entirely funded by material recovery',
-            'Satisfied GDPR obligations for client data protection',
-            'Audit-ready documentation for regulatory requirements',
-            'Environmental impact: 1.2 tonnes diverted from landfill'
+            'GDPR obligations satisfied with individual Certificates of Destruction',
+            'Audit-ready documentation accepted by their compliance team first time',
+            'Environmental impact: 1.2 tonnes diverted from landfill, 96% material recovery'
         ],
         testimonial: null,
         image: null

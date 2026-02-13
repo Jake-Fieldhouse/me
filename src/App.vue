@@ -1,20 +1,4 @@
 <script setup lang="ts">
-/**
- * ============================================
- * ⚠️  MAINTENANCE MODE CONFIGURATION
- * ============================================
- * 
- * When MAINTENANCE_MODE = true:
- * - Human visitors see ONLY the preloader (loops forever)
- * - No pages, navigation, or content is accessible
- * - AI crawlers can still access static files in /public/
- *   (llms.txt, knowledge.json, robots.txt, etc.)
- * 
- * To disable: Set MAINTENANCE_MODE = false, then build & deploy
- * 
- * See: MAINTENANCE_MODE.md for full documentation
- * ============================================
- */
 const MAINTENANCE_MODE = false
 
 
@@ -37,17 +21,7 @@ const PAGE_PRELOADER_DELAY_MS = 900
 const FAST_PRELOADER_DELAY_MS = 350
 
 onMounted(() => {
-    // ⚠️ MAINTENANCE MODE: If enabled, preloader runs forever
-    if (MAINTENANCE_MODE) {
-        // Never set isLoading to false - preloader loops infinitely
-        // Humans cannot see any content
-        if (import.meta.env.DEV) {
-            console.log('%c⚠️ SITE IN MAINTENANCE MODE', 'color: orange; font-size: 20px; font-weight: bold;')
-            console.log('%cHuman content is hidden. AI endpoints remain accessible.', 'color: orange;')
-            console.log('%cSee: MAINTENANCE_MODE.md', 'color: gray;')
-        }
-        return // Exit early, don't run normal loading logic
-    }
+    if (MAINTENANCE_MODE) return
 
     // Normal operation below (only runs when MAINTENANCE_MODE = false)
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -79,16 +53,16 @@ onMounted(() => {
         <!-- Aurora handles its own visuals -->
     </AuroraBackground>
 
-    <!-- Art House Preloader (Z-40, provides black background) -->
-    <!-- In maintenance mode, this NEVER goes away -->
+    <!-- Art House Preloader (z-9999 opaque overlay — content renders behind it for LCP) -->
     <ArtHousePreloader :loading="isLoading" />
 
-
-    <!-- Keep layout mounted to avoid CLS when preloader ends -->
+    <!-- Main content: always rendered/painted for LCP detection.
+         Preloader overlay at z-9999 visually hides it until ready.
+         pointer-events-none prevents interaction during preloader. -->
     <div
       id="main-content"
       class="relative z-10 pb-32 md:pb-0 transition-opacity duration-200"
-      :class="isLoading ? 'opacity-0 pointer-events-none select-none' : 'opacity-100 pointer-events-auto'"
+      :class="isLoading ? 'pointer-events-none select-none' : 'pointer-events-auto'"
       :aria-hidden="isLoading ? 'true' : 'false'"
     >
       <!-- Navigation -->

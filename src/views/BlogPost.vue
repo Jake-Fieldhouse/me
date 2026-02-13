@@ -225,8 +225,53 @@ const categoryColors: Record<string, string> = {
   'AI Search': 'bg-violet-500/10 text-violet-400 border-violet-500/20',
   'Repair': 'bg-red-500/10 text-red-400 border-red-500/20',
   'Compliance': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
-  'IT Support': 'bg-blue-500/10 text-blue-400 border-blue-500/20'
+  'IT Support': 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+  'E-Waste': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
 }
+
+// Contextual CTA based on post category
+const categoryCta: Record<string, { title: string; description: string; link: string; label: string; color: string }> = {
+  'AI Search': {
+    title: 'Is Your Business Invisible to AI?',
+    description: 'Find out if ChatGPT, Perplexity, and other AI tools can find your business. Free visibility audit.',
+    link: '/ai-optimization-hull',
+    label: 'Get Free AI Visibility Check',
+    color: 'bg-violet-600 hover:bg-violet-500'
+  },
+  'Repair': {
+    title: 'Device Not Working? Get a Free Diagnosis',
+    description: 'No Fix No Fee. Component-level repair with a 12-month warranty. Based in Hull.',
+    link: '/microsoldering-repair-hull',
+    label: 'Book Free Diagnosis',
+    color: 'bg-red-600 hover:bg-red-500'
+  },
+  'Compliance': {
+    title: 'Need Compliant IT Disposal?',
+    description: 'Free collection, NIST 800-88 data destruction, and full compliance documentation. EA registered.',
+    link: '/secure-data-disposal-hull',
+    label: 'Book Free Collection',
+    color: 'bg-amber-600 hover:bg-amber-500'
+  },
+  'E-Waste': {
+    title: 'Need Compliant IT Disposal?',
+    description: 'Free collection, NIST 800-88 data destruction, and full compliance documentation. EA registered.',
+    link: '/secure-data-disposal-hull',
+    label: 'Book Free Collection',
+    color: 'bg-emerald-600 hover:bg-emerald-500'
+  },
+  'IT Support': {
+    title: 'Need Reliable IT Support in Hull?',
+    description: '24/7 monitoring, EDR security, and a real person who picks up the phone. Enterprise protection, local response.',
+    link: '/managed-it-services-hull',
+    label: 'Get in Touch',
+    color: 'bg-blue-600 hover:bg-blue-500'
+  }
+}
+
+const currentCta = computed(() => {
+  const category = currentPost.value?.category || 'IT Support'
+  return categoryCta[category] || categoryCta['IT Support']
+})
 
 // If post doesn't exist, redirect to blog
 onMounted(() => {
@@ -275,17 +320,17 @@ onMounted(() => {
       v-html="currentPost.content"
     />
 
-    <!-- CTA -->
+    <!-- Contextual CTA -->
     <div class="bg-neutral-900/50 p-8 rounded-2xl border border-white/5">
-      <h3 class="text-xl font-bold text-white mb-4">Need Help With This?</h3>
+      <h3 class="text-xl font-bold text-white mb-4">{{ currentCta.title }}</h3>
       <p class="text-neutral-400 mb-6">
-        Whether it's AI optimization, device repair, or e-waste disposal, I respond within 24 hours.
+        {{ currentCta.description }}
       </p>
       <router-link 
-        to="/contact"
-        class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-3 rounded-xl transition-colors"
+        :to="currentCta.link"
+        :class="['inline-block text-white font-bold px-6 py-3 rounded-xl transition-colors', currentCta.color]"
       >
-        Get in Touch
+        {{ currentCta.label }}
       </router-link>
     </div>
 

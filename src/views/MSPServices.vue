@@ -68,6 +68,29 @@ useOgMeta({
         </div>
     </section>
 
+    <!-- How It Works -->
+    <section class="max-w-4xl mx-auto space-y-8">
+        <h2 class="text-3xl font-bold text-white text-center">How It Works</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center space-y-4">
+                <div class="w-12 h-12 mx-auto rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg">1</div>
+                <h3 class="text-lg font-bold text-white">Free IT Audit</h3>
+                <p class="text-neutral-400 text-sm">I assess your current setup — network, devices, security posture, and pain points. No sales pitch, just an honest assessment of where you stand.</p>
+            </div>
+            <div class="text-center space-y-4">
+                <div class="w-12 h-12 mx-auto rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg">2</div>
+                <h3 class="text-lg font-bold text-white">Tailored Plan</h3>
+                <p class="text-neutral-400 text-sm">You get a clear proposal with the right tier for your size and risk profile. No upselling, no unnecessary add-ons. Just what you actually need.</p>
+            </div>
+            <div class="text-center space-y-4">
+                <div class="w-12 h-12 mx-auto rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg">3</div>
+                <h3 class="text-lg font-bold text-white">Seamless Onboarding</h3>
+                <p class="text-neutral-400 text-sm">Monitoring agents deployed, EDR activated, backups configured. Usually completed within a single business day with zero downtime.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Services Grid -->
     <section class="grid md:grid-cols-2 gap-12">
         <div class="space-y-8">
