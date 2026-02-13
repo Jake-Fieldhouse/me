@@ -785,21 +785,25 @@ onMounted(() => {
   let curl: FBO;
   let pressure: DoubleFBO;
 
-  // WebGL Programs — Batch 1: core programs
+  // WebGL Programs — yield between each to keep individual tasks under 50ms
   const copyProgram = new Program(baseVertexShader, copyShader);
-  const clearProgram = new Program(baseVertexShader, clearShader);
-  const splatProgram = new Program(baseVertexShader, splatShader);
-  const advectionProgram = new Program(baseVertexShader, advectionShader);
-
-  // === YIELD: First batch of programs linked ===
   await yieldToMain();
-
-  // WebGL Programs — Batch 2: simulation programs
+  const clearProgram = new Program(baseVertexShader, clearShader);
+  await yieldToMain();
+  const splatProgram = new Program(baseVertexShader, splatShader);
+  await yieldToMain();
+  const advectionProgram = new Program(baseVertexShader, advectionShader);
+  await yieldToMain();
   const divergenceProgram = new Program(baseVertexShader, divergenceShader);
+  await yieldToMain();
   const curlProgram = new Program(baseVertexShader, curlShader);
+  await yieldToMain();
   const vorticityProgram = new Program(baseVertexShader, vorticityShader);
+  await yieldToMain();
   const pressureProgram = new Program(baseVertexShader, pressureShader);
+  await yieldToMain();
   const gradienSubtractProgram = new Program(baseVertexShader, gradientSubtractShader);
+  await yieldToMain();
   const displayMaterial = new Material(baseVertexShader, displayShaderSource);
 
   // -------------------- FBO creation --------------------
