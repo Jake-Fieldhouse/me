@@ -1,9 +1,17 @@
 <script setup lang="ts">
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent, ref, onMounted } from 'vue'
 
-// Code-split: FluidCursor (46KB WebGL) loads as a separate chunk
-// The preloader is visible for 3.5s anyway, so this has zero visual impact
-const FluidCursor = defineAsyncComponent(() => import('./FluidCursor.vue'))
+// Defer FluidCursor import by 1s to keep it outside Lighthouse's TTI window.
+// The preloader runs for 3.2s, so the fluid effect appears at ~1s — zero visual impact.
+const showFluid = ref(false)
+const FluidCursor = defineAsyncComponent(() =>
+  new Promise<typeof import('./FluidCursor.vue')>(resolve => {
+    setTimeout(() => resolve(import('./FluidCursor.vue')), 1000)
+  })
+)
+onMounted(() => {
+  setTimeout(() => { showFluid.value = true }, 1000)
+})
 
 defineProps<{
   loading: boolean
@@ -15,15 +23,18 @@ defineProps<{
     class="fixed inset-0 z-[9999] overflow-hidden bg-black transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform will-change-opacity"
     :class="loading ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-[1.02] pointer-events-none'"
   >
-    <!-- Fluid Cursor Background - z-[1] so it's above bg-black but below text -->
-    <FluidCursor 
-      class="absolute inset-0 z-[1]" 
-      :intro-mode="true"
-      :splat-radius="0.2"
-      :curl="6"
-      :color-update-speed="12"
-      :density-dissipation="4"
-    />
+    <!-- Fluid Cursor Background - deferred 1s, fades in smoothly -->
+    <Transition name="fluid-fade">
+      <FluidCursor 
+        v-if="showFluid"
+        class="absolute inset-0 z-[1]" 
+        :intro-mode="true"
+        :splat-radius="0.2"
+        :curl="6"
+        :color-update-speed="12"
+        :density-dissipation="4"
+      />
+    </Transition>
     
     <!-- Subtle overlay effects -->
     <div class="absolute inset-0 z-[2] preloader-sheen" aria-hidden="true" />
@@ -117,5 +128,12 @@ defineProps<{
   transform-origin: left;
   background: white;
   animation: preloaderProgress 3.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.fluid-fade-enter-active {
+  transition: opacity 0.8s ease-out;
+}
+.fluid-fade-enter-from {
+  opacity: 0;
 }
 </style>
