@@ -187,15 +187,6 @@ button:focus-visible {
     0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
-/* Glassmorphism backdrop for hero sections */
-.bg-scrim {
-  background: linear-gradient(180deg,
-      rgba(0, 0, 0, 0.4) 0%,
-      rgba(0, 0, 0, 0.2) 50%,
-      rgba(0, 0, 0, 0.4) 100%);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-}
 
 /* --- CSS Scroll-Driven Animations (2026 Standard) --- */
 @supports (animation-timeline: view()) {
@@ -355,16 +346,4 @@ h4 {
   .btn-depth:hover {
     transform: none;
   }
-}
-
-/* GPU-accelerated container */
-.gpu-accelerate {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-/* --- Content Visibility for Offscreen (2026 Performance) --- */
-.defer-offscreen {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 500px;
 }

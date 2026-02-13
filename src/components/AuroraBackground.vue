@@ -33,37 +33,47 @@ const props = withDefaults(defineProps<Props>(), {
             [background-size:300%,_200%]
             [background-position:50%_50%,50%_50%]
             filter blur-[10px] invert dark:invert-0
-            after:content-[''] after:absolute after:inset-0 after:[background-image:var(--white-gradient),var(--aurora)] 
-            after:dark:[background-image:var(--dark-gradient),var(--aurora)]
-            after:[background-size:200%,_100%] 
-            after:animate-aurora after:mix-blend-difference
             pointer-events-none
-            absolute -inset-[10px] opacity-50 will-change-transform`,
+            absolute -inset-[10px] opacity-50`,
             props.showRadialGradient &&
               `[mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,var(--transparent)_70%)]`,
           )
         "
-      ></div>
+      >
+        <!-- GPU-composited aurora layer: uses transform instead of background-position -->
+        <div class="aurora-sweep absolute inset-0" />
+      </div>
     </div>
     <slot></slot>
   </div>
 </template>
 
 <style scoped>
-@keyframes aurora {
-  from {
-    background-position:
-      50% 50%,
-      50% 50%;
-  }
-  to {
-    background-position:
-      350% 50%,
-      350% 50%;
-  }
+/* Aurora sweep layer — GPU-composited via transform (no repaint) */
+.aurora-sweep {
+  background-image:
+    var(--white-gradient), var(--aurora);
+  background-size: 200% 100%;
+  /* 3x wide so translateX(-66.67%) loops seamlessly */
+  width: 300%;
+  left: 0;
+  mix-blend-mode: difference;
+  will-change: transform;
+  animation: aurora-sweep 60s linear infinite;
 }
 
-.animate-aurora {
-  animation: aurora 60s linear infinite;
+:where(.dark, .dark *) .aurora-sweep {
+  background-image:
+    var(--dark-gradient), var(--aurora);
+}
+
+@keyframes aurora-sweep {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-66.67%);
+  }
 }
 </style>
+
