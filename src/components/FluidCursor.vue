@@ -332,6 +332,12 @@ onMounted(() => {
     return keywordsString + source;
   }
 
+  // KHR_parallel_shader_compile: lets the GPU compile/link in the background
+  // so the main thread stays free for preloader animations.
+  // Supported: Chrome 76+, Edge 79+, Firefox 117+, Safari 16.4+
+  const parallelCompileExt = gl.getExtension('KHR_parallel_shader_compile');
+  const COMPLETION_STATUS_KHR = 0x91B1;
+
   function compileShader(
     type: number,
     source: string,
@@ -342,7 +348,6 @@ onMounted(() => {
     if (!shader) return null;
     gl.shaderSource(shader, shaderSource);
     gl.compileShader(shader);
-
     return shader;
   }
 
@@ -356,8 +361,22 @@ onMounted(() => {
     gl.attachShader(program, vertexShader);
     gl.attachShader(program, fragmentShader);
     gl.linkProgram(program);
-
     return program;
+  }
+
+  /** Wait for a linked program to finish compiling on the GPU (non-blocking). */
+  function waitForProgramLink(program: WebGLProgram): Promise<void> {
+    if (!parallelCompileExt) return Promise.resolve();
+    return new Promise<void>(resolve => {
+      const poll = () => {
+        if (gl.getProgramParameter(program, COMPLETION_STATUS_KHR)) {
+          resolve();
+        } else {
+          requestAnimationFrame(poll);
+        }
+      };
+      poll();
+    });
   }
 
   function getUniforms(program: WebGLProgram) {
@@ -785,26 +804,32 @@ onMounted(() => {
   let curl: FBO;
   let pressure: DoubleFBO;
 
-  // WebGL Programs — yield between each to keep individual tasks under 50ms
+  // WebGL Programs — submit ALL at once for parallel GPU compilation.
+  // With KHR_parallel_shader_compile the GPU links them in the background
+  // while the main thread stays free for preloader animations.
   const copyProgram = new Program(baseVertexShader, copyShader);
-  await yieldToMain();
   const clearProgram = new Program(baseVertexShader, clearShader);
-  await yieldToMain();
   const splatProgram = new Program(baseVertexShader, splatShader);
-  await yieldToMain();
   const advectionProgram = new Program(baseVertexShader, advectionShader);
-  await yieldToMain();
   const divergenceProgram = new Program(baseVertexShader, divergenceShader);
-  await yieldToMain();
   const curlProgram = new Program(baseVertexShader, curlShader);
-  await yieldToMain();
   const vorticityProgram = new Program(baseVertexShader, vorticityShader);
-  await yieldToMain();
   const pressureProgram = new Program(baseVertexShader, pressureShader);
-  await yieldToMain();
   const gradienSubtractProgram = new Program(baseVertexShader, gradientSubtractShader);
-  await yieldToMain();
   const displayMaterial = new Material(baseVertexShader, displayShaderSource);
+
+  // Wait for all programs to finish linking on the GPU
+  if (parallelCompileExt) {
+    const programs = [
+      copyProgram, clearProgram, splatProgram, advectionProgram,
+      divergenceProgram, curlProgram, vorticityProgram, pressureProgram,
+      gradienSubtractProgram,
+    ].filter(p => p.program) as Program[];
+    await Promise.all(programs.map(p => waitForProgramLink(p.program!)));
+  } else {
+    // No extension — synchronous compile already done, single yield to breathe
+    await yieldToMain();
+  }
 
   // -------------------- FBO creation --------------------
   function createFBO(
