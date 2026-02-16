@@ -253,19 +253,19 @@ onUnmounted(() => {
       <div class="grid grid-cols-2 gap-4">
         <div class="bg-neutral-900/50 p-6 rounded-xl border border-white/5 text-center">
           <div class="text-3xl font-bold text-white">24h</div>
-          <div class="text-sm text-neutral-500 uppercase tracking-widest">Response Time</div>
+          <div class="text-sm text-neutral-400 uppercase tracking-widest">Response Time</div>
         </div>
         <div class="bg-neutral-900/50 p-6 rounded-xl border border-white/5 text-center">
           <div class="text-3xl font-bold text-white">5k+</div>
-          <div class="text-sm text-neutral-500 uppercase tracking-widest">Jobs Completed</div>
+          <div class="text-sm text-neutral-400 uppercase tracking-widest">Jobs Completed</div>
         </div>
         <div class="bg-neutral-900/50 p-6 rounded-xl border border-white/5 text-center">
           <div class="text-3xl font-bold text-white">12mo</div>
-          <div class="text-sm text-neutral-500 uppercase tracking-widest">Warranty</div>
+          <div class="text-sm text-neutral-400 uppercase tracking-widest">Warranty</div>
         </div>
         <div class="bg-neutral-900/50 p-6 rounded-xl border border-white/5 text-center">
           <div class="text-3xl font-bold text-white">Free</div>
-          <div class="text-sm text-neutral-500 uppercase tracking-widest">Diagnostics</div>
+          <div class="text-sm text-neutral-400 uppercase tracking-widest">Diagnostics</div>
         </div>
       </div>
     </section>
@@ -296,7 +296,7 @@ onUnmounted(() => {
                      :to="`/${loc.slug}-${service.slug}`"
                      class="p-4 bg-neutral-900/50 rounded-xl border border-white/5 hover:border-white/20 transition-colors text-center">
           <div class="font-bold text-white">{{ loc.name }}</div>
-          <div class="text-sm text-neutral-500">{{ loc.postcode }}</div>
+          <div class="text-sm text-neutral-400">{{ loc.postcode }}</div>
         </router-link>
       </div>
     </section>

@@ -35,7 +35,7 @@ const ewasteServices = services.filter(s => s.category === 'ewaste')
         <div v-for="location in locations" :key="location.slug"
              class="p-4 bg-neutral-900/50 rounded-xl border border-white/5 text-center hover:border-white/20 transition-colors">
           <div class="font-bold text-white">{{ location.name }}</div>
-          <div class="text-sm text-neutral-500">{{ location.postcode }}</div>
+          <div class="text-sm text-neutral-400">{{ location.postcode }}</div>
           <div class="text-xs text-neutral-600 mt-1">{{ location.region }}</div>
         </div>
       </div>
@@ -143,7 +143,7 @@ const ewasteServices = services.filter(s => s.category === 'ewaste')
                      :to="`/${loc.slug}-it-support`"
                      class="p-3 bg-neutral-900/30 rounded-lg border border-white/5 hover:border-blue-500/30 transition-colors text-center">
           <span class="text-white">IT Support</span>
-          <span class="text-neutral-500 block">{{ loc.name }}</span>
+          <span class="text-neutral-400 block">{{ loc.name }}</span>
         </router-link>
       </div>
     </section>

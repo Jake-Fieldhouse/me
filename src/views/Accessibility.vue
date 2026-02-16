@@ -67,7 +67,7 @@
         <div class="mt-4 p-4 bg-neutral-800 rounded-xl">
           <p class="font-medium text-white">Jake Fieldhouse Consulting Ltd</p>
           <p>Email: <a href="mailto:jake@jakefieldhouse.co.uk" class="text-blue-400 hover:underline">jake@jakefieldhouse.co.uk</a></p>
-          <p class="text-sm text-neutral-500 mt-2">Subject line: "Accessibility Feedback"</p>
+          <p class="text-sm text-neutral-400 mt-2">Subject line: "Accessibility Feedback"</p>
         </div>
         <p class="mt-4">We aim to respond to accessibility feedback within 5 business days.</p>
       </section>
@@ -77,12 +77,12 @@
         <p>If you are not satisfied with our response to your accessibility concern, you may contact the Equality Advisory Support Service (EASS) at <a href="https://www.equalityadvisoryservice.com/" target="_blank" rel="noopener" class="text-blue-400 hover:underline">equalityadvisoryservice.com</a>.</p>
       </section>
 
-      <p class="text-neutral-500 text-sm pt-8">Last updated: February 2026</p>
+      <p class="text-neutral-400 text-sm pt-8">Last updated: February 2026</p>
     </div>
     
     <div class="mt-12 text-center space-x-6">
-      <router-link to="/policies" class="text-neutral-500 hover:text-white transition-colors">← All Policies</router-link>
-      <router-link to="/" class="text-neutral-500 hover:text-white transition-colors">Back to Home</router-link>
+      <router-link to="/policies" class="text-neutral-400 hover:text-white transition-colors">← All Policies</router-link>
+      <router-link to="/" class="text-neutral-400 hover:text-white transition-colors">Back to Home</router-link>
     </div>
   </div>
 </template>

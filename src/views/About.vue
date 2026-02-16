@@ -66,15 +66,15 @@ const values = [
     <section class="grid grid-cols-3 gap-4 md:gap-8 py-6">
       <div class="text-center space-y-1">
         <div class="text-3xl md:text-4xl font-black text-white">15+</div>
-        <div class="text-xs md:text-sm text-neutral-500 uppercase tracking-wider">Years Experience</div>
+        <div class="text-xs md:text-sm text-neutral-400 uppercase tracking-wider">Years Experience</div>
       </div>
       <div class="text-center space-y-1">
         <div class="text-3xl md:text-4xl font-black text-white">1,000+</div>
-        <div class="text-xs md:text-sm text-neutral-500 uppercase tracking-wider">Devices Repaired</div>
+        <div class="text-xs md:text-sm text-neutral-400 uppercase tracking-wider">Devices Repaired</div>
       </div>
       <div class="text-center space-y-1">
         <div class="text-3xl md:text-4xl font-black text-white">2TB+</div>
-        <div class="text-xs md:text-sm text-neutral-500 uppercase tracking-wider">Data Recovered</div>
+        <div class="text-xs md:text-sm text-neutral-400 uppercase tracking-wider">Data Recovered</div>
       </div>
     </section>
 

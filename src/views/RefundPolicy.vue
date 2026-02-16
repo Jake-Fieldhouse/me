@@ -57,11 +57,11 @@
         <p>If you are dissatisfied with our decision regarding a refund, please refer to our <router-link to="/complaints" class="text-blue-400 hover:underline">Complaints Policy</router-link>.</p>
       </section>
 
-      <p class="text-neutral-500 text-sm pt-8">Last updated: February 2026</p>
+      <p class="text-neutral-400 text-sm pt-8">Last updated: February 2026</p>
     </div>
     
     <div class="mt-12 text-center">
-      <router-link to="/" class="text-neutral-500 hover:text-white transition-colors">← Back to Home</router-link>
+      <router-link to="/" class="text-neutral-400 hover:text-white transition-colors">← Back to Home</router-link>
     </div>
   </div>
 </template>

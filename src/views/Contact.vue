@@ -118,7 +118,7 @@ ${form.value.email}
         <div class="lg:col-span-3 card-container">
           <div class="card-header">
             <h2 class="text-base sm:text-lg font-semibold text-white">Schedule a Call</h2>
-            <span class="text-xs text-neutral-500">15 or 30 min • Free</span>
+            <span class="text-xs text-neutral-400">15 or 30 min • Free</span>
           </div>
           <div class="p-4 sm:p-5 lg:p-6 space-y-4">
             <div class="booking-hero">
@@ -184,7 +184,7 @@ ${form.value.email}
         <div class="lg:col-span-2 card-container flex flex-col">
           <div class="card-header">
             <h2 class="text-base sm:text-lg font-semibold text-white">Send a Message</h2>
-            <span class="text-xs text-neutral-500">Quick reply</span>
+            <span class="text-xs text-neutral-400">Quick reply</span>
           </div>
           <form @submit.prevent="submitForm" class="flex-1 flex flex-col p-4 gap-3">
             <div>

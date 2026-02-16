@@ -63,11 +63,24 @@
   <meta property="twitter:image" content="https://jakefieldhouse.co.uk/images/og-image.png" />
 
   <!-- Font preloads — critical weights only to avoid FOIT -->
-  <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/inter-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
+  <link rel="preload" href="/fonts/inter-700.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
 
   <!-- Preconnect for third-party origins -->
   <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+
+  <!-- Critical CSS: inline minimum styles for instant first paint (dark bg, fonts, layout) -->
+  <style>
+    /* @font-face for critical weights — browser paints text immediately */
+    @font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/inter-400.woff2') format('woff2')}
+    @font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/inter-700.woff2') format('woff2')}
+    /* Instant dark paint — no flash of white */
+    :root{font-family:'Inter',system-ui,sans-serif;color-scheme:dark;color:rgba(255,255,255,.87);background:#101010}
+    html,body{margin:0;padding:0;min-height:100vh;background:#000}
+    *,*::before,*::after{box-sizing:border-box}
+    /* Preloader layout — visible before JS hydrates */
+    #app{min-height:100vh}
+  </style>
 
   <!-- WebSite Schema: Sitelinks Searchbox -->
   <script type="application/ld+json">
@@ -666,9 +679,9 @@
       }
     }
   </script>
-  <script type="module" crossorigin src="/assets/index-B8M4sO0Z.js"></script>
+  <script type="module" crossorigin src="/assets/index-DAz8yLwr.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/vendor-BqHjVcQx.js">
-  <link rel="stylesheet" crossorigin href="/assets/index-CwALwTdI.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-D_ipWaKZ.css">
 </head>
 
 <body>

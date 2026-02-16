@@ -24,7 +24,7 @@
         <div class="mt-4 p-4 bg-neutral-800 rounded-xl">
           <p class="font-medium text-white">Jake Fieldhouse Consulting Ltd</p>
           <p>Email: <a href="mailto:jake@jakefieldhouse.co.uk" class="text-blue-400 hover:underline">jake@jakefieldhouse.co.uk</a></p>
-          <p class="text-sm text-neutral-500 mt-2">Subject line: "Formal Complaint - [Your Name]"</p>
+          <p class="text-sm text-neutral-400 mt-2">Subject line: "Formal Complaint - [Your Name]"</p>
         </div>
         <p class="mt-4">Please include:</p>
         <ul class="list-disc list-inside space-y-2 mt-2">
@@ -71,7 +71,7 @@
           <li>Offer a remedy we consider reasonable (at our discretion)</li>
           <li>Explain why no further action will be taken</li>
         </ul>
-        <p class="mt-4 text-sm text-neutral-500">We reserve the right to determine what remedy, if any, is appropriate. This policy does not create any right to compensation.</p>
+        <p class="mt-4 text-sm text-neutral-400">We reserve the right to determine what remedy, if any, is appropriate. This policy does not create any right to compensation.</p>
       </section>
 
       <section>
@@ -89,11 +89,11 @@
         <p>We reserve the right to decline to engage further with complaints that are, in our reasonable opinion, vexatious, repetitive without new information, or made in bad faith.</p>
       </section>
 
-      <p class="text-neutral-500 text-sm pt-8">Last updated: February 2026</p>
+      <p class="text-neutral-400 text-sm pt-8">Last updated: February 2026</p>
     </div>
     
     <div class="mt-12 text-center">
-      <router-link to="/" class="text-neutral-500 hover:text-white transition-colors">← Back to Home</router-link>
+      <router-link to="/" class="text-neutral-400 hover:text-white transition-colors">← Back to Home</router-link>
     </div>
   </div>
 </template>

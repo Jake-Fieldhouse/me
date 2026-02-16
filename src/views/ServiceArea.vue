@@ -191,7 +191,7 @@ const services = [
         </div>
 
         <div class="mt-12 text-center">
-            <router-link to="/" class="text-neutral-500 hover:text-white transition-colors">← Back to Home</router-link>
+            <router-link to="/" class="text-neutral-400 hover:text-white transition-colors">← Back to Home</router-link>
         </div>
     </div>
 </template>

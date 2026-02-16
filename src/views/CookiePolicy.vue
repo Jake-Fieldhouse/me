@@ -93,11 +93,11 @@
         <p>For questions about our use of cookies, contact us at <a href="mailto:jake@jakefieldhouse.co.uk" class="text-blue-400 hover:underline">jake@jakefieldhouse.co.uk</a>.</p>
       </section>
 
-      <p class="text-neutral-500 text-sm pt-8">Last updated: February 2026</p>
+      <p class="text-neutral-400 text-sm pt-8">Last updated: February 2026</p>
     </div>
     
     <div class="mt-12 text-center">
-      <router-link to="/" class="text-neutral-500 hover:text-white transition-colors">← Back to Home</router-link>
+      <router-link to="/" class="text-neutral-400 hover:text-white transition-colors">← Back to Home</router-link>
     </div>
   </div>
 </template>

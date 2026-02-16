@@ -33,7 +33,7 @@
         <div class="mt-4 p-4 bg-neutral-800 rounded-xl">
           <p class="text-sm text-neutral-400">Environment Agency Registration</p>
           <p class="font-bold text-white text-lg">CBDL620098</p>
-          <p class="text-sm text-neutral-500">Upper Tier Waste Carrier</p>
+          <p class="text-sm text-neutral-400">Upper Tier Waste Carrier</p>
           <a href="https://environment.data.gov.uk/public-register/view/search-waste-carriers-brokers" target="_blank" rel="noopener" class="text-blue-400 hover:underline text-sm">Verify on Public Register →</a>
         </div>
       </section>
@@ -47,7 +47,7 @@
           <li><strong class="text-white">Zero Landfill Target:</strong> We aim to divert 100% of collected e-waste from landfill</li>
           <li><strong class="text-white">Data Destruction:</strong> All storage media is sanitised to NIST 800-88 standards before recycling</li>
         </ul>
-        <p class="mt-4 text-sm text-neutral-500">Note: "Zero landfill" is an aspirational target. A small percentage of materials may be disposed of via approved waste streams when recycling is not technically feasible.</p>
+        <p class="mt-4 text-sm text-neutral-400">Note: "Zero landfill" is an aspirational target. A small percentage of materials may be disposed of via approved waste streams when recycling is not technically feasible.</p>
       </section>
 
       <section>
@@ -71,11 +71,11 @@
         <p>For questions about our environmental practices, contact <a href="mailto:jake@jakefieldhouse.co.uk" class="text-blue-400 hover:underline">jake@jakefieldhouse.co.uk</a>.</p>
       </section>
 
-      <p class="text-neutral-500 text-sm pt-8">Last updated: February 2026</p>
+      <p class="text-neutral-400 text-sm pt-8">Last updated: February 2026</p>
     </div>
     
     <div class="mt-12 text-center">
-      <router-link to="/" class="text-neutral-500 hover:text-white transition-colors">← Back to Home</router-link>
+      <router-link to="/" class="text-neutral-400 hover:text-white transition-colors">← Back to Home</router-link>
     </div>
   </div>
 </template>

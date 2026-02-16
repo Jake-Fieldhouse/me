@@ -56,7 +56,7 @@ const handleSubmit = async () => {
           v-model="form.name"
           type="text" 
           placeholder="Your Name"
-          class="w-full px-4 py-3 bg-neutral-800/50 border border-white/10 rounded-xl text-white placeholder:text-neutral-500 focus:outline-none focus:border-amber-500/50 transition-colors"
+          class="w-full px-4 py-3 bg-neutral-800/50 border border-white/10 rounded-xl text-white placeholder:text-neutral-400 focus:outline-none focus:border-amber-500/50 transition-colors"
         />
       </div>
       <div>
@@ -64,7 +64,7 @@ const handleSubmit = async () => {
           v-model="form.email"
           type="email" 
           placeholder="Your Email"
-          class="w-full px-4 py-3 bg-neutral-800/50 border border-white/10 rounded-xl text-white placeholder:text-neutral-500 focus:outline-none focus:border-amber-500/50 transition-colors"
+          class="w-full px-4 py-3 bg-neutral-800/50 border border-white/10 rounded-xl text-white placeholder:text-neutral-400 focus:outline-none focus:border-amber-500/50 transition-colors"
         />
       </div>
       <div>
@@ -72,7 +72,7 @@ const handleSubmit = async () => {
           v-model="form.message"
           placeholder="How can I help?"
           rows="4"
-          class="w-full px-4 py-3 bg-neutral-800/50 border border-white/10 rounded-xl text-white placeholder:text-neutral-500 focus:outline-none focus:border-amber-500/50 transition-colors resize-none"
+          class="w-full px-4 py-3 bg-neutral-800/50 border border-white/10 rounded-xl text-white placeholder:text-neutral-400 focus:outline-none focus:border-amber-500/50 transition-colors resize-none"
         ></textarea>
       </div>
       

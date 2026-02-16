@@ -84,7 +84,7 @@ const getStatusBorderColor = (status: string) => {
 const getStatusPillColor = (status: string) => {
     if (status === 'active') return 'bg-green-500/10 text-green-500 border border-green-500/20'
     if (status === 'pending') return 'bg-amber-500/10 text-amber-500 border border-amber-500/20'
-    return 'bg-neutral-800 text-neutral-500'
+    return 'bg-neutral-800 text-neutral-400'
 }
 
 </script>
@@ -146,7 +146,7 @@ const getStatusPillColor = (status: string) => {
                         <IconExternalLink class="w-4 h-4" />
                         View Official Certificate / Registry
                     </a>
-                    <span v-else class="text-neutral-500 italic text-sm flex items-center gap-2">
+                    <span v-else class="text-neutral-400 italic text-sm flex items-center gap-2">
                         <IconCheck class="w-4 h-4" />
                         Certificate document pending upload
                     </span>
@@ -229,7 +229,7 @@ const getStatusPillColor = (status: string) => {
     </section>
     
     <div class="mt-12 text-center">
-        <router-link to="/" class="text-neutral-500 hover:text-white transition-colors">← Back to Home</router-link>
+        <router-link to="/" class="text-neutral-400 hover:text-white transition-colors">← Back to Home</router-link>
     </div>
   </div>
 </template>

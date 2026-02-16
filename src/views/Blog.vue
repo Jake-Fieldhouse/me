@@ -44,8 +44,8 @@ const posts = ref(blogPosts)
           <span :class="['px-3 py-1 rounded-full text-xs font-medium border', categoryColors[post.category]]">
             {{ post.category }}
           </span>
-          <span class="text-neutral-500 text-sm">{{ post.date }}</span>
-          <span class="text-neutral-500 text-sm">• {{ post.readTime }}</span>
+          <span class="text-neutral-400 text-sm">{{ post.date }}</span>
+          <span class="text-neutral-400 text-sm">• {{ post.readTime }}</span>
         </div>
         
         <router-link 
@@ -72,7 +72,7 @@ const posts = ref(blogPosts)
 
     <!-- Back Link -->
     <div class="text-center">
-      <router-link to="/" class="text-neutral-500 hover:text-white transition-colors">
+      <router-link to="/" class="text-neutral-400 hover:text-white transition-colors">
         ← Back to Home
       </router-link>
     </div>

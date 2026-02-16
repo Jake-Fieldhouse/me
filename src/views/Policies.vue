@@ -121,7 +121,7 @@ const getColorClasses = (color: string) => {
             </h2>
             <p class="text-sm text-neutral-400 mt-1">{{ policy.description }}</p>
           </div>
-          <span class="text-neutral-500 group-hover:text-white transition-colors">→</span>
+          <span class="text-neutral-400 group-hover:text-white transition-colors">→</span>
         </div>
       </router-link>
     </div>
@@ -147,7 +147,7 @@ const getColorClasses = (color: string) => {
     </div>
     
     <div class="mt-12 text-center">
-      <router-link to="/" class="text-neutral-500 hover:text-white transition-colors">← Back to Home</router-link>
+      <router-link to="/" class="text-neutral-400 hover:text-white transition-colors">← Back to Home</router-link>
     </div>
   </div>
 </template>

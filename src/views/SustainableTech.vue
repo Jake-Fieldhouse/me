@@ -123,19 +123,19 @@ const scrollToComparison = () => {
     <section ref="statsRef" class="grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-white/5 py-12">
         <div class="text-center space-y-2">
             <div class="text-4xl font-bold text-white">100%</div>
-            <div class="text-sm text-neutral-500 uppercase tracking-widest">Zero Landfill</div>
+            <div class="text-sm text-neutral-400 uppercase tracking-widest">Zero Landfill</div>
         </div>
         <div class="text-center space-y-2">
             <div class="text-4xl font-bold text-white">NIST</div>
-            <div class="text-sm text-neutral-500 uppercase tracking-widest">800-88 Standard</div>
+            <div class="text-sm text-neutral-400 uppercase tracking-widest">800-88 Standard</div>
         </div>
         <div class="text-center space-y-2">
             <div class="text-4xl font-bold text-white">FREE</div>
-            <div class="text-sm text-neutral-500 uppercase tracking-widest">Collections</div>
+            <div class="text-sm text-neutral-400 uppercase tracking-widest">Collections</div>
         </div>
         <div class="text-center space-y-2">
             <div class="text-4xl font-bold text-white">24h</div>
-            <div class="text-sm text-neutral-500 uppercase tracking-widest">Response Time</div>
+            <div class="text-sm text-neutral-400 uppercase tracking-widest">Response Time</div>
         </div>
     </section>
 
@@ -177,17 +177,17 @@ const scrollToComparison = () => {
                  <div class="p-8 bg-black/50 backdrop-blur-sm rounded-2xl border border-white/5 space-y-4">
                      <div class="text-5xl font-black text-green-500">0%</div>
                      <h3 class="font-bold text-white text-xl">Landfill Policy</h3>
-                     <p class="text-sm text-neutral-500">Absolutely nothing goes to waste. We separate, refine, and recycle every gram of material.</p>
+                     <p class="text-sm text-neutral-400">Absolutely nothing goes to waste. We separate, refine, and recycle every gram of material.</p>
                  </div>
                  <div class="p-8 bg-black/50 backdrop-blur-sm rounded-2xl border border-white/5 space-y-4">
                      <div class="text-5xl font-black text-green-500">CO2</div>
                      <h3 class="font-bold text-white text-xl">Carbon Savings</h3>
-                     <p class="text-sm text-neutral-500">Refurbishing one laptop saves ~270kg of CO2 compared to manufacturing a new one.</p>
+                     <p class="text-sm text-neutral-400">Refurbishing one laptop saves ~270kg of CO2 compared to manufacturing a new one.</p>
                  </div>
                  <div class="p-8 bg-black/50 backdrop-blur-sm rounded-2xl border border-white/5 space-y-4">
                      <div class="text-5xl font-black text-green-500">95%</div>
                      <h3 class="font-bold text-white text-xl">Recovery Rate</h3>
-                     <p class="text-sm text-neutral-500">Through our advanced refining partners, we recover 95% of precious metals like Gold and Copper.</p>
+                     <p class="text-sm text-neutral-400">Through our advanced refining partners, we recover 95% of precious metals like Gold and Copper.</p>
                  </div>
              </div>
          </div>
@@ -231,7 +231,7 @@ const scrollToComparison = () => {
         <div class="overflow-x-auto">
             <table class="w-full text-left border-collapse min-w-xl">
                 <thead>
-                    <tr class="text-sm uppercase tracking-widest text-neutral-500 border-b border-white/10">
+                    <tr class="text-sm uppercase tracking-widest text-neutral-400 border-b border-white/10">
                         <th class="p-6 font-medium">Feature</th>
                         <th class="p-6 font-bold text-white bg-neutral-900/50 rounded-t-xl border-t border-x border-white/5">Jake Fieldhouse Consulting</th>
                         <th class="p-6 font-medium text-neutral-600">Typical Recycler</th>
@@ -282,7 +282,7 @@ const scrollToComparison = () => {
                     </div>
                     <div>
                         <strong class="text-white block">Blancco Data Erasure</strong>
-                        <span class="text-sm text-neutral-500">Industry-standard 3-pass wipe for functioning drives. Certificates provided per serial number.</span>
+                        <span class="text-sm text-neutral-400">Industry-standard 3-pass wipe for functioning drives. Certificates provided per serial number.</span>
                     </div>
                 </li>
                 <li class="flex items-start gap-3">
@@ -291,7 +291,7 @@ const scrollToComparison = () => {
                     </div>
                     <div>
                         <strong class="text-white block">Physical Destruction</strong>
-                        <span class="text-sm text-neutral-500">For non-functional media, we physically shred or drill drives to ensure 100% unrecoverability.</span>
+                        <span class="text-sm text-neutral-400">For non-functional media, we physically shred or drill drives to ensure 100% unrecoverability.</span>
                     </div>
                 </li>
                 <li class="flex items-start gap-3">
@@ -300,7 +300,7 @@ const scrollToComparison = () => {
                     </div>
                     <div>
                         <strong class="text-white block">Full Audit Trail</strong>
-                        <span class="text-sm text-neutral-500">You receive a complete asset report and Waste Transfer Note proving legal compliance.</span>
+                        <span class="text-sm text-neutral-400">You receive a complete asset report and Waste Transfer Note proving legal compliance.</span>
                     </div>
                 </li>
             </ul>
@@ -315,24 +315,24 @@ const scrollToComparison = () => {
                            <IconShieldCheck class="w-5 h-5 text-green-600" />
                        </div>
                        <p class="text-sm font-bold text-neutral-900 tracking-wide uppercase">Certificate of Destruction</p>
-                       <p class="text-xs text-neutral-500 mt-1">Jake Fieldhouse Consulting Ltd</p>
+                       <p class="text-xs text-neutral-400 mt-1">Jake Fieldhouse Consulting Ltd</p>
                    </div>
                    <!-- Body -->
                    <div class="space-y-3 text-xs">
                        <div class="flex justify-between">
-                           <span class="text-neutral-500">Certificate No.</span>
+                           <span class="text-neutral-400">Certificate No.</span>
                            <span class="font-mono text-neutral-800">JFC-2026-0042</span>
                        </div>
                        <div class="flex justify-between">
-                           <span class="text-neutral-500">Method</span>
+                           <span class="text-neutral-400">Method</span>
                            <span class="font-mono text-neutral-800">NIST 800-88 Purge</span>
                        </div>
                        <div class="flex justify-between">
-                           <span class="text-neutral-500">Serial No.</span>
+                           <span class="text-neutral-400">Serial No.</span>
                            <span class="font-mono text-neutral-800">████████1847</span>
                        </div>
                        <div class="flex justify-between">
-                           <span class="text-neutral-500">Status</span>
+                           <span class="text-neutral-400">Status</span>
                            <span class="font-bold text-green-600">DESTROYED ✓</span>
                        </div>
                    </div>
@@ -342,7 +342,7 @@ const scrollToComparison = () => {
                        <span class="text-[10px] bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full font-medium">GDPR Compliant</span>
                    </div>
                </div>
-               <p class="text-neutral-500 text-xs text-center mt-4">Sample — redacted for privacy</p>
+               <p class="text-neutral-400 text-xs text-center mt-4">Sample — redacted for privacy</p>
            </div>
         </div>
     </section>
@@ -430,7 +430,7 @@ const scrollToComparison = () => {
                     <button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-orange-600 text-black font-bold py-4 rounded-xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
                         Get Free Schedule
                     </button>
-                    <p class="text-center text-xs text-neutral-500">
+                    <p class="text-center text-xs text-neutral-400">
                         No Credit Card Required • No Obligations
                     </p>
                 </form>
@@ -446,22 +446,22 @@ const scrollToComparison = () => {
             <div class="text-center space-y-3">
                 <div class="w-12 h-12 mx-auto rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-bold">1</div>
                 <h3 class="font-bold text-white text-sm">24hr Response</h3>
-                <p class="text-xs text-neutral-500">We confirm your request and propose collection dates within one business day.</p>
+                <p class="text-xs text-neutral-400">We confirm your request and propose collection dates within one business day.</p>
             </div>
             <div class="text-center space-y-3">
                 <div class="w-12 h-12 mx-auto rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-bold">2</div>
                 <h3 class="font-bold text-white text-sm">Scheduled Pickup</h3>
-                <p class="text-xs text-neutral-500">We arrive on-site at the agreed time. You hand over equipment — that's it.</p>
+                <p class="text-xs text-neutral-400">We arrive on-site at the agreed time. You hand over equipment — that's it.</p>
             </div>
             <div class="text-center space-y-3">
                 <div class="w-12 h-12 mx-auto rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-bold">3</div>
                 <h3 class="font-bold text-white text-sm">WTN Issued</h3>
-                <p class="text-xs text-neutral-500">You receive a legal Waste Transfer Note proving your Duty of Care compliance.</p>
+                <p class="text-xs text-neutral-400">You receive a legal Waste Transfer Note proving your Duty of Care compliance.</p>
             </div>
             <div class="text-center space-y-3">
                 <div class="w-12 h-12 mx-auto rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-400 font-bold">✓</div>
                 <h3 class="font-bold text-white text-sm">Certificate Delivered</h3>
-                <p class="text-xs text-neutral-500">Full Certificate of Destruction with serial numbers, methods, and compliance evidence.</p>
+                <p class="text-xs text-neutral-400">Full Certificate of Destruction with serial numbers, methods, and compliance evidence.</p>
             </div>
         </div>
     </section>
@@ -477,7 +477,7 @@ const scrollToComparison = () => {
                 </div>
                 <div>
                     <h3 class="font-bold text-white text-sm group-hover:text-amber-400 transition-colors">Service Brief (1-Page Summary)</h3>
-                    <p class="text-xs text-neutral-500 mt-1">Print-ready overview with credentials — forward to your manager or facilities team.</p>
+                    <p class="text-xs text-neutral-400 mt-1">Print-ready overview with credentials — forward to your manager or facilities team.</p>
                 </div>
             </a>
             <a href="/documents/waste-transfer-note-template.html" target="_blank" rel="noopener" class="flex items-start gap-4 p-4 bg-white/5 border border-white/10 rounded-xl hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all group">
@@ -486,7 +486,7 @@ const scrollToComparison = () => {
                 </div>
                 <div>
                     <h3 class="font-bold text-white text-sm group-hover:text-emerald-400 transition-colors">Waste Transfer Note Template</h3>
-                    <p class="text-xs text-neutral-500 mt-1">Legal WTN template issued on every collection — satisfies Duty of Care obligations.</p>
+                    <p class="text-xs text-neutral-400 mt-1">Legal WTN template issued on every collection — satisfies Duty of Care obligations.</p>
                 </div>
             </a>
             <a href="/documents/collector-authorization-form.html" target="_blank" rel="noopener" class="flex items-start gap-4 p-4 bg-white/5 border border-white/10 rounded-xl hover:border-blue-500/30 hover:bg-blue-500/5 transition-all group">
@@ -495,7 +495,7 @@ const scrollToComparison = () => {
                 </div>
                 <div>
                     <h3 class="font-bold text-white text-sm group-hover:text-blue-400 transition-colors">Collector Authorization Form</h3>
-                    <p class="text-xs text-neutral-500 mt-1">Hand to reception/facilities to pre-authorize the collection on the agreed date.</p>
+                    <p class="text-xs text-neutral-400 mt-1">Hand to reception/facilities to pre-authorize the collection on the agreed date.</p>
                 </div>
             </a>
             <a href="/documents/certificate_of_destruction_example.html" target="_blank" rel="noopener" class="flex items-start gap-4 p-4 bg-white/5 border border-white/10 rounded-xl hover:border-green-500/30 hover:bg-green-500/5 transition-all group">
@@ -504,7 +504,7 @@ const scrollToComparison = () => {
                 </div>
                 <div>
                     <h3 class="font-bold text-white text-sm group-hover:text-green-400 transition-colors">Sample Certificate of Destruction</h3>
-                    <p class="text-xs text-neutral-500 mt-1">Example of the certificate you'll receive with serial numbers and destruction methods.</p>
+                    <p class="text-xs text-neutral-400 mt-1">Example of the certificate you'll receive with serial numbers and destruction methods.</p>
                 </div>
             </a>
         </div>

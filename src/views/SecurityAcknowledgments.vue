@@ -29,7 +29,7 @@ import CircuitPattern from '../components/CircuitPattern.vue'
             <span class="text-3xl">🏆</span> Hall of Fame
           </h2>
           
-          <div class="text-center py-12 text-neutral-500">
+          <div class="text-center py-12 text-neutral-400">
             <div class="text-6xl mb-4">🔒</div>
             <p class="text-lg">No vulnerabilities reported yet.</p>
             <p class="text-sm mt-2">Be the first to responsibly disclose a security issue!</p>
@@ -54,7 +54,7 @@ import CircuitPattern from '../components/CircuitPattern.vue'
                 <li class="flex items-center gap-3">
                   <span class="text-emerald-400">→</span>
                   <a href="mailto:security@jakefieldhouse.co.uk" class="text-emerald-400 hover:underline">security@jakefieldhouse.co.uk</a>
-                  <span class="text-neutral-500 text-sm">(preferred)</span>
+                  <span class="text-neutral-400 text-sm">(preferred)</span>
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="text-emerald-400">→</span>

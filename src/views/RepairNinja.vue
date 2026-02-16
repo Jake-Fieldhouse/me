@@ -91,19 +91,19 @@ const scrollToBook = () => {
     <section class="grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-white/5 py-12">
         <div class="text-center space-y-2">
             <div class="text-4xl font-bold text-white">12mo</div>
-            <div class="text-sm text-neutral-500 uppercase tracking-widest">Warranty</div>
+            <div class="text-sm text-neutral-400 uppercase tracking-widest">Warranty</div>
         </div>
         <div class="text-center space-y-2">
             <div class="text-4xl font-bold text-white">24h</div>
-            <div class="text-sm text-neutral-500 uppercase tracking-widest">Turnaround</div>
+            <div class="text-sm text-neutral-400 uppercase tracking-widest">Turnaround</div>
         </div>
         <div class="text-center space-y-2">
             <div class="text-4xl font-bold text-white">1k+</div>
-            <div class="text-sm text-neutral-500 uppercase tracking-widest">Devices Fixed</div>
+            <div class="text-sm text-neutral-400 uppercase tracking-widest">Devices Fixed</div>
         </div>
         <div class="text-center space-y-2">
             <div class="text-4xl font-bold text-white">No Fix</div>
-            <div class="text-sm text-neutral-500 uppercase tracking-widest">No Fee</div>
+            <div class="text-sm text-neutral-400 uppercase tracking-widest">No Fee</div>
         </div>
     </section>
 
@@ -200,31 +200,31 @@ const scrollToBook = () => {
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 
             <div class="aspect-square rounded-xl bg-gradient-to-br from-neutral-800 to-neutral-900 border border-neutral-700 flex items-center justify-center group hover:border-red-500/50 transition-colors">
-                <div class="text-center text-neutral-500 group-hover:text-neutral-400 transition-colors">
+                <div class="text-center text-neutral-400 group-hover:text-neutral-400 transition-colors">
                     <div class="text-3xl mb-2">🔬</div>
                     <span class="text-xs">Photo 1</span>
                 </div>
             </div>
             <div class="aspect-square rounded-xl bg-gradient-to-br from-neutral-800 to-neutral-900 border border-neutral-700 flex items-center justify-center group hover:border-red-500/50 transition-colors">
-                <div class="text-center text-neutral-500 group-hover:text-neutral-400 transition-colors">
+                <div class="text-center text-neutral-400 group-hover:text-neutral-400 transition-colors">
                     <div class="text-3xl mb-2">🔧</div>
                     <span class="text-xs">Photo 2</span>
                 </div>
             </div>
             <div class="aspect-square rounded-xl bg-gradient-to-br from-neutral-800 to-neutral-900 border border-neutral-700 flex items-center justify-center group hover:border-red-500/50 transition-colors">
-                <div class="text-center text-neutral-500 group-hover:text-neutral-400 transition-colors">
+                <div class="text-center text-neutral-400 group-hover:text-neutral-400 transition-colors">
                     <div class="text-3xl mb-2">💻</div>
                     <span class="text-xs">Photo 3</span>
                 </div>
             </div>
             <div class="aspect-square rounded-xl bg-gradient-to-br from-neutral-800 to-neutral-900 border border-neutral-700 flex items-center justify-center group hover:border-red-500/50 transition-colors">
-                <div class="text-center text-neutral-500 group-hover:text-neutral-400 transition-colors">
+                <div class="text-center text-neutral-400 group-hover:text-neutral-400 transition-colors">
                     <div class="text-3xl mb-2">🎮</div>
                     <span class="text-xs">Photo 4</span>
                 </div>
             </div>
         </div>
-        <p class="text-neutral-500 text-center text-sm mt-6">
+        <p class="text-neutral-400 text-center text-sm mt-6">
             Precision repairs on phones, consoles, and laptops
         </p>
     </section>

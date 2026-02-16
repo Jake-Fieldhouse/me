@@ -337,7 +337,7 @@ Looking forward to hearing from you.`)
           Book Your Free AI Visibility Audit
         </button>
         
-        <p class="text-neutral-500 mt-4 text-sm">Or email directly: <a href="mailto:jake@jakefieldhouse.co.uk" class="text-violet-400 hover:underline">jake@jakefieldhouse.co.uk</a></p>
+        <p class="text-neutral-400 mt-4 text-sm">Or email directly: <a href="mailto:jake@jakefieldhouse.co.uk" class="text-violet-400 hover:underline">jake@jakefieldhouse.co.uk</a></p>
       </div>
     </section>
   </div>

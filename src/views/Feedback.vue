@@ -155,7 +155,7 @@ const handleSubmit = async () => {
                     class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-neutral-500 focus:border-emerald-500/50 focus:outline-none transition-all resize-none"
                     required
                 ></textarea>
-                <p class="text-xs text-neutral-500 mt-2">
+                <p class="text-xs text-neutral-400 mt-2">
                     By submitting, you agree that your testimonial may be displayed on our website.
                 </p>
             </div>

@@ -286,7 +286,7 @@ onMounted(() => {
     
     <!-- Article Header -->
     <header ref="heroRef" class="space-y-6 mt-10">
-      <router-link to="/blog" class="text-neutral-500 hover:text-white transition-colors text-sm">
+      <router-link to="/blog" class="text-neutral-400 hover:text-white transition-colors text-sm">
         ← Back to Blog
       </router-link>
       
@@ -294,8 +294,8 @@ onMounted(() => {
         <span :class="['px-3 py-1 rounded-full text-xs font-medium border', categoryColors[currentPost.category]]">
           {{ currentPost.category }}
         </span>
-        <span class="text-neutral-500 text-sm">{{ currentPost.date }}</span>
-        <span class="text-neutral-500 text-sm">• {{ currentPost.readTime }}</span>
+        <span class="text-neutral-400 text-sm">{{ currentPost.date }}</span>
+        <span class="text-neutral-400 text-sm">• {{ currentPost.readTime }}</span>
       </div>
       
       <h1 class="text-4xl md:text-5xl font-black tracking-tighter text-white leading-tight">
@@ -316,7 +316,7 @@ onMounted(() => {
              prose-a:text-blue-400 prose-a:underline hover:prose-a:text-blue-300
              prose-strong:text-white
              prose-ul:text-neutral-300 prose-ol:text-neutral-300
-             prose-li:marker:text-neutral-500"
+             prose-li:marker:text-neutral-400"
       v-html="currentPost.content"
     />
 
@@ -336,7 +336,7 @@ onMounted(() => {
 
     <!-- Back Link -->
     <div class="text-center">
-      <router-link to="/blog" class="text-neutral-500 hover:text-white transition-colors">
+      <router-link to="/blog" class="text-neutral-400 hover:text-white transition-colors">
         ← Back to Blog
       </router-link>
     </div>

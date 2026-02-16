@@ -159,13 +159,13 @@ const caseStudies: CaseStudy[] = [
                     
                     <!-- Challenge -->
                     <div>
-                        <h3 class="text-sm font-bold uppercase tracking-wider text-neutral-500 mb-3">The Challenge</h3>
+                        <h3 class="text-sm font-bold uppercase tracking-wider text-neutral-400 mb-3">The Challenge</h3>
                         <p class="text-neutral-300 leading-relaxed">{{ study.challenge }}</p>
                     </div>
 
                     <!-- Solution -->
                     <div>
-                        <h3 class="text-sm font-bold uppercase tracking-wider text-neutral-500 mb-3">Our Solution</h3>
+                        <h3 class="text-sm font-bold uppercase tracking-wider text-neutral-400 mb-3">Our Solution</h3>
                         <ul class="space-y-2">
                             <li 
                                 v-for="(item, idx) in study.solution" 
@@ -180,7 +180,7 @@ const caseStudies: CaseStudy[] = [
 
                     <!-- Outcomes -->
                     <div>
-                        <h3 class="text-sm font-bold uppercase tracking-wider text-neutral-500 mb-3">Results</h3>
+                        <h3 class="text-sm font-bold uppercase tracking-wider text-neutral-400 mb-3">Results</h3>
                         <div class="grid sm:grid-cols-2 gap-3">
                             <div 
                                 v-for="(outcome, idx) in study.outcomes" 
@@ -220,7 +220,7 @@ const caseStudies: CaseStudy[] = [
         </div>
 
         <div class="mt-12 text-center">
-            <router-link to="/" class="text-neutral-500 hover:text-white transition-colors">← Back to Home</router-link>
+            <router-link to="/" class="text-neutral-400 hover:text-white transition-colors">← Back to Home</router-link>
         </div>
     </div>
 </template>

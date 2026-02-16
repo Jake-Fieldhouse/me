@@ -51,7 +51,7 @@
             </tbody>
           </table>
         </div>
-        <p class="text-sm text-neutral-500 mt-4">Response times are measured during business hours (Mon-Fri, 9am-5pm UK time). Response means acknowledgement of the issue, not necessarily resolution.</p>
+        <p class="text-sm text-neutral-400 mt-4">Response times are measured during business hours (Mon-Fri, 9am-5pm UK time). Response means acknowledgement of the issue, not necessarily resolution.</p>
       </section>
 
       <section>
@@ -87,11 +87,11 @@
         <p>Our liability for any failure to meet service targets is limited to the monthly fee paid for the affected service. We expressly exclude liability for any indirect, consequential, or economic losses, including but not limited to lost revenue, lost data, or business interruption.</p>
       </section>
 
-      <p class="text-neutral-500 text-sm pt-8">Last updated: February 2026</p>
+      <p class="text-neutral-400 text-sm pt-8">Last updated: February 2026</p>
     </div>
     
     <div class="mt-12 text-center">
-      <router-link to="/" class="text-neutral-500 hover:text-white transition-colors">← Back to Home</router-link>
+      <router-link to="/" class="text-neutral-400 hover:text-white transition-colors">← Back to Home</router-link>
     </div>
   </div>
 </template>
