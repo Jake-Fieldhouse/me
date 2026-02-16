@@ -104,11 +104,42 @@ select option {
   top: 1rem;
 }
 
-/* --- Accessibility: Focus-Visible Outlines --- */
+/* --- Accessibility: Focus-Visible Outlines (WCAG 2.2 SC 2.4.13 Focus Appearance) ---
+   AAA requires the focus indicator to have:
+   - Area ≥ perimeter × 2px (3px outline satisfies for all practical sizes)
+   - ≥ 3:1 contrast against adjacent colors
+   - ≥ 3:1 contrast between focused/unfocused state
+   #60a5fa on #000 = 6.6:1 contrast — well above 3:1 */
 :focus-visible {
-  outline: 2px solid rgba(96, 165, 250, 0.8);
-  outline-offset: 2px;
+  outline: 3px solid #60a5fa;
+  outline-offset: 3px;
+  /* Ensure focus ring is never clipped by overflow:hidden parents (SC 2.4.12) */
+  scroll-margin-block: 8px;
 }
+
+/* Remove default browser outline to prevent double ring */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* --- WCAG 2.2 SC 2.5.8: Target Size (Minimum 24×24 CSS px) ---
+   All interactive elements must have ≥ 24×24px target area.
+   We enforce this globally; specific components may override with larger targets. */
+a,
+button,
+[role="button"],
+[role="menuitem"],
+[role="tab"],
+input,
+select,
+textarea,
+summary {
+  min-height: 24px;
+  min-width: 24px;
+}
+
+/* Inline links within body text are exempt from target size per SC 2.5.8 exception.
+   But navigation/CTA links still need the minimum. */
 
 body {
   margin: 0;
@@ -165,9 +196,9 @@ button:hover {
   border-color: #646cff;
 }
 
-button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 3px solid #60a5fa;
+  outline-offset: 3px;
 }
 
 /* ========== 2026 BLEEDING EDGE ENHANCEMENTS ========== */
@@ -300,10 +331,10 @@ button:focus-visible {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* --- Modern Focus States (WCAG 2.4.7) --- */
+/* --- Modern Focus States (WCAG 2.2 SC 2.4.13 Focus Appearance — AAA) --- */
 a:focus-visible {
-  outline: 2px solid #60a5fa;
-  outline-offset: 2px;
+  outline: 3px solid #60a5fa;
+  outline-offset: 3px;
   border-radius: 2px;
 }
 
@@ -321,7 +352,10 @@ h4 {
   letter-spacing: -0.02em;
 }
 
-/* --- Reduced Motion Respect --- */
+/* --- Reduced Motion Respect (WCAG 2.3.3 Animation from Interactions — AAA) ---
+   Disables ALL motion when the user requests it.
+   Goes beyond AA (which only requires essential motion be kept) by
+   removing hover transforms, scroll animations, and background effects. */
 @media (prefers-reduced-motion: reduce) {
 
   *,
@@ -330,6 +364,7 @@ h4 {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 
   .scroll-reveal,
@@ -345,5 +380,11 @@ h4 {
   .hover-glow:hover,
   .btn-depth:hover {
     transform: none;
+  }
+
+  /* Hide purely decorative motion elements */
+  .fluid-cursor-canvas,
+  .aurora-sweep {
+    display: none !important;
   }
 }

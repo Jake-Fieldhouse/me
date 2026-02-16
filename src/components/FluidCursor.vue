@@ -1514,7 +1514,7 @@ onMounted(() => {
   >
     <canvas
       ref="canvasRef"
-      class="block w-full h-full"
+      class="fluid-cursor-canvas block w-full h-full"
     />
   </div>
 </template>
