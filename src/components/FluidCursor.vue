@@ -332,31 +332,6 @@ onMounted(() => {
     return keywordsString + source;
   }
 
-  // KHR_parallel_shader_compile: compile shaders on GPU background thread.
-  // When available, gl.compileShader() and gl.linkProgram() return immediately
-  // and compile/link asynchronously. We poll COMPLETION_STATUS_KHR to check
-  // when they're ready, yielding to main thread between polls.
-  // Supported: Chrome 76+, Edge 79+, Firefox 117+, Safari 16.4+
-  const parallelCompileExt = gl.getExtension('KHR_parallel_shader_compile');
-  const COMPLETION_STATUS_KHR = 0x91B1;
-
-  /** Poll until a shader or program is compiled/linked (non-blocking). */
-  async function waitForCompilation(obj: WebGLShader | WebGLProgram): Promise<void> {
-    if (!parallelCompileExt) return; // No extension = synchronous compile (already done)
-    // Poll with requestAnimationFrame for smooth visual updates during preloader
-    return new Promise<void>(resolve => {
-      const check = () => {
-        if (gl.getProgramParameter(obj as WebGLProgram, COMPLETION_STATUS_KHR)
-            || gl.getShaderParameter(obj as WebGLShader, COMPLETION_STATUS_KHR)) {
-          resolve();
-        } else {
-          requestAnimationFrame(check);
-        }
-      };
-      check();
-    });
-  }
-
   function compileShader(
     type: number,
     source: string,
@@ -367,8 +342,7 @@ onMounted(() => {
     if (!shader) return null;
     gl.shaderSource(shader, shaderSource);
     gl.compileShader(shader);
-    // With KHR_parallel_shader_compile, compilation happens on GPU thread.
-    // Without it, compilation is synchronous and already done.
+
     return shader;
   }
 
@@ -382,7 +356,7 @@ onMounted(() => {
     gl.attachShader(program, vertexShader);
     gl.attachShader(program, fragmentShader);
     gl.linkProgram(program);
-    // With KHR_parallel_shader_compile, linking happens on GPU thread.
+
     return program;
   }
 
@@ -811,36 +785,26 @@ onMounted(() => {
   let curl: FBO;
   let pressure: DoubleFBO;
 
-  // WebGL Programs — submit ALL at once, then wait for GPU to finish.
-  // With KHR_parallel_shader_compile, all programs compile in parallel on the
-  // GPU thread while the main thread stays free for preloader animations.
-  // Without the extension, compilation is synchronous (already done by here)
-  // and we yield once to let the browser breathe.
+  // WebGL Programs — yield between each to keep individual tasks under 50ms
   const copyProgram = new Program(baseVertexShader, copyShader);
+  await yieldToMain();
   const clearProgram = new Program(baseVertexShader, clearShader);
+  await yieldToMain();
   const splatProgram = new Program(baseVertexShader, splatShader);
+  await yieldToMain();
   const advectionProgram = new Program(baseVertexShader, advectionShader);
+  await yieldToMain();
   const divergenceProgram = new Program(baseVertexShader, divergenceShader);
+  await yieldToMain();
   const curlProgram = new Program(baseVertexShader, curlShader);
+  await yieldToMain();
   const vorticityProgram = new Program(baseVertexShader, vorticityShader);
+  await yieldToMain();
   const pressureProgram = new Program(baseVertexShader, pressureShader);
+  await yieldToMain();
   const gradienSubtractProgram = new Program(baseVertexShader, gradientSubtractShader);
+  await yieldToMain();
   const displayMaterial = new Material(baseVertexShader, displayShaderSource);
-
-  // Wait for all programs to finish compiling on the GPU (non-blocking poll)
-  const allPrograms = [
-    copyProgram, clearProgram, splatProgram, advectionProgram,
-    divergenceProgram, curlProgram, vorticityProgram, pressureProgram,
-    gradienSubtractProgram,
-  ].filter(p => p.program);
-
-  if (parallelCompileExt) {
-    // GPU is compiling in parallel — poll until all are done
-    await Promise.all(allPrograms.map(p => waitForCompilation(p.program!)));
-  } else {
-    // No extension — single yield to let browser breathe after sync compile
-    await yieldToMain();
-  }
 
   // -------------------- FBO creation --------------------
   function createFBO(
@@ -1550,7 +1514,7 @@ onMounted(() => {
   >
     <canvas
       ref="canvasRef"
-      class="fluid-cursor-canvas block w-full h-full"
+      class="block w-full h-full"
     />
   </div>
 </template>
