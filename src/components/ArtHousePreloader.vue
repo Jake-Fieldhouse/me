@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import FluidCursor from './FluidCursor.vue'
+import { defineAsyncComponent } from 'vue'
 
-// Show FluidCursor immediately — no artificial delay.
-// TBT is managed inside FluidCursor itself via KHR_parallel_shader_compile.
-const showFluid = ref(false)
-onMounted(() => {
-  showFluid.value = true
-})
+// Code-split: FluidCursor (46KB WebGL) loads as a separate chunk
+// The preloader is visible for 3.5s anyway, so this has zero visual impact
+const FluidCursor = defineAsyncComponent(() => import('./FluidCursor.vue'))
 
 defineProps<{
   loading: boolean
@@ -19,18 +15,15 @@ defineProps<{
     class="fixed inset-0 z-[9999] overflow-hidden bg-black transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform will-change-opacity"
     :class="loading ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-[1.02] pointer-events-none'"
   >
-    <!-- Fluid Cursor Background - deferred 1s, fades in smoothly -->
-    <Transition name="fluid-fade">
-      <FluidCursor 
-        v-if="showFluid"
-        class="absolute inset-0 z-[1]" 
-        :intro-mode="true"
-        :splat-radius="0.2"
-        :curl="6"
-        :color-update-speed="12"
-        :density-dissipation="4"
-      />
-    </Transition>
+    <!-- Fluid Cursor Background - z-[1] so it's above bg-black but below text -->
+    <FluidCursor 
+      class="absolute inset-0 z-[1]" 
+      :intro-mode="true"
+      :splat-radius="0.2"
+      :curl="6"
+      :color-update-speed="12"
+      :density-dissipation="4"
+    />
     
     <!-- Subtle overlay effects -->
     <div class="absolute inset-0 z-[2] preloader-sheen" aria-hidden="true" />
@@ -124,12 +117,5 @@ defineProps<{
   transform-origin: left;
   background: white;
   animation: preloaderProgress 3.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.fluid-fade-enter-active {
-  transition: opacity 0.8s ease-out;
-}
-.fluid-fade-enter-from {
-  opacity: 0;
 }
 </style>
