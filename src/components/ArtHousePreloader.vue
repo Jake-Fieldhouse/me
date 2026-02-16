@@ -1,16 +1,12 @@
 <script setup lang="ts">
-import { defineAsyncComponent, ref, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
+import FluidCursor from './FluidCursor.vue'
 
-// Defer FluidCursor import by 1s to keep it outside Lighthouse's TTI window.
-// The preloader runs for 3.2s, so the fluid effect appears at ~1s — zero visual impact.
+// Show FluidCursor immediately — no artificial delay.
+// TBT is managed inside FluidCursor itself via KHR_parallel_shader_compile.
 const showFluid = ref(false)
-const FluidCursor = defineAsyncComponent(() =>
-  new Promise<typeof import('./FluidCursor.vue')>(resolve => {
-    setTimeout(() => resolve(import('./FluidCursor.vue')), 1000)
-  })
-)
 onMounted(() => {
-  setTimeout(() => { showFluid.value = true }, 1000)
+  showFluid.value = true
 })
 
 defineProps<{
