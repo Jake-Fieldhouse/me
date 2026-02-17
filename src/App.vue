@@ -7,6 +7,8 @@ import ArtHousePreloader from './components/ArtHousePreloader.vue'
 // Async-load non-critical components to reduce initial main-thread work
 const CookieConsent = defineAsyncComponent(() => import('./components/CookieConsent.vue'))
 const StickyCTA = defineAsyncComponent(() => import('./components/StickyCTA.vue'))
+const ScrollProgress = defineAsyncComponent(() => import('./components/ScrollProgress.vue'))
+const BackToTop = defineAsyncComponent(() => import('./components/BackToTop.vue'))
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 const Toast = defineAsyncComponent(() => import('./components/Toast.vue'))
@@ -67,6 +69,9 @@ onMounted(() => {
       :class="isLoading ? 'pointer-events-none select-none' : 'pointer-events-auto'"
       :aria-hidden="isLoading ? 'true' : 'false'"
     >
+      <!-- Scroll Progress Indicator (pure CSS, zero JS) -->
+      <ScrollProgress />
+
       <!-- Navigation (persists across view transitions) -->
       <Navbar style="view-transition-name: navbar;" />
 
@@ -95,6 +100,9 @@ onMounted(() => {
 
       <!-- Sticky Mobile CTA -->
       <StickyCTA />
+
+      <!-- Back to Top (scroll-driven, appears after 15% scroll) -->
+      <BackToTop />
 
       <!-- Global Footer -->
       <Footer />

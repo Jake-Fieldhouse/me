@@ -450,3 +450,185 @@ h4 {
     opacity: 0;
   }
 }
+
+/* ========== PRINT STYLESHEET ========== */
+/* Inverts dark theme to light, hides interactive elements,
+   shows link URLs, sets professional page margins. */
+@media print {
+
+  /* --- Page Setup --- */
+  @page {
+    margin: 2cm 1.5cm;
+    size: A4;
+  }
+
+  @page :first {
+    margin-top: 1cm;
+  }
+
+  /* --- Theme Inversion: Dark → Light --- */
+  :root {
+    color-scheme: light;
+    color: #000 !important;
+    background: #fff !important;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+
+  #app {
+    background: transparent !important;
+  }
+
+  /* All text to black */
+  *,
+  *::before,
+  *::after {
+    color: #000 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border-color: #999 !important;
+  }
+
+  /* Preserve meaningful borders, remove decorative ones */
+  .border-white\/5,
+  .border-white\/10 {
+    border-color: #ccc !important;
+  }
+
+  /* --- Hide Non-Content Elements --- */
+  nav,
+  footer,
+  .skip-link,
+  .fluid-cursor-canvas,
+  .aurora-sweep,
+  .scroll-progress,
+  .back-to-top,
+  .cookie-consent,
+  .sticky-cta,
+  .preloader,
+  [class*="ArtHousePreloader"],
+  [class*="AuroraBackground"],
+  [class*="FluidCursor"],
+  [class*="CookieConsent"],
+  [class*="StickyCTA"],
+  [class*="Toast"],
+  [role="navigation"],
+  button:not([type="submit"]) {
+    display: none !important;
+  }
+
+  /* --- Content Layout --- */
+  .max-w-3xl,
+  .max-w-4xl,
+  .max-w-5xl,
+  .max-w-6xl,
+  .max-w-7xl {
+    max-width: 100% !important;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* --- Typography for Print --- */
+  h1 {
+    font-size: 24pt !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  h2 {
+    font-size: 18pt !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  h3 {
+    font-size: 14pt !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: auto;
+  }
+
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* --- Link URLs (show href after link text) --- */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    font-weight: normal;
+    color: #555 !important;
+    word-break: break-all;
+  }
+
+  /* Don't show URL for internal navigation or fragment links */
+  a[href^="#"]::after,
+  a[href^="/"]::after,
+  a[href^="javascript"]::after {
+    content: "";
+  }
+
+  /* Show full URL for internal links with domain */
+  a[href^="https://jakefieldhouse"]::after {
+    content: "";
+  }
+
+  /* --- Page Break Rules --- */
+  article,
+  section,
+  .prose {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  table,
+  figure,
+  pre,
+  blockquote {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* --- Badges/Tags: ensure visibility --- */
+  .rounded-full {
+    border: 1px solid #999 !important;
+    padding: 2px 8px !important;
+  }
+
+  /* --- Gradient Text: override to solid black --- */
+  .bg-clip-text,
+  .text-transparent {
+    -webkit-text-fill-color: #000 !important;
+    color: #000 !important;
+    background: none !important;
+  }
+
+  /* --- Remove backdrop effects --- */
+  .backdrop-blur-sm,
+  .backdrop-blur,
+  .backdrop-blur-md,
+  .backdrop-blur-lg,
+  .backdrop-blur-xl {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}
