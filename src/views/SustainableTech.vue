@@ -75,8 +75,13 @@ const scrollToComparison = () => {
     <BreadcrumbSchema :crumbs="[{ name: 'E-Waste Collection', url: '/secure-data-disposal-hull' }]" />
     <!-- Hero -->
     <header ref="headerRef" class="text-center space-y-6 mt-10">
-      <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-4">
-          Zero Landfill Policy • 100% Free Service
+      <div class="flex flex-wrap justify-center gap-3 mb-4">
+          <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium">
+              Zero Landfill Policy • 100% Free Service
+          </div>
+          <div class="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium">
+              NIST 800-88 Certified Destruction
+          </div>
       </div>
       <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
         Business IT Recycling <br class="hidden md:block" /> & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">Collection</span>
@@ -98,6 +103,17 @@ const scrollToComparison = () => {
     <router-link to="/compliance" class="block w-full cursor-pointer hover:opacity-90 transition-opacity">
         <TrustBar />
     </router-link>
+
+    <!-- Trusted By Sectors -->
+    <section class="flex flex-wrap justify-center gap-3 py-2">
+        <span class="text-xs text-neutral-500 uppercase tracking-widest font-medium self-center mr-2">Trusted by</span>
+        <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-neutral-400 text-sm">Offices</span>
+        <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-neutral-400 text-sm">Schools & Academies</span>
+        <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-neutral-400 text-sm">Law Firms</span>
+        <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-neutral-400 text-sm">Accountancy Practices</span>
+        <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-neutral-400 text-sm">Data Centres</span>
+        <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-neutral-400 text-sm">Charities & Non-Profits</span>
+    </section>
 
     <!-- Service Area Callout -->
     <section class="bg-gradient-to-r from-amber-500/5 to-emerald-500/5 border border-white/5 rounded-2xl p-6 md:p-8">
@@ -220,6 +236,23 @@ const scrollToComparison = () => {
                 <p class="text-neutral-400">
                     Absolutely. I'm based in East Yorkshire but can arrange nationwide collection through trusted courier partners. 
                     Whether it's one pallet in Hull or fifty laptops in Shoreditch, it gets handled.
+                </p>
+            </div>
+
+             <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
+                <h3 class="text-lg font-bold text-white mb-2">Is there a minimum number of items?</h3>
+                <p class="text-neutral-400">
+                    No hard minimum. Unlike most recyclers who require 10–20 items, I operate a permissive intake model. 
+                    Even a single high-spec laptop or server is worth collecting. Fill out the form and I'll confirm within 24 hours.
+                </p>
+            </div>
+
+            <div class="bg-neutral-900/50 p-6 rounded-2xl border border-white/5">
+                <h3 class="text-lg font-bold text-white mb-2">What if we have a whole office to clear — 100+ items?</h3>
+                <p class="text-neutral-400">
+                    No problem. I <strong>scale to your requirement</strong>. Whether it's a desk clear-out or a full building decommission, 
+                    I coordinate additional transport and processing capacity on-demand. Zero overhead means this scales without 
+                    passing warehouse or fleet costs to you.
                 </p>
             </div>
         </div>
