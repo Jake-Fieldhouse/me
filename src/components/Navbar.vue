@@ -22,7 +22,7 @@ onMounted(() => {
 const navItems = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
-  { name: 'Insights', path: '/blog' },
+  { name: 'Guides', path: '/blog' },
   { name: 'Contact', path: '/contact' }
 ]
 

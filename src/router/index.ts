@@ -1,4 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { ref } from 'vue'
+
+/**
+ * Native View Transitions API (Chrome 111+, Safari 18+)
+ * Provides smooth crossfade page transitions at the browser level.
+ * Falls back to Vue <transition> on unsupported browsers.
+ */
+export const useNativeViewTransition = ref(
+    typeof document !== 'undefined' &&
+    'startViewTransition' in document
+)
 
 
 const router = createRouter({
@@ -212,7 +223,7 @@ const router = createRouter({
             name: 'blog',
             component: () => import('../views/Blog.vue'),
             meta: {
-                title: 'Blog | IT Insights & Guides for Hull Businesses',
+                title: 'Tech Guides | IT Insights for Hull Businesses',
                 description: 'Practical tech advice, repair guides, and AI search insights from Jake Fieldhouse. No fluff, just actionable knowledge.'
             }
         },
@@ -221,7 +232,7 @@ const router = createRouter({
             name: 'blog-post',
             component: () => import('../views/BlogPost.vue'),
             meta: {
-                title: 'Blog | Jake Fieldhouse Consulting',
+                title: 'Guides | Jake Fieldhouse Consulting',
                 description: 'Tech insights and guides for Hull businesses.'
             }
         },
@@ -425,5 +436,40 @@ router.beforeEach((to, _from, next) => {
 
     next();
 });
+
+// View Transitions API — wrap route changes in native browser transition
+// Only activates on browsers that support document.startViewTransition
+// WCAG 2.3.3: Skip transitions entirely for reduced-motion users
+if (useNativeViewTransition.value) {
+    let resolveTransition: (() => void) | null = null
+
+    router.beforeResolve(() => {
+        // Skip view transition for users who prefer reduced motion
+        const prefersReducedMotion = window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        ).matches
+        if (prefersReducedMotion) return
+
+        // Create a promise that the transition callback will resolve
+        // This lets startViewTransition capture the "old" snapshot,
+        // then we resolve to let Vue swap the DOM, then it animates
+        return new Promise<void>((resolve) => {
+            resolveTransition = resolve
+                ; (document as any).startViewTransition(() => {
+                    // Return a promise that resolves when Vue has rendered the new route
+                    return new Promise<void>((done) => {
+                        resolveTransition = done
+                        resolve()
+                    })
+                })
+        })
+    })
+
+    router.afterEach(() => {
+        // Signal to the view transition that the new DOM is ready
+        resolveTransition?.()
+        resolveTransition = null
+    })
+}
 
 export default router

@@ -12,6 +12,8 @@ import Footer from './components/Footer.vue'
 const Toast = defineAsyncComponent(() => import('./components/Toast.vue'))
 import { ref, onMounted, defineAsyncComponent } from 'vue'
 import { useToast } from './composables/useToast'
+import { useNativeViewTransition } from './router'
+
 
 const isLoading = ref(true)
 
@@ -65,11 +67,16 @@ onMounted(() => {
       :class="isLoading ? 'pointer-events-none select-none' : 'pointer-events-auto'"
       :aria-hidden="isLoading ? 'true' : 'false'"
     >
-      <!-- Navigation -->
-      <Navbar />
+      <!-- Navigation (persists across view transitions) -->
+      <Navbar style="view-transition-name: navbar;" />
 
+      <!-- Route content with view transition name for animation targeting -->
       <router-view v-slot="{ Component }">
+        <!-- Native View Transitions API handles animation — skip Vue transition -->
+        <component v-if="useNativeViewTransition" :is="Component" style="view-transition-name: route-content;" />
+        <!-- Fallback: Vue CSS transition for unsupported browsers -->
         <transition 
+          v-else
           enter-active-class="transition ease-out duration-500" 
           enter-from-class="opacity-0 translate-y-4" 
           enter-to-class="opacity-100 translate-y-0" 
@@ -81,6 +88,7 @@ onMounted(() => {
           <component :is="Component" />
         </transition>
       </router-view>
+
 
       <!-- Cookie Consent -->
       <CookieConsent />

@@ -1,6 +1,6 @@
 /**
- * Blog Posts Data Layer
- * Centralized content for blog posts - easily extensible for CMS integration
+ * Guides Data Layer
+ * Centralized content for tech guides - date field retained for schema/sorting only (not displayed)
  */
 
 export interface BlogPost {

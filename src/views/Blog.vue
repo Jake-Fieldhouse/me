@@ -19,14 +19,14 @@ const posts = ref(blogPosts)
   <div class="relative w-full max-w-5xl mx-auto px-6 py-20 flex flex-col gap-16">
     
     <!-- Hero -->
-    <BreadcrumbSchema :crumbs="[{ name: 'Blog', url: '/blog' }]" />
+    <BreadcrumbSchema :crumbs="[{ name: 'Guides', url: '/blog' }]" />
 
     <header ref="heroRef" class="text-center space-y-6 mt-10">
       <div class="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-4">
-        Insights & Guides
+        Tech Guides
       </div>
       <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
-        The <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Blog</span>
+        Guides & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Resources</span>
       </h1>
       <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed text-readable">
         Practical tech advice for Hull businesses. No fluff, just actionable insights from the field.
@@ -44,8 +44,7 @@ const posts = ref(blogPosts)
           <span :class="['px-3 py-1 rounded-full text-xs font-medium border', categoryColors[post.category]]">
             {{ post.category }}
           </span>
-          <span class="text-neutral-400 text-sm">{{ post.date }}</span>
-          <span class="text-neutral-400 text-sm">• {{ post.readTime }}</span>
+          <span class="text-neutral-400 text-sm">{{ post.readTime }}</span>
         </div>
         
         <router-link 

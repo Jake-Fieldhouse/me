@@ -287,15 +287,14 @@ onMounted(() => {
     <!-- Article Header -->
     <header ref="heroRef" class="space-y-6 mt-10">
       <router-link to="/blog" class="text-neutral-400 hover:text-white transition-colors text-sm">
-        ← Back to Blog
+        ← Back to Guides
       </router-link>
       
       <div class="flex flex-wrap items-center gap-4">
         <span :class="['px-3 py-1 rounded-full text-xs font-medium border', categoryColors[currentPost.category]]">
           {{ currentPost.category }}
         </span>
-        <span class="text-neutral-400 text-sm">{{ currentPost.date }}</span>
-        <span class="text-neutral-400 text-sm">• {{ currentPost.readTime }}</span>
+        <span class="text-neutral-400 text-sm">{{ currentPost.readTime }}</span>
       </div>
       
       <h1 class="text-4xl md:text-5xl font-black tracking-tighter text-white leading-tight">
@@ -337,7 +336,7 @@ onMounted(() => {
     <!-- Back Link -->
     <div class="text-center">
       <router-link to="/blog" class="text-neutral-400 hover:text-white transition-colors">
-        ← Back to Blog
+        ← Back to Guides
       </router-link>
     </div>
   </div>

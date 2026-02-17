@@ -33,8 +33,9 @@ const currentYear = new Date().getFullYear()
         <!-- Main Navigation -->
         <nav class="flex justify-center gap-6 flex-wrap">
           <router-link to="/about" class="hover:text-white transition-colors">About</router-link>
-          <router-link to="/blog" class="hover:text-white transition-colors">Insights</router-link>
+          <router-link to="/blog" class="hover:text-white transition-colors">Guides</router-link>
           <router-link to="/contact" class="hover:text-white transition-colors">Contact</router-link>
+          <router-link to="/case-studies" class="hover:text-white transition-colors">Case Studies</router-link>
           <router-link to="/feedback" class="hover:text-white transition-colors">Feedback</router-link>
           <router-link to="/compliance" class="hover:text-white transition-colors">Compliance</router-link>
           <router-link to="/service-areas" class="hover:text-white transition-colors">Service Areas</router-link>
@@ -49,6 +50,7 @@ const currentYear = new Date().getFullYear()
             <router-link to="/cookies" class="hover:text-white transition-colors">Cookies</router-link>
             <router-link to="/accessibility" class="hover:text-white transition-colors">Accessibility</router-link>
             <router-link to="/cybersecurity" class="hover:text-white transition-colors">Security</router-link>
+            <router-link to="/security-acknowledgments" class="hover:text-white transition-colors">Responsible Disclosure</router-link>
             <router-link to="/policies" class="hover:text-white transition-colors font-medium">View All →</router-link>
           </nav>
         </div>
