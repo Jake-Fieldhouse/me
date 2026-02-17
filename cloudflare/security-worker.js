@@ -69,19 +69,17 @@ const SECURITY_HEADERS = {
     // Referrer: Send origin only for cross-origin, full URL for same-origin
     'Referrer-Policy': 'strict-origin-when-cross-origin',
 
-    // Permissions Policy: Exhaustive feature blocklist
-    // Disables all browser APIs not needed for this site
+    // Permissions Policy: Only features recognised by modern browsers.
+    // Removed deprecated features that cause Chrome console warnings:
+    // battery, document-domain, execution-while-not-rendered,
+    // execution-while-out-of-viewport, navigation-override, speaker-selection
     'Permissions-Policy': [
         'accelerometer=()',
         'autoplay=()',
-        'battery=()',
         'camera=()',
         'cross-origin-isolated=()',
         'display-capture=()',
-        'document-domain=()',
         'encrypted-media=()',
-        'execution-while-not-rendered=()',
-        'execution-while-out-of-viewport=()',
         'fullscreen=()',
         'gamepad=()',
         'geolocation=()',
@@ -95,13 +93,11 @@ const SECURITY_HEADERS = {
         'magnetometer=()',
         'microphone=()',
         'midi=()',
-        'navigation-override=()',
         'payment=()',            // Disable unless using Payment Request API
         'picture-in-picture=()',
         'publickey-credentials-get=()',
         'screen-wake-lock=()',
         'serial=()',
-        'speaker-selection=()',
         'sync-xhr=()',
         'usb=()',
         'web-share=()',
