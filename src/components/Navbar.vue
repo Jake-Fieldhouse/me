@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { usePrefetch } from '../composables/usePrefetch'
 import { useRoute } from 'vue-router'
 import IconChevronDown from './icons/IconChevronDown.vue'
 import IconMenu from './icons/IconMenu.vue'
 import IconX from './icons/IconX.vue'
 
 const route = useRoute()
+const { prefetch } = usePrefetch()
 const isMenuOpen = ref(false)
 const isServicesOpen = ref(false)
 const navRef = ref<HTMLElement | null>(null)
@@ -91,6 +93,8 @@ watch(() => route.path, () => {
             :to="item.path"
             class="text-sm transition-colors border-b pb-0.5"
             :class="isActive(item.path) ? 'text-white border-white/50' : 'text-neutral-400 hover:text-white border-transparent hover:border-white/50'"
+            @mouseenter="prefetch(item.path)"
+            @focus="prefetch(item.path)"
           >
             {{ item.name }}
           </router-link>
@@ -122,6 +126,8 @@ watch(() => route.path, () => {
                   :key="service.path"
                   :to="service.path"
                   @click="isServicesOpen = false"
+                  @mouseenter="prefetch(service.path)"
+                  @focus="prefetch(service.path)"
                   role="menuitem"
                   class="block px-4 py-2 text-sm rounded-lg transition-colors"
                   :class="isActive(service.path) ? 'bg-white/10 text-white' : 'text-neutral-400 hover:bg-white/5 hover:text-white'"
