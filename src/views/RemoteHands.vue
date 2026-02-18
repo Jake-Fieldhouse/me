@@ -6,6 +6,7 @@ import IconPhone from '../components/icons/IconPhone.vue'
 import IconCheck from '../components/icons/IconCheck.vue'
 import IconArrowRight from '../components/icons/IconArrowRight.vue'
 import { useOgMeta } from '../composables/useOgMeta'
+import { trackPhoneClick } from '../lib/analytics'
 import { useScrollReveal } from '../composables/useScrollReveal'
 import { remoteHandsTasks, faqs } from '../data/remoteHands'
 
@@ -82,7 +83,7 @@ onUnmounted(() => {
             Get a Quote
             </router-link>
             
-            <a href="tel:+447404090458" class="group px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/20 text-center flex items-center justify-center gap-2">
+            <a href="tel:+447404090458" class="group px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors border border-white/20 text-center flex items-center justify-center gap-2" @click="trackPhoneClick('remotehands_hero')">
                 <IconPhone class="w-4 h-4 text-neutral-400 group-hover:text-white transition-colors" />
                 Call Now
             </a>

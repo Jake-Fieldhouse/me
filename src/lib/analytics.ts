@@ -8,14 +8,21 @@ const GA_MEASUREMENT_ID = 'G-S5QEQ38Y9M'
 const GA_SCRIPT_ID = 'ga4-script'
 const GA_DISABLE_FLAG = `ga-disable-${GA_MEASUREMENT_ID}`
 
+// Replace with your Clarity Project ID from https://clarity.microsoft.com/
+const CLARITY_PROJECT_ID = 'REPLACE_WITH_CLARITY_ID'
+
 declare global {
   interface Window {
     dataLayer?: unknown[]
     gtag?: (...args: unknown[]) => void
     __gaInitialized?: boolean
+    __clarityInitialized?: boolean
+    clarity?: (...args: unknown[]) => void
     [key: `ga-disable-${string}`]: boolean | undefined
   }
 }
+
+// ─── GA4 Core ───────────────────────────────────────────────
 
 function ensureAnalyticsScript(): void {
   if (document.getElementById(GA_SCRIPT_ID)) {
@@ -39,6 +46,42 @@ function ensureGtagQueue(): void {
   }
 }
 
+// ─── Microsoft Clarity ──────────────────────────────────────
+
+function enableClarity(): void {
+  if (typeof window === 'undefined' || window.__clarityInitialized) {
+    return
+  }
+
+  if (CLARITY_PROJECT_ID === 'REPLACE_WITH_CLARITY_ID') {
+    return // Skip until a real project ID is configured
+  }
+
+  const script = document.createElement('script')
+  script.id = 'clarity-script'
+  script.textContent = `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${CLARITY_PROJECT_ID}");`
+  document.head.appendChild(script)
+
+  // Link Clarity sessions to GA4 for cross-referencing
+  window.clarity?.('set', 'gaId', GA_MEASUREMENT_ID)
+
+  window.__clarityInitialized = true
+}
+
+function disableClarity(): void {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  const script = document.getElementById('clarity-script')
+  if (script) {
+    script.remove()
+  }
+  window.__clarityInitialized = false
+}
+
+// ─── Enable / Disable (consent-gated) ───────────────────────
+
 export function enableAnalytics(): void {
   if (typeof window === 'undefined') {
     return
@@ -47,23 +90,23 @@ export function enableAnalytics(): void {
   window[GA_DISABLE_FLAG] = false
   ensureAnalyticsScript()
 
-  if (window.__gaInitialized) {
-    return
+  if (!window.__gaInitialized) {
+    ensureGtagQueue()
+    window.gtag?.('consent', 'default', {
+      analytics_storage: 'granted',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    })
+    window.gtag?.('js', new Date())
+    window.gtag?.('config', GA_MEASUREMENT_ID, {
+      anonymize_ip: true,
+      transport_type: 'beacon'
+    })
+    window.__gaInitialized = true
   }
 
-  ensureGtagQueue()
-  window.gtag?.('consent', 'default', {
-    analytics_storage: 'granted',
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied'
-  })
-  window.gtag?.('js', new Date())
-  window.gtag?.('config', GA_MEASUREMENT_ID, {
-    anonymize_ip: true,
-    transport_type: 'beacon'
-  })
-  window.__gaInitialized = true
+  enableClarity()
 }
 
 export function disableAnalytics(): void {
@@ -72,7 +115,38 @@ export function disableAnalytics(): void {
   }
 
   window[GA_DISABLE_FLAG] = true
+  disableClarity()
 }
+
+// ─── GA4 Event Tracking ─────────────────────────────────────
+
+export function trackEvent(eventName: string, params?: Record<string, string | number | boolean>): void {
+  if (typeof window === 'undefined' || !window.gtag) {
+    return
+  }
+  window.gtag('event', eventName, params)
+}
+
+export function trackFormSubmission(formName: string): void {
+  trackEvent('form_submission', {
+    form_name: formName,
+    form_type: 'mailto'
+  })
+}
+
+export function trackPhoneClick(location: string): void {
+  trackEvent('phone_click', {
+    link_location: location
+  })
+}
+
+export function trackCTAClick(ctaName: string): void {
+  trackEvent('cta_click', {
+    cta_name: ctaName
+  })
+}
+
+// ─── Cookie Utilities ───────────────────────────────────────
 
 export function parseCookiePreferences(raw: string | null): CookiePreferences | null {
   if (!raw) {
@@ -99,3 +173,4 @@ export function parseCookiePreferences(raw: string | null): CookiePreferences | 
     return null
   }
 }
+

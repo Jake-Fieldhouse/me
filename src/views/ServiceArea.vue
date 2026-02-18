@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { MapPin, Wrench, Server, Recycle, Shield, Clock, Phone, ArrowRight } from 'lucide-vue-next'
+import { trackPhoneClick } from '../lib/analytics'
 
 const props = defineProps<{
     location: string
@@ -183,6 +184,7 @@ const services = [
                 <a 
                     href="tel:+447404090458" 
                     class="inline-flex items-center gap-2 bg-neutral-800 text-white px-6 py-3 rounded-xl font-semibold hover:bg-neutral-700 transition-colors border border-neutral-600"
+                    @click="trackPhoneClick('service_area')"
                 >
                     <Phone class="w-4 h-4" />
                     Call Now

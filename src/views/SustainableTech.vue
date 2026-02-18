@@ -5,6 +5,7 @@ import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
 import { useToast } from '../composables/useToast'
 import { useOgMeta } from '../composables/useOgMeta'
+import { trackFormSubmission } from '../lib/analytics'
 import IconFileCheck from '../components/icons/IconFileCheck.vue'
 import IconRecycle from '../components/icons/IconRecycle.vue'
 import IconShieldCheck from '../components/icons/IconShieldCheck.vue'
@@ -55,6 +56,7 @@ Thanks!
   `.trim())
 
   window.location.href = `mailto:jake@jakefieldhouse.co.uk?subject=${subject}&body=${body}`
+  trackFormSubmission('ewaste_collection')
   
   // Show success toast
   showToast('Email client opened! We\'ll respond within 24 hours.', 4000)

@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
 import { useOgMeta } from '../composables/useOgMeta'
+import { trackFormSubmission, trackPhoneClick } from '../lib/analytics'
 import { useToast } from '../composables/useToast'
 import IconCall from '../components/icons/IconCall.vue'
 import IconWhatsApp from '../components/icons/IconWhatsApp.vue'
@@ -48,6 +49,7 @@ ${form.value.email}
   `.trim())
   
   window.location.href = `mailto:jake@jakefieldhouse.co.uk?subject=${subject}&body=${body}`
+  trackFormSubmission('contact')
   showToast('Email client opened! I\'ll respond within a few hours.', 4000)
 }
 </script>
@@ -71,7 +73,7 @@ ${form.value.email}
       <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3">
         
         <!-- Call -->
-        <a href="tel:+447404090458" class="contact-card group">
+        <a href="tel:+447404090458" class="contact-card group" @click="trackPhoneClick('contact_card')">
           <div class="card-icon bg-emerald-500/15 group-hover:bg-emerald-500/25">
             <IconCall class="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" />
           </div>
@@ -154,6 +156,7 @@ ${form.value.email}
                 <a
                   href="tel:+447404090458"
                   class="booking-secondary-btn"
+                  @click="trackPhoneClick('contact_urgent')"
                 >
                   Need urgent help? Call now
                 </a>

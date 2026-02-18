@@ -3,6 +3,7 @@ import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import IconPhone from './icons/IconPhone.vue'
 import IconChat from './icons/IconChat.vue'
+import { trackPhoneClick } from '../lib/analytics'
 
 const route = useRoute()
 
@@ -48,6 +49,7 @@ onUnmounted(() => {
           href="tel:+447404090458"
           class="flex items-center justify-center w-14 aspect-square bg-emerald-500/10 border border-emerald-500/50 text-emerald-400 rounded-xl hover:bg-emerald-500 hover:text-white transition-all active:scale-[0.95]"
           aria-label="Call Now"
+          @click="trackPhoneClick('sticky_cta')"
         >
             <IconPhone class="w-6 h-6" />
         </a>

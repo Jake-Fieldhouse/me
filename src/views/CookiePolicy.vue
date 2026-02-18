@@ -40,7 +40,7 @@
               </tr>
               <tr class="bg-neutral-900/50">
                 <td class="p-3 font-medium text-white">Analytics</td>
-                <td class="p-3">Help us understand how visitors use our site to improve it.</td>
+                <td class="p-3">Help us understand how visitors use our site. <strong class="text-white">Google Analytics</strong> provides traffic data; <strong class="text-white">Microsoft Clarity</strong> records anonymised heatmaps and session replays. No personal data is collected for marketing.</td>
                 <td class="p-3">Up to 2 years</td>
               </tr>
               <tr class="bg-neutral-900/50">

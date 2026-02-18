@@ -4,6 +4,7 @@ import TrustBar from '../components/TrustSignals/TrustBar.vue'
 import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
 import { useToast } from '../composables/useToast'
 import { useOgMeta } from '../composables/useOgMeta'
+import { trackFormSubmission } from '../lib/analytics'
 import IconChip from '../components/icons/IconChip.vue'
 
 useOgMeta({
@@ -42,6 +43,7 @@ Thanks!
   `.trim())
 
   window.location.href = `mailto:jake@jakefieldhouse.co.uk?subject=${subject}&body=${body}`
+  trackFormSubmission('repair_quote')
   
   // Show success toast
   showToast('Email client opened! We\'ll get back to you soon.', 4000)

@@ -2,6 +2,7 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useOgMeta } from '../composables/useOgMeta'
+import { trackFormSubmission } from '../lib/analytics'
 import { useToast } from '../composables/useToast'
 
 useOgMeta({
@@ -59,6 +60,7 @@ const handleSubmit = async () => {
     
     // Open email client
     window.location.href = `mailto:jake@jakefieldhouse.co.uk?subject=${subject}&body=${body}`
+    trackFormSubmission('feedback')
     
     // Show success toast
     showToast('Email client opened! Please send to complete submission.', 4000)

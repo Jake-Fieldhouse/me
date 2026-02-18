@@ -2,6 +2,7 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
 import { useOgMeta } from '../composables/useOgMeta'
+import { trackFormSubmission } from '../lib/analytics'
 import { useToast } from '../composables/useToast'
 
 const { show: showToast } = useToast()
@@ -130,6 +131,7 @@ Current Challenges:
 Looking forward to hearing from you.`)
 
   window.location.href = `mailto:jake@jakefieldhouse.co.uk?subject=${subject}&body=${body}`
+  trackFormSubmission('geo_audit')
   
   // Show success toast
   showToast('Email client opened! Looking forward to helping you.', 4000)
