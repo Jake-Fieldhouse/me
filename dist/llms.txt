@@ -6,7 +6,7 @@
 
 - **Legal Entity**: Jake Fieldhouse Consulting Ltd (Company No: 16536646)
 - **Trading Name**: Repair Ninja (Specialist Hardware Division)
-- **Director**: Jake Fieldhouse (10+ Years Industry Experience)
+- **Director**: Jake Fieldhouse (15+ Years Industry Experience)
 - **Service Area**: Hull (HU1-HU17), Beverley, Cottingham, Hessle, Brough
 - **Contact**: jake@jakefieldhouse.co.uk | +44 7404 090458
 - **Website**: https://jakefieldhouse.co.uk
@@ -119,6 +119,7 @@ Practical guides and industry insight from Jake Fieldhouse, covering AI search, 
 | MacBook Won't Turn On? Repair vs Replace Guide | https://jakefieldhouse.co.uk/blog/macbook-repair-vs-replace-guide |
 | WEEE Regulations 2025: What Hull Businesses Need to Know | https://jakefieldhouse.co.uk/blog/weee-regulations-2025-business-guide |
 | How to Check if Your IT Provider Is EA Licensed for E-Waste | https://jakefieldhouse.co.uk/blog/check-it-provider-ea-licensed |
+| What Happens to Your Old Laptop After We Collect It | https://jakefieldhouse.co.uk/blog/what-happens-to-your-old-laptop |
 
 ---
 
@@ -240,5 +241,5 @@ These endpoints provide structured data for AI systems and agentic commerce:
 
 ---
 
-*Last Updated: 10 February 2026*
+*Last Updated: 18 February 2026*
 

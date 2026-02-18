@@ -1,7 +1,15 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
+import { useOgMeta } from '../composables/useOgMeta'
 import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
+
+useOgMeta({
+  title: 'About Jake Fieldhouse | Director & Lead Systems Engineer',
+  description: 'Meet Jake Fieldhouse — Director of Jake Fieldhouse Consulting Ltd. 15+ years in IT, 1,000+ devices repaired. Hull-based, enterprise-grade support.',
+  image: '/images/og-image.png',
+  url: '/about'
+})
 
 const heroRef = ref<HTMLElement | null>(null)
 const storyRef = ref<HTMLElement | null>(null)

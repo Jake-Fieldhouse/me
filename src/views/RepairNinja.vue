@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
 import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
 import { useToast } from '../composables/useToast'
@@ -50,6 +50,37 @@ Thanks!
 const scrollToBook = () => {
     document.getElementById('book')?.scrollIntoView({ behavior: 'smooth' })
 }
+
+const serviceScriptTag = ref<HTMLScriptElement | null>(null)
+
+onMounted(() => {
+  const el = document.createElement('script')
+  el.type = 'application/ld+json'
+  el.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://jakefieldhouse.co.uk/#service-repair",
+    "name": "Microsoldering & Board Repair Hull",
+    "url": "https://jakefieldhouse.co.uk/microsoldering-repair-hull",
+    "description": "Component-level microsoldering for MacBooks, PS5s, and smartphones. No Fix, No Fee. Based in Hull.",
+    "serviceType": "Electronics Repair",
+    "termsOfService": "No Fix, No Fee",
+    "provider": { "@id": "https://jakefieldhouse.co.uk/#organization" },
+    "areaServed": [
+      { "@type": "City", "name": "Hull" },
+      { "@type": "Country", "name": "United Kingdom" }
+    ],
+    "serviceOutput": "Repaired electronic device with 12 month warranty"
+  })
+  document.head.appendChild(el)
+  serviceScriptTag.value = el
+})
+
+onUnmounted(() => {
+  if (serviceScriptTag.value) {
+    document.head.removeChild(serviceScriptTag.value)
+  }
+})
 </script>
 
 

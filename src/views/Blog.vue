@@ -1,9 +1,17 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
+import { useOgMeta } from '../composables/useOgMeta'
 import { blogPosts, categoryColors } from '../data/blogPosts'
 import IconArrowRight from '../components/icons/IconArrowRight.vue'
 import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
+
+useOgMeta({
+  title: 'Guides & Resources | Jake Fieldhouse Consulting',
+  description: 'Practical tech advice for Hull businesses. AI search, computer repair, e-waste compliance, and IT support guides.',
+  image: '/images/og-image.png',
+  url: '/blog'
+})
 
 const heroRef = ref<HTMLElement | null>(null)
 const postsRef = ref<HTMLElement | null>(null)

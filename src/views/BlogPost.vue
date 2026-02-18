@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useScrollReveal } from '../composables/useScrollReveal'
+import { useOgMeta } from '../composables/useOgMeta'
 
 const route = useRoute()
 const router = useRouter()
@@ -10,6 +11,10 @@ const contentRef = ref<HTMLElement | null>(null)
 
 useScrollReveal(heroRef)
 useScrollReveal(contentRef, { delay: 0.2 })
+
+// Article JSON-LD schema injection
+const articleScriptTag = ref<HTMLScriptElement | null>(null)
+
 
 interface BlogPost {
   title: string
@@ -273,10 +278,68 @@ const currentCta = computed(() => {
   return categoryCta[category] || categoryCta['IT Support']
 })
 
-// If post doesn't exist, redirect to blog
+// OG Meta per blog post
+const ogImageMap: Record<string, string> = {
+  'AI Search': '/images/og-msp.svg',
+  'Repair': '/images/og-repair.svg',
+  'Compliance': '/images/og-ewaste.svg',
+  'E-Waste': '/images/og-ewaste.svg',
+  'IT Support': '/images/og-msp.svg'
+}
+
+// Wire OG meta — must be called unconditionally at setup level
+const slug = route.params.slug as string
+const postForOg = posts[slug]
+if (postForOg) {
+  useOgMeta({
+    title: `${postForOg.title} | Jake Fieldhouse Consulting`,
+    description: postForOg.content.replace(/<[^>]+>/g, '').slice(0, 160).trim(),
+    image: ogImageMap[postForOg.category] || '/images/og-image.png',
+    url: `/blog/${slug}`
+  })
+}
+
+// If post doesn't exist, redirect to blog. If exists, inject Article JSON-LD.
 onMounted(() => {
   if (!currentPost.value) {
     router.push('/blog')
+    return
+  }
+
+  // Inject Article JSON-LD for Google News/Discover eligibility
+  const post = currentPost.value
+  const el = document.createElement('script')
+  el.type = 'application/ld+json'
+  el.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "datePublished": post.date,
+    "dateModified": post.date,
+    "author": {
+      "@type": "Person",
+      "@id": "https://jakefieldhouse.co.uk/#founder",
+      "name": post.author,
+      "url": "https://uk.linkedin.com/in/jake-fieldhouse"
+    },
+    "publisher": {
+      "@id": "https://jakefieldhouse.co.uk/#organization"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://jakefieldhouse.co.uk/blog/${route.params.slug}`
+    },
+    "image": "https://jakefieldhouse.co.uk/images/og-image.png",
+    "articleSection": post.category,
+    "inLanguage": "en-GB"
+  })
+  document.head.appendChild(el)
+  articleScriptTag.value = el
+})
+
+onUnmounted(() => {
+  if (articleScriptTag.value) {
+    document.head.removeChild(articleScriptTag.value)
   }
 })
 </script>

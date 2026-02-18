@@ -1,8 +1,20 @@
 <script setup lang="ts">
+import { onMounted, onUnmounted, ref } from 'vue'
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
+import { useOgMeta } from '../composables/useOgMeta'
 import { useToast } from '../composables/useToast'
 
 const { show: showToast } = useToast()
+
+// FAQPage JSON-LD injection
+const faqScriptTag = ref<HTMLScriptElement | null>(null)
+
+useOgMeta({
+  title: 'AI Search Optimization Hull | Get Found by ChatGPT & Perplexity',
+  description: 'Generative Engine Optimization (GEO) to make Hull businesses visible in ChatGPT, Perplexity, and Google AI Overviews. Free visibility audit.',
+  image: '/images/og-image.png',
+  url: '/ai-optimization-hull'
+})
 
 const packages = [
   {
@@ -78,6 +90,32 @@ const faqs = [
     answer: 'This very website is the proof of concept. I rank in AI search for Hull IT services, computer repair, and e-waste disposal. Ask any AI assistant about me and I appear because I practice what I preach.'
   }
 ]
+
+// Inject FAQPage JSON-LD
+onMounted(() => {
+  const el = document.createElement('script')
+  el.type = 'application/ld+json'
+  el.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  })
+  document.head.appendChild(el)
+  faqScriptTag.value = el
+})
+
+onUnmounted(() => {
+  if (faqScriptTag.value) {
+    document.head.removeChild(faqScriptTag.value)
+  }
+})
 
 function scrollToContact() {
   const subject = encodeURIComponent('AI Search Optimization Enquiry')

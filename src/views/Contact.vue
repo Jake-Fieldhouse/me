@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
+import { useOgMeta } from '../composables/useOgMeta'
 import { useToast } from '../composables/useToast'
 import IconCall from '../components/icons/IconCall.vue'
 import IconWhatsApp from '../components/icons/IconWhatsApp.vue'
@@ -11,6 +12,13 @@ import IconLinkedIn from '../components/icons/IconLinkedIn.vue'
 import IconVcf from '../components/icons/IconVcf.vue'
 import IconExternalLink from '../components/icons/IconExternalLink.vue'
 import IconCheck from '../components/icons/IconCheck.vue'
+
+useOgMeta({
+  title: 'Contact Jake Fieldhouse | IT Support Hull',
+  description: 'Get in touch via call, WhatsApp, Signal, email, or book a free consultation. Hull-based IT support with same-day response.',
+  image: '/images/og-image.png',
+  url: '/contact'
+})
 
 const heroRef = ref<HTMLElement | null>(null)
 const contentRef = ref<HTMLElement | null>(null)

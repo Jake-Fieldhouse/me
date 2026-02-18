@@ -1,7 +1,15 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
+import { useOgMeta } from '../composables/useOgMeta'
 import { useToast } from '../composables/useToast'
+
+useOgMeta({
+  title: 'Share Your Feedback | Jake Fieldhouse Consulting',
+  description: 'Had a great experience with Jake Fieldhouse Consulting? Share your testimonial and help other businesses find trusted IT support in Hull.',
+  image: '/images/og-image.png',
+  url: '/feedback'
+})
 
 const route = useRoute()
 

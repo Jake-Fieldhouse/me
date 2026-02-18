@@ -114,6 +114,7 @@
                 "@id": "https://jakefieldhouse.co.uk/#organization"
             },
             "serviceType": "Managed Service Provider",
+            "additionalType": "https://www.wikidata.org/wiki/Q54949219",
             "areaServed": {
                 "@id": "https://jakefieldhouse.co.uk/#area-hull"
             }
@@ -129,6 +130,7 @@
                 "@id": "https://jakefieldhouse.co.uk/#organization"
             },
             "serviceType": "Electronics Repair",
+            "additionalType": "https://www.wikidata.org/wiki/Q124515114",
             "termsOfService": "No Fix, No Fee"
         },
         {
@@ -141,6 +143,7 @@
                 "@id": "https://jakefieldhouse.co.uk/#organization"
             },
             "serviceType": "IT Asset Disposition",
+            "additionalType": "https://www.wikidata.org/wiki/Q327400",
             "priceSpecification": {
                 "@type": "PriceSpecification",
                 "price": 0,
@@ -157,7 +160,8 @@
             "provider": {
                 "@id": "https://jakefieldhouse.co.uk/#organization"
             },
-            "serviceType": "Search Engine Optimization"
+            "serviceType": "Search Engine Optimization",
+            "additionalType": "https://www.wikidata.org/wiki/Q180711"
         },
         {
             "@id": "https://jakefieldhouse.co.uk/#service-remotehands",
@@ -222,8 +226,8 @@
         }
     ],
     "_metadata": {
-        "version": "1.0.0",
-        "generated": "2026-02-09T09:30:00Z",
+        "version": "1.1.0",
+        "generated": "2026-02-18T11:30:00Z",
         "purpose": "Machine-readable knowledge graph for AI systems and semantic web applications",
         "contact": "jake@jakefieldhouse.co.uk"
     }

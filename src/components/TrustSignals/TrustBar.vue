@@ -38,7 +38,7 @@ import IconShieldCheck from '../icons/IconShieldCheck.vue'
 
          <!-- GDPR/ICO -->
          <div class="trust-card group" title="Information Commissioner's Office Registration">
-            <div class="p-2 rounded-lg bg-purple-500/10 border border-purple-500/20">
+            <div class="p-2 rounded-lg bg-purple-500/10 border border-purple-500/20 shadow-lg shadow-purple-500/10 group-hover:shadow-purple-500/20 transition-all">
                 <IconGDPR class="w-6 h-6 text-purple-500" />
             </div>
             <div class="flex flex-col">

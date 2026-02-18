@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
 import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
 import CitedStat from '../components/CitedStat.vue'
@@ -15,7 +16,43 @@ useOgMeta({
   image: '/images/og-msp.svg',
   url: '/managed-it-services-hull'
 })
+
+const serviceScriptTag = ref<HTMLScriptElement | null>(null)
+
+onMounted(() => {
+  const el = document.createElement('script')
+  el.type = 'application/ld+json'
+  el.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://jakefieldhouse.co.uk/#service-msp",
+    "name": "Managed IT Services Hull",
+    "url": "https://jakefieldhouse.co.uk/managed-it-services-hull",
+    "description": "Proactive infrastructure monitoring, EDR security, Microsoft 365 management for Hull businesses. Enterprise protection, local response.",
+    "serviceType": "Managed Service Provider",
+    "provider": { "@id": "https://jakefieldhouse.co.uk/#organization" },
+    "areaServed": { "@type": "City", "name": "Hull" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "MSP Service Tiers",
+      "itemListElement": [
+        { "@type": "Offer", "name": "Foundation", "description": "Monitoring, patching, and antivirus for small teams" },
+        { "@type": "Offer", "name": "Professional", "description": "EDR, Microsoft 365 management, and proactive support" },
+        { "@type": "Offer", "name": "Enterprise", "description": "Full infrastructure management with priority response" }
+      ]
+    }
+  })
+  document.head.appendChild(el)
+  serviceScriptTag.value = el
+})
+
+onUnmounted(() => {
+  if (serviceScriptTag.value) {
+    document.head.removeChild(serviceScriptTag.value)
+  }
+})
 </script>
+
 
 <template>
   <div class="relative w-full max-w-7xl mx-auto px-6 py-20 flex flex-col gap-20">

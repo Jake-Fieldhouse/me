@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
 import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
@@ -67,6 +67,41 @@ const scrollToQuote = () => {
 const scrollToComparison = () => {
     document.getElementById('comparison')?.scrollIntoView({ behavior: 'smooth' })
 }
+
+const serviceScriptTag = ref<HTMLScriptElement | null>(null)
+
+onMounted(() => {
+  const el = document.createElement('script')
+  el.type = 'application/ld+json'
+  el.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://jakefieldhouse.co.uk/#service-ewaste",
+    "name": "Secure Data Disposal Hull",
+    "url": "https://jakefieldhouse.co.uk/secure-data-disposal-hull",
+    "description": "Free GDPR-compliant e-waste collection for Hull businesses. EA licensed. NIST 800-88 data destruction. Zero landfill.",
+    "serviceType": "IT Asset Disposition",
+    "provider": { "@id": "https://jakefieldhouse.co.uk/#organization" },
+    "areaServed": [
+      { "@type": "City", "name": "Hull" },
+      { "@type": "AdministrativeArea", "name": "East Yorkshire" }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "GBP",
+      "description": "Free e-waste collection for businesses in Hull & East Yorkshire"
+    }
+  })
+  document.head.appendChild(el)
+  serviceScriptTag.value = el
+})
+
+onUnmounted(() => {
+  if (serviceScriptTag.value) {
+    document.head.removeChild(serviceScriptTag.value)
+  }
+})
 </script>
 
 <template>

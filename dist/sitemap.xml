@@ -3,10 +3,10 @@
   <!-- Core Pages -->
   <url>
     <loc>https://jakefieldhouse.co.uk/</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-02-18</lastmod>
     <priority>1.0</priority>
   </url>
-  
+
   <!-- Primary Services (Hyper-Local) -->
   <url>
     <loc>https://jakefieldhouse.co.uk/managed-it-services-hull/</loc>
@@ -33,7 +33,7 @@
     <lastmod>2026-02-10</lastmod>
     <priority>0.9</priority>
   </url>
-  
+
   <!-- Company Pages -->
   <url>
     <loc>https://jakefieldhouse.co.uk/about/</loc>
@@ -65,12 +65,13 @@
     <lastmod>2026-02-02</lastmod>
     <priority>0.5</priority>
   </url>
+  <!-- Policies Hub -->
   <url>
-    <loc>https://jakefieldhouse.co.uk/repair-services/</loc>
+    <loc>https://jakefieldhouse.co.uk/policies/</loc>
     <lastmod>2026-02-02</lastmod>
-    <priority>0.7</priority>
+    <priority>0.5</priority>
   </url>
-  
+
   <!-- Blog -->
   <url>
     <loc>https://jakefieldhouse.co.uk/blog/</loc>
@@ -97,7 +98,12 @@
     <lastmod>2026-02-10</lastmod>
     <priority>0.7</priority>
   </url>
-  
+  <url>
+    <loc>https://jakefieldhouse.co.uk/blog/what-happens-to-your-old-laptop/</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Legal & Policy Pages -->
   <url>
     <loc>https://jakefieldhouse.co.uk/privacy/</loc>
@@ -154,7 +160,7 @@
     <lastmod>2026-01-15</lastmod>
     <priority>0.3</priority>
   </url>
-  
+
   <!-- Priority Local SEO Pages: Hull (Core Market) -->
   <url>
     <loc>https://jakefieldhouse.co.uk/hull-computer-repair/</loc>
@@ -196,7 +202,7 @@
     <lastmod>2026-02-10</lastmod>
     <priority>0.8</priority>
   </url>
-  
+
   <!-- Priority Local SEO Pages: Beverley -->
   <url>
     <loc>https://jakefieldhouse.co.uk/beverley-computer-repair/</loc>
@@ -213,7 +219,7 @@
     <lastmod>2026-02-02</lastmod>
     <priority>0.7</priority>
   </url>
-  
+
   <!-- Priority Local SEO Pages: Driffield -->
   <url>
     <loc>https://jakefieldhouse.co.uk/driffield-computer-repair/</loc>
@@ -225,7 +231,7 @@
     <lastmod>2026-02-02</lastmod>
     <priority>0.7</priority>
   </url>
-  
+
   <!-- Priority Local SEO Pages: Bridlington -->
   <url>
     <loc>https://jakefieldhouse.co.uk/bridlington-computer-repair/</loc>
@@ -237,7 +243,7 @@
     <lastmod>2026-02-02</lastmod>
     <priority>0.7</priority>
   </url>
-  
+
   <!-- Priority Local SEO Pages: Goole -->
   <url>
     <loc>https://jakefieldhouse.co.uk/goole-computer-repair/</loc>
@@ -249,7 +255,7 @@
     <lastmod>2026-02-02</lastmod>
     <priority>0.6</priority>
   </url>
-  
+
   <!-- Priority Local SEO Pages: Withernsea -->
   <url>
     <loc>https://jakefieldhouse.co.uk/withernsea-computer-repair/</loc>
@@ -261,7 +267,7 @@
     <lastmod>2026-02-02</lastmod>
     <priority>0.6</priority>
   </url>
-  
+
   <!-- Priority Local SEO Pages: Hornsea -->
   <url>
     <loc>https://jakefieldhouse.co.uk/hornsea-computer-repair/</loc>

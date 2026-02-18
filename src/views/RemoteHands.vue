@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
 import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
 import IconPhone from '../components/icons/IconPhone.vue'
@@ -26,6 +26,35 @@ useOgMeta({
   description: 'Professional remote hands and smart hands support for data centres in Hull & East Yorkshire. Racking, cabling, hardware swap, vendor escort. DBS checked.',
   image: '/images/og-remote-hands.svg',
   url: '/data-centre-remote-hands-hull'
+})
+
+const serviceScriptTag = ref<HTMLScriptElement | null>(null)
+
+onMounted(() => {
+  const el = document.createElement('script')
+  el.type = 'application/ld+json'
+  el.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://jakefieldhouse.co.uk/#service-remotehands",
+    "name": "Data Centre Remote Hands Hull",
+    "url": "https://jakefieldhouse.co.uk/data-centre-remote-hands-hull",
+    "description": "Professional remote hands and smart hands support for data centres in Hull & East Yorkshire. Racking, cabling, hardware swap, vendor escort. DBS checked, fully insured.",
+    "serviceType": "Data Centre Support",
+    "provider": { "@id": "https://jakefieldhouse.co.uk/#organization" },
+    "areaServed": [
+      { "@type": "City", "name": "Hull" },
+      { "@type": "AdministrativeArea", "name": "East Yorkshire" }
+    ]
+  })
+  document.head.appendChild(el)
+  serviceScriptTag.value = el
+})
+
+onUnmounted(() => {
+  if (serviceScriptTag.value) {
+    document.head.removeChild(serviceScriptTag.value)
+  }
 })
 </script>
 

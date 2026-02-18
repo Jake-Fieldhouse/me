@@ -7,11 +7,19 @@ import OutcomeStats from '../components/OutcomeStats.vue'
 import Testimonials from '../components/Testimonials.vue'
 import { ref } from 'vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
+import { useOgMeta } from '../composables/useOgMeta'
 import HyperText from '../components/HyperText.vue'
 
 const gridRef = ref<HTMLElement | null>(null)
 
 useScrollReveal(gridRef, { delay: 0, y: 56 })
+
+useOgMeta({
+  title: 'Jake Fieldhouse | IT Consulting & Repair Hull',
+  description: 'Expert IT support, microsoldering repairs, and B2B e-waste solutions in Hull & East Yorkshire. Your full-stack tech partner.',
+  image: '/images/og-image.png',
+  url: '/'
+})
 </script>
 
 <template>
