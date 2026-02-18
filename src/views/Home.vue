@@ -27,10 +27,10 @@ useScrollReveal(gridRef, { delay: 0, y: 56 })
             />
         </div>
         <p class="text-xl sm:text-2xl md:text-3xl text-neutral-200 font-light max-w-2xl mx-auto drop-shadow-2xl">
-          Your IT. Repaired. Protected. Optimised.
+          E-Waste. Repair. AI Optimisation.
         </p>
         <p class="text-base sm:text-lg text-neutral-400 max-w-xl mx-auto text-readable drop-shadow-xl">
-          <router-link to="/microsoldering-repair-hull" class="text-red-400 hover:text-red-300 transition-colors">Fixing what others write off</router-link>, <router-link to="/managed-it-services-hull" class="text-blue-400 hover:text-blue-300 transition-colors">proactive security monitoring</router-link>, <router-link to="/ai-optimization-hull" class="text-violet-400 hover:text-violet-300 transition-colors">AI visibility</router-link>, <router-link to="/data-centre-remote-hands-hull" class="text-teal-400 hover:text-teal-300 transition-colors">data centre support</router-link>, and <router-link to="/secure-data-disposal-hull" class="text-emerald-400 hover:text-emerald-300 transition-colors">free e-waste collection</router-link>. One partner. Hull & East Yorkshire.
+          <router-link to="/secure-data-disposal-hull" class="text-emerald-400 hover:text-emerald-300 transition-colors">Free e-waste collection &amp; certified data destruction</router-link>, <router-link to="/microsoldering-repair-hull" class="text-red-400 hover:text-red-300 transition-colors">component-level hardware repair</router-link>, and <router-link to="/ai-optimization-hull" class="text-violet-400 hover:text-violet-300 transition-colors">AI search visibility</router-link>. One partner. Hull &amp; East Yorkshire.
         </p>
         
         <!-- CTAs -->
@@ -63,32 +63,32 @@ useScrollReveal(gridRef, { delay: 0, y: 56 })
       <main ref="gridRef" class="w-full">
         <BentoGrid class="max-w-4xl mx-auto">
           <BentoItem
+            title="E-Waste & ITAD"
+            description="Stop paying for disposal. Free business collection, NIST 800-88 certified data destruction, Zero Landfill policy, and full compliance documentation."
+            class="md:col-span-2 group hover:scale-105 transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
+            to="/secure-data-disposal-hull"
+          >
+             <template #header>
+                <div class="relative flex flex-1 w-full h-full min-h-24 rounded-xl bg-gradient-to-br from-emerald-900/50 to-neutral-900 overflow-hidden">
+                    <CircuitPattern class="text-emerald-500/30" />
+                </div>
+             </template>
+             <div class="mt-4 flex items-center text-emerald-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
+                Book Free Collection <span class="ml-1">→</span>
+             </div>
+          </BentoItem>
+
+          <BentoItem
             title="Repair Ninja"
             description="Manufacturer says unrepairable? We disagree. Component-level microsoldering for MacBooks, PS5s, and phones. No Fix, No Fee."
-            class="md:col-span-2 group hover:scale-105 transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
+            class="md:col-span-1 group hover:scale-105 transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
             to="/microsoldering-repair-hull"
           >
              <template #header>
-                <div class="relative flex flex-1 w-full h-full min-h-24 rounded-xl bg-gradient-to-br from-red-900/50 to-neutral-900 overflow-hidden">
-                    <CircuitPattern class="text-red-500/30" />
-                </div>
+                <div class="flex flex-1 w-full h-full min-h-24 rounded-xl bg-gradient-to-br from-red-900/50 to-neutral-900" />
              </template>
              <div class="mt-4 flex items-center text-red-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
                 Learn More <span class="ml-1">→</span>
-             </div>
-          </BentoItem>
-          
-          <BentoItem
-            title="Managed IT"
-            description="43% of UK businesses were breached this year. Local response, enterprise protection, proactive monitoring."
-            class="md:col-span-1 group hover:scale-105 transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
-            to="/managed-it-services-hull"
-          >
-            <template #header>
-                <div class="flex flex-1 w-full h-full min-h-24 rounded-xl bg-gradient-to-br from-blue-900/50 to-neutral-900" />
-            </template>
-             <div class="mt-4 flex items-center text-blue-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
-                Explore <span class="ml-1">→</span>
              </div>
           </BentoItem>
 
@@ -103,34 +103,6 @@ useScrollReveal(gridRef, { delay: 0, y: 56 })
              </template>
              <div class="mt-4 flex items-center text-violet-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
                 See How <span class="ml-1">→</span>
-             </div>
-          </BentoItem>
-
-          <BentoItem
-            title="DC Remote Hands"
-            description="Need someone to rack a server, swap a drive, or escort a vendor at your colo? On-site in hours, not days."
-            class="md:col-span-1 group hover:scale-105 transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
-            to="/data-centre-remote-hands-hull"
-          >
-             <template #header>
-                <div class="flex flex-1 w-full h-full min-h-24 rounded-xl bg-gradient-to-br from-teal-900/50 to-neutral-900" />
-             </template>
-             <div class="mt-4 flex items-center text-teal-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
-                Learn More <span class="ml-1">→</span>
-             </div>
-          </BentoItem>
-
-          <BentoItem
-            title="E-Waste & Recycling"
-            description="Stop paying for disposal. Free business collection, Zero Landfill policy, and full compliance documentation."
-            class="md:col-span-2 group hover:scale-105 transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
-            to="/secure-data-disposal-hull"
-          >
-             <template #header>
-                <div class="flex flex-1 w-full h-full min-h-24 rounded-xl bg-gradient-to-br from-amber-900/50 to-neutral-900" />
-             </template>
-             <div class="mt-4 flex items-center text-amber-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
-                Book Free Collection <span class="ml-1">→</span>
              </div>
           </BentoItem>
         </BentoGrid>

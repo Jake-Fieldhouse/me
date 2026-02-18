@@ -260,9 +260,9 @@ const categoryCta: Record<string, { title: string; description: string; link: st
     color: 'bg-emerald-600 hover:bg-emerald-500'
   },
   'IT Support': {
-    title: 'Need Reliable IT Support in Hull?',
-    description: 'Proactive monitoring, EDR security, and a real person who picks up the phone. Enterprise protection, local response.',
-    link: '/managed-it-services-hull',
+    title: 'Need Help With Your IT?',
+    description: 'Get in touch to discuss your IT requirements. Local response, enterprise-grade solutions.',
+    link: '/contact',
     label: 'Get in Touch',
     color: 'bg-blue-600 hover:bg-blue-500'
   }

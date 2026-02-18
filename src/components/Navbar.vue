@@ -27,11 +27,9 @@ const navItems = [
 ]
 
 const serviceItems = [
-  { name: 'Microsoldering & Repair', path: '/microsoldering-repair-hull' },
-  { name: 'Managed IT Services', path: '/managed-it-services-hull' },
-  { name: 'AI Optimization', path: '/ai-optimization-hull' },
-  { name: 'DC Remote Hands', path: '/data-centre-remote-hands-hull' },
   { name: 'Secure Data Disposal', path: '/secure-data-disposal-hull' },
+  { name: 'Microsoldering & Repair', path: '/microsoldering-repair-hull' },
+  { name: 'AI Optimization', path: '/ai-optimization-hull' },
   { name: 'Compliance', path: '/compliance' }
 ]
 

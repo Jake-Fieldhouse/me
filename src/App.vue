@@ -9,6 +9,7 @@ const CookieConsent = defineAsyncComponent(() => import('./components/CookieCons
 const StickyCTA = defineAsyncComponent(() => import('./components/StickyCTA.vue'))
 const ScrollProgress = defineAsyncComponent(() => import('./components/ScrollProgress.vue'))
 const BackToTop = defineAsyncComponent(() => import('./components/BackToTop.vue'))
+const PausedOverlay = defineAsyncComponent(() => import('./components/PausedOverlay.vue'))
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 const Toast = defineAsyncComponent(() => import('./components/Toast.vue'))
@@ -74,6 +75,9 @@ onMounted(() => {
 
       <!-- Navigation (persists across view transitions) -->
       <Navbar style="view-transition-name: navbar;" />
+
+      <!-- Paused Page Overlay (blocks interaction but keeps content for SEO) -->
+      <PausedOverlay />
 
       <!-- Route content with view transition name for animation targeting -->
       <router-view v-slot="{ Component }">
