@@ -17,7 +17,7 @@
           <li>Contact information (name, email, phone number)</li>
           <li>Device information for repair services</li>
           <li>Business information for MSP and e-waste services</li>
-          <li>Website usage data (cookies, analytics)</li>
+          <li>Website usage data (cookies, page views via Google Analytics, anonymised session recordings and heatmaps via Microsoft Clarity)</li>
         </ul>
       </section>
 
@@ -48,7 +48,7 @@
         <ul class="list-disc list-inside space-y-2 mt-4">
           <li><strong class="text-white">Contact enquiries:</strong> 2 years from last contact</li>
           <li><strong class="text-white">Client records:</strong> 6 years after service completion (legal/tax requirements)</li>
-          <li><strong class="text-white">Website analytics:</strong> 26 months</li>
+          <li><strong class="text-white">Website analytics:</strong> Up to 14 months (Google Analytics event data); session recordings 30 days, heatmaps 13 months (Microsoft Clarity)</li>
           <li><strong class="text-white">Marketing consent:</strong> Until you withdraw consent</li>
         </ul>
       </section>
@@ -57,6 +57,7 @@
         <h2 class="text-2xl font-bold text-white mb-4">6. Third-Party Disclosure</h2>
         <p>We may share your data with:</p>
         <ul class="list-disc list-inside space-y-2 mt-4">
+          <li><strong class="text-white">Analytics providers:</strong> Google Analytics (traffic and event data, retained up to 14 months) and Microsoft Clarity (anonymised session recordings and heatmaps, retained up to 13 months). Both are loaded only with your consent.</li>
           <li><strong class="text-white">Service providers:</strong> Payment processors, cloud hosting (data processing agreements in place)</li>
           <li><strong class="text-white">Legal authorities:</strong> Where required by law</li>
         </ul>

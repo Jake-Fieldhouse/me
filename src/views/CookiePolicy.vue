@@ -40,8 +40,8 @@
               </tr>
               <tr class="bg-neutral-900/50">
                 <td class="p-3 font-medium text-white">Analytics</td>
-                <td class="p-3">Help us understand how visitors use our site. <strong class="text-white">Google Analytics</strong> provides traffic data; <strong class="text-white">Microsoft Clarity</strong> records anonymised heatmaps and session replays. No personal data is collected for marketing.</td>
-                <td class="p-3">Up to 2 years</td>
+                <td class="p-3">Help us understand how visitors use our site. <strong class="text-white">Google Analytics</strong> provides traffic and event data (retained up to 14 months). <strong class="text-white">Microsoft Clarity</strong> records anonymised session replays (30 days) and heatmaps (13 months). No personal data is collected for marketing.</td>
+                <td class="p-3">Up to 14 months</td>
               </tr>
               <tr class="bg-neutral-900/50">
                 <td class="p-3 font-medium text-white">Third-Party (Cal.com)</td>
@@ -71,7 +71,7 @@
 
       <section>
         <h2 class="text-2xl font-bold text-white mb-4">6. Your Consent Choices</h2>
-        <p>We obtain consent for non-essential cookies through our cookie banner when you first visit the site. You can:</p>
+        <p>We obtain consent for non-essential cookies through a full-screen consent prompt before you can access the site. You can:</p>
         <ul class="list-disc list-inside space-y-2 mt-4">
           <li><strong class="text-white">Accept all:</strong> Enable all cookies including analytics</li>
           <li><strong class="text-white">Essential only:</strong> Accept only strictly necessary cookies</li>

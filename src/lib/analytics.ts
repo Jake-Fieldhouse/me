@@ -9,7 +9,7 @@ const GA_SCRIPT_ID = 'ga4-script'
 const GA_DISABLE_FLAG = `ga-disable-${GA_MEASUREMENT_ID}`
 
 // Replace with your Clarity Project ID from https://clarity.microsoft.com/
-const CLARITY_PROJECT_ID = 'REPLACE_WITH_CLARITY_ID'
+const CLARITY_PROJECT_ID = 'vjco5wzg5x'
 
 declare global {
   interface Window {
@@ -51,10 +51,6 @@ function ensureGtagQueue(): void {
 function enableClarity(): void {
   if (typeof window === 'undefined' || window.__clarityInitialized) {
     return
-  }
-
-  if (CLARITY_PROJECT_ID === 'REPLACE_WITH_CLARITY_ID') {
-    return // Skip until a real project ID is configured
   }
 
   const script = document.createElement('script')

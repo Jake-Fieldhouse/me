@@ -13,12 +13,21 @@ const PausedOverlay = defineAsyncComponent(() => import('./components/PausedOver
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 const Toast = defineAsyncComponent(() => import('./components/Toast.vue'))
-import { ref, onMounted, defineAsyncComponent } from 'vue'
+import { ref, onMounted, defineAsyncComponent, computed } from 'vue'
 import { useToast } from './composables/useToast'
 import { useNativeViewTransition } from './router'
 
 
 const isLoading = ref(true)
+const consentGiven = ref(false)
+const preloaderDone = computed(() => !isLoading.value)
+
+// Site is accessible only after BOTH preloader finishes AND consent is given
+const siteBlocked = computed(() => isLoading.value || !consentGiven.value)
+
+function onConsentGiven(): void {
+    consentGiven.value = true
+}
 
 const { toastMessage, showToast } = useToast()
 const HOME_PRELOADER_DELAY_MS = 3500
@@ -67,8 +76,8 @@ onMounted(() => {
     <div
       id="main-content"
       class="relative z-10 pb-32 md:pb-0 transition-opacity duration-200"
-      :class="isLoading ? 'pointer-events-none select-none' : 'pointer-events-auto'"
-      :aria-hidden="isLoading ? 'true' : 'false'"
+      :class="siteBlocked ? 'pointer-events-none select-none' : 'pointer-events-auto'"
+      :aria-hidden="siteBlocked ? 'true' : 'false'"
     >
       <!-- Scroll Progress Indicator (pure CSS, zero JS) -->
       <ScrollProgress />
@@ -99,8 +108,9 @@ onMounted(() => {
       </router-view>
 
 
-      <!-- Cookie Consent -->
-      <CookieConsent />
+      <!-- Cookie Consent Gate (full-screen overlay, mounted at body via teleport) -->
+      <!-- Placed inside main-content for component context, but teleports to body -->
+      <CookieConsent :preloader-done="preloaderDone" @consent-given="onConsentGiven" />
 
       <!-- Sticky Mobile CTA -->
       <StickyCTA />
