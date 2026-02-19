@@ -40,9 +40,9 @@ The preloader IS the user experience during load — it is intentional and desir
 - **Real-world experience is excellent**: FCP 0.3s (desktop), LCP 0.4s, CLS 0
 - **TBT cannot be meaningfully reduced** without removing the preloader
 
-## ⚠️ Warning for Future Agents
+## ⚠️ Do Not Re-Attempt These Optimizations
 
-**DO NOT attempt to optimize TBT by:**
+**Do NOT attempt to optimize TBT by:**
 
 - Adding artificial delays to FluidCursor loading
 - Wrapping FluidCursor in `v-if` guards or `Transition` components

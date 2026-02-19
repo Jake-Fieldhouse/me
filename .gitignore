@@ -40,3 +40,7 @@ Desktop.ini
 # Internal workflow files (not for public repo)
 .agent/
 public/templates/generated/
+
+# Test output
+playwright-report/
+test-results/

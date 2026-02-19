@@ -135,29 +135,5 @@ onUnmounted(() => {
     </div>
   </section>
   
-  <!-- 
-    PLACEHOLDER: This component is ready to receive testimonials.
-    
-    To add testimonials, populate the testimonials array above with objects like:
-    
-    B2B Example:
-    {
-      name: "Sarah Thompson",
-      role: "IT Director",
-      company: "Hull Manufacturing Ltd",
-      quote: "24/7 monitoring caught a ransomware attempt...",
-      rating: 5,
-      category: 'b2b'
-    }
-    
-    Consumer Example:
-    {
-      name: "Mark Wilson",
-      role: "PS5 HDMI Repair",
-      company: "Hull",
-      quote: "Sony wanted £300+ for a new console...",
-      rating: 5,
-      category: 'consumer'
-    }
-  -->
+
 </template>
