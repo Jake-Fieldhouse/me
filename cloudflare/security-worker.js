@@ -30,7 +30,7 @@ const SECURITY_HEADERS = {
         "default-src 'self'",
 
         // Scripts: Self + trusted third parties only
-        "script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://cal.com https://*.cal.com https://cal.eu https://*.cal.eu https://js.stripe.com",
+        "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://cal.com https://*.cal.com https://cal.eu https://*.cal.eu https://js.stripe.com",
 
         // Styles: Self + inline (required for Vue transitions) + Google Fonts
         "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cal.com https://*.cal.com https://cal.eu https://*.cal.eu",
@@ -39,10 +39,10 @@ const SECURITY_HEADERS = {
         "font-src 'self' https://fonts.gstatic.com",
 
         // Images: Self + data URIs (for inline SVGs) + any HTTPS source
-        "img-src 'self' data: https:",
+        "img-src 'self' data: https: https://*.clarity.ms",
 
         // XHR/Fetch: Self + analytics + integrations
-        "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://cal.com https://*.cal.com https://cal.eu https://*.cal.eu https://api.stripe.com",
+        "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://*.clarity.ms https://cal.com https://*.cal.com https://cal.eu https://*.cal.eu https://api.stripe.com",
 
         // Iframes: Cal.com booking + Stripe payment elements
         "frame-src https://cal.com https://*.cal.com https://cal.eu https://*.cal.eu https://js.stripe.com",
