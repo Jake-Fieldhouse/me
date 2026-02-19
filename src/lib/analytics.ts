@@ -53,13 +53,26 @@ function enableClarity(): void {
     return
   }
 
+  // Set up the Clarity command queue before loading the SDK
+  // This is the equivalent of what the IIFE does, but without inline script execution
+  if (!window.clarity) {
+    const clarityQueue: unknown[][] = []
+    window.clarity = (...args: unknown[]) => {
+      clarityQueue.push(args)
+    }
+      // Expose the queue so the SDK can drain it on load
+      ; (window.clarity as unknown as { q: unknown[][] }).q = clarityQueue
+  }
+
+  // Load the Clarity SDK via external script (CSP-safe, no inline execution needed)
   const script = document.createElement('script')
   script.id = 'clarity-script'
-  script.textContent = `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${CLARITY_PROJECT_ID}");`
+  script.async = true
+  script.src = `https://www.clarity.ms/tag/${CLARITY_PROJECT_ID}`
   document.head.appendChild(script)
 
   // Link Clarity sessions to GA4 for cross-referencing
-  window.clarity?.('set', 'gaId', GA_MEASUREMENT_ID)
+  window.clarity('set', 'gaId', GA_MEASUREMENT_ID)
 
   window.__clarityInitialized = true
 }
