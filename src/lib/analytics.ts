@@ -4,9 +4,9 @@ export interface CookiePreferences {
   marketing: boolean
 }
 
-const GA_MEASUREMENT_ID = 'G-S5QEQ38Y9M'
-const GA_SCRIPT_ID = 'ga4-script'
-const GA_DISABLE_FLAG = `ga-disable-${GA_MEASUREMENT_ID}`
+const GTM_CONTAINER_ID = 'GTM-TLZV3F9Q'
+const GTM_SCRIPT_ID = 'gtm-script'
+const GTM_DISABLE_FLAG = `ga-disable-${GTM_CONTAINER_ID}`
 
 // Replace with your Clarity Project ID from https://clarity.microsoft.com/
 const CLARITY_PROJECT_ID = 'vjco5wzg5x'
@@ -25,14 +25,20 @@ declare global {
 // ─── GA4 Core ───────────────────────────────────────────────
 
 function ensureAnalyticsScript(): void {
-  if (document.getElementById(GA_SCRIPT_ID)) {
+  if (document.getElementById(GTM_SCRIPT_ID)) {
     return
   }
 
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({
+    'gtm.start': new Date().getTime(),
+    event: 'gtm.js'
+  })
+
   const script = document.createElement('script')
-  script.id = GA_SCRIPT_ID
+  script.id = GTM_SCRIPT_ID
   script.async = true
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
+  script.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_CONTAINER_ID}`
   document.head.appendChild(script)
 }
 
@@ -71,8 +77,8 @@ function enableClarity(): void {
   script.src = `https://www.clarity.ms/tag/${CLARITY_PROJECT_ID}`
   document.head.appendChild(script)
 
-  // Link Clarity sessions to GA4 for cross-referencing
-  window.clarity('set', 'gaId', GA_MEASUREMENT_ID)
+  // Link Clarity sessions
+  window.clarity('set', 'gaId', 'G-S5QEQ38Y9M') // Retaining original GA4 ID for clarity linking
 
   window.__clarityInitialized = true
 }
@@ -96,7 +102,7 @@ export function enableAnalytics(): void {
     return
   }
 
-  window[GA_DISABLE_FLAG] = false
+  window[GTM_DISABLE_FLAG] = false
   ensureAnalyticsScript()
 
   if (!window.__gaInitialized) {
@@ -108,10 +114,6 @@ export function enableAnalytics(): void {
       ad_personalization: 'denied'
     })
     window.gtag?.('js', new Date())
-    window.gtag?.('config', GA_MEASUREMENT_ID, {
-      anonymize_ip: true,
-      transport_type: 'beacon'
-    })
     window.__gaInitialized = true
   }
 
@@ -123,7 +125,7 @@ export function disableAnalytics(): void {
     return
   }
 
-  window[GA_DISABLE_FLAG] = true
+  window[GTM_DISABLE_FLAG] = true
   disableClarity()
 }
 
