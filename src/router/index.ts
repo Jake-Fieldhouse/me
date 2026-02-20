@@ -70,7 +70,7 @@ const router = createRouter({
                 description: 'Professional remote hands and smart hands support for data centres in Hull & East Yorkshire. Racking, cabling, hardware swap, vendor escort. DBS checked.'
             }
         },
-        // ==================== LEGACY REDIRECTS ====================
+        // ==================== COMPATIBILITY REDIRECTS ====================
         {
             path: '/msp-services',
             redirect: '/managed-it-services-hull'

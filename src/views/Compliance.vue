@@ -71,7 +71,6 @@ const complianceItems = ref([
 
 const isExpired = (dateStr: string | null) => {
     if (!dateStr || dateStr === 'Rolling Renewal') return false
-    // Simple check, in reality parse date
     return false
 }
 
