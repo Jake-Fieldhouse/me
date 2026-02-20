@@ -1,59 +1,12 @@
-# robots.txt for Jake Fieldhouse Consulting
+# robots.txt for Jake Fieldhouse Consulting Ltd
 # https://jakefieldhouse.co.uk
+# Last reviewed: 2026-02-19 (22 AI bots, 8 providers)
 
+# ──────────────────────────────────────────────
+# DEFAULT POLICY — allow everything, block attack paths
+# ──────────────────────────────────────────────
 User-agent: *
 Allow: /
-
-# AI Search Engine Crawlers - Explicitly Allowed
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Anthropic-AI
-Allow: /
-
-User-agent: cohere-ai
-Allow: /
-
-# Sitemap
-Sitemap: https://jakefieldhouse.co.uk/sitemap.xml
-
-# Security Policy (RFC 9116)
-# See: https://securitytxt.org/
-# Security policy: https://jakefieldhouse.co.uk/.well-known/security.txt
-
-# AI Knowledge Files (llms.txt spec)
-# See: https://llmstxt.org/
-# LLM index: https://jakefieldhouse.co.uk/llms.txt
-# LLM full index: https://jakefieldhouse.co.uk/llms-full.txt
-
-# AI Agent Endpoints (Agentic Commerce)
-# Knowledge graph: https://jakefieldhouse.co.uk/knowledge.json
-# Availability API: https://jakefieldhouse.co.uk/api/availability.json
-# AI plugin: https://jakefieldhouse.co.uk/.well-known/ai-plugin.json
-
-# Security: Block common attack paths
-User-agent: *
 Disallow: /.env
 Disallow: /.git
 Disallow: /wp-admin
@@ -68,3 +21,135 @@ Disallow: /.htaccess
 Disallow: /server-status
 Disallow: /cgi-bin
 
+# ──────────────────────────────────────────────
+# GOOGLE
+# ──────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# ──────────────────────────────────────────────
+# MICROSOFT
+# ──────────────────────────────────────────────
+User-agent: Bingbot
+Allow: /
+
+# ──────────────────────────────────────────────
+# OPENAI (GPT models, ChatGPT browsing, search)
+# ──────────────────────────────────────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# ──────────────────────────────────────────────
+# ANTHROPIC (Claude models, browsing, search)
+# ──────────────────────────────────────────────
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# ──────────────────────────────────────────────
+# PERPLEXITY AI (search index, live browsing)
+# ──────────────────────────────────────────────
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# ──────────────────────────────────────────────
+# META (AI training, search, ads intelligence)
+# ──────────────────────────────────────────────
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-WebIndexer
+Allow: /
+
+User-agent: Meta-ExternalAds
+Allow: /
+
+# ──────────────────────────────────────────────
+# APPLE (Siri/Spotlight, Apple Intelligence)
+# ──────────────────────────────────────────────
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# ──────────────────────────────────────────────
+# BYTEDANCE / TIKTOK
+# ──────────────────────────────────────────────
+User-agent: Bytespider
+Allow: /
+
+# ──────────────────────────────────────────────
+# AMAZON (Alexa AI)
+# ──────────────────────────────────────────────
+User-agent: Amazonbot
+Allow: /
+
+# ──────────────────────────────────────────────
+# DUCKDUCKGO (AI answers)
+# ──────────────────────────────────────────────
+User-agent: DuckAssistBot
+Allow: /
+
+# ──────────────────────────────────────────────
+# COMMON CRAWL (open dataset, used by many LLMs)
+# ──────────────────────────────────────────────
+User-agent: CCBot
+Allow: /
+
+# ──────────────────────────────────────────────
+# COHERE
+# ──────────────────────────────────────────────
+User-agent: cohere-ai
+Allow: /
+
+# ──────────────────────────────────────────────
+# YOU.COM
+# ──────────────────────────────────────────────
+User-agent: YouBot
+Allow: /
+
+# ──────────────────────────────────────────────
+# DISCOVERY LAYER — signposts for AI systems
+# ──────────────────────────────────────────────
+
+# Sitemap (XML, for traditional + AI crawlers)
+Sitemap: https://jakefieldhouse.co.uk/sitemap.xml
+
+# AI-Readable Business Identity (llms.txt spec — llmstxt.org)
+# Index:    https://jakefieldhouse.co.uk/llms.txt
+# Full:     https://jakefieldhouse.co.uk/llms-full.txt
+
+# AI Behavioural Policy (ai.txt spec — ai-visibility.org.uk)
+# Policy:   https://jakefieldhouse.co.uk/ai.txt
+
+# Agentic Commerce Endpoints
+# Knowledge graph:  https://jakefieldhouse.co.uk/knowledge.json
+# Booking API:      https://jakefieldhouse.co.uk/api/availability.json
+# AI plugin:        https://jakefieldhouse.co.uk/.well-known/ai-plugin.json
+
+# RSS Feed (WebSub enabled)
+# Feed:     https://jakefieldhouse.co.uk/feed.xml
+
+# Security Policy (RFC 9116)
+# Policy:   https://jakefieldhouse.co.uk/.well-known/security.txt
