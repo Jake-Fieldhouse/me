@@ -27,33 +27,40 @@
       </section>
 
       <section>
-        <h2 class="text-2xl font-bold text-white mb-4">4. E-Waste Collection</h2>
-        <p>Items collected become the property of Jake Fieldhouse Consulting Ltd. Data destruction certificates are provided upon request. We are a registered Upper Tier Waste Carrier.</p>
+        <h2 class="text-2xl font-bold text-white mb-4">4. E-Waste Collection & ITAD</h2>
+        <p>Items collected become the property of Jake Fieldhouse Consulting Ltd for the purpose of secure processing. As a registered Upper Tier Waste Carrier (Environment Agency), we operate in strict compliance with the Waste Electrical and Electronic Equipment (WEEE) Regulations 2013. We provide obligatory Duty of Care waste transfer notes and ensure all downstream processing occurs at authorised treatment facilities, preventing illegal export and landfill disposal.</p>
+        <p class="mt-4 font-semibold text-neutral-200">4.1 Data Destruction Liability</p>
+        <p class="mt-2 text-neutral-300">Data destruction is performed to NIST 800-88 standards. Certificates of Destruction are provided to establish a verifiable chain of custody. Our liability regarding data processing terminates upon the issuance of said certificate.</p>
       </section>
 
       <section>
-        <h2 class="text-2xl font-bold text-white mb-4">5. Limitation of Liability</h2>
-        <p>Our liability is limited to the value of the services provided. We are not liable for indirect, consequential, or incidental damages. We maintain Public Liability and Professional Indemnity Insurance.</p>
-        <p class="mt-4 font-semibold text-neutral-200">5.1 Data Centre &amp; Remote Hands</p>
-        <p class="mt-2 text-neutral-300">When performing physical intervention, racking, or hot-swap duties on third-party data centre equipment ("Remote Hands"), our liability is strictly limited to the physical execution of the instructed task. We accept no liability for hardware failure, data loss, or cascading service outages resulting from the operation of the equipment, provided the instructed task was executed with reasonable care and skill.</p>
+        <h2 class="text-2xl font-bold text-white mb-4">5. Data Protection & UK GDPR</h2>
+        <p>In the provision of Managed IT Services (MSP) and E-Waste processing, we act as a Data Processor under the Data Protection Act 2018 (DPA 2018) and the UK GDPR, while the Client remains the Data Controller. We implement robust technical and organisational measures to ensure the integrity and confidentiality of personal data. We will promptly assist clients in fulfilling data subject rights requests and will report any critical data breaches to the Controller within the statutory 72-hour window.</p>
       </section>
 
       <section>
-        <h2 class="text-2xl font-bold text-white mb-4">6. Force Majeure</h2>
+        <h2 class="text-2xl font-bold text-white mb-4">6. Limitation of Liability</h2>
+        <p>Our overall liability is limited to the value of the services provided in the preceding 12 months. We are not liable for indirect, consequential, or incidental damages, including loss of profits or business interruption. We maintain comprehensive Public Liability and Professional Indemnity Insurance.</p>
+        <p class="mt-4 font-semibold text-neutral-200">6.1 Data Centre & Remote Hands</p>
+        <p class="mt-2 text-neutral-300">When performing physical intervention, racking, or hot-swap duties on third-party data centre equipment ("Remote Hands"), our liability is strictly limited to the physical execution of the instructed task. We accept no liability for pre-existing hardware failure, subsequent data loss, or cascading service outages resulting from the standard operation of the equipment, provided the instructed task was executed with reasonable care and skill.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">7. Force Majeure</h2>
         <p>We shall not be liable for any failure or delay in performing our obligations where such failure or delay results from circumstances beyond our reasonable control, including but not limited to:</p>
         <ul class="list-disc list-inside space-y-2 mt-4">
           <li>Natural disasters, extreme weather, or acts of God</li>
           <li>Pandemics, epidemics, or public health emergencies</li>
-          <li>Cyberattacks, IT infrastructure failures, or supply chain disruptions</li>
+          <li>Cyberattacks, upstream ISP/Cloud infrastructure failures, or supply chain disruptions</li>
           <li>Government actions, legal changes, or regulatory requirements</li>
           <li>Civil unrest, terrorism, or war</li>
         </ul>
-        <p class="mt-4">We will notify affected clients promptly and work to resume services as soon as reasonably practicable.</p>
+        <p class="mt-4 text-neutral-300">We will notify affected clients promptly and work to resume services as soon as reasonably practicable.</p>
       </section>
 
       <section>
-        <h2 class="text-2xl font-bold text-white mb-4">7. Governing Law</h2>
-        <p>These terms are governed by the laws of England and Wales.</p>
+        <h2 class="text-2xl font-bold text-white mb-4">8. Governing Law</h2>
+        <p>These terms are governed by the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
       </section>
 
       <p class="text-neutral-400 text-sm pt-8">Last updated: February 2026</p>
