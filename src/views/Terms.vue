@@ -34,6 +34,8 @@
       <section>
         <h2 class="text-2xl font-bold text-white mb-4">5. Limitation of Liability</h2>
         <p>Our liability is limited to the value of the services provided. We are not liable for indirect, consequential, or incidental damages. We maintain Public Liability and Professional Indemnity Insurance.</p>
+        <p class="mt-4 font-semibold text-neutral-200">5.1 Data Centre &amp; Remote Hands</p>
+        <p class="mt-2 text-neutral-300">When performing physical intervention, racking, or hot-swap duties on third-party data centre equipment ("Remote Hands"), our liability is strictly limited to the physical execution of the instructed task. We accept no liability for hardware failure, data loss, or cascading service outages resulting from the operation of the equipment, provided the instructed task was executed with reasonable care and skill.</p>
       </section>
 
       <section>

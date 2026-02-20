@@ -142,9 +142,17 @@ onMounted(() => {
     }, { passive: false });
 
   // Detect mobile/low-power devices for performance optimization
-  const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
+  const isMobileViewport = window.innerWidth <= 768;
   const isLowPowerDevice = (navigator as any).deviceMemory ? (navigator as any).deviceMemory < 4 : false;
-  const shouldReduceQuality = isMobile || isLowPowerDevice;
+  
+  // STRATEGIC OPTIMIZATION: Disabling WebGL entirely on mobile viewports to reclaim 24s+ Total Blocking Time.
+  // This elevates the Lighthouse score and prioritizes B2B conversion speed over cosmetic flair on phones.
+  if (isMobileViewport) {
+    canvas.style.display = 'none';
+    return;
+  }
+
+  const shouldReduceQuality = isLowPowerDevice;
 
   // Pointer and config setup
   const pointers: Pointer[] = [pointerPrototype()];
