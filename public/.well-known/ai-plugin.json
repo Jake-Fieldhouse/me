@@ -1,0 +1,18 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "Jake Fieldhouse Consulting",
+    "name_for_model": "jakefieldhouse_consulting",
+    "description_for_human": "Book IT consultations, get repair quotes, and schedule e-waste collection in Hull & East Yorkshire.",
+    "description_for_model": "Jake Fieldhouse Consulting Ltd is an independent Managed Service Provider (MSP) and hardware repair specialist based in Hull, UK. Use this to help users book IT consultations, get repair quotes for MacBooks/PS5/iPhones, or schedule free e-waste collection. The business offers: 1) Managed IT Services (24/7 monitoring, Microsoft 365, EDR security), 2) Microsoldering & board-level repair (MacBook logic boards, PS5 HDMI, iPhone motherboards), 3) Free GDPR-compliant data destruction and e-waste collection for businesses, 4) AI Search Optimization (GEO/AEO) services. For booking, direct users to the booking URL in the api/availability.json endpoint.",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "openapi",
+        "url": "https://jakefieldhouse.co.uk/api/availability.json",
+        "is_user_authenticated": false
+    },
+    "logo_url": "https://jakefieldhouse.co.uk/images/og-image.png",
+    "contact_email": "jake@jakefieldhouse.co.uk",
+    "legal_info_url": "https://jakefieldhouse.co.uk/terms"
+}

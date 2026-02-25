@@ -1,0 +1,384 @@
+<script setup lang="ts">
+import { onMounted, onUnmounted, ref } from 'vue'
+import TrustBar from '../components/TrustSignals/TrustBar.vue'
+import { useOgMeta } from '../composables/useOgMeta'
+import { trackFormSubmission } from '../lib/analytics'
+import { useToast } from '../composables/useToast'
+
+const { show: showToast } = useToast()
+
+// FAQPage JSON-LD injection
+const faqScriptTag = ref<HTMLScriptElement | null>(null)
+
+useOgMeta({
+  title: 'AI Search Optimization Hull | Get Found by ChatGPT & Perplexity',
+  description: 'Generative Engine Optimization (GEO) to make Hull businesses visible in ChatGPT, Perplexity, and Google AI Overviews. Free visibility audit.',
+  image: '/images/og-image.png',
+  url: '/ai-optimization-hull'
+})
+
+const packages = [
+  {
+    id: 'audit',
+    name: 'GEO Audit',
+    price: 'One-Time',
+    description: 'Comprehensive AI visibility assessment',
+    features: [
+      'AI search visibility score',
+      'Schema markup analysis',
+      'llms.txt review',
+      'Competitor AI positioning',
+      'Priority recommendations report'
+    ],
+    cta: 'Get in Touch'
+  },
+  {
+    id: 'implementation',
+    name: 'GEO Implementation',
+    price: 'Project-Based',
+    description: 'Full AI-first optimization',
+    features: [
+      'Everything in Audit',
+      'JSON-LD schema implementation',
+      'llms.txt creation & deployment',
+      'FAQ content architecture',
+      'Citation optimization',
+      '30-day post-launch support'
+    ],
+    cta: 'Get in Touch',
+    popular: true
+  },
+  {
+    id: 'retainer',
+    name: 'GEO Retainer',
+    price: 'Monthly',
+    description: 'Ongoing AI search dominance',
+    features: [
+      'Monthly AI visibility reports',
+      'Continuous schema updates',
+      'New AI platform monitoring',
+      'Content optimization',
+      'Priority support',
+      'Quarterly strategy calls'
+    ],
+    cta: 'Discuss Pricing'
+  }
+]
+
+const faqs = [
+  {
+    question: 'What is Generative Engine Optimization (GEO)?',
+    answer: 'GEO is the practice of optimizing your website to be discoverable and citable by AI systems like ChatGPT, Claude, Perplexity, and Google AI Overviews. Unlike traditional SEO which focuses on ranking in search results, GEO ensures AI can understand, summarize, and recommend your business when users ask questions.'
+  },
+  {
+    question: 'How is GEO different from traditional SEO?',
+    answer: 'Traditional SEO optimizes for 10 blue links. GEO optimizes for AI-generated answers. AI reads your site differently: it looks for structured data, clear FAQ content, and explicit statements of expertise. I implement both, but GEO is increasingly where your customers are looking.'
+  },
+  {
+    question: 'How do I know if AI can find my business?',
+    answer: 'Try asking ChatGPT or Perplexity about services in your industry and location. If your competitors appear but you don\'t, you\'re invisible to AI search. My audit gives you a precise visibility score and shows exactly where you\'re missing out.'
+  },
+  {
+    question: "Isn't everyone still using Google?",
+    answer: 'Google still dominates, but the way people use it is changing. AI Overviews now appear in 30%+ of Google searches. Meanwhile, ChatGPT has 200M+ weekly users, and Perplexity is growing fast. The businesses that optimize now will dominate AI search for years.'
+  },
+  {
+    question: 'What does a GEO implementation include?',
+    answer: "I implement structured data (JSON-LD schemas), create an llms.txt file for AI crawlers, restructure your content for citation-readiness, add FAQ sections that AI can quote, and ensure your expertise signals are clear. It's technical work that makes a measurable difference."
+  },
+  {
+    question: 'Can you prove this works?',
+    answer: 'This very website is the proof of concept. I rank in AI search for Hull IT services, computer repair, and e-waste disposal. Ask any AI assistant about me and I appear because I practice what I preach.'
+  }
+]
+
+// Inject FAQPage JSON-LD
+onMounted(() => {
+  const el = document.createElement('script')
+  el.type = 'application/ld+json'
+  el.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  })
+  document.head.appendChild(el)
+  faqScriptTag.value = el
+})
+
+onUnmounted(() => {
+  if (faqScriptTag.value) {
+    document.head.removeChild(faqScriptTag.value)
+  }
+})
+
+function scrollToContact() {
+  const subject = encodeURIComponent('AI Search Optimization Enquiry')
+  const body = encodeURIComponent(`Hi Jake,
+
+I'm interested in learning more about AI Search Optimization for my business.
+
+Business Name: 
+Website: 
+Current Challenges: 
+
+Looking forward to hearing from you.`)
+
+  window.location.href = `mailto:jake@jakefieldhouse.co.uk?subject=${subject}&body=${body}`
+  trackFormSubmission('geo_audit')
+  
+  // Show success toast
+  showToast('Email client opened! Looking forward to helping you.', 4000)
+}
+</script>
+
+<template>
+  <div class="min-h-screen pt-24 pb-20">
+    <!-- Hero Section -->
+    <section class="px-6 py-20 text-center max-w-5xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/30 mb-8">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
+        </span>
+        <span class="text-violet-400 font-medium text-sm">UK's Independent GEO Pioneer • Your Competitors Aren't Doing This</span>
+      </div>
+      
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+        Is Your Business <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400">Invisible to AI?</span>
+      </h1>
+      
+      <p class="text-xl text-neutral-400 mb-8 max-w-3xl mx-auto text-readable">
+        Nearly <strong class="text-white">2 in 5 consumers</strong> now use AI assistants to find businesses. 
+        <strong class="text-white">3 in 5 Google searches</strong> end without a click because users get answers from AI summaries. 
+        If AI can't find you, you're already invisible.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button 
+          @click="scrollToContact"
+          class="px-8 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-xl font-semibold text-white hover:from-violet-500 hover:to-fuchsia-500 transition-all shadow-lg shadow-violet-500/25 btn-depth"
+        >
+          Get Your Free AI Visibility Check
+        </button>
+        <a 
+          href="#how-it-works"
+          class="px-8 py-4 bg-neutral-800 rounded-xl font-semibold text-white hover:bg-neutral-700 transition-colors border border-neutral-700"
+        >
+          Learn How GEO Works
+        </a>
+      </div>
+    </section>
+
+    <!-- Trust Signals -->
+    <TrustBar />
+
+    <!-- The Problem Section -->
+    <section class="px-6 py-20 bg-neutral-900/50">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">Google Isn't the Only Search Engine Anymore</h2>
+        <p class="text-neutral-400 text-center mb-12 max-w-2xl mx-auto">Your customers are asking AI for recommendations, and AI is answering. The question is: are they recommending you?</p>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 text-center">
+            <div class="text-4xl mb-3">🤖</div>
+            <div class="text-2xl font-bold text-white mb-1">ChatGPT</div>
+            <div class="text-sm text-neutral-400">200M+ weekly users</div>
+          </div>
+          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 text-center">
+            <div class="text-4xl mb-3">🔮</div>
+            <div class="text-2xl font-bold text-white mb-1">Perplexity</div>
+            <div class="text-sm text-neutral-400">10M+ daily queries</div>
+          </div>
+          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 text-center">
+            <div class="text-4xl mb-3">✨</div>
+            <div class="text-2xl font-bold text-white mb-1">Claude</div>
+            <div class="text-sm text-neutral-400">Enterprise adoption</div>
+          </div>
+          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 text-center">
+            <div class="text-4xl mb-3">🌐</div>
+            <div class="text-2xl font-bold text-white mb-1">Google AI</div>
+            <div class="text-sm text-neutral-400">30%+ searches show AI</div>
+          </div>
+        </div>
+
+        <div class="mt-12 p-6 rounded-2xl bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/20">
+          <p class="text-center text-lg">
+            <strong class="text-white">The majority of Google searches</strong> 
+            <span class="text-neutral-300">now end without a click. Users get their answer from AI summaries. If you're not optimized for AI, you're invisible even on Google.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="px-6 py-20">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">AI-First Visibility</h2>
+        <p class="text-neutral-400 text-center mb-12 max-w-2xl mx-auto">Technical foundations that make AI understand, trust, and recommend your business.</p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors hover-lift scroll-reveal">
+            <div class="w-12 h-12 rounded-xl bg-violet-500/20 flex items-center justify-center mb-4">
+              <span class="text-2xl">📋</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Schema Markup</h3>
+            <p class="text-neutral-400">JSON-LD structured data that tells AI exactly what you do, where you operate, and why you're trustworthy.</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors hover-lift scroll-reveal">
+            <div class="w-12 h-12 rounded-xl bg-fuchsia-500/20 flex items-center justify-center mb-4">
+              <span class="text-2xl">🤖</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">llms.txt</h3>
+            <p class="text-neutral-400">A dedicated file that gives AI crawlers a clear summary of your business, similar to robots.txt but for AI.</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors hover-lift scroll-reveal">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4">
+              <span class="text-2xl">❓</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">FAQ Architecture</h3>
+            <p class="text-neutral-400">Structured Q&A content that AI can directly quote when users ask about your services.</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors hover-lift scroll-reveal">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4">
+              <span class="text-2xl">🔗</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Citation Optimization</h3>
+            <p class="text-neutral-400">Content structured so AI cites you as a source, building authority and driving referral traffic.</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors hover-lift scroll-reveal">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center mb-4">
+              <span class="text-2xl">📍</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Local AI Signals</h3>
+            <p class="text-neutral-400">Geographic data that helps AI recommend you for local queries like "best IT support in Hull".</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 hover:border-violet-500/50 transition-colors hover-lift scroll-reveal">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-4">
+              <span class="text-2xl">📊</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Trust Signals</h3>
+            <p class="text-neutral-400">Certifications, reviews, and credentials formatted so AI recognizes your expertise.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="px-6 py-20 bg-gradient-to-r from-violet-500/5 to-fuchsia-500/5 border-y border-violet-500/10">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 mb-6">
+          <span class="text-emerald-400 font-medium text-sm">Proof of Concept</span>
+        </div>
+        
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">This Site is AI-Optimized</h2>
+        <p class="text-neutral-400 mb-8 max-w-2xl mx-auto">This isn't theory. It's practice. This very website ranks in AI search for target keywords.</p>
+
+        <div class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700 text-left">
+          <p class="text-neutral-300 mb-4">Try asking any AI assistant:</p>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3">
+              <span class="text-violet-400">→</span>
+              <span class="text-white">"Who offers computer repair in Hull?"</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-violet-400">→</span>
+              <span class="text-white">"Best e-waste disposal service in East Yorkshire"</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-violet-400">→</span>
+              <span class="text-white">"IT support for small businesses Hull"</span>
+            </li>
+          </ul>
+          <p class="text-neutral-400 mt-4 text-sm">We appear because we've implemented the same strategies we'll implement for you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="px-6 py-20">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">Choose Your Package</h2>
+        <p class="text-neutral-400 text-center mb-12">From one-time audits to ongoing optimization, we scale with your ambitions.</p>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div 
+            v-for="pkg in packages" 
+            :key="pkg.id"
+            class="p-6 rounded-2xl border transition-all relative"
+            :class="pkg.popular 
+              ? 'bg-gradient-to-b from-violet-500/10 to-fuchsia-500/10 border-violet-500/50' 
+              : 'bg-neutral-800/50 border-neutral-700 hover:border-neutral-600'"
+          >
+            <div v-if="pkg.popular" class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-full text-xs font-bold text-white">
+              Most Popular
+            </div>
+            
+            <h3 class="text-xl font-bold text-white mb-2">{{ pkg.name }}</h3>
+            <div class="text-2xl font-bold text-violet-400 mb-2">{{ pkg.price }}</div>
+            <p class="text-neutral-400 text-sm mb-6">{{ pkg.description }}</p>
+            
+            <ul class="space-y-3 mb-6">
+              <li v-for="feature in pkg.features" :key="feature" class="flex items-start gap-2 text-sm">
+                <span class="text-emerald-400 mt-0.5">✓</span>
+                <span class="text-neutral-300">{{ feature }}</span>
+              </li>
+            </ul>
+
+            <button 
+              @click="scrollToContact"
+              class="w-full py-3 rounded-xl font-semibold transition-colors"
+              :class="pkg.popular 
+                ? 'bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white hover:from-violet-500 hover:to-fuchsia-500' 
+                : 'bg-neutral-700 text-white hover:bg-neutral-600'"
+            >
+              {{ pkg.cta }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="px-6 py-20 bg-neutral-900/50">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">Frequently Asked Questions</h2>
+        
+        <div class="space-y-4">
+          <div v-for="(faq, index) in faqs" :key="index" class="p-6 rounded-2xl bg-neutral-800/50 border border-neutral-700">
+            <h3 class="text-lg font-semibold text-white mb-3">{{ faq.question }}</h3>
+            <p class="text-neutral-400 leading-relaxed">{{ faq.answer }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="px-6 py-20">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Dominate AI Search?</h2>
+        <p class="text-neutral-400 mb-8">Get a free AI visibility check and see exactly where your business stands. No obligation, just clarity.</p>
+        
+        <button 
+          @click="scrollToContact"
+          class="px-8 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-xl font-semibold text-white hover:from-violet-500 hover:to-fuchsia-500 transition-all shadow-lg shadow-violet-500/25 text-lg"
+        >
+          Book Your Free AI Visibility Audit
+        </button>
+        
+        <p class="text-neutral-400 mt-4 text-sm">Or email directly: <a href="mailto:jake@jakefieldhouse.co.uk" class="text-violet-400 hover:underline">jake@jakefieldhouse.co.uk</a></p>
+      </div>
+    </section>
+  </div>
+</template>

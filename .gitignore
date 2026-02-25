@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+
+# Build output (kept in git for GitHub Pages deployment)
+# dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local environment
+.env
+.env.local
+.env.*.local
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Debug
+.npm
+.eslintcache
+
+# Vite cache
+.vite/
+
+# Optional: uncomment if you want to ignore insurance docs
+# Insurance/
+
+# Internal workflow files (not for public repo)
+.agent/
+public/templates/generated/
+
+# Test output
+playwright-report/
+test-results/
+gtm-key.json

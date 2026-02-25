@@ -1,0 +1,70 @@
+# robots.txt for Jake Fieldhouse Consulting
+# https://jakefieldhouse.co.uk
+
+User-agent: *
+Allow: /
+
+# AI Search Engine Crawlers - Explicitly Allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Sitemap
+Sitemap: https://jakefieldhouse.co.uk/sitemap.xml
+
+# Security Policy (RFC 9116)
+# See: https://securitytxt.org/
+# Security policy: https://jakefieldhouse.co.uk/.well-known/security.txt
+
+# AI Knowledge Files (llms.txt spec)
+# See: https://llmstxt.org/
+# LLM index: https://jakefieldhouse.co.uk/llms.txt
+# LLM full index: https://jakefieldhouse.co.uk/llms-full.txt
+
+# AI Agent Endpoints (Agentic Commerce)
+# Knowledge graph: https://jakefieldhouse.co.uk/knowledge.json
+# Availability API: https://jakefieldhouse.co.uk/api/availability.json
+# AI plugin: https://jakefieldhouse.co.uk/.well-known/ai-plugin.json
+
+# Security: Block common attack paths
+User-agent: *
+Disallow: /.env
+Disallow: /.git
+Disallow: /wp-admin
+Disallow: /wp-content
+Disallow: /wp-includes
+Disallow: /administrator
+Disallow: /admin
+Disallow: /phpmyadmin
+Disallow: /config
+Disallow: /backup
+Disallow: /.htaccess
+Disallow: /server-status
+Disallow: /cgi-bin
+

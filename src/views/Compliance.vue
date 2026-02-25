@@ -1,0 +1,235 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import { useScrollReveal } from '../composables/useScrollReveal'
+import { Recycle, ShieldCheck, FileText, Lock } from 'lucide-vue-next'
+import IconExternalLink from '../components/icons/IconExternalLink.vue'
+import IconDownload from '../components/icons/IconDownload.vue'
+import IconCheck from '../components/icons/IconCheck.vue'
+import BreadcrumbSchema from '../components/BreadcrumbSchema.vue'
+
+const containerRef = ref<HTMLElement | null>(null)
+useScrollReveal(containerRef)
+
+const complianceItems = ref([
+    {
+        title: 'Registered Waste Carrier',
+        description: 'Officially registered with the Environment Agency as a Carrier, Dealer, and Broker of controlled waste. Authorized to transport and handle e-waste.',
+        status: 'active', // Options: active, pending, expired
+        color: 'text-green-500',
+        icon: Recycle,
+        regNumber: 'CBDL620098',
+        expiry: 'Indefinite (Lower Tier)',
+        proofUrl: 'https://environment.data.gov.uk/public-register/view/search-waste-carriers-brokers'
+    },
+    {
+        title: 'Information Commissioner\'s Office (ICO)',
+        description: 'Registered Data Controller (ZC002956). Ensuring full compliance with GDPR and Data Protection Act 2018 requirements.',
+        status: 'active',
+        color: 'text-purple-500',
+        icon: Lock,
+        regNumber: 'ZC002956',
+        expiry: 'Tier 1 Controller',
+        proofUrl: '/documents/ICO_Certificate_ZC002956.pdf'
+    },
+    {
+        title: 'NIST 800-88 Purge Standard',
+        description: 'All storage media is sanitized to NIST 800-88 "Purge" Level using Blancco Drive Eraser for HDDs/SSDs and NVMe Secure Erase (cryptographic) for modern drives. Certificates of Destruction provided for every batch.',
+        status: 'active',
+        color: 'text-emerald-500',
+        icon: FileText,
+        regNumber: 'Blancco + NVMe Cryptographic Erase',
+        expiry: 'Standard Operating Procedure',
+        proofUrl: '/documents/certificate_of_destruction_example.html'
+    },
+
+    {
+        title: 'DBS Enhanced Check',
+        description: 'Full Enhanced Disclosure & Barring Service check. Active subscription to the Update Service for real-time status verification. Full certificate available on request.',
+        status: 'active',
+        color: 'text-sky-500',
+        icon: ShieldCheck,
+        regLabel: 'Reference (public copy redacted)',
+        regNumber: 'Public copy redacted; verification available on request',
+        expiry: 'Live Subscription',
+        proofUrl: 'https://secure.crbonline.gov.uk/crsc/check'
+    },
+    {
+        title: 'Business Insurance (Hiscox)',
+        description: 'Comprehensive business insurance underwritten by Hiscox including Professional Indemnity, Public Liability, and Cyber Liability coverage.',
+        status: 'active',
+        color: 'text-blue-500',
+        icon: ShieldCheck,
+        regNumber: 'Hiscox Underwritten',
+        expiry: 'Active Policy',
+        proofUrl: null,
+        proofUrls: [
+            { label: 'Professional Indemnity', url: '/certificates/insurance/DC501 - PI certificate_redacted.pdf' },
+            { label: 'Public Liability', url: '/certificates/insurance/DC502 - PL certificate_redacted.pdf' },
+            { label: 'Cyber Liability', url: '/certificates/insurance/DC506 Cyber Certificate_redacted.pdf' }
+        ]
+    }
+])
+
+const isExpired = (dateStr: string | null) => {
+    if (!dateStr || dateStr === 'Rolling Renewal') return false
+    return false
+}
+
+const getStatusBorderColor = (status: string) => {
+    if (status === 'active') return 'border-green-500/20 shadow-lg shadow-green-500/10'
+    if (status === 'pending') return 'border-amber-500/20 border-dashed'
+    return 'border-white/5 opacity-50'
+}
+
+const getStatusPillColor = (status: string) => {
+    if (status === 'active') return 'bg-green-500/10 text-green-500 border border-green-500/20'
+    if (status === 'pending') return 'bg-amber-500/10 text-amber-500 border border-amber-500/20'
+    return 'bg-neutral-800 text-neutral-400'
+}
+
+</script>
+
+<template>
+  <div ref="containerRef" class="relative z-10 min-h-screen pt-32 pb-20 px-6 max-w-4xl mx-auto text-white">
+    <BreadcrumbSchema :crumbs="[{ name: 'Compliance', url: '/compliance' }]" />
+    <h1 class="text-4xl font-bold mb-12">Compliance & Certifications</h1>
+    
+    <div class="space-y-6">
+        <div v-for="item in complianceItems" :key="item.title" 
+             class="bg-neutral-900/50 p-8 rounded-2xl border transition-colors group relative overflow-hidden"
+             :class="getStatusBorderColor(item.status)">
+            
+            <!-- Status Pill -->
+            <div class="absolute top-6 right-6 flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider"
+                 :class="getStatusPillColor(item.status)">
+                <span v-if="item.status === 'active'" class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 bg-current"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-current"></span>
+                </span>
+                <span v-else class="h-2 w-2 rounded-full bg-current"></span>
+                {{ item.status === 'active' ? 'Live & Verified' : 'Pending Verification' }}
+            </div>
+
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3" :class="item.color">
+                <component :is="item.icon" class="w-6 h-6" />
+                {{ item.title }}
+            </h2>
+            
+            <p class="text-neutral-300 mb-6 max-w-2xl">{{ item.description }}</p>
+            
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <!-- Registration Data -->
+                <div v-if="item.regNumber" class="bg-neutral-800/50 px-4 py-3 rounded-lg border border-white/5 flex justify-between items-center">
+                    <span class="text-neutral-400">{{ item.regLabel || 'Registration ID' }}</span>
+                    <span class="font-mono text-white select-all">{{ item.regNumber }}</span>
+                </div>
+                
+                <div v-if="item.expiry" class="bg-neutral-800/50 px-4 py-3 rounded-lg border border-white/5 flex justify-between items-center">
+                    <span class="text-neutral-400">Valid Until</span>
+                    <span class="font-mono" :class="isExpired(item.expiry) ? 'text-red-400' : 'text-green-400'">
+                        {{ item.expiry }}
+                    </span>
+                </div>
+
+                <!-- Proof Link(s) -->
+                <div class="md:col-span-2 mt-2">
+                    <!-- Multiple proof links (for insurance) -->
+                    <div v-if="item.proofUrls" class="flex flex-wrap gap-4">
+                        <a v-for="proof in item.proofUrls" :key="proof.label" :href="proof.url" target="_blank" rel="noopener"
+                           class="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors text-sm">
+                            <IconDownload class="w-4 h-4" />
+                            {{ proof.label }} ↓
+                        </a>
+                    </div>
+                    <!-- Single proof link -->
+                    <a v-else-if="item.proofUrl" :href="item.proofUrl" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors text-sm group/link">
+                        <IconExternalLink class="w-4 h-4" />
+                        View Official Certificate / Registry
+                    </a>
+                    <span v-else class="text-neutral-400 italic text-sm flex items-center gap-2">
+                        <IconCheck class="w-4 h-4" />
+                        Certificate document pending upload
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Client Resources (Safety Net) -->
+    <section class="mt-20 border-t border-white/5 pt-12">
+        <h2 class="text-3xl font-bold mb-8">Client Resources (Due Diligence)</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            
+            <div class="bg-neutral-900/30 p-6 rounded-xl border border-white/5 flex items-start gap-4 hover:border-white/10 transition-colors">
+                <div class="p-3 bg-neutral-800 rounded-lg text-white">
+                    <FileText class="w-6 h-6" />
+                </div>
+                <div>
+                    <h3 class="font-bold text-white">Standard RAMS Pack</h3>
+                    <p class="text-sm text-neutral-400 mt-1 mb-3">Risk Assessment & Method Statement for on-site collection.</p>
+                    <a href="/documents/RAMS.html" target="_blank" rel="noopener" class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2">
+                        View Document →
+                    </a>
+                </div>
+            </div>
+
+             <div class="bg-neutral-900/30 p-6 rounded-xl border border-white/5 flex items-start gap-4 hover:border-white/10 transition-colors">
+                <div class="p-3 bg-neutral-800 rounded-lg text-white">
+                    <Lock class="w-6 h-6" />
+                </div>
+                <div>
+                    <h3 class="font-bold text-white">Pre-Signed NDA</h3>
+                    <p class="text-sm text-neutral-400 mt-1 mb-3">Standard Non-Disclosure Agreement for data handling.</p>
+                    <a href="/documents/NDA.html" target="_blank" rel="noopener" class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2">
+                        View Template →
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-neutral-900/30 p-6 rounded-xl border border-white/5 flex items-start gap-4 hover:border-white/10 transition-colors">
+                <div class="p-3 bg-neutral-800 rounded-lg text-emerald-400">
+                    <Recycle class="w-6 h-6" />
+                </div>
+                <div>
+                    <h3 class="font-bold text-white">E-Waste Service Brief</h3>
+                    <p class="text-sm text-neutral-400 mt-1 mb-3">One-page overview of our ITAD service for decision-makers.</p>
+                    <a href="/documents/e-waste-service-brief.html" target="_blank" rel="noopener" class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2">
+                        View Brief →
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-neutral-900/30 p-6 rounded-xl border border-white/5 flex items-start gap-4 hover:border-white/10 transition-colors">
+                <div class="p-3 bg-neutral-800 rounded-lg text-emerald-400">
+                    <FileText class="w-6 h-6" />
+                </div>
+                <div>
+                    <h3 class="font-bold text-white">Waste Transfer Note Template</h3>
+                    <p class="text-sm text-neutral-400 mt-1 mb-3">Duty of Care WTN for compliant e-waste transfer.</p>
+                    <a href="/documents/waste-transfer-note-template.html" target="_blank" rel="noopener" class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2">
+                        View Template →
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-neutral-900/30 p-6 rounded-xl border border-white/5 flex items-start gap-4 hover:border-white/10 transition-colors">
+                <div class="p-3 bg-neutral-800 rounded-lg text-emerald-400">
+                    <ShieldCheck class="w-6 h-6" />
+                </div>
+                <div>
+                    <h3 class="font-bold text-white">Collector Authorization Form</h3>
+                    <p class="text-sm text-neutral-400 mt-1 mb-3">For reception or facilities staff to authorize collection on behalf of their organisation.</p>
+                    <a href="/documents/collector-authorization-form.html" target="_blank" rel="noopener" class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2">
+                        View Form →
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <div class="mt-12 text-center">
+        <router-link to="/" class="text-neutral-400 hover:text-white transition-colors">← Back to Home</router-link>
+    </div>
+  </div>
+</template>

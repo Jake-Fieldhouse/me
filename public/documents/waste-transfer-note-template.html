@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Transfer Note - Jake Fieldhouse Consulting</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            color: #1a1a1a;
+            background: #fff;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 3px solid #000;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .header .sub {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        .header .ref {
+            text-align: right;
+            font-family: monospace;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .legal-notice {
+            background: #fff8e1;
+            border: 1px solid #ffe082;
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin-bottom: 24px;
+            font-size: 11px;
+            color: #5d4037;
+        }
+
+        .legal-notice strong {
+            color: #000;
+        }
+
+        h2 {
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section {
+            margin-bottom: 24px;
+        }
+
+        .field-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .field-grid.three {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .field {
+            margin-bottom: 10px;
+        }
+
+        .field .label {
+            display: block;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #888;
+            letter-spacing: 0.5px;
+            margin-bottom: 3px;
+        }
+
+        .field .value {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 4px;
+            min-height: 22px;
+        }
+
+        .field .value[contenteditable="true"] {
+            background: #fffef0;
+            padding: 2px 4px;
+            border-radius: 2px;
+            cursor: text;
+        }
+
+        .field .value.pre-filled {
+            color: #000;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+
+        th {
+            text-align: left;
+            border-bottom: 2px solid #000;
+            padding: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            border-bottom: 1px solid #eee;
+            padding: 10px 8px;
+        }
+
+        td[contenteditable="true"] {
+            background: #fffef0;
+        }
+
+        .checkbox-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 10px 0;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+        }
+
+        .checkbox-item input {
+            width: 14px;
+            height: 14px;
+        }
+
+        .hierarchy-box {
+            background: #e8f5e9;
+            border: 1px solid #a5d6a7;
+            border-radius: 6px;
+            padding: 14px 16px;
+            margin-bottom: 20px;
+        }
+
+        .hierarchy-box h3 {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #2e7d32;
+            margin-bottom: 6px;
+        }
+
+        .hierarchy-box p {
+            font-size: 11px;
+            color: #1b5e20;
+        }
+
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .sig-box {
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 16px;
+        }
+
+        .sig-box h3 {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            color: #555;
+        }
+
+        .sig-line {
+            border-bottom: 1px solid #000;
+            height: 40px;
+            margin: 8px 0;
+        }
+
+        .sig-box .label {
+            font-size: 10px;
+            color: #888;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .footer {
+            margin-top: 24px;
+            font-size: 9px;
+            color: #999;
+            text-align: center;
+            border-top: 1px solid #eee;
+            padding-top: 12px;
+        }
+
+        .retention-notice {
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin: 20px 0;
+            font-size: 11px;
+            color: #0d47a1;
+        }
+
+        @media print {
+            body {
+                padding: 20px;
+                font-size: 11px;
+            }
+
+            .legal-notice {
+                background: #fff !important;
+                border: 2px solid #000;
+            }
+
+            td[contenteditable="true"],
+            .field .value[contenteditable="true"] {
+                background: #fff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div>
+            <h1>WASTE TRANSFER NOTE</h1>
+            <p class="sub">Environmental Protection (Duty of Care) Regulations 1991</p>
+        </div>
+        <div class="ref">
+            WTN Reference: WTN-__________<br>
+            Date of Issue: ____ / ____ / ________
+        </div>
+    </div>
+
+    <div class="legal-notice">
+        <strong>Legal Requirement:</strong> This Waste Transfer Note is required under the Environmental Protection Act
+        1990,
+        Section 34, and the Environmental Protection (Duty of Care) Regulations 1991. Both the transferor and transferee
+        must retain a copy for a minimum of <strong>2 years</strong> from the date of transfer. Digital copies are
+        acceptable
+        provided they are readily accessible for inspection by the Environment Agency.
+    </div>
+
+    <!-- Section A: Waste Description -->
+    <div class="section">
+        <h2>Section A — Description of Waste</h2>
+        <div class="field-grid">
+            <div class="field">
+                <span class="label">Written Description of Waste</span>
+                <span class="value" contenteditable="true">Mixed WEEE (IT equipment) — laptops, desktops, monitors,
+                    peripherals</span>
+            </div>
+            <div class="field">
+                <span class="label">EWC / List of Waste Code(s)</span>
+                <span class="value" contenteditable="true">20 01 35* (WEEE containing hazardous components) / 20 01 36
+                    (WEEE non-hazardous)</span>
+            </div>
+        </div>
+        <div class="field-grid three">
+            <div class="field">
+                <span class="label">Quantity (Weight / Volume / Count)</span>
+                <span class="value" contenteditable="true"></span>
+            </div>
+            <div class="field">
+                <span class="label">How Contained / Packaged</span>
+                <span class="value" contenteditable="true">Loose / on pallet / in crates</span>
+            </div>
+            <div class="field">
+                <span class="label">Any Previous Treatment</span>
+                <span class="value" contenteditable="true">None — collected as-is from producer</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section B: Transferor -->
+    <div class="section">
+        <h2>Section B — Transferor (Person Handing Over Waste)</h2>
+        <div class="field-grid">
+            <div class="field">
+                <span class="label">Organisation Name</span>
+                <span class="value" contenteditable="true"></span>
+            </div>
+            <div class="field">
+                <span class="label">Contact Name</span>
+                <span class="value" contenteditable="true"></span>
+            </div>
+        </div>
+        <div class="field-grid">
+            <div class="field">
+                <span class="label">Collection / Site Address</span>
+                <span class="value" contenteditable="true"></span>
+            </div>
+            <div class="field">
+                <span class="label">Postcode</span>
+                <span class="value" contenteditable="true"></span>
+            </div>
+        </div>
+        <div class="field-grid three">
+            <div class="field">
+                <span class="label">SIC Code (Industry Classification)</span>
+                <span class="value" contenteditable="true"></span>
+            </div>
+            <div class="field">
+                <span class="label">Category of Transferor</span>
+                <span class="value" contenteditable="true">Producer / Original Producer</span>
+            </div>
+            <div class="field">
+                <span class="label">Is Transferor the Original Producer?</span>
+                <span class="value" contenteditable="true">Yes / No</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section C: Transferee -->
+    <div class="section">
+        <h2>Section C — Transferee (Person Receiving Waste)</h2>
+        <div class="field-grid">
+            <div class="field">
+                <span class="label">Organisation Name</span>
+                <span class="value pre-filled">Jake Fieldhouse Consulting LTD</span>
+            </div>
+            <div class="field">
+                <span class="label">Contact Name</span>
+                <span class="value pre-filled">Jake Fieldhouse</span>
+            </div>
+        </div>
+        <div class="field-grid">
+            <div class="field">
+                <span class="label">Registered Address</span>
+                <span class="value pre-filled">Hull, East Yorkshire</span>
+            </div>
+            <div class="field">
+                <span class="label">Category of Transferee</span>
+                <span class="value pre-filled">Registered Carrier, Dealer & Broker of Controlled Waste</span>
+            </div>
+        </div>
+        <div class="field-grid three">
+            <div class="field">
+                <span class="label">EA Waste Carrier Registration</span>
+                <span class="value pre-filled">CBDL620098</span>
+            </div>
+            <div class="field">
+                <span class="label">Registration Type</span>
+                <span class="value pre-filled">Lower Tier (Indefinite)</span>
+            </div>
+            <div class="field">
+                <span class="label">Companies House Number</span>
+                <span class="value pre-filled">16536646</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section D: Transfer Details -->
+    <div class="section">
+        <h2>Section D — Transfer Details</h2>
+        <div class="field-grid">
+            <div class="field">
+                <span class="label">Date of Transfer</span>
+                <span class="value" contenteditable="true">____ / ____ / ________</span>
+            </div>
+            <div class="field">
+                <span class="label">Time of Transfer</span>
+                <span class="value" contenteditable="true">____:____</span>
+            </div>
+        </div>
+        <div class="field">
+            <span class="label">Place of Transfer</span>
+            <span class="value" contenteditable="true"></span>
+        </div>
+    </div>
+
+    <!-- Section E: Waste Hierarchy -->
+    <div class="hierarchy-box">
+        <h3>Waste Hierarchy Confirmation (Regulation 12)</h3>
+        <p>The transferee confirms that, in accepting this waste, the waste hierarchy has been applied:</p>
+        <div class="checkbox-row" style="margin-top: 8px;">
+            <label class="checkbox-item"><input type="checkbox" checked disabled> <span>Prevention
+                    considered</span></label>
+            <label class="checkbox-item"><input type="checkbox" checked disabled> <span>Re-use prioritised (Refurbish
+                    First model)</span></label>
+            <label class="checkbox-item"><input type="checkbox" checked disabled> <span>Recycling applied to
+                    non-reusable items</span></label>
+            <label class="checkbox-item"><input type="checkbox" checked disabled> <span>Recovery of precious
+                    metals</span></label>
+            <label class="checkbox-item"><input type="checkbox" disabled> <span>Disposal (last resort
+                    only)</span></label>
+        </div>
+    </div>
+
+    <!-- Section F: Asset Register (Optional) -->
+    <div class="section">
+        <h2>Section E — Asset Register (Optional Detail)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Device Type</th>
+                    <th>Make / Model</th>
+                    <th>Serial / Asset ID</th>
+                    <th>Condition</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true">Working / Non-working</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Section G: Signatures -->
+    <div class="section">
+        <h2>Section F — Signatures</h2>
+        <div class="signature-grid">
+            <div class="sig-box">
+                <h3>Transferor (Handing Over)</h3>
+                <div class="field">
+                    <span class="label">Signed</span>
+                    <div class="sig-line"></div>
+                </div>
+                <div class="field">
+                    <span class="label">Print Name</span>
+                    <span class="value" contenteditable="true"></span>
+                </div>
+                <div class="field">
+                    <span class="label">Position / Title</span>
+                    <span class="value" contenteditable="true"></span>
+                </div>
+                <div class="field">
+                    <span class="label">Date</span>
+                    <span class="value" contenteditable="true"></span>
+                </div>
+            </div>
+            <div class="sig-box">
+                <h3>Transferee (Receiving)</h3>
+                <div class="field">
+                    <span class="label">Signed</span>
+                    <div class="sig-line"
+                        style="font-family: 'Brush Script MT', cursive; font-size: 22px; padding-top: 10px;">Jake
+                        Fieldhouse</div>
+                </div>
+                <div class="field">
+                    <span class="label">Print Name</span>
+                    <span class="value pre-filled">Jake Fieldhouse</span>
+                </div>
+                <div class="field">
+                    <span class="label">Position / Title</span>
+                    <span class="value pre-filled">Director</span>
+                </div>
+                <div class="field">
+                    <span class="label">Date</span>
+                    <span class="value" contenteditable="true"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="retention-notice">
+        <strong>Retention:</strong> Both parties must retain this Waste Transfer Note for a minimum of 2 years from the
+        date of transfer
+        (3 years for hazardous waste consignment notes). This document may be stored digitally provided it is readily
+        accessible
+        for inspection by the Environment Agency.
+    </div>
+
+    <div class="footer">
+        Jake Fieldhouse Consulting LTD. Registered in England & Wales (16536646).<br>
+        Environment Agency Registered Waste Carrier: CBDL620098 | ICO Registration: ZC002956 | Insured by Hiscox<br>
+        jakefieldhouse.co.uk | jake@jakefieldhouse.co.uk | 07404 090 458
+    </div>
+
+</body>
+
+</html>

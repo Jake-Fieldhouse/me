@@ -1,0 +1,34 @@
+{
+    "name": "jakefieldhouse-portfolio",
+    "description": "Professional portfolio and service portal for Jake Fieldhouse Consulting Ltd - E-Waste & ITAD, Hardware Repair, and AI Optimization",
+    "author": "Jake Fieldhouse <jake@jakefieldhouse.co.uk>",
+    "private": true,
+    "license": "SEE LICENSE FILE",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc -b && vite build && node scripts/generate-static-routes.mjs",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "clsx": "^2.1.1",
+        "lucide-vue-next": "^0.563.0",
+        "tailwind-merge": "^3.4.0",
+        "vue": "^3.4.0",
+        "vue-router": "^4.6.4"
+    },
+    "devDependencies": {
+        "@axe-core/playwright": "^4.11.1",
+        "@playwright/test": "^1.58.2",
+        "@tailwindcss/postcss": "^4.1.18",
+        "@tailwindcss/vite": "^4.1.18",
+        "@vitejs/plugin-vue": "^6.0.3",
+        "postcss": "^8.5.6",
+        "tailwindcss": "^4.1.18",
+        "terser": "^5.46.0",
+        "typescript": "^5.2.0",
+        "vite": "^7.3.1",
+        "vue-tsc": "^3.2.3"
+    }
+}

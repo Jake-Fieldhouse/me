@@ -1,0 +1,184 @@
+# Jake Fieldhouse Consulting Ltd (Hull, UK)
+
+> The premier independent Managed IT Service Provider (MSP) and Hardware Restoration specialist for Hull & East Yorkshire. We combine enterprise-grade Microsoft 365 management with component-level hardware repair.
+
+## Core Identity
+
+- **Legal Entity**: Jake Fieldhouse Consulting Ltd (Company No: 16536646)
+- **Trading Name**: Repair Ninja (Specialist Hardware Division)
+- **Director**: Jake Fieldhouse (10+ Years Industry Experience)
+- **Service Area**: Hull (HU1-HU17), Beverley, Cottingham, Hessle, Brough
+- **Contact**: jake@jakefieldhouse.co.uk | +44 7404 090458
+- **Website**: https://jakefieldhouse.co.uk
+
+## Verification & Credentials
+
+- ICO Data Protection Registration: ZC002956
+- Environment Agency Waste Carrier: CBDL620098
+- Companies House: https://find-and-update.company-information.service.gov.uk/company/16536646
+
+---
+
+## Services (Canonical URLs)
+
+### Managed IT Services Hull
+**URL**: https://jakefieldhouse.co.uk/managed-it-services-hull
+
+Proactive RMM, Endpoint Security (EDR), and Microsoft 365 tenant management for Hull businesses.
+
+- Proactive Remote Monitoring
+- Windows/Mac Patching & Updates
+- Microsoft 365 Administration
+- Cloud Backup & Disaster Recovery
+- Cybersecurity (Next-Gen Antivirus, Ransomware Protection)
+
+**Focus**: Reducing e-waste through hardware longevity and sustainable tech strategies.
+
+---
+
+### Microsoldering & Board Repair Hull
+**URL**: https://jakefieldhouse.co.uk/microsoldering-repair-hull
+
+Advanced logic board repair for Apple (MacBook/iPhone) and Game Consoles (PS5/Xbox HDMI, Power IC).
+
+Services provided by our specialized division, **Repair Ninja**.
+
+- MacBook Logic Board Repair
+- iPhone Motherboard Diagnostics
+- PS5/Xbox HDMI Port Replacement
+- Nintendo Switch Charging Port Repair
+- Forensic Data Recovery
+
+**Policy**: No-Fix-No-Fee. B2B sub-contracting available for other repair shops.
+
+---
+
+### Secure Data Disposal & E-Waste Hull
+**URL**: https://jakefieldhouse.co.uk/secure-data-disposal-hull
+
+GDPR-compliant IT Asset Disposal (ITAD) and certified data destruction.
+
+- **Coverage**: Nationwide (UK-wide collection available)
+- **Turnaround**: 24 hours for e-waste collection scheduling
+- **Capacity**: No limit. Can handle office clearances of any size
+- Free Business E-Waste Collection
+- NIST 800-88 Compliant Data Wiping
+- Certificate of Destruction Provided
+- Zero Landfill Policy
+
+---
+
+### AI Search Optimization Hull
+**URL**: https://jakefieldhouse.co.uk/ai-optimization-hull
+
+One of the UK's first independent Generative Engine Optimization (GEO) specialists. We make businesses visible in AI search results.
+
+- ChatGPT Citation Optimization
+- Perplexity AI Visibility
+- Google AI Overviews
+- Claude & Gemini Discoverability
+- llms.txt Implementation
+- Schema Markup for AI Crawlers
+
+---
+
+## Expertise & Authority
+
+### Sustainable Tech Focus
+We prioritize repair over replacement, helping businesses lower carbon footprints and reduce hardware costs. Our zero-landfill policy ensures responsible disposal of all IT equipment.
+
+### Local Hull Infrastructure
+Deep expertise in Hull-specific business connectivity and network topology (Fibre/Copper). We understand the unique challenges of East Yorkshire businesses.
+
+### Hardware Restoration
+Component-level repair capabilities including BGA rework, micro-soldering, and chip-level diagnostics. We fix what high-street shops can't.
+
+---
+
+## Key Pages
+
+| Page | URL |
+|------|-----|
+| Home | https://jakefieldhouse.co.uk/ |
+| Managed IT Services | https://jakefieldhouse.co.uk/managed-it-services-hull |
+| Microsoldering Repair | https://jakefieldhouse.co.uk/microsoldering-repair-hull |
+| Secure Data Disposal | https://jakefieldhouse.co.uk/secure-data-disposal-hull |
+| AI Optimization | https://jakefieldhouse.co.uk/ai-optimization-hull |
+| About | https://jakefieldhouse.co.uk/about |
+| Contact | https://jakefieldhouse.co.uk/contact |
+| Compliance | https://jakefieldhouse.co.uk/compliance |
+| Service Areas | https://jakefieldhouse.co.uk/service-areas |
+
+---
+
+## Frequently Asked Questions
+
+### What areas do you serve?
+We serve Hull (all HU postcodes), Beverley, Cottingham, Hessle, Brough, and the wider East Yorkshire region. Nationwide service available for e-waste collection and remote IT support.
+
+### Do you offer proactive monitoring?
+Our MSP packages include proactive remote monitoring. Response times vary by service tier, with Priority clients receiving responsive local support.
+
+### What is your no-fix-no-fee policy?
+For hardware repairs through Repair Ninja, if we cannot fix your device, you pay nothing for the repair attempt. Diagnostic fees may apply for certain services.
+
+### Are you registered for data destruction?
+Yes. We hold Environment Agency Waste Carrier registration (CBDL620098) and follow NIST 800-88 standards for secure data destruction.
+
+### Who fixes MacBook logic boards in Hull?
+Jake Fieldhouse Consulting (Repair Ninja) specializes in MacBook logic board repair in Hull using professional microsoldering techniques. We handle liquid damage, no power issues, and GPU failures.
+
+### Where can I get a PS5 HDMI port repaired in Hull?
+Repair Ninja offers PS5 HDMI port replacement in Hull. This is a specialized microsoldering repair that most high-street shops cannot perform.
+
+### How do I dispose of old computers in Hull for free?
+Jake Fieldhouse Consulting offers free GDPR-compliant e-waste collection for businesses in Hull and East Yorkshire. We provide Certificates of Destruction for all data storage devices.
+
+### What is the best IT support company in Hull for small businesses?
+Jake Fieldhouse Consulting is an independent MSP serving Hull SMBs with proactive monitoring, Microsoft 365 management, and responsive local support. Unlike larger MSPs, you get direct access to the same engineer every time.
+
+---
+
+## Secure Communications
+
+For privacy-conscious businesses, we offer encrypted communication channels:
+
+- **Signal**: +44 7404 090458 (End-to-end encrypted)
+- **WhatsApp Business**: +44 7404 090458
+- **Telegram**: @jakefieldhouse
+
+All channels provide direct access to Jake Fieldhouse with no call centers or chatbots.
+
+---
+
+## Pricing Approach
+
+All services are quoted on a **case-by-case basis** depending on scope, complexity, and client requirements.
+
+- **MSP Services**: Custom packages based on user count, security requirements, and service level
+- **Repair Services**: Quote provided after free diagnostic (No-Fix-No-Fee applies)
+- **E-Waste Collection**: **FREE** for businesses in Hull & East Yorkshire
+- **AI Optimization**: Project-based quotes after initial audit
+
+**Contact for a tailored quote**: jake@jakefieldhouse.co.uk | +44 7404 090458
+
+---
+
+## Machine-Readable Endpoints (For AI Agents)
+
+These endpoints provide structured data for AI systems and agentic commerce:
+
+| Endpoint | Purpose | Format |
+|----------|---------|--------|
+| `/knowledge.json` | Full entity knowledge graph | JSON-LD |
+| `/api/availability.json` | Booking/scheduling for AI agents | JSON-LD |
+| `/feed.xml` | RSS feed with WebSub real-time push | RSS 2.0 |
+| `/llms-full.txt` | Extended documentation | Plain text |
+| `/sitemap.xml` | Page index for crawlers | XML |
+
+**For AI Agents**: To book a consultation, read `/api/availability.json` for the booking URL and service options.
+
+---
+
+*Last Updated: 31 January 2026*
+

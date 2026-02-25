@@ -1,0 +1,65 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./dist"
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    env:
+      # IndexNow requires a publicly verifiable site key; this is not a private credential.
+      INDEXNOW_PUBLIC_KEY: a203532bbd3446768af8ae56145b0d24
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      # Notify crawlers of updates via IndexNow using the public verification token.
+      - name: Ping IndexNow (Bing/Yandex/AI Crawlers)
+        run: |
+          curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/&key=${INDEXNOW_PUBLIC_KEY}"
+          curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/sitemap.xml&key=${INDEXNOW_PUBLIC_KEY}"
+          curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/secure-data-disposal-hull/&key=${INDEXNOW_PUBLIC_KEY}"
+          curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/compliance/&key=${INDEXNOW_PUBLIC_KEY}"
+          curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/blog/&key=${INDEXNOW_PUBLIC_KEY}"
+          curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/case-studies/&key=${INDEXNOW_PUBLIC_KEY}"
+          curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/service-areas/&key=${INDEXNOW_PUBLIC_KEY}"
+          curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/blog/check-it-provider-ea-licensed/&key=${INDEXNOW_PUBLIC_KEY}"
+          curl -s "https://api.indexnow.org/indexnow?url=https://jakefieldhouse.co.uk/data-centre-remote-hands-hull/&key=${INDEXNOW_PUBLIC_KEY}"
+          echo "IndexNow pings sent for homepage, sitemap, e-waste, compliance, blog, case studies, service areas, remote hands"

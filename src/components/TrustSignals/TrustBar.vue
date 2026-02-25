@@ -1,0 +1,85 @@
+
+<script setup lang="ts">
+// Professional Trust Signals Component
+import IconWasteCarrier from '../icons/IconWasteCarrier.vue'
+import IconNIST from '../icons/IconNIST.vue'
+import IconGDPR from '../icons/IconGDPR.vue'
+import IconShieldCheck from '../icons/IconShieldCheck.vue'
+</script>
+
+<template>
+  <div class="w-full bg-neutral-900/30 border-y border-white/5 backdrop-blur-md py-6 md:py-8 overflow-hidden relative group">
+    <!-- Subtle gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
+        
+        <!-- Waste Carrier -->
+        <div class="trust-card group" title="Registration Active">
+            <div class="relative p-2 rounded-lg bg-green-500/10 border border-green-500/20 shadow-lg shadow-green-500/10 group-hover:shadow-green-500/20 transition-all">
+                <IconWasteCarrier class="w-6 h-6 text-green-500" />
+            </div>
+            <div class="flex flex-col">
+                <span class="text-xs text-neutral-400 uppercase tracking-wider font-semibold group-hover:text-green-400 transition-colors">Waste Carrier</span>
+                <span class="text-white font-bold leading-none">CBDL620098</span>
+            </div>
+        </div>
+        
+        <!-- NIST Data Destruction -->
+        <div class="trust-card group" title="Data Destruction Standard">
+            <div class="relative p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 shadow-lg shadow-emerald-500/10 group-hover:shadow-emerald-500/20 transition-all">
+                <IconNIST class="w-6 h-6 text-emerald-500" />
+            </div>
+            <div class="flex flex-col">
+                <span class="text-xs text-neutral-400 uppercase tracking-wider font-semibold group-hover:text-emerald-400 transition-colors">Data Safety</span>
+                <span class="text-white font-bold leading-none">NIST 800-88</span>
+            </div>
+        </div>
+
+         <!-- GDPR/ICO -->
+         <div class="trust-card group" title="Information Commissioner's Office Registration">
+            <div class="p-2 rounded-lg bg-purple-500/10 border border-purple-500/20 shadow-lg shadow-purple-500/10 group-hover:shadow-purple-500/20 transition-all">
+                <IconGDPR class="w-6 h-6 text-purple-500" />
+            </div>
+            <div class="flex flex-col">
+                <span class="text-xs text-neutral-400 uppercase tracking-wider font-semibold group-hover:text-purple-300 transition-colors">Compliance</span>
+                <span class="text-white font-bold leading-none">ICO Registered</span>
+            </div>
+        </div>
+
+        <!-- Insurance -->
+        <div class="trust-card group" title="Professional Indemnity & Public Liability">
+            <div class="relative p-2 rounded-lg bg-amber-500/10 border border-amber-500/20 shadow-lg shadow-amber-500/10 group-hover:shadow-amber-500/20 transition-all">
+                <IconShieldCheck class="w-6 h-6 text-amber-400" />
+            </div>
+            <div class="flex flex-col">
+                <span class="text-xs text-neutral-400 uppercase tracking-wider font-semibold group-hover:text-amber-300 transition-colors">PI & PL</span>
+                <span class="text-white font-bold leading-none">Insured by Hiscox</span>
+            </div>
+        </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.trust-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 72px;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.9rem;
+  background: rgba(10, 10, 10, 0.45);
+  transition: border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.9;
+  cursor: help;
+}
+
+.trust-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+  opacity: 1;
+}
+</style>
+

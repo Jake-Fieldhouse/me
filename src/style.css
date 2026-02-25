@@ -1,0 +1,634 @@
+/* Self-hosted Inter font — eliminates render-blocking Google Fonts request */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/inter-300.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/inter-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inter-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/inter-700.woff2') format('woff2');
+}
+
+@import "tailwindcss";
+
+/* Force dark mode via class selector, not browser preference.
+   This prevents Chrome/OS dark mode settings from inverting our dark-themed site. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Declare dark UI while preserving accessibility modes */
+  color-scheme: dark;
+  forced-color-adjust: auto;
+  -ms-high-contrast-adjust: auto;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #101010;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+
+  --white: #ffffff;
+  --black: #000000;
+  --transparent: transparent;
+  --blue-500: #3b82f6;
+  --indigo-300: #a5b4fc;
+  --blue-300: #93c5fd;
+  --violet-200: #ddd6fe;
+  --blue-400: #60a5fa;
+}
+
+/* Native <select> dropdown options — force dark colors since
+   browser popup UI ignores Tailwind classes and inherits system theme */
+select,
+select option {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* --- Accessibility: Skip-to-Content Link --- */
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: #101010;
+  color: #fff;
+  border: 2px solid rgba(96, 165, 250, 0.8);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* --- Accessibility: Focus-Visible Outlines (WCAG 2.2 SC 2.4.13 Focus Appearance) ---
+   AAA requires the focus indicator to have:
+   - Area ≥ perimeter × 2px (3px outline satisfies for all practical sizes)
+   - ≥ 3:1 contrast against adjacent colors
+   - ≥ 3:1 contrast between focused/unfocused state
+   #60a5fa on #000 = 6.6:1 contrast — well above 3:1 */
+:focus-visible {
+  outline: 3px solid #60a5fa;
+  outline-offset: 3px;
+  /* Ensure focus ring is never clipped by overflow:hidden parents (SC 2.4.12) */
+  scroll-margin-block: 8px;
+}
+
+/* Remove default browser outline to prevent double ring */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* --- WCAG 2.2 SC 2.5.8: Target Size (Minimum 24×24 CSS px) ---
+   All interactive elements must have ≥ 24×24px target area.
+   We enforce this globally; specific components may override with larger targets. */
+a,
+button,
+[role="button"],
+[role="menuitem"],
+[role="tab"],
+input,
+select,
+textarea,
+summary {
+  min-height: 24px;
+  min-width: 24px;
+}
+
+/* Inline links within body text are exempt from target size per SC 2.5.8 exception.
+   But navigation/CTA links still need the minimum. */
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #000000 !important;
+  /* Force black canvas */
+  color: rgba(255, 255, 255, 0.87);
+}
+
+html {
+  background-color: #000000 !important;
+}
+
+#app {
+  width: 100%;
+  margin: 0 auto;
+}
+
+h1 {
+  /* Fluid typography - scales smoothly from mobile to desktop */
+  font-size: clamp(1.75rem, 4vw + 1rem, 3.5rem);
+  line-height: 1.1;
+}
+
+/* Modern viewport height with fallback */
+.min-h-dvh {
+  min-height: 100vh;
+  /* Fallback */
+  min-height: 100dvh;
+}
+
+.h-dvh {
+  height: 100vh;
+  /* Fallback */
+  height: 100dvh;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus-visible {
+  outline: 3px solid #60a5fa;
+  outline-offset: 3px;
+}
+
+/* ========== 2026 BLEEDING EDGE ENHANCEMENTS ========== */
+
+/* --- WCAG 2.2 AA Contrast Utilities (4.5:1 minimum) --- */
+.text-readable {
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.8),
+    0 2px 8px rgba(0, 0, 0, 0.6),
+    0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.text-readable-strong {
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.9),
+    0 4px 12px rgba(0, 0, 0, 0.7),
+    0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+
+/* --- CSS Scroll-Driven Animations (2026 Standard) --- */
+@supports (animation-timeline: view()) {
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeSlideUp 1ms linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+  }
+
+  .scroll-reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: fadeSlideLeft 1ms linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+  }
+
+  .scroll-reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    animation: fadeSlideRight 1ms linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+  }
+
+  .scroll-scale {
+    transform: scale(0.95);
+    opacity: 0;
+    animation: scaleIn 1ms linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+}
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeSlideRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Fallback for browsers without scroll-driven animations */
+@supports not (animation-timeline: view()) {
+
+  .scroll-reveal,
+  .scroll-reveal-left,
+  .scroll-reveal-right,
+  .scroll-scale {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --- Micro-Interactions (Premium Feel) --- */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.4), 0 0 40px rgba(99, 102, 241, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Button depth effect */
+.btn-depth {
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-depth:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn-depth:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Modern Focus States (WCAG 2.2 SC 2.4.13 Focus Appearance — AAA) --- */
+a:focus-visible {
+  outline: 3px solid #60a5fa;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* --- Typography Polish --- */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+.stat-number {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* --- Reduced Motion Respect (WCAG 2.3.3 Animation from Interactions — AAA) ---
+   Disables ALL motion when the user requests it.
+   Goes beyond AA (which only requires essential motion be kept) by
+   removing hover transforms, scroll animations, and background effects. */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .scroll-reveal,
+  .scroll-reveal-left,
+  .scroll-reveal-right,
+  .scroll-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .hover-lift:hover,
+  .hover-glow:hover,
+  .btn-depth:hover {
+    transform: none;
+  }
+
+  /* Hide purely decorative motion elements */
+  .fluid-cursor-canvas,
+  .aurora-sweep {
+    display: none !important;
+  }
+
+  /* Disable native view transition animations for reduced motion */
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+/* --- Native View Transitions API (Chrome 111+, Safari 18+) ---
+   Provides smooth crossfade with slide for route changes.
+   Navbar persists across transitions without animating. */
+
+/* Route content: crossfade + subtle slide */
+::view-transition-old(route-content) {
+  animation: vt-slide-out 250ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+::view-transition-new(route-content) {
+  animation: vt-slide-in 350ms cubic-bezier(0, 0, 0.2, 1) both;
+}
+
+/* Navbar: persist without animating (no crossfade flicker) */
+::view-transition-old(navbar),
+::view-transition-new(navbar) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Default crossfade for root (background, footer, etc.) */
+::view-transition-old(root) {
+  animation: vt-fade-out 200ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+::view-transition-new(root) {
+  animation: vt-fade-in 300ms cubic-bezier(0, 0, 0.2, 1) both;
+}
+
+@keyframes vt-slide-out {
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes vt-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@keyframes vt-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ========== PRINT STYLESHEET ========== */
+/* Inverts dark theme to light, hides interactive elements,
+   shows link URLs, sets professional page margins. */
+@media print {
+
+  /* --- Page Setup --- */
+  @page {
+    margin: 2cm 1.5cm;
+    size: A4;
+  }
+
+  @page :first {
+    margin-top: 1cm;
+  }
+
+  /* --- Theme Inversion: Dark → Light --- */
+  :root {
+    color-scheme: light;
+    color: #000 !important;
+    background: #fff !important;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+
+  #app {
+    background: transparent !important;
+  }
+
+  /* All text to black */
+  *,
+  *::before,
+  *::after {
+    color: #000 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border-color: #999 !important;
+  }
+
+  /* Preserve meaningful borders, remove decorative ones */
+  .border-white\/5,
+  .border-white\/10 {
+    border-color: #ccc !important;
+  }
+
+  /* --- Hide Non-Content Elements --- */
+  nav,
+  footer,
+  .skip-link,
+  .fluid-cursor-canvas,
+  .aurora-sweep,
+  .scroll-progress,
+  .back-to-top,
+  .cookie-consent,
+  .sticky-cta,
+  .preloader,
+  [class*="ArtHousePreloader"],
+  [class*="AuroraBackground"],
+  [class*="FluidCursor"],
+  [class*="CookieConsent"],
+  [class*="StickyCTA"],
+  [class*="Toast"],
+  [role="navigation"],
+  button:not([type="submit"]) {
+    display: none !important;
+  }
+
+  /* --- Content Layout --- */
+  .max-w-3xl,
+  .max-w-4xl,
+  .max-w-5xl,
+  .max-w-6xl,
+  .max-w-7xl {
+    max-width: 100% !important;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* --- Typography for Print --- */
+  h1 {
+    font-size: 24pt !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  h2 {
+    font-size: 18pt !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  h3 {
+    font-size: 14pt !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: auto;
+  }
+
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* --- Link URLs (show href after link text) --- */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    font-weight: normal;
+    color: #555 !important;
+    word-break: break-all;
+  }
+
+  /* Don't show URL for internal navigation or fragment links */
+  a[href^="#"]::after,
+  a[href^="/"]::after,
+  a[href^="javascript"]::after {
+    content: "";
+  }
+
+  /* Show full URL for internal links with domain */
+  a[href^="https://jakefieldhouse"]::after {
+    content: "";
+  }
+
+  /* --- Page Break Rules --- */
+  article,
+  section,
+  .prose {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  table,
+  figure,
+  pre,
+  blockquote {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* --- Badges/Tags: ensure visibility --- */
+  .rounded-full {
+    border: 1px solid #999 !important;
+    padding: 2px 8px !important;
+  }
+
+  /* --- Gradient Text: override to solid black --- */
+  .bg-clip-text,
+  .text-transparent {
+    -webkit-text-fill-color: #000 !important;
+    color: #000 !important;
+    background: none !important;
+  }
+
+  /* --- Remove backdrop effects --- */
+  .backdrop-blur-sm,
+  .backdrop-blur,
+  .backdrop-blur-md,
+  .backdrop-blur-lg,
+  .backdrop-blur-xl {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}
