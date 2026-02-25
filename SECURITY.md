@@ -51,7 +51,7 @@ Security hardening does NOT interfere with search optimization:
 ## Security Audit Summary
 
 - **Last Audit:** 2026-02-13
-- **Overall Grade:** A+ (Enterprise Grade)
+- **Assessment:** Internal review completed
 - **Vulnerabilities:** 0 Critical, 0 High, 0 Medium
 - **npm audit:** 0 vulnerabilities
 - **WCAG 2.1 AA:** 11/11 pages pass (Playwright + axe-core)

@@ -7,7 +7,7 @@
 
 ---
 
-**Full Stack MSP Services, Repair Ninja Diagnostics, and Sustainable Tech Solutions.**
+Practical IT services, repair diagnostics, and secure disposal solutions.
 
 ## 🚀 Live Site
 
@@ -15,30 +15,17 @@
 
 ---
 
-## Architecture & Engineering Highlights
+## Overview
 
-This is not a template website. This Single Page Application (SPA) is built from the ground up to demonstrate mastery of modern web performance, advanced rendering APIs, and programmatic SEO.
+This repository contains the source for [jakefieldhouse.co.uk](https://jakefieldhouse.co.uk), built as a Vue + TypeScript SPA and deployed through GitHub Actions.
 
-### 🎨 Rendering & Graphics (The "Bleeding Edge")
+## Technical Highlights
 
-* **Custom WebGL Fluid Cursor**: A bespoke 60fps Navier-Stokes fluid simulation (`FluidCursor.vue`) running entirely on the GPU.
-* **Async Shader Compilation**: Utilizes `KHR_parallel_shader_compile` to compile WebGL shaders in a background thread, preventing main-thread blocking during initial page load and keeping Total Blocking Time (TBT) < 50ms.
-* **Native View Transitions**: Exploits the cutting-edge View Transitions API for seamless, cinematic route changes, gracefully degrading to Vue `<Transition>` fallbacks on older browsers.
-* **Scroll-Driven Animations**: Leverages pure CSS `animation-timeline: view()` for zero-JavaScript performance on scroll effects.
-
-### 🤖 Search & Generative Engine Optimization (GEO)
-
-* **Agentic Commerce Ready**: Features `llms.txt` and `llms-full.txt` files mapping out the knowledge graph for crawling by LLMs (Claude, GPTBot, Perplexity).
-* **Machine-Readable Availability**: Uses `public/api/availability.json` as an endpoint explicitly designed for AI agents to parse booking states.
-* **Semantic Entity Graph**: Implements deep JSON-LD structured data arrays (`Organization`, `LocalBusiness`, `FAQPage`, `HowTo`, `Speakable`) to assert entity dominance in traditional Search.
-* **Programmatic SEO**: Houses 84 dynamically generated, highly localized Service Area pages to blanket search intent within a 1-hour radius.
-
-### ⚡ Infrastructure & Quality Assurance
-
-* **Tech Stack**: Vue 3.4 (Composition API), TypeScript 5.2, Vite 7, Tailwind v4.
-* **Edge Security**: Cloudflare Worker deployment injecting strict HSTS, CSP, and Permissions-Policy headers.
-* **End-to-End Testing**: Microsoft Playwright orchestrated with `axe-core`, executing 11 strict visual regression workflows and continuous WCAG 2.1 AA accessibility gating.
-* **Cookieless Privacy**: Architecture supports fully functional navigation without cookies, integrating a strict UK-PECR compliant consent gate for GA4 and Microsoft Clarity analytics.
+* **Frontend stack**: Vue 3, TypeScript, Vite, Tailwind CSS.
+* **Interactive UI**: GPU-accelerated WebGL cursor effects and smooth route transitions.
+* **SEO/GEO**: Structured data, sitemap/robots, and localized service-area pages.
+* **Security posture**: Strict security headers (HSTS, CSP, Permissions-Policy) managed at the edge.
+* **Accessibility & testing**: Playwright + axe-core checks in CI.
 
 ---
 
