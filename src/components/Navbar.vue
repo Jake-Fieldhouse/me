@@ -24,14 +24,14 @@ const navItems = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
   { name: 'Guides', path: '/blog' },
+  { name: 'Compliance', path: '/compliance' },
   { name: 'Contact', path: '/contact' }
 ]
 
 const serviceItems = [
   { name: 'Secure Data Disposal', path: '/secure-data-disposal-hull' },
   { name: 'Microsoldering & Repair', path: '/microsoldering-repair-hull' },
-  { name: 'AI Optimization', path: '/ai-optimization-hull' },
-  { name: 'Compliance', path: '/compliance' }
+  { name: 'AI Optimization', path: '/ai-optimization-hull' }
 ]
 
 const isActive = (path: string) => route.path === path
