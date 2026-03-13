@@ -25,14 +25,11 @@ const router = createRouter({
             }
         },
         // ==================== CORE SERVICES (Hyper-Local) ====================
+        // MSP route — redirects to home while service is paused.
+        // To re-enable: restore the component route and remove from redirects.
         {
             path: '/managed-it-services-hull',
-            name: 'managed-it-services-hull',
-            component: () => import('../views/MSPServices.vue'),
-            meta: {
-                title: 'Managed IT Services Hull | Proactive Monitoring & Support',
-                description: 'Proactive IT infrastructure management, cybersecurity EDR, and Microsoft 365 solutions for Hull & East Yorkshire businesses.'
-            }
+            redirect: '/'
         },
         {
             path: '/microsoldering-repair-hull',
@@ -73,7 +70,11 @@ const router = createRouter({
         // ==================== COMPATIBILITY REDIRECTS ====================
         {
             path: '/msp-services',
-            redirect: '/managed-it-services-hull'
+            redirect: '/'
+        },
+        {
+            path: '/services',
+            redirect: '/'
         },
         {
             path: '/repair-ninja',
@@ -196,7 +197,7 @@ const router = createRouter({
             component: () => import('../views/Contact.vue'),
             meta: {
                 title: 'Contact Us | Book IT Consultation Hull',
-                description: 'Get a quote for repair, schedule an MSP consultation, or book an e-waste collection. Response within 24 hours.'
+                description: 'Get a quote for repair, schedule a consultation, or book an e-waste collection. Response within 24 hours.'
             }
         },
         {
@@ -270,7 +271,7 @@ const router = createRouter({
             component: () => import('../views/RefundPolicy.vue'),
             meta: {
                 title: 'Refund & Cancellation Policy | Jake Fieldhouse Consulting',
-                description: 'Our refund policy for repairs, MSP services, and cancellation terms.'
+                description: 'Our refund policy for repairs, IT services, and cancellation terms.'
             }
         },
         {
@@ -279,7 +280,7 @@ const router = createRouter({
             component: () => import('../views/ServiceCommitment.vue'),
             meta: {
                 title: 'Service Level Commitment | Jake Fieldhouse Consulting',
-                description: 'Our service targets and response time commitments for MSP clients.'
+                description: 'Our service targets and response time commitments for IT support clients.'
             }
         },
         {
