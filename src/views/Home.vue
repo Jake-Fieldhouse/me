@@ -26,7 +26,8 @@ useOgMeta({
       </h1>
       
       <p class="text-xl md:text-3xl text-neutral-400 max-w-3xl leading-relaxed font-light">
-        Hardware restoration, zero-landfill e-waste, and <span class="text-white font-normal">home & enterprise automation.</span>
+        Bespoke technology services for homes and businesses. <br class="hidden md:block" />
+        <span class="text-white font-normal">Complex hardware repair, secure IT disposal, and smart home automation.</span>
       </p>
 
       <div class="pt-8 w-full flex flex-wrap gap-6 items-center">
