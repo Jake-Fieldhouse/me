@@ -2,8 +2,13 @@
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
 import ContactForm from '../components/ContactForm.vue'
 import { useOgMeta } from '../composables/useOgMeta'
+import IconWhatsApp from '../components/icons/IconWhatsApp.vue'
+import IconPhone from '../components/icons/IconPhone.vue'
+import IconEmail from '../components/icons/IconEmail.vue'
+import IconSignal from '../components/icons/IconSignal.vue'
+import IconTelegram from '../components/icons/IconTelegram.vue'
+import IconLinkedIn from '../components/icons/IconLinkedIn.vue'
 import IconChevronDown from '../components/icons/IconChevronDown.vue'
-
 useOgMeta({
   title: 'Jake Fieldhouse Consulting | Hardware & IT Strategist',
   description: 'Hull & East Yorkshire. Component-level repair, zero-landfill e-waste, embedded IT, and home automation.',
@@ -30,11 +35,32 @@ useOgMeta({
         <span class="text-white font-normal">Complex hardware repair, secure IT disposal, and smart home automation.</span>
       </p>
 
-      <div class="pt-8 w-full flex flex-wrap gap-6 items-center">
+      <div class="pt-8 w-full flex flex-wrap gap-4 items-center">
         <a href="#contact" class="bg-white/10 hover:bg-white text-white hover:text-black border border-white/20 px-8 py-4 rounded-xl font-bold transition-all duration-300 backdrop-blur-md shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]">
           Get in Touch
         </a>
-        <a href="#expertise" class="text-neutral-400 hover:text-white transition-colors flex items-center gap-2 group tracking-wide text-sm uppercase">
+        
+        <!-- Elegant Contact Icons -->
+        <a href="https://wa.me/447404090458" target="_blank" rel="noopener noreferrer" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-neutral-400 hover:text-[#25D366] hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(37,211,102,0.15)] group" aria-label="WhatsApp">
+          <IconWhatsApp class="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-300" />
+        </a>
+        <a href="tel:+447404090458" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-neutral-400 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(255,255,255,0.1)] group" aria-label="Call Mobile">
+          <IconPhone class="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-300" />
+        </a>
+        <a href="https://signal.me/#p/+447404090458" target="_blank" rel="noopener noreferrer" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-neutral-400 hover:text-[#3a76f0] hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(58,118,240,0.15)] group" aria-label="Signal">
+          <IconSignal class="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-300" />
+        </a>
+        <a href="https://t.me/jakefieldhouse" target="_blank" rel="noopener noreferrer" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-neutral-400 hover:text-[#0088cc] hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(0,136,204,0.15)] group" aria-label="Telegram">
+          <IconTelegram class="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-300" />
+        </a>
+        <a href="mailto:jake@jakefieldhouse.co.uk" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-neutral-400 hover:text-[#60a5fa] hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(96,165,250,0.15)] group" aria-label="Email">
+          <IconEmail class="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-300" />
+        </a>
+        <a href="https://uk.linkedin.com/in/jake-fieldhouse" target="_blank" rel="noopener noreferrer" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-neutral-400 hover:text-[#0077b5] hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(0,119,181,0.15)] group" aria-label="LinkedIn">
+          <IconLinkedIn class="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-300" />
+        </a>
+
+        <a href="#expertise" class="text-neutral-500 hover:text-white transition-colors flex items-center gap-2 group tracking-wide text-sm uppercase ml-4">
           Capabilities <IconChevronDown class="w-4 h-4 group-hover:translate-y-1 transition-transform" />
         </a>
       </div>
