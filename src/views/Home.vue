@@ -16,7 +16,7 @@ useOgMeta({
   <div class="relative w-full max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-24 flex flex-col gap-40">
     
     <!-- Hero (Obsidian Glass) -->
-    <section class="min-h-[75vh] flex flex-col justify-center items-start space-y-10 relative scroll-reveal">
+    <section class="flex flex-col justify-start items-start space-y-10 relative scroll-reveal pt-4 md:pt-12">
       <div class="inline-block px-5 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-neutral-300 text-sm font-medium tracking-wide shadow-[0_0_15px_rgba(255,255,255,0.05)]">
         Hull & East Yorkshire • UK Nationwide
       </div>
