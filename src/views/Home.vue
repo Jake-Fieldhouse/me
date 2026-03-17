@@ -39,28 +39,7 @@ useOgMeta({
         <a href="#contact" class="bg-white/10 hover:bg-white text-white hover:text-black border border-white/20 px-8 py-4 rounded-xl font-bold transition-all duration-300 backdrop-blur-md shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]">
           Get in Touch
         </a>
-        
-        <!-- Elegant Contact Icons -->
-        <a href="https://wa.me/447404090458" target="_blank" rel="noopener noreferrer" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-neutral-400 hover:text-[#25D366] hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(37,211,102,0.15)] group" aria-label="WhatsApp">
-          <IconWhatsApp class="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-300" />
-        </a>
-        <a href="tel:+447404090458" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-neutral-400 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(255,255,255,0.1)] group" aria-label="Call Mobile">
-          <IconPhone class="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-300" />
-        </a>
-        <a href="https://signal.me/#p/+447404090458" target="_blank" rel="noopener noreferrer" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-neutral-400 hover:text-[#3a76f0] hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(58,118,240,0.15)] group" aria-label="Signal">
-          <IconSignal class="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-300" />
-        </a>
-        <a href="https://t.me/jakefieldhouse" target="_blank" rel="noopener noreferrer" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-neutral-400 hover:text-[#0088cc] hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(0,136,204,0.15)] group" aria-label="Telegram">
-          <IconTelegram class="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-300" />
-        </a>
-        <a href="mailto:jake@jakefieldhouse.co.uk" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-neutral-400 hover:text-[#60a5fa] hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(96,165,250,0.15)] group" aria-label="Email">
-          <IconEmail class="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-300" />
-        </a>
-        <a href="https://uk.linkedin.com/in/jake-fieldhouse" target="_blank" rel="noopener noreferrer" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-neutral-400 hover:text-[#0077b5] hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(0,119,181,0.15)] group" aria-label="LinkedIn">
-          <IconLinkedIn class="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-300" />
-        </a>
-
-        <a href="#expertise" class="text-neutral-500 hover:text-white transition-colors flex items-center gap-2 group tracking-wide text-sm uppercase ml-4">
+        <a href="#expertise" class="text-neutral-400 hover:text-white transition-colors flex items-center gap-2 group tracking-wide text-sm uppercase ml-2">
           Capabilities <IconChevronDown class="w-4 h-4 group-hover:translate-y-1 transition-transform" />
         </a>
       </div>
@@ -152,13 +131,37 @@ useOgMeta({
 
     <!-- Contact Section -->
     <section id="contact" class="scroll-mt-32 pt-16 border-t border-white/5 scroll-reveal">
-        <div class="max-w-2xl mx-auto w-full space-y-10">
+        <div class="max-w-4xl mx-auto w-full space-y-12">
             <div class="text-center space-y-4">
                 <h2 class="text-4xl font-bold text-white tracking-tight">Start a Dialogue</h2>
                 <p class="text-neutral-400 font-light text-lg">Whether you are looking for custom home automation, a complex board repair, or an office IT clearance, let's discuss your requirements.</p>
             </div>
+
+            <!-- Elegant Contact Grid -->
+            <div class="flex flex-wrap justify-center gap-4 sm:gap-6 pt-4 pb-12 scroll-reveal" style="animation-delay: 150ms;">
+              <a href="https://wa.me/447404090458" target="_blank" rel="noopener noreferrer" class="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-neutral-400 hover:text-[#25D366] hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md hover:-translate-y-1.5 hover:shadow-[0_12px_24px_rgba(37,211,102,0.15)] group" aria-label="WhatsApp">
+                <IconWhatsApp class="w-6 h-6 sm:w-7 sm:h-7 group-hover:scale-110 transition-transform duration-300" />
+              </a>
+              <a href="tel:+447404090458" class="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-neutral-400 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md hover:-translate-y-1.5 hover:shadow-[0_12px_24px_rgba(255,255,255,0.1)] group" aria-label="Call Mobile">
+                <IconPhone class="w-6 h-6 sm:w-7 sm:h-7 group-hover:scale-110 transition-transform duration-300" />
+              </a>
+              <a href="https://signal.me/#p/+447404090458" target="_blank" rel="noopener noreferrer" class="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-neutral-400 hover:text-[#3a76f0] hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md hover:-translate-y-1.5 hover:shadow-[0_12px_24px_rgba(58,118,240,0.15)] group" aria-label="Signal">
+                <IconSignal class="w-6 h-6 sm:w-7 sm:h-7 group-hover:scale-110 transition-transform duration-300" />
+              </a>
+              <a href="https://t.me/jakefieldhouse" target="_blank" rel="noopener noreferrer" class="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-neutral-400 hover:text-[#0088cc] hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md hover:-translate-y-1.5 hover:shadow-[0_12px_24px_rgba(0,136,204,0.15)] group" aria-label="Telegram">
+                <IconTelegram class="w-6 h-6 sm:w-7 sm:h-7 group-hover:scale-110 transition-transform duration-300" />
+              </a>
+              <a href="mailto:jake@jakefieldhouse.co.uk" class="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-neutral-400 hover:text-[#60a5fa] hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md hover:-translate-y-1.5 hover:shadow-[0_12px_24px_rgba(96,165,250,0.15)] group" aria-label="Email">
+                <IconEmail class="w-6 h-6 sm:w-7 sm:h-7 group-hover:scale-110 transition-transform duration-300" />
+              </a>
+              <a href="https://uk.linkedin.com/in/jake-fieldhouse" target="_blank" rel="noopener noreferrer" class="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-neutral-400 hover:text-[#0077b5] hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md hover:-translate-y-1.5 hover:shadow-[0_12px_24px_rgba(0,119,181,0.15)] group" aria-label="LinkedIn">
+                <IconLinkedIn class="w-6 h-6 sm:w-7 sm:h-7 group-hover:scale-110 transition-transform duration-300" />
+              </a>
+            </div>
             
-            <ContactForm />
+            <div class="max-w-2xl mx-auto w-full">
+              <ContactForm />
+            </div>
         </div>
     </section>
 

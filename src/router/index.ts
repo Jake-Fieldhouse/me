@@ -53,7 +53,16 @@ const router = createRouter({
       return savedPosition
     }
     
-    // Hash routing for single page scrolling
+    // Always start at the true top on absolute initial load so the preloader reveals sequence correctly
+    if (_from.matched.length === 0) {
+      // We can also strip the hash from the URL so it doesn't look confusing
+      if (to.hash && typeof window !== 'undefined') {
+        window.history.replaceState(null, '', to.path)
+      }
+      return { top: 0 }
+    }
+    
+    // Hash routing for single page scrolling (only active after initial load)
     if (to.hash) {
       return {
         el: to.hash,
