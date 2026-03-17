@@ -16,7 +16,7 @@
         <ul class="list-disc list-inside space-y-2">
           <li>Contact information (name, email, phone number)</li>
           <li>Device information for repair services</li>
-          <li>Business information for MSP and e-waste services</li>
+          <li>Business information for IT and e-waste services</li>
           <li>Website usage data (cookies, page views via Google Analytics, anonymised session recordings and heatmaps via Microsoft Clarity)</li>
         </ul>
       </section>

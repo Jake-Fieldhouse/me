@@ -134,7 +134,7 @@ ${form.value.email}
             <div class="booking-hero">
               <p class="text-sm sm:text-base text-neutral-200 leading-relaxed">
                 Choose a consultation slot in the secure calendar and I will confirm quickly.
-                Perfect for MSP onboarding, repair diagnostics, and compliance planning.
+                Perfect for repair diagnostics, e-waste queries, and compliance planning.
               </p>
 
               <div class="flex flex-wrap gap-2 mt-4">

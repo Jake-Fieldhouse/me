@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Transfer Note - Jake Fieldhouse Consulting</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            border-bottom: 2px solid #000;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .logo p {
+            margin: 5px 0 0;
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 24px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 14px;
+            background: #f5f5f5;
+            padding: 10px 12px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-left: 3px solid #000;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 12px;
+        }
+
+        .col {
+            flex: 1;
+        }
+
+        .label {
+            font-weight: 600;
+            font-size: 11px;
+            color: #666;
+            display: block;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        .value {
+            font-size: 14px;
+            font-weight: 500;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 4px;
+            min-height: 20px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 8px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+        }
+
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 12px;
+        }
+
+        .items-table th {
+            text-align: left;
+            border-bottom: 2px solid #000;
+            padding: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 10px;
+        }
+
+        .items-table td {
+            border-bottom: 1px solid #eee;
+            padding: 8px;
+            font-family: monospace;
+        }
+
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .signature-box {
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+
+        .signature-line {
+            border-bottom: 1px solid #000;
+            height: 50px;
+            margin: 15px 0 10px;
+        }
+
+        .legal {
+            font-size: 11px;
+            color: #666;
+            margin-top: 30px;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+            line-height: 1.5;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 10px;
+            color: #999;
+            text-align: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        @media print {
+            body {
+                padding: 20px;
+            }
+
+            .signature-box {
+                border: 1px solid #000;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <h1>JAKE FIELDHOUSE</h1>
+            <p>Managed IT & Secure Disposal</p>
+        </div>
+        <div style="text-align: right; font-size: 12px; color: #666;">
+            <strong>Transfer Reference:</strong> WTN-20260201-0001<br>
+            <strong>Date:</strong> 01 February 2026
+        </div>
+    </div>
+
+    <h1>Waste Transfer Note / Duty of Care</h1>
+
+    <!-- Section A: Transferor (Client) -->
+    <h2>Section A: The Transferor (Current Holder of the Waste)</h2>
+    <div class="section">
+        <div class="row">
+            <div class="col">
+                <span class="label">Company / Name</span>
+                <div class="value">Acme Manufacturing Ltd</div>
+            </div>
+            <div class="col">
+                <span class="label">Contact Person</span>
+                <div class="value">Jane Smith</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <span class="label">Collection Address</span>
+                <div class="value">123 Industrial Estate, Hull, HU1 2AB</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <span class="label">SIC Code (2007)</span>
+                <div class="value">As per client records</div>
+            </div>
+            <div class="col">
+                <span class="label">Postcode</span>
+                <div class="value">HU1 2AB</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section B: Description of Waste -->
+    <h2>Section B: Description of the Waste</h2>
+    <div class="section">
+        <div class="row">
+            <div class="col">
+                <span class="label">EWC Code</span>
+                <div class="value">20-01-36 (Discarded Electrical and Electronic Equipment)</div>
+            </div>
+            <div class="col">
+                <span class="label">Physical Form</span>
+                <div class="value">Solid / Mixed WEEE</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <span class="label">General Description</span>
+                <div class="value">Mixed WEEE - IT Equipment, Laptops, Desktops, Peripherals</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <span class="label">Total Items</span>
+                <div class="value">3</div>
+            </div>
+            <div class="col">
+                <span class="label">Estimated Weight</span>
+                <div class="value">Approx. 9 kg</div>
+            </div>
+        </div>
+
+        <table class="items-table">
+            <thead>
+                <tr>
+                    <th>Qty</th>
+                    <th>Device Type</th>
+                    <th>Description</th>
+                    <th>Serial Numbers (if applicable)</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td></td>
+                    <td>Laptop</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td></td>
+                    <td>Desktop PC</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td></td>
+                    <td>Monitor</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Section C: Transferee (Jake Fieldhouse) -->
+    <h2>Section C: The Transferee (Person Collecting the Waste)</h2>
+    <div class="section">
+        <div class="row">
+            <div class="col">
+                <span class="label">Company Name</span>
+                <div class="value">Jake Fieldhouse Consulting Ltd</div>
+            </div>
+            <div class="col">
+                <span class="label">Driver / Collector</span>
+                <div class="value">Jake Fieldhouse</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <span class="label">Business Address</span>
+                <div class="value">Hull, East Yorkshire, United Kingdom</div>
+            </div>
+            <div class="col">
+                <span class="label">Vehicle Registration</span>
+                <div class="value">N/A</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <span class="label">Waste Carrier Registration</span>
+                <div class="value">CBDL620098 (Environment Agency)</div>
+            </div>
+            <div class="col">
+                <span class="label">Destination</span>
+                <div class="value">Jake Fieldhouse Consulting (Hull) / AATF Partner</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section D: Signatures -->
+    <h2>Section D: Declaration & Signatures</h2>
+    <p class="legal">
+        By signing this note, both parties confirm they have fulfilled their duty to apply the waste hierarchy
+        as required by Regulation 12 of the Waste (England and Wales) Regulations 2011. The transferor confirms
+        the waste description is accurate; the transferee confirms they are authorized to accept this waste.
+    </p>
+
+    <div class="signature-grid">
+        <div class="signature-box">
+            <span class="label">Signed for Transferor (Client)</span>
+            <div class="signature-line"></div>
+            <span class="label">Print Name:</span> Jane Smith<br>
+            <span class="label">Position:</span> Office Manager<br>
+            <span class="label">Date:</span> 01 February 2026
+        </div>
+        <div class="signature-box">
+            <span class="label">Signed for Transferee (Jake Fieldhouse Consulting)</span>
+            <div class="signature-line"
+                style="font-family: 'Brush Script MT', cursive; font-size: 28px; padding-top: 10px;">
+                Jake Fieldhouse
+            </div>
+            <span class="label">Print Name:</span> Jake Fieldhouse<br>
+            <span class="label">Position:</span> Director<br>
+            <span class="label">Date:</span> 01 February 2026
+        </div>
+    </div>
+
+    <div class="footer">
+        Jake Fieldhouse Consulting LTD. Registered in England & Wales (16536646).<br>
+        Environment Agency Waste Carrier: CBDL620098 | ICO Registration: ZC002956<br>
+        Insured by Hiscox | jakefieldhouse.co.uk
+    </div>
+
+</body>
+
+</html>

@@ -6,10 +6,8 @@ import AuroraBackground from './components/AuroraBackground.vue'
 import ArtHousePreloader from './components/ArtHousePreloader.vue'
 // Async-load non-critical components to reduce initial main-thread work
 const CookieConsent = defineAsyncComponent(() => import('./components/CookieConsent.vue'))
-const StickyCTA = defineAsyncComponent(() => import('./components/StickyCTA.vue'))
 const ScrollProgress = defineAsyncComponent(() => import('./components/ScrollProgress.vue'))
 const BackToTop = defineAsyncComponent(() => import('./components/BackToTop.vue'))
-const PausedOverlay = defineAsyncComponent(() => import('./components/PausedOverlay.vue'))
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 const Toast = defineAsyncComponent(() => import('./components/Toast.vue'))
@@ -85,9 +83,6 @@ onMounted(() => {
       <!-- Navigation (persists across view transitions) -->
       <Navbar style="view-transition-name: navbar;" />
 
-      <!-- Paused Page Overlay (blocks interaction but keeps content for SEO) -->
-      <PausedOverlay />
-
       <!-- Route content with view transition name for animation targeting -->
       <router-view v-slot="{ Component }">
         <!-- Native View Transitions API handles animation — skip Vue transition -->
@@ -111,9 +106,6 @@ onMounted(() => {
       <!-- Cookie Consent Gate (full-screen overlay, mounted at body via teleport) -->
       <!-- Placed inside main-content for component context, but teleports to body -->
       <CookieConsent :preloader-done="preloaderDone" @consent-given="onConsentGiven" />
-
-      <!-- Sticky Mobile CTA -->
-      <StickyCTA />
 
       <!-- Back to Top (scroll-driven, appears after 15% scroll) -->
       <BackToTop />

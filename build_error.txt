@@ -1,0 +1,31 @@
+
+> jakefieldhouse-portfolio@1.0.0 build
+> vue-tsc -b && vite build && node scripts/generate-static-routes.mjs
+
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[31;1m[0m
+[31;1m&#39;/images/circuit-bg.webp&#39; referenced in & didn't resolve at build time, it will remain unchanged to be resolved at runtime[0m
+[32m✓[39m 1770 modules transformed.
+rendering chunks...
+[2mdist/[22m[32mindex.html                          [39m[1m[2m 30.02 kB[22m[1m[22m
+[2mdist/[22m[35massets/ScrollProgress-DW_flTft.css  [39m[1m[2m  0.63 kB[22m[1m[22m
+[2mdist/[22m[35massets/CookieConsent-DYsfT0Ky.css   [39m[1m[2m  0.92 kB[22m[1m[22m
+[2mdist/[22m[35massets/BackToTop-BYrfrbDV.css       [39m[1m[2m  1.40 kB[22m[1m[22m
+[2mdist/[22m[35massets/index-BzVL5rOX.css           [39m[1m[2m111.46 kB[22m[1m[22m
+[2mdist/[22m[36massets/ScrollProgress-km_-FjbO.js   [39m[1m[2m  0.37 kB[22m[1m[22m
+[2mdist/[22m[36massets/IconCheck-ud0ZzbbP.js        [39m[1m[2m  0.38 kB[22m[1m[22m
+[2mdist/[22m[36massets/BackToTop-CkSls1Ux.js        [39m[1m[2m  0.68 kB[22m[1m[22m
+[2mdist/[22m[36massets/Toast-Np1ebaQ2.js            [39m[1m[2m  1.18 kB[22m[1m[22m
+[2mdist/[22m[36massets/icons-edRmK_gN.js            [39m[1m[2m  2.80 kB[22m[1m[22m
+[2mdist/[22m[36massets/Policies-DeqG6MDu.js         [39m[1m[2m  4.40 kB[22m[1m[22m
+[2mdist/[22m[36massets/Terms-BvlL-U9g.js            [39m[1m[2m  5.24 kB[22m[1m[22m
+[2mdist/[22m[36massets/CookiePolicy-BzudYMdn.js     [39m[1m[2m  5.35 kB[22m[1m[22m
+[2mdist/[22m[36massets/Privacy-DFJ1r060.js          [39m[1m[2m  5.51 kB[22m[1m[22m
+[2mdist/[22m[36massets/CookieConsent-DImJI4sK.js    [39m[1m[2m  6.55 kB[22m[1m[22m
+[2mdist/[22m[36massets/Compliance-DWzguyZC.js       [39m[1m[2m 12.67 kB[22m[1m[22m
+[2mdist/[22m[36massets/FluidCursor-4gFRKdco.js      [39m[1m[2m 23.87 kB[22m[1m[22m
+[2mdist/[22m[36massets/index-DzsCoRyi.js            [39m[1m[2m 58.43 kB[22m[1m[22m
+[2mdist/[22m[36massets/vendor-UAWHzyhJ.js           [39m[1m[2m 98.53 kB[22m[1m[22m
+[32m✓ built in 5.79s[39m
+[static-routes] Generated 0 route files in dist/.

@@ -35,7 +35,7 @@
 
       <section>
         <h2 class="text-2xl font-bold text-white mb-4">5. Data Protection & UK GDPR</h2>
-        <p>In the provision of Managed IT Services (MSP) and E-Waste processing, we act as a Data Processor under the Data Protection Act 2018 (DPA 2018) and the UK GDPR, while the Client remains the Data Controller. We implement robust technical and organisational measures to ensure the integrity and confidentiality of personal data. We will promptly assist clients in fulfilling data subject rights requests and will report any critical data breaches to the Controller within the statutory 72-hour window.</p>
+        <p>In the provision of IT services and E-Waste processing, we act as a Data Processor under the Data Protection Act 2018 (DPA 2018) and the UK GDPR, while the Client remains the Data Controller. We implement robust technical and organisational measures to ensure the integrity and confidentiality of personal data. We will promptly assist clients in fulfilling data subject rights requests and will report any critical data breaches to the Controller within the statutory 72-hour window.</p>
       </section>
 
       <section>

@@ -37,7 +37,7 @@ const policies = [
   },
   {
     title: 'Service Commitment',
-    description: 'Response time targets and availability goals for MSP clients.',
+    description: 'Response time targets and availability goals for IT support clients.',
     route: '/service-commitment',
     icon: '⚡',
     color: 'blue'

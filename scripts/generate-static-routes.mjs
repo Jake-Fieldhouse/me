@@ -3,9 +3,9 @@ import path from 'node:path';
 import ts from 'typescript';
 
 const SITE_ORIGIN = 'https://jakefieldhouse.co.uk';
-const FALLBACK_TITLE = 'Jake Fieldhouse | Repair Ninja & MSP Services';
+const FALLBACK_TITLE = 'Jake Fieldhouse | IT Consulting & Repair Hull';
 const FALLBACK_DESCRIPTION =
-  'Expert Electronics Repair, Microsoldering, Data Recovery, and Managed IT Services (MSP) for UK Businesses. Zero-Landfill E-Waste Solutions.';
+  'Hardware restoration, zero-landfill e-waste, and strategic IT. I fix what others won\'t.';
 
 const rootDir = process.cwd();
 const distOutputDir = process.env.STATIC_ROUTES_DIST_DIR || 'dist';
@@ -101,35 +101,6 @@ function parseRouterStaticMeta(routerSource) {
   };
 }
 
-function parseExportedObjectArray(sourceText, exportName) {
-  const sourceFile = ts.createSourceFile(`${exportName}.ts`, sourceText, ts.ScriptTarget.Latest, true, ts.ScriptKind.TS);
-
-  for (const statement of sourceFile.statements) {
-    if (!ts.isVariableStatement(statement)) continue;
-    for (const declaration of statement.declarationList.declarations) {
-      if (!ts.isIdentifier(declaration.name) || declaration.name.text !== exportName) continue;
-      if (!declaration.initializer || !ts.isArrayLiteralExpression(declaration.initializer)) continue;
-
-      const rows = [];
-      for (const element of declaration.initializer.elements) {
-        if (!ts.isObjectLiteralExpression(element)) continue;
-        const row = {};
-        for (const prop of element.properties) {
-          if (!ts.isPropertyAssignment(prop)) continue;
-          const key = getPropertyName(prop.name);
-          if (!key) continue;
-          const value = getStringInitializer(prop);
-          if (value !== null) row[key] = value;
-        }
-        rows.push(row);
-      }
-      return rows;
-    }
-  }
-
-  return [];
-}
-
 function replaceTag(html, pattern, replacement) {
   if (pattern.test(html)) return html.replace(pattern, replacement);
   return html;
@@ -182,10 +153,8 @@ async function generateRouteFiles() {
 
   if (!indexExists) throw new Error(`${distOutputDir}/index.html not found. Run vite build first.`);
 
-  const [routerSource, blogSource, localSeoSource, baseHtml] = await Promise.all([
+  const [routerSource, baseHtml] = await Promise.all([
     readText(path.join(rootDir, 'src', 'router', 'index.ts')),
-    readText(path.join(rootDir, 'src', 'data', 'blogPosts.ts')),
-    readText(path.join(rootDir, 'src', 'data', 'localSeo.ts')),
     readText(indexHtmlPath),
   ]);
 
@@ -193,34 +162,8 @@ async function generateRouteFiles() {
   const homeDescription = extractDescriptionFromHtml(baseHtml);
 
   const { staticRoutes, routeMeta } = parseRouterStaticMeta(routerSource);
-  const blogPosts = parseExportedObjectArray(blogSource, 'blogPosts');
-  const locations = parseExportedObjectArray(localSeoSource, 'locations');
-  const services = parseExportedObjectArray(localSeoSource, 'services');
-
-  const blogRoutes = blogPosts
-    .map((post) => post.slug)
-    .filter(Boolean)
-    .map((slug) => normalizeRoute(`/blog/${slug}`));
-
-  const localServiceRoutes = [];
-  for (const location of locations) {
-    for (const service of services) {
-      if (!location.slug || !service.slug) continue;
-      localServiceRoutes.push(normalizeRoute(`/${location.slug}-${service.slug}`));
-    }
-  }
-
-  const allRoutes = new Set([...staticRoutes, ...blogRoutes, ...localServiceRoutes]);
+  const allRoutes = new Set([...staticRoutes]);
   const sortedRoutes = [...allRoutes].sort();
-
-  const blogByRoute = new Map();
-  for (const post of blogPosts) {
-    if (!post.slug) continue;
-    blogByRoute.set(normalizeRoute(`/blog/${post.slug}`), post);
-  }
-
-  const locationBySlug = new Map(locations.filter((loc) => loc.slug).map((loc) => [loc.slug, loc]));
-  const serviceBySlug = new Map(services.filter((service) => service.slug).map((service) => [service.slug, service]));
 
   function buildRouteMeta(route) {
     const staticMeta = routeMeta.get(route);
@@ -230,28 +173,6 @@ async function generateRouteFiles() {
         description: staticMeta.description || homeDescription,
       };
     }
-
-    const blogPost = blogByRoute.get(route);
-    if (blogPost) {
-      return {
-        title: blogPost.title ? `${blogPost.title} | Jake Fieldhouse Consulting` : homeTitle,
-        description: blogPost.excerpt || homeDescription,
-      };
-    }
-
-    const localMatch = route.match(/^\/([a-z0-9]+)-([a-z0-9-]+)$/i);
-    if (localMatch) {
-      const [, locationSlug, serviceSlug] = localMatch;
-      const location = locationBySlug.get(locationSlug);
-      const service = serviceBySlug.get(serviceSlug);
-      if (location && service) {
-        return {
-          title: `${service.name} ${location.name} | Jake Fieldhouse Consulting`,
-          description: `Professional ${service.name.toLowerCase()} in ${location.name}, ${location.region}. Serving ${location.postcode} and surrounding areas.`,
-        };
-      }
-    }
-
     return { title: homeTitle, description: homeDescription };
   }
 

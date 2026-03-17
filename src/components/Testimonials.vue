@@ -107,7 +107,7 @@ onUnmounted(() => {
               ? 'bg-blue-500/20 text-blue-400' 
               : 'bg-red-500/20 text-red-400'"
           >
-            {{ testimonial.category === 'b2b' ? 'MSP Services' : 'Repair Ninja' }}
+            {{ testimonial.category === 'b2b' ? 'Business IT' : 'Repair Ninja' }}
           </span>
           
           <!-- Stars -->

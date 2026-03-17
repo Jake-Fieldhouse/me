@@ -1,126 +1,131 @@
 <script setup lang="ts">
-import BentoGrid from '../components/BentoGrid.vue'
-import BentoItem from '../components/BentoItem.vue'
-import CircuitPattern from '../components/CircuitPattern.vue'
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
-import OutcomeStats from '../components/OutcomeStats.vue'
-import Testimonials from '../components/Testimonials.vue'
-import { ref } from 'vue'
-import { useScrollReveal } from '../composables/useScrollReveal'
+import ContactForm from '../components/ContactForm.vue'
 import { useOgMeta } from '../composables/useOgMeta'
-import HyperText from '../components/HyperText.vue'
-
-const gridRef = ref<HTMLElement | null>(null)
-
-useScrollReveal(gridRef, { delay: 0, y: 56 })
+import IconChevronDown from '../components/icons/IconChevronDown.vue'
 
 useOgMeta({
-  title: 'Jake Fieldhouse | IT Consulting & Repair Hull',
-  description: 'Expert IT support, microsoldering repairs, and B2B e-waste solutions in Hull & East Yorkshire. Your full-stack tech partner.',
+  title: 'Jake Fieldhouse Consulting | Hardware & IT Strategist',
+  description: 'Hull & East Yorkshire. I fix what others won\'t. Component-level repair, zero-landfill e-waste, embedded IT, and AI optimization.',
   image: '/images/og-image.png',
   url: '/'
 })
 </script>
 
 <template>
-    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 flex flex-col items-center gap-32">
+  <div class="relative w-full max-w-5xl mx-auto px-6 pt-32 pb-20 flex flex-col gap-32">
+    
+    <!-- Hero (Minimalist) -->
+    <section class="min-h-[70vh] flex flex-col justify-center items-start space-y-8 relative">
+      <div class="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300 text-sm font-medium tracking-wide">
+        Hull & East Yorkshire • UK Nationwide
+      </div>
       
-      <!-- Header -->
-      <header class="text-center space-y-6 w-full mt-20">
-        <div class="flex justify-center">
-            <HyperText
-            text="Jake Fieldhouse"
-            :animate-on-load="false"
-            class="text-6xl md:text-8xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60" 
-            />
-        </div>
-        <p class="text-xl sm:text-2xl md:text-3xl text-neutral-200 font-light max-w-2xl mx-auto drop-shadow-2xl">
-          E-Waste. Repair. AI Optimisation.
-        </p>
-        <p class="text-base sm:text-lg text-neutral-400 max-w-xl mx-auto text-readable drop-shadow-xl">
-          <router-link to="/secure-data-disposal-hull" class="text-emerald-400 hover:text-emerald-300 transition-colors">Free e-waste collection &amp; certified data destruction</router-link>, <router-link to="/microsoldering-repair-hull" class="text-red-400 hover:text-red-300 transition-colors">component-level hardware repair</router-link>, and <router-link to="/ai-optimization-hull" class="text-violet-400 hover:text-violet-300 transition-colors">AI search visibility</router-link>. One partner. Hull &amp; East Yorkshire.
-        </p>
+      <h1 class="text-5xl md:text-8xl font-black tracking-tighter text-white leading-[1.1]">
+        Jake Fieldhouse
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-neutral-400 max-w-2xl leading-relaxed text-readable">
+        Hardware restoration, zero-landfill e-waste, and strategic IT. <br class="hidden md:block" />
+        <span class="text-white font-medium">I fix what others won't.</span>
+      </p>
+
+      <div class="pt-8 w-full flex flex-wrap gap-6 items-center">
+        <a href="#contact" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-200 transition-colors btn-depth">
+          Get in Touch
+        </a>
+        <a href="#expertise" class="text-neutral-400 hover:text-white transition-colors flex items-center gap-2">
+          View Capabilities <IconChevronDown class="w-4 h-4" />
+        </a>
+      </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="scroll-mt-32 space-y-12">
+        <h2 class="text-3xl font-bold text-white border-b border-white/10 pb-4">Capabilities</h2>
         
-        <!-- CTAs -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-          <router-link 
-            to="/contact" 
-            class="px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-neutral-200 transition-all hover:scale-105 shadow-lg shadow-white/10 btn-depth"
-          >
-            Get in Touch
-          </router-link>
-          <router-link 
-            to="/microsoldering-repair-hull" 
-            class="px-8 py-3 border border-white/20 text-white font-medium rounded-full hover:bg-white/5 transition-all"
-          >
-            Get Repair Quote
-          </router-link>
-          <router-link 
-            to="/secure-data-disposal-hull" 
-            class="px-8 py-3 border border-emerald-500/30 text-emerald-400 font-medium rounded-full hover:bg-emerald-500/10 transition-all"
-          >
-            ♻️ Book Free Collection
-          </router-link>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Hardware / Repair -->
+            <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-8 hover:bg-neutral-900/60 transition-colors hover-lift">
+                <div class="text-3xl mb-6">🔬</div>
+                <h3 class="text-xl font-bold text-white mb-3">Hardware Restoration</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed">
+                    15+ years of component-level microsoldering. If the manufacturer says "replace it", I say "fix it". Dead logic boards, torn traces, liquid damage. I recover what's lost.
+                </p>
+            </div>
+
+            <!-- E-Waste -->
+            <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-8 hover:bg-neutral-900/60 transition-colors hover-lift">
+                <div class="text-3xl mb-6">♻️</div>
+                <h3 class="text-xl font-bold text-white mb-3">IT Asset Disposal</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed">
+                    EA Licensed (CBDL620098) zero-landfill e-waste collection. I process, wipe (NIST 800-88), and refurbish your dead assets. Free collection for businesses.
+                </p>
+            </div>
+
+            <!-- IT & AI -->
+            <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-8 hover:bg-neutral-900/60 transition-colors hover-lift">
+                <div class="text-3xl mb-6">🌐</div>
+                <h3 class="text-xl font-bold text-white mb-3">Embedded IT & AEO</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed">
+                    From enterprise-grade infrastructure to making your business visible to frontier AI. I don't just maintain networks; I future-proof them for the generative web.
+                </p>
+            </div>
         </div>
-      </header>
+    </section>
+
+    <!-- Trust Signals -->
+    <section class="max-w-4xl mx-auto w-full">
+        <TrustBar />
+    </section>
+
+    <!-- About / Story -->
+    <section id="about" class="scroll-mt-32 bg-neutral-900/30 p-8 md:p-12 rounded-3xl border border-white/5 space-y-8">
+      <h2 class="text-3xl font-bold text-white">The Story</h2>
+      <div class="text-neutral-300 space-y-6 leading-relaxed max-w-3xl">
+        <p>
+          I started out at 15, fixing early iPhones and hand-delivering flyers in Hull. Before delivery apps took over the city, I built <strong class="text-white">Sweet Tooth</strong> — Hull's first sweet delivery business, scaling it organically through a deep understanding of social media tech before the market caught on.
+        </p>
+        <p>
+          Today, I work as an IT Engineer at KCOM, diagnosing datacentre infrastructure, scripting automations, and configuring enterprise networks. On the side, I run <strong class="text-white">Jake Fieldhouse Consulting</strong> to bring that capability back down to earth for individuals and SMBs.
+        </p>
+        <p>
+          My sweetest spot? Being the guy you call for a fingerprint reader who ends up auditing your entire network, deploying remote orchestration, and securing the estate. No agencies. No call centers. Just capability.
+        </p>
+      </div>
       
-      <!-- Trust Signals -->
-      <TrustBar class="w-full max-w-6xl mx-auto rounded-xl border border-white/5" />
+      <!-- Stats highlight -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6 border-t border-white/10 mt-6">
+        <div>
+            <div class="text-2xl font-bold text-white">15+</div>
+            <div class="text-xs text-neutral-500 uppercase tracking-widest mt-1">Years Active</div>
+        </div>
+        <div>
+            <div class="text-2xl font-bold text-white">1k+</div>
+            <div class="text-xs text-neutral-500 uppercase tracking-widest mt-1">Devices Fixed</div>
+        </div>
+        <div>
+            <div class="text-2xl font-bold text-white">DBS</div>
+            <div class="text-xs text-neutral-500 uppercase tracking-widest mt-1">Checked</div>
+        </div>
+        <div>
+            <div class="text-2xl font-bold text-white">Hiscox</div>
+            <div class="text-xs text-neutral-500 uppercase tracking-widest mt-1">Insured</div>
+        </div>
+      </div>
+    </section>
 
-      <!-- Services Grid -->
-      <main ref="gridRef" class="w-full">
-        <BentoGrid class="max-w-4xl mx-auto">
-          <BentoItem
-            title="E-Waste & ITAD"
-            description="Stop paying for disposal. Free business collection, NIST 800-88 certified data destruction, Zero Landfill policy, and full compliance documentation."
-            class="md:col-span-2 group hover:scale-105 transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
-            to="/secure-data-disposal-hull"
-          >
-             <template #header>
-                <div class="relative flex flex-1 w-full h-full min-h-24 rounded-xl bg-gradient-to-br from-emerald-900/50 to-neutral-900 overflow-hidden">
-                    <CircuitPattern class="text-emerald-500/30" />
-                </div>
-             </template>
-             <div class="mt-4 flex items-center text-emerald-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
-                Book Free Collection <span class="ml-1">→</span>
-             </div>
-          </BentoItem>
+    <!-- Contact Section -->
+    <section id="contact" class="scroll-mt-32 pt-12 border-t border-white/5">
+        <div class="max-w-xl mx-auto w-full space-y-8">
+            <div class="text-center space-y-4">
+                <h2 class="text-3xl font-bold text-white">Get in Touch</h2>
+                <p class="text-neutral-400">Whether it's a dead logic board, a rack of servers, or an office clearance — tell me what you need.</p>
+            </div>
+            
+            <ContactForm />
+        </div>
+    </section>
 
-          <BentoItem
-            title="Repair Ninja"
-            description="Manufacturer says unrepairable? We disagree. Component-level microsoldering for MacBooks, PS5s, and phones. No Fix, No Fee."
-            class="md:col-span-1 group hover:scale-105 transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
-            to="/microsoldering-repair-hull"
-          >
-             <template #header>
-                <div class="flex flex-1 w-full h-full min-h-24 rounded-xl bg-gradient-to-br from-red-900/50 to-neutral-900" />
-             </template>
-             <div class="mt-4 flex items-center text-red-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
-                Learn More <span class="ml-1">→</span>
-             </div>
-          </BentoItem>
-
-          <BentoItem
-            title="AI Visibility"
-            description="58% of consumers now search with AI. Make sure ChatGPT, Perplexity, and Google AI recommend you, not your competitors."
-            class="md:col-span-1 group hover:scale-105 transition-all duration-300 border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm cursor-pointer"
-            to="/ai-optimization-hull"
-          >
-             <template #header>
-                <div class="flex flex-1 w-full h-full min-h-24 rounded-xl bg-gradient-to-br from-violet-900/50 to-neutral-900" />
-             </template>
-             <div class="mt-4 flex items-center text-violet-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
-                See How <span class="ml-1">→</span>
-             </div>
-          </BentoItem>
-        </BentoGrid>
-      </main>
-
-      <!-- Outcome Stats -->
-      <OutcomeStats class="w-full" />
-
-      <!-- Testimonials (hidden until populated) -->
-      <Testimonials class="w-full" />
-
-    </div>
+  </div>
 </template>

@@ -1,234 +1,63 @@
 {
-    "@context": {
-        "@vocab": "https://schema.org/",
-        "xsd": "http://www.w3.org/2001/XMLSchema#"
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://jakefieldhouse.co.uk/#person",
+      "name": "Jake Fieldhouse",
+      "jobTitle": "Hardware & IT Strategist",
+      "worksFor": {
+        "@id": "https://jakefieldhouse.co.uk/#organization"
+      },
+      "url": "https://jakefieldhouse.co.uk",
+      "sameAs": [
+        "https://uk.linkedin.com/in/jake-fieldhouse"
+      ],
+      "knowsAbout": ["Hardware Repair", "Microsoldering", "E-Waste Disposal", "IT Asset Disposal", "IT Infrastructure", "Cybersecurity", "AI Search Optimization"]
     },
-    "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://jakefieldhouse.co.uk/#organization",
+      "name": "Jake Fieldhouse Consulting Ltd",
+      "legalName": "JAKE FIELDHOUSE CONSULTING LTD",
+      "description": "Hardware restoration, zero-landfill e-waste, and strategic IT. We fix what others won't.",
+      "url": "https://jakefieldhouse.co.uk",
+      "logo": "https://jakefieldhouse.co.uk/logo.png",
+      "telephone": "+447404090458",
+      "email": "jake@jakefieldhouse.co.uk",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hull",
+        "addressRegion": "East Yorkshire",
+        "addressCountry": "UK"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "53.7676",
+        "longitude": "-0.3274"
+      },
+      "foundingDate": "2024",
+      "founder": {
+        "@id": "https://jakefieldhouse.co.uk/#person"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Hull"
+      },
+      "hasCredential": [
         {
-            "@id": "https://jakefieldhouse.co.uk/#organization",
-            "@type": "Organization",
-            "name": "Jake Fieldhouse Consulting Ltd",
-            "legalName": "JAKE FIELDHOUSE CONSULTING LTD",
-            "alternateName": [
-                "Jake Fieldhouse Consulting",
-                "Repair Ninja",
-                "JFC"
-            ],
-            "url": "https://jakefieldhouse.co.uk",
-            "logo": "https://jakefieldhouse.co.uk/images/og-image.png",
-            "foundingDate": "2024-11-01",
-            "identifier": {
-                "@type": "PropertyValue",
-                "name": "Companies House Number",
-                "value": "16536646"
-            },
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Hull",
-                "addressRegion": "East Yorkshire",
-                "addressCountry": "GB"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 53.7443,
-                "longitude": -0.3325
-            },
-            "founder": {
-                "@id": "https://jakefieldhouse.co.uk/#founder"
-            },
-            "makesOffer": [
-                {
-                    "@id": "https://jakefieldhouse.co.uk/#service-msp"
-                },
-                {
-                    "@id": "https://jakefieldhouse.co.uk/#service-repair"
-                },
-                {
-                    "@id": "https://jakefieldhouse.co.uk/#service-ewaste"
-                },
-                {
-                    "@id": "https://jakefieldhouse.co.uk/#service-geo"
-                },
-                {
-                    "@id": "https://jakefieldhouse.co.uk/#service-remotehands"
-                }
-            ],
-            "hasCredential": [
-                {
-                    "@id": "https://jakefieldhouse.co.uk/#credential-waste"
-                },
-                {
-                    "@id": "https://jakefieldhouse.co.uk/#credential-ico"
-                }
-            ],
-            "areaServed": [
-                {
-                    "@id": "https://jakefieldhouse.co.uk/#area-hull"
-                },
-                {
-                    "@id": "https://jakefieldhouse.co.uk/#area-eastyorkshire"
-                },
-                {
-                    "@id": "https://jakefieldhouse.co.uk/#area-uk"
-                }
-            ],
-            "sameAs": [
-                "https://find-and-update.company-information.service.gov.uk/company/16536646",
-                "https://uk.linkedin.com/in/jake-fieldhouse",
-                "https://github.com/Jake-Fieldhouse"
-            ],
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+44-7404-090458",
-                "email": "jake@jakefieldhouse.co.uk",
-                "contactType": "sales",
-                "availableLanguage": "en"
-            }
+          "@type": "EducationalOccupationalCredential",
+          "name": "Environment Agency Waste Carrier",
+          "credentialCategory": "license",
+          "identifier": "CBDL620098"
         },
         {
-            "@id": "https://jakefieldhouse.co.uk/#founder",
-            "@type": "Person",
-            "name": "Jake Fieldhouse",
-            "jobTitle": "Director & Lead Systems Engineer",
-            "url": "https://uk.linkedin.com/in/jake-fieldhouse",
-            "worksFor": {
-                "@id": "https://jakefieldhouse.co.uk/#organization"
-            },
-            "knowsAbout": [
-                "Microsoldering",
-                "Logic Board Repair",
-                "Microsoft 365 Administration",
-                "Endpoint Security",
-                "ITAD",
-                "NIST 800-88 Data Destruction",
-                "Generative Engine Optimization"
-            ]
-        },
-        {
-            "@id": "https://jakefieldhouse.co.uk/#service-msp",
-            "@type": "Service",
-            "name": "Managed IT Services",
-            "description": "Proactive monitoring, EDR security, Microsoft 365 administration, and responsive local support for Hull businesses",
-            "url": "https://jakefieldhouse.co.uk/managed-it-services-hull",
-            "provider": {
-                "@id": "https://jakefieldhouse.co.uk/#organization"
-            },
-            "serviceType": "Managed Service Provider",
-            "additionalType": "https://www.wikidata.org/wiki/Q54949219",
-            "areaServed": {
-                "@id": "https://jakefieldhouse.co.uk/#area-hull"
-            }
-        },
-        {
-            "@id": "https://jakefieldhouse.co.uk/#service-repair",
-            "@type": "Service",
-            "name": "Microsoldering & Board Repair",
-            "alternateName": "Repair Ninja",
-            "description": "Component-level repair for MacBooks, PS5, consoles, iPhones. No Fix, No Fee guarantee.",
-            "url": "https://jakefieldhouse.co.uk/microsoldering-repair-hull",
-            "provider": {
-                "@id": "https://jakefieldhouse.co.uk/#organization"
-            },
-            "serviceType": "Electronics Repair",
-            "additionalType": "https://www.wikidata.org/wiki/Q124515114",
-            "termsOfService": "No Fix, No Fee"
-        },
-        {
-            "@id": "https://jakefieldhouse.co.uk/#service-ewaste",
-            "@type": "Service",
-            "name": "Secure Data Disposal & E-Waste Collection",
-            "description": "Free GDPR-compliant IT asset disposal with NIST 800-88 data destruction and Waste Transfer Notes",
-            "url": "https://jakefieldhouse.co.uk/secure-data-disposal-hull",
-            "provider": {
-                "@id": "https://jakefieldhouse.co.uk/#organization"
-            },
-            "serviceType": "IT Asset Disposition",
-            "additionalType": "https://www.wikidata.org/wiki/Q327400",
-            "priceSpecification": {
-                "@type": "PriceSpecification",
-                "price": 0,
-                "priceCurrency": "GBP",
-                "description": "Free collection for Hull & East Yorkshire businesses"
-            }
-        },
-        {
-            "@id": "https://jakefieldhouse.co.uk/#service-geo",
-            "@type": "Service",
-            "name": "AI Search Optimization (GEO)",
-            "description": "Generative Engine Optimization to make businesses visible in ChatGPT, Perplexity, and Google AI",
-            "url": "https://jakefieldhouse.co.uk/ai-optimization-hull",
-            "provider": {
-                "@id": "https://jakefieldhouse.co.uk/#organization"
-            },
-            "serviceType": "Search Engine Optimization",
-            "additionalType": "https://www.wikidata.org/wiki/Q180711"
-        },
-        {
-            "@id": "https://jakefieldhouse.co.uk/#service-remotehands",
-            "@type": "Service",
-            "name": "Data Centre Remote Hands",
-            "description": "Professional remote hands and smart hands support for data centres in Hull & East Yorkshire. Racking, cabling, hardware swap, vendor escort. DBS checked.",
-            "url": "https://jakefieldhouse.co.uk/data-centre-remote-hands-hull",
-            "provider": {
-                "@id": "https://jakefieldhouse.co.uk/#organization"
-            },
-            "serviceType": "Data Centre Support",
-            "areaServed": {
-                "@id": "https://jakefieldhouse.co.uk/#area-hull"
-            }
-        },
-        {
-            "@id": "https://jakefieldhouse.co.uk/#credential-waste",
-            "@type": "Credential",
-            "name": "Environment Agency Waste Carrier License",
-            "credentialCategory": "Upper Tier Waste Carrier",
-            "identifier": "CBDL620098",
-            "issuedBy": {
-                "@type": "GovernmentOrganization",
-                "name": "Environment Agency",
-                "url": "https://environment.data.gov.uk"
-            }
-        },
-        {
-            "@id": "https://jakefieldhouse.co.uk/#credential-ico",
-            "@type": "Credential",
-            "name": "ICO Data Protection Registration",
-            "credentialCategory": "Data Controller",
-            "identifier": "ZC002956",
-            "issuedBy": {
-                "@type": "GovernmentOrganization",
-                "name": "Information Commissioner's Office",
-                "url": "https://ico.org.uk"
-            }
-        },
-        {
-            "@id": "https://jakefieldhouse.co.uk/#area-hull",
-            "@type": "City",
-            "name": "Hull",
-            "alternateName": "Kingston upon Hull",
-            "containedInPlace": {
-                "@id": "https://jakefieldhouse.co.uk/#area-eastyorkshire"
-            }
-        },
-        {
-            "@id": "https://jakefieldhouse.co.uk/#area-eastyorkshire",
-            "@type": "AdministrativeArea",
-            "name": "East Yorkshire",
-            "containedInPlace": {
-                "@id": "https://jakefieldhouse.co.uk/#area-uk"
-            }
-        },
-        {
-            "@id": "https://jakefieldhouse.co.uk/#area-uk",
-            "@type": "Country",
-            "name": "United Kingdom",
-            "identifier": "GB"
+          "@type": "EducationalOccupationalCredential",
+          "name": "ICO Data Protection Registration",
+          "credentialCategory": "registration",
+          "identifier": "ZC002956"
         }
-    ],
-    "_metadata": {
-        "version": "1.1.0",
-        "generated": "2026-02-18T11:30:00Z",
-        "purpose": "Machine-readable knowledge graph for AI systems and semantic web applications",
-        "contact": "jake@jakefieldhouse.co.uk"
+      ]
     }
+  ]
 }
