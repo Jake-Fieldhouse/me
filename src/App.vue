@@ -2,7 +2,6 @@
 const MAINTENANCE_MODE = false
 
 
-import AuroraBackground from './components/AuroraBackground.vue'
 import ArtHousePreloader from './components/ArtHousePreloader.vue'
 // Async-load non-critical components to reduce initial main-thread work
 const CookieConsent = defineAsyncComponent(() => import('./components/CookieConsent.vue'))
@@ -60,10 +59,10 @@ onMounted(() => {
     <!-- Skip to Content (a11y: keyboard users bypass nav) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Hero Layer -->
-    <AuroraBackground class="fixed inset-0 z-0">
-        <!-- Aurora handles its own visuals -->
-    </AuroraBackground>
+    <!-- Hero Layer (Subtle Obsidian Glass Background) -->
+    <div class="fixed inset-0 z-0 bg-black">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(255,255,255,0.03)_0%,transparent_50%)]"></div>
+    </div>
 
     <!-- Art House Preloader (z-9999 opaque overlay — content renders behind it for LCP) -->
     <ArtHousePreloader :loading="isLoading" />
