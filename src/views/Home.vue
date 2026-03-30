@@ -10,8 +10,8 @@ import IconTelegram from '../components/icons/IconTelegram.vue'
 import IconLinkedIn from '../components/icons/IconLinkedIn.vue'
 import IconChevronDown from '../components/icons/IconChevronDown.vue'
 useOgMeta({
-  title: 'Jake Fieldhouse Consulting | Hardware & IT Strategist',
-  description: 'Hull & East Yorkshire. Component-level repair, zero-landfill e-waste, embedded IT, and home automation.',
+  title: 'Jake Fieldhouse Consulting | Hardware Specialist & Tech Consultant',
+  description: 'Hull & East Yorkshire. Component-level repair, zero-landfill e-waste, remote IT support, and AI / LLM integration.',
   image: '/images/og-image.png',
   url: '/'
 })
@@ -31,8 +31,8 @@ useOgMeta({
       </h1>
       
       <p class="text-xl md:text-3xl text-neutral-400 max-w-3xl leading-relaxed font-light">
-        Bespoke technology services for homes and businesses. <br class="hidden md:block" />
-        <span class="text-white font-normal">Complex hardware repair, secure IT disposal, and smart home automation.</span>
+        Premium technology services for consumers and businesses. <br class="hidden md:block" />
+        <span class="text-white font-normal">Complex hardware repair, zero-landfill eWaste, remote IT support, and AI / LLM integration.</span>
       </p>
 
       <div class="pt-8 w-full flex flex-col gap-6 items-start">
@@ -76,31 +76,40 @@ useOgMeta({
           <div class="h-px bg-gradient-to-r from-white/20 to-transparent flex-1"></div>
         </div>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 gap-8">
             <!-- Hardware / Repair -->
             <div class="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:bg-white/[0.04] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,255,255,0.05)] scroll-reveal">
                 <div class="text-4xl mb-8 opacity-80">🔬</div>
-                <h3 class="text-xl font-bold text-white mb-4 tracking-tight">Hardware Restoration</h3>
+                <h3 class="text-xl font-bold text-white mb-4 tracking-tight">Hardware Specialist</h3>
                 <p class="text-neutral-400 leading-relaxed font-light">
-                    15+ years of component-level microsoldering and recovery. Focusing on extending the lifespan of premium devices, repairing logic boards, and recovering data when conventional replacement isn't desirable.
+                    The industry standard is "Replace-First" — shops swapping entire expensive parts and passing the cost to you. I offer a radically different approach: 15+ years of complex, component-level microsoldering. From phone screens and vacuums to dead logic boards, I fix the actual fault to save you money and extend the lifespan of your device.
                 </p>
             </div>
 
             <!-- E-Waste -->
             <div class="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:bg-white/[0.04] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,255,255,0.05)] scroll-reveal" style="animation-delay: 100ms;">
                 <div class="text-4xl mb-8 opacity-80">♻️</div>
-                <h3 class="text-xl font-bold text-white mb-4 tracking-tight">IT Asset Disposal</h3>
+                <h3 class="text-xl font-bold text-white mb-4 tracking-tight">eWaste Solutions</h3>
                 <p class="text-neutral-400 leading-relaxed font-light">
-                    Fully licensed (CBDL620098) zero-landfill e-waste processing. Secure data wiping (NIST 800-88 compliance) and asset lifecycle management tailored for homes and businesses.
+                    Fully licensed (CBDL620098) zero-landfill e-waste processing. Secure data wiping (NIST 800-88 compliance available upon request) and ethical asset lifecycle management for homes and businesses.
                 </p>
             </div>
 
-            <!-- Home & Enterprise Automation -->
+            <!-- IT Support -->
             <div class="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:bg-white/[0.04] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,255,255,0.05)] scroll-reveal" style="animation-delay: 200ms;">
                 <div class="text-4xl mb-8 opacity-80">⚡</div>
-                <h3 class="text-xl font-bold text-white mb-4 tracking-tight">Home & Enterprise IT</h3>
+                <h3 class="text-xl font-bold text-white mb-4 tracking-tight">Complex IT Support</h3>
                 <p class="text-neutral-400 leading-relaxed font-light">
-                    From deploying high-end local smart home orchestration (Home Assistant) for significant power and efficiency savings, to securing and mapping enterprise-level networks.
+                    Reliable technical support and automation tailored for small-to-medium businesses, high-end smart homes, and everyday households. For SMBs, this means deploying custom automation that can save thousands in power and efficiency—delivered with extreme rigor, minus the bloat of traditional managed services.
+                </p>
+            </div>
+
+            <!-- AI Integration -->
+            <div class="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:bg-white/[0.04] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,255,255,0.05)] scroll-reveal" style="animation-delay: 300ms;">
+                <div class="text-4xl mb-8 opacity-80">🤖</div>
+                <h3 class="text-xl font-bold text-white mb-4 tracking-tight">AI & LLM Integration</h3>
+                <p class="text-neutral-400 leading-relaxed font-light">
+                    Helping you navigate the rapidly changing AI landscape. From Generative Search Optimization to custom LLM integration and general usage guidance, I help bridge the knowledge gap for your business.
                 </p>
             </div>
         </div>
@@ -121,20 +130,20 @@ useOgMeta({
         
         <div class="text-neutral-300 space-y-6 leading-relaxed max-w-4xl text-lg font-light">
           <p>
-            I began at 15, diagnosing early-generation iPhones and physically distributing flyers across Hull. Long before modern delivery platforms saturated the market, I built <strong class="text-white font-medium">Sweet Tooth</strong> — the city's first sweet delivery service, scaling entirely organically.
+            I first touched a PC at age 6, navigating DOS games and early operating systems. By 11, long before the modern internet provided easy answers, I was building systems and deep-diving into early tech forums. That foundational obsession evolved into my first business, hand-delivering tech flyers across Hull at 16, and eventually into advanced component-level logic board recovery.
           </p>
           <p>
-            Currently, I operate embedded within enterprise IT infrastructure for a major digital services provider, diagnosing datacentre systems and engineering automated deployments. 
+            Today, I bring over 15 years of hands-on technical experience—paired with the extreme rigor demanded by my 7-year background working within enterprise infrastructures.
           </p>
           <p>
-            <strong class="text-white font-medium">Jake Fieldhouse Consulting</strong> exists to bring that tier of capability back down to earth. Whether you need an elite smart home orchestration system driving down your power consumption, or a delicate component-level repair on a device vital to your life, you deal directly with the engineer.
+            <strong class="text-white font-medium">Jake Fieldhouse Consulting</strong> exists to provide radically honest, premium technical capability directly to the consumer and small business. I operate on an extreme customer-first philosophy: if it is cheaper for you to buy a second-hand replacement than for me to repair your current device, I will tell you to do that. You always deal directly with the engineer.
           </p>
         </div>
         
         <!-- Stats highlight -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-white/10 mt-8">
           <div>
-              <div class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-neutral-500">15+</div>
+              <div class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-neutral-500">20+</div>
               <div class="text-xs text-neutral-500 uppercase tracking-widest mt-2 font-semibold">Years Active</div>
           </div>
           <div>
@@ -142,7 +151,7 @@ useOgMeta({
               <div class="text-xs text-neutral-500 uppercase tracking-widest mt-2 font-semibold">Devices Fixed</div>
           </div>
           <div>
-              <div class="text-3xl font-black text-white">DBS</div>
+              <div class="text-3xl font-black text-white">Enhanced DBS</div>
               <div class="text-xs text-neutral-500 uppercase tracking-widest mt-2 font-semibold">Checked</div>
           </div>
           <div>
@@ -158,7 +167,7 @@ useOgMeta({
         <div class="max-w-4xl mx-auto w-full space-y-12">
             <div class="text-center space-y-4">
                 <h2 class="text-4xl font-bold text-white tracking-tight">Start a Dialogue</h2>
-                <p class="text-neutral-400 font-light text-lg">Whether you are looking for custom home automation, a complex board repair, or an office IT clearance, let's discuss your requirements.</p>
+                <p class="text-neutral-400 font-light text-lg">Whether you need a simple phone repair, complex logic board recovery, licensed asset disposal, or help navigating AI and LLMs for your business workflow—let's discuss your requirements.</p>
             </div>
 
             <!-- Contact Form only at the bottom, without redundant grids -->
