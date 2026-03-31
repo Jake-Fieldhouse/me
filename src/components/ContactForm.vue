@@ -45,9 +45,9 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-  <div class="bg-neutral-900/50 p-6 md:p-8 rounded-3xl border border-white/5">
+  <div class="bg-white/[0.02] backdrop-blur-xl border border-white/10 p-6 md:p-8 rounded-3xl hover:bg-white/[0.04] transition-all duration-500 hover:shadow-[0_20px_40px_rgba(255,255,255,0.05)]">
     <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-3">
-      <span class="w-2 h-6 bg-amber-500 rounded-full shadow-lg shadow-amber-500/40"></span>
+      <span class="w-2 h-6 bg-purple-400 rounded-full shadow-[0_0_15px_rgba(192,132,252,0.6)]"></span>
       Quick Message
     </h3>
     <p class="text-neutral-400 text-sm mb-6">Prefer a form? No problem.</p>
@@ -58,7 +58,7 @@ const handleSubmit = async () => {
           v-model="form.name"
           type="text" 
           placeholder="Your Name"
-          class="w-full px-4 py-3 bg-neutral-800/50 border border-white/10 rounded-xl text-white placeholder:text-neutral-400 focus:outline-none focus:border-amber-500/50 transition-colors"
+          class="w-full px-4 py-3 bg-white/[0.03] border border-white/10 rounded-xl text-white placeholder:text-neutral-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/[0.05] transition-all duration-300"
         />
       </div>
       <div>
@@ -66,7 +66,7 @@ const handleSubmit = async () => {
           v-model="form.email"
           type="email" 
           placeholder="Your Email"
-          class="w-full px-4 py-3 bg-neutral-800/50 border border-white/10 rounded-xl text-white placeholder:text-neutral-400 focus:outline-none focus:border-amber-500/50 transition-colors"
+          class="w-full px-4 py-3 bg-white/[0.03] border border-white/10 rounded-xl text-white placeholder:text-neutral-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/[0.05] transition-all duration-300"
         />
       </div>
       <div>
@@ -74,7 +74,7 @@ const handleSubmit = async () => {
           v-model="form.message"
           placeholder="How can I help?"
           rows="4"
-          class="w-full px-4 py-3 bg-neutral-800/50 border border-white/10 rounded-xl text-white placeholder:text-neutral-400 focus:outline-none focus:border-amber-500/50 transition-colors resize-none"
+          class="w-full px-4 py-3 bg-white/[0.03] border border-white/10 rounded-xl text-white placeholder:text-neutral-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/[0.05] transition-all duration-300 resize-none"
         ></textarea>
       </div>
       
@@ -83,7 +83,7 @@ const handleSubmit = async () => {
       <button 
         type="submit"
         :disabled="isSubmitting"
-        class="w-full py-3 bg-amber-500 hover:bg-amber-400 text-black font-semibold rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        class="w-full py-3 bg-gradient-to-r from-purple-500 to-fuchsia-600 hover:from-purple-400 hover:to-fuchsia-500 text-white font-bold tracking-wide rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {{ isSubmitting ? 'Sending...' : 'Send Message' }}
       </button>

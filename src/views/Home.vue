@@ -2,6 +2,7 @@
 import TrustBar from '../components/TrustSignals/TrustBar.vue'
 import ContactForm from '../components/ContactForm.vue'
 import { useOgMeta } from '../composables/useOgMeta'
+import { Microscope, Recycle, Zap, BrainCircuit } from 'lucide-vue-next'
 import IconWhatsApp from '../components/icons/IconWhatsApp.vue'
 import IconPhone from '../components/icons/IconPhone.vue'
 import IconEmail from '../components/icons/IconEmail.vue'
@@ -18,8 +19,14 @@ useOgMeta({
 </script>
 
 <template>
-  <div class="relative w-full max-w-7xl mx-auto px-6 lg:px-12 pt-32 flex flex-col gap-48 md:gap-64 pb-32">
+  <div class="relative w-full max-w-7xl mx-auto px-6 lg:px-12 pt-24 md:pt-32 flex flex-col gap-32 md:gap-40 pb-32">
     
+    <!-- Ambient Accent Glow-->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-[-1] hidden md:block">
+      <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-fuchsia-500/[0.05] blur-[150px] rounded-full mix-blend-screen animate-pulse duration-[5000ms]"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-purple-600/[0.05] blur-[150px] rounded-full mix-blend-screen animate-pulse duration-[7000ms]" style="animation-delay: 2s;"></div>
+    </div>
+
     <!-- Hero (Obsidian Glass) -->
     <section class="min-h-[82vh] flex flex-col justify-start items-start space-y-10 relative scroll-reveal pt-4 md:pt-12">
       <div class="inline-block px-5 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-neutral-300 text-sm font-medium tracking-wide shadow-[0_0_15px_rgba(255,255,255,0.05)]">
@@ -78,8 +85,8 @@ useOgMeta({
         
         <div class="grid md:grid-cols-2 gap-8">
             <!-- Hardware / Repair -->
-            <div class="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:bg-white/[0.04] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,255,255,0.05)] scroll-reveal">
-                <div class="text-4xl mb-8 opacity-80">🔬</div>
+            <div class="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:bg-white/[0.04] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,255,255,0.05)] scroll-reveal flex flex-col">
+                <Microscope class="w-12 h-12 mb-8 text-fuchsia-400 drop-shadow-[0_0_15px_rgba(232,121,249,0.5)]" stroke-width="1.5" />
                 <h3 class="text-xl font-bold text-white mb-4 tracking-tight">Hardware Specialist</h3>
                 <p class="text-neutral-400 leading-relaxed font-light">
                     The industry standard is "Replace-First" — shops swapping entire expensive parts and passing the cost to you. I offer a radically different approach: 15+ years of complex, component-level microsoldering. From phone screens and vacuums to dead logic boards, I fix the actual fault to save you money and extend the lifespan of your device.
@@ -87,8 +94,8 @@ useOgMeta({
             </div>
 
             <!-- E-Waste -->
-            <div class="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:bg-white/[0.04] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,255,255,0.05)] scroll-reveal" style="animation-delay: 100ms;">
-                <div class="text-4xl mb-8 opacity-80">♻️</div>
+            <div class="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:bg-white/[0.04] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,255,255,0.05)] scroll-reveal flex flex-col" style="animation-delay: 100ms;">
+                <Recycle class="w-12 h-12 mb-8 text-emerald-400 drop-shadow-[0_0_15px_rgba(52,211,153,0.5)]" stroke-width="1.5" />
                 <h3 class="text-xl font-bold text-white mb-4 tracking-tight">eWaste Solutions</h3>
                 <p class="text-neutral-400 leading-relaxed font-light">
                     Fully licensed (CBDL620098) zero-landfill e-waste processing. Secure data wiping (NIST 800-88 compliance available upon request) and ethical asset lifecycle management for homes and businesses.
@@ -96,8 +103,8 @@ useOgMeta({
             </div>
 
             <!-- IT Support -->
-            <div class="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:bg-white/[0.04] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,255,255,0.05)] scroll-reveal" style="animation-delay: 200ms;">
-                <div class="text-4xl mb-8 opacity-80">⚡</div>
+            <div class="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:bg-white/[0.04] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,255,255,0.05)] scroll-reveal flex flex-col" style="animation-delay: 200ms;">
+                <Zap class="w-12 h-12 mb-8 text-amber-400 drop-shadow-[0_0_15px_rgba(251,191,36,0.5)]" stroke-width="1.5" />
                 <h3 class="text-xl font-bold text-white mb-4 tracking-tight">Complex IT Support</h3>
                 <p class="text-neutral-400 leading-relaxed font-light">
                     Reliable technical support and automation tailored for small-to-medium businesses, high-end smart homes, and everyday households. For SMBs, this means deploying custom automation that can save thousands in power and efficiency—delivered with extreme rigor, minus the bloat of traditional managed services.
@@ -105,8 +112,8 @@ useOgMeta({
             </div>
 
             <!-- AI Integration -->
-            <div class="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:bg-white/[0.04] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,255,255,0.05)] scroll-reveal" style="animation-delay: 300ms;">
-                <div class="text-4xl mb-8 opacity-80">🤖</div>
+            <div class="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:bg-white/[0.04] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,255,255,0.05)] scroll-reveal flex flex-col" style="animation-delay: 300ms;">
+                <BrainCircuit class="w-12 h-12 mb-8 text-purple-400 drop-shadow-[0_0_15px_rgba(192,132,252,0.5)]" stroke-width="1.5" />
                 <h3 class="text-xl font-bold text-white mb-4 tracking-tight">AI & LLM Integration</h3>
                 <p class="text-neutral-400 leading-relaxed font-light">
                     Helping you navigate the rapidly changing AI landscape. From Generative Search Optimization to custom LLM integration and general usage guidance, I help bridge the knowledge gap for your business.
@@ -151,8 +158,8 @@ useOgMeta({
               <div class="text-xs text-neutral-500 uppercase tracking-widest mt-2 font-semibold">Devices Fixed</div>
           </div>
           <div>
-              <div class="text-3xl font-black text-white">Enhanced DBS</div>
-              <div class="text-xs text-neutral-500 uppercase tracking-widest mt-2 font-semibold">Checked</div>
+              <div class="text-3xl lg:text-4xl font-black text-white whitespace-nowrap">DBS Checked</div>
+              <div class="text-sm text-purple-400 uppercase tracking-widest mt-2 font-semibold">Enhanced Level</div>
           </div>
           <div>
               <div class="text-3xl font-black text-white">Hiscox</div>
@@ -166,7 +173,7 @@ useOgMeta({
     <section id="contact" class="scroll-mt-32 pt-16 border-t border-white/5 scroll-reveal">
         <div class="max-w-4xl mx-auto w-full space-y-12">
             <div class="text-center space-y-4">
-                <h2 class="text-4xl font-bold text-white tracking-tight">Start a Dialogue</h2>
+                <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight">Start a Dialogue</h2>
                 <p class="text-neutral-400 font-light text-lg">Whether you need a simple phone repair, complex logic board recovery, licensed asset disposal, or help navigating AI and LLMs for your business workflow—let's discuss your requirements.</p>
             </div>
 
