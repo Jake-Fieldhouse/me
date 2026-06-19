@@ -19,6 +19,12 @@ Practical IT services, repair diagnostics, and secure disposal solutions.
 
 This repository contains the source for [jakefieldhouse.co.uk](https://jakefieldhouse.co.uk), built as a Vue + TypeScript SPA and deployed through GitHub Actions.
 
+## Project Home Base
+
+For the ongoing portfolio rebuild brief, current-state mapping, and phased plan, see:
+
+- [Portfolio Home Base (Working Brief)](./docs/portfolio-home-base.md)
+
 ## Technical Highlights
 
 * **Frontend stack**: Vue 3, TypeScript, Vite, Tailwind CSS.
