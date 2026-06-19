@@ -82,6 +82,27 @@ test.describe('About Page', () => {
     })
 })
 
+// ─── Contact Page ───────────────────────────────────────────
+
+test.describe('Contact Page', () => {
+    test('booking session entry point is visible', async ({ page }) => {
+        await page.addInitScript(() => {
+            localStorage.setItem('cookie-preferences', JSON.stringify({
+                necessary: true,
+                analytics: false,
+                marketing: false,
+            }))
+        })
+
+        await page.goto('/contact')
+        await expect(page.getByRole('heading', { name: 'Schedule a Call' })).toBeVisible({ timeout: 15000 })
+
+        const bookingLink = page.getByRole('link', { name: 'Open Booking Calendar' })
+        await expect(bookingLink).toBeVisible()
+        await expect(bookingLink).toHaveAttribute('href', 'https://cal.eu/jake-fieldhouse-7kcb9d')
+    })
+})
+
 // ─── Managed IT Services ────────────────────────────────────
 
 test.describe('Managed IT Services', () => {

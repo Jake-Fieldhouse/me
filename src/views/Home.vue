@@ -181,6 +181,15 @@ useOgMeta({
             <div class="max-w-2xl mx-auto w-full pt-4 pb-12">
               <ContactForm />
             </div>
+
+            <div class="text-center -mt-4">
+              <router-link
+                to="/contact"
+                class="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-white/10"
+              >
+                Looking to start a working session? Open the booking page
+              </router-link>
+            </div>
         </div>
     </section>
 

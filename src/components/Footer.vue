@@ -35,6 +35,7 @@ const currentYear = new Date().getFullYear()
           <router-link to="/#about" class="hover:text-white transition-colors">About</router-link>
           <router-link to="/#expertise" class="hover:text-white transition-colors">Expertise</router-link>
           <router-link to="/#contact" class="hover:text-white transition-colors">Contact</router-link>
+          <router-link to="/contact" class="hover:text-white transition-colors">Book a Session</router-link>
           <router-link to="/compliance" class="hover:text-white transition-colors">Compliance</router-link>
         </nav>
 

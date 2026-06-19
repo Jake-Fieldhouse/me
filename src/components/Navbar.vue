@@ -12,10 +12,17 @@ const navRef = ref<HTMLElement | null>(null)
 const navItems = [
   { name: 'Expertise', path: '/#expertise' },
   { name: 'About', path: '/#about' },
-  { name: 'Contact', path: '/#contact' }
+  { name: 'Contact', path: '/#contact' },
+  { name: 'Book a Session', path: '/contact' }
 ]
 
-const isActive = (path: string) => route.hash === path.substring(1)
+const isActive = (path: string) => {
+  if (path.includes('#')) {
+    return route.path === '/' && route.hash === path.substring(1)
+  }
+
+  return route.path === path
+}
 
 // Close mobile menu when tapping/clicking outside.
 const handleOutsideInteraction = (event: PointerEvent | MouseEvent) => {
