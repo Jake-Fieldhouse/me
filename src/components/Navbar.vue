@@ -18,7 +18,8 @@ const navItems = [
 
 const isActive = (path: string) => {
   if (path.includes('#')) {
-    return route.path === '/' && route.hash === path.slice(path.indexOf('#'))
+    const [routePath, routeHash] = path.split('#')
+    return route.path === (routePath || '/') && route.hash === `#${routeHash}`
   }
 
   return route.path === path
