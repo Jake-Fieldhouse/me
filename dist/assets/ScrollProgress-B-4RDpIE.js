@@ -1,0 +1,1 @@
+import{d as s,o as a,c as r}from"./vendor-uoJrtAcC.js";import{_ as o}from"./index-B0V-NlXC.js";import"./icons-D7zBv8F5.js";const e={class:"scroll-progress",role:"progressbar","aria-label":"Reading progress","aria-valuemin":"0","aria-valuemax":"100"},i=o(s({__name:"ScrollProgress",setup:s=>(s,o)=>(a(),r("div",e))}),[["__scopeId","data-v-d68c22bf"]]);export{i as default};
